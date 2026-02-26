@@ -240,7 +240,8 @@ Traceback (most recent call last):
   File "/home/tony/Documents/final_devforge_db/app/main.py", line 8, in <module>
     import posthog
 ModuleNotFoundError: No module named 'posthog'
-WARNING:  StatReload detected changes in 'app/main.py'. Reloading...
+INFO:     Stopping reloader process [73516]
+p/main.py'. Reloading...
 Process SpawnProcess-6:
 Traceback (most recent call last):
   File "/usr/lib64/python3.14/multiprocessing/process.py", line 320, in _bootstrap
@@ -334,3 +335,4 @@ Traceback (most recent call last):
   File "/home/tony/Documents/final_devforge_db/app/main.py", line 8, in <module>
     import posthog
 ModuleNotFoundError: No module named 'posthog'
+INFO:     Stopping reloader process [69538]
