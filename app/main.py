@@ -1,5 +1,13 @@
 import os
 os.environ["ANONYMIZED_TELEMETRY"] = "False"
+os.environ["CHROMA_TELEMETRY_ENABLED"] = "false"
+
+# Monkey-patch posthog to completely prevent telemetry errors
+# ChromaDB's posthog version has a broken capture() signature
+import posthog
+posthog.capture = lambda *args, **kwargs: None
+posthog.identify = lambda *args, **kwargs: None
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import nodes, edges, search, pdf, graph, stats

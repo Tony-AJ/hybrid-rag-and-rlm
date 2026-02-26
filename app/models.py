@@ -113,12 +113,15 @@ class HybridSearchRequest(BaseModel):
     vector_weight: float = 0.6
     graph_weight: float = 0.4
     top_k: int = 5
+    max_depth: int = 2
+    path_distance_penalty: float = 0.1
 
 class HybridSearchResultItem(BaseModel):
     id: str
     vector_score: float
     graph_score: float
     final_score: float
+    reason: str = ""
     info: Dict[str, Any]
 
 class HybridSearchResponse(BaseModel):

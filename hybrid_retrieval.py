@@ -28,9 +28,10 @@ GRAPH_DB_PATH = os.path.join(CURRENT_DIR, "db", "graph_data.json")
 # Embedding model
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
-# Hybrid scoring weights
-COSINE_WEIGHT = 0.7
-GRAPH_WEIGHT = 0.3
+# Hybrid scoring hyperparameters
+COSINE_WEIGHT = 0.7  # α
+GRAPH_WEIGHT = 0.3   # β
+PATH_PENALTY = 0.1   # γ
 
 # Graph traversal depth
 GRAPH_DEPTH = 2
@@ -56,169 +57,186 @@ graph_db = GraphDatabase(db_path=GRAPH_DB_PATH, auto_persist=True)
 def vector_search(query: str, top_k: int = 5) -> List[Tuple[str, str, float]]:
     """
     Perform vector search using ChromaDB with cosine similarity.
-    
-    Args:
-        query: User query string
-        top_k: Number of top results to return
-        
+
     Returns:
         List of tuples: (chunk_id, chunk_text, cosine_score)
-        
-    Assumptions:
-        - ChromaDB collection uses chunk index as metadata 'id' or generates IDs
-        - Cosine similarity scores are normalized [0, 1]
     """
-    # Use ChromaDB's similarity search with scores
     results = chroma_db.similarity_search_with_score(query, k=top_k)
-    
+
     vector_results = []
     for doc, score in results:
-        # Extract chunk_id from metadata (fallback to generated ID)
         chunk_id = doc.metadata.get('id', doc.metadata.get('source', str(hash(doc.page_content))))
         chunk_text = doc.page_content
-        
-        # ChromaDB returns distance, convert to similarity (1 - normalized_distance)
-        # Assuming L2 distance, normalize to [0, 1] similarity
-        cosine_score = 1.0 / (1.0 + score)  # Convert distance to similarity
-        
+
+        # ChromaDB returns distance, convert to similarity
+        cosine_score = 1.0 / (1.0 + score)
+
         vector_results.append((chunk_id, chunk_text, cosine_score))
-    
+
     return vector_results
 
 
 # ==================== 2. Graph Expansion & Scoring ====================
 
-def graph_score(graph: nx.MultiDiGraph, chunk_id: str, depth: int = GRAPH_DEPTH) -> Dict[str, float]:
+def graph_score(graph: nx.MultiDiGraph, chunk_id: str, depth: int = GRAPH_DEPTH) -> Dict[str, Dict[str, Any]]:
     """
     Compute graph-based scores for nodes related to chunk_id.
-    
-    Args:
-        graph: NetworkX MultiDiGraph instance
-        chunk_id: Starting chunk/node ID
-        depth: Maximum traversal depth (default: 2)
-        
+
+    Score: 1 / (hop_distance + 1), already normalized to (0, 1].
+
     Returns:
-        Dictionary mapping related_chunk_id -> relation_score
-        
-    Score assignment:
-        - depth 1 (direct neighbors): score 1.0
-        - depth 2 (2-hop neighbors): score 0.5
-        - no connection: score 0.0
-        
-    Assumptions:
-        - Graph nodes represent chunk IDs
-        - Edges represent meaningful relationships (parent-child, topic-subtopic, etc.)
+        Dictionary mapping related_chunk_id -> {"score": float, "hop": int, "via_edge": str, "from_node": str}
     """
     if chunk_id not in graph.nodes:
         return {}
-    
-    scores = {}
+
+    result = {}
     visited = set()
-    queue = [(chunk_id, 0)]  # (node_id, current_depth)
-    
+    queue = [(chunk_id, 0, None, None)]  # (node_id, current_depth, via_edge, from_node)
+
     while queue:
-        node_id, current_depth = queue.pop(0)
-        
+        node_id, current_depth, via_edge, from_node = queue.pop(0)
+
         if node_id in visited:
             continue
-        
+
         visited.add(node_id)
-        
-        # Assign score based on depth
-        if current_depth == 0:
-            scores[node_id] = 1.0  # Starting node
-        elif current_depth == 1:
-            scores[node_id] = 1.0  # Direct neighbors
-        elif current_depth == 2:
-            scores[node_id] = 0.5  # 2-hop neighbors
-        else:
-            scores[node_id] = 0.0  # Beyond depth
-        
-        # Explore neighbors if within depth
+
+        score = 1.0 / (current_depth + 1)
+        result[node_id] = {
+            "score": score,
+            "hop": current_depth,
+            "via_edge": via_edge,
+            "from_node": from_node
+        }
+
         if current_depth < depth:
-            # Get both outgoing and incoming neighbors
             neighbors = set(graph.successors(node_id)) | set(graph.predecessors(node_id))
             for neighbor in neighbors:
                 if neighbor not in visited:
-                    queue.append((neighbor, current_depth + 1))
-    
-    return scores
+                    # Get edge type for explainability
+                    edge_type = "link"
+                    if graph.has_edge(node_id, neighbor):
+                        for key, edge_data in graph[node_id][neighbor].items():
+                            edge_type = edge_data.get("type", "link")
+                            break
+                    elif graph.has_edge(neighbor, node_id):
+                        for key, edge_data in graph[neighbor][node_id].items():
+                            edge_type = edge_data.get("type", "link")
+                            break
+                    queue.append((neighbor, current_depth + 1, edge_type, node_id))
+
+    return result
 
 
 # ==================== 3. Hybrid Scoring ====================
 
 def hybrid_rank(
     cosine_results: List[Tuple[str, str, float]],
-    graph_scores: Dict[str, float]
+    graph_data: Dict[str, Dict[str, Any]]
 ) -> List[Dict[str, Any]]:
     """
-    Combine cosine similarity and graph scores using hybrid formula.
-    
+    Combine cosine similarity and graph scores using normalized hybrid formula.
+
     Formula:
-        final_score = cosine_similarity * 0.7 + graph_score * 0.3
-    
-    Args:
-        cosine_results: List of (chunk_id, chunk_text, cosine_score)
-        graph_scores: Dictionary {chunk_id: graph_score}
-        
-    Returns:
-        Sorted list of result dictionaries with final scores
+        final_score = (α × normalized_vector_score)
+                    + (β × normalized_graph_score)
+                    - (γ × path_distance_penalty)
     """
-    # Collect all unique chunks from both sources
-    chunk_data = {}  # chunk_id -> {text, cosine_score, graph_score}
-    
+    chunk_data = {}
+
     # Add vector search results
     for chunk_id, chunk_text, cos_score in cosine_results:
         if chunk_id not in chunk_data:
             chunk_data[chunk_id] = {
                 'chunk_id': chunk_id,
                 'text': chunk_text,
-                'cosine_similarity': cos_score,
-                'graph_score': 0.0
+                'raw_cosine': cos_score,
+                'graph_score': 0.0,
+                'hop': 0,
+                'via_edge': None,
+                'from_node': None,
             }
         else:
-            chunk_data[chunk_id]['cosine_similarity'] = max(
-                chunk_data[chunk_id]['cosine_similarity'], 
+            chunk_data[chunk_id]['raw_cosine'] = max(
+                chunk_data[chunk_id]['raw_cosine'],
                 cos_score
             )
-    
+
     # Add graph expansion results
-    for chunk_id, g_score in graph_scores.items():
+    for chunk_id, g_info in graph_data.items():
         if chunk_id not in chunk_data:
-            # Node exists in graph but not in vector results
-            # Retrieve text from graph database
             node = graph_db.get_node(chunk_id)
             chunk_text = node.text if node else ""
-            
+
             chunk_data[chunk_id] = {
                 'chunk_id': chunk_id,
                 'text': chunk_text,
-                'cosine_similarity': 0.0,
-                'graph_score': g_score
+                'raw_cosine': 0.0,
+                'graph_score': g_info["score"],
+                'hop': g_info["hop"],
+                'via_edge': g_info["via_edge"],
+                'from_node': g_info["from_node"],
             }
         else:
-            chunk_data[chunk_id]['graph_score'] = g_score
-    
-    # Compute final scores
+            chunk_data[chunk_id]['graph_score'] = g_info["score"]
+            chunk_data[chunk_id]['hop'] = g_info["hop"]
+            chunk_data[chunk_id]['via_edge'] = g_info["via_edge"]
+            chunk_data[chunk_id]['from_node'] = g_info["from_node"]
+
+    # ── Min-Max Normalize Vector Scores ──
+    raw_scores = [d['raw_cosine'] for d in chunk_data.values() if d['raw_cosine'] > 0]
+    v_min = min(raw_scores) if raw_scores else 0.0
+    v_max = max(raw_scores) if raw_scores else 1.0
+    v_range = v_max - v_min if v_max != v_min else 1.0
+
+    for data in chunk_data.values():
+        if data['raw_cosine'] > 0:
+            data['norm_cosine'] = (data['raw_cosine'] - v_min) / v_range
+        else:
+            data['norm_cosine'] = 0.0
+
+    # ── Compute Final Scores ──
+    α = COSINE_WEIGHT
+    β = GRAPH_WEIGHT
+    γ = PATH_PENALTY
+
     final_results = []
     for chunk_id, data in chunk_data.items():
-        final_score = (
-            data['cosine_similarity'] * COSINE_WEIGHT + 
-            data['graph_score'] * GRAPH_WEIGHT
-        )
-        
+        norm_v = data['norm_cosine']
+        norm_g = data['graph_score']
+        hop = data['hop']
+
+        penalty = (hop / GRAPH_DEPTH) if GRAPH_DEPTH > 0 else 0.0
+
+        final_score = (α * norm_v) + (β * norm_g) - (γ * penalty)
+        final_score = max(0.0, final_score)
+
+        # ── Build Explanation Reason ──
+        reason_parts = []
+        if norm_v > 0:
+            reason_parts.append(f"Vector match (score {norm_v:.2f})")
+        if hop == 0 and norm_v > 0:
+            reason_parts.append("Direct vector hit")
+        elif hop > 0:
+            via = data.get('via_edge') or 'link'
+            from_node = data.get('from_node') or '?'
+            reason_parts.append(f"Connected to {from_node} via '{via}' at hop {hop}")
+        if not reason_parts:
+            reason_parts.append("Graph-only node")
+
         result = {
             'chunk_id': chunk_id,
-            'cosine_similarity': round(data['cosine_similarity'], 4),
-            'graph_score': round(data['graph_score'], 2),
+            'cosine_similarity': round(norm_v, 4),
+            'graph_score': round(norm_g, 4),
             'final_score': round(final_score, 4),
+            'reason': "; ".join(reason_parts),
             'text': data['text']
         }
         final_results.append(result)
-    
-    # Sort by final score (descending)
+
     final_results.sort(key=lambda x: x['final_score'], reverse=True)
-    
+
     return final_results
 
 
@@ -227,43 +245,32 @@ def hybrid_rank(
 def hybrid_retrieve(query: str, top_k: int = 5) -> List[Dict[str, Any]]:
     """
     End-to-end hybrid retrieval pipeline.
-    
+
     Process:
-        1. Perform vector search to get top_k chunks
-        2. For each chunk, expand via graph to find related nodes
-        3. Combine scores using hybrid ranking
+        1. Vector search → top_k chunks
+        2. Graph expansion → related nodes with edge metadata
+        3. Normalized hybrid scoring with explainability
         4. Return sorted results
-    
-    Args:
-        query: User query string
-        top_k: Number of initial vector search results
-        
-    Returns:
-        JSON-serializable list of result dictionaries
     """
     # Step 1: Vector search
     vector_results = vector_search(query, top_k)
-    
+
     # Step 2: Graph expansion
-    graph_scores_combined = {}
-    
+    graph_data_combined = {}
+
     for chunk_id, _, cos_score in vector_results:
-        # Get graph scores for this chunk
-        related_scores = graph_score(graph_db.graph, chunk_id, depth=GRAPH_DEPTH)
-        
-        # Merge scores (take max if chunk appears in multiple expansions)
-        for node_id, score in related_scores.items():
-            if node_id not in graph_scores_combined:
-                graph_scores_combined[node_id] = score
+        related = graph_score(graph_db.graph, chunk_id, depth=GRAPH_DEPTH)
+
+        for node_id, g_info in related.items():
+            if node_id not in graph_data_combined:
+                graph_data_combined[node_id] = g_info
             else:
-                graph_scores_combined[node_id] = max(
-                    graph_scores_combined[node_id], 
-                    score
-                )
-    
+                if g_info["score"] > graph_data_combined[node_id]["score"]:
+                    graph_data_combined[node_id] = g_info
+
     # Step 3: Hybrid ranking
-    final_results = hybrid_rank(vector_results, graph_scores_combined)
-    
+    final_results = hybrid_rank(vector_results, graph_data_combined)
+
     return final_results
 
 

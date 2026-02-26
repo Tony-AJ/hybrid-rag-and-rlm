@@ -43,7 +43,8 @@ def main():
         for rank, result in enumerate(results[:10], 1):
             print(f"{rank}. [Score: {result['final_score']:.4f}]")
             print(f"   Chunk ID: {result['chunk_id']}")
-            print(f"   Cosine: {result['cosine_similarity']:.4f} | Graph: {result['graph_score']:.2f}")
+            print(f"   Cosine: {result['cosine_similarity']:.4f} | Graph: {result['graph_score']:.4f}")
+            print(f"   Reason: {result.get('reason', 'N/A')}")
             print(f"   Text: {result['text'][:150]}...")
             print()
         

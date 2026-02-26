@@ -1,6 +1,11 @@
 import os
-# Disable ChromaDB telemetry
+import logging
+
+# Disable ChromaDB telemetry completely
 os.environ["ANONYMIZED_TELEMETRY"] = "False"
+os.environ["CHROMA_TELEMETRY_ENABLED"] = "false"
+logging.getLogger('chromadb').setLevel(logging.ERROR)
+logging.getLogger('posthog').setLevel(logging.ERROR)
 
 from typing import List, Dict, Any, Optional, Tuple
 from langchain_chroma import Chroma

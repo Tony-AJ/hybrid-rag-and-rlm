@@ -302,70 +302,147 @@ class HybridRetrievalService:
             nodes=nodes
         )
 
-    def hybrid_search(self, query: str, vector_weight: float, graph_weight: float, top_k: int) -> HybridSearchResponse:
-        # 1. Vector Search
+    def hybrid_search(self, query: str, vector_weight: float, graph_weight: float, top_k: int, max_depth: int = 2, path_distance_penalty: float = 0.1) -> HybridSearchResponse:
+        """
+        Normalized Hybrid Retrieval with Explainability.
+
+        Formula:
+            final_score = (α × normalized_vector_score)
+                        + (β × normalized_graph_score)
+                        - (γ × path_distance_penalty_score)
+
+        Where:
+            α = vector_weight, β = graph_weight, γ = path_distance_penalty
+            normalized_vector_score ∈ [0, 1] via min-max normalization
+            normalized_graph_score  = 1 / (shortest_path_length + 1) ∈ (0, 1]
+            path_distance_penalty_score = hop / max_depth ∈ [0, 1]
+        """
+        # ── Step 1: Vector Search ──
         vector_results = self.vector_db.search(query, top_k)
-        
+
         candidates = {}
         start_nodes = []
-        
+
         for doc_id, text, score, metadata in vector_results:
             nid = doc_id or metadata.get('id')
-            if not nid: continue
-            
+            if not nid:
+                continue
+
             candidates[nid] = {
-                "vector_score": score,
+                "raw_vector_score": score,
                 "graph_score": 0.0,
-                "info": {"hop": 0}
+                "hop": 0,
+                "reached_via_edge": None,
+                "reached_from": None,
+                "edge_path": [],
             }
             start_nodes.append(nid)
-            
-        # 2. Graph Scoring: 1 / (1 + hops)
+
+        # ── Step 2: Graph Expansion with Configurable Depth ──
         queue = collections.deque()
-        visited = {} 
-        
+        visited = {}
+
         for nid in start_nodes:
             if nid not in visited:
                 visited[nid] = 0
-                queue.append((nid, 0))
-                
+                queue.append((nid, 0, None, None))  # (node_id, hops, reached_via_edge_type, reached_from_node)
+
         while queue:
-            curr_id, hops = queue.popleft()
-            
+            curr_id, hops, via_edge, from_node = queue.popleft()
+
             g_score = 1.0 / (1.0 + hops)
-            
+
             if curr_id not in candidates:
                 candidates[curr_id] = {
-                    "vector_score": 0.0,
+                    "raw_vector_score": 0.0,
                     "graph_score": g_score,
-                    "info": {"hop": hops}
+                    "hop": hops,
+                    "reached_via_edge": via_edge,
+                    "reached_from": from_node,
+                    "edge_path": (candidates[from_node]["edge_path"] + [via_edge]) if from_node and from_node in candidates else ([via_edge] if via_edge else []),
                 }
             else:
-                candidates[curr_id]["graph_score"] = g_score
-                candidates[curr_id]["info"]["hop"] = hops
-                
-            if hops < 2:
-                if curr_id in self.graph_db.graph:
-                     for neighbor in self.graph_db.graph.successors(curr_id):
-                         if neighbor not in visited:
-                             visited[neighbor] = hops + 1
-                             queue.append((neighbor, hops + 1))
+                if g_score > candidates[curr_id]["graph_score"]:
+                    candidates[curr_id]["graph_score"] = g_score
+                    candidates[curr_id]["hop"] = hops
+                    candidates[curr_id]["reached_via_edge"] = via_edge
+                    candidates[curr_id]["reached_from"] = from_node
 
-        # 3. Final Ranking
+            if hops < max_depth:
+                if curr_id in self.graph_db.graph:
+                    for neighbor in self.graph_db.graph.successors(curr_id):
+                        if neighbor not in visited:
+                            # Get the edge type for explainability
+                            edge_type = None
+                            for key, edge_data in self.graph_db.graph[curr_id][neighbor].items():
+                                edge_type = edge_data.get("type", "unknown")
+                                break
+                            visited[neighbor] = hops + 1
+                            queue.append((neighbor, hops + 1, edge_type, curr_id))
+
+        # ── Step 3: Normalize Vector Scores (Min-Max) ──
+        raw_scores = [d["raw_vector_score"] for d in candidates.values() if d["raw_vector_score"] > 0]
+        v_min = min(raw_scores) if raw_scores else 0.0
+        v_max = max(raw_scores) if raw_scores else 1.0
+        v_range = v_max - v_min if v_max != v_min else 1.0
+
+        for data in candidates.values():
+            if data["raw_vector_score"] > 0:
+                data["norm_vector_score"] = (data["raw_vector_score"] - v_min) / v_range
+            else:
+                data["norm_vector_score"] = 0.0
+
+        # ── Step 4: Normalized Graph Scores are already in [0, 1] ──
+        # graph_score = 1 / (hop + 1), already computed above
+
+        # ── Step 5: Final Scoring with α, β, γ ──
+        α = vector_weight
+        β = graph_weight
+        γ = path_distance_penalty
+
         results = []
         for nid, data in candidates.items():
-            final = (data["vector_score"] * vector_weight) + (data["graph_score"] * graph_weight)
-            
+            norm_v = data["norm_vector_score"]
+            norm_g = data["graph_score"]
+            hop = data["hop"]
+
+            # Path distance penalty: penalizes nodes that are far away in the graph
+            penalty = (hop / max_depth) if max_depth > 0 else 0.0
+
+            final = (α * norm_v) + (β * norm_g) - (γ * penalty)
+            final = max(0.0, final)  # Clamp to non-negative
+
+            # ── Build Explanation Reason ──
+            reason_parts = []
+            if norm_v > 0:
+                reason_parts.append(f"Vector match (score {norm_v:.2f})")
+            if hop == 0 and norm_g > 0 and norm_v > 0:
+                reason_parts.append("Direct vector hit")
+            elif hop > 0:
+                via = data.get("reached_via_edge") or "link"
+                from_node = data.get("reached_from") or "?"
+                edge_path = data.get("edge_path", [])
+                if hop == 1:
+                    reason_parts.append(f"Connected to {from_node} via '{via}' at hop {hop}")
+                else:
+                    path_str = " → ".join(filter(None, edge_path))
+                    reason_parts.append(f"Reached via {from_node} ({path_str}) at hop {hop}")
+            if not reason_parts:
+                reason_parts.append("Graph-only node")
+
+            reason = "; ".join(reason_parts)
+
             results.append(HybridSearchResultItem(
                 id=nid,
-                vector_score=round(data["vector_score"], 4),
-                graph_score=round(data["graph_score"], 4),
+                vector_score=round(norm_v, 4),
+                graph_score=round(norm_g, 4),
                 final_score=round(final, 4),
-                info=data["info"]
+                reason=reason,
+                info={"hop": hop, "raw_vector_score": round(data["raw_vector_score"], 4)}
             ))
-            
+
         results.sort(key=lambda x: x.final_score, reverse=True)
-        
+
         return HybridSearchResponse(
             query_text=query,
             vector_weight=vector_weight,

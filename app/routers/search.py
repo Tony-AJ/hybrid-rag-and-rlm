@@ -24,5 +24,7 @@ def hybrid_search(request: HybridSearchRequest, service: HybridRetrievalService 
         request.query_text,
         request.vector_weight,
         request.graph_weight,
-        request.top_k
+        request.top_k,
+        request.max_depth,
+        request.path_distance_penalty
     )

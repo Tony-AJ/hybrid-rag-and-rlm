@@ -3,6 +3,7 @@ import logging
 
 # Suppress ChromaDB telemetry and logging
 os.environ["ANONYMIZED_TELEMETRY"] = "False"
+os.environ["CHROMA_TELEMETRY_ENABLED"] = "false"
 logging.getLogger('chromadb').setLevel(logging.ERROR)
 logging.getLogger('posthog').setLevel(logging.ERROR)
 

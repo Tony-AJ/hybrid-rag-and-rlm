@@ -1,0 +1,27 @@
+{
+  "hyperparameters": {
+    "alpha": 0.7,
+    "beta": 0.3,
+    "gamma": 0.1,
+    "top_k": 5,
+    "graph_depth": 2
+  },
+  "queries": 6,
+  "results": {
+    "Vector Only": {
+      "Precision@K": 0.0,
+      "Recall@K": 0.0,
+      "MRR": 0.0
+    },
+    "Graph Only": {
+      "Precision@K": 0.0,
+      "Recall@K": 0.0,
+      "MRR": 0.0
+    },
+    "Hybrid": {
+      "Precision@K": 0.0,
+      "Recall@K": 0.0,
+      "MRR": 0.0
+    }
+  }
+}
