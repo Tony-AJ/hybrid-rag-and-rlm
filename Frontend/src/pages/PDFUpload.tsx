@@ -77,11 +77,10 @@ export default function PDFUpload() {
             onDragLeave={handleDrag}
             onDragOver={handleDrag}
             onDrop={handleDrop}
-            className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
-              dragActive
+            className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${dragActive
                 ? 'border-primary-500 bg-primary-50'
                 : 'border-gray-300 hover:border-gray-400'
-            }`}
+              }`}
           >
             <Upload className="h-12 w-12 text-gray-400 mx-auto mb-4" />
             {file ? (
@@ -167,8 +166,8 @@ export default function PDFUpload() {
       {uploadMutation.data && (
         <div className="card">
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Search Result</h2>
-          <SearchResultCard 
-            result={uploadMutation.data} 
+          <SearchResultCard
+            result={uploadMutation.data}
             nodeData={resultNode}
           />
         </div>
