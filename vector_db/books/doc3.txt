@@ -1,0 +1,4 @@
+Distributed systems are basically long-distance relationships. Nodes drift apart, messages get lost,
+and during network partitions everyone blames everyone else. Leader election decides who gets
+boss privileges until the next heartbeat timeout. Caching across a cluster is especially fun because
+one stale node ruins the whole party.

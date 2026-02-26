@@ -1,0 +1,22 @@
+The currently activated Python version 3.14.0 is not supported by the project (>=3.10.0,<3.12).
+Trying to find and use a compatible version. 
+Using python3.11 (3.11.14)
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+Books directory: /home/suryaguru/StudioProjects/final_devforge_db/vector_db/books
+Persistent directory: /home/suryaguru/StudioProjects/final_devforge_db/vector_db/db/chroma_db_with_metadata
+Persistent directory does not exist. Initializing vector store...
+
+--- Document Chunks Information ---
+Number of document chunks: 6
+
+--- Creating embeddings ---
+
+--- Finished creating embeddings ---
+
+--- Creating and persisting vector store ---
+Processing 6 documents in 1 batch(es) of max 5000 documents each
+Adding batch 1/1 (6 documents)...
+Batch 1/1 completed.
+
+--- Finished creating and persisting vector store ---

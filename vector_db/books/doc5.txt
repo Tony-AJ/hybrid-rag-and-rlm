@@ -1,0 +1,3 @@
+Graph algorithms show up in real life more than people notice. Social feeds rely on BFS for exploring
+connections, recommendations rely on random walks, and PageRank still refuses to die. Even your
+team's on-call rotation effectively forms a directed cycle, complete with its own failure modes.

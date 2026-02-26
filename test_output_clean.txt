@@ -1,0 +1,25 @@
+The currently activated Python version 3.14.0 is not supported by the project (>=3.10.0,<3.12).
+Trying to find and use a compatible version. 
+Using python3.11 (3.11.14)
+============================= test session starts ==============================
+platform linux -- Python 3.11.14, pytest-9.0.1, pluggy-1.6.0 -- /home/suryaguru/.cache/pypoetry/virtualenvs/devforge-db-w8kaJ40k-py3.11/bin/python
+cachedir: .pytest_cache
+rootdir: /home/suryaguru/StudioProjects/final_devforge_db
+configfile: pytest.ini
+plugins: anyio-4.11.0
+collecting ... collected 12 items
+
+devforge_test_case.py::test_1_create_node PASSED                         [  8%]
+devforge_test_case.py::test_create_other_nodes PASSED                    [ 16%]
+devforge_test_case.py::test_5_create_edge PASSED                         [ 25%]
+devforge_test_case.py::test_2_get_node PASSED                            [ 33%]
+devforge_test_case.py::test_3_update_node PASSED                         [ 41%]
+devforge_test_case.py::test_6_get_edge PASSED                            [ 50%]
+devforge_test_case.py::test_7_update_edge PASSED                         [ 58%]
+devforge_test_case.py::test_8_delete_edge PASSED                         [ 66%]
+devforge_test_case.py::test_4_delete_node PASSED                         [ 75%]
+devforge_test_case.py::test_9_vector_search PASSED                       [ 83%]
+devforge_test_case.py::test_10_graph_search PASSED                       [ 91%]
+devforge_test_case.py::test_11_hybrid_search PASSED                      [100%]
+
+============================== 12 passed in 6.98s ==============================

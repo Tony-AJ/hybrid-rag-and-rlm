@@ -1,0 +1,3 @@
+The RedisGraph module promises a weird marriage: pretend your cache is also a graph database.
+Honestly, it works better than expected. You can store relationships like user -> viewed -> product
+and then still query it with cypher-like syntax. Someone even built a PageRank demo over it.

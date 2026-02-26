@@ -1,0 +1,22 @@
+The currently activated Python version 3.14.0 is not supported by the project (>=3.10.0,<3.12).
+Trying to find and use a compatible version. 
+Using python3.11 (3.11.14)
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event CollectionGetEvent: capture() takes 1 positional argument but 3 were given
+
+==================================================
+TESTING PDF SEARCH FLOW WITH CO.pdf
+==================================================
+
+1. Uploading vector_db/books/CO.pdf and Searching...
+Top Result:
+  Chunk ID: CO.pdf_chunk_20
+  Final Score: 0.8311
+  Vector Score: 0.6622
+  Graph Score: 1.0000
+  Text: Workstations: - It is used in large, high -resolution graphics screen built in network support, 
+Engineering applications(CAD/CAM), software development desktop publishing...
+
+✅ SUCCESS: Search completed.

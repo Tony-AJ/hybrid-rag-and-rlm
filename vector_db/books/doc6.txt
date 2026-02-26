@@ -1,0 +1,4 @@
+README draft: to combine Redis with a graph database, you start by defining nodes for each entity,
+like articles, users, or configuration snippets. Then you create edges describing interactions: mentions,
+references, imports, or even blame (use sparingly). The magic happens when semantic search embeddings
+overlay this structure and suddenly the system feels smarter than it is.

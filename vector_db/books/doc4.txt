@@ -1,0 +1,3 @@
+A short note on cache invalidation: you think you understand it until your application grows. Patterns
+like write-through, write-behind, and cache-aside all behave differently under load. Versioned keys
+help, but someone will always ship code that forgets to update them. The universe trends toward chaos.

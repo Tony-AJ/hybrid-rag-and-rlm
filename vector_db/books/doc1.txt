@@ -1,0 +1,4 @@
+Redis became the default choice for caching mostly because people like avoiding slow databases.
+There are the usual headaches: eviction policies like LRU vs LFU, memory pressure, and when
+someone forgets to set TTLs and wonders why servers fall over. A funny incident last month:
+our checkout service kept missing prices because a stale cache key survived a deploy.
