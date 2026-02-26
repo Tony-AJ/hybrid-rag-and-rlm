@@ -1,12 +1,25 @@
 import axios from 'axios'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+
+export const endpoints = {
+  nodes: `/nodes`,
+  edges: `/edges`,
+  search: {
+    vector: `/search/vector`,
+    graph: `/search/graph`,
+    hybrid: `/search/hybrid`,
+  },
+  pdf: `/pdf/search`,
+  graph: `/graph`,
+  stats: `/stats`,
+}
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  baseURL: API_BASE,
+  // headers: {
+  //   'Content-Type': 'application/json',
+  // },
 })
 
 // ==================== Node Types ====================
@@ -160,29 +173,29 @@ export interface HybridSearchResult {
 
 // Node APIs
 export const nodeApi = {
-  create: (data: NodeCreate) => api.post<NodeCreateResponse>('/nodes', data),
-  get: (id: string) => api.get<Node>(`/nodes/${id}`),
-  update: (id: string, data: NodeUpdate) => api.put<NodeUpdateResponse>(`/nodes/${id}`, data),
-  delete: (id: string) => api.delete<NodeDeleteResponse>(`/nodes/${id}`),
+  create: (data: NodeCreate) => api.post<NodeCreateResponse>(endpoints.nodes, data),
+  get: (id: string) => api.get<Node>(`${endpoints.nodes}/${id}`),
+  update: (id: string, data: NodeUpdate) => api.put<NodeUpdateResponse>(`${endpoints.nodes}/${id}`, data),
+  delete: (id: string) => api.delete<NodeDeleteResponse>(`${endpoints.nodes}/${id}`),
 }
 
 // Edge APIs
 export const edgeApi = {
-  create: (data: EdgeCreate) => api.post<EdgeCreateResponse>('/edges', data),
-  get: (id: string) => api.get<Edge>(`/edges/${id}`),
-  update: (id: string, data: EdgeUpdate) => api.put<EdgeUpdateResponse>(`/edges/${id}`, data),
-  delete: (id: string) => api.delete<EdgeDeleteResponse>(`/edges/${id}`),
+  create: (data: EdgeCreate) => api.post<EdgeCreateResponse>(endpoints.edges, data),
+  get: (id: string) => api.get<Edge>(`${endpoints.edges}/${id}`),
+  update: (id: string, data: EdgeUpdate) => api.put<EdgeUpdateResponse>(`${endpoints.edges}/${id}`, data),
+  delete: (id: string) => api.delete<EdgeDeleteResponse>(`${endpoints.edges}/${id}`),
 }
 
 // Search APIs
 export const searchApi = {
-  vector: (data: VectorSearchRequest) => api.post<VectorSearchResponse>('/search/vector', data),
+  vector: (data: VectorSearchRequest) => api.post<VectorSearchResponse>(endpoints.search.vector, data),
   graph: (startId: string, depth: number = 2, typeFilter?: string) => {
     const params = new URLSearchParams({ start_id: startId, depth: depth.toString() })
     if (typeFilter) params.append('type_filter', typeFilter)
-    return api.get<GraphTraversalResponse>(`/search/graph?${params.toString()}`)
+    return api.get<GraphTraversalResponse>(`${endpoints.search.graph}?${params.toString()}`)
   },
-  hybrid: (data: HybridSearchRequest) => api.post<HybridSearchResponse>('/search/hybrid', data),
+  hybrid: (data: HybridSearchRequest) => api.post<HybridSearchResponse>(endpoints.search.hybrid, data),
 }
 
 // PDF API
@@ -191,7 +204,7 @@ export const pdfApi = {
     const formData = new FormData()
     formData.append('file', file)
     formData.append('query', query)
-    return api.post<HybridSearchResult>('/pdf/search', formData, {
+    return api.post<HybridSearchResult>(endpoints.pdf, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -222,7 +235,7 @@ export interface GraphData {
 }
 
 export const graphApi = {
-  get: () => api.get<GraphData>('/graph'),
+  get: () => api.get<GraphData>(endpoints.graph),
 }
 
 // Stats API
@@ -237,7 +250,7 @@ export interface StatsData {
 }
 
 export const statsApi = {
-  get: () => api.get<StatsData>('/stats'),
+  get: () => api.get<StatsData>(endpoints.stats),
 }
 
 export default api

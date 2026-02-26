@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Network, DataSet } from 'vis-network/standalone'
 import { RefreshCw, Loader } from 'lucide-react'
 import { useQuery } from '@tanstack/react-query'
-import api from '../services/api'
+import { graphApi } from '../services/api'
 
 interface GraphData {
   nodes: Array<{
@@ -34,10 +34,7 @@ export default function GraphView() {
   // Fetch graph data from backend
   const { data: graphData, isLoading, refetch } = useQuery<GraphData>({
     queryKey: ['graph-data'],
-    queryFn: async () => {
-      const response = await api.get('/graph')
-      return response.data
-    },
+    queryFn: () => graphApi.get().then(res => res.data),
     refetchOnWindowFocus: false,
   })
 
