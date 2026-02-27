@@ -77,7 +77,9 @@ export default function GraphView() {
           highlight: '#848484',
         },
         smooth: {
+          enabled: true,
           type: 'continuous',
+          roundness: 0.5,
         },
       }))
     )
@@ -107,7 +109,9 @@ export default function GraphView() {
           highlight: '#848484',
         },
         smooth: {
+          enabled: true,
           type: 'continuous',
+          roundness: 0.5,
         },
         arrows: {
           to: {
