@@ -18,7 +18,13 @@ app = FastAPI(title="Hybrid Retrieval System")
 # Add CORS middleware to allow frontend requests
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3001", "http://127.0.0.1:3001"],  # Frontend dev server
+    allow_origins=[
+        "http://localhost:3000",    # Docker frontend
+        "http://localhost:3001",    # Dev server
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:3001",
+        "http://frontend:80",      # Docker internal
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

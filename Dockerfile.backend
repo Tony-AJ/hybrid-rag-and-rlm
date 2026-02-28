@@ -1,0 +1,35 @@
+# ── Backend Dockerfile ──
+# FastAPI + ChromaDB + sentence-transformers + NetworkX
+
+FROM python:3.11-slim AS backend
+
+# System deps for building native extensions (numpy, tokenizers, etc.)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential gcc g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Install Poetry and export requirements
+COPY pyproject.toml poetry.lock ./
+RUN pip install --no-cache-dir poetry poetry-plugin-export \
+    && poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-ansi --only main \
+    && pip uninstall -y poetry poetry-plugin-export
+
+# Copy application code
+COPY app/ ./app/
+COPY graph_db/ ./graph_db/
+COPY vector_db/ ./vector_db/
+COPY hybrid_retrieval.py ./
+COPY ingest_data.py ./
+COPY .env ./
+
+# Create runtime directories
+RUN mkdir -p /app/db /app/vector_db/books
+
+# Expose FastAPI port
+EXPOSE 8000
+
+# Run the application
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

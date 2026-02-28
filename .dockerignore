@@ -1,0 +1,31 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+.pytest_cache
+
+# Node
+node_modules
+Frontend/node_modules
+
+# IDE
+.vscode
+.idea
+
+# Runtime data (mounted as volumes)
+db/
+
+# Logs & test artifacts
+*.log
+*.txt
+benchmark_results.json
+results_query_*.json
+
+# Docs
+*.md
+!README.md
