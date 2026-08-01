@@ -1,0 +1,231 @@
+{
+  "query_text": "How did the feud end?",
+  "retrieval_metadata": {
+    "pipeline_version": "2.0",
+    "timestamp": "2026-08-01T07:12:45.473711+00:00",
+    "max_depth": 2,
+    "path_distance_penalty": 0.1,
+    "normalization": "min-max",
+    "distance_conversion": "cosine = 1 - (L2^2 / 2)"
+  },
+  "results": [
+    {
+      "node_id": "chunk_8",
+      "raw_vector_score": 0.4163,
+      "normalized_vector_score": 1.0,
+      "graph_score": 1.0,
+      "vector_contribution": 0.7,
+      "graph_contribution": 0.3,
+      "penalty_contribution": 0.0,
+      "final_score": 1.0,
+      "retrieval_sources": [
+        "vector",
+        "graph"
+      ],
+      "reason": {
+        "rank": 1,
+        "vector_rank": 1,
+        "graph_rank": 1,
+        "hop": 0,
+        "edge": null,
+        "retrieval_method": [
+          "vector",
+          "graph"
+        ]
+      },
+      "metadata": {},
+      "text": "Juliet wakes up, finds Romeo dead, and stabs herself with his dagger. The families end their feud in shared grief.",
+      "info": {}
+    },
+    {
+      "node_id": "chunk_4",
+      "raw_vector_score": 0.3695,
+      "normalized_vector_score": 0.6988,
+      "graph_score": 1.0,
+      "vector_contribution": 0.4892,
+      "graph_contribution": 0.3,
+      "penalty_contribution": 0.0,
+      "final_score": 0.7892,
+      "retrieval_sources": [
+        "vector",
+        "graph"
+      ],
+      "reason": {
+        "rank": 2,
+        "vector_rank": 2,
+        "graph_rank": 5,
+        "hop": 0,
+        "edge": null,
+        "retrieval_method": [
+          "vector",
+          "graph"
+        ]
+      },
+      "metadata": {},
+      "text": "Tybalt Capulet challenges Romeo to a duel. Romeo refuses, but his friend Mercutio fights instead and is killed.",
+      "info": {}
+    },
+    {
+      "node_id": "chunk_5",
+      "raw_vector_score": 0.3337,
+      "normalized_vector_score": 0.4679,
+      "graph_score": 1.0,
+      "vector_contribution": 0.3275,
+      "graph_contribution": 0.3,
+      "penalty_contribution": 0.0,
+      "final_score": 0.6275,
+      "retrieval_sources": [
+        "vector",
+        "graph"
+      ],
+      "reason": {
+        "rank": 3,
+        "vector_rank": 3,
+        "graph_rank": 8,
+        "hop": 0,
+        "edge": null,
+        "retrieval_method": [
+          "vector",
+          "graph"
+        ]
+      },
+      "metadata": {},
+      "text": "Enraged by Mercutio's death, Romeo kills Tybalt and is subsequently banished from Verona by the Prince.",
+      "info": {}
+    },
+    {
+      "node_id": "chunk_1",
+      "raw_vector_score": 0.3218,
+      "normalized_vector_score": 0.3918,
+      "graph_score": 1.0,
+      "vector_contribution": 0.2742,
+      "graph_contribution": 0.3,
+      "penalty_contribution": 0.0,
+      "final_score": 0.5742,
+      "retrieval_sources": [
+        "vector",
+        "graph"
+      ],
+      "reason": {
+        "rank": 4,
+        "vector_rank": 4,
+        "graph_rank": 7,
+        "hop": 0,
+        "edge": null,
+        "retrieval_method": [
+          "vector",
+          "graph"
+        ]
+      },
+      "metadata": {},
+      "text": "The play is set in Verona, Italy, where two noble families, the Montagues and the Capulets, are locked in a violent feud.",
+      "info": {}
+    },
+    {
+      "node_id": "chunk_7",
+      "raw_vector_score": 0.2609,
+      "normalized_vector_score": 0.0,
+      "graph_score": 1.0,
+      "vector_contribution": 0.0,
+      "graph_contribution": 0.3,
+      "penalty_contribution": 0.0,
+      "final_score": 0.3,
+      "retrieval_sources": [
+        "vector",
+        "graph"
+      ],
+      "reason": {
+        "rank": 5,
+        "vector_rank": 5,
+        "graph_rank": 2,
+        "hop": 0,
+        "edge": null,
+        "retrieval_method": [
+          "vector",
+          "graph"
+        ]
+      },
+      "metadata": {},
+      "text": "Romeo hears of Juliet's death but not the plan. He goes to her tomb, drinks poison, and dies by her side.",
+      "info": {}
+    },
+    {
+      "node_id": "chunk_3",
+      "raw_vector_score": null,
+      "normalized_vector_score": null,
+      "graph_score": 0.5,
+      "vector_contribution": 0.0,
+      "graph_contribution": 0.15,
+      "penalty_contribution": 0.05,
+      "final_score": 0.1,
+      "retrieval_sources": [
+        "graph"
+      ],
+      "reason": {
+        "rank": 6,
+        "vector_rank": null,
+        "graph_rank": 3,
+        "hop": 1,
+        "edge": "goal_achieved",
+        "retrieval_method": [
+          "graph"
+        ]
+      },
+      "metadata": {},
+      "text": "Romeo and Juliet are secretly married by Friar Lawrence, who hopes their union will reconcile their warring families.",
+      "info": {}
+    },
+    {
+      "node_id": "chunk_6",
+      "raw_vector_score": null,
+      "normalized_vector_score": null,
+      "graph_score": 0.5,
+      "vector_contribution": 0.0,
+      "graph_contribution": 0.15,
+      "penalty_contribution": 0.05,
+      "final_score": 0.1,
+      "retrieval_sources": [
+        "graph"
+      ],
+      "reason": {
+        "rank": 7,
+        "vector_rank": null,
+        "graph_rank": 4,
+        "hop": 1,
+        "edge": "next",
+        "retrieval_method": [
+          "graph"
+        ]
+      },
+      "metadata": {},
+      "text": "Juliet's father arranges for her to marry Count Paris. To avoid this, she takes a potion that makes her appear dead.",
+      "info": {}
+    },
+    {
+      "node_id": "chunk_2",
+      "raw_vector_score": null,
+      "normalized_vector_score": null,
+      "graph_score": 0.5,
+      "vector_contribution": 0.0,
+      "graph_contribution": 0.15,
+      "penalty_contribution": 0.05,
+      "final_score": 0.1,
+      "retrieval_sources": [
+        "graph"
+      ],
+      "reason": {
+        "rank": 8,
+        "vector_rank": null,
+        "graph_rank": 6,
+        "hop": 1,
+        "edge": "next",
+        "retrieval_method": [
+          "graph"
+        ]
+      },
+      "metadata": {},
+      "text": "Romeo Montague attends a Capulet ball in disguise, where he meets and falls in love with Juliet Capulet.",
+      "info": {}
+    }
+  ]
+}

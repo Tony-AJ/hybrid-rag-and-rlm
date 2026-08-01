@@ -2,19 +2,29 @@ import os
 from typing import List, Dict, Any, Optional
 import collections
 import shutil
+from datetime import datetime, timezone
 from fastapi import UploadFile
 from pypdf import PdfReader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+try:
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+except ImportError:
+    from langchain.text_splitter import RecursiveCharacterTextSplitter
 from app.models import (
     NodeCreate, NodeResponse, NodeCreateResponse, NodeUpdate, NodeUpdateResponse, NodeDeleteResponse,
     EdgeCreate, EdgeResponse, EdgeCreateResponse, EdgeGetResponse, EdgeUpdate, EdgeUpdateResponse, EdgeDeleteResponse,
     VectorSearchResultItem, VectorSearchResponse,
     GraphTraversalResponse, GraphTraversalNode,
-    HybridSearchResultItem, HybridSearchResponse
+    HybridSearchResultItem, HybridSearchResponse, RetrievalReason, RetrievalMetadata
 )
 from app.vector_db import VectorDatabase
 from graph_db.graph_db import GraphDatabase
 from graph_db.models import GraphNode, GraphRelationship
+
+# Normalization epsilon (prevents division by zero)
+NORM_EPSILON = 1e-6
+
+# Pipeline version (bump on any scoring-formula change)
+PIPELINE_VERSION = "2.0"
 
 class HybridRetrievalService:
     def __init__(self):
@@ -304,18 +314,16 @@ class HybridRetrievalService:
 
     def hybrid_search(self, query: str, vector_weight: float, graph_weight: float, top_k: int, max_depth: int = 2, path_distance_penalty: float = 0.1) -> HybridSearchResponse:
         """
-        Normalized Hybrid Retrieval with Explainability.
+        Research-grade Hybrid Retrieval with full explainability (v2.0).
 
-        Formula:
-            final_score = (α × normalized_vector_score)
-                        + (β × normalized_graph_score)
-                        - (γ × path_distance_penalty_score)
+        Design:
+            - Vector-retrieved nodes: final = alpha * norm_v + beta * g - gamma * penalty
+            - Graph-only nodes:       final = beta * g - gamma * penalty
+            - No fake vector scores for graph-only nodes.
 
-        Where:
-            α = vector_weight, β = graph_weight, γ = path_distance_penalty
-            normalized_vector_score ∈ [0, 1] via min-max normalization
-            normalized_graph_score  = 1 / (shortest_path_length + 1) ∈ (0, 1]
-            path_distance_penalty_score = hop / max_depth ∈ [0, 1]
+        Normalization:
+            normalized = (score - v_min) / (v_range + epsilon)
+            No floor clamp. retrieved_by_vector boolean distinguishes 0.0 from null.
         """
         # ── Step 1: Vector Search ──
         vector_results = self.vector_db.search(query, top_k)
@@ -323,43 +331,58 @@ class HybridRetrievalService:
         candidates = {}
         start_nodes = []
 
-        for doc_id, text, score, metadata in vector_results:
+        for vector_rank, (doc_id, text, score, metadata) in enumerate(vector_results, 1):
             nid = doc_id or metadata.get('id')
             if not nid:
                 continue
 
             candidates[nid] = {
-                "raw_vector_score": score,
+                "raw_vector_score": score,         # true cosine similarity
+                "retrieved_by_vector": True,
+                "vector_rank": vector_rank,
                 "graph_score": 0.0,
+                "graph_rank": None,
                 "hop": 0,
                 "reached_via_edge": None,
                 "reached_from": None,
-                "edge_path": [],
+                "text": text,
+                "metadata": metadata,
             }
             start_nodes.append(nid)
 
-        # ── Step 2: Graph Expansion with Configurable Depth ──
+        # ── Step 2: Graph Expansion ──
         queue = collections.deque()
         visited = {}
+        graph_rank_counter = 0
 
         for nid in start_nodes:
             if nid not in visited:
                 visited[nid] = 0
-                queue.append((nid, 0, None, None))  # (node_id, hops, reached_via_edge_type, reached_from_node)
+                queue.append((nid, 0, None, None))
 
         while queue:
             curr_id, hops, via_edge, from_node = queue.popleft()
 
             g_score = 1.0 / (1.0 + hops)
+            graph_rank_counter += 1
 
             if curr_id not in candidates:
+                # Graph-only node
+                node = self.graph_db.get_node(curr_id)
+                node_text = node.text if node else ""
+                node_meta = node.metadata if node else {}
+
                 candidates[curr_id] = {
-                    "raw_vector_score": 0.0,
+                    "raw_vector_score": None,       # null, not 0.0
+                    "retrieved_by_vector": False,
+                    "vector_rank": None,
                     "graph_score": g_score,
+                    "graph_rank": graph_rank_counter,
                     "hop": hops,
                     "reached_via_edge": via_edge,
                     "reached_from": from_node,
-                    "edge_path": (candidates[from_node]["edge_path"] + [via_edge]) if from_node and from_node in candidates else ([via_edge] if via_edge else []),
+                    "text": node_text,
+                    "metadata": node_meta,
                 }
             else:
                 if g_score > candidates[curr_id]["graph_score"]:
@@ -367,12 +390,13 @@ class HybridRetrievalService:
                     candidates[curr_id]["hop"] = hops
                     candidates[curr_id]["reached_via_edge"] = via_edge
                     candidates[curr_id]["reached_from"] = from_node
+                    if candidates[curr_id]["graph_rank"] is None:
+                        candidates[curr_id]["graph_rank"] = graph_rank_counter
 
             if hops < max_depth:
                 if curr_id in self.graph_db.graph:
                     for neighbor in self.graph_db.graph.successors(curr_id):
                         if neighbor not in visited:
-                            # Get the edge type for explainability
                             edge_type = None
                             for key, edge_data in self.graph_db.graph[curr_id][neighbor].items():
                                 edge_type = edge_data.get("type", "unknown")
@@ -380,73 +404,97 @@ class HybridRetrievalService:
                             visited[neighbor] = hops + 1
                             queue.append((neighbor, hops + 1, edge_type, curr_id))
 
-        # ── Step 3: Normalize Vector Scores (Min-Max) ──
-        raw_scores = [d["raw_vector_score"] for d in candidates.values() if d["raw_vector_score"] > 0]
+        # ── Step 3: Normalize Vector Scores (only vector-retrieved) ──
+        raw_scores = [d["raw_vector_score"] for d in candidates.values() if d["retrieved_by_vector"]]
         v_min = min(raw_scores) if raw_scores else 0.0
-        v_max = max(raw_scores) if raw_scores else 1.0
-        v_range = v_max - v_min if v_max != v_min else 1.0
+        v_max = max(raw_scores) if raw_scores else 0.0
+        v_range = v_max - v_min
 
         for data in candidates.values():
-            if data["raw_vector_score"] > 0:
-                data["norm_vector_score"] = (data["raw_vector_score"] - v_min) / v_range
+            if data["retrieved_by_vector"]:
+                data["norm_vector_score"] = (data["raw_vector_score"] - v_min) / (v_range + NORM_EPSILON)
             else:
-                data["norm_vector_score"] = 0.0
+                data["norm_vector_score"] = None  # null, not 0.0
 
-        # ── Step 4: Normalized Graph Scores are already in [0, 1] ──
-        # graph_score = 1 / (hop + 1), already computed above
-
-        # ── Step 5: Final Scoring with α, β, γ ──
-        α = vector_weight
-        β = graph_weight
-        γ = path_distance_penalty
+        # ── Step 4: Final Scoring with Split Formula ──
+        alpha = vector_weight
+        beta = graph_weight
+        gamma = path_distance_penalty
 
         results = []
         for nid, data in candidates.items():
-            norm_v = data["norm_vector_score"]
             norm_g = data["graph_score"]
             hop = data["hop"]
-
-            # Path distance penalty: penalizes nodes that are far away in the graph
             penalty = (hop / max_depth) if max_depth > 0 else 0.0
 
-            final = (α * norm_v) + (β * norm_g) - (γ * penalty)
-            final = max(0.0, final)  # Clamp to non-negative
+            # Split formula
+            if data["retrieved_by_vector"]:
+                norm_v = data["norm_vector_score"]
+                vector_contrib = alpha * norm_v
+                graph_contrib = beta * norm_g
+                penalty_contrib = gamma * penalty
+                final = vector_contrib + graph_contrib - penalty_contrib
+            else:
+                vector_contrib = 0.0
+                graph_contrib = beta * norm_g
+                penalty_contrib = gamma * penalty
+                final = graph_contrib - penalty_contrib
 
-            # ── Build Explanation Reason ──
-            reason_parts = []
-            if norm_v > 0:
-                reason_parts.append(f"Vector match (score {norm_v:.2f})")
-            if hop == 0 and norm_g > 0 and norm_v > 0:
-                reason_parts.append("Direct vector hit")
-            elif hop > 0:
-                via = data.get("reached_via_edge") or "link"
-                from_node = data.get("reached_from") or "?"
-                edge_path = data.get("edge_path", [])
-                if hop == 1:
-                    reason_parts.append(f"Connected to {from_node} via '{via}' at hop {hop}")
-                else:
-                    path_str = " → ".join(filter(None, edge_path))
-                    reason_parts.append(f"Reached via {from_node} ({path_str}) at hop {hop}")
-            if not reason_parts:
-                reason_parts.append("Graph-only node")
+            # Keep the pre-clamp value so the contribution breakdown always reconstructs
+            # exactly; a heavy penalty can drive a deep graph-only node below zero.
+            unclamped_final = final
+            final = max(0.0, final)
 
-            reason = "; ".join(reason_parts)
+            # ── Build retrieval_sources ──
+            sources = []
+            if data["retrieved_by_vector"]:
+                sources.append("vector")
+            if data["graph_score"] > 0:
+                sources.append("graph")
+
+            # ── Build structured reason ──
+            reason = RetrievalReason(
+                vector_rank=data["vector_rank"],
+                graph_rank=data["graph_rank"],
+                hop=hop,
+                edge=data.get("reached_via_edge"),
+                retrieval_method=sources,
+            )
 
             results.append(HybridSearchResultItem(
-                id=nid,
-                vector_score=round(norm_v, 4),
+                node_id=nid,
+                raw_vector_score=round(data["raw_vector_score"], 4) if data["raw_vector_score"] is not None else None,
+                normalized_vector_score=round(data["norm_vector_score"], 4) if data["norm_vector_score"] is not None else None,
                 graph_score=round(norm_g, 4),
+                vector_contribution=round(vector_contrib, 4),
+                graph_contribution=round(graph_contrib, 4),
+                penalty_contribution=round(penalty_contrib, 4),
+                unclamped_final_score=round(unclamped_final, 4),
                 final_score=round(final, 4),
+                retrieval_sources=sources,
                 reason=reason,
-                info={"hop": hop, "raw_vector_score": round(data["raw_vector_score"], 4)}
+                metadata=data.get("metadata", {}),
+                text=data.get("text", ""),
+                info={},
             ))
 
         results.sort(key=lambda x: x.final_score, reverse=True)
+
+        # Assign overall fused rank (vector_rank / graph_rank stay as retrieved)
+        for rank, r in enumerate(results, 1):
+            r.reason.rank = rank
 
         return HybridSearchResponse(
             query_text=query,
             vector_weight=vector_weight,
             graph_weight=graph_weight,
+            pipeline_version=PIPELINE_VERSION,
+            retrieval_metadata=RetrievalMetadata(
+                pipeline_version=PIPELINE_VERSION,
+                timestamp=datetime.now(timezone.utc).isoformat(),
+                max_depth=max_depth,
+                path_distance_penalty=path_distance_penalty,
+            ),
             results=results[:top_k]
         )
 
@@ -508,22 +556,15 @@ class HybridRetrievalService:
         top_result = search_res.results[0]
         
         # Get text for the result
-        node = self.get_node(top_result.id)
-        text_content = node.text if node else ""
+        node = self.get_node(top_result.node_id)
+        text_content = node.text if node else top_result.text
         
         # Return in the format expected by test_pdf_flow.py (HybridSearchResult)
-        # {
-        #   "node_id": str,
-        #   "final_score": float,
-        #   "cosine_similarity": float,
-        #   "graph_score": float,
-        #   "text": str
-        # }
         from app.models import HybridSearchResult
         return HybridSearchResult(
-            node_id=top_result.id,
+            node_id=top_result.node_id,
             final_score=top_result.final_score,
-            cosine_similarity=top_result.vector_score,
+            cosine_similarity=top_result.raw_vector_score or 0.0,
             graph_score=top_result.graph_score,
             text=text_content
         )

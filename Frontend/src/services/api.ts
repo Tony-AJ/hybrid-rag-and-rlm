@@ -144,13 +144,48 @@ export interface HybridSearchRequest {
   vector_weight?: number
   graph_weight?: number
   top_k?: number
+  max_depth?: number
+  path_distance_penalty?: number
+}
+
+export type RetrievalSource = 'vector' | 'graph' | (string & {})
+
+export interface RetrievalReason {
+  rank: number | null
+  vector_rank: number | null
+  graph_rank: number | null
+  hop: number
+  edge: string | null
+  retrieval_method: RetrievalSource[]
+}
+
+export interface RetrievalMetadata {
+  pipeline_version: string
+  timestamp: string
+  max_depth: number
+  path_distance_penalty: number
+  normalization: string
+  distance_conversion: string
 }
 
 export interface HybridSearchResultItem {
-  id: string
-  vector_score: number
+  node_id: string
+  /** True cosine similarity (1 - L2²/2). null when the node was only reached via the graph. */
+  raw_vector_score: number | null
+  /** Min-max normalized within this query's vector hits. null for graph-only nodes. */
+  normalized_vector_score: number | null
   graph_score: number
+  vector_contribution: number
+  graph_contribution: number
+  penalty_contribution: number
+  /** Exact: vector_contribution + graph_contribution - penalty_contribution. May be negative. */
+  unclamped_final_score: number
+  /** max(0, unclamped_final_score) — the value used for ranking. */
   final_score: number
+  retrieval_sources: RetrievalSource[]
+  reason: RetrievalReason
+  metadata: Record<string, any>
+  text: string
   info: Record<string, any>
 }
 
@@ -158,6 +193,8 @@ export interface HybridSearchResponse {
   query_text: string
   vector_weight: number
   graph_weight: number
+  pipeline_version: string
+  retrieval_metadata: RetrievalMetadata | null
   results: HybridSearchResultItem[]
 }
 

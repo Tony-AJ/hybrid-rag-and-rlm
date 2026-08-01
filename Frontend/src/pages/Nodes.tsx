@@ -38,12 +38,12 @@ export default function Nodes() {
     },
   })
 
-  const handleCreate = (data: NodeCreate) => {
-    createMutation.mutate(data)
+  const handleCreate = (data: NodeCreate | NodeUpdate) => {
+    createMutation.mutate(data as NodeCreate)
   }
 
-  const handleUpdate = (id: string, data: NodeUpdate) => {
-    updateMutation.mutate({ id, data })
+  const handleUpdate = (id: string, data: NodeCreate | NodeUpdate) => {
+    updateMutation.mutate({ id, data: data as NodeUpdate })
   }
 
   const handleDelete = (id: string) => {
@@ -119,13 +119,13 @@ export default function Nodes() {
               </button>
             </div>
           </div>
-          
+
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Text Content</label>
               <p className="text-gray-900 bg-gray-50 p-3 rounded-lg">{selectedNode.text}</p>
             </div>
-            
+
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Metadata</label>
               <pre className="text-sm bg-gray-50 p-3 rounded-lg overflow-auto">

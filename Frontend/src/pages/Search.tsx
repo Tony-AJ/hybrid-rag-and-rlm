@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { Search as SearchIcon, Sparkles, Filter } from 'lucide-react'
-import { searchApi, nodeApi, type VectorSearchResponse, type HybridSearchResponse, type GraphTraversalResponse } from '../services/api'
+import { Search as SearchIcon } from 'lucide-react'
+import { searchApi, nodeApi } from '../services/api'
+import type { HybridSearchResultItem } from '../services/api'
 
 type SearchType = 'vector' | 'graph' | 'hybrid'
 
@@ -72,31 +73,28 @@ export default function Search() {
         <div className="flex space-x-4 mb-6">
           <button
             onClick={() => setSearchType('vector')}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              searchType === 'vector'
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${searchType === 'vector'
                 ? 'bg-primary-600 text-white'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
+              }`}
           >
             Vector Search
           </button>
           <button
             onClick={() => setSearchType('graph')}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              searchType === 'graph'
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${searchType === 'graph'
                 ? 'bg-primary-600 text-white'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
+              }`}
           >
             Graph Traversal
           </button>
           <button
             onClick={() => setSearchType('hybrid')}
-            className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              searchType === 'hybrid'
+            className={`px-4 py-2 rounded-lg font-medium transition-colors ${searchType === 'hybrid'
                 ? 'bg-primary-600 text-white'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-            }`}
+              }`}
           >
             Hybrid Search
           </button>
@@ -285,6 +283,14 @@ export default function Search() {
           <div className="mb-4 space-y-1 text-sm">
             <p>Query: "{hybridResults.query_text}"</p>
             <p>Vector Weight: {hybridResults.vector_weight} | Graph Weight: {hybridResults.graph_weight}</p>
+            {hybridResults.retrieval_metadata && (
+              <p className="text-xs text-gray-500">
+                Pipeline v{hybridResults.retrieval_metadata.pipeline_version} |
+                {' '}max_depth {hybridResults.retrieval_metadata.max_depth} |
+                {' '}penalty {hybridResults.retrieval_metadata.path_distance_penalty} |
+                {' '}{new Date(hybridResults.retrieval_metadata.timestamp).toLocaleString()}
+              </p>
+            )}
           </div>
           <div className="space-y-4">
             {hybridResults.results.map((result, index) => (
@@ -381,37 +387,61 @@ function VectorResultCard({ result }: { result: { id: string; vector_score: numb
   )
 }
 
-function HybridResultCard({ result }: { result: { id: string; vector_score: number; graph_score: number; final_score: number; info: Record<string, any> } }) {
+const SOURCE_BADGE: Record<string, string> = {
+  vector: 'bg-blue-100 text-blue-700',
+  graph: 'bg-green-100 text-green-700',
+}
+
+/** null means the node was never scored by that retriever — show "—", not 0.0000. */
+function score(value: number | null): string {
+  return value === null ? '—' : value.toFixed(4)
+}
+
+function HybridResultCard({ result }: { result: HybridSearchResultItem }) {
+  const { reason } = result
+  // Backend returns the text inline; only fall back to a node fetch when it's empty.
   const { data: node } = useQuery({
-    queryKey: ['node', result.id],
-    queryFn: () => nodeApi.get(result.id).then(res => res.data),
-    enabled: !!result.id,
+    queryKey: ['node', result.node_id],
+    queryFn: () => nodeApi.get(result.node_id).then(res => res.data),
+    enabled: !!result.node_id && !result.text,
   })
+  const text = result.text || node?.text
+  const metadata = Object.keys(result.metadata).length > 0 ? result.metadata : node?.metadata
 
   return (
     <div className="border border-gray-200 rounded-lg p-4 hover:border-primary-300 transition-colors">
       <div className="flex justify-between items-start mb-2">
         <div className="flex-1">
-          <div className="flex items-center space-x-2 mb-2">
-            <span className="text-xs font-mono text-gray-500">ID: {result.id}</span>
-            <span className="px-2 py-1 bg-primary-100 text-primary-700 text-xs rounded">
-              Hybrid
-            </span>
-            {result.info.hop !== undefined && (
-              <span className="text-xs text-gray-500">Hop: {result.info.hop}</span>
+          <div className="flex flex-wrap items-center gap-2 mb-2">
+            {reason.rank !== null && (
+              <span className="text-xs font-semibold text-gray-700">#{reason.rank}</span>
             )}
+            <span className="text-xs font-mono text-gray-500">ID: {result.node_id}</span>
+            {result.retrieval_sources.map(source => (
+              <span
+                key={source}
+                className={`px-2 py-1 text-xs rounded ${SOURCE_BADGE[source] ?? 'bg-gray-100 text-gray-700'}`}
+              >
+                {source}
+              </span>
+            ))}
+            <span className="text-xs text-gray-500">Hop: {reason.hop}</span>
+            {reason.edge && <span className="text-xs text-gray-500">via {reason.edge}</span>}
           </div>
-          {node ? (
-            <p className="text-gray-900">{node.text}</p>
+          {text ? (
+            <p className="text-gray-900">{text}</p>
           ) : (
             <p className="text-gray-400 italic">Loading node details...</p>
           )}
         </div>
       </div>
-      <div className="mt-3 flex items-center space-x-4 text-sm">
+
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
         <div className="text-gray-600">
-          <span className="font-medium">Vector:</span>{' '}
-          {result.vector_score.toFixed(4)}
+          <span className="font-medium">Cosine:</span> {score(result.raw_vector_score)}
+        </div>
+        <div className="text-gray-600">
+          <span className="font-medium">Normalized:</span> {score(result.normalized_vector_score)}
         </div>
         <div className="text-gray-600">
           <span className="font-medium">Graph:</span> {result.graph_score.toFixed(4)}
@@ -420,14 +450,27 @@ function HybridResultCard({ result }: { result: { id: string; vector_score: numb
           <span className="font-medium">Final:</span> {result.final_score.toFixed(4)}
         </div>
       </div>
-      {node?.metadata && Object.keys(node.metadata).length > 0 && (
+
+      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-gray-500">
+        <span>vector +{result.vector_contribution.toFixed(4)}</span>
+        <span>graph +{result.graph_contribution.toFixed(4)}</span>
+        <span>penalty -{result.penalty_contribution.toFixed(4)}</span>
+        <span className="text-gray-400">= {result.unclamped_final_score.toFixed(4)}</span>
+        {result.unclamped_final_score < 0 && (
+          <span className="text-amber-600">clamped to 0</span>
+        )}
+        {reason.vector_rank !== null && <span>vector rank #{reason.vector_rank}</span>}
+        {reason.graph_rank !== null && <span>graph rank #{reason.graph_rank}</span>}
+      </div>
+
+      {metadata && Object.keys(metadata).length > 0 && (
         <div className="mt-2 pt-2 border-t border-gray-100">
           <details className="text-xs">
             <summary className="cursor-pointer text-gray-500 hover:text-gray-700">
               Metadata
             </summary>
             <pre className="mt-2 text-xs bg-gray-50 p-2 rounded overflow-auto">
-              {JSON.stringify(node.metadata, null, 2)}
+              {JSON.stringify(metadata, null, 2)}
             </pre>
           </details>
         </div>

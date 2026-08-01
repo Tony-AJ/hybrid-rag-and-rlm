@@ -116,23 +116,60 @@ class HybridSearchRequest(BaseModel):
     max_depth: int = 2
     path_distance_penalty: float = 0.1
 
+
+class RetrievalReason(BaseModel):
+    """Structured, machine-parseable retrieval explanation."""
+    rank: Optional[int] = None          # Position in the final fused ranking (1-indexed)
+    vector_rank: Optional[int] = None   # Position in vector search results (1-indexed), None if not vector-retrieved
+    graph_rank: Optional[int] = None    # Position in graph expansion order (1-indexed), None if not graph-retrieved
+    hop: int = 0                        # Graph hop distance from nearest vector-hit node
+    edge: Optional[str] = None          # Edge type used to reach this node (e.g. "next", "goal_achieved")
+    retrieval_method: List[str] = Field(default_factory=list)  # e.g. ["vector", "graph"]
+
+
+class RetrievalMetadata(BaseModel):
+    """Per-query provenance for benchmarking and reproducibility."""
+    pipeline_version: str = "2.0"
+    timestamp: str                              # ISO-8601 UTC
+    max_depth: int = 2
+    path_distance_penalty: float = 0.1
+    normalization: str = "min-max"
+    distance_conversion: str = "cosine = 1 - (L2^2 / 2)"
+
+
 class HybridSearchResultItem(BaseModel):
-    id: str
-    vector_score: float
-    graph_score: float
-    final_score: float
-    reason: str = ""
-    info: Dict[str, Any]
+    """Research-grade hybrid search result with full explainability."""
+    node_id: str
+    raw_vector_score: Optional[float] = None         # True cosine similarity = 1 - (L2²/2). None if graph-only.
+    normalized_vector_score: Optional[float] = None   # Min-max normalized within this query's results. None if graph-only.
+    graph_score: float = 0.0                          # 1/(hop+1), already in (0,1]
+    vector_contribution: float = 0.0                  # α × normalized_vector_score
+    graph_contribution: float = 0.0                   # β × graph_score
+    penalty_contribution: float = 0.0                 # γ × (hop / max_depth)
+    # Exact identity: vector_contribution + graph_contribution - penalty_contribution == unclamped_final_score
+    unclamped_final_score: float = 0.0
+    final_score: float = 0.0                          # max(0, unclamped_final_score) — the value used for ranking
+    retrieval_sources: List[str] = Field(default_factory=list)  # ["vector"], ["graph"], or ["vector", "graph"]
+    reason: RetrievalReason = Field(default_factory=RetrievalReason)
+    metadata: Dict[str, Any] = Field(default_factory=dict)
+    text: str = ""
+    info: Dict[str, Any] = Field(default_factory=dict)  # Optional extensibility field for debugging/experiments
+
 
 class HybridSearchResponse(BaseModel):
     query_text: str
     vector_weight: float
     graph_weight: float
+    pipeline_version: str = "2.0"
+    retrieval_metadata: Optional[RetrievalMetadata] = None
     results: List[HybridSearchResultItem]
 
+
+# Legacy model kept for backward compatibility with main.py CLI
 class HybridSearchResult(BaseModel):
     node_id: str
     final_score: float
     cosine_similarity: float
     graph_score: float
     text: str
+

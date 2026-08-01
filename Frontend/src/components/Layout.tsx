@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Database, Search, FileText, Network, Plus, Home, TestTube } from 'lucide-react'
+import { Database, Search, FileText, Network, Home, TestTube } from 'lucide-react'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -46,11 +46,10 @@ export default function Layout({ children }: LayoutProps) {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
-                    isActive
+                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${isActive
                       ? 'bg-primary-50 text-primary-700 font-medium'
                       : 'text-gray-700 hover:bg-gray-50'
-                  }`}
+                    }`}
                 >
                   <Icon className="h-5 w-5" />
                   <span>{item.label}</span>

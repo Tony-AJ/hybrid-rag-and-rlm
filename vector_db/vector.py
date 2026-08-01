@@ -7,7 +7,10 @@ os.environ["CHROMA_TELEMETRY_ENABLED"] = "false"
 logging.getLogger('chromadb').setLevel(logging.ERROR)
 logging.getLogger('posthog').setLevel(logging.ERROR)
 
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+try:
+    from langchain_text_splitters import RecursiveCharacterTextSplitter
+except ImportError:
+    from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings

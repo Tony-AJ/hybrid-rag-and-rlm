@@ -60,7 +60,9 @@ class VectorDatabase:
         results = self.db.similarity_search_with_score(query, k=top_k, filter=filter)
         formatted_results = []
         for doc, score in results:
-            similarity = 1.0 / (1.0 + score)
+            # ChromaDB returns L2² distance. For unit-normalized vectors:
+            # cosine_similarity = 1 - (L2² / 2)
+            similarity = max(0.0, 1.0 - (score / 2.0))
             doc_id = doc.metadata.get('id')
             formatted_results.append((doc_id, doc.page_content, similarity, doc.metadata))
             
