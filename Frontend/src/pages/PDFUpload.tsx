@@ -202,18 +202,23 @@ function SearchResultCard({ result, nodeData }: { result: HybridSearchResult; no
           )}
         </div>
       </div>
-      <div className="mt-3 flex items-center space-x-4 text-sm">
-        <div className="text-gray-600">
-          <span className="font-medium">Vector Score:</span>{' '}
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+        <div className="text-primary-600 font-semibold">
+          <span className="font-medium">Cosine Similarity:</span>{' '}
           {result.cosine_similarity.toFixed(4)}
         </div>
         <div className="text-gray-600">
           <span className="font-medium">Graph Score:</span> {result.graph_score.toFixed(4)}
         </div>
-        <div className="text-primary-600 font-semibold">
-          <span className="font-medium">Final Score:</span> {result.final_score.toFixed(4)}
+        <div className="text-gray-600">
+          <span className="font-medium">Rank Score:</span> {result.final_score.toFixed(4)}
         </div>
       </div>
+      <p className="mt-1 text-xs text-gray-500">
+        Cosine similarity is the absolute match quality. Rank score is normalized within a
+        single query, so the top result is always 1.0000 — it orders results, it does not
+        measure them.
+      </p>
       {nodeData?.metadata && Object.keys(nodeData.metadata).length > 0 && (
         <div className="mt-2 pt-2 border-t border-gray-100">
           <details className="text-xs">

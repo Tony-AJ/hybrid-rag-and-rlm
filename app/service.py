@@ -26,6 +26,10 @@ NORM_EPSILON = 1e-6
 # Pipeline version (bump on any scoring-formula change)
 PIPELINE_VERSION = "2.0"
 
+# Candidate pool for the PDF upload flow, which surfaces only the single best chunk.
+# Normalization needs more than one sample to mean anything.
+PDF_CANDIDATE_POOL = 5
+
 class HybridRetrievalService:
     def __init__(self):
         # Paths
@@ -410,11 +414,18 @@ class HybridRetrievalService:
         v_max = max(raw_scores) if raw_scores else 0.0
         v_range = v_max - v_min
 
+        # Min-max is undefined with a single hit or with all scores tied: (score - min) is
+        # 0 for every candidate, which would silently zero out the entire vector component.
+        # There is no relative ordering to express, so every hit is treated as best-available.
+        degenerate = len(raw_scores) < 2 or v_range < NORM_EPSILON
+
         for data in candidates.values():
-            if data["retrieved_by_vector"]:
-                data["norm_vector_score"] = (data["raw_vector_score"] - v_min) / (v_range + NORM_EPSILON)
-            else:
+            if not data["retrieved_by_vector"]:
                 data["norm_vector_score"] = None  # null, not 0.0
+            elif degenerate:
+                data["norm_vector_score"] = 1.0
+            else:
+                data["norm_vector_score"] = (data["raw_vector_score"] - v_min) / (v_range + NORM_EPSILON)
 
         # ── Step 4: Final Scoring with Split Formula ──
         alpha = vector_weight
@@ -546,9 +557,9 @@ class HybridRetrievalService:
             prev_id = chunk_id
             
         # 5. Hybrid Search
-        # We use default weights from the prompt/requirement if not specified
-        # But here we just want the top result for the PDF test
-        search_res = self.hybrid_search(query, vector_weight=0.5, graph_weight=0.5, top_k=1)
+        # Retrieve a real candidate pool even though only the top hit is returned:
+        # at top_k=1 min-max normalization has a single sample and carries no signal.
+        search_res = self.hybrid_search(query, vector_weight=0.5, graph_weight=0.5, top_k=PDF_CANDIDATE_POOL)
         
         if not search_res.results:
             return None

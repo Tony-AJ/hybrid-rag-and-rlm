@@ -232,11 +232,18 @@ def hybrid_rank(
     v_max = max(raw_scores) if raw_scores else 0.0
     v_range = v_max - v_min
 
+    # Min-max is undefined with a single hit or with all scores tied: (score - min) is
+    # 0 for every candidate, which would silently zero out the entire vector component.
+    # There is no relative ordering to express, so every hit is treated as best-available.
+    degenerate = len(raw_scores) < 2 or v_range < NORM_EPSILON
+
     for data in chunk_data.values():
-        if data['retrieved_by_vector']:
-            data['norm_cosine'] = (data['raw_cosine'] - v_min) / (v_range + NORM_EPSILON)
-        else:
+        if not data['retrieved_by_vector']:
             data['norm_cosine'] = None  # null, not 0.0
+        elif degenerate:
+            data['norm_cosine'] = 1.0
+        else:
+            data['norm_cosine'] = (data['raw_cosine'] - v_min) / (v_range + NORM_EPSILON)
 
     # ── Compute Final Scores with Split Formula ──
     alpha = COSINE_WEIGHT
