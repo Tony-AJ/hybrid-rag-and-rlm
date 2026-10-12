@@ -1,27 +1,20 @@
 {
-  "hyperparameters": {
-    "alpha": 0.7,
-    "beta": 0.3,
-    "gamma": 0.1,
-    "top_k": 5,
-    "graph_depth": 2
+  "vector": {
+    "precision@5": 0.34,
+    "recall@5": 0.9333,
+    "mrr": 0.9167,
+    "ndcg@5": 0.8586
   },
-  "queries": 6,
-  "results": {
-    "Vector Only": {
-      "Precision@K": 0.0,
-      "Recall@K": 0.0,
-      "MRR": 0.0
-    },
-    "Graph Only": {
-      "Precision@K": 0.0,
-      "Recall@K": 0.0,
-      "MRR": 0.0
-    },
-    "Hybrid": {
-      "Precision@K": 0.0,
-      "Recall@K": 0.0,
-      "MRR": 0.0
-    }
+  "graph": {
+    "precision@5": 0.32,
+    "recall@5": 0.8792,
+    "mrr": 0.8725,
+    "ndcg@5": 0.8106
+  },
+  "hybrid": {
+    "precision@5": 0.34,
+    "recall@5": 0.9333,
+    "mrr": 0.9167,
+    "ndcg@5": 0.861
   }
 }

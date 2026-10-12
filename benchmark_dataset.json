@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "query": "Where does the story take place and which families are involved?",
+    "relevant": ["chunk_1"],
+    "category": "single-hop factual",
+    "description": "Establishes the setting in Verona, Italy, and the feud between Montagues and Capulets (chunk_1)."
+  },
+  {
+    "id": 2,
+    "query": "Where did Romeo first meet Juliet?",
+    "relevant": ["chunk_2"],
+    "category": "single-hop factual",
+    "description": "Romeo attends the Capulet ball in disguise and falls in love with Juliet (chunk_2)."
+  },
+  {
+    "id": 3,
+    "query": "Who performed the secret wedding ceremony for Romeo and Juliet?",
+    "relevant": ["chunk_3"],
+    "category": "single-hop factual",
+    "description": "Friar Lawrence secretly marries Romeo and Juliet in hopes of ending the family feud (chunk_3)."
+  },
+  {
+    "id": 4,
+    "query": "Who challenged Romeo to a duel and who was killed?",
+    "relevant": ["chunk_4"],
+    "category": "single-hop factual",
+    "description": "Tybalt challenges Romeo, Romeo refuses, and Mercutio fights and is killed instead (chunk_4)."
+  },
+  {
+    "id": 5,
+    "query": "Why was Romeo banished from Verona by the Prince?",
+    "relevant": ["chunk_5"],
+    "category": "single-hop factual",
+    "description": "Enraged by Mercutio's death, Romeo kills Tybalt and the Prince banishes him (chunk_5)."
+  },
+  {
+    "id": 6,
+    "query": "What did Juliet do to avoid marrying Count Paris?",
+    "relevant": ["chunk_6"],
+    "category": "single-hop factual",
+    "description": "Juliet takes a sleeping potion that induces a death-like coma to avoid marrying Paris (chunk_6)."
+  },
+  {
+    "id": 7,
+    "query": "How did Romeo die in Juliet's tomb?",
+    "relevant": ["chunk_7"],
+    "category": "single-hop factual",
+    "description": "Romeo drinks lethal poison by Juliet's tomb after believing she is truly dead (chunk_7)."
+  },
+  {
+    "id": 8,
+    "query": "How did Juliet die after waking up?",
+    "relevant": ["chunk_8"],
+    "category": "single-hop factual",
+    "description": "Juliet wakes to find Romeo dead and stabs herself with his dagger (chunk_8)."
+  },
+  {
+    "id": 9,
+    "query": "How did Tybalt's challenge lead to Romeo's banishment?",
+    "relevant": ["chunk_4", "chunk_5"],
+    "category": "2-hop causal",
+    "description": "Tybalt challenges Romeo and kills Mercutio (chunk_4), triggering Romeo to kill Tybalt and face banishment (chunk_5)."
+  },
+  {
+    "id": 10,
+    "query": "What sequence of events followed Mercutio's death?",
+    "relevant": ["chunk_4", "chunk_5", "chunk_6"],
+    "category": "multi-hop sequential",
+    "description": "Mercutio's death (chunk_4) causes Romeo to kill Tybalt and get banished (chunk_5), leading Capulet to force Juliet's marriage to Paris (chunk_6)."
+  },
+  {
+    "id": 11,
+    "query": "Why did Friar Lawrence marry Romeo and Juliet, and did his hope come true?",
+    "relevant": ["chunk_3", "chunk_8"],
+    "category": "semantic graph relation (goal_achieved)",
+    "description": "Friar marries the lovers hoping to reconcile the families (chunk_3); the families finally reconcile, but only in shared grief over their deaths (chunk_8)."
+  },
+  {
+    "id": 12,
+    "query": "How did the family feud escalate into violence and death in the streets?",
+    "relevant": ["chunk_1", "chunk_4"],
+    "category": "semantic graph relation (foreshadows)",
+    "description": "The violent family feud in Verona (chunk_1) foreshadows and erupts into Tybalt's duel and Mercutio's murder (chunk_4)."
+  },
+  {
+    "id": 13,
+    "query": "What tragic miscommunication caused Romeo's death at the tomb?",
+    "relevant": ["chunk_6", "chunk_7"],
+    "category": "2-hop causal",
+    "description": "Juliet takes a potion to appear dead (chunk_6), but Romeo hears of her death without knowing the plan and drinks poison (chunk_7)."
+  },
+  {
+    "id": 14,
+    "query": "How did Romeo's presence at the Capulet ball lead to Juliet taking the sleeping potion?",
+    "relevant": ["chunk_2", "chunk_6"],
+    "category": "semantic graph relation (character_arc)",
+    "description": "Meeting Juliet at the Capulet ball (chunk_2) leads to an impossible romance, forcing Juliet to take the potion when betrothed to Paris (chunk_6)."
+  },
+  {
+    "id": 15,
+    "query": "What were the consequences of Romeo killing Tybalt on Juliet's marriage situation?",
+    "relevant": ["chunk_5", "chunk_6"],
+    "category": "2-hop causal",
+    "description": "Romeo's exile following Tybalt's death (chunk_5) precipitates her father arranging a hasty marriage to Paris (chunk_6)."
+  },
+  {
+    "id": 16,
+    "query": "What happened when Juliet woke up from her potion-induced sleep?",
+    "relevant": ["chunk_6", "chunk_7", "chunk_8"],
+    "category": "multi-hop sequential",
+    "description": "Juliet takes the potion (chunk_6); Romeo arrives, drinks poison and dies (chunk_7); Juliet awakens, finds him dead, and ends her own life (chunk_8)."
+  },
+  {
+    "id": 17,
+    "query": "How did the ancient feud between Montagues and Capulets finally come to an end?",
+    "relevant": ["chunk_1", "chunk_8"],
+    "category": "narrative arc (beginning to end)",
+    "description": "The story opens with two families locked in a violent feud (chunk_1) and closes with them ending their enmity in shared grief (chunk_8)."
+  },
+  {
+    "id": 18,
+    "query": "Trace the chain of events from the secret wedding to Romeo's exile.",
+    "relevant": ["chunk_3", "chunk_4", "chunk_5"],
+    "category": "multi-hop sequential",
+    "description": "Secret marriage (chunk_3) is immediately disrupted by Tybalt's duel (chunk_4), resulting in Tybalt's death and Romeo's banishment (chunk_5)."
+  },
+  {
+    "id": 19,
+    "query": "How did Mercutio's fight lead ultimately to the tragic deaths of the two lovers?",
+    "relevant": ["chunk_4", "chunk_5", "chunk_7", "chunk_8"],
+    "category": "extended multi-hop causal",
+    "description": "Mercutio's fight and death (chunk_4) triggers exile (chunk_5), Romeo's fatal poisoning (chunk_7), and Juliet's suicide (chunk_8)."
+  },
+  {
+    "id": 20,
+    "query": "What was the overarching narrative arc from Romeo attending the ball to the lovers' secret union?",
+    "relevant": ["chunk_2", "chunk_3"],
+    "category": "sequential narrative",
+    "description": "Romeo sneaks into the Capulet ball and falls in love with Juliet (chunk_2), directly leading to their clandestine marriage by Friar Lawrence (chunk_3)."
+  }
+]
