@@ -18,3 +18,7 @@ db/
 
 # Log files
 *.log
+# Local secrets - never commit real API keys
+.env
+.env.*
+!.env.example
