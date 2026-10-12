@@ -9,11 +9,20 @@ import posthog
 posthog.disabled = True
 posthog.capture = lambda *args, **kwargs: None
 
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.routers import nodes, edges, search, pdf, graph, stats
+from app.dependencies import get_service
 
-app = FastAPI(title="Hybrid Retrieval System")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Load embedding model + Chroma once at startup so startup fails loudly
+    # instead of the first burst of requests racing to build it.
+    get_service()
+    yield
+
+app = FastAPI(title="Hybrid Retrieval System", lifespan=lifespan)
 
 # Add CORS middleware to allow frontend requests
 app.add_middleware(

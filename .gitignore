@@ -1,2 +1,20 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
 
+# Python byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Node modules
+node_modules/
+
+# Databases & local data
 db/
+
+# Log files
+*.log
