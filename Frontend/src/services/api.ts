@@ -291,3 +291,125 @@ export const statsApi = {
 }
 
 export default api
+
+// ==================== RLM (retrieve-and-reason loop) ====================
+
+export interface RlmRetrievalStatus {
+  available: boolean
+  detail?: string
+  variant?: string
+  description?: string
+  alpha?: number
+  beta?: number
+  gamma?: number
+  seed_k?: number
+  max_depth?: number
+  production_service_modified?: boolean
+  control_metrics?: Record<string, number>
+  selected_metrics?: Record<string, number>
+  corpus_fingerprint?: string
+  dataset_sha256?: string
+}
+
+export interface RlmProviderStatus {
+  name: string
+  hosted: boolean
+  ready: boolean
+  key_present: boolean
+  evaluative: boolean
+  models: string[]
+  model_count?: number
+  detail?: string
+}
+
+export interface RlmCorpus {
+  corpus_id: string
+  description?: string
+  has_dataset: boolean
+  privacy_restricted: boolean
+  vector_doc_count?: number
+}
+
+export interface RlmStatus {
+  retrieval: RlmRetrievalStatus
+  providers: RlmProviderStatus[]
+  corpora: RlmCorpus[]
+  loop: { version: string; prompt_template_sha256: Record<string, string> }
+}
+
+export interface RlmDatasetQuery {
+  id: number
+  query: string
+  category: string
+  hops: number
+  relevant: string[]
+  gold_answer: { kind: string; entity_type?: string; entities?: string[]; predicates?: Record<string, any> }
+}
+
+export interface RlmAskRequest {
+  question: string
+  provider: string
+  model?: string
+  corpus_id?: string
+  top_k?: number
+  max_steps?: number
+  max_retrievals?: number
+  query_id?: number
+}
+
+export interface RlmAskResponse {
+  question: string
+  answer: string
+  provider: string
+  model: string
+  evaluative: boolean
+  stop_reason: string
+  retrieval_calls: number
+  generation_calls: number
+  input_tokens: number
+  output_tokens: number
+  retrieval_latency_ms: number
+  generation_latency_ms: number
+  total_latency_ms: number
+  steps: Array<{ step: number; query: string; retrieved: string[]; new_evidence: string[]; decision?: string }>
+  evidence: Array<{ node_id: string; text: string; hop: number; retrieved_by_vector: boolean }>
+  retrieval: { variant: string; weights: Record<string, number>; seed_k: number; max_depth: number; top_k: number }
+  answer_evaluation?: Record<string, any> | null
+  gold_answer?: Record<string, any> | null
+}
+
+export interface RlmExperimentSummary {
+  file: string
+  status?: string
+  status_derived?: boolean
+  recorded_status?: string
+  evaluative?: boolean
+  complete?: boolean
+  queries_evaluated?: number
+  queries_in_dataset?: number
+  quota_stop?: { provider: string; detail: string; completed: number; remaining: number } | null
+  caveat?: string | null
+  provider?: string
+  model?: string
+  corpus_id?: string
+  retrieval_variant?: string
+  recorded_at?: string
+  aggregate?: {
+    answer_level: Record<string, number | null>
+    chunk_level: Record<string, number>
+    cost: Record<string, number>
+  }
+  error?: string
+}
+
+export const rlmApi = {
+  status: () => api.get<RlmStatus>('/rlm/status'),
+  dataset: (corpusId = 'meridian-transit-v1') =>
+    api.get<{ corpus_id: string; dataset_version: string; count: number; queries: RlmDatasetQuery[] }>(
+      '/rlm/dataset', { params: { corpus_id: corpusId } }),
+  ask: (body: RlmAskRequest) => api.post<RlmAskResponse>('/rlm/ask', body),
+  experiments: () => api.get<{ count: number; experiments: RlmExperimentSummary[] }>('/rlm/experiments'),
+  experimentDetail: (file: string) => api.get<any>(`/rlm/experiments/${file}`),
+  ablation: (corpusId = 'meridian-transit-v1') =>
+    api.get<any>('/rlm/ablation', { params: { corpus_id: corpusId } }),
+}

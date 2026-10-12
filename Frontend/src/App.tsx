@@ -7,6 +7,7 @@ import Search from './pages/Search'
 import PDFUpload from './pages/PDFUpload'
 import GraphView from './pages/GraphView'
 import TestRunner from './pages/TestRunner'
+import RLM from './pages/RLM'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/pdf" element={<PDFUpload />} />
         <Route path="/graph" element={<GraphView />} />
+        <Route path="/rlm" element={<RLM />} />
         <Route path="/tests" element={<TestRunner />} />
       </Routes>
     </Layout>

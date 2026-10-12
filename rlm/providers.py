@@ -101,6 +101,29 @@ class ProviderUnavailable(RuntimeError):
     """No usable credential, SDK or model. Never silently degraded to a mock."""
 
 
+class QuotaExceeded(RuntimeError):
+    """The provider refused the call for rate or quota reasons.
+
+    Kept distinct from a generic failure because the correct response differs:
+    a quota stop means the run is incomplete, not that the system is broken, so
+    the evaluator saves partial results and says how far it got instead of
+    reporting a score over fewer queries as if it were the whole set.
+    """
+
+    def __init__(self, provider: str, detail: str) -> None:
+        super().__init__(f"{provider} quota or rate limit reached: {detail}")
+        self.provider = provider
+        self.detail = detail
+
+
+def _is_quota_error(exc: BaseException) -> bool:
+    name = type(exc).__name__
+    if name in {"ResourceExhausted", "RateLimitError", "TooManyRequests"}:
+        return True
+    text = str(exc).lower()
+    return "429" in text or "quota" in text or "rate limit" in text
+
+
 # ================================ Anthropic =================================
 
 
@@ -163,6 +186,8 @@ class AnthropicProvider:
                 **({"stop_sequences": list(self.config.stop_sequences)} if self.config.stop_sequences else {}),
             )
         except Exception as exc:
+            if _is_quota_error(exc):
+                raise QuotaExceeded("anthropic", str(exc)) from exc
             raise RuntimeError(f"Anthropic generation failed for a {len(prompt)}-char prompt") from exc
         latency_ms = (time.perf_counter() - started) * 1000
         text = "".join(block.text for block in response.content if getattr(block, "type", "") == "text")
@@ -237,6 +262,8 @@ class GoogleProvider:
                 },
             )
         except Exception as exc:
+            if _is_quota_error(exc):
+                raise QuotaExceeded("google", str(exc)) from exc
             raise RuntimeError(f"Google generation failed for a {len(prompt)}-char prompt") from exc
         latency_ms = (time.perf_counter() - started) * 1000
         usage = getattr(response, "usage_metadata", None)

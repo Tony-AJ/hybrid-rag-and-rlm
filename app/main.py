@@ -12,7 +12,7 @@ posthog.capture = lambda *args, **kwargs: None
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import nodes, edges, search, pdf, graph, stats
+from app.routers import nodes, edges, search, pdf, graph, stats, rlm
 from app.dependencies import get_service
 
 @asynccontextmanager
@@ -45,6 +45,7 @@ app.include_router(search.router)
 app.include_router(pdf.router)
 app.include_router(graph.router)
 app.include_router(stats.router)
+app.include_router(rlm.router)
 
 @app.get("/")
 def root():

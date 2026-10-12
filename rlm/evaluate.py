@@ -46,9 +46,9 @@ if str(ROOT) not in sys.path:
 
 import benchmark as bench  # noqa: E402
 from rlm import loop as rlm_loop  # noqa: E402
-from rlm.providers import ProviderUnavailable, build_provider  # noqa: E402
+from rlm.providers import ProviderUnavailable, QuotaExceeded, build_provider  # noqa: E402
 
-EVALUATION_CODE_VERSION = "rlm-eval-1.0"
+EVALUATION_CODE_VERSION = "rlm-eval-1.1"
 HOSTED_PROVIDERS = {"anthropic", "google"}
 PRIVACY_RESTRICTED_CORPORA = {"production-uploads-v1"}
 
@@ -155,6 +155,67 @@ def station_universe(service: Any) -> List[str]:
 # ================================= Runner ===================================
 
 
+def run_signature(
+    corpus_id: str,
+    dataset_sha: str,
+    variant: str,
+    provider_name: str,
+    model: str,
+    bounds_record: Dict[str, Any],
+) -> str:
+    """Identity of a run configuration.
+
+    A cached per-query result may only be reused when every input that could
+    change the answer is identical: corpus, dataset, retriever, provider, model,
+    prompt templates, loop bounds and the evaluator version.
+    """
+    payload = json.dumps(
+        {
+            "corpus_id": corpus_id,
+            "dataset_sha256": dataset_sha,
+            "variant": variant,
+            "provider": provider_name,
+            "model": model,
+            "bounds": bounds_record,
+            "prompts": rlm_loop.TEMPLATE_HASHES,
+            "loop_version": rlm_loop.LOOP_VERSION,
+            "evaluation_code_version": EVALUATION_CODE_VERSION,
+        },
+        sort_keys=True,
+    )
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def load_cache(path: Path, signature: str) -> Dict[str, Any]:
+    """Previously completed per-query rows for this exact configuration.
+
+    A free-tier daily quota (20 generate requests for gemini-2.5-flash, and the
+    loop spends up to 2 per query) cannot cover a 60-query set in one day, so a
+    run has to be able to continue tomorrow without redoing what it already paid
+    for. Rows recorded under a different signature are ignored, never reused.
+    """
+    if not path.exists():
+        return {}
+    try:
+        stored = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    if stored.get("run_signature") != signature:
+        return {}
+    return {int(key): value for key, value in (stored.get("rows") or {}).items()}
+
+
+def save_cache(path: Path, signature: str, rows: Dict[int, Any]) -> None:
+    path.write_text(
+        json.dumps(
+            {"run_signature": signature, "rows": {str(key): value for key, value in rows.items()}},
+            indent=2,
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
+
 def git_revision() -> Optional[str]:
     try:
         return subprocess.run(
@@ -179,6 +240,10 @@ def main() -> int:
     parser.add_argument("--top-k", type=int, default=5)
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--max-tokens", type=int, default=512)
+    parser.add_argument("--resume", action="store_true",
+                        help="reuse per-query results already recorded for this exact configuration")
+    parser.add_argument("--no-cache-write", action="store_true",
+                        help="do not record per-query results for later resumption")
     args = parser.parse_args()
 
     if args.corpus in PRIVACY_RESTRICTED_CORPORA and args.provider in HOSTED_PROVIDERS:
@@ -216,11 +281,51 @@ def main() -> int:
     queries = dataset[: args.limit] if args.limit else dataset
     universe = station_universe(service)
 
+    signature = run_signature(
+        corpus["corpus_id"],
+        provenance["dataset_sha256"],
+        retriever.variant_name,
+        args.provider,
+        provider.config.model,
+        bounds.as_record(),
+    )
+    cache_path = ROOT / f"experiment_rlm_cache_{corpus['corpus_id']}_{args.provider}.json"
+    cache: Dict[int, Any] = load_cache(cache_path, signature) if args.resume else {}
+    if args.resume:
+        print(f"resume: {len(cache)} cached rows match this configuration "
+              f"(signature {signature[:12]})")
+
     rows: List[Dict[str, Any]] = []
+    quota_stop: Optional[Dict[str, Any]] = None
+    reused = 0
     started_all = time.perf_counter()
     for index, item in enumerate(queries, 1):
         question = str(item["query"])
-        run = rlm_loop.run_loop(retriever, provider, question, bounds)
+        query_id = int(item.get("id", index))
+
+        cached = cache.get(query_id)
+        if cached is not None:
+            rows.append(cached)
+            reused += 1
+            print(f"[{index:02d}/{len(queries)}] cached  correct={cached['answer_evaluation']['correct']} "
+                  f"| {question[:58]}")
+            continue
+
+        try:
+            run = rlm_loop.run_loop(retriever, provider, question, bounds)
+        except QuotaExceeded as exc:
+            # A quota stop makes the run incomplete. Record how far it got and
+            # keep the rows already paid for, rather than averaging over a
+            # truncated set as if it were the whole dataset.
+            quota_stop = {
+                "provider": exc.provider,
+                "detail": exc.detail,
+                "stopped_at_query_id": query_id,
+                "completed": len(rows),
+                "remaining": len(queries) - len(rows),
+            }
+            print(f"\n[{index:02d}/{len(queries)}] QUOTA STOP after {len(rows)} of {len(queries)} queries")
+            break
         answer_score = score_answer(run.answer, item["gold_answer"], universe)
 
         relevant = {str(value) for value in item["relevant"]}
@@ -249,11 +354,20 @@ def main() -> int:
             "stop_reason": run.stop_reason,
             "steps": run.steps,
         })
+        cache[query_id] = rows[-1]
+        if not args.no_cache_write:
+            save_cache(cache_path, signature, cache)
         print(f"[{index:02d}/{len(queries)}] correct={answer_score['correct']} "
               f"coverage={rows[-1]['evidence_coverage']['coverage']:.2f} "
               f"calls={run.retrieval_calls} tokens={run.input_tokens}+{run.output_tokens} "
               f"| {question[:58]}")
     wall_ms = (time.perf_counter() - started_all) * 1000
+
+    if not rows:
+        raise SystemExit(
+            "No query completed, so there is nothing to report. "
+            + (f"Reason: {quota_stop['detail']}" if quota_stop else "")
+        )
 
     def mean(path) -> float:
         return round(statistics.fmean([path(row) for row in rows]), 4) if rows else 0.0
@@ -301,14 +415,34 @@ def main() -> int:
         },
     }
 
+    complete = len(rows) == len(queries)
+    if not evaluative:
+        status = "plumbing_only"
+    elif complete:
+        status = "valid"
+    else:
+        status = "partial"
+
     output = {
-        "status": "valid" if evaluative else "plumbing_only",
+        "status": status,
         "experiment": "rag-plus-rlm-end-to-end",
         "evaluative": evaluative,
+        "complete": complete,
+        "queries_evaluated": len(rows),
+        "queries_in_dataset": len(dataset),
+        "queries_requested": len(queries),
+        "queries_reused_from_cache": reused,
+        "quota_stop": quota_stop,
         "caveat": None if evaluative else (
             "Run with the mock provider: it performs no reasoning, so answer-level numbers "
             "measure the harness, not model quality. Rerun with a verified hosted model for "
             "a quality claim."
+        ),
+        "partial_caveat": None if complete else (
+            f"Incomplete run: {len(rows)} of {len(queries)} queries evaluated"
+            + (f", stopped by {quota_stop['provider']} quota" if quota_stop else "")
+            + ". Aggregates cover only the evaluated queries and are not comparable with a "
+            "full run. Re-run with --resume to continue where this stopped."
         ),
         "reproducibility": {
             "evaluation_code_version": EVALUATION_CODE_VERSION,
@@ -357,6 +491,13 @@ def main() -> int:
     print("\n" + "=" * 80)
     if not evaluative:
         print("PLUMBING ONLY - mock provider does no reasoning; answer numbers are not quality")
+    if not complete:
+        print(f"PARTIAL RUN - {len(rows)} of {len(queries)} queries"
+              + (f", stopped by {quota_stop['provider']} quota" if quota_stop else "")
+              + "; aggregates cover evaluated queries only")
+        if quota_stop:
+            print(f"  {quota_stop['detail'][:160]}")
+        print("  continue later with: --resume")
     print(f"answer accuracy            {aggregate['answer_level']['accuracy']:.4f}")
     print(f"abstention rate            {aggregate['answer_level']['abstention_rate']:.4f}")
     print(f"evidence coverage          {aggregate['chunk_level']['evidence_coverage']:.4f}")
