@@ -6,21 +6,21 @@
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 11.789
+      "mean_latency_ms": 23.925
     },
     "graph_expansion": {
       "precision@5": 0.03,
       "recall@5": 0.0667,
       "mrr": 0.1,
       "ndcg@5": 0.0648,
-      "mean_latency_ms": 0.023
+      "mean_latency_ms": 0.024
     },
     "hybrid": {
       "precision@5": 0.34,
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 9.304
+      "mean_latency_ms": 10.789
     }
   },
   "configuration": {

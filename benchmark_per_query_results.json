@@ -39,21 +39,21 @@
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 11.789
+      "mean_latency_ms": 23.925
     },
     "graph_expansion": {
       "precision@5": 0.03,
       "recall@5": 0.0667,
       "mrr": 0.1,
       "ndcg@5": 0.0648,
-      "mean_latency_ms": 0.023
+      "mean_latency_ms": 0.024
     },
     "hybrid": {
       "precision@5": 0.34,
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 9.304
+      "mean_latency_ms": 10.789
     }
   },
   "per_query": [
@@ -106,9 +106,9 @@
         }
       },
       "latency_ms": {
-        "vector": 55.495,
-        "graph_expansion": 0.028,
-        "hybrid": 8.966
+        "vector": 238.107,
+        "graph_expansion": 0.03,
+        "hybrid": 10.765
       }
     },
     {
@@ -159,9 +159,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.961,
-        "graph_expansion": 0.026,
-        "hybrid": 10.27
+        "vector": 13.245,
+        "graph_expansion": 0.03,
+        "hybrid": 9.711
       }
     },
     {
@@ -213,9 +213,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.446,
+        "vector": 11.224,
         "graph_expansion": 0.025,
-        "hybrid": 8.041
+        "hybrid": 10.999
       }
     },
     {
@@ -267,9 +267,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.102,
-        "graph_expansion": 0.024,
-        "hybrid": 8.302
+        "vector": 13.23,
+        "graph_expansion": 0.025,
+        "hybrid": 12.049
       }
     },
     {
@@ -321,9 +321,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.603,
-        "graph_expansion": 0.026,
-        "hybrid": 10.006
+        "vector": 13.46,
+        "graph_expansion": 0.032,
+        "hybrid": 9.623
       }
     },
     {
@@ -373,9 +373,9 @@
         }
       },
       "latency_ms": {
-        "vector": 9.133,
-        "graph_expansion": 0.02,
-        "hybrid": 9.5
+        "vector": 14.737,
+        "graph_expansion": 0.034,
+        "hybrid": 10.8
       }
     },
     {
@@ -423,9 +423,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.527,
-        "graph_expansion": 0.019,
-        "hybrid": 8.691
+        "vector": 12.723,
+        "graph_expansion": 0.02,
+        "hybrid": 9.258
       }
     },
     {
@@ -473,9 +473,9 @@
         }
       },
       "latency_ms": {
-        "vector": 9.181,
+        "vector": 10.461,
         "graph_expansion": 0.018,
-        "hybrid": 8.174
+        "hybrid": 11.383
       }
     },
     {
@@ -528,9 +528,9 @@
         }
       },
       "latency_ms": {
-        "vector": 22.272,
-        "graph_expansion": 0.026,
-        "hybrid": 8.835
+        "vector": 13.701,
+        "graph_expansion": 0.027,
+        "hybrid": 11.707
       }
     },
     {
@@ -580,9 +580,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.228,
-        "graph_expansion": 0.018,
-        "hybrid": 8.668
+        "vector": 13.15,
+        "graph_expansion": 0.019,
+        "hybrid": 12.218
       }
     },
     {
@@ -633,9 +633,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.411,
-        "graph_expansion": 0.021,
-        "hybrid": 11.753
+        "vector": 12.47,
+        "graph_expansion": 0.024,
+        "hybrid": 10.151
       }
     },
     {
@@ -688,9 +688,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.403,
-        "graph_expansion": 0.026,
-        "hybrid": 8.98
+        "vector": 11.404,
+        "graph_expansion": 0.022,
+        "hybrid": 10.764
       }
     },
     {
@@ -739,9 +739,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.778,
-        "graph_expansion": 0.019,
-        "hybrid": 10.795
+        "vector": 12.498,
+        "graph_expansion": 0.022,
+        "hybrid": 9.474
       }
     },
     {
@@ -793,9 +793,9 @@
         }
       },
       "latency_ms": {
-        "vector": 9.412,
-        "graph_expansion": 0.024,
-        "hybrid": 9.429
+        "vector": 12.37,
+        "graph_expansion": 0.023,
+        "hybrid": 10.996
       }
     },
     {
@@ -846,9 +846,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.932,
-        "graph_expansion": 0.021,
-        "hybrid": 9.18
+        "vector": 15.318,
+        "graph_expansion": 0.022,
+        "hybrid": 10.241
       }
     },
     {
@@ -898,9 +898,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.884,
-        "graph_expansion": 0.018,
-        "hybrid": 8.829
+        "vector": 13.597,
+        "graph_expansion": 0.021,
+        "hybrid": 11.342
       }
     },
     {
@@ -953,9 +953,9 @@
         }
       },
       "latency_ms": {
-        "vector": 9.418,
-        "graph_expansion": 0.026,
-        "hybrid": 8.958
+        "vector": 11.646,
+        "graph_expansion": 0.022,
+        "hybrid": 9.841
       }
     },
     {
@@ -1009,9 +1009,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.57,
-        "graph_expansion": 0.025,
-        "hybrid": 8.938
+        "vector": 12.902,
+        "graph_expansion": 0.026,
+        "hybrid": 10.445
       }
     },
     {
@@ -1062,9 +1062,9 @@
         }
       },
       "latency_ms": {
-        "vector": 8.677,
+        "vector": 10.668,
         "graph_expansion": 0.02,
-        "hybrid": 10.74
+        "hybrid": 12.337
       }
     },
     {
@@ -1116,9 +1116,9 @@
         }
       },
       "latency_ms": {
-        "vector": 9.349,
-        "graph_expansion": 0.024,
-        "hybrid": 9.026
+        "vector": 11.586,
+        "graph_expansion": 0.022,
+        "hybrid": 11.674
       }
     }
   ]
