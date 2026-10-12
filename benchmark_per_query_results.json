@@ -1,19 +1,37 @@
 {
-  "benchmark_version": "2.0-service-aligned",
+  "status": "valid",
+  "benchmark_version": "2.1-corpus-validated",
   "implementation": "app.service.HybridRetrievalService.hybrid_search",
   "configuration": {
+    "corpus_id": "romeo-and-juliet-summary-v1",
+    "corpus_description": "8-chunk Romeo and Juliet plot summary, node IDs chunk_1..chunk_8, with a 'next'/semantic relation graph over those chunks.",
+    "dataset": "benchmark_dataset.json",
+    "dataset_version": "1.0",
+    "dataset_sha256": "47d0d867f4b6fcb4666b0b081f31091a7c20cacf3109cf9356644928e6d33f83",
     "top_k": 5,
     "graph_depth": 2,
     "alpha": 0.6,
     "beta": 0.4,
     "gamma": 0.1,
-    "vector_db_path_expected": "db/chroma_db_service",
-    "graph_db_path_expected": "db/graph_data_service.json"
+    "vector_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\vector_db\\db\\chroma_db_with_metadata",
+    "graph_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\graph_data.json"
   },
   "ground_truth_validation": {
+    "corpus_id": "romeo-and-juliet-summary-v1",
+    "vector_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\vector_db\\db\\chroma_db_with_metadata",
+    "graph_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\graph_data.json",
     "unique_relevant_ids": 8,
     "relevant_ids_found_in_graph": 8,
-    "relevant_ids_missing_from_graph": []
+    "relevant_ids_missing_from_graph": [],
+    "relevant_ids_missing_from_vector_index": [],
+    "graph_node_count": 16,
+    "vector_doc_count": 8,
+    "corpus_fingerprint": "8b9c97acc24e1920cc2d4f57b7b9b551285e40ecc64a1d4d8e0eb959cffb379b",
+    "relevant_ids_without_graph_text": [],
+    "dataset_path": "benchmark_dataset.json",
+    "dataset_sha256": "47d0d867f4b6fcb4666b0b081f31091a7c20cacf3109cf9356644928e6d33f83",
+    "dataset_version": "1.0",
+    "declared_corpus_id": null
   },
   "aggregate": {
     "vector": {
@@ -21,21 +39,21 @@
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 15.01
+      "mean_latency_ms": 11.789
     },
     "graph_expansion": {
       "precision@5": 0.03,
       "recall@5": 0.0667,
       "mrr": 0.1,
       "ndcg@5": 0.0648,
-      "mean_latency_ms": 0.025
+      "mean_latency_ms": 0.023
     },
     "hybrid": {
       "precision@5": 0.34,
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 11.152
+      "mean_latency_ms": 9.304
     }
   },
   "per_query": [
@@ -88,9 +106,9 @@
         }
       },
       "latency_ms": {
-        "vector": 71.96,
-        "graph_expansion": 0.036,
-        "hybrid": 14.198
+        "vector": 55.495,
+        "graph_expansion": 0.028,
+        "hybrid": 8.966
       }
     },
     {
@@ -141,9 +159,9 @@
         }
       },
       "latency_ms": {
-        "vector": 9.586,
-        "graph_expansion": 0.032,
-        "hybrid": 9.004
+        "vector": 8.961,
+        "graph_expansion": 0.026,
+        "hybrid": 10.27
       }
     },
     {
@@ -195,9 +213,9 @@
         }
       },
       "latency_ms": {
-        "vector": 11.245,
-        "graph_expansion": 0.026,
-        "hybrid": 9.291
+        "vector": 8.446,
+        "graph_expansion": 0.025,
+        "hybrid": 8.041
       }
     },
     {
@@ -249,9 +267,9 @@
         }
       },
       "latency_ms": {
-        "vector": 11.174,
+        "vector": 8.102,
         "graph_expansion": 0.024,
-        "hybrid": 9.282
+        "hybrid": 8.302
       }
     },
     {
@@ -303,9 +321,9 @@
         }
       },
       "latency_ms": {
-        "vector": 11.617,
+        "vector": 8.603,
         "graph_expansion": 0.026,
-        "hybrid": 10.34
+        "hybrid": 10.006
       }
     },
     {
@@ -355,9 +373,9 @@
         }
       },
       "latency_ms": {
-        "vector": 15.941,
-        "graph_expansion": 0.022,
-        "hybrid": 9.904
+        "vector": 9.133,
+        "graph_expansion": 0.02,
+        "hybrid": 9.5
       }
     },
     {
@@ -405,9 +423,9 @@
         }
       },
       "latency_ms": {
-        "vector": 10.441,
-        "graph_expansion": 0.02,
-        "hybrid": 11.464
+        "vector": 8.527,
+        "graph_expansion": 0.019,
+        "hybrid": 8.691
       }
     },
     {
@@ -455,9 +473,9 @@
         }
       },
       "latency_ms": {
-        "vector": 10.706,
-        "graph_expansion": 0.022,
-        "hybrid": 8.962
+        "vector": 9.181,
+        "graph_expansion": 0.018,
+        "hybrid": 8.174
       }
     },
     {
@@ -510,9 +528,9 @@
         }
       },
       "latency_ms": {
-        "vector": 12.228,
-        "graph_expansion": 0.024,
-        "hybrid": 10.013
+        "vector": 22.272,
+        "graph_expansion": 0.026,
+        "hybrid": 8.835
       }
     },
     {
@@ -562,9 +580,9 @@
         }
       },
       "latency_ms": {
-        "vector": 11.432,
-        "graph_expansion": 0.02,
-        "hybrid": 9.274
+        "vector": 8.228,
+        "graph_expansion": 0.018,
+        "hybrid": 8.668
       }
     },
     {
@@ -615,9 +633,9 @@
         }
       },
       "latency_ms": {
-        "vector": 13.108,
-        "graph_expansion": 0.024,
-        "hybrid": 9.471
+        "vector": 8.411,
+        "graph_expansion": 0.021,
+        "hybrid": 11.753
       }
     },
     {
@@ -670,9 +688,9 @@
         }
       },
       "latency_ms": {
-        "vector": 12.888,
-        "graph_expansion": 0.027,
-        "hybrid": 13.434
+        "vector": 8.403,
+        "graph_expansion": 0.026,
+        "hybrid": 8.98
       }
     },
     {
@@ -721,9 +739,9 @@
         }
       },
       "latency_ms": {
-        "vector": 11.492,
-        "graph_expansion": 0.022,
-        "hybrid": 10.637
+        "vector": 8.778,
+        "graph_expansion": 0.019,
+        "hybrid": 10.795
       }
     },
     {
@@ -775,9 +793,9 @@
         }
       },
       "latency_ms": {
-        "vector": 12.677,
+        "vector": 9.412,
         "graph_expansion": 0.024,
-        "hybrid": 10.798
+        "hybrid": 9.429
       }
     },
     {
@@ -828,9 +846,9 @@
         }
       },
       "latency_ms": {
-        "vector": 11.414,
-        "graph_expansion": 0.022,
-        "hybrid": 10.028
+        "vector": 8.932,
+        "graph_expansion": 0.021,
+        "hybrid": 9.18
       }
     },
     {
@@ -880,9 +898,9 @@
         }
       },
       "latency_ms": {
-        "vector": 10.28,
-        "graph_expansion": 0.019,
-        "hybrid": 10.343
+        "vector": 8.884,
+        "graph_expansion": 0.018,
+        "hybrid": 8.829
       }
     },
     {
@@ -935,9 +953,9 @@
         }
       },
       "latency_ms": {
-        "vector": 11.567,
-        "graph_expansion": 0.023,
-        "hybrid": 11.311
+        "vector": 9.418,
+        "graph_expansion": 0.026,
+        "hybrid": 8.958
       }
     },
     {
@@ -991,9 +1009,9 @@
         }
       },
       "latency_ms": {
-        "vector": 14.558,
-        "graph_expansion": 0.028,
-        "hybrid": 12.052
+        "vector": 8.57,
+        "graph_expansion": 0.025,
+        "hybrid": 8.938
       }
     },
     {
@@ -1044,9 +1062,9 @@
         }
       },
       "latency_ms": {
-        "vector": 11.771,
-        "graph_expansion": 0.021,
-        "hybrid": 13.988
+        "vector": 8.677,
+        "graph_expansion": 0.02,
+        "hybrid": 10.74
       }
     },
     {
@@ -1098,9 +1116,9 @@
         }
       },
       "latency_ms": {
-        "vector": 14.108,
-        "graph_expansion": 0.029,
-        "hybrid": 19.252
+        "vector": 9.349,
+        "graph_expansion": 0.024,
+        "hybrid": 9.026
       }
     }
   ]

@@ -1,40 +1,58 @@
 {
+  "status": "valid",
   "aggregate": {
     "vector": {
       "precision@5": 0.34,
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 15.01
+      "mean_latency_ms": 11.789
     },
     "graph_expansion": {
       "precision@5": 0.03,
       "recall@5": 0.0667,
       "mrr": 0.1,
       "ndcg@5": 0.0648,
-      "mean_latency_ms": 0.025
+      "mean_latency_ms": 0.023
     },
     "hybrid": {
       "precision@5": 0.34,
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 11.152
+      "mean_latency_ms": 9.304
     }
   },
   "configuration": {
+    "corpus_id": "romeo-and-juliet-summary-v1",
+    "corpus_description": "8-chunk Romeo and Juliet plot summary, node IDs chunk_1..chunk_8, with a 'next'/semantic relation graph over those chunks.",
+    "dataset": "benchmark_dataset.json",
+    "dataset_version": "1.0",
+    "dataset_sha256": "47d0d867f4b6fcb4666b0b081f31091a7c20cacf3109cf9356644928e6d33f83",
     "top_k": 5,
     "graph_depth": 2,
     "alpha": 0.6,
     "beta": 0.4,
     "gamma": 0.1,
-    "vector_db_path_expected": "db/chroma_db_service",
-    "graph_db_path_expected": "db/graph_data_service.json"
+    "vector_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\vector_db\\db\\chroma_db_with_metadata",
+    "graph_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\graph_data.json"
   },
   "implementation": "app.service.HybridRetrievalService.hybrid_search",
   "ground_truth_validation": {
+    "corpus_id": "romeo-and-juliet-summary-v1",
+    "vector_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\vector_db\\db\\chroma_db_with_metadata",
+    "graph_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\graph_data.json",
     "unique_relevant_ids": 8,
     "relevant_ids_found_in_graph": 8,
-    "relevant_ids_missing_from_graph": []
+    "relevant_ids_missing_from_graph": [],
+    "relevant_ids_missing_from_vector_index": [],
+    "graph_node_count": 16,
+    "vector_doc_count": 8,
+    "corpus_fingerprint": "8b9c97acc24e1920cc2d4f57b7b9b551285e40ecc64a1d4d8e0eb959cffb379b",
+    "relevant_ids_without_graph_text": [],
+    "dataset_path": "benchmark_dataset.json",
+    "dataset_sha256": "47d0d867f4b6fcb4666b0b081f31091a7c20cacf3109cf9356644928e6d33f83",
+    "dataset_version": "1.0",
+    "declared_corpus_id": null
   }
 }
