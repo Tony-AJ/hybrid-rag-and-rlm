@@ -6,21 +6,379 @@
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 23.925
+      "mean_latency_ms": 382.961
     },
     "graph_expansion": {
       "precision@5": 0.03,
       "recall@5": 0.0667,
       "mrr": 0.1,
       "ndcg@5": 0.0648,
-      "mean_latency_ms": 0.024
+      "mean_latency_ms": 0.03
     },
     "hybrid": {
       "precision@5": 0.34,
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 10.789
+      "mean_latency_ms": 13.086
+    }
+  },
+  "diagnostics": {
+    "declared_seed_in_vector_top_k": null,
+    "declared_seed_in_vector_top_k__applicable_queries": 0,
+    "graph_only_chunks_in_hybrid_top_k": 0.0,
+    "graph_only_chunks_in_hybrid_top_k__applicable_queries": 20,
+    "reached_with_wide_budget_25": 0.0667,
+    "reached_with_wide_budget_25__applicable_queries": 20,
+    "recoverable_by_graph": 0.0667,
+    "recoverable_by_graph__applicable_queries": 20,
+    "recovered_in_hybrid_top_k": 0.0,
+    "recovered_in_hybrid_top_k__applicable_queries": 20,
+    "relevant_reachable_within_depth": 1.0,
+    "relevant_reachable_within_depth__applicable_queries": 20
+  },
+  "by_category": {
+    "single-hop factual": {
+      "queries": 8,
+      "modes": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 0.8542,
+          "ndcg@5": 0.8914
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 0.8542,
+          "ndcg@5": 0.8914
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 8,
+        "reached_with_wide_budget_25": 8,
+        "recoverable_by_graph": 8,
+        "recovered_in_hybrid_top_k": 8,
+        "relevant_reachable_within_depth": 8
+      }
+    },
+    "2-hop causal": {
+      "queries": 3,
+      "modes": {
+        "vector": {
+          "precision@5": 0.3333,
+          "recall@5": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 0.8212
+        },
+        "graph_expansion": {
+          "precision@5": 0.0667,
+          "recall@5": 0.1667,
+          "mrr": 0.3333,
+          "ndcg@5": 0.2044
+        },
+        "hybrid": {
+          "precision@5": 0.3333,
+          "recall@5": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 0.8212
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.1667,
+        "recoverable_by_graph": 0.1667,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 3,
+        "reached_with_wide_budget_25": 3,
+        "recoverable_by_graph": 3,
+        "recovered_in_hybrid_top_k": 3,
+        "relevant_reachable_within_depth": 3
+      }
+    },
+    "multi-hop sequential": {
+      "queries": 3,
+      "modes": {
+        "vector": {
+          "precision@5": 0.5333,
+          "recall@5": 0.8889,
+          "mrr": 1.0,
+          "ndcg@5": 0.8836
+        },
+        "graph_expansion": {
+          "precision@5": 0.0667,
+          "recall@5": 0.1111,
+          "mrr": 0.1667,
+          "ndcg@5": 0.0987
+        },
+        "hybrid": {
+          "precision@5": 0.5333,
+          "recall@5": 0.8889,
+          "mrr": 1.0,
+          "ndcg@5": 0.8836
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.1111,
+        "recoverable_by_graph": 0.1111,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 3,
+        "reached_with_wide_budget_25": 3,
+        "recoverable_by_graph": 3,
+        "recovered_in_hybrid_top_k": 3,
+        "relevant_reachable_within_depth": 3
+      }
+    },
+    "semantic graph relation (goal_achieved)": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.8503
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.8503
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
+    },
+    "semantic graph relation (foreshadows)": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@5": 0.6131
+        },
+        "graph_expansion": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 0.5,
+          "ndcg@5": 0.3869
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@5": 0.6131
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.5,
+        "recoverable_by_graph": 0.5,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
+    },
+    "semantic graph relation (character_arc)": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.9197
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.9197
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
+    },
+    "narrative arc (beginning to end)": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.8503
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.8503
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
+    },
+    "extended multi-hop causal": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
+    },
+    "sequential narrative": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 0.5,
+          "ndcg@5": 0.6934
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 0.5,
+          "ndcg@5": 0.6934
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
     }
   },
   "configuration": {
@@ -30,6 +388,7 @@
     "dataset_version": "1.0",
     "dataset_sha256": "47d0d867f4b6fcb4666b0b081f31091a7c20cacf3109cf9356644928e6d33f83",
     "top_k": 5,
+    "wide_diagnostic_k": 25,
     "graph_depth": 2,
     "alpha": 0.6,
     "beta": 0.4,

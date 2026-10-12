@@ -1,0 +1,4766 @@
+{
+  "nodes": [
+    {
+      "id": "line_azure",
+      "text": "The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.",
+      "metadata": {
+        "id": "line_azure",
+        "type": "line",
+        "corpus": "meridian-transit-v1",
+        "line": "Azure Line"
+      },
+      "embedding": null
+    },
+    {
+      "id": "line_crimson",
+      "text": "The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.",
+      "metadata": {
+        "id": "line_crimson",
+        "type": "line",
+        "corpus": "meridian-transit-v1",
+        "line": "Crimson Line"
+      },
+      "embedding": null
+    },
+    {
+      "id": "line_jade",
+      "text": "The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.",
+      "metadata": {
+        "id": "line_jade",
+        "type": "line",
+        "corpus": "meridian-transit-v1",
+        "line": "Jade Line"
+      },
+      "embedding": null
+    },
+    {
+      "id": "line_amber",
+      "text": "The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.",
+      "metadata": {
+        "id": "line_amber",
+        "type": "line",
+        "corpus": "meridian-transit-v1",
+        "line": "Amber Line"
+      },
+      "embedding": null
+    },
+    {
+      "id": "line_violet",
+      "text": "The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.",
+      "metadata": {
+        "id": "line_violet",
+        "type": "line",
+        "corpus": "meridian-transit-v1",
+        "line": "Violet Line"
+      },
+      "embedding": null
+    },
+    {
+      "id": "line_slate",
+      "text": "The Slate Line runs from Elmsworth to Juniper Row, calling at Fallowfield, Glasshouse, Hartsmere, Ivory Dock. It is operated with Series 200 heritage sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.",
+      "metadata": {
+        "id": "line_slate",
+        "type": "line",
+        "corpus": "meridian-transit-v1",
+        "line": "Slate Line"
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_harbour_row",
+      "text": "Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.",
+      "metadata": {
+        "id": "station_harbour_row",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Azure Line",
+        "position": 1
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_kestrel_green",
+      "text": "Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.",
+      "metadata": {
+        "id": "station_kestrel_green",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Azure Line",
+        "position": 2
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_alder_vale",
+      "text": "Alder Vale is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Harbour Row and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.",
+      "metadata": {
+        "id": "station_alder_vale",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Azure Line",
+        "position": 3
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_brickworks",
+      "text": "Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012.",
+      "metadata": {
+        "id": "station_brickworks",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Azure Line",
+        "position": 4
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_copper_lane",
+      "text": "Copper Lane is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Harbour Row and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013.",
+      "metadata": {
+        "id": "station_copper_lane",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Azure Line",
+        "position": 5
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_dunmore_park",
+      "text": "Dunmore Park is a terminus on the Azure Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Harbour Row and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014.",
+      "metadata": {
+        "id": "station_dunmore_park",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Azure Line",
+        "position": 6
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_eastgate_quay",
+      "text": "Eastgate Quay is a terminus on the Crimson Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Eastgate Quay and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.",
+      "metadata": {
+        "id": "station_eastgate_quay",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Crimson Line",
+        "position": 1
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_foundry_bridge",
+      "text": "Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.",
+      "metadata": {
+        "id": "station_foundry_bridge",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Crimson Line",
+        "position": 2
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_garnet_hill",
+      "text": "Garnet Hill is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Eastgate Quay and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.",
+      "metadata": {
+        "id": "station_garnet_hill",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Crimson Line",
+        "position": 3
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_hollow_mill",
+      "text": "Hollow Mill is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Eastgate Quay and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012.",
+      "metadata": {
+        "id": "station_hollow_mill",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Crimson Line",
+        "position": 4
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_ironside",
+      "text": "Ironside is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Eastgate Quay and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013.",
+      "metadata": {
+        "id": "station_ironside",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Crimson Line",
+        "position": 5
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_jubilee_fields",
+      "text": "Jubilee Fields is a terminus on the Crimson Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Eastgate Quay and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014.",
+      "metadata": {
+        "id": "station_jubilee_fields",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Crimson Line",
+        "position": 6
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_kingsmoor",
+      "text": "Kingsmoor is a terminus on the Jade Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Kingsmoor and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.",
+      "metadata": {
+        "id": "station_kingsmoor",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Jade Line",
+        "position": 1
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_larkspur",
+      "text": "Larkspur is a through station on the Jade Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Kingsmoor and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.",
+      "metadata": {
+        "id": "station_larkspur",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Jade Line",
+        "position": 2
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_mallow_street",
+      "text": "Mallow Street is a through station on the Jade Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Kingsmoor and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.",
+      "metadata": {
+        "id": "station_mallow_street",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Jade Line",
+        "position": 3
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_netherby",
+      "text": "Netherby is a through station on the Jade Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Kingsmoor and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012.",
+      "metadata": {
+        "id": "station_netherby",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Jade Line",
+        "position": 4
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_oakhurst",
+      "text": "Oakhurst is a through station on the Jade Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Kingsmoor and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013.",
+      "metadata": {
+        "id": "station_oakhurst",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Jade Line",
+        "position": 5
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_pennyford",
+      "text": "Pennyford is a terminus on the Jade Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Kingsmoor and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014.",
+      "metadata": {
+        "id": "station_pennyford",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Jade Line",
+        "position": 6
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_quarry_side",
+      "text": "Quarry Side is a terminus on the Amber Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Quarry Side and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.",
+      "metadata": {
+        "id": "station_quarry_side",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Amber Line",
+        "position": 1
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_redcliff",
+      "text": "Redcliff is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Quarry Side and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.",
+      "metadata": {
+        "id": "station_redcliff",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Amber Line",
+        "position": 2
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_saltmarsh",
+      "text": "Saltmarsh is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Quarry Side and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.",
+      "metadata": {
+        "id": "station_saltmarsh",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Amber Line",
+        "position": 3
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_thistlebank",
+      "text": "Thistlebank is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Quarry Side and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012.",
+      "metadata": {
+        "id": "station_thistlebank",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Amber Line",
+        "position": 4
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_underbank",
+      "text": "Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013.",
+      "metadata": {
+        "id": "station_underbank",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Amber Line",
+        "position": 5
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_vantage_point",
+      "text": "Vantage Point is a terminus on the Amber Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Quarry Side and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014.",
+      "metadata": {
+        "id": "station_vantage_point",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Amber Line",
+        "position": 6
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_westmere",
+      "text": "Westmere is a terminus on the Violet Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Westmere and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.",
+      "metadata": {
+        "id": "station_westmere",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Violet Line",
+        "position": 1
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_yarrow_cross",
+      "text": "Yarrow Cross is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Westmere and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.",
+      "metadata": {
+        "id": "station_yarrow_cross",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Violet Line",
+        "position": 2
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_ashfen",
+      "text": "Ashfen is a through station on the Violet Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Westmere and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.",
+      "metadata": {
+        "id": "station_ashfen",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Violet Line",
+        "position": 3
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_beacon_rise",
+      "text": "Beacon Rise is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Westmere and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012.",
+      "metadata": {
+        "id": "station_beacon_rise",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Violet Line",
+        "position": 4
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_carrow_end",
+      "text": "Carrow End is a through station on the Violet Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Westmere and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013.",
+      "metadata": {
+        "id": "station_carrow_end",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Violet Line",
+        "position": 5
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_dovecote",
+      "text": "Dovecote is a terminus on the Violet Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Westmere and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014.",
+      "metadata": {
+        "id": "station_dovecote",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Violet Line",
+        "position": 6
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_elmsworth",
+      "text": "Elmsworth is a terminus on the Slate Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Elmsworth and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.",
+      "metadata": {
+        "id": "station_elmsworth",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Slate Line",
+        "position": 1
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_fallowfield",
+      "text": "Fallowfield is a through station on the Slate Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Elmsworth and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.",
+      "metadata": {
+        "id": "station_fallowfield",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Slate Line",
+        "position": 2
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_glasshouse",
+      "text": "Glasshouse is a through station on the Slate Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Elmsworth and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.",
+      "metadata": {
+        "id": "station_glasshouse",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Slate Line",
+        "position": 3
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_hartsmere",
+      "text": "Hartsmere is a through station on the Slate Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Elmsworth and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012.",
+      "metadata": {
+        "id": "station_hartsmere",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Slate Line",
+        "position": 4
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_ivory_dock",
+      "text": "Ivory Dock is a through station on the Slate Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Elmsworth and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013.",
+      "metadata": {
+        "id": "station_ivory_dock",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Slate Line",
+        "position": 5
+      },
+      "embedding": null
+    },
+    {
+      "id": "station_juniper_row",
+      "text": "Juniper Row is a terminus on the Slate Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Elmsworth and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014.",
+      "metadata": {
+        "id": "station_juniper_row",
+        "type": "station",
+        "corpus": "meridian-transit-v1",
+        "line": "Slate Line",
+        "position": 6
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_TX-440",
+      "text": "The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G.",
+      "metadata": {
+        "id": "equipment_TX-440",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "TX-440"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_HV-21",
+      "text": "The HV-21 pantograph head is fitted across the fleet and in fixed installations. Its dominant failure mode is carbon strip fracture, which presents as a sudden loss of overhead contact force. A HV-21 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group HV21G.",
+      "metadata": {
+        "id": "equipment_HV-21",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "HV-21"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_BR-7",
+      "text": "The BR-7 regenerative brake unit is fitted across the fleet and in fixed installations. Its dominant failure mode is resistor grid overheat, which presents as grid temperature above the 310 degree cut-out. A BR-7 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group BR7G.",
+      "metadata": {
+        "id": "equipment_BR-7",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "BR-7"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_PD-90",
+      "text": "The PD-90 platform screen door controller is fitted across the fleet and in fixed installations. Its dominant failure mode is obstruction sensor drift, which presents as false obstruction reports on an empty threshold. A PD-90 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PD90G.",
+      "metadata": {
+        "id": "equipment_PD-90",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "PD-90"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_SG-12",
+      "text": "The SG-12 signal interlocking relay is fitted across the fleet and in fixed installations. Its dominant failure mode is contact welding, which presents as a relay that fails to drop out after de-energising. A SG-12 unit has a design life of 8 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group SG12G.",
+      "metadata": {
+        "id": "equipment_SG-12",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "SG-12"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_AX-3",
+      "text": "The AX-3 axle bearing assembly is fitted across the fleet and in fixed installations. Its dominant failure mode is thermal spike, which presents as a bearing temperature rise of more than 40 degrees in ten minutes. A AX-3 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group AX3G.",
+      "metadata": {
+        "id": "equipment_AX-3",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "AX-3"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_CP-55",
+      "text": "The CP-55 compressor module is fitted across the fleet and in fixed installations. Its dominant failure mode is pressure bleed-down, which presents as main reservoir pressure falling below 6.2 bar while stabled. A CP-55 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group CP55G.",
+      "metadata": {
+        "id": "equipment_CP-55",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "CP-55"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_DR-8",
+      "text": "The DR-8 door engine actuator is fitted across the fleet and in fixed installations. Its dominant failure mode is leadscrew backlash, which presents as a door leaf that rebounds before locking. A DR-8 unit has a design life of 12 years and is classified as a service-critical asset. Replacement units are held at the central store under part group DR8G.",
+      "metadata": {
+        "id": "equipment_DR-8",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "DR-8"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_PS-19",
+      "text": "The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G.",
+      "metadata": {
+        "id": "equipment_PS-19",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "PS-19"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_TC-6",
+      "text": "The TC-6 track circuit transmitter is fitted across the fleet and in fixed installations. Its dominant failure mode is frequency drift, which presents as a carrier frequency outside the 83 to 87 hertz window. A TC-6 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TC6G.",
+      "metadata": {
+        "id": "equipment_TC-6",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "TC-6"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_VE-31",
+      "text": "The VE-31 tunnel ventilation fan is fitted across the fleet and in fixed installations. Its dominant failure mode is blade imbalance, which presents as vibration velocity above 7 millimetres per second at the bearing housing. A VE-31 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group VE31G.",
+      "metadata": {
+        "id": "equipment_VE-31",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "VE-31"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_ES-14",
+      "text": "The ES-14 escalator drive chain is fitted across the fleet and in fixed installations. Its dominant failure mode is elongation wear, which presents as chain elongation beyond the 1.5 percent service limit. A ES-14 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group ES14G.",
+      "metadata": {
+        "id": "equipment_ES-14",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "ES-14"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_LT-77",
+      "text": "The LT-77 lighting ballast is fitted across the fleet and in fixed installations. Its dominant failure mode is flicker cascade, which presents as a cascading flicker across an entire platform circuit. A LT-77 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group LT77G.",
+      "metadata": {
+        "id": "equipment_LT-77",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "LT-77"
+      },
+      "embedding": null
+    },
+    {
+      "id": "equipment_WS-5",
+      "text": "The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G.",
+      "metadata": {
+        "id": "equipment_WS-5",
+        "type": "equipment",
+        "corpus": "meridian-transit-v1",
+        "equipment_code": "WS-5"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-101",
+      "text": "Maintenance procedure MP-101: Inverter phase balance verification. Applies to the TX-440 traction inverter. Scheduled every 90 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes.",
+      "metadata": {
+        "id": "procedure_MP-101",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-101",
+        "equipment_code": "TX-440"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-102",
+      "text": "Maintenance procedure MP-102: Inverter gate driver replacement. Applies to the TX-440 traction inverter. Scheduled on condition. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. This procedure supersedes MP-101, which is withdrawn from the maintenance plan.",
+      "metadata": {
+        "id": "procedure_MP-102",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-102",
+        "equipment_code": "TX-440"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-103",
+      "text": "Maintenance procedure MP-103: Pantograph carbon strip renewal. Applies to the HV-21 pantograph head. Scheduled every 45 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes.",
+      "metadata": {
+        "id": "procedure_MP-103",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-103",
+        "equipment_code": "HV-21"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-104",
+      "text": "Maintenance procedure MP-104: Pantograph contact force calibration. Applies to the HV-21 pantograph head. Scheduled every 180 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 130 minutes.",
+      "metadata": {
+        "id": "procedure_MP-104",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-104",
+        "equipment_code": "HV-21"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-105",
+      "text": "Maintenance procedure MP-105: Brake resistor grid thermal survey. Applies to the BR-7 regenerative brake unit. Scheduled every 60 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes.",
+      "metadata": {
+        "id": "procedure_MP-105",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-105",
+        "equipment_code": "BR-7"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-106",
+      "text": "Maintenance procedure MP-106: Brake chopper firmware refresh. Applies to the BR-7 regenerative brake unit. Scheduled annually. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 55 minutes. This procedure supersedes MP-105, which is withdrawn from the maintenance plan.",
+      "metadata": {
+        "id": "procedure_MP-106",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-106",
+        "equipment_code": "BR-7"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-107",
+      "text": "Maintenance procedure MP-107: Screen door sensor realignment. Applies to the PD-90 platform screen door controller. Scheduled every 30 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 70 minutes.",
+      "metadata": {
+        "id": "procedure_MP-107",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-107",
+        "equipment_code": "PD-90"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-108",
+      "text": "Maintenance procedure MP-108: Screen door controller loop test. Applies to the PD-90 platform screen door controller. Scheduled every 120 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 85 minutes.",
+      "metadata": {
+        "id": "procedure_MP-108",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-108",
+        "equipment_code": "PD-90"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-109",
+      "text": "Maintenance procedure MP-109: Interlocking relay contact inspection. Applies to the SG-12 signal interlocking relay. Scheduled every 28 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes.",
+      "metadata": {
+        "id": "procedure_MP-109",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-109",
+        "equipment_code": "SG-12"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-110",
+      "text": "Maintenance procedure MP-110: Relay drop-out timing audit. Applies to the SG-12 signal interlocking relay. Scheduled every 365 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes.",
+      "metadata": {
+        "id": "procedure_MP-110",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-110",
+        "equipment_code": "SG-12"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-111",
+      "text": "Maintenance procedure MP-111: Axle bearing lubrication and endplay check. Applies to the AX-3 axle bearing assembly. Scheduled every 75 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 130 minutes.",
+      "metadata": {
+        "id": "procedure_MP-111",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-111",
+        "equipment_code": "AX-3"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-112",
+      "text": "Maintenance procedure MP-112: Bearing acoustic emission screening. Applies to the AX-3 axle bearing assembly. Scheduled every 150 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-111, which is withdrawn from the maintenance plan.",
+      "metadata": {
+        "id": "procedure_MP-112",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-112",
+        "equipment_code": "AX-3"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-113",
+      "text": "Maintenance procedure MP-113: Compressor valve plate overhaul. Applies to the CP-55 compressor module. Scheduled every 200 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 55 minutes.",
+      "metadata": {
+        "id": "procedure_MP-113",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-113",
+        "equipment_code": "CP-55"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-114",
+      "text": "Maintenance procedure MP-114: Reservoir leak-rate measurement. Applies to the CP-55 compressor module. Scheduled every 50 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 70 minutes.",
+      "metadata": {
+        "id": "procedure_MP-114",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-114",
+        "equipment_code": "CP-55"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-115",
+      "text": "Maintenance procedure MP-115: Door actuator leadscrew re-shimming. Applies to the DR-8 door engine actuator. Scheduled every 40 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 85 minutes.",
+      "metadata": {
+        "id": "procedure_MP-115",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-115",
+        "equipment_code": "DR-8"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-116",
+      "text": "Maintenance procedure MP-116: Door obstacle force profiling. Applies to the DR-8 door engine actuator. Scheduled every 90 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 100 minutes.",
+      "metadata": {
+        "id": "procedure_MP-116",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-116",
+        "equipment_code": "DR-8"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-117",
+      "text": "Maintenance procedure MP-117: Auxiliary supply ripple measurement. Applies to the PS-19 auxiliary power supply. Scheduled every 70 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes.",
+      "metadata": {
+        "id": "procedure_MP-117",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-117",
+        "equipment_code": "PS-19"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-118",
+      "text": "Maintenance procedure MP-118: Track circuit carrier retune. Applies to the TC-6 track circuit transmitter. Scheduled every 35 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 130 minutes.",
+      "metadata": {
+        "id": "procedure_MP-118",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-118",
+        "equipment_code": "TC-6"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-119",
+      "text": "Maintenance procedure MP-119: Transmitter oscillator substitution. Applies to the TC-6 track circuit transmitter. Scheduled on condition. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-118, which is withdrawn from the maintenance plan.",
+      "metadata": {
+        "id": "procedure_MP-119",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-119",
+        "equipment_code": "TC-6"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-120",
+      "text": "Maintenance procedure MP-120: Ventilation fan balance correction. Applies to the VE-31 tunnel ventilation fan. Scheduled every 240 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 55 minutes.",
+      "metadata": {
+        "id": "procedure_MP-120",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-120",
+        "equipment_code": "VE-31"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-121",
+      "text": "Maintenance procedure MP-121: Escalator chain elongation gauging. Applies to the ES-14 escalator drive chain. Scheduled every 110 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 70 minutes.",
+      "metadata": {
+        "id": "procedure_MP-121",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-121",
+        "equipment_code": "ES-14"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-122",
+      "text": "Maintenance procedure MP-122: Ballast circuit staged replacement. Applies to the LT-77 lighting ballast. Scheduled every 300 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes.",
+      "metadata": {
+        "id": "procedure_MP-122",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-122",
+        "equipment_code": "LT-77"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-123",
+      "text": "Maintenance procedure MP-123: Slide protection valve latch release test. Applies to the WS-5 wheel slide protection valve. Scheduled every 55 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 100 minutes.",
+      "metadata": {
+        "id": "procedure_MP-123",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-123",
+        "equipment_code": "WS-5"
+      },
+      "embedding": null
+    },
+    {
+      "id": "procedure_MP-124",
+      "text": "Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan.",
+      "metadata": {
+        "id": "procedure_MP-124",
+        "type": "procedure",
+        "corpus": "meridian-transit-v1",
+        "procedure_code": "MP-124",
+        "equipment_code": "WS-5"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-A",
+      "text": "Authorisation policy PL-A, Traction Maintenance Authorisation, governs work on propulsion and current collection assets. A named holder of PL-A must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-A suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-A",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-A"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-B",
+      "text": "Authorisation policy PL-B, Braking Systems Authorisation, governs work that alters braking performance. A named holder of PL-B must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-B suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-B",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-B"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-C",
+      "text": "Authorisation policy PL-C, Platform Interface Authorisation, governs work on the platform-train interface. A named holder of PL-C must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-C suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-C",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-C"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-D",
+      "text": "Authorisation policy PL-D, Signalling Safety Authorisation, governs work inside a signalling interlocking. A named holder of PL-D must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-D suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-D",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-D"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-E",
+      "text": "Authorisation policy PL-E, Running Gear Authorisation, governs work on axles, bearings and wheelsets. A named holder of PL-E must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-E suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-E",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-E"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-F",
+      "text": "Authorisation policy PL-F, Pneumatics Authorisation, governs work on compressed air generation and storage. A named holder of PL-F must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-F suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-F",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-F"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-G",
+      "text": "Authorisation policy PL-G, Door Systems Authorisation, governs work on vehicle door mechanisms. A named holder of PL-G must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-G suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-G",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-G"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-H",
+      "text": "Authorisation policy PL-H, Low Voltage Authorisation, governs work on battery and auxiliary supplies. A named holder of PL-H must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 1 maintenance procedures. Withdrawal of PL-H suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-H",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-H"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-I",
+      "text": "Authorisation policy PL-I, Tunnel Environment Authorisation, governs work on tunnel ventilation and smoke control. A named holder of PL-I must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 1 maintenance procedures. Withdrawal of PL-I suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-I",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-I"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-J",
+      "text": "Authorisation policy PL-J, Fixed Plant Authorisation, governs work on escalators, lifts and platform lighting. A named holder of PL-J must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-J suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-J",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-J"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-K",
+      "text": "Authorisation policy PL-K, Night Possession Authorisation, governs any procedure performed inside an engineering possession. A named holder of PL-K must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-K suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-K",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-K"
+      },
+      "embedding": null
+    },
+    {
+      "id": "policy_PL-L",
+      "text": "Authorisation policy PL-L, Degraded Mode Authorisation, governs procedures carried out while service is running. A named holder of PL-L must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 3 maintenance procedures. Withdrawal of PL-L suspends every procedure it covers until a new holder is appointed.",
+      "metadata": {
+        "id": "policy_PL-L",
+        "type": "policy",
+        "corpus": "meridian-transit-v1",
+        "policy_code": "PL-L"
+      },
+      "embedding": null
+    },
+    {
+      "id": "role_traction_technician",
+      "text": "The night traction technician owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on nights.",
+      "metadata": {
+        "id": "role_traction_technician",
+        "type": "role",
+        "corpus": "meridian-transit-v1",
+        "role": "night traction technician"
+      },
+      "embedding": null
+    },
+    {
+      "id": "role_current_collection_fitter",
+      "text": "The current collection fitter owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.",
+      "metadata": {
+        "id": "role_current_collection_fitter",
+        "type": "role",
+        "corpus": "meridian-transit-v1",
+        "role": "current collection fitter"
+      },
+      "embedding": null
+    },
+    {
+      "id": "role_brake_specialist",
+      "text": "The brake systems specialist owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.",
+      "metadata": {
+        "id": "role_brake_specialist",
+        "type": "role",
+        "corpus": "meridian-transit-v1",
+        "role": "brake systems specialist"
+      },
+      "embedding": null
+    },
+    {
+      "id": "role_platform_systems_engineer",
+      "text": "The platform systems engineer owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.",
+      "metadata": {
+        "id": "role_platform_systems_engineer",
+        "type": "role",
+        "corpus": "meridian-transit-v1",
+        "role": "platform systems engineer"
+      },
+      "embedding": null
+    },
+    {
+      "id": "role_signalling_technician",
+      "text": "The signalling maintenance technician owns 4 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 6 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.",
+      "metadata": {
+        "id": "role_signalling_technician",
+        "type": "role",
+        "corpus": "meridian-transit-v1",
+        "role": "signalling maintenance technician"
+      },
+      "embedding": null
+    },
+    {
+      "id": "role_running_gear_inspector",
+      "text": "The running gear inspector owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.",
+      "metadata": {
+        "id": "role_running_gear_inspector",
+        "type": "role",
+        "corpus": "meridian-transit-v1",
+        "role": "running gear inspector"
+      },
+      "embedding": null
+    },
+    {
+      "id": "role_pneumatics_fitter",
+      "text": "The pneumatics fitter owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.",
+      "metadata": {
+        "id": "role_pneumatics_fitter",
+        "type": "role",
+        "corpus": "meridian-transit-v1",
+        "role": "pneumatics fitter"
+      },
+      "embedding": null
+    },
+    {
+      "id": "role_door_fitter",
+      "text": "The door systems fitter owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.",
+      "metadata": {
+        "id": "role_door_fitter",
+        "type": "role",
+        "corpus": "meridian-transit-v1",
+        "role": "door systems fitter"
+      },
+      "embedding": null
+    },
+    {
+      "id": "role_power_technician",
+      "text": "The auxiliary power technician owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.",
+      "metadata": {
+        "id": "role_power_technician",
+        "type": "role",
+        "corpus": "meridian-transit-v1",
+        "role": "auxiliary power technician"
+      },
+      "embedding": null
+    },
+    {
+      "id": "role_plant_engineer",
+      "text": "The fixed plant engineer owns 4 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 6 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.",
+      "metadata": {
+        "id": "role_plant_engineer",
+        "type": "role",
+        "corpus": "meridian-transit-v1",
+        "role": "fixed plant engineer"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_01",
+      "text": "Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_01",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Harbour Row",
+        "line": "Azure Line",
+        "equipment_code": "TX-440"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_02",
+      "text": "Service incident 2026/02 on 2026-02-07: trains were held at Kestrel Green on the Azure Line for 15 minutes after a HV-21 pantograph head suffered a carbon strip fracture. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_02",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Kestrel Green",
+        "line": "Azure Line",
+        "equipment_code": "HV-21"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_03",
+      "text": "Service incident 2026/03 on 2026-03-10: trains were held at Alder Vale on the Azure Line for 19 minutes after a BR-7 regenerative brake unit suffered a resistor grid overheat. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_03",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Alder Vale",
+        "line": "Azure Line",
+        "equipment_code": "BR-7"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_04",
+      "text": "Service incident 2026/04 on 2026-04-13: trains were held at Brickworks on the Azure Line for 23 minutes after a PD-90 platform screen door controller suffered a obstruction sensor drift. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_04",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Brickworks",
+        "line": "Azure Line",
+        "equipment_code": "PD-90"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_05",
+      "text": "Service incident 2026/05 on 2026-05-16: trains were held at Copper Lane on the Azure Line for 27 minutes after a SG-12 signal interlocking relay suffered a contact welding. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_05",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Copper Lane",
+        "line": "Azure Line",
+        "equipment_code": "SG-12"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_06",
+      "text": "Service incident 2026/06 on 2026-06-19: trains were held at Dunmore Park on the Azure Line for 31 minutes after a AX-3 axle bearing assembly suffered a thermal spike. 8 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_06",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Dunmore Park",
+        "line": "Azure Line",
+        "equipment_code": "AX-3"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_07",
+      "text": "Service incident 2026/07 on 2026-07-22: trains were held at Eastgate Quay on the Crimson Line for 35 minutes after a CP-55 compressor module suffered a pressure bleed-down. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_07",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Eastgate Quay",
+        "line": "Crimson Line",
+        "equipment_code": "CP-55"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_08",
+      "text": "Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_08",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Foundry Bridge",
+        "line": "Crimson Line",
+        "equipment_code": "DR-8"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_09",
+      "text": "Service incident 2026/09 on 2026-09-01: trains were held at Garnet Hill on the Crimson Line for 43 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 2 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_09",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Garnet Hill",
+        "line": "Crimson Line",
+        "equipment_code": "PS-19"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_10",
+      "text": "Service incident 2026/10 on 2026-10-04: trains were held at Hollow Mill on the Crimson Line for 47 minutes after a TC-6 track circuit transmitter suffered a frequency drift. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_10",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Hollow Mill",
+        "line": "Crimson Line",
+        "equipment_code": "TC-6"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_11",
+      "text": "Service incident 2026/11 on 2026-11-07: trains were held at Ironside on the Crimson Line for 51 minutes after a VE-31 tunnel ventilation fan suffered a blade imbalance. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_11",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Ironside",
+        "line": "Crimson Line",
+        "equipment_code": "VE-31"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_12",
+      "text": "Service incident 2026/12 on 2026-12-10: trains were held at Jubilee Fields on the Crimson Line for 55 minutes after a ES-14 escalator drive chain suffered a elongation wear. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_12",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Jubilee Fields",
+        "line": "Crimson Line",
+        "equipment_code": "ES-14"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_13",
+      "text": "Service incident 2026/13 on 2026-01-13: trains were held at Kingsmoor on the Jade Line for 59 minutes after a LT-77 lighting ballast suffered a flicker cascade. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_13",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Kingsmoor",
+        "line": "Jade Line",
+        "equipment_code": "LT-77"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_14",
+      "text": "Service incident 2026/14 on 2026-02-16: trains were held at Larkspur on the Jade Line for 10 minutes after a WS-5 wheel slide protection valve suffered a latched release. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_14",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Larkspur",
+        "line": "Jade Line",
+        "equipment_code": "WS-5"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_15",
+      "text": "Service incident 2026/15 on 2026-03-19: trains were held at Mallow Street on the Jade Line for 14 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 8 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_15",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Mallow Street",
+        "line": "Jade Line",
+        "equipment_code": "TX-440"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_16",
+      "text": "Service incident 2026/16 on 2026-04-22: trains were held at Netherby on the Jade Line for 18 minutes after a HV-21 pantograph head suffered a carbon strip fracture. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_16",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Netherby",
+        "line": "Jade Line",
+        "equipment_code": "HV-21"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_17",
+      "text": "Service incident 2026/17 on 2026-05-25: trains were held at Oakhurst on the Jade Line for 22 minutes after a BR-7 regenerative brake unit suffered a resistor grid overheat. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_17",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Oakhurst",
+        "line": "Jade Line",
+        "equipment_code": "BR-7"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_18",
+      "text": "Service incident 2026/18 on 2026-06-01: trains were held at Pennyford on the Jade Line for 26 minutes after a PD-90 platform screen door controller suffered a obstruction sensor drift. 2 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_18",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Pennyford",
+        "line": "Jade Line",
+        "equipment_code": "PD-90"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_19",
+      "text": "Service incident 2026/19 on 2026-07-04: trains were held at Quarry Side on the Amber Line for 30 minutes after a SG-12 signal interlocking relay suffered a contact welding. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_19",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Quarry Side",
+        "line": "Amber Line",
+        "equipment_code": "SG-12"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_20",
+      "text": "Service incident 2026/20 on 2026-08-07: trains were held at Redcliff on the Amber Line for 34 minutes after a AX-3 axle bearing assembly suffered a thermal spike. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_20",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Redcliff",
+        "line": "Amber Line",
+        "equipment_code": "AX-3"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_21",
+      "text": "Service incident 2026/21 on 2026-09-10: trains were held at Saltmarsh on the Amber Line for 38 minutes after a CP-55 compressor module suffered a pressure bleed-down. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_21",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Saltmarsh",
+        "line": "Amber Line",
+        "equipment_code": "CP-55"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_22",
+      "text": "Service incident 2026/22 on 2026-10-13: trains were held at Thistlebank on the Amber Line for 42 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_22",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Thistlebank",
+        "line": "Amber Line",
+        "equipment_code": "DR-8"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_23",
+      "text": "Service incident 2026/23 on 2026-11-16: trains were held at Underbank on the Amber Line for 46 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_23",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Underbank",
+        "line": "Amber Line",
+        "equipment_code": "PS-19"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_24",
+      "text": "Service incident 2026/24 on 2026-12-19: trains were held at Vantage Point on the Amber Line for 50 minutes after a TC-6 track circuit transmitter suffered a frequency drift. 8 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_24",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Vantage Point",
+        "line": "Amber Line",
+        "equipment_code": "TC-6"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_25",
+      "text": "Service incident 2026/25 on 2026-01-22: trains were held at Westmere on the Violet Line for 54 minutes after a VE-31 tunnel ventilation fan suffered a blade imbalance. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_25",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Westmere",
+        "line": "Violet Line",
+        "equipment_code": "VE-31"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_26",
+      "text": "Service incident 2026/26 on 2026-02-25: trains were held at Yarrow Cross on the Violet Line for 58 minutes after a ES-14 escalator drive chain suffered a elongation wear. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_26",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Yarrow Cross",
+        "line": "Violet Line",
+        "equipment_code": "ES-14"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_27",
+      "text": "Service incident 2026/27 on 2026-03-01: trains were held at Ashfen on the Violet Line for 9 minutes after a LT-77 lighting ballast suffered a flicker cascade. 2 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_27",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Ashfen",
+        "line": "Violet Line",
+        "equipment_code": "LT-77"
+      },
+      "embedding": null
+    },
+    {
+      "id": "incident_2026_28",
+      "text": "Service incident 2026/28 on 2026-04-04: trains were held at Beacon Rise on the Violet Line for 13 minutes after a WS-5 wheel slide protection valve suffered a latched release. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.",
+      "metadata": {
+        "id": "incident_2026_28",
+        "type": "incident",
+        "corpus": "meridian-transit-v1",
+        "station": "Beacon Rise",
+        "line": "Violet Line",
+        "equipment_code": "WS-5"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_01",
+      "text": "Fare and ticketing bulletin, quarter 1 of 2026, reference B001. The authority confirms that fare arrangements were reviewed by the customer committee, with 14 responses received and 4 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_01",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "fare"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_02",
+      "text": "Fare and ticketing bulletin, quarter 2 of 2026, reference B002. The authority confirms that fare arrangements were reviewed by the customer committee, with 16 responses received and 5 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_02",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "fare"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_03",
+      "text": "Fare and ticketing bulletin, quarter 3 of 2026, reference B003. The authority confirms that fare arrangements were reviewed by the customer committee, with 18 responses received and 6 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_03",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "fare"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_04",
+      "text": "Accessibility works notice, quarter 1 of 2026, reference B004. The authority confirms that accessibility arrangements were reviewed by the customer committee, with 20 responses received and 7 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_04",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "accessibility"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_05",
+      "text": "Accessibility works notice, quarter 2 of 2026, reference B005. The authority confirms that accessibility arrangements were reviewed by the customer committee, with 22 responses received and 8 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_05",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "accessibility"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_06",
+      "text": "Accessibility works notice, quarter 3 of 2026, reference B006. The authority confirms that accessibility arrangements were reviewed by the customer committee, with 24 responses received and 3 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_06",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "accessibility"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_07",
+      "text": "Lost property quarterly summary, quarter 1 of 2026, reference B007. The authority confirms that lost property arrangements were reviewed by the customer committee, with 26 responses received and 4 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_07",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "lost_property"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_08",
+      "text": "Lost property quarterly summary, quarter 2 of 2026, reference B008. The authority confirms that lost property arrangements were reviewed by the customer committee, with 28 responses received and 5 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_08",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "lost_property"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_09",
+      "text": "Lost property quarterly summary, quarter 3 of 2026, reference B009. The authority confirms that lost property arrangements were reviewed by the customer committee, with 30 responses received and 6 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_09",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "lost_property"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_10",
+      "text": "Staff newsletter extract, quarter 1 of 2026, reference B010. The authority confirms that staff news arrangements were reviewed by the customer committee, with 32 responses received and 7 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_10",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "staff_news"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_11",
+      "text": "Staff newsletter extract, quarter 2 of 2026, reference B011. The authority confirms that staff news arrangements were reviewed by the customer committee, with 34 responses received and 8 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_11",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "staff_news"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_12",
+      "text": "Staff newsletter extract, quarter 3 of 2026, reference B012. The authority confirms that staff news arrangements were reviewed by the customer committee, with 36 responses received and 3 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_12",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "staff_news"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_13",
+      "text": "Timetable consultation summary, quarter 1 of 2026, reference B013. The authority confirms that timetable arrangements were reviewed by the customer committee, with 38 responses received and 4 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_13",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "timetable"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_14",
+      "text": "Timetable consultation summary, quarter 2 of 2026, reference B014. The authority confirms that timetable arrangements were reviewed by the customer committee, with 40 responses received and 5 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_14",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "timetable"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_15",
+      "text": "Timetable consultation summary, quarter 3 of 2026, reference B015. The authority confirms that timetable arrangements were reviewed by the customer committee, with 42 responses received and 6 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_15",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "timetable"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_16",
+      "text": "Station retail licensing update, quarter 1 of 2026, reference B016. The authority confirms that retail arrangements were reviewed by the customer committee, with 44 responses received and 7 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_16",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "retail"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_17",
+      "text": "Station retail licensing update, quarter 2 of 2026, reference B017. The authority confirms that retail arrangements were reviewed by the customer committee, with 46 responses received and 8 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_17",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "retail"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_18",
+      "text": "Station retail licensing update, quarter 3 of 2026, reference B018. The authority confirms that retail arrangements were reviewed by the customer committee, with 48 responses received and 3 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_18",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "retail"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_19",
+      "text": "Cycle parking expansion notice, quarter 1 of 2026, reference B019. The authority confirms that cycling arrangements were reviewed by the customer committee, with 50 responses received and 4 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_19",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "cycling"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_20",
+      "text": "Cycle parking expansion notice, quarter 2 of 2026, reference B020. The authority confirms that cycling arrangements were reviewed by the customer committee, with 52 responses received and 5 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_20",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "cycling"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_21",
+      "text": "Cycle parking expansion notice, quarter 3 of 2026, reference B021. The authority confirms that cycling arrangements were reviewed by the customer committee, with 54 responses received and 6 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_21",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "cycling"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_22",
+      "text": "Depot catering arrangements, quarter 1 of 2026, reference B022. The authority confirms that catering arrangements were reviewed by the customer committee, with 56 responses received and 7 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_22",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "catering"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_23",
+      "text": "Depot catering arrangements, quarter 2 of 2026, reference B023. The authority confirms that catering arrangements were reviewed by the customer committee, with 58 responses received and 8 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_23",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "catering"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_24",
+      "text": "Depot catering arrangements, quarter 3 of 2026, reference B024. The authority confirms that catering arrangements were reviewed by the customer committee, with 60 responses received and 3 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_24",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "catering"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_25",
+      "text": "Uniform and presentation standard, quarter 1 of 2026, reference B025. The authority confirms that uniform arrangements were reviewed by the customer committee, with 62 responses received and 4 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_25",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "uniform"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_26",
+      "text": "Uniform and presentation standard, quarter 2 of 2026, reference B026. The authority confirms that uniform arrangements were reviewed by the customer committee, with 64 responses received and 5 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_26",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "uniform"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_27",
+      "text": "Uniform and presentation standard, quarter 3 of 2026, reference B027. The authority confirms that uniform arrangements were reviewed by the customer committee, with 66 responses received and 6 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_27",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "uniform"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_28",
+      "text": "Heritage archive acquisition note, quarter 1 of 2026, reference B028. The authority confirms that archive arrangements were reviewed by the customer committee, with 68 responses received and 7 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_28",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "archive"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_29",
+      "text": "Heritage archive acquisition note, quarter 2 of 2026, reference B029. The authority confirms that archive arrangements were reviewed by the customer committee, with 70 responses received and 8 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_29",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "archive"
+      },
+      "embedding": null
+    },
+    {
+      "id": "bulletin_30",
+      "text": "Heritage archive acquisition note, quarter 3 of 2026, reference B030. The authority confirms that archive arrangements were reviewed by the customer committee, with 72 responses received and 3 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.",
+      "metadata": {
+        "id": "bulletin_30",
+        "type": "bulletin",
+        "corpus": "meridian-transit-v1",
+        "theme": "archive"
+      },
+      "embedding": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0001",
+      "source": "line_azure",
+      "target": "station_harbour_row",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0002",
+      "source": "station_harbour_row",
+      "target": "line_azure",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0003",
+      "source": "station_harbour_row",
+      "target": "station_kestrel_green",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0004",
+      "source": "station_kestrel_green",
+      "target": "station_harbour_row",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0005",
+      "source": "line_azure",
+      "target": "station_kestrel_green",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0006",
+      "source": "station_kestrel_green",
+      "target": "line_azure",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0007",
+      "source": "station_kestrel_green",
+      "target": "station_alder_vale",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0008",
+      "source": "station_alder_vale",
+      "target": "station_kestrel_green",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0009",
+      "source": "line_azure",
+      "target": "station_alder_vale",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0010",
+      "source": "station_alder_vale",
+      "target": "line_azure",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0011",
+      "source": "station_alder_vale",
+      "target": "station_brickworks",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0012",
+      "source": "station_brickworks",
+      "target": "station_alder_vale",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0013",
+      "source": "line_azure",
+      "target": "station_brickworks",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0014",
+      "source": "station_brickworks",
+      "target": "line_azure",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0015",
+      "source": "station_brickworks",
+      "target": "station_copper_lane",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0016",
+      "source": "station_copper_lane",
+      "target": "station_brickworks",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0017",
+      "source": "line_azure",
+      "target": "station_copper_lane",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0018",
+      "source": "station_copper_lane",
+      "target": "line_azure",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0019",
+      "source": "station_copper_lane",
+      "target": "station_dunmore_park",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0020",
+      "source": "station_dunmore_park",
+      "target": "station_copper_lane",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0021",
+      "source": "line_azure",
+      "target": "station_dunmore_park",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0022",
+      "source": "station_dunmore_park",
+      "target": "line_azure",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0023",
+      "source": "line_crimson",
+      "target": "station_eastgate_quay",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0024",
+      "source": "station_eastgate_quay",
+      "target": "line_crimson",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0025",
+      "source": "station_eastgate_quay",
+      "target": "station_foundry_bridge",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0026",
+      "source": "station_foundry_bridge",
+      "target": "station_eastgate_quay",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0027",
+      "source": "line_crimson",
+      "target": "station_foundry_bridge",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0028",
+      "source": "station_foundry_bridge",
+      "target": "line_crimson",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0029",
+      "source": "station_foundry_bridge",
+      "target": "station_garnet_hill",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0030",
+      "source": "station_garnet_hill",
+      "target": "station_foundry_bridge",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0031",
+      "source": "line_crimson",
+      "target": "station_garnet_hill",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0032",
+      "source": "station_garnet_hill",
+      "target": "line_crimson",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0033",
+      "source": "station_garnet_hill",
+      "target": "station_hollow_mill",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0034",
+      "source": "station_hollow_mill",
+      "target": "station_garnet_hill",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0035",
+      "source": "line_crimson",
+      "target": "station_hollow_mill",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0036",
+      "source": "station_hollow_mill",
+      "target": "line_crimson",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0037",
+      "source": "station_hollow_mill",
+      "target": "station_ironside",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0038",
+      "source": "station_ironside",
+      "target": "station_hollow_mill",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0039",
+      "source": "line_crimson",
+      "target": "station_ironside",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0040",
+      "source": "station_ironside",
+      "target": "line_crimson",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0041",
+      "source": "station_ironside",
+      "target": "station_jubilee_fields",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0042",
+      "source": "station_jubilee_fields",
+      "target": "station_ironside",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0043",
+      "source": "line_crimson",
+      "target": "station_jubilee_fields",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0044",
+      "source": "station_jubilee_fields",
+      "target": "line_crimson",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0045",
+      "source": "line_jade",
+      "target": "station_kingsmoor",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0046",
+      "source": "station_kingsmoor",
+      "target": "line_jade",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0047",
+      "source": "station_kingsmoor",
+      "target": "station_larkspur",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0048",
+      "source": "station_larkspur",
+      "target": "station_kingsmoor",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0049",
+      "source": "line_jade",
+      "target": "station_larkspur",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0050",
+      "source": "station_larkspur",
+      "target": "line_jade",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0051",
+      "source": "station_larkspur",
+      "target": "station_mallow_street",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0052",
+      "source": "station_mallow_street",
+      "target": "station_larkspur",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0053",
+      "source": "line_jade",
+      "target": "station_mallow_street",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0054",
+      "source": "station_mallow_street",
+      "target": "line_jade",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0055",
+      "source": "station_mallow_street",
+      "target": "station_netherby",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0056",
+      "source": "station_netherby",
+      "target": "station_mallow_street",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0057",
+      "source": "line_jade",
+      "target": "station_netherby",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0058",
+      "source": "station_netherby",
+      "target": "line_jade",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0059",
+      "source": "station_netherby",
+      "target": "station_oakhurst",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0060",
+      "source": "station_oakhurst",
+      "target": "station_netherby",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0061",
+      "source": "line_jade",
+      "target": "station_oakhurst",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0062",
+      "source": "station_oakhurst",
+      "target": "line_jade",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0063",
+      "source": "station_oakhurst",
+      "target": "station_pennyford",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0064",
+      "source": "station_pennyford",
+      "target": "station_oakhurst",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0065",
+      "source": "line_jade",
+      "target": "station_pennyford",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0066",
+      "source": "station_pennyford",
+      "target": "line_jade",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0067",
+      "source": "line_amber",
+      "target": "station_quarry_side",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0068",
+      "source": "station_quarry_side",
+      "target": "line_amber",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0069",
+      "source": "station_quarry_side",
+      "target": "station_redcliff",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0070",
+      "source": "station_redcliff",
+      "target": "station_quarry_side",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0071",
+      "source": "line_amber",
+      "target": "station_redcliff",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0072",
+      "source": "station_redcliff",
+      "target": "line_amber",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0073",
+      "source": "station_redcliff",
+      "target": "station_saltmarsh",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0074",
+      "source": "station_saltmarsh",
+      "target": "station_redcliff",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0075",
+      "source": "line_amber",
+      "target": "station_saltmarsh",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0076",
+      "source": "station_saltmarsh",
+      "target": "line_amber",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0077",
+      "source": "station_saltmarsh",
+      "target": "station_thistlebank",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0078",
+      "source": "station_thistlebank",
+      "target": "station_saltmarsh",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0079",
+      "source": "line_amber",
+      "target": "station_thistlebank",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0080",
+      "source": "station_thistlebank",
+      "target": "line_amber",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0081",
+      "source": "station_thistlebank",
+      "target": "station_underbank",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0082",
+      "source": "station_underbank",
+      "target": "station_thistlebank",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0083",
+      "source": "line_amber",
+      "target": "station_underbank",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0084",
+      "source": "station_underbank",
+      "target": "line_amber",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0085",
+      "source": "station_underbank",
+      "target": "station_vantage_point",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0086",
+      "source": "station_vantage_point",
+      "target": "station_underbank",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0087",
+      "source": "line_amber",
+      "target": "station_vantage_point",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0088",
+      "source": "station_vantage_point",
+      "target": "line_amber",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0089",
+      "source": "line_violet",
+      "target": "station_westmere",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0090",
+      "source": "station_westmere",
+      "target": "line_violet",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0091",
+      "source": "station_westmere",
+      "target": "station_yarrow_cross",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0092",
+      "source": "station_yarrow_cross",
+      "target": "station_westmere",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0093",
+      "source": "line_violet",
+      "target": "station_yarrow_cross",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0094",
+      "source": "station_yarrow_cross",
+      "target": "line_violet",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0095",
+      "source": "station_yarrow_cross",
+      "target": "station_ashfen",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0096",
+      "source": "station_ashfen",
+      "target": "station_yarrow_cross",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0097",
+      "source": "line_violet",
+      "target": "station_ashfen",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0098",
+      "source": "station_ashfen",
+      "target": "line_violet",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0099",
+      "source": "station_ashfen",
+      "target": "station_beacon_rise",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0100",
+      "source": "station_beacon_rise",
+      "target": "station_ashfen",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0101",
+      "source": "line_violet",
+      "target": "station_beacon_rise",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0102",
+      "source": "station_beacon_rise",
+      "target": "line_violet",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0103",
+      "source": "station_beacon_rise",
+      "target": "station_carrow_end",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0104",
+      "source": "station_carrow_end",
+      "target": "station_beacon_rise",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0105",
+      "source": "line_violet",
+      "target": "station_carrow_end",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0106",
+      "source": "station_carrow_end",
+      "target": "line_violet",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0107",
+      "source": "station_carrow_end",
+      "target": "station_dovecote",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0108",
+      "source": "station_dovecote",
+      "target": "station_carrow_end",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0109",
+      "source": "line_violet",
+      "target": "station_dovecote",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0110",
+      "source": "station_dovecote",
+      "target": "line_violet",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0111",
+      "source": "line_slate",
+      "target": "station_elmsworth",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0112",
+      "source": "station_elmsworth",
+      "target": "line_slate",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0113",
+      "source": "station_elmsworth",
+      "target": "station_fallowfield",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0114",
+      "source": "station_fallowfield",
+      "target": "station_elmsworth",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0115",
+      "source": "line_slate",
+      "target": "station_fallowfield",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0116",
+      "source": "station_fallowfield",
+      "target": "line_slate",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0117",
+      "source": "station_fallowfield",
+      "target": "station_glasshouse",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0118",
+      "source": "station_glasshouse",
+      "target": "station_fallowfield",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0119",
+      "source": "line_slate",
+      "target": "station_glasshouse",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0120",
+      "source": "station_glasshouse",
+      "target": "line_slate",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0121",
+      "source": "station_glasshouse",
+      "target": "station_hartsmere",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0122",
+      "source": "station_hartsmere",
+      "target": "station_glasshouse",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0123",
+      "source": "line_slate",
+      "target": "station_hartsmere",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0124",
+      "source": "station_hartsmere",
+      "target": "line_slate",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0125",
+      "source": "station_hartsmere",
+      "target": "station_ivory_dock",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0126",
+      "source": "station_ivory_dock",
+      "target": "station_hartsmere",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0127",
+      "source": "line_slate",
+      "target": "station_ivory_dock",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0128",
+      "source": "station_ivory_dock",
+      "target": "line_slate",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0129",
+      "source": "station_ivory_dock",
+      "target": "station_juniper_row",
+      "type": "next_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0130",
+      "source": "station_juniper_row",
+      "target": "station_ivory_dock",
+      "type": "previous_station",
+      "weight": 1.0
+    },
+    {
+      "id": "e0131",
+      "source": "line_slate",
+      "target": "station_juniper_row",
+      "type": "serves",
+      "weight": 1.0
+    },
+    {
+      "id": "e0132",
+      "source": "station_juniper_row",
+      "target": "line_slate",
+      "type": "served_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0133",
+      "source": "incident_2026_01",
+      "target": "station_harbour_row",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0134",
+      "source": "incident_2026_01",
+      "target": "line_azure",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0135",
+      "source": "incident_2026_01",
+      "target": "equipment_TX-440",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0136",
+      "source": "station_harbour_row",
+      "target": "incident_2026_01",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0137",
+      "source": "incident_2026_02",
+      "target": "station_kestrel_green",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0138",
+      "source": "incident_2026_02",
+      "target": "line_azure",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0139",
+      "source": "incident_2026_02",
+      "target": "equipment_HV-21",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0140",
+      "source": "station_kestrel_green",
+      "target": "incident_2026_02",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0141",
+      "source": "incident_2026_03",
+      "target": "station_alder_vale",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0142",
+      "source": "incident_2026_03",
+      "target": "line_azure",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0143",
+      "source": "incident_2026_03",
+      "target": "equipment_BR-7",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0144",
+      "source": "station_alder_vale",
+      "target": "incident_2026_03",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0145",
+      "source": "incident_2026_04",
+      "target": "station_brickworks",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0146",
+      "source": "incident_2026_04",
+      "target": "line_azure",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0147",
+      "source": "incident_2026_04",
+      "target": "equipment_PD-90",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0148",
+      "source": "station_brickworks",
+      "target": "incident_2026_04",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0149",
+      "source": "incident_2026_05",
+      "target": "station_copper_lane",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0150",
+      "source": "incident_2026_05",
+      "target": "line_azure",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0151",
+      "source": "incident_2026_05",
+      "target": "equipment_SG-12",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0152",
+      "source": "station_copper_lane",
+      "target": "incident_2026_05",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0153",
+      "source": "incident_2026_06",
+      "target": "station_dunmore_park",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0154",
+      "source": "incident_2026_06",
+      "target": "line_azure",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0155",
+      "source": "incident_2026_06",
+      "target": "equipment_AX-3",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0156",
+      "source": "station_dunmore_park",
+      "target": "incident_2026_06",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0157",
+      "source": "incident_2026_07",
+      "target": "station_eastgate_quay",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0158",
+      "source": "incident_2026_07",
+      "target": "line_crimson",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0159",
+      "source": "incident_2026_07",
+      "target": "equipment_CP-55",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0160",
+      "source": "station_eastgate_quay",
+      "target": "incident_2026_07",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0161",
+      "source": "incident_2026_08",
+      "target": "station_foundry_bridge",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0162",
+      "source": "incident_2026_08",
+      "target": "line_crimson",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0163",
+      "source": "incident_2026_08",
+      "target": "equipment_DR-8",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0164",
+      "source": "station_foundry_bridge",
+      "target": "incident_2026_08",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0165",
+      "source": "incident_2026_09",
+      "target": "station_garnet_hill",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0166",
+      "source": "incident_2026_09",
+      "target": "line_crimson",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0167",
+      "source": "incident_2026_09",
+      "target": "equipment_PS-19",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0168",
+      "source": "station_garnet_hill",
+      "target": "incident_2026_09",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0169",
+      "source": "incident_2026_10",
+      "target": "station_hollow_mill",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0170",
+      "source": "incident_2026_10",
+      "target": "line_crimson",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0171",
+      "source": "incident_2026_10",
+      "target": "equipment_TC-6",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0172",
+      "source": "station_hollow_mill",
+      "target": "incident_2026_10",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0173",
+      "source": "incident_2026_11",
+      "target": "station_ironside",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0174",
+      "source": "incident_2026_11",
+      "target": "line_crimson",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0175",
+      "source": "incident_2026_11",
+      "target": "equipment_VE-31",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0176",
+      "source": "station_ironside",
+      "target": "incident_2026_11",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0177",
+      "source": "incident_2026_12",
+      "target": "station_jubilee_fields",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0178",
+      "source": "incident_2026_12",
+      "target": "line_crimson",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0179",
+      "source": "incident_2026_12",
+      "target": "equipment_ES-14",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0180",
+      "source": "station_jubilee_fields",
+      "target": "incident_2026_12",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0181",
+      "source": "incident_2026_13",
+      "target": "station_kingsmoor",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0182",
+      "source": "incident_2026_13",
+      "target": "line_jade",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0183",
+      "source": "incident_2026_13",
+      "target": "equipment_LT-77",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0184",
+      "source": "station_kingsmoor",
+      "target": "incident_2026_13",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0185",
+      "source": "incident_2026_14",
+      "target": "station_larkspur",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0186",
+      "source": "incident_2026_14",
+      "target": "line_jade",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0187",
+      "source": "incident_2026_14",
+      "target": "equipment_WS-5",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0188",
+      "source": "station_larkspur",
+      "target": "incident_2026_14",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0189",
+      "source": "incident_2026_15",
+      "target": "station_mallow_street",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0190",
+      "source": "incident_2026_15",
+      "target": "line_jade",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0191",
+      "source": "incident_2026_15",
+      "target": "equipment_TX-440",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0192",
+      "source": "station_mallow_street",
+      "target": "incident_2026_15",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0193",
+      "source": "incident_2026_16",
+      "target": "station_netherby",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0194",
+      "source": "incident_2026_16",
+      "target": "line_jade",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0195",
+      "source": "incident_2026_16",
+      "target": "equipment_HV-21",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0196",
+      "source": "station_netherby",
+      "target": "incident_2026_16",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0197",
+      "source": "incident_2026_17",
+      "target": "station_oakhurst",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0198",
+      "source": "incident_2026_17",
+      "target": "line_jade",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0199",
+      "source": "incident_2026_17",
+      "target": "equipment_BR-7",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0200",
+      "source": "station_oakhurst",
+      "target": "incident_2026_17",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0201",
+      "source": "incident_2026_18",
+      "target": "station_pennyford",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0202",
+      "source": "incident_2026_18",
+      "target": "line_jade",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0203",
+      "source": "incident_2026_18",
+      "target": "equipment_PD-90",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0204",
+      "source": "station_pennyford",
+      "target": "incident_2026_18",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0205",
+      "source": "incident_2026_19",
+      "target": "station_quarry_side",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0206",
+      "source": "incident_2026_19",
+      "target": "line_amber",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0207",
+      "source": "incident_2026_19",
+      "target": "equipment_SG-12",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0208",
+      "source": "station_quarry_side",
+      "target": "incident_2026_19",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0209",
+      "source": "incident_2026_20",
+      "target": "station_redcliff",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0210",
+      "source": "incident_2026_20",
+      "target": "line_amber",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0211",
+      "source": "incident_2026_20",
+      "target": "equipment_AX-3",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0212",
+      "source": "station_redcliff",
+      "target": "incident_2026_20",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0213",
+      "source": "incident_2026_21",
+      "target": "station_saltmarsh",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0214",
+      "source": "incident_2026_21",
+      "target": "line_amber",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0215",
+      "source": "incident_2026_21",
+      "target": "equipment_CP-55",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0216",
+      "source": "station_saltmarsh",
+      "target": "incident_2026_21",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0217",
+      "source": "incident_2026_22",
+      "target": "station_thistlebank",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0218",
+      "source": "incident_2026_22",
+      "target": "line_amber",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0219",
+      "source": "incident_2026_22",
+      "target": "equipment_DR-8",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0220",
+      "source": "station_thistlebank",
+      "target": "incident_2026_22",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0221",
+      "source": "incident_2026_23",
+      "target": "station_underbank",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0222",
+      "source": "incident_2026_23",
+      "target": "line_amber",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0223",
+      "source": "incident_2026_23",
+      "target": "equipment_PS-19",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0224",
+      "source": "station_underbank",
+      "target": "incident_2026_23",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0225",
+      "source": "incident_2026_24",
+      "target": "station_vantage_point",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0226",
+      "source": "incident_2026_24",
+      "target": "line_amber",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0227",
+      "source": "incident_2026_24",
+      "target": "equipment_TC-6",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0228",
+      "source": "station_vantage_point",
+      "target": "incident_2026_24",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0229",
+      "source": "incident_2026_25",
+      "target": "station_westmere",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0230",
+      "source": "incident_2026_25",
+      "target": "line_violet",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0231",
+      "source": "incident_2026_25",
+      "target": "equipment_VE-31",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0232",
+      "source": "station_westmere",
+      "target": "incident_2026_25",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0233",
+      "source": "incident_2026_26",
+      "target": "station_yarrow_cross",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0234",
+      "source": "incident_2026_26",
+      "target": "line_violet",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0235",
+      "source": "incident_2026_26",
+      "target": "equipment_ES-14",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0236",
+      "source": "station_yarrow_cross",
+      "target": "incident_2026_26",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0237",
+      "source": "incident_2026_27",
+      "target": "station_ashfen",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0238",
+      "source": "incident_2026_27",
+      "target": "line_violet",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0239",
+      "source": "incident_2026_27",
+      "target": "equipment_LT-77",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0240",
+      "source": "station_ashfen",
+      "target": "incident_2026_27",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0241",
+      "source": "incident_2026_28",
+      "target": "station_beacon_rise",
+      "type": "occurred_at",
+      "weight": 1.0
+    },
+    {
+      "id": "e0242",
+      "source": "incident_2026_28",
+      "target": "line_violet",
+      "type": "affected_line",
+      "weight": 1.0
+    },
+    {
+      "id": "e0243",
+      "source": "incident_2026_28",
+      "target": "equipment_WS-5",
+      "type": "caused_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0244",
+      "source": "station_beacon_rise",
+      "target": "incident_2026_28",
+      "type": "site_of_incident",
+      "weight": 1.0
+    },
+    {
+      "id": "e0245",
+      "source": "equipment_TX-440",
+      "target": "procedure_MP-101",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0246",
+      "source": "procedure_MP-101",
+      "target": "equipment_TX-440",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0247",
+      "source": "equipment_TX-440",
+      "target": "procedure_MP-102",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0248",
+      "source": "procedure_MP-102",
+      "target": "equipment_TX-440",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0249",
+      "source": "equipment_HV-21",
+      "target": "procedure_MP-103",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0250",
+      "source": "procedure_MP-103",
+      "target": "equipment_HV-21",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0251",
+      "source": "equipment_HV-21",
+      "target": "procedure_MP-104",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0252",
+      "source": "procedure_MP-104",
+      "target": "equipment_HV-21",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0253",
+      "source": "equipment_BR-7",
+      "target": "procedure_MP-105",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0254",
+      "source": "procedure_MP-105",
+      "target": "equipment_BR-7",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0255",
+      "source": "equipment_BR-7",
+      "target": "procedure_MP-106",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0256",
+      "source": "procedure_MP-106",
+      "target": "equipment_BR-7",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0257",
+      "source": "equipment_PD-90",
+      "target": "procedure_MP-107",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0258",
+      "source": "procedure_MP-107",
+      "target": "equipment_PD-90",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0259",
+      "source": "equipment_PD-90",
+      "target": "procedure_MP-108",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0260",
+      "source": "procedure_MP-108",
+      "target": "equipment_PD-90",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0261",
+      "source": "equipment_SG-12",
+      "target": "procedure_MP-109",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0262",
+      "source": "procedure_MP-109",
+      "target": "equipment_SG-12",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0263",
+      "source": "equipment_SG-12",
+      "target": "procedure_MP-110",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0264",
+      "source": "procedure_MP-110",
+      "target": "equipment_SG-12",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0265",
+      "source": "equipment_AX-3",
+      "target": "procedure_MP-111",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0266",
+      "source": "procedure_MP-111",
+      "target": "equipment_AX-3",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0267",
+      "source": "equipment_AX-3",
+      "target": "procedure_MP-112",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0268",
+      "source": "procedure_MP-112",
+      "target": "equipment_AX-3",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0269",
+      "source": "equipment_CP-55",
+      "target": "procedure_MP-113",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0270",
+      "source": "procedure_MP-113",
+      "target": "equipment_CP-55",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0271",
+      "source": "equipment_CP-55",
+      "target": "procedure_MP-114",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0272",
+      "source": "procedure_MP-114",
+      "target": "equipment_CP-55",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0273",
+      "source": "equipment_DR-8",
+      "target": "procedure_MP-115",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0274",
+      "source": "procedure_MP-115",
+      "target": "equipment_DR-8",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0275",
+      "source": "equipment_DR-8",
+      "target": "procedure_MP-116",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0276",
+      "source": "procedure_MP-116",
+      "target": "equipment_DR-8",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0277",
+      "source": "equipment_PS-19",
+      "target": "procedure_MP-117",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0278",
+      "source": "procedure_MP-117",
+      "target": "equipment_PS-19",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0279",
+      "source": "equipment_TC-6",
+      "target": "procedure_MP-118",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0280",
+      "source": "procedure_MP-118",
+      "target": "equipment_TC-6",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0281",
+      "source": "equipment_TC-6",
+      "target": "procedure_MP-119",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0282",
+      "source": "procedure_MP-119",
+      "target": "equipment_TC-6",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0283",
+      "source": "equipment_VE-31",
+      "target": "procedure_MP-120",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0284",
+      "source": "procedure_MP-120",
+      "target": "equipment_VE-31",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0285",
+      "source": "equipment_ES-14",
+      "target": "procedure_MP-121",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0286",
+      "source": "procedure_MP-121",
+      "target": "equipment_ES-14",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0287",
+      "source": "equipment_LT-77",
+      "target": "procedure_MP-122",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0288",
+      "source": "procedure_MP-122",
+      "target": "equipment_LT-77",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0289",
+      "source": "equipment_WS-5",
+      "target": "procedure_MP-123",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0290",
+      "source": "procedure_MP-123",
+      "target": "equipment_WS-5",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0291",
+      "source": "equipment_WS-5",
+      "target": "procedure_MP-124",
+      "type": "maintained_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0292",
+      "source": "procedure_MP-124",
+      "target": "equipment_WS-5",
+      "type": "maintains",
+      "weight": 1.0
+    },
+    {
+      "id": "e0293",
+      "source": "procedure_MP-101",
+      "target": "policy_PL-A",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0294",
+      "source": "policy_PL-A",
+      "target": "procedure_MP-101",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0295",
+      "source": "procedure_MP-101",
+      "target": "role_traction_technician",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0296",
+      "source": "role_traction_technician",
+      "target": "procedure_MP-101",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0297",
+      "source": "procedure_MP-102",
+      "target": "policy_PL-A",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0298",
+      "source": "policy_PL-A",
+      "target": "procedure_MP-102",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0299",
+      "source": "procedure_MP-102",
+      "target": "role_traction_technician",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0300",
+      "source": "role_traction_technician",
+      "target": "procedure_MP-102",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0301",
+      "source": "procedure_MP-102",
+      "target": "procedure_MP-101",
+      "type": "supersedes",
+      "weight": 1.0
+    },
+    {
+      "id": "e0302",
+      "source": "procedure_MP-101",
+      "target": "procedure_MP-102",
+      "type": "superseded_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0303",
+      "source": "procedure_MP-103",
+      "target": "policy_PL-A",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0304",
+      "source": "policy_PL-A",
+      "target": "procedure_MP-103",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0305",
+      "source": "procedure_MP-103",
+      "target": "role_current_collection_fitter",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0306",
+      "source": "role_current_collection_fitter",
+      "target": "procedure_MP-103",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0307",
+      "source": "procedure_MP-104",
+      "target": "policy_PL-A",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0308",
+      "source": "policy_PL-A",
+      "target": "procedure_MP-104",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0309",
+      "source": "procedure_MP-104",
+      "target": "role_current_collection_fitter",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0310",
+      "source": "role_current_collection_fitter",
+      "target": "procedure_MP-104",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0311",
+      "source": "procedure_MP-105",
+      "target": "policy_PL-B",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0312",
+      "source": "policy_PL-B",
+      "target": "procedure_MP-105",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0313",
+      "source": "procedure_MP-105",
+      "target": "role_brake_specialist",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0314",
+      "source": "role_brake_specialist",
+      "target": "procedure_MP-105",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0315",
+      "source": "procedure_MP-106",
+      "target": "policy_PL-B",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0316",
+      "source": "policy_PL-B",
+      "target": "procedure_MP-106",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0317",
+      "source": "procedure_MP-106",
+      "target": "role_brake_specialist",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0318",
+      "source": "role_brake_specialist",
+      "target": "procedure_MP-106",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0319",
+      "source": "procedure_MP-106",
+      "target": "procedure_MP-105",
+      "type": "supersedes",
+      "weight": 1.0
+    },
+    {
+      "id": "e0320",
+      "source": "procedure_MP-105",
+      "target": "procedure_MP-106",
+      "type": "superseded_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0321",
+      "source": "procedure_MP-107",
+      "target": "policy_PL-C",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0322",
+      "source": "policy_PL-C",
+      "target": "procedure_MP-107",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0323",
+      "source": "procedure_MP-107",
+      "target": "policy_PL-L",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0324",
+      "source": "policy_PL-L",
+      "target": "procedure_MP-107",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0325",
+      "source": "procedure_MP-107",
+      "target": "role_platform_systems_engineer",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0326",
+      "source": "role_platform_systems_engineer",
+      "target": "procedure_MP-107",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0327",
+      "source": "procedure_MP-108",
+      "target": "policy_PL-C",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0328",
+      "source": "policy_PL-C",
+      "target": "procedure_MP-108",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0329",
+      "source": "procedure_MP-108",
+      "target": "role_platform_systems_engineer",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0330",
+      "source": "role_platform_systems_engineer",
+      "target": "procedure_MP-108",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0331",
+      "source": "procedure_MP-109",
+      "target": "policy_PL-D",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0332",
+      "source": "policy_PL-D",
+      "target": "procedure_MP-109",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0333",
+      "source": "procedure_MP-109",
+      "target": "policy_PL-K",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0334",
+      "source": "policy_PL-K",
+      "target": "procedure_MP-109",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0335",
+      "source": "procedure_MP-109",
+      "target": "role_signalling_technician",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0336",
+      "source": "role_signalling_technician",
+      "target": "procedure_MP-109",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0337",
+      "source": "procedure_MP-110",
+      "target": "policy_PL-D",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0338",
+      "source": "policy_PL-D",
+      "target": "procedure_MP-110",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0339",
+      "source": "procedure_MP-110",
+      "target": "role_signalling_technician",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0340",
+      "source": "role_signalling_technician",
+      "target": "procedure_MP-110",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0341",
+      "source": "procedure_MP-111",
+      "target": "policy_PL-E",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0342",
+      "source": "policy_PL-E",
+      "target": "procedure_MP-111",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0343",
+      "source": "procedure_MP-111",
+      "target": "role_running_gear_inspector",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0344",
+      "source": "role_running_gear_inspector",
+      "target": "procedure_MP-111",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0345",
+      "source": "procedure_MP-112",
+      "target": "policy_PL-E",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0346",
+      "source": "policy_PL-E",
+      "target": "procedure_MP-112",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0347",
+      "source": "procedure_MP-112",
+      "target": "role_running_gear_inspector",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0348",
+      "source": "role_running_gear_inspector",
+      "target": "procedure_MP-112",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0349",
+      "source": "procedure_MP-112",
+      "target": "procedure_MP-111",
+      "type": "supersedes",
+      "weight": 1.0
+    },
+    {
+      "id": "e0350",
+      "source": "procedure_MP-111",
+      "target": "procedure_MP-112",
+      "type": "superseded_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0351",
+      "source": "procedure_MP-113",
+      "target": "policy_PL-F",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0352",
+      "source": "policy_PL-F",
+      "target": "procedure_MP-113",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0353",
+      "source": "procedure_MP-113",
+      "target": "role_pneumatics_fitter",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0354",
+      "source": "role_pneumatics_fitter",
+      "target": "procedure_MP-113",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0355",
+      "source": "procedure_MP-114",
+      "target": "policy_PL-F",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0356",
+      "source": "policy_PL-F",
+      "target": "procedure_MP-114",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0357",
+      "source": "procedure_MP-114",
+      "target": "policy_PL-L",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0358",
+      "source": "policy_PL-L",
+      "target": "procedure_MP-114",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0359",
+      "source": "procedure_MP-114",
+      "target": "role_pneumatics_fitter",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0360",
+      "source": "role_pneumatics_fitter",
+      "target": "procedure_MP-114",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0361",
+      "source": "procedure_MP-115",
+      "target": "policy_PL-G",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0362",
+      "source": "policy_PL-G",
+      "target": "procedure_MP-115",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0363",
+      "source": "procedure_MP-115",
+      "target": "role_door_fitter",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0364",
+      "source": "role_door_fitter",
+      "target": "procedure_MP-115",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0365",
+      "source": "procedure_MP-116",
+      "target": "policy_PL-G",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0366",
+      "source": "policy_PL-G",
+      "target": "procedure_MP-116",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0367",
+      "source": "procedure_MP-116",
+      "target": "role_door_fitter",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0368",
+      "source": "role_door_fitter",
+      "target": "procedure_MP-116",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0369",
+      "source": "procedure_MP-117",
+      "target": "policy_PL-H",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0370",
+      "source": "policy_PL-H",
+      "target": "procedure_MP-117",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0371",
+      "source": "procedure_MP-117",
+      "target": "role_power_technician",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0372",
+      "source": "role_power_technician",
+      "target": "procedure_MP-117",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0373",
+      "source": "procedure_MP-118",
+      "target": "policy_PL-D",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0374",
+      "source": "policy_PL-D",
+      "target": "procedure_MP-118",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0375",
+      "source": "procedure_MP-118",
+      "target": "policy_PL-K",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0376",
+      "source": "policy_PL-K",
+      "target": "procedure_MP-118",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0377",
+      "source": "procedure_MP-118",
+      "target": "role_signalling_technician",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0378",
+      "source": "role_signalling_technician",
+      "target": "procedure_MP-118",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0379",
+      "source": "procedure_MP-119",
+      "target": "policy_PL-D",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0380",
+      "source": "policy_PL-D",
+      "target": "procedure_MP-119",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0381",
+      "source": "procedure_MP-119",
+      "target": "role_signalling_technician",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0382",
+      "source": "role_signalling_technician",
+      "target": "procedure_MP-119",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0383",
+      "source": "procedure_MP-119",
+      "target": "procedure_MP-118",
+      "type": "supersedes",
+      "weight": 1.0
+    },
+    {
+      "id": "e0384",
+      "source": "procedure_MP-118",
+      "target": "procedure_MP-119",
+      "type": "superseded_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0385",
+      "source": "procedure_MP-120",
+      "target": "policy_PL-I",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0386",
+      "source": "policy_PL-I",
+      "target": "procedure_MP-120",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0387",
+      "source": "procedure_MP-120",
+      "target": "policy_PL-K",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0388",
+      "source": "policy_PL-K",
+      "target": "procedure_MP-120",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0389",
+      "source": "procedure_MP-120",
+      "target": "role_plant_engineer",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0390",
+      "source": "role_plant_engineer",
+      "target": "procedure_MP-120",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0391",
+      "source": "procedure_MP-121",
+      "target": "policy_PL-J",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0392",
+      "source": "policy_PL-J",
+      "target": "procedure_MP-121",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0393",
+      "source": "procedure_MP-121",
+      "target": "policy_PL-K",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0394",
+      "source": "policy_PL-K",
+      "target": "procedure_MP-121",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0395",
+      "source": "procedure_MP-121",
+      "target": "role_plant_engineer",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0396",
+      "source": "role_plant_engineer",
+      "target": "procedure_MP-121",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0397",
+      "source": "procedure_MP-122",
+      "target": "policy_PL-J",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0398",
+      "source": "policy_PL-J",
+      "target": "procedure_MP-122",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0399",
+      "source": "procedure_MP-122",
+      "target": "role_power_technician",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0400",
+      "source": "role_power_technician",
+      "target": "procedure_MP-122",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0401",
+      "source": "procedure_MP-123",
+      "target": "policy_PL-B",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0402",
+      "source": "policy_PL-B",
+      "target": "procedure_MP-123",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0403",
+      "source": "procedure_MP-123",
+      "target": "role_plant_engineer",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0404",
+      "source": "role_plant_engineer",
+      "target": "procedure_MP-123",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0405",
+      "source": "procedure_MP-124",
+      "target": "policy_PL-B",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0406",
+      "source": "policy_PL-B",
+      "target": "procedure_MP-124",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0407",
+      "source": "procedure_MP-124",
+      "target": "policy_PL-L",
+      "type": "authorised_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0408",
+      "source": "policy_PL-L",
+      "target": "procedure_MP-124",
+      "type": "authorises",
+      "weight": 1.0
+    },
+    {
+      "id": "e0409",
+      "source": "procedure_MP-124",
+      "target": "role_plant_engineer",
+      "type": "performed_by",
+      "weight": 1.0
+    },
+    {
+      "id": "e0410",
+      "source": "role_plant_engineer",
+      "target": "procedure_MP-124",
+      "type": "responsible_for",
+      "weight": 1.0
+    },
+    {
+      "id": "e0411",
+      "source": "procedure_MP-124",
+      "target": "procedure_MP-123",
+      "type": "supersedes",
+      "weight": 1.0
+    },
+    {
+      "id": "e0412",
+      "source": "procedure_MP-123",
+      "target": "procedure_MP-124",
+      "type": "superseded_by",
+      "weight": 1.0
+    }
+  ]
+}

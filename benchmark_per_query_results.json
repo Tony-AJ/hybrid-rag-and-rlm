@@ -9,6 +9,7 @@
     "dataset_version": "1.0",
     "dataset_sha256": "47d0d867f4b6fcb4666b0b081f31091a7c20cacf3109cf9356644928e6d33f83",
     "top_k": 5,
+    "wide_diagnostic_k": 25,
     "graph_depth": 2,
     "alpha": 0.6,
     "beta": 0.4,
@@ -39,21 +40,379 @@
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 23.925
+      "mean_latency_ms": 382.961
     },
     "graph_expansion": {
       "precision@5": 0.03,
       "recall@5": 0.0667,
       "mrr": 0.1,
       "ndcg@5": 0.0648,
-      "mean_latency_ms": 0.024
+      "mean_latency_ms": 0.03
     },
     "hybrid": {
       "precision@5": 0.34,
       "recall@5": 0.9333,
       "mrr": 0.9167,
       "ndcg@5": 0.8586,
-      "mean_latency_ms": 10.789
+      "mean_latency_ms": 13.086
+    }
+  },
+  "diagnostics": {
+    "declared_seed_in_vector_top_k": null,
+    "declared_seed_in_vector_top_k__applicable_queries": 0,
+    "graph_only_chunks_in_hybrid_top_k": 0.0,
+    "graph_only_chunks_in_hybrid_top_k__applicable_queries": 20,
+    "reached_with_wide_budget_25": 0.0667,
+    "reached_with_wide_budget_25__applicable_queries": 20,
+    "recoverable_by_graph": 0.0667,
+    "recoverable_by_graph__applicable_queries": 20,
+    "recovered_in_hybrid_top_k": 0.0,
+    "recovered_in_hybrid_top_k__applicable_queries": 20,
+    "relevant_reachable_within_depth": 1.0,
+    "relevant_reachable_within_depth__applicable_queries": 20
+  },
+  "by_category": {
+    "single-hop factual": {
+      "queries": 8,
+      "modes": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 0.8542,
+          "ndcg@5": 0.8914
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 0.8542,
+          "ndcg@5": 0.8914
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 8,
+        "reached_with_wide_budget_25": 8,
+        "recoverable_by_graph": 8,
+        "recovered_in_hybrid_top_k": 8,
+        "relevant_reachable_within_depth": 8
+      }
+    },
+    "2-hop causal": {
+      "queries": 3,
+      "modes": {
+        "vector": {
+          "precision@5": 0.3333,
+          "recall@5": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 0.8212
+        },
+        "graph_expansion": {
+          "precision@5": 0.0667,
+          "recall@5": 0.1667,
+          "mrr": 0.3333,
+          "ndcg@5": 0.2044
+        },
+        "hybrid": {
+          "precision@5": 0.3333,
+          "recall@5": 0.8333,
+          "mrr": 1.0,
+          "ndcg@5": 0.8212
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.1667,
+        "recoverable_by_graph": 0.1667,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 3,
+        "reached_with_wide_budget_25": 3,
+        "recoverable_by_graph": 3,
+        "recovered_in_hybrid_top_k": 3,
+        "relevant_reachable_within_depth": 3
+      }
+    },
+    "multi-hop sequential": {
+      "queries": 3,
+      "modes": {
+        "vector": {
+          "precision@5": 0.5333,
+          "recall@5": 0.8889,
+          "mrr": 1.0,
+          "ndcg@5": 0.8836
+        },
+        "graph_expansion": {
+          "precision@5": 0.0667,
+          "recall@5": 0.1111,
+          "mrr": 0.1667,
+          "ndcg@5": 0.0987
+        },
+        "hybrid": {
+          "precision@5": 0.5333,
+          "recall@5": 0.8889,
+          "mrr": 1.0,
+          "ndcg@5": 0.8836
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.1111,
+        "recoverable_by_graph": 0.1111,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 3,
+        "reached_with_wide_budget_25": 3,
+        "recoverable_by_graph": 3,
+        "recovered_in_hybrid_top_k": 3,
+        "relevant_reachable_within_depth": 3
+      }
+    },
+    "semantic graph relation (goal_achieved)": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.8503
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.8503
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
+    },
+    "semantic graph relation (foreshadows)": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@5": 0.6131
+        },
+        "graph_expansion": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 0.5,
+          "ndcg@5": 0.3869
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@5": 0.6131
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.5,
+        "recoverable_by_graph": 0.5,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
+    },
+    "semantic graph relation (character_arc)": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.9197
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.9197
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
+    },
+    "narrative arc (beginning to end)": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.8503
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.8503
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
+    },
+    "extended multi-hop causal": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
+    },
+    "sequential narrative": {
+      "queries": 1,
+      "modes": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 0.5,
+          "ndcg@5": 0.6934
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 0.5,
+          "ndcg@5": 0.6934
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": null,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recoverable_by_graph": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "graph_only_chunks_in_hybrid_top_k": 1,
+        "reached_with_wide_budget_25": 1,
+        "recoverable_by_graph": 1,
+        "recovered_in_hybrid_top_k": 1,
+        "relevant_reachable_within_depth": 1
+      }
     }
   },
   "per_query": [
@@ -61,6 +420,8 @@
       "id": 1,
       "query": "Where does the story take place and which families are involved?",
       "category": "single-hop factual",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_1"
       ],
@@ -106,15 +467,25 @@
         }
       },
       "latency_ms": {
-        "vector": 238.107,
-        "graph_expansion": 0.03,
-        "hybrid": 10.765
+        "vector": 1665.977,
+        "graph_expansion": 0.05,
+        "hybrid": 18.045
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 2,
       "query": "Where did Romeo first meet Juliet?",
       "category": "single-hop factual",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_2"
       ],
@@ -159,15 +530,25 @@
         }
       },
       "latency_ms": {
-        "vector": 13.245,
-        "graph_expansion": 0.03,
-        "hybrid": 9.711
+        "vector": 16.163,
+        "graph_expansion": 0.023,
+        "hybrid": 9.443
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 3,
       "query": "Who performed the secret wedding ceremony for Romeo and Juliet?",
       "category": "single-hop factual",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_3"
       ],
@@ -213,15 +594,25 @@
         }
       },
       "latency_ms": {
-        "vector": 11.224,
-        "graph_expansion": 0.025,
-        "hybrid": 10.999
+        "vector": 532.931,
+        "graph_expansion": 0.041,
+        "hybrid": 15.38
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 4,
       "query": "Who challenged Romeo to a duel and who was killed?",
       "category": "single-hop factual",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_4"
       ],
@@ -267,15 +658,25 @@
         }
       },
       "latency_ms": {
-        "vector": 13.23,
-        "graph_expansion": 0.025,
-        "hybrid": 12.049
+        "vector": 507.408,
+        "graph_expansion": 0.024,
+        "hybrid": 8.781
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 5,
       "query": "Why was Romeo banished from Verona by the Prince?",
       "category": "single-hop factual",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_5"
       ],
@@ -321,15 +722,25 @@
         }
       },
       "latency_ms": {
-        "vector": 13.46,
-        "graph_expansion": 0.032,
-        "hybrid": 9.623
+        "vector": 189.88,
+        "graph_expansion": 0.03,
+        "hybrid": 17.419
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 6,
       "query": "What did Juliet do to avoid marrying Count Paris?",
       "category": "single-hop factual",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_6"
       ],
@@ -373,15 +784,25 @@
         }
       },
       "latency_ms": {
-        "vector": 14.737,
-        "graph_expansion": 0.034,
-        "hybrid": 10.8
+        "vector": 19.03,
+        "graph_expansion": 0.03,
+        "hybrid": 15.834
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 7,
       "query": "How did Romeo die in Juliet's tomb?",
       "category": "single-hop factual",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_7"
       ],
@@ -423,15 +844,25 @@
         }
       },
       "latency_ms": {
-        "vector": 12.723,
+        "vector": 18.798,
         "graph_expansion": 0.02,
-        "hybrid": 9.258
+        "hybrid": 9.709
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 8,
       "query": "How did Juliet die after waking up?",
       "category": "single-hop factual",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_8"
       ],
@@ -473,15 +904,25 @@
         }
       },
       "latency_ms": {
-        "vector": 10.461,
-        "graph_expansion": 0.018,
-        "hybrid": 11.383
+        "vector": 51.31,
+        "graph_expansion": 0.02,
+        "hybrid": 9.106
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 9,
       "query": "How did Tybalt's challenge lead to Romeo's banishment?",
       "category": "2-hop causal",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_4",
         "chunk_5"
@@ -528,15 +969,25 @@
         }
       },
       "latency_ms": {
-        "vector": 13.701,
-        "graph_expansion": 0.027,
-        "hybrid": 11.707
+        "vector": 593.715,
+        "graph_expansion": 0.023,
+        "hybrid": 10.29
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 10,
       "query": "What sequence of events followed Mercutio's death?",
       "category": "multi-hop sequential",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_4",
         "chunk_5",
@@ -580,15 +1031,25 @@
         }
       },
       "latency_ms": {
-        "vector": 13.15,
-        "graph_expansion": 0.019,
-        "hybrid": 12.218
+        "vector": 1442.533,
+        "graph_expansion": 0.053,
+        "hybrid": 24.283
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 11,
       "query": "Why did Friar Lawrence marry Romeo and Juliet, and did his hope come true?",
       "category": "semantic graph relation (goal_achieved)",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_3",
         "chunk_8"
@@ -633,15 +1094,25 @@
         }
       },
       "latency_ms": {
-        "vector": 12.47,
-        "graph_expansion": 0.024,
-        "hybrid": 10.151
+        "vector": 41.659,
+        "graph_expansion": 0.023,
+        "hybrid": 10.848
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 12,
       "query": "How did the family feud escalate into violence and death in the streets?",
       "category": "semantic graph relation (foreshadows)",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_1",
         "chunk_4"
@@ -688,15 +1159,25 @@
         }
       },
       "latency_ms": {
-        "vector": 11.404,
-        "graph_expansion": 0.022,
-        "hybrid": 10.764
+        "vector": 59.72,
+        "graph_expansion": 0.028,
+        "hybrid": 10.867
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.5,
+        "reached_with_wide_budget_25": 0.5,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 13,
       "query": "What tragic miscommunication caused Romeo's death at the tomb?",
       "category": "2-hop causal",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_6",
         "chunk_7"
@@ -739,15 +1220,25 @@
         }
       },
       "latency_ms": {
-        "vector": 12.498,
-        "graph_expansion": 0.022,
-        "hybrid": 9.474
+        "vector": 12.985,
+        "graph_expansion": 0.02,
+        "hybrid": 9.266
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 14,
       "query": "How did Romeo's presence at the Capulet ball lead to Juliet taking the sleeping potion?",
       "category": "semantic graph relation (character_arc)",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_2",
         "chunk_6"
@@ -793,15 +1284,25 @@
         }
       },
       "latency_ms": {
-        "vector": 12.37,
-        "graph_expansion": 0.023,
-        "hybrid": 10.996
+        "vector": 54.059,
+        "graph_expansion": 0.024,
+        "hybrid": 10.206
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 15,
       "query": "What were the consequences of Romeo killing Tybalt on Juliet's marriage situation?",
       "category": "2-hop causal",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_5",
         "chunk_6"
@@ -846,15 +1347,25 @@
         }
       },
       "latency_ms": {
-        "vector": 15.318,
-        "graph_expansion": 0.022,
-        "hybrid": 10.241
+        "vector": 238.378,
+        "graph_expansion": 0.021,
+        "hybrid": 12.518
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.5,
+        "reached_with_wide_budget_25": 0.5,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 16,
       "query": "What happened when Juliet woke up from her potion-induced sleep?",
       "category": "multi-hop sequential",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_6",
         "chunk_7",
@@ -898,15 +1409,25 @@
         }
       },
       "latency_ms": {
-        "vector": 13.597,
-        "graph_expansion": 0.021,
-        "hybrid": 11.342
+        "vector": 376.829,
+        "graph_expansion": 0.063,
+        "hybrid": 24.742
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 17,
       "query": "How did the ancient feud between Montagues and Capulets finally come to an end?",
       "category": "narrative arc (beginning to end)",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_1",
         "chunk_8"
@@ -953,15 +1474,25 @@
         }
       },
       "latency_ms": {
-        "vector": 11.646,
-        "graph_expansion": 0.022,
-        "hybrid": 9.841
+        "vector": 446.108,
+        "graph_expansion": 0.027,
+        "hybrid": 8.798
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 18,
       "query": "Trace the chain of events from the secret wedding to Romeo's exile.",
       "category": "multi-hop sequential",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_3",
         "chunk_4",
@@ -1009,15 +1540,25 @@
         }
       },
       "latency_ms": {
-        "vector": 12.902,
-        "graph_expansion": 0.026,
-        "hybrid": 10.445
+        "vector": 429.706,
+        "graph_expansion": 0.029,
+        "hybrid": 9.348
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.333333,
+        "reached_with_wide_budget_25": 0.333333,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 19,
       "query": "How did Mercutio's fight lead ultimately to the tragic deaths of the two lovers?",
       "category": "extended multi-hop causal",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_4",
         "chunk_5",
@@ -1062,15 +1603,25 @@
         }
       },
       "latency_ms": {
-        "vector": 10.668,
+        "vector": 239.399,
         "graph_expansion": 0.02,
-        "hybrid": 12.337
+        "hybrid": 14.782
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     },
     {
       "id": 20,
       "query": "What was the overarching narrative arc from Romeo attending the ball to the lovers' secret union?",
       "category": "sequential narrative",
+      "hops": null,
+      "graph_path": null,
       "relevant": [
         "chunk_2",
         "chunk_3"
@@ -1116,9 +1667,17 @@
         }
       },
       "latency_ms": {
-        "vector": 11.586,
-        "graph_expansion": 0.022,
-        "hybrid": 11.674
+        "vector": 722.637,
+        "graph_expansion": 0.036,
+        "hybrid": 12.057
+      },
+      "diagnostics": {
+        "relevant_reachable_within_depth": 1.0,
+        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "graph_only_chunks_in_hybrid_top_k": 0,
+        "declared_seed_in_vector_top_k": null
       }
     }
   ]

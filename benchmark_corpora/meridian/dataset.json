@@ -1,0 +1,689 @@
+{
+  "corpus_id": "meridian-transit-v1",
+  "dataset_version": "1.0",
+  "generator": "benchmark_corpora/meridian/generate_corpus.py",
+  "generator_seed": 20261012,
+  "notes": "Labels are generated from the same entity tables as the text and the graph. Multi-hop families are written so the answer chunk has no station or line vocabulary, forcing graph traversal.",
+  "queries": [
+    {
+      "id": 1,
+      "query": "How many platforms does Harbour Row have and when was the station building refurbished?",
+      "relevant": [
+        "station_harbour_row"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Harbour Row station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 2,
+      "query": "How many platforms does Brickworks have and when was the station building refurbished?",
+      "relevant": [
+        "station_brickworks"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Brickworks station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 3,
+      "query": "How many platforms does Eastgate Quay have and when was the station building refurbished?",
+      "relevant": [
+        "station_eastgate_quay"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Eastgate Quay station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 4,
+      "query": "How many platforms does Hollow Mill have and when was the station building refurbished?",
+      "relevant": [
+        "station_hollow_mill"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Hollow Mill station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 5,
+      "query": "How many platforms does Kingsmoor have and when was the station building refurbished?",
+      "relevant": [
+        "station_kingsmoor"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Kingsmoor station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 6,
+      "query": "How many platforms does Netherby have and when was the station building refurbished?",
+      "relevant": [
+        "station_netherby"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Netherby station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 7,
+      "query": "How many platforms does Quarry Side have and when was the station building refurbished?",
+      "relevant": [
+        "station_quarry_side"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Quarry Side station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 8,
+      "query": "How many platforms does Thistlebank have and when was the station building refurbished?",
+      "relevant": [
+        "station_thistlebank"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Thistlebank station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 9,
+      "query": "How many platforms does Westmere have and when was the station building refurbished?",
+      "relevant": [
+        "station_westmere"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Westmere station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 10,
+      "query": "How many platforms does Beacon Rise have and when was the station building refurbished?",
+      "relevant": [
+        "station_beacon_rise"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Beacon Rise station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 11,
+      "query": "How many platforms does Elmsworth have and when was the station building refurbished?",
+      "relevant": [
+        "station_elmsworth"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Elmsworth station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 12,
+      "query": "How many platforms does Hartsmere have and when was the station building refurbished?",
+      "relevant": [
+        "station_hartsmere"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Hartsmere station chunk states platform count and refurbishment year."
+    },
+    {
+      "id": 13,
+      "query": "What rolling stock operates the Azure Line and what are its peak headways?",
+      "relevant": [
+        "line_azure"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Azure Line chunk states stock family and headways."
+    },
+    {
+      "id": 14,
+      "query": "What rolling stock operates the Crimson Line and what are its peak headways?",
+      "relevant": [
+        "line_crimson"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Crimson Line chunk states stock family and headways."
+    },
+    {
+      "id": 15,
+      "query": "What rolling stock operates the Jade Line and what are its peak headways?",
+      "relevant": [
+        "line_jade"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Jade Line chunk states stock family and headways."
+    },
+    {
+      "id": 16,
+      "query": "What rolling stock operates the Amber Line and what are its peak headways?",
+      "relevant": [
+        "line_amber"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Amber Line chunk states stock family and headways."
+    },
+    {
+      "id": 17,
+      "query": "What rolling stock operates the Violet Line and what are its peak headways?",
+      "relevant": [
+        "line_violet"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Violet Line chunk states stock family and headways."
+    },
+    {
+      "id": 18,
+      "query": "What rolling stock operates the Slate Line and what are its peak headways?",
+      "relevant": [
+        "line_slate"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Slate Line chunk states stock family and headways."
+    },
+    {
+      "id": 19,
+      "query": "What does authorisation policy PL-A require before an asset returns to service?",
+      "relevant": [
+        "policy_PL-A"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Policy PL-A chunk states the countersignature requirement."
+    },
+    {
+      "id": 20,
+      "query": "What does authorisation policy PL-B require before an asset returns to service?",
+      "relevant": [
+        "policy_PL-B"
+      ],
+      "category": "single-hop factual",
+      "hops": 0,
+      "graph_path": "none - answer chunk is the lexical match",
+      "description": "Policy PL-B chunk states the countersignature requirement."
+    },
+    {
+      "id": 21,
+      "query": "Which component failed when trains were held at Harbour Row?",
+      "relevant": [
+        "equipment_TX-440"
+      ],
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "graph_path": "incident_2026_01 -caused_by-> equipment_TX-440",
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+    },
+    {
+      "id": 22,
+      "query": "Which component failed when trains were held at Kestrel Green?",
+      "relevant": [
+        "equipment_HV-21"
+      ],
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "graph_path": "incident_2026_02 -caused_by-> equipment_HV-21",
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+    },
+    {
+      "id": 23,
+      "query": "Which component failed when trains were held at Alder Vale?",
+      "relevant": [
+        "equipment_BR-7"
+      ],
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "graph_path": "incident_2026_03 -caused_by-> equipment_BR-7",
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+    },
+    {
+      "id": 24,
+      "query": "Which component failed when trains were held at Brickworks?",
+      "relevant": [
+        "equipment_PD-90"
+      ],
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "graph_path": "incident_2026_04 -caused_by-> equipment_PD-90",
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+    },
+    {
+      "id": 25,
+      "query": "Which component failed when trains were held at Copper Lane?",
+      "relevant": [
+        "equipment_SG-12"
+      ],
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "graph_path": "incident_2026_05 -caused_by-> equipment_SG-12",
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+    },
+    {
+      "id": 26,
+      "query": "Which component failed when trains were held at Dunmore Park?",
+      "relevant": [
+        "equipment_AX-3"
+      ],
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "graph_path": "incident_2026_06 -caused_by-> equipment_AX-3",
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+    },
+    {
+      "id": 27,
+      "query": "Which component failed when trains were held at Eastgate Quay?",
+      "relevant": [
+        "equipment_CP-55"
+      ],
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "graph_path": "incident_2026_07 -caused_by-> equipment_CP-55",
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+    },
+    {
+      "id": 28,
+      "query": "Which component failed when trains were held at Foundry Bridge?",
+      "relevant": [
+        "equipment_DR-8"
+      ],
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "graph_path": "incident_2026_08 -caused_by-> equipment_DR-8",
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+    },
+    {
+      "id": 29,
+      "query": "Which component failed when trains were held at Garnet Hill?",
+      "relevant": [
+        "equipment_PS-19"
+      ],
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "graph_path": "incident_2026_09 -caused_by-> equipment_PS-19",
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+    },
+    {
+      "id": 30,
+      "query": "Which component failed when trains were held at Hollow Mill?",
+      "relevant": [
+        "equipment_TC-6"
+      ],
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "graph_path": "incident_2026_10 -caused_by-> equipment_TC-6",
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+    },
+    {
+      "id": 31,
+      "query": "Which maintenance procedures cover the fault that stopped service at Harbour Row?",
+      "relevant": [
+        "procedure_MP-101",
+        "procedure_MP-102"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_01 -caused_by-> equipment_TX-440 -maintained_by-> procedure_MP-101, procedure_MP-102",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 32,
+      "query": "Which maintenance procedures cover the fault that stopped service at Kestrel Green?",
+      "relevant": [
+        "procedure_MP-103",
+        "procedure_MP-104"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_02 -caused_by-> equipment_HV-21 -maintained_by-> procedure_MP-103, procedure_MP-104",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 33,
+      "query": "Which maintenance procedures cover the fault that stopped service at Alder Vale?",
+      "relevant": [
+        "procedure_MP-105",
+        "procedure_MP-106"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_03 -caused_by-> equipment_BR-7 -maintained_by-> procedure_MP-105, procedure_MP-106",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 34,
+      "query": "Which maintenance procedures cover the fault that stopped service at Brickworks?",
+      "relevant": [
+        "procedure_MP-107",
+        "procedure_MP-108"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_04 -caused_by-> equipment_PD-90 -maintained_by-> procedure_MP-107, procedure_MP-108",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 35,
+      "query": "Which maintenance procedures cover the fault that stopped service at Copper Lane?",
+      "relevant": [
+        "procedure_MP-109",
+        "procedure_MP-110"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_05 -caused_by-> equipment_SG-12 -maintained_by-> procedure_MP-109, procedure_MP-110",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 36,
+      "query": "Which maintenance procedures cover the fault that stopped service at Dunmore Park?",
+      "relevant": [
+        "procedure_MP-111",
+        "procedure_MP-112"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_06 -caused_by-> equipment_AX-3 -maintained_by-> procedure_MP-111, procedure_MP-112",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 37,
+      "query": "Which maintenance procedures cover the fault that stopped service at Eastgate Quay?",
+      "relevant": [
+        "procedure_MP-113",
+        "procedure_MP-114"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_07 -caused_by-> equipment_CP-55 -maintained_by-> procedure_MP-113, procedure_MP-114",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 38,
+      "query": "Which maintenance procedures cover the fault that stopped service at Foundry Bridge?",
+      "relevant": [
+        "procedure_MP-115",
+        "procedure_MP-116"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_08 -caused_by-> equipment_DR-8 -maintained_by-> procedure_MP-115, procedure_MP-116",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 39,
+      "query": "Which maintenance procedures cover the fault that stopped service at Garnet Hill?",
+      "relevant": [
+        "procedure_MP-117"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_09 -caused_by-> equipment_PS-19 -maintained_by-> procedure_MP-117",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 40,
+      "query": "Which maintenance procedures cover the fault that stopped service at Hollow Mill?",
+      "relevant": [
+        "procedure_MP-118",
+        "procedure_MP-119"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_10 -caused_by-> equipment_TC-6 -maintained_by-> procedure_MP-118, procedure_MP-119",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 41,
+      "query": "Which maintenance procedures cover the fault that stopped service at Ironside?",
+      "relevant": [
+        "procedure_MP-120"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_11 -caused_by-> equipment_VE-31 -maintained_by-> procedure_MP-120",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 42,
+      "query": "Which maintenance procedures cover the fault that stopped service at Jubilee Fields?",
+      "relevant": [
+        "procedure_MP-121"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_12 -caused_by-> equipment_ES-14 -maintained_by-> procedure_MP-121",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 43,
+      "query": "Which maintenance procedures cover the fault that stopped service at Kingsmoor?",
+      "relevant": [
+        "procedure_MP-122"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_13 -caused_by-> equipment_LT-77 -maintained_by-> procedure_MP-122",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 44,
+      "query": "Which maintenance procedures cover the fault that stopped service at Larkspur?",
+      "relevant": [
+        "procedure_MP-123",
+        "procedure_MP-124"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_14 -caused_by-> equipment_WS-5 -maintained_by-> procedure_MP-123, procedure_MP-124",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 45,
+      "query": "Which maintenance procedures cover the fault that stopped service at Mallow Street?",
+      "relevant": [
+        "procedure_MP-101",
+        "procedure_MP-102"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_15 -caused_by-> equipment_TX-440 -maintained_by-> procedure_MP-101, procedure_MP-102",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 46,
+      "query": "Which maintenance procedures cover the fault that stopped service at Netherby?",
+      "relevant": [
+        "procedure_MP-103",
+        "procedure_MP-104"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_16 -caused_by-> equipment_HV-21 -maintained_by-> procedure_MP-103, procedure_MP-104",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 47,
+      "query": "Which maintenance procedures cover the fault that stopped service at Oakhurst?",
+      "relevant": [
+        "procedure_MP-105",
+        "procedure_MP-106"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_17 -caused_by-> equipment_BR-7 -maintained_by-> procedure_MP-105, procedure_MP-106",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 48,
+      "query": "Which maintenance procedures cover the fault that stopped service at Pennyford?",
+      "relevant": [
+        "procedure_MP-107",
+        "procedure_MP-108"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_18 -caused_by-> equipment_PD-90 -maintained_by-> procedure_MP-107, procedure_MP-108",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 49,
+      "query": "Which maintenance procedures cover the fault that stopped service at Quarry Side?",
+      "relevant": [
+        "procedure_MP-109",
+        "procedure_MP-110"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_19 -caused_by-> equipment_SG-12 -maintained_by-> procedure_MP-109, procedure_MP-110",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 50,
+      "query": "Which maintenance procedures cover the fault that stopped service at Redcliff?",
+      "relevant": [
+        "procedure_MP-111",
+        "procedure_MP-112"
+      ],
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "graph_path": "incident_2026_20 -caused_by-> equipment_AX-3 -maintained_by-> procedure_MP-111, procedure_MP-112",
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+    },
+    {
+      "id": 51,
+      "query": "Which authorisation is needed to carry out inverter phase balance verification on the TX-440?",
+      "relevant": [
+        "policy_PL-A"
+      ],
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "graph_path": "procedure_MP-101 -authorised_by-> policy_PL-A",
+      "description": "Policy chunks never name a procedure title, only a scope phrase."
+    },
+    {
+      "id": 52,
+      "query": "Which authorisation is needed to carry out inverter gate driver replacement on the TX-440?",
+      "relevant": [
+        "policy_PL-A"
+      ],
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "graph_path": "procedure_MP-102 -authorised_by-> policy_PL-A",
+      "description": "Policy chunks never name a procedure title, only a scope phrase."
+    },
+    {
+      "id": 53,
+      "query": "Which authorisation is needed to carry out pantograph carbon strip renewal on the HV-21?",
+      "relevant": [
+        "policy_PL-A"
+      ],
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "graph_path": "procedure_MP-103 -authorised_by-> policy_PL-A",
+      "description": "Policy chunks never name a procedure title, only a scope phrase."
+    },
+    {
+      "id": 54,
+      "query": "Which authorisation is needed to carry out pantograph contact force calibration on the HV-21?",
+      "relevant": [
+        "policy_PL-A"
+      ],
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "graph_path": "procedure_MP-104 -authorised_by-> policy_PL-A",
+      "description": "Policy chunks never name a procedure title, only a scope phrase."
+    },
+    {
+      "id": 55,
+      "query": "Which authorisation is needed to carry out brake resistor grid thermal survey on the BR-7?",
+      "relevant": [
+        "policy_PL-B"
+      ],
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "graph_path": "procedure_MP-105 -authorised_by-> policy_PL-B",
+      "description": "Policy chunks never name a procedure title, only a scope phrase."
+    },
+    {
+      "id": 56,
+      "query": "Which authorisation is needed to carry out brake chopper firmware refresh on the BR-7?",
+      "relevant": [
+        "policy_PL-B"
+      ],
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "graph_path": "procedure_MP-106 -authorised_by-> policy_PL-B",
+      "description": "Policy chunks never name a procedure title, only a scope phrase."
+    },
+    {
+      "id": 57,
+      "query": "Which stations sit immediately either side of Alder Vale along its own line?",
+      "relevant": [
+        "station_kestrel_green",
+        "station_brickworks"
+      ],
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "graph_path": "station_alder_vale -next_station/previous_station-> neighbours",
+      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names."
+    },
+    {
+      "id": 58,
+      "query": "Which stations sit immediately either side of Garnet Hill along its own line?",
+      "relevant": [
+        "station_foundry_bridge",
+        "station_hollow_mill"
+      ],
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "graph_path": "station_garnet_hill -next_station/previous_station-> neighbours",
+      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names."
+    },
+    {
+      "id": 59,
+      "query": "Which stations sit immediately either side of Mallow Street along its own line?",
+      "relevant": [
+        "station_larkspur",
+        "station_netherby"
+      ],
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "graph_path": "station_mallow_street -next_station/previous_station-> neighbours",
+      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names."
+    },
+    {
+      "id": 60,
+      "query": "Which stations sit immediately either side of Saltmarsh along its own line?",
+      "relevant": [
+        "station_redcliff",
+        "station_thistlebank"
+      ],
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "graph_path": "station_saltmarsh -next_station/previous_station-> neighbours",
+      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names."
+    }
+  ]
+}
