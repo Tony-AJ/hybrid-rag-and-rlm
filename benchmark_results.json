@@ -2,313 +2,47 @@
   "status": "valid",
   "aggregate": {
     "vector": {
-      "precision@5": 0.34,
-      "recall@5": 0.9333,
-      "mrr": 0.9167,
-      "ndcg@5": 0.8586,
-      "mean_latency_ms": 382.961
+      "precision@5": 0.0767,
+      "recall@5": 0.375,
+      "mrr": 0.3478,
+      "ndcg@5": 0.354,
+      "mean_latency_ms": 18.381
     },
     "graph_expansion": {
-      "precision@5": 0.03,
-      "recall@5": 0.0667,
-      "mrr": 0.1,
-      "ndcg@5": 0.0648,
-      "mean_latency_ms": 0.03
+      "precision@5": 0.0467,
+      "recall@5": 0.2333,
+      "mrr": 0.1306,
+      "ndcg@5": 0.1569,
+      "mean_latency_ms": 0.064
     },
     "hybrid": {
-      "precision@5": 0.34,
-      "recall@5": 0.9333,
-      "mrr": 0.9167,
-      "ndcg@5": 0.8586,
-      "mean_latency_ms": 13.086
+      "precision@5": 0.0767,
+      "recall@5": 0.375,
+      "mrr": 0.3478,
+      "ndcg@5": 0.354,
+      "mean_latency_ms": 12.961
     }
   },
   "diagnostics": {
-    "declared_seed_in_vector_top_k": null,
-    "declared_seed_in_vector_top_k__applicable_queries": 0,
+    "declared_seed_in_vector_top_k": 1.0,
+    "declared_seed_in_vector_top_k__applicable_queries": 40,
     "graph_only_chunks_in_hybrid_top_k": 0.0,
-    "graph_only_chunks_in_hybrid_top_k__applicable_queries": 20,
-    "reached_with_wide_budget_25": 0.0667,
-    "reached_with_wide_budget_25__applicable_queries": 20,
-    "recoverable_by_graph": 0.0667,
-    "recoverable_by_graph__applicable_queries": 20,
+    "graph_only_chunks_in_hybrid_top_k__applicable_queries": 60,
+    "reached_with_wide_budget_25": 0.6083,
+    "reached_with_wide_budget_25__applicable_queries": 60,
+    "recoverable_by_graph": 0.625,
+    "recoverable_by_graph__applicable_queries": 60,
     "recovered_in_hybrid_top_k": 0.0,
-    "recovered_in_hybrid_top_k__applicable_queries": 20,
+    "recovered_in_hybrid_top_k__applicable_queries": 60,
     "relevant_reachable_within_depth": 1.0,
-    "relevant_reachable_within_depth__applicable_queries": 20
+    "relevant_reachable_within_depth__applicable_queries": 60
   },
   "by_category": {
     "single-hop factual": {
-      "queries": 8,
+      "queries": 20,
       "modes": {
         "vector": {
           "precision@5": 0.2,
-          "recall@5": 1.0,
-          "mrr": 0.8542,
-          "ndcg@5": 0.8914
-        },
-        "graph_expansion": {
-          "precision@5": 0.0,
-          "recall@5": 0.0,
-          "mrr": 0.0,
-          "ndcg@5": 0.0
-        },
-        "hybrid": {
-          "precision@5": 0.2,
-          "recall@5": 1.0,
-          "mrr": 0.8542,
-          "ndcg@5": 0.8914
-        }
-      },
-      "diagnostics": {
-        "declared_seed_in_vector_top_k": null,
-        "graph_only_chunks_in_hybrid_top_k": 0.0,
-        "reached_with_wide_budget_25": 0.0,
-        "recoverable_by_graph": 0.0,
-        "recovered_in_hybrid_top_k": 0.0,
-        "relevant_reachable_within_depth": 1.0
-      },
-      "diagnostics_applicable_queries": {
-        "graph_only_chunks_in_hybrid_top_k": 8,
-        "reached_with_wide_budget_25": 8,
-        "recoverable_by_graph": 8,
-        "recovered_in_hybrid_top_k": 8,
-        "relevant_reachable_within_depth": 8
-      }
-    },
-    "2-hop causal": {
-      "queries": 3,
-      "modes": {
-        "vector": {
-          "precision@5": 0.3333,
-          "recall@5": 0.8333,
-          "mrr": 1.0,
-          "ndcg@5": 0.8212
-        },
-        "graph_expansion": {
-          "precision@5": 0.0667,
-          "recall@5": 0.1667,
-          "mrr": 0.3333,
-          "ndcg@5": 0.2044
-        },
-        "hybrid": {
-          "precision@5": 0.3333,
-          "recall@5": 0.8333,
-          "mrr": 1.0,
-          "ndcg@5": 0.8212
-        }
-      },
-      "diagnostics": {
-        "declared_seed_in_vector_top_k": null,
-        "graph_only_chunks_in_hybrid_top_k": 0.0,
-        "reached_with_wide_budget_25": 0.1667,
-        "recoverable_by_graph": 0.1667,
-        "recovered_in_hybrid_top_k": 0.0,
-        "relevant_reachable_within_depth": 1.0
-      },
-      "diagnostics_applicable_queries": {
-        "graph_only_chunks_in_hybrid_top_k": 3,
-        "reached_with_wide_budget_25": 3,
-        "recoverable_by_graph": 3,
-        "recovered_in_hybrid_top_k": 3,
-        "relevant_reachable_within_depth": 3
-      }
-    },
-    "multi-hop sequential": {
-      "queries": 3,
-      "modes": {
-        "vector": {
-          "precision@5": 0.5333,
-          "recall@5": 0.8889,
-          "mrr": 1.0,
-          "ndcg@5": 0.8836
-        },
-        "graph_expansion": {
-          "precision@5": 0.0667,
-          "recall@5": 0.1111,
-          "mrr": 0.1667,
-          "ndcg@5": 0.0987
-        },
-        "hybrid": {
-          "precision@5": 0.5333,
-          "recall@5": 0.8889,
-          "mrr": 1.0,
-          "ndcg@5": 0.8836
-        }
-      },
-      "diagnostics": {
-        "declared_seed_in_vector_top_k": null,
-        "graph_only_chunks_in_hybrid_top_k": 0.0,
-        "reached_with_wide_budget_25": 0.1111,
-        "recoverable_by_graph": 0.1111,
-        "recovered_in_hybrid_top_k": 0.0,
-        "relevant_reachable_within_depth": 1.0
-      },
-      "diagnostics_applicable_queries": {
-        "graph_only_chunks_in_hybrid_top_k": 3,
-        "reached_with_wide_budget_25": 3,
-        "recoverable_by_graph": 3,
-        "recovered_in_hybrid_top_k": 3,
-        "relevant_reachable_within_depth": 3
-      }
-    },
-    "semantic graph relation (goal_achieved)": {
-      "queries": 1,
-      "modes": {
-        "vector": {
-          "precision@5": 0.4,
-          "recall@5": 1.0,
-          "mrr": 1.0,
-          "ndcg@5": 0.8503
-        },
-        "graph_expansion": {
-          "precision@5": 0.0,
-          "recall@5": 0.0,
-          "mrr": 0.0,
-          "ndcg@5": 0.0
-        },
-        "hybrid": {
-          "precision@5": 0.4,
-          "recall@5": 1.0,
-          "mrr": 1.0,
-          "ndcg@5": 0.8503
-        }
-      },
-      "diagnostics": {
-        "declared_seed_in_vector_top_k": null,
-        "graph_only_chunks_in_hybrid_top_k": 0.0,
-        "reached_with_wide_budget_25": 0.0,
-        "recoverable_by_graph": 0.0,
-        "recovered_in_hybrid_top_k": 0.0,
-        "relevant_reachable_within_depth": 1.0
-      },
-      "diagnostics_applicable_queries": {
-        "graph_only_chunks_in_hybrid_top_k": 1,
-        "reached_with_wide_budget_25": 1,
-        "recoverable_by_graph": 1,
-        "recovered_in_hybrid_top_k": 1,
-        "relevant_reachable_within_depth": 1
-      }
-    },
-    "semantic graph relation (foreshadows)": {
-      "queries": 1,
-      "modes": {
-        "vector": {
-          "precision@5": 0.2,
-          "recall@5": 0.5,
-          "mrr": 1.0,
-          "ndcg@5": 0.6131
-        },
-        "graph_expansion": {
-          "precision@5": 0.2,
-          "recall@5": 0.5,
-          "mrr": 0.5,
-          "ndcg@5": 0.3869
-        },
-        "hybrid": {
-          "precision@5": 0.2,
-          "recall@5": 0.5,
-          "mrr": 1.0,
-          "ndcg@5": 0.6131
-        }
-      },
-      "diagnostics": {
-        "declared_seed_in_vector_top_k": null,
-        "graph_only_chunks_in_hybrid_top_k": 0.0,
-        "reached_with_wide_budget_25": 0.5,
-        "recoverable_by_graph": 0.5,
-        "recovered_in_hybrid_top_k": 0.0,
-        "relevant_reachable_within_depth": 1.0
-      },
-      "diagnostics_applicable_queries": {
-        "graph_only_chunks_in_hybrid_top_k": 1,
-        "reached_with_wide_budget_25": 1,
-        "recoverable_by_graph": 1,
-        "recovered_in_hybrid_top_k": 1,
-        "relevant_reachable_within_depth": 1
-      }
-    },
-    "semantic graph relation (character_arc)": {
-      "queries": 1,
-      "modes": {
-        "vector": {
-          "precision@5": 0.4,
-          "recall@5": 1.0,
-          "mrr": 1.0,
-          "ndcg@5": 0.9197
-        },
-        "graph_expansion": {
-          "precision@5": 0.0,
-          "recall@5": 0.0,
-          "mrr": 0.0,
-          "ndcg@5": 0.0
-        },
-        "hybrid": {
-          "precision@5": 0.4,
-          "recall@5": 1.0,
-          "mrr": 1.0,
-          "ndcg@5": 0.9197
-        }
-      },
-      "diagnostics": {
-        "declared_seed_in_vector_top_k": null,
-        "graph_only_chunks_in_hybrid_top_k": 0.0,
-        "reached_with_wide_budget_25": 0.0,
-        "recoverable_by_graph": 0.0,
-        "recovered_in_hybrid_top_k": 0.0,
-        "relevant_reachable_within_depth": 1.0
-      },
-      "diagnostics_applicable_queries": {
-        "graph_only_chunks_in_hybrid_top_k": 1,
-        "reached_with_wide_budget_25": 1,
-        "recoverable_by_graph": 1,
-        "recovered_in_hybrid_top_k": 1,
-        "relevant_reachable_within_depth": 1
-      }
-    },
-    "narrative arc (beginning to end)": {
-      "queries": 1,
-      "modes": {
-        "vector": {
-          "precision@5": 0.4,
-          "recall@5": 1.0,
-          "mrr": 1.0,
-          "ndcg@5": 0.8503
-        },
-        "graph_expansion": {
-          "precision@5": 0.0,
-          "recall@5": 0.0,
-          "mrr": 0.0,
-          "ndcg@5": 0.0
-        },
-        "hybrid": {
-          "precision@5": 0.4,
-          "recall@5": 1.0,
-          "mrr": 1.0,
-          "ndcg@5": 0.8503
-        }
-      },
-      "diagnostics": {
-        "declared_seed_in_vector_top_k": null,
-        "graph_only_chunks_in_hybrid_top_k": 0.0,
-        "reached_with_wide_budget_25": 0.0,
-        "recoverable_by_graph": 0.0,
-        "recovered_in_hybrid_top_k": 0.0,
-        "relevant_reachable_within_depth": 1.0
-      },
-      "diagnostics_applicable_queries": {
-        "graph_only_chunks_in_hybrid_top_k": 1,
-        "reached_with_wide_budget_25": 1,
-        "recoverable_by_graph": 1,
-        "recovered_in_hybrid_top_k": 1,
-        "relevant_reachable_within_depth": 1
-      }
-    },
-    "extended multi-hop causal": {
-      "queries": 1,
-      "modes": {
-        "vector": {
-          "precision@5": 0.8,
           "recall@5": 1.0,
           "mrr": 1.0,
           "ndcg@5": 1.0
@@ -320,7 +54,7 @@
           "ndcg@5": 0.0
         },
         "hybrid": {
-          "precision@5": 0.8,
+          "precision@5": 0.2,
           "recall@5": 1.0,
           "mrr": 1.0,
           "ndcg@5": 1.0
@@ -335,21 +69,60 @@
         "relevant_reachable_within_depth": 1.0
       },
       "diagnostics_applicable_queries": {
-        "graph_only_chunks_in_hybrid_top_k": 1,
-        "reached_with_wide_budget_25": 1,
-        "recoverable_by_graph": 1,
-        "recovered_in_hybrid_top_k": 1,
-        "relevant_reachable_within_depth": 1
+        "graph_only_chunks_in_hybrid_top_k": 20,
+        "reached_with_wide_budget_25": 20,
+        "recoverable_by_graph": 20,
+        "recovered_in_hybrid_top_k": 20,
+        "relevant_reachable_within_depth": 20
       }
     },
-    "sequential narrative": {
-      "queries": 1,
+    "1-hop graph (cause)": {
+      "queries": 10,
       "modes": {
         "vector": {
-          "precision@5": 0.4,
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.2,
           "recall@5": 1.0,
-          "mrr": 0.5,
-          "ndcg@5": 0.6934
+          "mrr": 0.55,
+          "ndcg@5": 0.6655
+        },
+        "hybrid": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": 1.0,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 1.0,
+        "recoverable_by_graph": 1.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "declared_seed_in_vector_top_k": 10,
+        "graph_only_chunks_in_hybrid_top_k": 10,
+        "reached_with_wide_budget_25": 10,
+        "recoverable_by_graph": 10,
+        "recovered_in_hybrid_top_k": 10,
+        "relevant_reachable_within_depth": 10
+      }
+    },
+    "2-hop graph (incident to procedure)": {
+      "queries": 20,
+      "modes": {
+        "vector": {
+          "precision@5": 0.01,
+          "recall@5": 0.025,
+          "mrr": 0.01,
+          "ndcg@5": 0.0119
         },
         "graph_expansion": {
           "precision@5": 0.0,
@@ -358,60 +131,139 @@
           "ndcg@5": 0.0
         },
         "hybrid": {
-          "precision@5": 0.4,
-          "recall@5": 1.0,
-          "mrr": 0.5,
-          "ndcg@5": 0.6934
+          "precision@5": 0.01,
+          "recall@5": 0.025,
+          "mrr": 0.01,
+          "ndcg@5": 0.0119
         }
       },
       "diagnostics": {
-        "declared_seed_in_vector_top_k": null,
+        "declared_seed_in_vector_top_k": 1.0,
         "graph_only_chunks_in_hybrid_top_k": 0.0,
-        "reached_with_wide_budget_25": 0.0,
-        "recoverable_by_graph": 0.0,
+        "reached_with_wide_budget_25": 0.925,
+        "recoverable_by_graph": 0.975,
         "recovered_in_hybrid_top_k": 0.0,
         "relevant_reachable_within_depth": 1.0
       },
       "diagnostics_applicable_queries": {
-        "graph_only_chunks_in_hybrid_top_k": 1,
-        "reached_with_wide_budget_25": 1,
-        "recoverable_by_graph": 1,
-        "recovered_in_hybrid_top_k": 1,
-        "relevant_reachable_within_depth": 1
+        "declared_seed_in_vector_top_k": 20,
+        "graph_only_chunks_in_hybrid_top_k": 20,
+        "reached_with_wide_budget_25": 20,
+        "recoverable_by_graph": 20,
+        "recovered_in_hybrid_top_k": 20,
+        "relevant_reachable_within_depth": 20
+      }
+    },
+    "1-hop graph (authorisation)": {
+      "queries": 6,
+      "modes": {
+        "vector": {
+          "precision@5": 0.0667,
+          "recall@5": 0.3333,
+          "mrr": 0.1111,
+          "ndcg@5": 0.1667
+        },
+        "graph_expansion": {
+          "precision@5": 0.1333,
+          "recall@5": 0.6667,
+          "mrr": 0.3889,
+          "ndcg@5": 0.4603
+        },
+        "hybrid": {
+          "precision@5": 0.0667,
+          "recall@5": 0.3333,
+          "mrr": 0.1111,
+          "ndcg@5": 0.1667
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": 1.0,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 0.6667,
+        "recoverable_by_graph": 0.6667,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "declared_seed_in_vector_top_k": 6,
+        "graph_only_chunks_in_hybrid_top_k": 6,
+        "reached_with_wide_budget_25": 6,
+        "recoverable_by_graph": 6,
+        "recovered_in_hybrid_top_k": 6,
+        "relevant_reachable_within_depth": 6
+      }
+    },
+    "1-hop graph (adjacency)": {
+      "queries": 4,
+      "modes": {
+        "vector": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        }
+      },
+      "diagnostics": {
+        "declared_seed_in_vector_top_k": 1.0,
+        "graph_only_chunks_in_hybrid_top_k": 0.0,
+        "reached_with_wide_budget_25": 1.0,
+        "recoverable_by_graph": 1.0,
+        "recovered_in_hybrid_top_k": 0.0,
+        "relevant_reachable_within_depth": 1.0
+      },
+      "diagnostics_applicable_queries": {
+        "declared_seed_in_vector_top_k": 4,
+        "graph_only_chunks_in_hybrid_top_k": 4,
+        "reached_with_wide_budget_25": 4,
+        "recoverable_by_graph": 4,
+        "recovered_in_hybrid_top_k": 4,
+        "relevant_reachable_within_depth": 4
       }
     }
   },
   "configuration": {
-    "corpus_id": "romeo-and-juliet-summary-v1",
-    "corpus_description": "8-chunk Romeo and Juliet plot summary, node IDs chunk_1..chunk_8, with a 'next'/semantic relation graph over those chunks.",
-    "dataset": "benchmark_dataset.json",
-    "dataset_version": "1.0",
-    "dataset_sha256": "47d0d867f4b6fcb4666b0b081f31091a7c20cacf3109cf9356644928e6d33f83",
+    "corpus_id": "meridian-transit-v1",
+    "corpus_description": "160-chunk synthetic transit-authority corpus (6 lines, 36 stations, 14 equipment models, 24 procedures, 12 policies, 10 roles, 28 incidents, 30 distractor bulletins) with a 412-edge typed graph. 60 queries: 20 single-hop factual plus 40 graph queries whose answer chunks carry no station or line vocabulary. Generated by benchmark_corpora/meridian/generate_corpus.py (seed 20261012).",
+    "dataset": "dataset.json",
+    "dataset_version": "1.1",
+    "dataset_sha256": "8f61e760d6ec9b1ca95f8bf955bfb33698851caa8e61cf7ff0d3b1f758a54fb2",
     "top_k": 5,
     "wide_diagnostic_k": 25,
     "graph_depth": 2,
     "alpha": 0.6,
     "beta": 0.4,
     "gamma": 0.1,
-    "vector_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\vector_db\\db\\chroma_db_with_metadata",
-    "graph_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\graph_data.json"
+    "vector_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\chroma_db_bench_meridian",
+    "graph_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\graph_data_bench_meridian.json"
   },
   "implementation": "app.service.HybridRetrievalService.hybrid_search",
   "ground_truth_validation": {
-    "corpus_id": "romeo-and-juliet-summary-v1",
-    "vector_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\vector_db\\db\\chroma_db_with_metadata",
-    "graph_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\graph_data.json",
-    "unique_relevant_ids": 8,
-    "relevant_ids_found_in_graph": 8,
+    "corpus_id": "meridian-transit-v1",
+    "vector_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\chroma_db_bench_meridian",
+    "graph_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\graph_data_bench_meridian.json",
+    "unique_relevant_ids": 58,
+    "relevant_ids_found_in_graph": 58,
     "relevant_ids_missing_from_graph": [],
     "relevant_ids_missing_from_vector_index": [],
-    "graph_node_count": 16,
-    "vector_doc_count": 8,
-    "corpus_fingerprint": "8b9c97acc24e1920cc2d4f57b7b9b551285e40ecc64a1d4d8e0eb959cffb379b",
+    "graph_node_count": 160,
+    "vector_doc_count": 160,
+    "corpus_fingerprint": "63cf21ec4c8c04ad83977ebb9c029b6a1c26ea19c345a74587175aded99e97f1",
     "relevant_ids_without_graph_text": [],
-    "dataset_path": "benchmark_dataset.json",
-    "dataset_sha256": "47d0d867f4b6fcb4666b0b081f31091a7c20cacf3109cf9356644928e6d33f83",
-    "dataset_version": "1.0",
-    "declared_corpus_id": null
+    "dataset_path": "dataset.json",
+    "dataset_sha256": "8f61e760d6ec9b1ca95f8bf955bfb33698851caa8e61cf7ff0d3b1f758a54fb2",
+    "dataset_version": "1.1",
+    "declared_corpus_id": "meridian-transit-v1"
   }
 }

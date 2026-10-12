@@ -43,7 +43,7 @@ from typing import Any, Dict, List, Tuple
 
 HERE = Path(__file__).resolve().parent
 CORPUS_ID = "meridian-transit-v1"
-DATASET_VERSION = "1.0"
+DATASET_VERSION = "1.1"
 SEED = 20261012
 
 # ============================== Entity tables ===============================
@@ -475,6 +475,7 @@ def build_queries(incidents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         hops: int,
         graph_path: str,
         description: str,
+        gold_answer: Dict[str, Any],
     ) -> None:
         queries.append({
             "id": len(queries) + 1,
@@ -484,6 +485,14 @@ def build_queries(incidents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             "hops": hops,
             "graph_path": graph_path,
             "description": description,
+            # Answer-level ground truth, kept apart from the chunk-level
+            # `relevant` labels. Two shapes only:
+            #   entity_set - an authoritative set of identifiers, compared as a
+            #                set after type-specific extraction from the answer
+            #   predicates - named facts for free-form answers, each checked by
+            #                a normalized value match, because exact string
+            #                equality over prose is not a meaningful metric
+            "gold_answer": gold_answer,
         })
 
     flat_stations = [(key, name) for key, names in STATIONS.items() for name in names]
@@ -492,6 +501,8 @@ def build_queries(incidents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     for index in range(12):
         line_key, name = flat_stations[index * 3 % len(flat_stations)]
         public_name = next(item[1] for item in LINES if item[0] == line_key)
+        stop_position = STATIONS[line_key].index(name)
+        is_terminus = stop_position in (0, len(STATIONS[line_key]) - 1)
         add(
             f"How many platforms does {name} have and when was the station building refurbished?",
             [station_id(name)],
@@ -499,6 +510,13 @@ def build_queries(incidents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             0,
             "none - answer chunk is the lexical match",
             f"{name} station chunk states platform count and refurbishment year.",
+            {
+                "kind": "predicates",
+                "predicates": {
+                    "platforms": 3 if is_terminus else 2,
+                    "refurbished_year": 2009 + stop_position,
+                },
+            },
         )
         if len(queries) >= 12:
             break
@@ -510,6 +528,13 @@ def build_queries(incidents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             0,
             "none - answer chunk is the lexical match",
             f"{public_name} chunk states stock family and headways.",
+            {
+                "kind": "predicates",
+                "predicates": {
+                    "rolling_stock": _stock,
+                    "peak_headway_minutes": 3 + len(STATIONS[key]) % 4,
+                },
+            },
         )
     for code, _title, _scope, _authorised in POLICIES[:2]:
         add(
@@ -519,6 +544,14 @@ def build_queries(incidents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             0,
             "none - answer chunk is the lexical match",
             f"Policy {code} chunk states the countersignature requirement.",
+            {
+                "kind": "predicates",
+                "predicates": {
+                    "policy_code": code,
+                    "requirement": "countersign",
+                    "signatory": "named holder",
+                },
+            },
         )
 
     # --- Family 2: 1 hop, incident -> equipment, 10 queries. ---
@@ -533,6 +566,11 @@ def build_queries(incidents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                 f"The query names only the station. The equipment chunk never names a "
                 f"station, so it must be reached from the incident chunk."
             ),
+            {
+                "kind": "entity_set",
+                "entity_type": "equipment_code",
+                "entities": [incident["equipment_code"]],
+            },
         )
 
     # --- Family 3: 2 hops, incident -> equipment -> procedure, 20 queries. ---
@@ -553,6 +591,11 @@ def build_queries(incidents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                 "Procedure chunks name only the equipment code, never the station, so "
                 "vector search has no lexical bridge from the query to the answer."
             ),
+            {
+                "kind": "entity_set",
+                "entity_type": "procedure_code",
+                "entities": list(proc_codes),
+            },
         )
 
     # --- Family 4: 1 hop, procedure -> policy, 6 queries. ---
@@ -565,6 +608,11 @@ def build_queries(incidents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             1,
             f"{procedure_id(code)} -authorised_by-> {', '.join(policy_id(p) for p in policy_codes)}",
             "Policy chunks never name a procedure title, only a scope phrase.",
+            {
+                "kind": "entity_set",
+                "entity_type": "policy_code",
+                "entities": list(policy_codes),
+            },
         )
 
     # --- Family 5: 1 hop, next/previous station, 4 queries. ---
@@ -578,6 +626,11 @@ def build_queries(incidents: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
             1,
             f"{station_id(middle)} -next_station/previous_station-> neighbours",
             "Adjacency is only in the graph; station text gives a stop number, not neighbour names.",
+            {
+                "kind": "entity_set",
+                "entity_type": "station_name",
+                "entities": [names[1], names[3]],
+            },
         )
 
     return queries
@@ -636,6 +689,45 @@ def validate(
     if unreachable:
         raise ValueError("graph does not support the declared labels:\n" + "\n".join(unreachable))
 
+    gold_kinds: Dict[str, int] = {}
+    documents_by_id = {doc["id"]: doc for doc in documents}
+    for query in queries:
+        gold = query.get("gold_answer")
+        if not isinstance(gold, dict) or "kind" not in gold:
+            raise ValueError(f"query {query['id']} has no well-formed gold_answer")
+        kind = gold["kind"]
+        gold_kinds[kind] = gold_kinds.get(kind, 0) + 1
+        if kind == "entity_set":
+            if not gold.get("entities") or not gold.get("entity_type"):
+                raise ValueError(f"query {query['id']} has an empty entity_set gold_answer")
+            # Every gold entity must be stated in at least one labelled chunk,
+            # otherwise the answer is not supported by the evidence we score.
+            for entity in gold["entities"]:
+                supported = any(
+                    entity in documents_by_id[node_id]["text"]
+                    for node_id in query["relevant"]
+                )
+                if not supported:
+                    raise ValueError(
+                        f"query {query['id']} gold entity {entity!r} appears in none of its "
+                        f"labelled chunks {query['relevant']}"
+                    )
+        elif kind == "predicates":
+            if not gold.get("predicates"):
+                raise ValueError(f"query {query['id']} has an empty predicates gold_answer")
+            for key, value in gold["predicates"].items():
+                supported = any(
+                    str(value).lower() in documents_by_id[node_id]["text"].lower()
+                    for node_id in query["relevant"]
+                )
+                if not supported:
+                    raise ValueError(
+                        f"query {query['id']} predicate {key}={value!r} is not stated in its "
+                        f"labelled chunks {query['relevant']}"
+                    )
+        else:
+            raise ValueError(f"query {query['id']} has unknown gold_answer kind {kind!r}")
+
     type_counts: Dict[str, int] = {}
     for doc in documents:
         type_counts[doc["metadata"]["type"]] = type_counts.get(doc["metadata"]["type"], 0) + 1
@@ -651,6 +743,7 @@ def validate(
         "queries": len(queries),
         "query_categories": category_counts,
         "labelled_ids": len({node_id for query in queries for node_id in query["relevant"]}),
+        "gold_answer_kinds": gold_kinds,
     }
 
 

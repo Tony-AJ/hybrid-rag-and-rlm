@@ -1,0 +1,217 @@
+{
+  "status": "frozen",
+  "frozen_at_corpus": "meridian-transit-v1",
+  "selection_rule": {
+    "primary_metric": "ndcg@5",
+    "secondary_metric": "recall@5",
+    "complexity_margin_on_primary": 0.05,
+    "guardrail_category": "single-hop factual",
+    "note": "Stated before inspecting the numbers; applied programmatically in select()."
+  },
+  "selected": {
+    "variant": "no_hop0_graph",
+    "description": "hop-0 vector seeds receive no graph credit",
+    "seed_k": 5,
+    "top_k": 5,
+    "max_depth": 2,
+    "alpha": 0.6,
+    "beta": 0.4,
+    "gamma": 0.1,
+    "implementation": "experiments.fusion_ablation.VARIANTS['no_hop0_graph']",
+    "production_service_modified": false
+  },
+  "control": {
+    "variant": "control",
+    "description": "app.service.HybridRetrievalService.hybrid_search, unmodified",
+    "metrics": {
+      "precision@5": 0.0767,
+      "recall@5": 0.375,
+      "mrr": 0.3478,
+      "ndcg@5": 0.354,
+      "mean_latency_ms": 11.004,
+      "graph_only_in_top_k": 0.0,
+      "recovered_in_top_k": 0.0
+    },
+    "preserved_as": "the control for every later comparison"
+  },
+  "selected_metrics": {
+    "precision@5": 0.14,
+    "recall@5": 0.6333,
+    "mrr": 0.4169,
+    "ndcg@5": 0.4724,
+    "mean_latency_ms": 11.66,
+    "graph_only_in_top_k": 2.9833,
+    "recovered_in_top_k": 0.2833
+  },
+  "selected_by_category": {
+    "single-hop factual": {
+      "queries": 20,
+      "metrics": {
+        "precision@5": 0.2,
+        "recall@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0,
+        "recovered_in_top_k": 0.0
+      }
+    },
+    "1-hop graph (cause)": {
+      "queries": 10,
+      "metrics": {
+        "precision@5": 0.18,
+        "recall@5": 0.9,
+        "mrr": 0.21,
+        "ndcg@5": 0.3745,
+        "recovered_in_top_k": 0.9
+      }
+    },
+    "2-hop graph (incident to procedure)": {
+      "queries": 20,
+      "metrics": {
+        "precision@5": 0.0,
+        "recall@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0,
+        "recovered_in_top_k": 0.0
+      }
+    },
+    "1-hop graph (authorisation)": {
+      "queries": 6,
+      "metrics": {
+        "precision@5": 0.1667,
+        "recall@5": 0.8333,
+        "mrr": 0.2361,
+        "ndcg@5": 0.382,
+        "recovered_in_top_k": 0.6667
+      }
+    },
+    "1-hop graph (adjacency)": {
+      "queries": 4,
+      "metrics": {
+        "precision@5": 0.4,
+        "recall@5": 1.0,
+        "mrr": 0.375,
+        "ndcg@5": 0.5773,
+        "recovered_in_top_k": 1.0
+      }
+    }
+  },
+  "decisions": [
+    {
+      "variant": "no_hop0_graph",
+      "base": "control",
+      "ndcg@5_delta_vs_base": 0.1184,
+      "recall@5_delta_vs_base": 0.2583,
+      "guardrail_passed": true,
+      "adopted": true,
+      "reason": "gain +0.1184 on ndcg@5 clears the 0.05 margin"
+    },
+    {
+      "variant": "max_norm",
+      "base": "control",
+      "ndcg@5_delta_vs_base": 0.0,
+      "recall@5_delta_vs_base": 0.0,
+      "guardrail_passed": true,
+      "adopted": false,
+      "reason": "gain +0.0000 on ndcg@5 is below the 0.05 margin"
+    },
+    {
+      "variant": "rrf",
+      "base": "control",
+      "ndcg@5_delta_vs_base": 0.0,
+      "recall@5_delta_vs_base": 0.0,
+      "guardrail_passed": true,
+      "adopted": false,
+      "reason": "gain +0.0000 on ndcg@5 is below the 0.05 margin"
+    },
+    {
+      "variant": "no_hop0_no_penalty",
+      "base": "no_hop0_graph",
+      "ndcg@5_delta_vs_base": 0.0063,
+      "recall@5_delta_vs_base": 0.0,
+      "guardrail_passed": true,
+      "adopted": false,
+      "reason": "gain +0.0063 on ndcg@5 is below the 0.05 margin"
+    },
+    {
+      "variant": "no_hop0_flat_hop",
+      "base": "no_hop0_graph",
+      "ndcg@5_delta_vs_base": 0.0129,
+      "recall@5_delta_vs_base": 0.0,
+      "guardrail_passed": true,
+      "adopted": false,
+      "reason": "gain +0.0129 on ndcg@5 is below the 0.05 margin"
+    },
+    {
+      "variant": "no_hop0_seed_weighted",
+      "base": "no_hop0_graph",
+      "ndcg@5_delta_vs_base": 0.0072,
+      "recall@5_delta_vs_base": 0.0167,
+      "guardrail_passed": true,
+      "adopted": false,
+      "reason": "gain +0.0072 on ndcg@5 is below the 0.05 margin"
+    },
+    {
+      "variant": "no_hop0_convergence",
+      "base": "no_hop0_graph",
+      "ndcg@5_delta_vs_base": -0.0566,
+      "recall@5_delta_vs_base": -0.1166,
+      "guardrail_passed": true,
+      "adopted": false,
+      "reason": "gain -0.0566 on ndcg@5 is below the 0.05 margin"
+    },
+    {
+      "variant": "no_hop0_query_rescore",
+      "base": "no_hop0_graph",
+      "ndcg@5_delta_vs_base": -0.088,
+      "recall@5_delta_vs_base": -0.1916,
+      "guardrail_passed": true,
+      "adopted": false,
+      "reason": "gain -0.0880 on ndcg@5 is below the 0.05 margin"
+    }
+  ],
+  "trade_offs": [
+    {
+      "kind": "regression",
+      "category": "2-hop graph (incident to procedure)",
+      "metric": "recall@5",
+      "control": 0.025,
+      "selected": 0.0,
+      "query_equivalents": 0.5
+    },
+    {
+      "kind": "composition_shift",
+      "detail": "graph-only chunks now occupy 2.98 of 5 top-K slots on average, versus 0.00 for the control. Vector hits are displaced by graph evidence; the single-hop guardrail shows this did not cost factual retrieval on this corpus, but a corpus with weaker graph precision could suffer."
+    },
+    {
+      "kind": "latency",
+      "detail": "mean 11.7 ms versus 11.0 ms for the control. The fusion change is arithmetic over an already-built candidate set, so cost is unchanged; both figures are dominated by query embedding and vary between runs."
+    },
+    {
+      "kind": "unresolved",
+      "detail": "None of the six tested mechanisms recovers the 2-hop incident-to-procedure family. Hop-1 neighbours of the vector seeds fill the top-K ahead of the hop-2 answer. Depth-level mechanisms (penalty removal, flat hop credit, seed-strength weighting) leave it at 0.000, and both round-3 hypotheses were measured and rejected: multi-seed convergence cost -0.117 recall@5 with 9 regressions, and query-aware rescoring of graph candidates with the production embedding model cost -0.192 recall@5 with 13 regressions at 2.4x the latency. Rescoring fails for a diagnosable reason: the query names a station, so station and incident chunks outscore the procedure chunk that actually answers it, which is the same lexical gap the corpus was built to create."
+    },
+    {
+      "kind": "interpretation",
+      "detail": "The 2-hop answer is unreachable by embedding similarity and, structurally, indistinguishable from the irrelevant hop-1 neighbours of the same seed. Separating them requires knowing which relation to follow (caused_by then maintained_by) for this question, which is query intent, not a scalar any static fusion formula can carry. Two honest routes: a relation-aware retriever that conditions edge traversal on the query, or the bounded RLM loop, where the model issues a follow-up retrieval after seeing the incident chunk. The second is already built (rlm/loop.py) and is the case where a reasoning loop should beat any static fusion. Hand-tuned edge-type priors would also lift this family but would encode this dataset's answer paths, so they are excluded as not a fair test."
+    }
+  ],
+  "provenance": {
+    "ablation_file": "experiment_fusion_ablation_meridian-transit-v1.json",
+    "ablation_sha256": "580c8b66df48152f0a16e45dd3ca5fd204aba43e4e387023f6b6987cd0f77616",
+    "corpus_fingerprint": "63cf21ec4c8c04ad83977ebb9c029b6a1c26ea19c345a74587175aded99e97f1",
+    "dataset": "dataset.json",
+    "dataset_sha256": "8f61e760d6ec9b1ca95f8bf955bfb33698851caa8e61cf7ff0d3b1f758a54fb2",
+    "vector_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\chroma_db_bench_meridian",
+    "graph_db_path": "C:\\Users\\user\\OneDrive\\Documents\\projects\\hybrid-rag-and-rlm\\db\\graph_data_bench_meridian.json",
+    "control_faithfulness": {
+      "queries_checked": 60,
+      "mismatches": 0
+    },
+    "baseline_reference": {
+      "file": "benchmark_baseline_meridian-transit-v1.json",
+      "recorded_at": "2026-10-12T11:27:35+00:00",
+      "label": "frozen baseline v3, deterministic index, dataset 1.1 (adds gold_answer), unmodified scoring formula",
+      "corpus_fingerprint": "63cf21ec4c8c04ad83977ebb9c029b6a1c26ea19c345a74587175aded99e97f1"
+    }
+  }
+}

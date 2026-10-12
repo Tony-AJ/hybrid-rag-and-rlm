@@ -67,7 +67,31 @@ def main() -> int:
     print(f"graph: {graph_db.graph.number_of_nodes()} nodes, {graph_db.graph.number_of_edges()} edges -> {GRAPH_PATH}")
 
     # --- Vector index: same VectorDatabase class the service uses. ---
+    # Chroma's HNSW search is approximate, and at the default search_ef it
+    # intermittently omits a document between processes: the same query returned
+    # station_garnet_hill in one run and not in the next, with identical stored
+    # data. That makes benchmark numbers irreproducible. The collection is
+    # pre-created here with a search_ef far above the corpus size so the search
+    # is exhaustive in practice. VectorDatabase then attaches to this existing
+    # collection, so production code is unchanged and only this benchmark store
+    # carries the setting.
+    # app.vector_db sets the Chroma telemetry env vars at import time, and a
+    # client built before that import gets different settings, which makes the
+    # second PersistentClient for the same path fail. Import it first.
     from app.vector_db import VectorDatabase
+
+    import chromadb
+
+    client = chromadb.PersistentClient(path=str(VECTOR_PATH))
+    client.get_or_create_collection(
+        name="langchain",
+        metadata={
+            "hnsw:space": "l2",
+            "hnsw:search_ef": 400,
+            "hnsw:construction_ef": 400,
+            "hnsw:M": 64,
+        },
+    )
 
     vector_db = VectorDatabase(persist_directory=str(VECTOR_PATH))
     ids = [doc["id"] for doc in documents]

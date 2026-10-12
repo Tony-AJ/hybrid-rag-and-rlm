@@ -1,6 +1,6 @@
 {
   "corpus_id": "meridian-transit-v1",
-  "dataset_version": "1.0",
+  "dataset_version": "1.1",
   "generator": "benchmark_corpora/meridian/generate_corpus.py",
   "generator_seed": 20261012,
   "notes": "Labels are generated from the same entity tables as the text and the graph. Multi-hop families are written so the answer chunk has no station or line vocabulary, forcing graph traversal.",
@@ -14,7 +14,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Harbour Row station chunk states platform count and refurbishment year."
+      "description": "Harbour Row station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 3,
+          "refurbished_year": 2009
+        }
+      }
     },
     {
       "id": 2,
@@ -25,7 +32,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Brickworks station chunk states platform count and refurbishment year."
+      "description": "Brickworks station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 2,
+          "refurbished_year": 2012
+        }
+      }
     },
     {
       "id": 3,
@@ -36,7 +50,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Eastgate Quay station chunk states platform count and refurbishment year."
+      "description": "Eastgate Quay station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 3,
+          "refurbished_year": 2009
+        }
+      }
     },
     {
       "id": 4,
@@ -47,7 +68,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Hollow Mill station chunk states platform count and refurbishment year."
+      "description": "Hollow Mill station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 2,
+          "refurbished_year": 2012
+        }
+      }
     },
     {
       "id": 5,
@@ -58,7 +86,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Kingsmoor station chunk states platform count and refurbishment year."
+      "description": "Kingsmoor station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 3,
+          "refurbished_year": 2009
+        }
+      }
     },
     {
       "id": 6,
@@ -69,7 +104,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Netherby station chunk states platform count and refurbishment year."
+      "description": "Netherby station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 2,
+          "refurbished_year": 2012
+        }
+      }
     },
     {
       "id": 7,
@@ -80,7 +122,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Quarry Side station chunk states platform count and refurbishment year."
+      "description": "Quarry Side station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 3,
+          "refurbished_year": 2009
+        }
+      }
     },
     {
       "id": 8,
@@ -91,7 +140,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Thistlebank station chunk states platform count and refurbishment year."
+      "description": "Thistlebank station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 2,
+          "refurbished_year": 2012
+        }
+      }
     },
     {
       "id": 9,
@@ -102,7 +158,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Westmere station chunk states platform count and refurbishment year."
+      "description": "Westmere station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 3,
+          "refurbished_year": 2009
+        }
+      }
     },
     {
       "id": 10,
@@ -113,7 +176,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Beacon Rise station chunk states platform count and refurbishment year."
+      "description": "Beacon Rise station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 2,
+          "refurbished_year": 2012
+        }
+      }
     },
     {
       "id": 11,
@@ -124,7 +194,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Elmsworth station chunk states platform count and refurbishment year."
+      "description": "Elmsworth station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 3,
+          "refurbished_year": 2009
+        }
+      }
     },
     {
       "id": 12,
@@ -135,7 +212,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Hartsmere station chunk states platform count and refurbishment year."
+      "description": "Hartsmere station chunk states platform count and refurbishment year.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "platforms": 2,
+          "refurbished_year": 2012
+        }
+      }
     },
     {
       "id": 13,
@@ -146,7 +230,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Azure Line chunk states stock family and headways."
+      "description": "Azure Line chunk states stock family and headways.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": "Series 400 four-car sets",
+          "peak_headway_minutes": 5
+        }
+      }
     },
     {
       "id": 14,
@@ -157,7 +248,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Crimson Line chunk states stock family and headways."
+      "description": "Crimson Line chunk states stock family and headways.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": "Series 500 six-car sets",
+          "peak_headway_minutes": 5
+        }
+      }
     },
     {
       "id": 15,
@@ -168,7 +266,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Jade Line chunk states stock family and headways."
+      "description": "Jade Line chunk states stock family and headways.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": "Series 300 refurbished sets",
+          "peak_headway_minutes": 5
+        }
+      }
     },
     {
       "id": 16,
@@ -179,7 +284,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Amber Line chunk states stock family and headways."
+      "description": "Amber Line chunk states stock family and headways.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": "Series 600 articulated sets",
+          "peak_headway_minutes": 5
+        }
+      }
     },
     {
       "id": 17,
@@ -190,7 +302,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Violet Line chunk states stock family and headways."
+      "description": "Violet Line chunk states stock family and headways.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": "Series 450 driverless sets",
+          "peak_headway_minutes": 5
+        }
+      }
     },
     {
       "id": 18,
@@ -201,7 +320,14 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Slate Line chunk states stock family and headways."
+      "description": "Slate Line chunk states stock family and headways.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": "Series 200 heritage sets",
+          "peak_headway_minutes": 5
+        }
+      }
     },
     {
       "id": 19,
@@ -212,7 +338,15 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Policy PL-A chunk states the countersignature requirement."
+      "description": "Policy PL-A chunk states the countersignature requirement.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "policy_code": "PL-A",
+          "requirement": "countersign",
+          "signatory": "named holder"
+        }
+      }
     },
     {
       "id": 20,
@@ -223,7 +357,15 @@
       "category": "single-hop factual",
       "hops": 0,
       "graph_path": "none - answer chunk is the lexical match",
-      "description": "Policy PL-B chunk states the countersignature requirement."
+      "description": "Policy PL-B chunk states the countersignature requirement.",
+      "gold_answer": {
+        "kind": "predicates",
+        "predicates": {
+          "policy_code": "PL-B",
+          "requirement": "countersign",
+          "signatory": "named holder"
+        }
+      }
     },
     {
       "id": 21,
@@ -234,7 +376,14 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "graph_path": "incident_2026_01 -caused_by-> equipment_TX-440",
-      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "TX-440"
+        ]
+      }
     },
     {
       "id": 22,
@@ -245,7 +394,14 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "graph_path": "incident_2026_02 -caused_by-> equipment_HV-21",
-      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "HV-21"
+        ]
+      }
     },
     {
       "id": 23,
@@ -256,7 +412,14 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "graph_path": "incident_2026_03 -caused_by-> equipment_BR-7",
-      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "BR-7"
+        ]
+      }
     },
     {
       "id": 24,
@@ -267,7 +430,14 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "graph_path": "incident_2026_04 -caused_by-> equipment_PD-90",
-      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "PD-90"
+        ]
+      }
     },
     {
       "id": 25,
@@ -278,7 +448,14 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "graph_path": "incident_2026_05 -caused_by-> equipment_SG-12",
-      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "SG-12"
+        ]
+      }
     },
     {
       "id": 26,
@@ -289,7 +466,14 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "graph_path": "incident_2026_06 -caused_by-> equipment_AX-3",
-      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "AX-3"
+        ]
+      }
     },
     {
       "id": 27,
@@ -300,7 +484,14 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "graph_path": "incident_2026_07 -caused_by-> equipment_CP-55",
-      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "CP-55"
+        ]
+      }
     },
     {
       "id": 28,
@@ -311,7 +502,14 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "graph_path": "incident_2026_08 -caused_by-> equipment_DR-8",
-      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "DR-8"
+        ]
+      }
     },
     {
       "id": 29,
@@ -322,7 +520,14 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "graph_path": "incident_2026_09 -caused_by-> equipment_PS-19",
-      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "PS-19"
+        ]
+      }
     },
     {
       "id": 30,
@@ -333,7 +538,14 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "graph_path": "incident_2026_10 -caused_by-> equipment_TC-6",
-      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk."
+      "description": "The query names only the station. The equipment chunk never names a station, so it must be reached from the incident chunk.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "TC-6"
+        ]
+      }
     },
     {
       "id": 31,
@@ -345,7 +557,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_01 -caused_by-> equipment_TX-440 -maintained_by-> procedure_MP-101, procedure_MP-102",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-101",
+          "MP-102"
+        ]
+      }
     },
     {
       "id": 32,
@@ -357,7 +577,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_02 -caused_by-> equipment_HV-21 -maintained_by-> procedure_MP-103, procedure_MP-104",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-103",
+          "MP-104"
+        ]
+      }
     },
     {
       "id": 33,
@@ -369,7 +597,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_03 -caused_by-> equipment_BR-7 -maintained_by-> procedure_MP-105, procedure_MP-106",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-105",
+          "MP-106"
+        ]
+      }
     },
     {
       "id": 34,
@@ -381,7 +617,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_04 -caused_by-> equipment_PD-90 -maintained_by-> procedure_MP-107, procedure_MP-108",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-107",
+          "MP-108"
+        ]
+      }
     },
     {
       "id": 35,
@@ -393,7 +637,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_05 -caused_by-> equipment_SG-12 -maintained_by-> procedure_MP-109, procedure_MP-110",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-109",
+          "MP-110"
+        ]
+      }
     },
     {
       "id": 36,
@@ -405,7 +657,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_06 -caused_by-> equipment_AX-3 -maintained_by-> procedure_MP-111, procedure_MP-112",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-111",
+          "MP-112"
+        ]
+      }
     },
     {
       "id": 37,
@@ -417,7 +677,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_07 -caused_by-> equipment_CP-55 -maintained_by-> procedure_MP-113, procedure_MP-114",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-113",
+          "MP-114"
+        ]
+      }
     },
     {
       "id": 38,
@@ -429,7 +697,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_08 -caused_by-> equipment_DR-8 -maintained_by-> procedure_MP-115, procedure_MP-116",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-115",
+          "MP-116"
+        ]
+      }
     },
     {
       "id": 39,
@@ -440,7 +716,14 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_09 -caused_by-> equipment_PS-19 -maintained_by-> procedure_MP-117",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-117"
+        ]
+      }
     },
     {
       "id": 40,
@@ -452,7 +735,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_10 -caused_by-> equipment_TC-6 -maintained_by-> procedure_MP-118, procedure_MP-119",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-118",
+          "MP-119"
+        ]
+      }
     },
     {
       "id": 41,
@@ -463,7 +754,14 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_11 -caused_by-> equipment_VE-31 -maintained_by-> procedure_MP-120",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-120"
+        ]
+      }
     },
     {
       "id": 42,
@@ -474,7 +772,14 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_12 -caused_by-> equipment_ES-14 -maintained_by-> procedure_MP-121",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-121"
+        ]
+      }
     },
     {
       "id": 43,
@@ -485,7 +790,14 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_13 -caused_by-> equipment_LT-77 -maintained_by-> procedure_MP-122",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-122"
+        ]
+      }
     },
     {
       "id": 44,
@@ -497,7 +809,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_14 -caused_by-> equipment_WS-5 -maintained_by-> procedure_MP-123, procedure_MP-124",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-123",
+          "MP-124"
+        ]
+      }
     },
     {
       "id": 45,
@@ -509,7 +829,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_15 -caused_by-> equipment_TX-440 -maintained_by-> procedure_MP-101, procedure_MP-102",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-101",
+          "MP-102"
+        ]
+      }
     },
     {
       "id": 46,
@@ -521,7 +849,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_16 -caused_by-> equipment_HV-21 -maintained_by-> procedure_MP-103, procedure_MP-104",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-103",
+          "MP-104"
+        ]
+      }
     },
     {
       "id": 47,
@@ -533,7 +869,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_17 -caused_by-> equipment_BR-7 -maintained_by-> procedure_MP-105, procedure_MP-106",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-105",
+          "MP-106"
+        ]
+      }
     },
     {
       "id": 48,
@@ -545,7 +889,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_18 -caused_by-> equipment_PD-90 -maintained_by-> procedure_MP-107, procedure_MP-108",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-107",
+          "MP-108"
+        ]
+      }
     },
     {
       "id": 49,
@@ -557,7 +909,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_19 -caused_by-> equipment_SG-12 -maintained_by-> procedure_MP-109, procedure_MP-110",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-109",
+          "MP-110"
+        ]
+      }
     },
     {
       "id": 50,
@@ -569,7 +929,15 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "graph_path": "incident_2026_20 -caused_by-> equipment_AX-3 -maintained_by-> procedure_MP-111, procedure_MP-112",
-      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer."
+      "description": "Procedure chunks name only the equipment code, never the station, so vector search has no lexical bridge from the query to the answer.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-111",
+          "MP-112"
+        ]
+      }
     },
     {
       "id": 51,
@@ -580,7 +948,14 @@
       "category": "1-hop graph (authorisation)",
       "hops": 1,
       "graph_path": "procedure_MP-101 -authorised_by-> policy_PL-A",
-      "description": "Policy chunks never name a procedure title, only a scope phrase."
+      "description": "Policy chunks never name a procedure title, only a scope phrase.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-A"
+        ]
+      }
     },
     {
       "id": 52,
@@ -591,7 +966,14 @@
       "category": "1-hop graph (authorisation)",
       "hops": 1,
       "graph_path": "procedure_MP-102 -authorised_by-> policy_PL-A",
-      "description": "Policy chunks never name a procedure title, only a scope phrase."
+      "description": "Policy chunks never name a procedure title, only a scope phrase.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-A"
+        ]
+      }
     },
     {
       "id": 53,
@@ -602,7 +984,14 @@
       "category": "1-hop graph (authorisation)",
       "hops": 1,
       "graph_path": "procedure_MP-103 -authorised_by-> policy_PL-A",
-      "description": "Policy chunks never name a procedure title, only a scope phrase."
+      "description": "Policy chunks never name a procedure title, only a scope phrase.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-A"
+        ]
+      }
     },
     {
       "id": 54,
@@ -613,7 +1002,14 @@
       "category": "1-hop graph (authorisation)",
       "hops": 1,
       "graph_path": "procedure_MP-104 -authorised_by-> policy_PL-A",
-      "description": "Policy chunks never name a procedure title, only a scope phrase."
+      "description": "Policy chunks never name a procedure title, only a scope phrase.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-A"
+        ]
+      }
     },
     {
       "id": 55,
@@ -624,7 +1020,14 @@
       "category": "1-hop graph (authorisation)",
       "hops": 1,
       "graph_path": "procedure_MP-105 -authorised_by-> policy_PL-B",
-      "description": "Policy chunks never name a procedure title, only a scope phrase."
+      "description": "Policy chunks never name a procedure title, only a scope phrase.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-B"
+        ]
+      }
     },
     {
       "id": 56,
@@ -635,7 +1038,14 @@
       "category": "1-hop graph (authorisation)",
       "hops": 1,
       "graph_path": "procedure_MP-106 -authorised_by-> policy_PL-B",
-      "description": "Policy chunks never name a procedure title, only a scope phrase."
+      "description": "Policy chunks never name a procedure title, only a scope phrase.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-B"
+        ]
+      }
     },
     {
       "id": 57,
@@ -647,7 +1057,15 @@
       "category": "1-hop graph (adjacency)",
       "hops": 1,
       "graph_path": "station_alder_vale -next_station/previous_station-> neighbours",
-      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names."
+      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "entities": [
+          "Kestrel Green",
+          "Brickworks"
+        ]
+      }
     },
     {
       "id": 58,
@@ -659,7 +1077,15 @@
       "category": "1-hop graph (adjacency)",
       "hops": 1,
       "graph_path": "station_garnet_hill -next_station/previous_station-> neighbours",
-      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names."
+      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "entities": [
+          "Foundry Bridge",
+          "Hollow Mill"
+        ]
+      }
     },
     {
       "id": 59,
@@ -671,7 +1097,15 @@
       "category": "1-hop graph (adjacency)",
       "hops": 1,
       "graph_path": "station_mallow_street -next_station/previous_station-> neighbours",
-      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names."
+      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "entities": [
+          "Larkspur",
+          "Netherby"
+        ]
+      }
     },
     {
       "id": 60,
@@ -683,7 +1117,15 @@
       "category": "1-hop graph (adjacency)",
       "hops": 1,
       "graph_path": "station_saltmarsh -next_station/previous_station-> neighbours",
-      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names."
+      "description": "Adjacency is only in the graph; station text gives a stop number, not neighbour names.",
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "entities": [
+          "Redcliff",
+          "Thistlebank"
+        ]
+      }
     }
   ]
 }
