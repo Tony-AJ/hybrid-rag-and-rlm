@@ -1,20 +1,40 @@
 {
-  "vector": {
-    "precision@5": 0.34,
-    "recall@5": 0.9333,
-    "mrr": 0.9167,
-    "ndcg@5": 0.8586
+  "aggregate": {
+    "vector": {
+      "precision@5": 0.34,
+      "recall@5": 0.9333,
+      "mrr": 0.9167,
+      "ndcg@5": 0.8586,
+      "mean_latency_ms": 15.01
+    },
+    "graph_expansion": {
+      "precision@5": 0.03,
+      "recall@5": 0.0667,
+      "mrr": 0.1,
+      "ndcg@5": 0.0648,
+      "mean_latency_ms": 0.025
+    },
+    "hybrid": {
+      "precision@5": 0.34,
+      "recall@5": 0.9333,
+      "mrr": 0.9167,
+      "ndcg@5": 0.8586,
+      "mean_latency_ms": 11.152
+    }
   },
-  "graph": {
-    "precision@5": 0.32,
-    "recall@5": 0.8792,
-    "mrr": 0.8725,
-    "ndcg@5": 0.8106
+  "configuration": {
+    "top_k": 5,
+    "graph_depth": 2,
+    "alpha": 0.6,
+    "beta": 0.4,
+    "gamma": 0.1,
+    "vector_db_path_expected": "db/chroma_db_service",
+    "graph_db_path_expected": "db/graph_data_service.json"
   },
-  "hybrid": {
-    "precision@5": 0.34,
-    "recall@5": 0.9333,
-    "mrr": 0.9167,
-    "ndcg@5": 0.861
+  "implementation": "app.service.HybridRetrievalService.hybrid_search",
+  "ground_truth_validation": {
+    "unique_relevant_ids": 8,
+    "relevant_ids_found_in_graph": 8,
+    "relevant_ids_missing_from_graph": []
   }
 }

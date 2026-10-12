@@ -18,13 +18,10 @@ class VectorDatabase:
         self.embedding_function = HuggingFaceEmbeddings(
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
-        # Disable telemetry to reduce noise
-        settings = chromadb.config.Settings(anonymized_telemetry=False)
-        
+        client = chromadb.PersistentClient(path=self.persist_directory)
         self.db = Chroma(
-            persist_directory=self.persist_directory,
-            embedding_function=self.embedding_function,
-            client_settings=settings
+            client=client,
+            embedding_function=self.embedding_function
         )
 
     def add_document(self, doc_id: str, text: str, metadata: Dict[str, Any]):

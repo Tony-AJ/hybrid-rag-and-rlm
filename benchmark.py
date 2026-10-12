@@ -37,6 +37,17 @@ ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+# If executed with system Python where dependencies are missing, transparently delegate to .venv
+_venv_python = ROOT / ".venv" / "Scripts" / "python.exe"
+if _venv_python.exists() and Path(sys.executable).resolve() != _venv_python.resolve():
+    try:
+        import fastapi  # type: ignore
+    except ImportError:
+        import subprocess
+        result = subprocess.run([str(_venv_python)] + sys.argv)
+        sys.exit(result.returncode)
+
+
 DATASET_PATH = ROOT / "benchmark_dataset.json"
 RESULTS_PATH = ROOT / "benchmark_results.json"
 PER_QUERY_PATH = ROOT / "benchmark_per_query_results.json"
@@ -177,7 +188,12 @@ def run_benchmark() -> Dict[str, Any]:
             "from the project root and verify that FastAPI imports this service."
         ) from exc
 
-    service = HybridRetrievalService()
+    benchmark_vec_path = str(ROOT / "vector_db" / "db" / "chroma_db_with_metadata")
+    benchmark_graph_path = str(ROOT / "db" / "graph_data.json")
+    if os.path.exists(benchmark_vec_path) and os.path.exists(benchmark_graph_path):
+        service = HybridRetrievalService(vector_db_path=benchmark_vec_path, graph_db_path=benchmark_graph_path)
+    else:
+        service = HybridRetrievalService()
     modes = ["vector", "graph_expansion", "hybrid"]
     metric_names = [f"precision@{TOP_K}", f"recall@{TOP_K}", "mrr", f"ndcg@{TOP_K}"]
     metric_values: Dict[str, Dict[str, List[float]]] = {

@@ -1,0 +1,1107 @@
+{
+  "benchmark_version": "2.0-service-aligned",
+  "implementation": "app.service.HybridRetrievalService.hybrid_search",
+  "configuration": {
+    "top_k": 5,
+    "graph_depth": 2,
+    "alpha": 0.6,
+    "beta": 0.4,
+    "gamma": 0.1,
+    "vector_db_path_expected": "db/chroma_db_service",
+    "graph_db_path_expected": "db/graph_data_service.json"
+  },
+  "ground_truth_validation": {
+    "unique_relevant_ids": 8,
+    "relevant_ids_found_in_graph": 8,
+    "relevant_ids_missing_from_graph": []
+  },
+  "aggregate": {
+    "vector": {
+      "precision@5": 0.34,
+      "recall@5": 0.9333,
+      "mrr": 0.9167,
+      "ndcg@5": 0.8586,
+      "mean_latency_ms": 15.01
+    },
+    "graph_expansion": {
+      "precision@5": 0.03,
+      "recall@5": 0.0667,
+      "mrr": 0.1,
+      "ndcg@5": 0.0648,
+      "mean_latency_ms": 0.025
+    },
+    "hybrid": {
+      "precision@5": 0.34,
+      "recall@5": 0.9333,
+      "mrr": 0.9167,
+      "ndcg@5": 0.8586,
+      "mean_latency_ms": 11.152
+    }
+  },
+  "per_query": [
+    {
+      "id": 1,
+      "query": "Where does the story take place and which families are involved?",
+      "category": "single-hop factual",
+      "relevant": [
+        "chunk_1"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_1",
+          "chunk_8",
+          "chunk_3",
+          "chunk_7",
+          "chunk_6"
+        ],
+        "graph_expansion": [
+          "chunk_2",
+          "chunk_4",
+          "chunk_5"
+        ],
+        "hybrid": [
+          "chunk_1",
+          "chunk_8",
+          "chunk_3",
+          "chunk_7",
+          "chunk_6"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        }
+      },
+      "latency_ms": {
+        "vector": 71.96,
+        "graph_expansion": 0.036,
+        "hybrid": 14.198
+      }
+    },
+    {
+      "id": 2,
+      "query": "Where did Romeo first meet Juliet?",
+      "category": "single-hop factual",
+      "relevant": [
+        "chunk_2"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_7",
+          "chunk_2",
+          "chunk_5",
+          "chunk_6",
+          "chunk_3"
+        ],
+        "graph_expansion": [
+          "chunk_4",
+          "chunk_8"
+        ],
+        "hybrid": [
+          "chunk_7",
+          "chunk_2",
+          "chunk_5",
+          "chunk_6",
+          "chunk_3"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 0.5,
+          "ndcg@5": 0.63093
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 0.5,
+          "ndcg@5": 0.63093
+        }
+      },
+      "latency_ms": {
+        "vector": 9.586,
+        "graph_expansion": 0.032,
+        "hybrid": 9.004
+      }
+    },
+    {
+      "id": 3,
+      "query": "Who performed the secret wedding ceremony for Romeo and Juliet?",
+      "category": "single-hop factual",
+      "relevant": [
+        "chunk_3"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_3",
+          "chunk_7",
+          "chunk_5",
+          "chunk_6",
+          "chunk_1"
+        ],
+        "graph_expansion": [
+          "chunk_2",
+          "chunk_4",
+          "chunk_8"
+        ],
+        "hybrid": [
+          "chunk_3",
+          "chunk_7",
+          "chunk_5",
+          "chunk_6",
+          "chunk_1"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        }
+      },
+      "latency_ms": {
+        "vector": 11.245,
+        "graph_expansion": 0.026,
+        "hybrid": 9.291
+      }
+    },
+    {
+      "id": 4,
+      "query": "Who challenged Romeo to a duel and who was killed?",
+      "category": "single-hop factual",
+      "relevant": [
+        "chunk_4"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_4",
+          "chunk_5",
+          "chunk_7",
+          "chunk_1",
+          "chunk_8"
+        ],
+        "graph_expansion": [
+          "chunk_2",
+          "chunk_6",
+          "chunk_3"
+        ],
+        "hybrid": [
+          "chunk_4",
+          "chunk_5",
+          "chunk_7",
+          "chunk_1",
+          "chunk_8"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        }
+      },
+      "latency_ms": {
+        "vector": 11.174,
+        "graph_expansion": 0.024,
+        "hybrid": 9.282
+      }
+    },
+    {
+      "id": 5,
+      "query": "Why was Romeo banished from Verona by the Prince?",
+      "category": "single-hop factual",
+      "relevant": [
+        "chunk_5"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_5",
+          "chunk_4",
+          "chunk_7",
+          "chunk_1",
+          "chunk_3"
+        ],
+        "graph_expansion": [
+          "chunk_2",
+          "chunk_6",
+          "chunk_8"
+        ],
+        "hybrid": [
+          "chunk_5",
+          "chunk_4",
+          "chunk_7",
+          "chunk_1",
+          "chunk_3"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        }
+      },
+      "latency_ms": {
+        "vector": 11.617,
+        "graph_expansion": 0.026,
+        "hybrid": 10.34
+      }
+    },
+    {
+      "id": 6,
+      "query": "What did Juliet do to avoid marrying Count Paris?",
+      "category": "single-hop factual",
+      "relevant": [
+        "chunk_6"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_6",
+          "chunk_3",
+          "chunk_7",
+          "chunk_5",
+          "chunk_4"
+        ],
+        "graph_expansion": [
+          "chunk_8"
+        ],
+        "hybrid": [
+          "chunk_6",
+          "chunk_3",
+          "chunk_7",
+          "chunk_5",
+          "chunk_4"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        }
+      },
+      "latency_ms": {
+        "vector": 15.941,
+        "graph_expansion": 0.022,
+        "hybrid": 9.904
+      }
+    },
+    {
+      "id": 7,
+      "query": "How did Romeo die in Juliet's tomb?",
+      "category": "single-hop factual",
+      "relevant": [
+        "chunk_7"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_7",
+          "chunk_5",
+          "chunk_6",
+          "chunk_8",
+          "chunk_4"
+        ],
+        "graph_expansion": [],
+        "hybrid": [
+          "chunk_7",
+          "chunk_5",
+          "chunk_6",
+          "chunk_8",
+          "chunk_4"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        }
+      },
+      "latency_ms": {
+        "vector": 10.441,
+        "graph_expansion": 0.02,
+        "hybrid": 11.464
+      }
+    },
+    {
+      "id": 8,
+      "query": "How did Juliet die after waking up?",
+      "category": "single-hop factual",
+      "relevant": [
+        "chunk_8"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_6",
+          "chunk_7",
+          "chunk_8",
+          "chunk_5",
+          "chunk_4"
+        ],
+        "graph_expansion": [],
+        "hybrid": [
+          "chunk_6",
+          "chunk_7",
+          "chunk_8",
+          "chunk_5",
+          "chunk_4"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 0.333333,
+          "ndcg@5": 0.5
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 1.0,
+          "mrr": 0.333333,
+          "ndcg@5": 0.5
+        }
+      },
+      "latency_ms": {
+        "vector": 10.706,
+        "graph_expansion": 0.022,
+        "hybrid": 8.962
+      }
+    },
+    {
+      "id": 9,
+      "query": "How did Tybalt's challenge lead to Romeo's banishment?",
+      "category": "2-hop causal",
+      "relevant": [
+        "chunk_4",
+        "chunk_5"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_4",
+          "chunk_5",
+          "chunk_1",
+          "chunk_7",
+          "chunk_2"
+        ],
+        "graph_expansion": [
+          "chunk_3",
+          "chunk_6",
+          "chunk_8"
+        ],
+        "hybrid": [
+          "chunk_4",
+          "chunk_5",
+          "chunk_1",
+          "chunk_7",
+          "chunk_2"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        }
+      },
+      "latency_ms": {
+        "vector": 12.228,
+        "graph_expansion": 0.024,
+        "hybrid": 10.013
+      }
+    },
+    {
+      "id": 10,
+      "query": "What sequence of events followed Mercutio's death?",
+      "category": "multi-hop sequential",
+      "relevant": [
+        "chunk_4",
+        "chunk_5",
+        "chunk_6"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_5",
+          "chunk_4",
+          "chunk_7",
+          "chunk_8",
+          "chunk_6"
+        ],
+        "graph_expansion": [],
+        "hybrid": [
+          "chunk_5",
+          "chunk_4",
+          "chunk_7",
+          "chunk_8",
+          "chunk_6"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.6,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.946902
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.6,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.946902
+        }
+      },
+      "latency_ms": {
+        "vector": 11.432,
+        "graph_expansion": 0.02,
+        "hybrid": 9.274
+      }
+    },
+    {
+      "id": 11,
+      "query": "Why did Friar Lawrence marry Romeo and Juliet, and did his hope come true?",
+      "category": "semantic graph relation (goal_achieved)",
+      "relevant": [
+        "chunk_3",
+        "chunk_8"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_3",
+          "chunk_7",
+          "chunk_6",
+          "chunk_5",
+          "chunk_8"
+        ],
+        "graph_expansion": [
+          "chunk_4"
+        ],
+        "hybrid": [
+          "chunk_3",
+          "chunk_7",
+          "chunk_6",
+          "chunk_5",
+          "chunk_8"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.850345
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.850345
+        }
+      },
+      "latency_ms": {
+        "vector": 13.108,
+        "graph_expansion": 0.024,
+        "hybrid": 9.471
+      }
+    },
+    {
+      "id": 12,
+      "query": "How did the family feud escalate into violence and death in the streets?",
+      "category": "semantic graph relation (foreshadows)",
+      "relevant": [
+        "chunk_1",
+        "chunk_4"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_1",
+          "chunk_8",
+          "chunk_3",
+          "chunk_5",
+          "chunk_7"
+        ],
+        "graph_expansion": [
+          "chunk_2",
+          "chunk_4",
+          "chunk_6"
+        ],
+        "hybrid": [
+          "chunk_1",
+          "chunk_8",
+          "chunk_3",
+          "chunk_5",
+          "chunk_7"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@5": 0.613147
+        },
+        "graph_expansion": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 0.5,
+          "ndcg@5": 0.386853
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@5": 0.613147
+        }
+      },
+      "latency_ms": {
+        "vector": 12.888,
+        "graph_expansion": 0.027,
+        "hybrid": 13.434
+      }
+    },
+    {
+      "id": 13,
+      "query": "What tragic miscommunication caused Romeo's death at the tomb?",
+      "category": "2-hop causal",
+      "relevant": [
+        "chunk_6",
+        "chunk_7"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_7",
+          "chunk_5",
+          "chunk_4",
+          "chunk_8",
+          "chunk_6"
+        ],
+        "graph_expansion": [],
+        "hybrid": [
+          "chunk_7",
+          "chunk_5",
+          "chunk_4",
+          "chunk_8",
+          "chunk_6"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.850345
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.850345
+        }
+      },
+      "latency_ms": {
+        "vector": 11.492,
+        "graph_expansion": 0.022,
+        "hybrid": 10.637
+      }
+    },
+    {
+      "id": 14,
+      "query": "How did Romeo's presence at the Capulet ball lead to Juliet taking the sleeping potion?",
+      "category": "semantic graph relation (character_arc)",
+      "relevant": [
+        "chunk_2",
+        "chunk_6"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_2",
+          "chunk_7",
+          "chunk_6",
+          "chunk_4",
+          "chunk_5"
+        ],
+        "graph_expansion": [
+          "chunk_3",
+          "chunk_8"
+        ],
+        "hybrid": [
+          "chunk_2",
+          "chunk_7",
+          "chunk_6",
+          "chunk_4",
+          "chunk_5"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.919721
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.919721
+        }
+      },
+      "latency_ms": {
+        "vector": 12.677,
+        "graph_expansion": 0.024,
+        "hybrid": 10.798
+      }
+    },
+    {
+      "id": 15,
+      "query": "What were the consequences of Romeo killing Tybalt on Juliet's marriage situation?",
+      "category": "2-hop causal",
+      "relevant": [
+        "chunk_5",
+        "chunk_6"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_5",
+          "chunk_4",
+          "chunk_7",
+          "chunk_3",
+          "chunk_8"
+        ],
+        "graph_expansion": [
+          "chunk_6"
+        ],
+        "hybrid": [
+          "chunk_5",
+          "chunk_4",
+          "chunk_7",
+          "chunk_3",
+          "chunk_8"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@5": 0.613147
+        },
+        "graph_expansion": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@5": 0.613147
+        },
+        "hybrid": {
+          "precision@5": 0.2,
+          "recall@5": 0.5,
+          "mrr": 1.0,
+          "ndcg@5": 0.613147
+        }
+      },
+      "latency_ms": {
+        "vector": 11.414,
+        "graph_expansion": 0.022,
+        "hybrid": 10.028
+      }
+    },
+    {
+      "id": 16,
+      "query": "What happened when Juliet woke up from her potion-induced sleep?",
+      "category": "multi-hop sequential",
+      "relevant": [
+        "chunk_6",
+        "chunk_7",
+        "chunk_8"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_6",
+          "chunk_7",
+          "chunk_8",
+          "chunk_5",
+          "chunk_4"
+        ],
+        "graph_expansion": [],
+        "hybrid": [
+          "chunk_6",
+          "chunk_7",
+          "chunk_8",
+          "chunk_5",
+          "chunk_4"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.6,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.6,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        }
+      },
+      "latency_ms": {
+        "vector": 10.28,
+        "graph_expansion": 0.019,
+        "hybrid": 10.343
+      }
+    },
+    {
+      "id": 17,
+      "query": "How did the ancient feud between Montagues and Capulets finally come to an end?",
+      "category": "narrative arc (beginning to end)",
+      "relevant": [
+        "chunk_1",
+        "chunk_8"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_1",
+          "chunk_4",
+          "chunk_2",
+          "chunk_5",
+          "chunk_8"
+        ],
+        "graph_expansion": [
+          "chunk_3",
+          "chunk_6",
+          "chunk_7"
+        ],
+        "hybrid": [
+          "chunk_1",
+          "chunk_4",
+          "chunk_2",
+          "chunk_5",
+          "chunk_8"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.850345
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 0.850345
+        }
+      },
+      "latency_ms": {
+        "vector": 11.567,
+        "graph_expansion": 0.023,
+        "hybrid": 11.311
+      }
+    },
+    {
+      "id": 18,
+      "query": "Trace the chain of events from the secret wedding to Romeo's exile.",
+      "category": "multi-hop sequential",
+      "relevant": [
+        "chunk_3",
+        "chunk_4",
+        "chunk_5"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_3",
+          "chunk_7",
+          "chunk_5",
+          "chunk_1",
+          "chunk_8"
+        ],
+        "graph_expansion": [
+          "chunk_2",
+          "chunk_4",
+          "chunk_6"
+        ],
+        "hybrid": [
+          "chunk_3",
+          "chunk_7",
+          "chunk_5",
+          "chunk_1",
+          "chunk_8"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 0.666667,
+          "mrr": 1.0,
+          "ndcg@5": 0.703918
+        },
+        "graph_expansion": {
+          "precision@5": 0.2,
+          "recall@5": 0.333333,
+          "mrr": 0.5,
+          "ndcg@5": 0.296082
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 0.666667,
+          "mrr": 1.0,
+          "ndcg@5": 0.703918
+        }
+      },
+      "latency_ms": {
+        "vector": 14.558,
+        "graph_expansion": 0.028,
+        "hybrid": 12.052
+      }
+    },
+    {
+      "id": 19,
+      "query": "How did Mercutio's fight lead ultimately to the tragic deaths of the two lovers?",
+      "category": "extended multi-hop causal",
+      "relevant": [
+        "chunk_4",
+        "chunk_5",
+        "chunk_7",
+        "chunk_8"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_5",
+          "chunk_4",
+          "chunk_8",
+          "chunk_7",
+          "chunk_6"
+        ],
+        "graph_expansion": [],
+        "hybrid": [
+          "chunk_5",
+          "chunk_4",
+          "chunk_8",
+          "chunk_7",
+          "chunk_6"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.8,
+          "recall@5": 1.0,
+          "mrr": 1.0,
+          "ndcg@5": 1.0
+        }
+      },
+      "latency_ms": {
+        "vector": 11.771,
+        "graph_expansion": 0.021,
+        "hybrid": 13.988
+      }
+    },
+    {
+      "id": 20,
+      "query": "What was the overarching narrative arc from Romeo attending the ball to the lovers' secret union?",
+      "category": "sequential narrative",
+      "relevant": [
+        "chunk_2",
+        "chunk_3"
+      ],
+      "rankings": {
+        "vector": [
+          "chunk_7",
+          "chunk_2",
+          "chunk_3",
+          "chunk_8",
+          "chunk_5"
+        ],
+        "graph_expansion": [
+          "chunk_4",
+          "chunk_6"
+        ],
+        "hybrid": [
+          "chunk_7",
+          "chunk_2",
+          "chunk_3",
+          "chunk_8",
+          "chunk_5"
+        ]
+      },
+      "metrics": {
+        "vector": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 0.5,
+          "ndcg@5": 0.693426
+        },
+        "graph_expansion": {
+          "precision@5": 0.0,
+          "recall@5": 0.0,
+          "mrr": 0.0,
+          "ndcg@5": 0.0
+        },
+        "hybrid": {
+          "precision@5": 0.4,
+          "recall@5": 1.0,
+          "mrr": 0.5,
+          "ndcg@5": 0.693426
+        }
+      },
+      "latency_ms": {
+        "vector": 14.108,
+        "graph_expansion": 0.029,
+        "hybrid": 19.252
+      }
+    }
+  ]
+}

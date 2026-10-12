@@ -31,11 +31,11 @@ PIPELINE_VERSION = "2.0"
 PDF_CANDIDATE_POOL = 5
 
 class HybridRetrievalService:
-    def __init__(self):
+    def __init__(self, vector_db_path: Optional[str] = None, graph_db_path: Optional[str] = None):
         # Paths
         current_dir = os.getcwd()
-        self.vector_db_path = os.path.join(current_dir, "db", "chroma_db_service")
-        self.graph_db_path = os.path.join(current_dir, "db", "graph_data_service.json")
+        self.vector_db_path = vector_db_path or os.getenv("VECTOR_DB_PATH") or os.path.join(current_dir, "db", "chroma_db_service")
+        self.graph_db_path = graph_db_path or os.getenv("GRAPH_DB_PATH") or os.path.join(current_dir, "db", "graph_data_service.json")
         self.books_dir = os.path.join(current_dir, "vector_db", "books")
         os.makedirs(self.books_dir, exist_ok=True)
         
