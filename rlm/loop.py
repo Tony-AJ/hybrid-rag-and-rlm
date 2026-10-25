@@ -18,6 +18,7 @@ into the run record, so a prompt edit is visible in the results.
 from __future__ import annotations
 
 import json
+import re
 import sys
 import time
 from dataclasses import dataclass, field
@@ -36,7 +37,7 @@ from rlm.providers import (  # noqa: E402
 )
 
 FROZEN_CONFIG_PATH = ROOT / "experiment_frozen_retrieval_config.json"
-LOOP_VERSION = "1.0"
+LOOP_VERSION = "1.2"
 
 ANSWER_TEMPLATE = """You answer questions about a transit authority using only the evidence below.
 
@@ -75,6 +76,7 @@ class LoopBounds:
     max_retrievals: int = 3
     top_k: int = 5
     max_evidence_chunks: int = 12
+    max_grounding_chunks: int = 4
 
     def as_record(self) -> Dict[str, Any]:
         return {
@@ -82,6 +84,7 @@ class LoopBounds:
             "max_retrievals": self.max_retrievals,
             "top_k": self.top_k,
             "max_evidence_chunks": self.max_evidence_chunks,
+            "max_grounding_chunks": self.max_grounding_chunks,
         }
 
 
@@ -157,16 +160,77 @@ class FrozenRetriever:
                 "text": candidates[node_id]["text"],
                 "hop": candidates[node_id]["hop"],
                 "retrieved_by_vector": candidates[node_id]["retrieved_by_vector"],
+                "relations": self.relations(node_id),
             }
             for node_id in ranking
         ]
 
+    def relations(self, node_id: str) -> Dict[str, List[str]]:
+        """Outgoing graph edges of a node, grouped by edge type.
+
+        Chunk text alone does not say which procedures maintain a piece of
+        equipment; that link exists only as a graph edge. Without it the model
+        sees one procedure, cannot know a second exists, and stops early.
+        """
+        graph = self.service.graph_db.graph
+        grouped: Dict[str, List[str]] = {}
+        if node_id not in graph:
+            return grouped
+        for _, target, data in graph.out_edges(node_id, data=True):
+            grouped.setdefault(str(data.get("type", "related_to")), []).append(str(target))
+        return {edge_type: sorted(targets) for edge_type, targets in sorted(grouped.items())}
+
+    def fetch(self, node_id: str) -> Optional[Dict[str, Any]]:
+        """One node's chunk by id, read from the graph rather than searched for."""
+        graph = self.service.graph_db.graph
+        if node_id not in graph:
+            return None
+        return {
+            "node_id": node_id,
+            "text": graph.nodes[node_id].get("text") or "",
+            "hop": None,
+            "retrieved_by_vector": False,
+            "relations": self.relations(node_id),
+        }
+
+
+TYPOGRAPHIC_DASHES = re.compile(r"[\u2010-\u2015\u2212]")
+
+
+def cited_link_targets(answer: str, evidence: List[Dict[str, Any]]) -> List[str]:
+    """Linked nodes the answer names that are not yet in the evidence.
+
+    An answer may cite an identifier it only saw in a `Links:` list (for example
+    MP-102 from equipment_TX-440's maintained_by edge). Such a citation rests on
+    the edge alone; the grounding pass fetches the node's own text so the final
+    answer is checked against it. A node counts as cited when its full id or its
+    code (the part after the type prefix) appears in the answer.
+    """
+    text = TYPOGRAPHIC_DASHES.sub("-", answer)
+    present = {chunk["node_id"] for chunk in evidence}
+    cited: List[str] = []
+    for chunk in evidence:
+        for targets in (chunk.get("relations") or {}).values():
+            for target in targets:
+                if target in present or target in cited:
+                    continue
+                code = target.split("_", 1)[-1]
+                if target in text or re.search(rf"(?<![\w-]){re.escape(code)}(?![\w-])", text):
+                    cited.append(target)
+    return cited
+
 
 def format_evidence(chunks: List[Dict[str, Any]]) -> str:
-    return "\n".join(
-        f"[{index}] ({chunk['node_id']}) {chunk['text']}"
-        for index, chunk in enumerate(chunks, 1)
-    )
+    lines = []
+    for index, chunk in enumerate(chunks, 1):
+        line = f"[{index}] ({chunk['node_id']}) {chunk['text']}"
+        relations = chunk.get("relations") or {}
+        if relations:
+            line += " Links: " + "; ".join(
+                f"{edge_type} -> {', '.join(targets)}" for edge_type, targets in relations.items()
+            )
+        lines.append(line)
+    return "\n".join(lines)
 
 
 def run_loop(
@@ -244,6 +308,25 @@ def run_loop(
     )
     record_generation(answer_result)
     run.answer = answer_result.text.strip()
+
+    # Grounding pass: an answer that cites a node seen only as a link is
+    # re-answered once with that node's text in the evidence. Graph lookups,
+    # not retrievals; one extra generation call, and only when needed.
+    grounding = cited_link_targets(run.answer, evidence)[: bounds.max_grounding_chunks]
+    fetched = [chunk for chunk in (retriever.fetch(node_id) for node_id in grounding) if chunk]
+    if fetched:
+        evidence.extend(fetched)
+        run.steps.append({
+            "step": "grounding",
+            "cited_from_links": [chunk["node_id"] for chunk in fetched],
+            "answer_before_grounding": run.answer[:300],
+        })
+        answer_result = provider.generate(
+            ANSWER_TEMPLATE.format(question=question, evidence=format_evidence(evidence))
+        )
+        record_generation(answer_result)
+        run.answer = answer_result.text.strip()
+
     run.evidence_ids = [chunk["node_id"] for chunk in evidence]
     if run.stop_reason == "unknown":
         run.stop_reason = "completed"

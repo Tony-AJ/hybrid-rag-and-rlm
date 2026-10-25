@@ -401,7 +401,9 @@ def ask(request: AskRequest) -> AskResponse:
             from rlm.evaluate import score_answer, station_universe
 
             gold_answer = match["gold_answer"]
-            answer_evaluation = score_answer(run.answer, gold_answer, station_universe(service))
+            answer_evaluation = score_answer(
+                run.answer, gold_answer, station_universe(service), request.question
+            )
 
     record = run.as_record()
     return AskResponse(

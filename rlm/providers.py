@@ -124,6 +124,36 @@ def _is_quota_error(exc: BaseException) -> bool:
     return "429" in text or "quota" in text or "rate limit" in text
 
 
+RATE_LIMIT_MAX_WAITS = 6
+
+
+def _rate_limit_wait_seconds(exc: BaseException) -> Optional[float]:
+    """Seconds to wait before retrying a per-minute rate limit, or None.
+
+    A per-minute limit (free-tier gemini-2.5-flash allows 5 requests a minute;
+    Groq reports "tokens per minute (TPM)") clears by itself, so the call is
+    retried after the delay the provider asks for. A per-day quota (Google
+    "PerDay", Groq "per day (TPD)") does not clear within a run and stays a
+    hard stop.
+    """
+    text = str(exc)
+    if "PerDay" in text or "per day" in text:
+        return None
+    if "PerMinute" not in text and "per minute" not in text:
+        return None
+    google = re.search(r"retry in ([\d.]+)s", text) or re.search(r"seconds:\s*(\d+)", text)
+    if google:
+        return float(google.group(1)) + 1.0
+    # Groq: "Please try again in 1m17.76s" or "in 7.66s" or "in 450ms".
+    groq = re.search(r"try again in (?:(\d+)m(?!s))?(?:([\d.]+)(ms|s))?", text)
+    if groq and (groq.group(1) or groq.group(2)):
+        seconds = float(groq.group(1) or 0) * 60
+        if groq.group(2):
+            seconds += float(groq.group(2)) / (1000 if groq.group(3) == "ms" else 1)
+        return seconds + 1.0
+    return 60.0
+
+
 # ================================ Anthropic =================================
 
 
@@ -251,20 +281,28 @@ class GoogleProvider:
     def generate(self, prompt: str) -> GenerationResult:
         if not self.config.model:
             raise ProviderUnavailable("No model id configured; run verify_model() first.")
-        started = time.perf_counter()
-        try:
-            model = self._genai.GenerativeModel(self.config.model)
-            response = model.generate_content(
-                prompt,
-                generation_config={
-                    "temperature": self.config.temperature,
-                    "max_output_tokens": self.config.max_tokens,
-                },
-            )
-        except Exception as exc:
-            if _is_quota_error(exc):
-                raise QuotaExceeded("google", str(exc)) from exc
-            raise RuntimeError(f"Google generation failed for a {len(prompt)}-char prompt") from exc
+        model = self._genai.GenerativeModel(self.config.model)
+        for attempt in range(RATE_LIMIT_MAX_WAITS + 1):
+            # Timed per attempt so a rate-limit wait never inflates recorded latency.
+            started = time.perf_counter()
+            try:
+                response = model.generate_content(
+                    prompt,
+                    generation_config={
+                        "temperature": self.config.temperature,
+                        "max_output_tokens": self.config.max_tokens,
+                    },
+                )
+                break
+            except Exception as exc:
+                if not _is_quota_error(exc):
+                    raise RuntimeError(f"Google generation failed for a {len(prompt)}-char prompt") from exc
+                wait = _rate_limit_wait_seconds(exc)
+                if wait is None or attempt == RATE_LIMIT_MAX_WAITS:
+                    raise QuotaExceeded("google", str(exc)) from exc
+                print(f"  google per-minute limit hit; waiting {wait:.0f}s "
+                      f"(retry {attempt + 1}/{RATE_LIMIT_MAX_WAITS})", flush=True)
+                time.sleep(wait)
         latency_ms = (time.perf_counter() - started) * 1000
         usage = getattr(response, "usage_metadata", None)
         return GenerationResult(
@@ -330,9 +368,87 @@ class MockProvider:
         )
 
 
+# =================================== Groq ===================================
+
+
+class GroqProvider:
+    """Hosted Groq through its OpenAI-compatible endpoint, via the `openai` SDK.
+
+    Same verification rule: the model id must appear in the provider's own list.
+    """
+
+    BASE_URL = "https://api.groq.com/openai/v1"
+
+    def __init__(self, model: Optional[str] = None, temperature: float = 0.0, max_tokens: int = 1024):
+        api_key = resolve_key("GROQ_API_KEY")
+        if not api_key:
+            raise ProviderUnavailable("GROQ_API_KEY is not set in the environment or .env")
+        try:
+            from openai import OpenAI
+        except ImportError as exc:
+            raise ProviderUnavailable("the `openai` package is not installed") from exc
+        self._client = OpenAI(api_key=api_key, base_url=self.BASE_URL)
+        model_id = model or os.environ.get("GROQ_MODEL") or ""
+        self.config = GenerationConfig(
+            provider="groq", model=model_id, temperature=temperature, max_tokens=max_tokens
+        )
+
+    def list_models(self) -> List[str]:
+        return [model.id for model in self._client.models.list().data]
+
+    def verify_model(self) -> Dict[str, Any]:
+        available = self.list_models()
+        if not self.config.model:
+            raise ProviderUnavailable(
+                "No model id given. Pass --model or set GROQ_MODEL. Ids this key can reach: "
+                f"{available}."
+            )
+        if self.config.model not in available:
+            raise ProviderUnavailable(
+                f"Model {self.config.model!r} is not available to this key. Available: {available}"
+            )
+        return {"provider": "groq", "model": self.config.model, "verified": True,
+                "models_visible": len(available)}
+
+    def generate(self, prompt: str) -> GenerationResult:
+        if not self.config.model:
+            raise ProviderUnavailable("No model id configured; run verify_model() first.")
+        for attempt in range(RATE_LIMIT_MAX_WAITS + 1):
+            # Timed per attempt so a rate-limit wait never inflates recorded latency.
+            started = time.perf_counter()
+            try:
+                response = self._client.chat.completions.create(
+                    model=self.config.model,
+                    temperature=self.config.temperature,
+                    max_tokens=self.config.max_tokens,
+                    messages=[{"role": "user", "content": prompt}],
+                )
+                break
+            except Exception as exc:
+                if not _is_quota_error(exc):
+                    raise RuntimeError(f"Groq generation failed for a {len(prompt)}-char prompt") from exc
+                wait = _rate_limit_wait_seconds(exc)
+                if wait is None or attempt == RATE_LIMIT_MAX_WAITS:
+                    raise QuotaExceeded("groq", str(exc)) from exc
+                print(f"  groq per-minute limit hit; waiting {wait:.0f}s "
+                      f"(retry {attempt + 1}/{RATE_LIMIT_MAX_WAITS})", flush=True)
+                time.sleep(wait)
+        latency_ms = (time.perf_counter() - started) * 1000
+        usage = response.usage
+        return GenerationResult(
+            text=response.choices[0].message.content or "",
+            model=response.model,
+            provider="groq",
+            input_tokens=getattr(usage, "prompt_tokens", None),
+            output_tokens=getattr(usage, "completion_tokens", None),
+            latency_ms=round(latency_ms, 3),
+        )
+
+
 PROVIDERS = {
     "anthropic": AnthropicProvider,
     "google": GoogleProvider,
+    "groq": GroqProvider,
     "mock": MockProvider,
 }
 

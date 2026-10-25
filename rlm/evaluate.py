@@ -49,6 +49,10 @@ from rlm import loop as rlm_loop  # noqa: E402
 from rlm.providers import ProviderUnavailable, QuotaExceeded, build_provider  # noqa: E402
 
 EVALUATION_CODE_VERSION = "rlm-eval-1.1"
+# Scoring is deterministic and re-applied to cached rows on load, so it is
+# versioned apart from the run signature: a scorer fix never forces paid
+# generation calls to be repeated.
+SCORER_VERSION = "rlm-score-1.3"
 HOSTED_PROVIDERS = {"anthropic", "google"}
 PRIVACY_RESTRICTED_CORPORA = {"production-uploads-v1"}
 
@@ -62,13 +66,32 @@ ENTITY_PATTERNS = {
 # ============================ Answer-level scoring ==========================
 
 
+UNICODE_DASHES = re.compile(r"[\u2010-\u2015\u2212]")
+UNICODE_SPACES = re.compile(r"[\u00a0\u2000-\u200a\u202f\u205f\u3000]")
+
+
+def fold_typography(text: str) -> str:
+    """Fold typographic dashes and spaces to ASCII before matching.
+
+    Some models write PL-A with a non-breaking hyphen (U+2011) or Series 400
+    with a narrow no-break space (U+202F); both are the same value.
+    """
+    return UNICODE_SPACES.sub(" ", UNICODE_DASHES.sub("-", text))
+
+
 def extract_entities(answer: str, entity_type: str, universe: Optional[List[str]] = None) -> Set[str]:
     """Pull candidate entities of one type out of free text.
 
     Codes come from a strict pattern. Station names cannot be patterned, so they
     are matched against the corpus's own station list, which is the only
     authoritative universe of names.
+
+    Typography is folded to ASCII first, and underscores are read as spaces so
+    a chunk id counts as its entity: procedure_MP-107 as MP-107 (otherwise the
+    underscore defeats the \\b boundary) and station_kestrel_green as Kestrel
+    Green.
     """
+    answer = fold_typography(answer).replace("_", " ")
     if entity_type in ENTITY_PATTERNS:
         return set(re.findall(ENTITY_PATTERNS[entity_type], answer))
     if entity_type == "station_name":
@@ -81,9 +104,14 @@ def extract_entities(answer: str, entity_type: str, universe: Optional[List[str]
     raise ValueError(f"no extractor for entity type {entity_type!r}")
 
 
-def score_entity_set(answer: str, gold: Dict[str, Any], universe: Optional[List[str]]) -> Dict[str, Any]:
+def score_entity_set(
+    answer: str, gold: Dict[str, Any], universe: Optional[List[str]], question: str = ""
+) -> Dict[str, Any]:
     expected = set(gold["entities"])
     found = extract_entities(answer, gold["entity_type"], universe)
+    # Restating an entity the question already names ("either side of Alder
+    # Vale ...") is not an answer to it, so it is not counted as a wrong pick.
+    found -= extract_entities(question, gold["entity_type"], universe) - expected
     hits = expected & found
     return {
         "kind": "entity_set",
@@ -104,6 +132,7 @@ def score_predicates(answer: str, gold: Dict[str, Any]) -> Dict[str, Any]:
     string equality against a reference answer.
     """
     results: Dict[str, bool] = {}
+    answer = fold_typography(answer)
     lowered = answer.lower()
     for key, value in gold["predicates"].items():
         if isinstance(value, bool):
@@ -123,13 +152,15 @@ def score_predicates(answer: str, gold: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-def score_answer(answer: str, gold: Dict[str, Any], universe: Optional[List[str]]) -> Dict[str, Any]:
+def score_answer(
+    answer: str, gold: Dict[str, Any], universe: Optional[List[str]], question: str = ""
+) -> Dict[str, Any]:
     if answer.strip().upper().startswith("INSUFFICIENT EVIDENCE"):
         base = {"abstained": True}
     else:
         base = {"abstained": False}
     if gold["kind"] == "entity_set":
-        base.update(score_entity_set(answer, gold, universe))
+        base.update(score_entity_set(answer, gold, universe, question))
     elif gold["kind"] == "predicates":
         base.update(score_predicates(answer, gold))
     else:
@@ -242,6 +273,8 @@ def main() -> int:
     parser.add_argument("--max-tokens", type=int, default=512)
     parser.add_argument("--resume", action="store_true",
                         help="reuse per-query results already recorded for this exact configuration")
+    parser.add_argument("--category", default=None,
+                        help="evaluate only queries whose category contains this text")
     parser.add_argument("--no-cache-write", action="store_true",
                         help="do not record per-query results for later resumption")
     args = parser.parse_args()
@@ -279,6 +312,8 @@ def main() -> int:
         max_steps=args.max_steps, max_retrievals=args.max_retrievals, top_k=args.top_k
     )
     queries = dataset[: args.limit] if args.limit else dataset
+    if args.category:
+        queries = [item for item in queries if args.category in str(item.get("category", ""))]
     universe = station_universe(service)
 
     signature = run_signature(
@@ -305,6 +340,9 @@ def main() -> int:
 
         cached = cache.get(query_id)
         if cached is not None:
+            cached["answer_evaluation"] = score_answer(
+                cached["answer"], item["gold_answer"], universe, question
+            )
             rows.append(cached)
             reused += 1
             print(f"[{index:02d}/{len(queries)}] cached  correct={cached['answer_evaluation']['correct']} "
@@ -326,7 +364,7 @@ def main() -> int:
             }
             print(f"\n[{index:02d}/{len(queries)}] QUOTA STOP after {len(rows)} of {len(queries)} queries")
             break
-        answer_score = score_answer(run.answer, item["gold_answer"], universe)
+        answer_score = score_answer(run.answer, item["gold_answer"], universe, question)
 
         relevant = {str(value) for value in item["relevant"]}
         evidence = set(run.evidence_ids)
@@ -446,6 +484,7 @@ def main() -> int:
         ),
         "reproducibility": {
             "evaluation_code_version": EVALUATION_CODE_VERSION,
+            "scorer_version": SCORER_VERSION,
             "git_revision": git_revision(),
             "recorded_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "corpus_id": corpus["corpus_id"],
