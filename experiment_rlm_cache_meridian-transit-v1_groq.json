@@ -1,12 +1,12 @@
 {
-  "run_signature": "29f61fd3765508789af9717f5cca254bc4296da083397d41f90142016ec4806d",
+  "run_signature": "0a21289fd96e4ceab6a1803b13e1465ee3801ce2f0e528f155eb8b4e15484abd",
   "rows": {
     "31": {
       "id": 31,
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Harbour Row?",
-      "answer": "MP-101, MP-102 – these are the maintenance procedures that cover the TX-440 traction inverter fault.",
+      "answer": "MP-101, MP-102 – both are maintenance procedures that apply to the TX-440 traction inverter, which caused the phase‑imbalance fault at Harbour Row.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -34,18 +34,20 @@
           "station_harbour_row",
           "line_azure",
           "equipment_TX-440",
-          "station_kestrel_green"
+          "station_kestrel_green",
+          "procedure_MP-101",
+          "procedure_MP-102"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1401,
-        "output_tokens": 271,
-        "retrieval_latency_ms": 83.338,
-        "generation_latency_ms": 1453.715
+        "generation_calls": 3,
+        "input_tokens": 2358,
+        "output_tokens": 405,
+        "retrieval_latency_ms": 279.913,
+        "generation_latency_ms": 2360.528
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -67,6 +69,14 @@
             "station_kestrel_green"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-101",
+            "procedure_MP-102"
+          ],
+          "answer_before_grounding": "MP-101, MP-102 – these are the maintenance procedures that cover the TX‑440 traction inverter fault that halted service at Harbour Row."
         }
       ]
     },
@@ -75,7 +85,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Kestrel Green?",
-      "answer": "MP-103, MP-104 – these are the maintenance procedures that cover the HV‑21 pantograph head fault that halted service at Kestrel Green.",
+      "answer": "MP-103, MP-104 – both procedures maintain the HV‑21 pantograph head that suffered the carbon strip fracture.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -103,18 +113,20 @@
           "station_kestrel_green",
           "line_azure",
           "equipment_HV-21",
-          "station_harbour_row"
+          "station_harbour_row",
+          "procedure_MP-103",
+          "procedure_MP-104"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1413,
-        "output_tokens": 274,
-        "retrieval_latency_ms": 26.01,
-        "generation_latency_ms": 1816.733
+        "generation_calls": 3,
+        "input_tokens": 2350,
+        "output_tokens": 388,
+        "retrieval_latency_ms": 17.702,
+        "generation_latency_ms": 2465.149
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -136,6 +148,14 @@
             "station_harbour_row"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-103",
+            "procedure_MP-104"
+          ],
+          "answer_before_grounding": "MP-103, MP-104 – these are the maintenance procedures that cover the HV‑21 pantograph head fault that halted service at Kestrel Green."
         }
       ]
     },
@@ -144,7 +164,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Alder Vale?",
-      "answer": "MP-105, MP-106 – these are the maintenance procedures that cover the BR‑7 regenerative brake unit fault.",
+      "answer": "MP-105, MP-106 – both procedures maintain the BR‑7 regenerative brake unit whose resistor‑grid overheat caused the Alder Vale service fault.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -172,18 +192,20 @@
           "line_azure",
           "equipment_BR-7",
           "station_kestrel_green",
-          "station_brickworks"
+          "station_brickworks",
+          "procedure_MP-105",
+          "procedure_MP-106"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1427,
-        "output_tokens": 278,
-        "retrieval_latency_ms": 18.919,
-        "generation_latency_ms": 1417.972
+        "generation_calls": 3,
+        "input_tokens": 2399,
+        "output_tokens": 407,
+        "retrieval_latency_ms": 21.102,
+        "generation_latency_ms": 2404.958
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -205,6 +227,14 @@
             "station_brickworks"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-105",
+            "procedure_MP-106"
+          ],
+          "answer_before_grounding": "MP-105, MP-106 – these are the maintenance procedures that cover the BR‑7 regenerative brake unit fault that halted service at Alder Vale."
         }
       ]
     },
@@ -213,7 +243,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Brickworks?",
-      "answer": "procedure_MP-107, procedure_MP-108 – these are the maintenance procedures that cover the PD‑90 platform screen door controller fault.",
+      "answer": "MP-107, MP-108 – these are the maintenance procedures that cover the PD‑90 platform screen door controller fault that halted service at Brickworks.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -241,18 +271,20 @@
           "station_brickworks",
           "role_signalling_technician",
           "line_azure",
-          "equipment_PD-90"
+          "equipment_PD-90",
+          "procedure_MP-107",
+          "procedure_MP-108"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1361,
-        "output_tokens": 362,
-        "retrieval_latency_ms": 17.677,
-        "generation_latency_ms": 2126.945
+        "generation_calls": 3,
+        "input_tokens": 2278,
+        "output_tokens": 516,
+        "retrieval_latency_ms": 14.977,
+        "generation_latency_ms": 18161.917
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -274,6 +306,14 @@
             "equipment_PD-90"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-107",
+            "procedure_MP-108"
+          ],
+          "answer_before_grounding": "procedure_MP-107, procedure_MP-108 – these are the maintenance procedures that cover the PD-90 platform screen door controller fault that halted service at Brickworks."
         }
       ]
     },
@@ -282,7 +322,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Copper Lane?",
-      "answer": "MP-109, MP-110 – these are the maintenance procedures that cover the SG‑12 signal interlocking relay whose contact‑welding fault stopped service at Copper Lane.",
+      "answer": "MP-109, MP-110 – both procedures maintain the SG‑12 signal interlocking relay that failed at Copper Lane.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -314,18 +354,18 @@
           "equipment_SG-12",
           "procedure_MP-109",
           "incident_2026_19",
-          "policy_PL-D"
+          "procedure_MP-110"
         ],
-        "coverage": 0.5,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 2,
-        "generation_calls": 3,
-        "input_tokens": 3004,
-        "output_tokens": 477,
-        "retrieval_latency_ms": 29.454,
-        "generation_latency_ms": 11751.396
+        "generation_calls": 4,
+        "input_tokens": 3951,
+        "output_tokens": 701,
+        "retrieval_latency_ms": 35.958,
+        "generation_latency_ms": 34041.934
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -346,25 +386,31 @@
             "station_brickworks",
             "line_azure"
           ],
-          "decision": "SEARCH: maintenance procedures SG-12 signal interlocking relay fault contact welding"
+          "decision": "SEARCH: maintenance procedures for SG-12 signal interlocking relay fault copper lane incident"
         },
         {
           "step": 2,
-          "query": "maintenance procedures SG-12 signal interlocking relay fault contact welding",
+          "query": "maintenance procedures for SG-12 signal interlocking relay fault copper lane incident",
           "retrieved": [
             "equipment_SG-12",
+            "incident_2026_05",
             "procedure_MP-109",
             "incident_2026_19",
-            "incident_2026_05",
-            "policy_PL-D"
+            "station_copper_lane"
           ],
           "new_evidence": [
             "equipment_SG-12",
             "procedure_MP-109",
-            "incident_2026_19",
-            "policy_PL-D"
+            "incident_2026_19"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-110"
+          ],
+          "answer_before_grounding": "MP-109, MP-110 – both are maintenance procedures that apply to the SG‑12 signal interlocking relay whose contact‑welding fault stopped service at Copper Lane."
         }
       ]
     },
@@ -373,7 +419,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Dunmore Park?",
-      "answer": "MP-111, MP-112 – these are the maintenance procedures that cover the AX‑3 axle bearing assembly fault that halted service at Dunmore Park.",
+      "answer": "MP-111, MP-112 – both procedures are assigned to maintain the AX‑3 axle bearing assembly that failed.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -401,18 +447,20 @@
           "line_azure",
           "equipment_AX-3",
           "station_copper_lane",
-          "station_garnet_hill"
+          "station_garnet_hill",
+          "procedure_MP-111",
+          "procedure_MP-112"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1429,
-        "output_tokens": 268,
-        "retrieval_latency_ms": 21.809,
-        "generation_latency_ms": 13381.941
+        "generation_calls": 3,
+        "input_tokens": 2406,
+        "output_tokens": 362,
+        "retrieval_latency_ms": 11.746,
+        "generation_latency_ms": 22452.432
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -434,6 +482,14 @@
             "station_garnet_hill"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-111",
+            "procedure_MP-112"
+          ],
+          "answer_before_grounding": "MP-111, MP-112 – these are the maintenance procedures that cover the AX‑3 axle bearing assembly fault that halted service at Dunmore Park."
         }
       ]
     },
@@ -442,7 +498,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Eastgate Quay?",
-      "answer": "MP-113, MP-114 – these are the maintenance procedures that cover the CP‑55 compressor module fault that halted service at Eastgate Quay.",
+      "answer": "MP-113, MP-114 – these are the maintenance procedures that apply to the CP‑55 compressor module whose pressure bleed‑down caused the service stoppage at Eastgate Quay.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -470,18 +526,20 @@
           "station_eastgate_quay",
           "line_crimson",
           "equipment_CP-55",
-          "station_foundry_bridge"
+          "station_foundry_bridge",
+          "procedure_MP-113",
+          "procedure_MP-114"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1437,
-        "output_tokens": 297,
-        "retrieval_latency_ms": 24.265,
-        "generation_latency_ms": 12464.142
+        "generation_calls": 3,
+        "input_tokens": 2388,
+        "output_tokens": 385,
+        "retrieval_latency_ms": 12.681,
+        "generation_latency_ms": 19874.773
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -503,6 +561,14 @@
             "station_foundry_bridge"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-113",
+            "procedure_MP-114"
+          ],
+          "answer_before_grounding": "MP-113, MP-114 – these are the maintenance procedures that cover the CP-55 compressor module fault that halted service at Eastgate Quay."
         }
       ]
     },
@@ -511,7 +577,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Foundry Bridge?",
-      "answer": "MP-115, MP-116 – these are the maintenance procedures that cover the DR‑8 door engine actuator fault.",
+      "answer": "MP-115, MP-116 – both procedures maintain the DR‑8 door engine actuator, whose leadscrew backlash caused the incident.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -539,18 +605,20 @@
           "station_foundry_bridge",
           "line_crimson",
           "equipment_DR-8",
-          "station_eastgate_quay"
+          "station_eastgate_quay",
+          "procedure_MP-115",
+          "procedure_MP-116"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1421,
-        "output_tokens": 222,
-        "retrieval_latency_ms": 15.001,
-        "generation_latency_ms": 13500.49
+        "generation_calls": 3,
+        "input_tokens": 2361,
+        "output_tokens": 552,
+        "retrieval_latency_ms": 15.479,
+        "generation_latency_ms": 21826.257
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -572,6 +640,14 @@
             "station_eastgate_quay"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-115",
+            "procedure_MP-116"
+          ],
+          "answer_before_grounding": "MP-115, MP-116 – these are the maintenance procedures that cover the DR‑8 door engine actuator fault that halted service at Foundry Bridge."
         }
       ]
     },
@@ -580,7 +656,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Garnet Hill?",
-      "answer": "MP-117 – the maintenance procedure that covers the PS‑19 auxiliary power supply ripple fault.",
+      "answer": "MP-117 – the Auxiliary supply ripple measurement procedure covers the ripple fault that stopped service at Garnet Hill.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -605,18 +681,19 @@
           "station_garnet_hill",
           "line_crimson",
           "equipment_PS-19",
-          "station_foundry_bridge"
+          "station_foundry_bridge",
+          "procedure_MP-117"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1433,
-        "output_tokens": 243,
-        "retrieval_latency_ms": 14.9,
-        "generation_latency_ms": 12091.231
+        "generation_calls": 3,
+        "input_tokens": 2274,
+        "output_tokens": 367,
+        "retrieval_latency_ms": 16.931,
+        "generation_latency_ms": 19796.826
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -638,6 +715,13 @@
             "station_foundry_bridge"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-117"
+          ],
+          "answer_before_grounding": "MP-117 — the maintenance procedure that covers the PS‑19 auxiliary power supply ripple fault."
         }
       ]
     },
@@ -646,7 +730,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Hollow Mill?",
-      "answer": "procedure_MP-118, procedure_MP-119 – these are the maintenance procedures that cover the TC‑6 track circuit transmitter fault that halted service at Hollow Mill.",
+      "answer": "MP-118, MP-119 – these are the maintenance procedures that cover the TC‑6 track circuit transmitter fault that halted service at Hollow Mill.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -676,21 +760,23 @@
           "station_garnet_hill",
           "line_crimson",
           "equipment_TC-6",
-          "station_vantage_point",
-          "line_amber",
           "policy_PL-D",
-          "policy_PL-K"
+          "policy_PL-K",
+          "role_signalling_technician",
+          "station_vantage_point",
+          "procedure_MP-118",
+          "procedure_MP-119"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 2,
-        "generation_calls": 3,
-        "input_tokens": 3246,
-        "output_tokens": 417,
-        "retrieval_latency_ms": 36.761,
-        "generation_latency_ms": 27174.235
+        "generation_calls": 4,
+        "input_tokens": 4691,
+        "output_tokens": 565,
+        "retrieval_latency_ms": 39.124,
+        "generation_latency_ms": 40346.856
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -711,26 +797,34 @@
             "station_garnet_hill",
             "line_crimson"
           ],
-          "decision": "SEARCH: TC-6 track circuit transmitter maintenance procedures frequency drift"
+          "decision": "SEARCH: maintenance procedures for TC-6 track circuit transmitter frequency drift"
         },
         {
           "step": 2,
-          "query": "TC-6 track circuit transmitter maintenance procedures frequency drift",
+          "query": "maintenance procedures for TC-6 track circuit transmitter frequency drift",
           "retrieved": [
             "equipment_TC-6",
-            "station_vantage_point",
-            "line_amber",
             "policy_PL-D",
-            "policy_PL-K"
+            "policy_PL-K",
+            "role_signalling_technician",
+            "station_vantage_point"
           ],
           "new_evidence": [
             "equipment_TC-6",
-            "station_vantage_point",
-            "line_amber",
             "policy_PL-D",
-            "policy_PL-K"
+            "policy_PL-K",
+            "role_signalling_technician",
+            "station_vantage_point"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-118",
+            "procedure_MP-119"
+          ],
+          "answer_before_grounding": "procedure_MP-118, procedure_MP-119 – these are the maintenance procedures that cover the TC‑6 track circuit transmitter fault that halted service at Hollow Mill."
         }
       ]
     },
@@ -739,7 +833,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Ironside?",
-      "answer": "MP-120 — the maintenance procedure that covers the VE‑31 tunnel ventilation fan fault that stopped service at Ironside.",
+      "answer": "MP-120 – the ventilation fan balance correction procedure covers the blade‑imbalance fault that halted service at Ironside.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -764,18 +858,19 @@
           "station_ironside",
           "line_crimson",
           "equipment_VE-31",
-          "station_hollow_mill"
+          "station_hollow_mill",
+          "procedure_MP-120"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1435,
-        "output_tokens": 250,
-        "retrieval_latency_ms": 23.703,
-        "generation_latency_ms": 11931.927
+        "generation_calls": 3,
+        "input_tokens": 2283,
+        "output_tokens": 374,
+        "retrieval_latency_ms": 15.772,
+        "generation_latency_ms": 11439.347
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -797,6 +892,13 @@
             "station_hollow_mill"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-120"
+          ],
+          "answer_before_grounding": "MP-120 — the maintenance procedure that covers the VE‑31 tunnel ventilation fan fault that stopped service at Ironside."
         }
       ]
     },
@@ -805,7 +907,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Jubilee Fields?",
-      "answer": "MP-121 covers the ES-14 escalator drive chain fault that stopped service at Jubilee Fields.",
+      "answer": "MP-121 – the Escalator chain elongation gauging procedure covers the ES‑14 escalator drive chain fault that stopped service at Jubilee Fields.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -830,18 +932,19 @@
           "station_jubilee_fields",
           "line_crimson",
           "equipment_ES-14",
-          "station_ironside"
+          "station_ironside",
+          "procedure_MP-121"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1413,
-        "output_tokens": 243,
-        "retrieval_latency_ms": 29.176,
-        "generation_latency_ms": 13303.067
+        "generation_calls": 3,
+        "input_tokens": 2253,
+        "output_tokens": 376,
+        "retrieval_latency_ms": 83.755,
+        "generation_latency_ms": 20439.322
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -863,6 +966,13 @@
             "station_ironside"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-121"
+          ],
+          "answer_before_grounding": "MP-121 covers the ES-14 escalator drive chain fault that halted service at Jubilee Fields."
         }
       ]
     },
@@ -871,7 +981,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Kingsmoor?",
-      "answer": "MP-122 – Maintenance procedure MP-122 covers the LT‑77 lighting ballast whose flicker cascade fault stopped service at Kingsmoor.",
+      "answer": "MP-122 covers the LT‑77 lighting ballast fault that halted service at Kingsmoor.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -900,20 +1010,22 @@
           "equipment_LT-77",
           "procedure_MP-122",
           "incident_2026_27",
-          "policy_PL-J"
+          "policy_PL-J",
+          "role_power_technician",
+          "station_ashfen"
         ],
         "coverage": 1.0,
         "all_relevant_present": true
       },
       "cost": {
-        "retrieval_calls": 2,
+        "retrieval_calls": 3,
         "generation_calls": 3,
-        "input_tokens": 2894,
-        "output_tokens": 544,
-        "retrieval_latency_ms": 23.344,
-        "generation_latency_ms": 24754.597
+        "input_tokens": 3075,
+        "output_tokens": 529,
+        "retrieval_latency_ms": 72.633,
+        "generation_latency_ms": 26717.285
       },
-      "stop_reason": "model_stopped",
+      "stop_reason": "step_budget_exhausted",
       "steps": [
         {
           "step": 1,
@@ -950,7 +1062,23 @@
             "incident_2026_27",
             "policy_PL-J"
           ],
-          "decision": "STOP"
+          "decision": "SEARCH: procedure_MP-121 maintenance scope LT-77 lighting ballast fault"
+        },
+        {
+          "step": 3,
+          "query": "procedure_MP-121 maintenance scope LT-77 lighting ballast fault",
+          "retrieved": [
+            "procedure_MP-122",
+            "equipment_LT-77",
+            "policy_PL-J",
+            "role_power_technician",
+            "station_ashfen"
+          ],
+          "new_evidence": [
+            "role_power_technician",
+            "station_ashfen"
+          ],
+          "decision": "bounds_reached"
         }
       ]
     },
@@ -959,7 +1087,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Larkspur?",
-      "answer": "MP-123, MP-124 – these are the maintenance procedures that cover the WS‑5 wheel slide protection valve fault that halted service at Larkspur.",
+      "answer": "MP-123, MP-124 – both procedures maintain the WS‑5 wheel slide protection valve that failed.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -987,18 +1115,20 @@
           "station_larkspur",
           "line_jade",
           "equipment_WS-5",
-          "station_kingsmoor"
+          "station_kingsmoor",
+          "procedure_MP-123",
+          "procedure_MP-124"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1397,
-        "output_tokens": 246,
-        "retrieval_latency_ms": 17.666,
-        "generation_latency_ms": 12844.734
+        "generation_calls": 3,
+        "input_tokens": 2361,
+        "output_tokens": 342,
+        "retrieval_latency_ms": 28.184,
+        "generation_latency_ms": 18930.817
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1020,6 +1150,14 @@
             "station_kingsmoor"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-123",
+            "procedure_MP-124"
+          ],
+          "answer_before_grounding": "MP-123, MP-124 – these are the maintenance procedures that cover the WS‑5 wheel slide protection valve fault that halted service at Larkspur."
         }
       ]
     },
@@ -1028,7 +1166,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Mallow Street?",
-      "answer": "MP-101, MP-102 – these are the maintenance procedures that cover the TX-440 traction inverter fault that halted service at Mallow Street.",
+      "answer": "MP-101, MP-102 – both are maintenance procedures that apply to the TX-440 traction inverter, which caused the fault at Mallow Street.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -1056,18 +1194,20 @@
           "incident_2026_07",
           "station_mallow_street",
           "line_jade",
-          "equipment_TX-440"
+          "equipment_TX-440",
+          "procedure_MP-101",
+          "procedure_MP-102"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1409,
-        "output_tokens": 283,
-        "retrieval_latency_ms": 28.082,
-        "generation_latency_ms": 13215.271
+        "generation_calls": 3,
+        "input_tokens": 2370,
+        "output_tokens": 404,
+        "retrieval_latency_ms": 65.918,
+        "generation_latency_ms": 21322.822
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1089,6 +1229,14 @@
             "equipment_TX-440"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-101",
+            "procedure_MP-102"
+          ],
+          "answer_before_grounding": "MP-101, MP-102 – these are the maintenance procedures that cover the TX-440 traction inverter fault that halted service at Mallow Street."
         }
       ]
     },
@@ -1097,7 +1245,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Netherby?",
-      "answer": "MP-103, MP-104 – these are the maintenance procedures that cover the HV‑21 pantograph head fault that halted service at Netherby.",
+      "answer": "MP-103, MP-104 – both procedures maintain the HV‑21 pantograph head and address carbon‑strip failures.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -1125,18 +1273,20 @@
           "station_netherby",
           "line_jade",
           "equipment_HV-21",
-          "station_mallow_street"
+          "station_mallow_street",
+          "procedure_MP-103",
+          "procedure_MP-104"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1401,
-        "output_tokens": 268,
-        "retrieval_latency_ms": 16.622,
-        "generation_latency_ms": 11964.816
+        "generation_calls": 3,
+        "input_tokens": 2332,
+        "output_tokens": 491,
+        "retrieval_latency_ms": 52.665,
+        "generation_latency_ms": 21089.253
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1158,6 +1308,14 @@
             "station_mallow_street"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-103",
+            "procedure_MP-104"
+          ],
+          "answer_before_grounding": "MP-103, MP-104 – these are the maintenance procedures that cover the HV‑21 pantograph head fault that halted service at Netherby."
         }
       ]
     },
@@ -1166,7 +1324,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Oakhurst?",
-      "answer": "MP-105, MP-106 – these are the maintenance procedures that cover the BR-7 regenerative brake unit fault at Oakhurst.",
+      "answer": "MP-105, MP-106 – both are maintenance procedures that apply to the BR-7 regenerative brake unit whose resistor grid overheat caused the Oakhurst service stoppage.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -1194,18 +1352,20 @@
           "incident_2026_08",
           "line_jade",
           "equipment_BR-7",
-          "station_foundry_bridge"
+          "station_foundry_bridge",
+          "procedure_MP-105",
+          "procedure_MP-106"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1425,
-        "output_tokens": 276,
-        "retrieval_latency_ms": 19.124,
-        "generation_latency_ms": 12903.94
+        "generation_calls": 3,
+        "input_tokens": 2396,
+        "output_tokens": 405,
+        "retrieval_latency_ms": 61.946,
+        "generation_latency_ms": 21094.605
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1227,6 +1387,14 @@
             "station_foundry_bridge"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-105",
+            "procedure_MP-106"
+          ],
+          "answer_before_grounding": "MP-105, MP-106 – these are the maintenance procedures that cover the BR-7 regenerative brake unit fault at Oakhurst."
         }
       ]
     },
@@ -1235,7 +1403,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Pennyford?",
-      "answer": "MP-107, MP-108 – these are the maintenance procedures that cover the PD-90 controller fault at Pennyford.",
+      "answer": "MP-107, MP-108 – both procedures maintain the PD-90 platform screen door controller that experienced the obstruction sensor drift.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -1263,18 +1431,20 @@
           "line_jade",
           "equipment_PD-90",
           "station_foundry_bridge",
-          "line_crimson"
+          "line_crimson",
+          "procedure_MP-107",
+          "procedure_MP-108"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1439,
-        "output_tokens": 240,
-        "retrieval_latency_ms": 14.753,
-        "generation_latency_ms": 13064.77
+        "generation_calls": 3,
+        "input_tokens": 2395,
+        "output_tokens": 359,
+        "retrieval_latency_ms": 47.815,
+        "generation_latency_ms": 21479.458
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1296,6 +1466,14 @@
             "line_crimson"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-107",
+            "procedure_MP-108"
+          ],
+          "answer_before_grounding": "MP-107, MP-108 – these are the maintenance procedures that cover the PD-90 platform screen door controller fault at Pennyford."
         }
       ]
     },
@@ -1304,7 +1482,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Quarry Side?",
-      "answer": "MP-109, MP-110 – these are the maintenance procedures that cover the SG‑12 relay fault that halted service at Quarry Side.",
+      "answer": "MP-109, MP-110 – both procedures maintain the SG‑12 signal interlocking relay that failed at Quarry Side.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -1332,18 +1510,20 @@
           "station_quarry_side",
           "line_amber",
           "equipment_SG-12",
-          "station_redcliff"
+          "station_redcliff",
+          "procedure_MP-109",
+          "procedure_MP-110"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1393,
-        "output_tokens": 235,
-        "retrieval_latency_ms": 25.223,
-        "generation_latency_ms": 12052.755
+        "generation_calls": 3,
+        "input_tokens": 2328,
+        "output_tokens": 359,
+        "retrieval_latency_ms": 54.396,
+        "generation_latency_ms": 19376.634
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1365,6 +1545,14 @@
             "station_redcliff"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-109",
+            "procedure_MP-110"
+          ],
+          "answer_before_grounding": "MP-109, MP-110 – these are the maintenance procedures that cover the SG‑12 relay fault that halted service at Quarry Side."
         }
       ]
     },
@@ -1373,7 +1561,7 @@
       "category": "2-hop graph (incident to procedure)",
       "hops": 2,
       "question": "Which maintenance procedures cover the fault that stopped service at Redcliff?",
-      "answer": "MP-111, MP-112 – these are the maintenance procedures that cover the AX‑3 axle bearing assembly fault that halted service at Redcliff.",
+      "answer": "MP-111, MP-112 – both procedures are listed as maintaining the AX-3 axle bearing assembly that failed at Redcliff.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -1401,18 +1589,20 @@
           "station_redcliff",
           "incident_2026_08",
           "line_amber",
-          "equipment_AX-3"
+          "equipment_AX-3",
+          "procedure_MP-111",
+          "procedure_MP-112"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1415,
-        "output_tokens": 235,
-        "retrieval_latency_ms": 31.524,
-        "generation_latency_ms": 11946.176
+        "generation_calls": 3,
+        "input_tokens": 2385,
+        "output_tokens": 356,
+        "retrieval_latency_ms": 54.219,
+        "generation_latency_ms": 20009.596
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1434,6 +1624,14 @@
             "equipment_AX-3"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "procedure_MP-111",
+            "procedure_MP-112"
+          ],
+          "answer_before_grounding": "MP-111, MP-112 – these are the maintenance procedures that cover the AX‑3 axle bearing assembly fault that halted service at Redcliff."
         }
       ]
     },
@@ -1442,7 +1640,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "How many platforms does Harbour Row have and when was the station building refurbished?",
-      "answer": "station_harbour_row – 3 platforms; refurbished in 2009.",
+      "answer": "station_harbour_row – Harbour Row has 3 platforms and was last refurbished in 2009.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -1474,9 +1672,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1405,
-        "output_tokens": 258,
-        "retrieval_latency_ms": 85.563,
-        "generation_latency_ms": 1653.983
+        "output_tokens": 269,
+        "retrieval_latency_ms": 251.709,
+        "generation_latency_ms": 2086.788
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1538,9 +1736,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1411,
-        "output_tokens": 254,
-        "retrieval_latency_ms": 12.263,
-        "generation_latency_ms": 1732.33
+        "output_tokens": 205,
+        "retrieval_latency_ms": 33.578,
+        "generation_latency_ms": 1997.146
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1603,8 +1801,8 @@
         "generation_calls": 2,
         "input_tokens": 1435,
         "output_tokens": 244,
-        "retrieval_latency_ms": 17.17,
-        "generation_latency_ms": 1716.184
+        "retrieval_latency_ms": 22.386,
+        "generation_latency_ms": 2101.489
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1666,9 +1864,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1475,
-        "output_tokens": 372,
-        "retrieval_latency_ms": 12.058,
-        "generation_latency_ms": 1828.054
+        "output_tokens": 275,
+        "retrieval_latency_ms": 54.973,
+        "generation_latency_ms": 1728.958
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1698,7 +1896,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "How many platforms does Kingsmoor have and when was the station building refurbished?",
-      "answer": "station_kingsmoor – 3 platforms; the building was last refurbished in 2009.",
+      "answer": "station_kingsmoor – 3 platforms; refurbished in 2009.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -1730,9 +1928,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1375,
-        "output_tokens": 264,
-        "retrieval_latency_ms": 16.423,
-        "generation_latency_ms": 1616.108
+        "output_tokens": 254,
+        "retrieval_latency_ms": 29.955,
+        "generation_latency_ms": 1804.418
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1762,7 +1960,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "How many platforms does Netherby have and when was the station building refurbished?",
-      "answer": "station_netherby – 2 platforms; last refurbished in 2012.",
+      "answer": "station_netherby – 2 platforms; refurbished in 2012.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -1794,9 +1992,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1399,
-        "output_tokens": 229,
-        "retrieval_latency_ms": 10.838,
-        "generation_latency_ms": 8998.632
+        "output_tokens": 227,
+        "retrieval_latency_ms": 37.263,
+        "generation_latency_ms": 8393.142
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1858,9 +2056,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1399,
-        "output_tokens": 224,
-        "retrieval_latency_ms": 13.865,
-        "generation_latency_ms": 13088.049
+        "output_tokens": 222,
+        "retrieval_latency_ms": 19.137,
+        "generation_latency_ms": 10839.082
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1922,9 +2120,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1405,
-        "output_tokens": 281,
-        "retrieval_latency_ms": 17.025,
-        "generation_latency_ms": 12269.543
+        "output_tokens": 288,
+        "retrieval_latency_ms": 37.133,
+        "generation_latency_ms": 12116.642
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -1986,9 +2184,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1407,
-        "output_tokens": 252,
-        "retrieval_latency_ms": 20.114,
-        "generation_latency_ms": 11952.899
+        "output_tokens": 212,
+        "retrieval_latency_ms": 16.458,
+        "generation_latency_ms": 11677.571
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2018,7 +2216,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "How many platforms does Beacon Rise have and when was the station building refurbished?",
-      "answer": "station_beacon_rise – has 2 platforms and the building was last refurbished in 2012.",
+      "answer": "station_beacon_rise – 2 platforms; last refurbished in 2012.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -2050,9 +2248,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1387,
-        "output_tokens": 262,
-        "retrieval_latency_ms": 16.649,
-        "generation_latency_ms": 13289.654
+        "output_tokens": 300,
+        "retrieval_latency_ms": 41.174,
+        "generation_latency_ms": 12609.078
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2114,9 +2312,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1327,
-        "output_tokens": 303,
-        "retrieval_latency_ms": 15.668,
-        "generation_latency_ms": 10936.292
+        "output_tokens": 304,
+        "retrieval_latency_ms": 15.518,
+        "generation_latency_ms": 12370.865
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2146,7 +2344,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "How many platforms does Hartsmere have and when was the station building refurbished?",
-      "answer": "station_hartsmere – 2 platforms; the station building was last refurbished in 2012.",
+      "answer": "station_hartsmere – it has 2 platforms and the building was last refurbished in 2012.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -2178,9 +2376,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1357,
-        "output_tokens": 250,
-        "retrieval_latency_ms": 22.384,
-        "generation_latency_ms": 12262.967
+        "output_tokens": 234,
+        "retrieval_latency_ms": 22.275,
+        "generation_latency_ms": 12465.673
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2210,7 +2408,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "What rolling stock operates the Azure Line and what are its peak headways?",
-      "answer": "Series 400 four‑car sets – 5 minutes headway in the morning peak.",
+      "answer": "Series 400 four‑car sets; 5 minutes headway in the morning peak.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -2242,9 +2440,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1433,
-        "output_tokens": 398,
-        "retrieval_latency_ms": 27.687,
-        "generation_latency_ms": 13584.15
+        "output_tokens": 381,
+        "retrieval_latency_ms": 35.245,
+        "generation_latency_ms": 13299.395
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2274,7 +2472,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "What rolling stock operates the Crimson Line and what are its peak headways?",
-      "answer": "Series 500 six‑car sets; 5 minutes – The Crimson Line uses Series 500 rolling stock and operates a 5‑minute headway during the morning peak.",
+      "answer": "Series 500 six‑car sets; 5 minutes headway in the morning peak.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -2306,9 +2504,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1459,
-        "output_tokens": 374,
-        "retrieval_latency_ms": 17.217,
-        "generation_latency_ms": 13354.19
+        "output_tokens": 283,
+        "retrieval_latency_ms": 25.012,
+        "generation_latency_ms": 13106.905
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2338,7 +2536,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "What rolling stock operates the Jade Line and what are its peak headways?",
-      "answer": "Series 300 refurbished sets; peak headways are 5 minutes.",
+      "answer": "Series 300 refurbished sets; 5‑minute headway in the morning peak.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -2370,9 +2568,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1431,
-        "output_tokens": 285,
-        "retrieval_latency_ms": 13.166,
-        "generation_latency_ms": 13337.377
+        "output_tokens": 385,
+        "retrieval_latency_ms": 18.756,
+        "generation_latency_ms": 13702.715
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2402,7 +2600,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "What rolling stock operates the Amber Line and what are its peak headways?",
-      "answer": "Series 600 articulated sets; 5‑minute morning‑peak headway.",
+      "answer": "Series 600 articulated sets; peak headways are 5 minutes.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -2434,9 +2632,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1451,
-        "output_tokens": 333,
-        "retrieval_latency_ms": 15.095,
-        "generation_latency_ms": 13657.139
+        "output_tokens": 230,
+        "retrieval_latency_ms": 26.695,
+        "generation_latency_ms": 13083.275
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2498,9 +2696,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1439,
-        "output_tokens": 398,
-        "retrieval_latency_ms": 15.967,
-        "generation_latency_ms": 13448.469
+        "output_tokens": 350,
+        "retrieval_latency_ms": 30.774,
+        "generation_latency_ms": 13425.721
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2530,7 +2728,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "What rolling stock operates the Slate Line and what are its peak headways?",
-      "answer": "Series 200 heritage sets; peak headway is 5 minutes.",
+      "answer": "Series 200 heritage sets; peak headways are 5 minutes.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -2562,9 +2760,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1367,
-        "output_tokens": 338,
-        "retrieval_latency_ms": 14.845,
-        "generation_latency_ms": 13290.38
+        "output_tokens": 291,
+        "retrieval_latency_ms": 21.994,
+        "generation_latency_ms": 12875.068
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2594,7 +2792,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "What does authorisation policy PL-A require before an asset returns to service?",
-      "answer": "PL‑A: a named holder must countersign the work record before the asset is returned to service.",
+      "answer": "policy_PL-A – a named holder must countersign the work record before the asset is returned to service.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -2627,9 +2825,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1409,
-        "output_tokens": 233,
-        "retrieval_latency_ms": 24.085,
-        "generation_latency_ms": 12450.332
+        "output_tokens": 215,
+        "retrieval_latency_ms": 40.549,
+        "generation_latency_ms": 11995.482
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2659,7 +2857,7 @@
       "category": "single-hop factual",
       "hops": 0,
       "question": "What does authorisation policy PL-B require before an asset returns to service?",
-      "answer": "policy_PL-B – a named holder must countersign the work record before the asset is returned to service.",
+      "answer": "policy_PL-B requires a named holder to countersign the work record before the asset returns to service.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "predicates",
@@ -2692,9 +2890,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1415,
-        "output_tokens": 215,
-        "retrieval_latency_ms": 25.03,
-        "generation_latency_ms": 11746.965
+        "output_tokens": 222,
+        "retrieval_latency_ms": 19.115,
+        "generation_latency_ms": 11787.089
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2724,7 +2922,7 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "question": "Which component failed when trains were held at Harbour Row?",
-      "answer": "equipment_TX-440 – the TX-440 traction inverter failed, causing the trains to be held at Harbour Row.",
+      "answer": "TX-440 – the traction inverter failed, causing the trains to be held at Harbour Row.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -2758,9 +2956,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1389,
-        "output_tokens": 201,
-        "retrieval_latency_ms": 18.146,
-        "generation_latency_ms": 11855.701
+        "output_tokens": 207,
+        "retrieval_latency_ms": 32.236,
+        "generation_latency_ms": 11856.359
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2790,7 +2988,7 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "question": "Which component failed when trains were held at Kestrel Green?",
-      "answer": "equipment_HV-21 – the HV-21 pantograph head failed.",
+      "answer": "equipment_HV-21 – the HV-21 pantograph head failed, causing the trains to be held at Kestrel Green.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -2824,9 +3022,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1435,
-        "output_tokens": 243,
-        "retrieval_latency_ms": 12.222,
-        "generation_latency_ms": 13193.272
+        "output_tokens": 225,
+        "retrieval_latency_ms": 18.182,
+        "generation_latency_ms": 13987.491
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2856,7 +3054,7 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "question": "Which component failed when trains were held at Alder Vale?",
-      "answer": "equipment_BR-7 – the BR-7 regenerative brake unit failed due to a resistor grid overheat.",
+      "answer": "equipment_BR-7 – the BR-7 regenerative brake unit failed, causing the trains to be held at Alder Vale.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -2890,9 +3088,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1415,
-        "output_tokens": 281,
-        "retrieval_latency_ms": 13.672,
-        "generation_latency_ms": 13293.076
+        "output_tokens": 274,
+        "retrieval_latency_ms": 17.17,
+        "generation_latency_ms": 11131.87
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2956,9 +3154,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1421,
-        "output_tokens": 181,
-        "retrieval_latency_ms": 10.37,
-        "generation_latency_ms": 10733.889
+        "output_tokens": 185,
+        "retrieval_latency_ms": 13.493,
+        "generation_latency_ms": 12859.123
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -2988,7 +3186,7 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "question": "Which component failed when trains were held at Copper Lane?",
-      "answer": "equipment_SG-12 – the SG‑12 signal interlocking relay failed at Copper Lane.",
+      "answer": "equipment_SG-12 – the SG-12 signal interlocking relay failed.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -3013,18 +3211,19 @@
           "incident_2026_10",
           "incident_2026_05",
           "station_foundry_bridge",
-          "line_crimson"
+          "line_crimson",
+          "equipment_SG-12"
         ],
-        "coverage": 0.0,
-        "all_relevant_present": false
+        "coverage": 1.0,
+        "all_relevant_present": true
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 2,
-        "input_tokens": 1451,
-        "output_tokens": 218,
-        "retrieval_latency_ms": 11.384,
-        "generation_latency_ms": 13021.285
+        "generation_calls": 3,
+        "input_tokens": 2303,
+        "output_tokens": 341,
+        "retrieval_latency_ms": 15.343,
+        "generation_latency_ms": 19662.306
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -3046,6 +3245,13 @@
             "line_crimson"
           ],
           "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "equipment_SG-12"
+          ],
+          "answer_before_grounding": "equipment_SG-12 – the SG‑12 signal interlocking relay failed, causing trains to be held at Copper Lane."
         }
       ]
     },
@@ -3054,7 +3260,7 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "question": "Which component failed when trains were held at Dunmore Park?",
-      "answer": "equipment_AX-3 – the AX-3 axle bearing assembly failed, causing the trains to be held at Dunmore Park.",
+      "answer": "equipment_AX-3 — the AX-3 axle bearing assembly failed, causing the trains to be held at Dunmore Park.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -3088,9 +3294,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1413,
-        "output_tokens": 190,
-        "retrieval_latency_ms": 13.326,
-        "generation_latency_ms": 11827.675
+        "output_tokens": 188,
+        "retrieval_latency_ms": 28.103,
+        "generation_latency_ms": 12479.004
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -3120,7 +3326,7 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "question": "Which component failed when trains were held at Eastgate Quay?",
-      "answer": "equipment_CP-55 – the CP-55 compressor module failed.",
+      "answer": "equipment_CP-55 – the CP-55 compressor module failed, causing the trains to be held at Eastgate Quay.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -3154,9 +3360,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1433,
-        "output_tokens": 192,
-        "retrieval_latency_ms": 14.546,
-        "generation_latency_ms": 13356.181
+        "output_tokens": 199,
+        "retrieval_latency_ms": 12.287,
+        "generation_latency_ms": 11586.523
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -3186,7 +3392,7 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "question": "Which component failed when trains were held at Foundry Bridge?",
-      "answer": "equipment_DR-8 – the DR-8 door engine actuator failed.",
+      "answer": "equipment_DR-8 – the DR‑8 door engine actuator failed, causing the trains to be held at Foundry Bridge.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -3220,9 +3426,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1429,
-        "output_tokens": 199,
-        "retrieval_latency_ms": 11.506,
-        "generation_latency_ms": 11387.257
+        "output_tokens": 220,
+        "retrieval_latency_ms": 50.056,
+        "generation_latency_ms": 11638.51
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -3252,7 +3458,7 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "question": "Which component failed when trains were held at Garnet Hill?",
-      "answer": "equipment_PS-19 – the PS-19 auxiliary power supply failed.",
+      "answer": "equipment_PS-19 – the PS-19 auxiliary power supply suffered a ripple fault, causing the trains to be held.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -3286,9 +3492,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1429,
-        "output_tokens": 236,
-        "retrieval_latency_ms": 20.412,
-        "generation_latency_ms": 12095.391
+        "output_tokens": 226,
+        "retrieval_latency_ms": 74.311,
+        "generation_latency_ms": 13049.47
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -3318,7 +3524,7 @@
       "category": "1-hop graph (cause)",
       "hops": 1,
       "question": "Which component failed when trains were held at Hollow Mill?",
-      "answer": "equipment_TC-6 – the TC‑6 track circuit transmitter failed.",
+      "answer": "equipment_TC-6 – the TC-6 track circuit transmitter failed.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -3352,9 +3558,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1431,
-        "output_tokens": 187,
-        "retrieval_latency_ms": 9.675,
-        "generation_latency_ms": 13053.284
+        "output_tokens": 201,
+        "retrieval_latency_ms": 65.812,
+        "generation_latency_ms": 12351.737
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -3384,7 +3590,7 @@
       "category": "1-hop graph (authorisation)",
       "hops": 1,
       "question": "Which authorisation is needed to carry out inverter phase balance verification on the TX-440?",
-      "answer": "policy_PL-A – the Traction Maintenance Authorisation required for the inverter phase balance verification.",
+      "answer": "policy_PL-A is the authorisation required to carry out the inverter phase balance verification on the TX‑440.",
       "answer_evaluation": {
         "abstained": false,
         "kind": "entity_set",
@@ -3418,9 +3624,9 @@
         "retrieval_calls": 1,
         "generation_calls": 2,
         "input_tokens": 1363,
-        "output_tokens": 218,
-        "retrieval_latency_ms": 23.924,
-        "generation_latency_ms": 11950.125
+        "output_tokens": 262,
+        "retrieval_latency_ms": 68.454,
+        "generation_latency_ms": 11671.071
       },
       "stop_reason": "model_stopped",
       "steps": [
@@ -3440,6 +3646,620 @@
             "procedure_MP-102",
             "policy_PL-A",
             "role_traction_technician"
+          ],
+          "decision": "STOP"
+        }
+      ]
+    },
+    "52": {
+      "id": 52,
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "question": "Which authorisation is needed to carry out inverter gate driver replacement on the TX-440?",
+      "answer": "PL‑A – the Traction Maintenance Authorisation policy authorises the inverter gate driver replacement (procedure MP‑102).",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "expected": [
+          "PL-A"
+        ],
+        "extracted": [
+          "PL-A"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-A"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-102",
+          "equipment_TX-440",
+          "procedure_MP-101",
+          "policy_PL-A",
+          "role_traction_technician"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1363,
+        "output_tokens": 281,
+        "retrieval_latency_ms": 17.361,
+        "generation_latency_ms": 14527.552
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out inverter gate driver replacement on the TX-440?",
+          "retrieved": [
+            "procedure_MP-102",
+            "equipment_TX-440",
+            "procedure_MP-101",
+            "policy_PL-A",
+            "role_traction_technician"
+          ],
+          "new_evidence": [
+            "procedure_MP-102",
+            "equipment_TX-440",
+            "procedure_MP-101",
+            "policy_PL-A",
+            "role_traction_technician"
+          ],
+          "decision": "STOP"
+        }
+      ]
+    },
+    "53": {
+      "id": 53,
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "question": "Which authorisation is needed to carry out pantograph carbon strip renewal on the HV-21?",
+      "answer": "policy_PL-A is the authorisation required to carry out pantograph carbon strip renewal on the HV‑21.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "expected": [
+          "PL-A"
+        ],
+        "extracted": [
+          "PL-A"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-A"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-103",
+          "equipment_HV-21",
+          "policy_PL-A",
+          "role_current_collection_fitter",
+          "station_kestrel_green"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1333,
+        "output_tokens": 260,
+        "retrieval_latency_ms": 40.603,
+        "generation_latency_ms": 9310.278
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out pantograph carbon strip renewal on the HV-21?",
+          "retrieved": [
+            "procedure_MP-103",
+            "equipment_HV-21",
+            "policy_PL-A",
+            "role_current_collection_fitter",
+            "station_kestrel_green"
+          ],
+          "new_evidence": [
+            "procedure_MP-103",
+            "equipment_HV-21",
+            "policy_PL-A",
+            "role_current_collection_fitter",
+            "station_kestrel_green"
+          ],
+          "decision": "STOP"
+        }
+      ]
+    },
+    "54": {
+      "id": 54,
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "question": "Which authorisation is needed to carry out pantograph contact force calibration on the HV-21?",
+      "answer": "policy_PL-A is the authorisation required to carry out pantograph contact force calibration on the HV‑21.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "expected": [
+          "PL-A"
+        ],
+        "extracted": [
+          "PL-A"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-A"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-104",
+          "equipment_HV-21",
+          "procedure_MP-103",
+          "policy_PL-A",
+          "role_current_collection_fitter"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1313,
+        "output_tokens": 236,
+        "retrieval_latency_ms": 26.246,
+        "generation_latency_ms": 11404.402
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out pantograph contact force calibration on the HV-21?",
+          "retrieved": [
+            "procedure_MP-104",
+            "equipment_HV-21",
+            "procedure_MP-103",
+            "policy_PL-A",
+            "role_current_collection_fitter"
+          ],
+          "new_evidence": [
+            "procedure_MP-104",
+            "equipment_HV-21",
+            "procedure_MP-103",
+            "policy_PL-A",
+            "role_current_collection_fitter"
+          ],
+          "decision": "STOP"
+        }
+      ]
+    },
+    "55": {
+      "id": 55,
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "question": "Which authorisation is needed to carry out brake resistor grid thermal survey on the BR-7?",
+      "answer": "policy_PL-B – the Braking Systems Authorisation required for procedure MP-105 (brake resistor grid thermal survey).",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "expected": [
+          "PL-B"
+        ],
+        "extracted": [
+          "PL-B"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-B"
+        ],
+        "evidence_chunks": [
+          "equipment_BR-7",
+          "procedure_MP-105",
+          "procedure_MP-106",
+          "procedure_MP-123",
+          "procedure_MP-124",
+          "policy_PL-B"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 3,
+        "input_tokens": 2364,
+        "output_tokens": 375,
+        "retrieval_latency_ms": 21.39,
+        "generation_latency_ms": 20882.159
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out brake resistor grid thermal survey on the BR-7?",
+          "retrieved": [
+            "equipment_BR-7",
+            "procedure_MP-105",
+            "procedure_MP-106",
+            "procedure_MP-123",
+            "procedure_MP-124"
+          ],
+          "new_evidence": [
+            "equipment_BR-7",
+            "procedure_MP-105",
+            "procedure_MP-106",
+            "procedure_MP-123",
+            "procedure_MP-124"
+          ],
+          "decision": "STOP"
+        },
+        {
+          "step": "grounding",
+          "cited_from_links": [
+            "policy_PL-B"
+          ],
+          "answer_before_grounding": "policy_PL-B – the brake resistor grid thermal survey (procedure MP‑105) is authorised by policy PL‑B."
+        }
+      ]
+    },
+    "56": {
+      "id": 56,
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "question": "Which authorisation is needed to carry out brake chopper firmware refresh on the BR-7?",
+      "answer": "policy_PL-B is the authorisation required for the brake chopper firmware refresh on the BR-7.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "expected": [
+          "PL-B"
+        ],
+        "extracted": [
+          "PL-B"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-B"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-106",
+          "equipment_BR-7",
+          "policy_PL-B",
+          "procedure_MP-123",
+          "procedure_MP-124"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1485,
+        "output_tokens": 201,
+        "retrieval_latency_ms": 66.149,
+        "generation_latency_ms": 13092.465
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out brake chopper firmware refresh on the BR-7?",
+          "retrieved": [
+            "procedure_MP-106",
+            "equipment_BR-7",
+            "policy_PL-B",
+            "procedure_MP-123",
+            "procedure_MP-124"
+          ],
+          "new_evidence": [
+            "procedure_MP-106",
+            "equipment_BR-7",
+            "policy_PL-B",
+            "procedure_MP-123",
+            "procedure_MP-124"
+          ],
+          "decision": "STOP"
+        }
+      ]
+    },
+    "57": {
+      "id": 57,
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "question": "Which stations sit immediately either side of Alder Vale along its own line?",
+      "answer": "station_kestrel_green, station_brickworks – they are the previous and next stations on the Azure Line adjacent to Alder Vale.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "expected": [
+          "Brickworks",
+          "Kestrel Green"
+        ],
+        "extracted": [
+          "Brickworks",
+          "Kestrel Green"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_brickworks",
+          "station_kestrel_green"
+        ],
+        "evidence_chunks": [
+          "station_alder_vale",
+          "incident_2026_03",
+          "station_kestrel_green",
+          "line_azure",
+          "station_brickworks"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1445,
+        "output_tokens": 209,
+        "retrieval_latency_ms": 58.792,
+        "generation_latency_ms": 11797.753
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Alder Vale along its own line?",
+          "retrieved": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "station_kestrel_green",
+            "line_azure",
+            "station_brickworks"
+          ],
+          "new_evidence": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "station_kestrel_green",
+            "line_azure",
+            "station_brickworks"
+          ],
+          "decision": "STOP"
+        }
+      ]
+    },
+    "58": {
+      "id": 58,
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "question": "Which stations sit immediately either side of Garnet Hill along its own line?",
+      "answer": "station_foundry_bridge, station_hollow_mill – they are the previous and next stations on the Crimson Line adjacent to Garnet Hill.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "expected": [
+          "Foundry Bridge",
+          "Hollow Mill"
+        ],
+        "extracted": [
+          "Foundry Bridge",
+          "Hollow Mill"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_foundry_bridge",
+          "station_hollow_mill"
+        ],
+        "evidence_chunks": [
+          "station_garnet_hill",
+          "incident_2026_09",
+          "station_foundry_bridge",
+          "station_hollow_mill",
+          "equipment_PS-19"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1419,
+        "output_tokens": 184,
+        "retrieval_latency_ms": 63.841,
+        "generation_latency_ms": 12510.001
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Garnet Hill along its own line?",
+          "retrieved": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "station_foundry_bridge",
+            "station_hollow_mill",
+            "equipment_PS-19"
+          ],
+          "new_evidence": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "station_foundry_bridge",
+            "station_hollow_mill",
+            "equipment_PS-19"
+          ],
+          "decision": "STOP"
+        }
+      ]
+    },
+    "59": {
+      "id": 59,
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "question": "Which stations sit immediately either side of Mallow Street along its own line?",
+      "answer": "station_larkspur, station_netherby – Larkspur is the previous station and Netherby is the next station on the Jade Line adjacent to Mallow Street.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "expected": [
+          "Larkspur",
+          "Netherby"
+        ],
+        "extracted": [
+          "Larkspur",
+          "Netherby"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_larkspur",
+          "station_netherby"
+        ],
+        "evidence_chunks": [
+          "station_mallow_street",
+          "station_larkspur",
+          "line_jade",
+          "station_netherby",
+          "station_elmsworth"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1385,
+        "output_tokens": 262,
+        "retrieval_latency_ms": 63.665,
+        "generation_latency_ms": 11390.22
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Mallow Street along its own line?",
+          "retrieved": [
+            "station_mallow_street",
+            "station_larkspur",
+            "line_jade",
+            "station_netherby",
+            "station_elmsworth"
+          ],
+          "new_evidence": [
+            "station_mallow_street",
+            "station_larkspur",
+            "line_jade",
+            "station_netherby",
+            "station_elmsworth"
+          ],
+          "decision": "STOP"
+        }
+      ]
+    },
+    "60": {
+      "id": 60,
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "question": "Which stations sit immediately either side of Saltmarsh along its own line?",
+      "answer": "station_redcliff, station_thistlebank – they are the previous and next stations on the Amber Line adjacent to Saltmarsh.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "expected": [
+          "Redcliff",
+          "Thistlebank"
+        ],
+        "extracted": [
+          "Redcliff",
+          "Thistlebank"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_redcliff",
+          "station_thistlebank"
+        ],
+        "evidence_chunks": [
+          "station_saltmarsh",
+          "incident_2026_21",
+          "station_redcliff",
+          "line_amber",
+          "station_thistlebank"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1429,
+        "output_tokens": 241,
+        "retrieval_latency_ms": 53.778,
+        "generation_latency_ms": 12867.541
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Saltmarsh along its own line?",
+          "retrieved": [
+            "station_saltmarsh",
+            "incident_2026_21",
+            "station_redcliff",
+            "line_amber",
+            "station_thistlebank"
+          ],
+          "new_evidence": [
+            "station_saltmarsh",
+            "incident_2026_21",
+            "station_redcliff",
+            "line_amber",
+            "station_thistlebank"
           ],
           "decision": "STOP"
         }
