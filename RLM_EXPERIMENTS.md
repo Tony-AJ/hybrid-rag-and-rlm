@@ -455,3 +455,144 @@ python -m pytest tests/test_robustness_scoring.py
 python -m experiments.robustness_r1 --phase validate
 python -m experiments.robustness_r1 --phase answers --provider groq --model openai/gpt-oss-120b --reasoning-effort low --resume
 ```
+
+---
+
+# Phase 3, R1′: Evidence-aware RLM
+
+Preregistered in [PREREGISTRATION_R1_PRIME.md](PREREGISTRATION_R1_PRIME.md)
+(commit `4bb8ad51`) before any implementation or model call. R1 stays frozen as
+the control; its interpretation is unchanged. Loop 1.7 is unchanged; the variant
+is a separate module, `rlm/loop_evidence.py` (loop `1.8-ea`, gate `gate-1.0`).
+
+## Variants (architecture D only; A, B2, C are frozen controls)
+
+| Variant | Failed-fetch trace | Sufficiency gate | `ABSTAIN:` in step prompt | How measured |
+|---|---|---|---|---|
+| D control | no | no | no | frozen R1 and Phase 2 rows |
+| D-gate | yes | yes | no | exact offline replay over the control rows (0 tokens) |
+| D-abstain | yes | no | yes | Groq run |
+| D-ea (primary) | yes | yes | yes | Groq run |
+
+Gate (endpoint-text policy): every code and station name the final answer names,
+and the question does not, must appear in chunk text the model received
+(retrieved or fetched during grounding); `Links:` lines do not count; numbers are
+not gated. A failing answer becomes `INSUFFICIENT EVIDENCE`. Failed fetches are
+recorded with a reason (`unavailable`, `empty_text`, `truncated`).
+
+## Results
+
+R1 (24 unanswerable queries):
+
+| | D control | D-gate (replay) | D-abstain | D-ea |
+|---|---|---|---|---|
+| **Correct abstention** | 15/24 | 23/24 | 17/24 | **24/24** |
+| R1a no document | 7/8 | 7/8 | 8/8 | 8/8 |
+| R1b partial evidence | 8/8 | 8/8 | 8/8 | 8/8 |
+| R1c edge without text | 0/8 | **8/8** | 1/8 | **8/8** |
+| Link-only answers (R1c) | 8/8 | 0/8 | 7/8 | 0/8 |
+| Unsupported claims | 8/24 | 0/24 | 7/24 | 0/24 |
+| Input tokens / query | 1,748 | 1,748 | 751 | 751 |
+| Input tokens / query, R1a + R1b | 2,218 | 2,218 | **784** | **784** |
+| Generation calls / query | 2.33 | 2.33 | 1.08 | 1.08 |
+
+v1.1 (60 answerable queries; over-rejection test):
+
+| | D control | D-gate (replay) | D-abstain | D-ea |
+|---|---|---|---|---|
+| **Accuracy** | 60/60 | **60/60** | 56/60 | 56/60 |
+| Over-rejected (control right, variant abstained) | n/a | 0/60 | 4/60 | 4/60 |
+| Two-hop | 20/20 | 20/20 | 17/20 | 17/20 |
+| Authorisation | 6/6 | 6/6 | 5/6 | 5/6 |
+| Adjacency | 4/4 | 4/4 | 4/4 | 4/4 |
+| Evidence coverage | 1.000 | 1.000 | 0.950 | 0.950 |
+| Input tokens / query | 883 | 883 | 825 | 825 |
+| Generation calls / query | 1.40 | 1.40 | 1.32 | 1.32 |
+
+## Hypotheses (preregistered thresholds)
+
+| | Criterion | D-gate | D-ea |
+|---|---|---|---|
+| H1 R1c abstention | ≥ 7/8 | 8/8 ✓ | 8/8 ✓ |
+| H2 R1a+R1b abstention | ≥ 15/16 | 15/16 ✓ | 16/16 ✓ |
+| H3 no over-rejection | v1.1 ≥ 58/60, adjacency 4/4, two-hop ≥ 19/20 | 60/60, 4/4, 20/20 ✓ | **56/60, 4/4, 17/20 ✗** |
+| H4 lower cost on unanswerable | below control 2,218 | no change | 784 ✓ (−65%) |
+| H5 gate alone fixes R1c | ≥ 7/8 | 8/8 ✓ | n/a |
+
+**Decision under the preregistered adoption rule:** D-ea fails H3 and is not
+recommended. D-gate meets H1, H2, H3 and H5. The `ABSTAIN:` option (D-abstain)
+adds the R1a fix and the cost reduction but causes the over-rejection, so the
+recommended configuration is **D-gate: loop 1.7 plus failed-fetch tracing and
+the sufficiency gate, with the step prompt unchanged.** Adoption remains the
+project owner's decision.
+
+## Findings
+
+1. **The gate alone closes the R1 failure without cost or over-rejection.**
+   All 8 R1c abstentions are `link_target_unavailable`; all 60 v1.1 answers pass
+   (83 identifiers checked). It adds no model call.
+2. **`ABSTAIN:` makes the model quit before searching.** All four v1.1 failures
+   are step-1 `ABSTAIN:` decisions. On 35, 40 and 43 (two-hop) the first
+   retrieval held only the incident chunk; the control searched for the
+   equipment's procedures and answered in step 2. On 56 the policy chunk was
+   already in evidence (coverage 1.0) and the model still abstained.
+3. **`ABSTAIN:` is what reduces cost on unanswerable questions** (2,218 to 784
+   input tokens), and it fixed 1008, the wrong-entity answer the gate cannot
+   catch. The benefit and the harm come from the same prompt change.
+4. **D-ea behaved as D-abstain plus the gate.** Separate runs, but the same
+   trajectory on all 84 queries (same stop reasons; input tokens equal on 82 of
+   84); only the gate's decision differs.
+5. **D-abstain alone does not fix R1c** (1/8): when the masked id is visible in
+   a link, the model still answers from it.
+
+## Deviation from the preregistration
+
+The preregistration states that grounding fetches neighbouring station chunks,
+so adjacency answers pass the gate. Loop 1.7's `cited_link_targets` matches codes
+(`MP-101`) but not station names (`station_kestrel_green` vs "Kestrel Green"), so
+grounding never fetches a station. No code was changed to match the text. The
+gate is therefore stricter than described: a station named only in a `Links:`
+line is rejected. On v1.1 this did not occur (adjacency 4/4: hybrid retrieval had
+already returned the neighbour chunks); a unit test pins the behaviour.
+
+## Limitations
+
+- Small n (24 + 60), one model, one run per variant, temperature 0.
+- Answer wording differs between D-abstain and D-ea on some queries despite
+  identical prompts; hosted inference is not fully deterministic.
+- The gate checks identifiers, not relations, and does not gate numbers.
+- D-gate is an offline replay. It is exact because the gate runs after the loop
+  and changes nothing before it; the replay's evidence text was checked against
+  the recorded prompts on every R1 row (validation E2).
+- v1.1 is the same set the loop was developed on. A follow-up such as allowing
+  `ABSTAIN:` only after one `SEARCH:` would need its own preregistration and
+  should not be tuned on these 60 queries.
+
+## Provenance
+
+| Item | Value |
+|---|---|
+| Preregistration | `PREREGISTRATION_R1_PRIME.md`, commit `4bb8ad51` |
+| Implementation | commit `b8b2fb57`; `rlm/loop_evidence.py`, `experiments/robustness_r1_prime.py`, `tests/test_loop_evidence.py` (32 tests with the R1 scorer tests) |
+| Freeze | `experiment_r1prime_freeze.json` (sha256 `50c7f166…`); all R1 checks, Phase 2 regression, loop 1.7 equivalence on 84 queries (E1) and replay rebuild (E2) passed |
+| Model | Groq `openai/gpt-oss-120b`, temperature 0.0, max_tokens 512, `reasoning_effort: low` |
+| Signatures | D-ea R1 `d596015f058a`, D-ea v1.1 `77c11fb78eeb`, D-abstain R1 `42ad00096cb7`, D-abstain v1.1 `93ecb4259f4a` |
+
+| File | sha256 |
+|---|---|
+| `experiment_r1prime_replay_gate.json` (D-gate) | `9135a61b0d02…` |
+| `experiment_r1prime_r1_ea_groq.json` | `41f53f887859…` |
+| `experiment_r1prime_v11_ea_groq.json` | `f4f1095868a8…` |
+| `experiment_r1prime_r1_abstain_groq.json` | `8abf58744620…` |
+| `experiment_r1prime_v11_abstain_groq.json` | `06d545d493c0…` |
+| `experiment_r1prime_comparison.json` (tables above) | `e47f30cf33a8…` |
+
+Result files are marked read-only; caches hold every prompt sent.
+
+```powershell
+python -m pytest tests/test_loop_evidence.py tests/test_robustness_scoring.py
+python -m experiments.robustness_r1_prime --phase validate
+python -m experiments.robustness_r1_prime --phase replay
+python -m experiments.robustness_r1_prime --phase answers --variant ea --dataset r1 --provider groq --model openai/gpt-oss-120b --reasoning-effort low --resume
+python -m experiments.robustness_r1_prime --phase report
+```

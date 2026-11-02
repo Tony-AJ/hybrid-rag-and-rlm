@@ -1,0 +1,1757 @@
+{
+  "run_signature": "d596015f058a9e730bb4790a6366bf7de415fb2890b7f69472289aa814ee48a9",
+  "rows": {
+    "1001": {
+      "id": 1001,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Who is the station manager at Harbour Row?",
+          "retrieved": [
+            "station_harbour_row",
+            "incident_2026_01",
+            "line_azure",
+            "station_kestrel_green",
+            "equipment_TX-440"
+          ],
+          "new_evidence": [
+            "station_harbour_row",
+            "incident_2026_01",
+            "line_azure",
+            "station_kestrel_green",
+            "equipment_TX-440"
+          ],
+          "decision": "ABSTAIN: The provided evidence does not contain any information about the station manager at Harbour Row.",
+          "abstain_reason": "The provided evidence does not contain any information about the station manager at Harbour Row."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Who is the station manager at Harbour Row?\nEvidence:\n[1] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_kestrel_green; served_by -> line_azure; site_of_incident -> incident_2026_01\n[2] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_TX-440\n[3] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_kestrel_green\n[4] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; site_of_incident -> incident_2026_02\n[5] (equipment_TX-440) The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G. Links: maintained_by -> procedure_MP-101, procedure_MP-102\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "station_harbour_row",
+          "incident_2026_01",
+          "line_azure",
+          "station_kestrel_green",
+          "equipment_TX-440"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 670,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 47.971,
+        "generation_latency_ms": 527.848,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 670,
+            "output_tokens": 41,
+            "latency_ms": 527.848
+          }
+        }
+      }
+    },
+    "1002": {
+      "id": 1002,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many car parking spaces are there at Kestrel Green?",
+          "retrieved": [
+            "station_kestrel_green",
+            "station_harbour_row",
+            "station_alder_vale",
+            "incident_2026_02",
+            "station_brickworks"
+          ],
+          "new_evidence": [
+            "station_kestrel_green",
+            "station_harbour_row",
+            "station_alder_vale",
+            "incident_2026_02",
+            "station_brickworks"
+          ],
+          "decision": "ABSTAIN: The provided evidence does not contain any information about the number of car parking spaces at Kestrel Green.",
+          "abstain_reason": "The provided evidence does not contain any information about the number of car parking spaces at Kestrel Green."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: How many car parking spaces are there at Kestrel Green?\nEvidence:\n[1] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; previous_station -> station_harbour_row; served_by -> line_azure; site_of_incident -> incident_2026_02\n[2] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: served_by -> line_azure; site_of_incident -> incident_2026_01\n[3] (station_alder_vale) Alder Vale is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Harbour Row and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_brickworks; served_by -> line_azure; site_of_incident -> incident_2026_03\n[4] (incident_2026_02) Service incident 2026/02 on 2026-02-07: trains were held at Kestrel Green on the Azure Line for 15 minutes after a HV-21 pantograph head suffered a carbon strip fracture. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_HV-21\n[5] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_copper_lane; served_by -> line_azure; site_of_incident -> incident_2026_04\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "station_kestrel_green",
+          "station_harbour_row",
+          "station_alder_vale",
+          "incident_2026_02",
+          "station_brickworks"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 674,
+        "output_tokens": 47,
+        "retrieval_latency_ms": 54.214,
+        "generation_latency_ms": 762.967,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 674,
+            "output_tokens": 47,
+            "latency_ms": 762.967
+          }
+        }
+      }
+    },
+    "1003": {
+      "id": 1003,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How much did the 2009 refurbishment of Harbour Row cost?",
+          "retrieved": [
+            "station_harbour_row",
+            "line_slate",
+            "station_glasshouse",
+            "line_azure",
+            "station_kestrel_green"
+          ],
+          "new_evidence": [
+            "station_harbour_row",
+            "line_slate",
+            "station_glasshouse",
+            "line_azure",
+            "station_kestrel_green"
+          ],
+          "decision": "ABSTAIN: The provided evidence mentions the refurbishment year but does not state its cost.",
+          "abstain_reason": "The provided evidence mentions the refurbishment year but does not state its cost."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: How much did the 2009 refurbishment of Harbour Row cost?\nEvidence:\n[1] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_kestrel_green; served_by -> line_azure; site_of_incident -> incident_2026_01\n[2] (line_slate) The Slate Line runs from Elmsworth to Juniper Row, calling at Fallowfield, Glasshouse, Hartsmere, Ivory Dock. It is operated with Series 200 heritage sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_elmsworth, station_fallowfield, station_glasshouse, station_hartsmere, station_ivory_dock, station_juniper_row\n[3] (station_glasshouse) Glasshouse is a through station on the Slate Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Elmsworth and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_hartsmere; previous_station -> station_fallowfield\n[4] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_kestrel_green\n[5] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; site_of_incident -> incident_2026_02\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "station_harbour_row",
+          "line_slate",
+          "station_glasshouse",
+          "line_azure",
+          "station_kestrel_green"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 681,
+        "output_tokens": 40,
+        "retrieval_latency_ms": 51.658,
+        "generation_latency_ms": 905.048,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 681,
+            "output_tokens": 40,
+            "latency_ms": 905.048
+          }
+        }
+      }
+    },
+    "1004": {
+      "id": 1004,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What is the Sunday headway on the Azure Line?",
+          "retrieved": [
+            "line_azure",
+            "station_kestrel_green",
+            "station_alder_vale",
+            "station_brickworks",
+            "station_copper_lane"
+          ],
+          "new_evidence": [
+            "line_azure",
+            "station_kestrel_green",
+            "station_alder_vale",
+            "station_brickworks",
+            "station_copper_lane"
+          ],
+          "decision": "ABSTAIN: The provided evidence does not include information about Sunday headways on the Azure Line.",
+          "abstain_reason": "The provided evidence does not include information about Sunday headways on the Azure Line."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: What is the Sunday headway on the Azure Line?\nEvidence:\n[1] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_harbour_row, station_kestrel_green\n[2] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; previous_station -> station_harbour_row; site_of_incident -> incident_2026_02\n[3] (station_alder_vale) Alder Vale is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Harbour Row and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_brickworks; site_of_incident -> incident_2026_03\n[4] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_copper_lane; site_of_incident -> incident_2026_04\n[5] (station_copper_lane) Copper Lane is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Harbour Row and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_dunmore_park; site_of_incident -> incident_2026_05\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "line_azure",
+          "station_kestrel_green",
+          "station_alder_vale",
+          "station_brickworks",
+          "station_copper_lane"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 667,
+        "output_tokens": 56,
+        "retrieval_latency_ms": 50.21,
+        "generation_latency_ms": 732.124,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 667,
+            "output_tokens": 56,
+            "latency_ms": 732.124
+          }
+        }
+      }
+    },
+    "1005": {
+      "id": 1005,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What is the top speed of the Series 400 four-car sets?",
+          "retrieved": [
+            "line_crimson",
+            "line_slate",
+            "line_violet",
+            "line_azure",
+            "station_eastgate_quay"
+          ],
+          "new_evidence": [
+            "line_crimson",
+            "line_slate",
+            "line_violet",
+            "line_azure",
+            "station_eastgate_quay"
+          ],
+          "decision": "ABSTAIN: The provided evidence does not include the top speed of the Series 400 four‑car sets.",
+          "abstain_reason": "The provided evidence does not include the top speed of the Series 400 four‑car sets."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: What is the top speed of the Series 400 four-car sets?\nEvidence:\n[1] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_foundry_bridge, station_garnet_hill, station_hollow_mill, station_ironside, station_jubilee_fields\n[2] (line_slate) The Slate Line runs from Elmsworth to Juniper Row, calling at Fallowfield, Glasshouse, Hartsmere, Ivory Dock. It is operated with Series 200 heritage sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_elmsworth, station_fallowfield, station_glasshouse, station_hartsmere, station_ivory_dock, station_juniper_row\n[3] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_ashfen, station_beacon_rise, station_carrow_end, station_dovecote, station_westmere, station_yarrow_cross\n[4] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_harbour_row, station_kestrel_green\n[5] (station_eastgate_quay) Eastgate Quay is a terminus on the Crimson Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Eastgate Quay and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_foundry_bridge; site_of_incident -> incident_2026_07\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "line_crimson",
+          "line_slate",
+          "line_violet",
+          "line_azure",
+          "station_eastgate_quay"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 734,
+        "output_tokens": 64,
+        "retrieval_latency_ms": 50.384,
+        "generation_latency_ms": 595.041,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 734,
+            "output_tokens": 64,
+            "latency_ms": 595.041
+          }
+        }
+      }
+    },
+    "1006": {
+      "id": 1006,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Thornwick Junction have?",
+          "retrieved": [
+            "station_eastgate_quay",
+            "station_jubilee_fields",
+            "station_elmsworth",
+            "station_yarrow_cross",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "station_eastgate_quay",
+            "station_jubilee_fields",
+            "station_elmsworth",
+            "station_yarrow_cross",
+            "line_crimson"
+          ],
+          "decision": "ABSTAIN: The provided evidence does not contain any information about Thornwick Junction.",
+          "abstain_reason": "The provided evidence does not contain any information about Thornwick Junction."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: How many platforms does Thornwick Junction have?\nEvidence:\n[1] (station_eastgate_quay) Eastgate Quay is a terminus on the Crimson Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Eastgate Quay and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_foundry_bridge; served_by -> line_crimson; site_of_incident -> incident_2026_07\n[2] (station_jubilee_fields) Jubilee Fields is a terminus on the Crimson Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Eastgate Quay and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014. Links: previous_station -> station_ironside; served_by -> line_crimson; site_of_incident -> incident_2026_12\n[3] (station_elmsworth) Elmsworth is a terminus on the Slate Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Elmsworth and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_fallowfield; served_by -> line_slate\n[4] (station_yarrow_cross) Yarrow Cross is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Westmere and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_ashfen; previous_station -> station_westmere; served_by -> line_violet; site_of_incident -> incident_2026_26\n[5] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_foundry_bridge, station_garnet_hill, station_hollow_mill, station_ironside\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "station_eastgate_quay",
+          "station_jubilee_fields",
+          "station_elmsworth",
+          "station_yarrow_cross",
+          "line_crimson"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 675,
+        "output_tokens": 48,
+        "retrieval_latency_ms": 49.895,
+        "generation_latency_ms": 552.775,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 675,
+            "output_tokens": 48,
+            "latency_ms": 552.775
+          }
+        }
+      }
+    },
+    "1007": {
+      "id": 1007,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedure covers the QZ-900 signalling relay?",
+          "retrieved": [
+            "procedure_MP-119",
+            "procedure_MP-109",
+            "equipment_SG-12",
+            "procedure_MP-110",
+            "equipment_TC-6"
+          ],
+          "new_evidence": [
+            "procedure_MP-119",
+            "procedure_MP-109",
+            "equipment_SG-12",
+            "procedure_MP-110",
+            "equipment_TC-6"
+          ],
+          "decision": "ABSTAIN: The provided evidence does not reference the QZ-900 signalling relay or a maintenance procedure for it.",
+          "abstain_reason": "The provided evidence does not reference the QZ-900 signalling relay or a maintenance procedure for it."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedure covers the QZ-900 signalling relay?\nEvidence:\n[1] (procedure_MP-119) Maintenance procedure MP-119: Transmitter oscillator substitution. Applies to the TC-6 track circuit transmitter. Scheduled on condition. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-118, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-D; maintains -> equipment_TC-6; performed_by -> role_signalling_technician; supersedes -> procedure_MP-118\n[2] (procedure_MP-109) Maintenance procedure MP-109: Interlocking relay contact inspection. Applies to the SG-12 signal interlocking relay. Scheduled every 28 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-D, policy_PL-K; maintains -> equipment_SG-12; performed_by -> role_signalling_technician\n[3] (equipment_SG-12) The SG-12 signal interlocking relay is fitted across the fleet and in fixed installations. Its dominant failure mode is contact welding, which presents as a relay that fails to drop out after de-energising. A SG-12 unit has a design life of 8 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group SG12G. Links: maintained_by -> procedure_MP-110\n[4] (procedure_MP-110) Maintenance procedure MP-110: Relay drop-out timing audit. Applies to the SG-12 signal interlocking relay. Scheduled every 365 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-D; performed_by -> role_signalling_technician\n[5] (equipment_TC-6) The TC-6 track circuit transmitter is fitted across the fleet and in fixed installations. Its dominant failure mode is frequency drift, which presents as a carrier frequency outside the 83 to 87 hertz window. A TC-6 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TC6G. Links: maintained_by -> procedure_MP-118\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "procedure_MP-119",
+          "procedure_MP-109",
+          "equipment_SG-12",
+          "procedure_MP-110",
+          "equipment_TC-6"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 691,
+        "output_tokens": 58,
+        "retrieval_latency_ms": 42.029,
+        "generation_latency_ms": 520.574,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 691,
+            "output_tokens": 58,
+            "latency_ms": 520.574
+          }
+        }
+      }
+    },
+    "1008": {
+      "id": 1008,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "When was authorisation policy PL-Z issued?",
+          "retrieved": [
+            "policy_PL-L",
+            "policy_PL-I",
+            "procedure_MP-107",
+            "procedure_MP-114",
+            "procedure_MP-124"
+          ],
+          "new_evidence": [
+            "policy_PL-L",
+            "policy_PL-I",
+            "procedure_MP-107",
+            "procedure_MP-114",
+            "procedure_MP-124"
+          ],
+          "decision": "ABSTAIN: No evidence provided contains information about authorisation policy PL‑Z.",
+          "abstain_reason": "No evidence provided contains information about authorisation policy PL‑Z."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: When was authorisation policy PL-Z issued?\nEvidence:\n[1] (policy_PL-L) Authorisation policy PL-L, Degraded Mode Authorisation, governs procedures carried out while service is running. A named holder of PL-L must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 3 maintenance procedures. Withdrawal of PL-L suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-107, procedure_MP-114, procedure_MP-124\n[2] (policy_PL-I) Authorisation policy PL-I, Tunnel Environment Authorisation, governs work on tunnel ventilation and smoke control. A named holder of PL-I must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 1 maintenance procedures. Withdrawal of PL-I suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-120\n[3] (procedure_MP-107) Maintenance procedure MP-107: Screen door sensor realignment. Applies to the PD-90 platform screen door controller. Scheduled every 30 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 70 minutes. Links: authorised_by -> policy_PL-C; maintains -> equipment_PD-90; performed_by -> role_platform_systems_engineer\n[4] (procedure_MP-114) Maintenance procedure MP-114: Reservoir leak-rate measurement. Applies to the CP-55 compressor module. Scheduled every 50 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 70 minutes. Links: authorised_by -> policy_PL-F; maintains -> equipment_CP-55; performed_by -> role_pneumatics_fitter\n[5] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B; maintains -> equipment_WS-5; performed_by -> role_plant_engineer; supersedes -> procedure_MP-123\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "policy_PL-L",
+          "policy_PL-I",
+          "procedure_MP-107",
+          "procedure_MP-114",
+          "procedure_MP-124"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 699,
+        "output_tokens": 48,
+        "retrieval_latency_ms": 46.779,
+        "generation_latency_ms": 1012.5,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 699,
+            "output_tokens": 48,
+            "latency_ms": 1012.5
+          }
+        }
+      }
+    },
+    "1009": {
+      "id": 1009,
+      "answer": "INSUFFICIENT EVIDENCE.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Harbour Row have, and how many car parking spaces does it have?",
+          "retrieved": [
+            "station_harbour_row",
+            "line_azure",
+            "station_kestrel_green",
+            "incident_2026_01",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "station_harbour_row",
+            "line_azure",
+            "station_kestrel_green",
+            "incident_2026_01",
+            "line_crimson"
+          ],
+          "decision": "SEARCH: Harbour Row car parking spaces"
+        },
+        {
+          "step": 2,
+          "query": "Harbour Row car parking spaces",
+          "retrieved": [
+            "station_harbour_row",
+            "line_azure",
+            "station_kestrel_green",
+            "incident_2026_01",
+            "station_elmsworth"
+          ],
+          "new_evidence": [
+            "station_elmsworth"
+          ],
+          "decision": "SEARCH: Harbour Row car parking spaces"
+        },
+        {
+          "step": 3,
+          "query": "Harbour Row car parking spaces",
+          "retrieved": [
+            "station_harbour_row",
+            "line_azure",
+            "station_kestrel_green",
+            "incident_2026_01",
+            "station_elmsworth"
+          ],
+          "new_evidence": [],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE."
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: How many platforms does Harbour Row have, and how many car parking spaces does it have?\nEvidence:\n[1] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_kestrel_green; served_by -> line_azure; site_of_incident -> incident_2026_01\n[2] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_kestrel_green\n[3] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; site_of_incident -> incident_2026_02\n[4] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_TX-440\n[5] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_foundry_bridge, station_garnet_hill, station_hollow_mill, station_ironside, station_jubilee_fields\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Answer using only the evidence, or ask for more.\nQuestion: How many platforms does Harbour Row have, and how many car parking spaces does it have?\nEvidence:\n[1] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_kestrel_green; served_by -> line_azure; site_of_incident -> incident_2026_01\n[2] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_kestrel_green\n[3] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; site_of_incident -> incident_2026_02\n[4] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_TX-440\n[5] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_foundry_bridge, station_garnet_hill, station_hollow_mill, station_ironside, station_jubilee_fields\n[6] (station_elmsworth) Elmsworth is a terminus on the Slate Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Elmsworth and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_fallowfield; served_by -> line_slate\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Answer using only the evidence.\nQuestion: How many platforms does Harbour Row have, and how many car parking spaces does it have?\nEvidence:\n[1] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_kestrel_green; served_by -> line_azure; site_of_incident -> incident_2026_01\n[2] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_kestrel_green\n[3] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; site_of_incident -> incident_2026_02\n[4] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_TX-440\n[5] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_foundry_bridge, station_garnet_hill, station_hollow_mill, station_ironside, station_jubilee_fields\n[6] (station_elmsworth) Elmsworth is a terminus on the Slate Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Elmsworth and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_fallowfield; served_by -> line_slate\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "station_harbour_row",
+          "line_azure",
+          "station_kestrel_green",
+          "incident_2026_01",
+          "line_crimson",
+          "station_elmsworth"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 3,
+        "generation_calls": 3,
+        "input_tokens": 2254,
+        "output_tokens": 134,
+        "retrieval_latency_ms": 242.957,
+        "generation_latency_ms": 1736.637,
+        "by_stage": {
+          "step": {
+            "calls": 2,
+            "input_tokens": 1493,
+            "output_tokens": 97,
+            "latency_ms": 1160.721
+          },
+          "answer": {
+            "calls": 1,
+            "input_tokens": 761,
+            "output_tokens": 37,
+            "latency_ms": 575.916
+          }
+        }
+      }
+    },
+    "1010": {
+      "id": 1010,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "In what year was Kestrel Green last refurbished, and who is its station manager?",
+          "retrieved": [
+            "station_kestrel_green",
+            "incident_2026_02",
+            "station_harbour_row",
+            "line_azure",
+            "station_alder_vale"
+          ],
+          "new_evidence": [
+            "station_kestrel_green",
+            "incident_2026_02",
+            "station_harbour_row",
+            "line_azure",
+            "station_alder_vale"
+          ],
+          "decision": "ABSTAIN: The evidence provides the refurbishment year (2010) but does not include information about the station manager.",
+          "abstain_reason": "The evidence provides the refurbishment year (2010) but does not include information about the station manager."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: In what year was Kestrel Green last refurbished, and who is its station manager?\nEvidence:\n[1] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; previous_station -> station_harbour_row; served_by -> line_azure; site_of_incident -> incident_2026_02\n[2] (incident_2026_02) Service incident 2026/02 on 2026-02-07: trains were held at Kestrel Green on the Azure Line for 15 minutes after a HV-21 pantograph head suffered a carbon strip fracture. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_HV-21\n[3] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: served_by -> line_azure; site_of_incident -> incident_2026_01\n[4] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park\n[5] (station_alder_vale) Alder Vale is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Harbour Row and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_brickworks; site_of_incident -> incident_2026_03\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "station_kestrel_green",
+          "incident_2026_02",
+          "station_harbour_row",
+          "line_azure",
+          "station_alder_vale"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 678,
+        "output_tokens": 66,
+        "retrieval_latency_ms": 46.957,
+        "generation_latency_ms": 784.672,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 678,
+            "output_tokens": 66,
+            "latency_ms": 784.672
+          }
+        }
+      }
+    },
+    "1011": {
+      "id": 1011,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What is the morning peak headway on the Azure Line, and what is its Sunday headway?",
+          "retrieved": [
+            "line_azure",
+            "station_dunmore_park",
+            "station_alder_vale",
+            "station_brickworks",
+            "station_copper_lane"
+          ],
+          "new_evidence": [
+            "line_azure",
+            "station_dunmore_park",
+            "station_alder_vale",
+            "station_brickworks",
+            "station_copper_lane"
+          ],
+          "decision": "ABSTAIN: The evidence provides the morning peak headway but does not include information about the Sunday headway.",
+          "abstain_reason": "The evidence provides the morning peak headway but does not include information about the Sunday headway."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: What is the morning peak headway on the Azure Line, and what is its Sunday headway?\nEvidence:\n[1] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_harbour_row, station_kestrel_green\n[2] (station_dunmore_park) Dunmore Park is a terminus on the Azure Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Harbour Row and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014. Links: previous_station -> station_copper_lane; site_of_incident -> incident_2026_06\n[3] (station_alder_vale) Alder Vale is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Harbour Row and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_brickworks; previous_station -> station_kestrel_green; site_of_incident -> incident_2026_03\n[4] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_copper_lane; site_of_incident -> incident_2026_04\n[5] (station_copper_lane) Copper Lane is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Harbour Row and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: site_of_incident -> incident_2026_05\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "line_azure",
+          "station_dunmore_park",
+          "station_alder_vale",
+          "station_brickworks",
+          "station_copper_lane"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 665,
+        "output_tokens": 63,
+        "retrieval_latency_ms": 49.821,
+        "generation_latency_ms": 5867.259,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 665,
+            "output_tokens": 63,
+            "latency_ms": 5867.259
+          }
+        }
+      }
+    },
+    "1012": {
+      "id": 1012,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What is the design life of the TX-440 traction inverter, and what is the purchase price of one unit?",
+          "retrieved": [
+            "equipment_TX-440",
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "policy_PL-A",
+            "procedure_MP-117"
+          ],
+          "new_evidence": [
+            "equipment_TX-440",
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "policy_PL-A",
+            "procedure_MP-117"
+          ],
+          "decision": "ABSTAIN: The evidence provides the design life but does not include the purchase price of a TX-440 unit.",
+          "abstain_reason": "The evidence provides the design life but does not include the purchase price of a TX-440 unit."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: What is the design life of the TX-440 traction inverter, and what is the purchase price of one unit?\nEvidence:\n[1] (equipment_TX-440) The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G. Links: maintained_by -> procedure_MP-101, procedure_MP-102\n[2] (procedure_MP-101) Maintenance procedure MP-101: Inverter phase balance verification. Applies to the TX-440 traction inverter. Scheduled every 90 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-A; performed_by -> role_traction_technician; superseded_by -> procedure_MP-102\n[3] (procedure_MP-102) Maintenance procedure MP-102: Inverter gate driver replacement. Applies to the TX-440 traction inverter. Scheduled on condition. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. This procedure supersedes MP-101, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-A; performed_by -> role_traction_technician\n[4] (policy_PL-A) Authorisation policy PL-A, Traction Maintenance Authorisation, governs work on propulsion and current collection assets. A named holder of PL-A must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-A suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-103, procedure_MP-104\n[5] (procedure_MP-117) Maintenance procedure MP-117: Auxiliary supply ripple measurement. Applies to the PS-19 auxiliary power supply. Scheduled every 70 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-H; maintains -> equipment_PS-19; performed_by -> role_power_technician\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "equipment_TX-440",
+          "procedure_MP-101",
+          "procedure_MP-102",
+          "policy_PL-A",
+          "procedure_MP-117"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 688,
+        "output_tokens": 58,
+        "retrieval_latency_ms": 45.577,
+        "generation_latency_ms": 6211.721,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 688,
+            "output_tokens": 58,
+            "latency_ms": 6211.721
+          }
+        }
+      }
+    },
+    "1013": {
+      "id": 1013,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How often is maintenance procedure MP-101 scheduled, and what does each visit cost?",
+          "retrieved": [
+            "procedure_MP-113",
+            "procedure_MP-114",
+            "procedure_MP-101",
+            "procedure_MP-124",
+            "equipment_CP-55"
+          ],
+          "new_evidence": [
+            "procedure_MP-113",
+            "procedure_MP-114",
+            "procedure_MP-101",
+            "procedure_MP-124",
+            "equipment_CP-55"
+          ],
+          "decision": "ABSTAIN: The provided evidence gives the schedule for MP‑101 but does not include any information about the cost of each visit.",
+          "abstain_reason": "The provided evidence gives the schedule for MP‑101 but does not include any information about the cost of each visit."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: How often is maintenance procedure MP-101 scheduled, and what does each visit cost?\nEvidence:\n[1] (procedure_MP-113) Maintenance procedure MP-113: Compressor valve plate overhaul. Applies to the CP-55 compressor module. Scheduled every 200 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 55 minutes. Links: authorised_by -> policy_PL-F; maintains -> equipment_CP-55; performed_by -> role_pneumatics_fitter\n[2] (procedure_MP-114) Maintenance procedure MP-114: Reservoir leak-rate measurement. Applies to the CP-55 compressor module. Scheduled every 50 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 70 minutes. Links: authorised_by -> policy_PL-F, policy_PL-L; maintains -> equipment_CP-55; performed_by -> role_pneumatics_fitter\n[3] (procedure_MP-101) Maintenance procedure MP-101: Inverter phase balance verification. Applies to the TX-440 traction inverter. Scheduled every 90 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-A; maintains -> equipment_TX-440; performed_by -> role_traction_technician; superseded_by -> procedure_MP-102\n[4] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B, policy_PL-L; maintains -> equipment_WS-5; performed_by -> role_plant_engineer; supersedes -> procedure_MP-123\n[5] (equipment_CP-55) The CP-55 compressor module is fitted across the fleet and in fixed installations. Its dominant failure mode is pressure bleed-down, which presents as main reservoir pressure falling below 6.2 bar while stabled. A CP-55 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group CP55G.\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "procedure_MP-113",
+          "procedure_MP-114",
+          "procedure_MP-101",
+          "procedure_MP-124",
+          "equipment_CP-55"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 705,
+        "output_tokens": 51,
+        "retrieval_latency_ms": 13.679,
+        "generation_latency_ms": 5040.088,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 705,
+            "output_tokens": 51,
+            "latency_ms": 5040.088
+          }
+        }
+      }
+    },
+    "1014": {
+      "id": 1014,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "When was policy PL-A issued, and what is the annual budget for work under it?",
+          "retrieved": [
+            "policy_PL-F",
+            "policy_PL-A",
+            "policy_PL-C",
+            "procedure_MP-113",
+            "procedure_MP-114"
+          ],
+          "new_evidence": [
+            "policy_PL-F",
+            "policy_PL-A",
+            "policy_PL-C",
+            "procedure_MP-113",
+            "procedure_MP-114"
+          ],
+          "decision": "ABSTAIN: The evidence provides the issue date of policy PL‑A but does not include any information about its annual budget.",
+          "abstain_reason": "The evidence provides the issue date of policy PL‑A but does not include any information about its annual budget."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: When was policy PL-A issued, and what is the annual budget for work under it?\nEvidence:\n[1] (policy_PL-F) Authorisation policy PL-F, Pneumatics Authorisation, governs work on compressed air generation and storage. A named holder of PL-F must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-F suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-113, procedure_MP-114\n[2] (policy_PL-A) Authorisation policy PL-A, Traction Maintenance Authorisation, governs work on propulsion and current collection assets. A named holder of PL-A must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-A suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-101, procedure_MP-102, procedure_MP-103, procedure_MP-104\n[3] (policy_PL-C) Authorisation policy PL-C, Platform Interface Authorisation, governs work on the platform-train interface. A named holder of PL-C must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-C suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-107, procedure_MP-108\n[4] (procedure_MP-113) Maintenance procedure MP-113: Compressor valve plate overhaul. Applies to the CP-55 compressor module. Scheduled every 200 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 55 minutes. Links: maintains -> equipment_CP-55; performed_by -> role_pneumatics_fitter\n[5] (procedure_MP-114) Maintenance procedure MP-114: Reservoir leak-rate measurement. Applies to the CP-55 compressor module. Scheduled every 50 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 70 minutes. Links: authorised_by -> policy_PL-L; maintains -> equipment_CP-55; performed_by -> role_pneumatics_fitter\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "policy_PL-F",
+          "policy_PL-A",
+          "policy_PL-C",
+          "procedure_MP-113",
+          "procedure_MP-114"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 684,
+        "output_tokens": 66,
+        "retrieval_latency_ms": 22.354,
+        "generation_latency_ms": 5802.903,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 684,
+            "output_tokens": 66,
+            "latency_ms": 5802.903
+          }
+        }
+      }
+    },
+    "1015": {
+      "id": 1015,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many entries does Alder Vale record on a typical weekday, and how many on a typical Sunday?",
+          "retrieved": [
+            "station_alder_vale",
+            "station_kestrel_green",
+            "line_azure",
+            "station_brickworks",
+            "incident_2026_03"
+          ],
+          "new_evidence": [
+            "station_alder_vale",
+            "station_kestrel_green",
+            "line_azure",
+            "station_brickworks",
+            "incident_2026_03"
+          ],
+          "decision": "ABSTAIN: The evidence provides weekday entry numbers but does not include Sunday entry figures.",
+          "abstain_reason": "The evidence provides weekday entry numbers but does not include Sunday entry figures."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: How many entries does Alder Vale record on a typical weekday, and how many on a typical Sunday?\nEvidence:\n[1] (station_alder_vale) Alder Vale is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Harbour Row and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_brickworks; previous_station -> station_kestrel_green; served_by -> line_azure; site_of_incident -> incident_2026_03\n[2] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: previous_station -> station_harbour_row; served_by -> line_azure; site_of_incident -> incident_2026_02\n[3] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_brickworks, station_copper_lane, station_dunmore_park, station_harbour_row\n[4] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_copper_lane; site_of_incident -> incident_2026_04\n[5] (incident_2026_03) Service incident 2026/03 on 2026-03-10: trains were held at Alder Vale on the Azure Line for 19 minutes after a BR-7 regenerative brake unit suffered a resistor grid overheat. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_BR-7\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "station_alder_vale",
+          "station_kestrel_green",
+          "line_azure",
+          "station_brickworks",
+          "incident_2026_03"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 687,
+        "output_tokens": 44,
+        "retrieval_latency_ms": 61.763,
+        "generation_latency_ms": 5355.995,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 687,
+            "output_tokens": 44,
+            "latency_ms": 5355.995
+          }
+        }
+      }
+    },
+    "1016": {
+      "id": 1016,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "For how many minutes were trains held at Harbour Row in incident 2026/01, and what did the delay cost the authority?",
+          "retrieved": [
+            "incident_2026_01",
+            "incident_2026_04",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_TX-440"
+          ],
+          "new_evidence": [
+            "incident_2026_01",
+            "incident_2026_04",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_TX-440"
+          ],
+          "decision": "ABSTAIN: the provided evidence does not include the delay cost to the authority.",
+          "abstain_reason": "the provided evidence does not include the delay cost to the authority."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: For how many minutes were trains held at Harbour Row in incident 2026/01, and what did the delay cost the authority?\nEvidence:\n[1] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_TX-440; occurred_at -> station_harbour_row\n[2] (incident_2026_04) Service incident 2026/04 on 2026-04-13: trains were held at Brickworks on the Azure Line for 23 minutes after a PD-90 platform screen door controller suffered a obstruction sensor drift. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_PD-90; occurred_at -> station_brickworks\n[3] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_kestrel_green; served_by -> line_azure\n[4] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_kestrel_green\n[5] (equipment_TX-440) The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G. Links: maintained_by -> procedure_MP-101, procedure_MP-102\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "incident_2026_01",
+          "incident_2026_04",
+          "station_harbour_row",
+          "line_azure",
+          "equipment_TX-440"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 698,
+        "output_tokens": 49,
+        "retrieval_latency_ms": 47.045,
+        "generation_latency_ms": 4804.572,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 698,
+            "output_tokens": 49,
+            "latency_ms": 4804.572
+          }
+        }
+      }
+    },
+    "1017": {
+      "id": 1017,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Harbour Row?",
+          "retrieved": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_TX-440",
+            "station_kestrel_green"
+          ],
+          "new_evidence": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_TX-440",
+            "station_kestrel_green"
+          ],
+          "decision": "ANSWER: procedure_MP-101 and procedure_MP-102 – these are the maintenance procedures that cover the TX-440 traction inverter fault that stopped service at Harbour Row."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-101",
+            "procedure_MP-102"
+          ],
+          "cited_from_links_unverified": [],
+          "fetched": [],
+          "fetch_failures": [
+            {
+              "node_id": "procedure_MP-101",
+              "reason": "unavailable"
+            },
+            {
+              "node_id": "procedure_MP-102",
+              "reason": "unavailable"
+            }
+          ],
+          "truncated": [],
+          "link_only_claims": [
+            "procedure_MP-101",
+            "procedure_MP-102"
+          ]
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "abstain",
+          "named": [
+            "code:MP-101",
+            "code:MP-102",
+            "code:TX-440"
+          ],
+          "unsupported": [
+            "code:MP-101",
+            "code:MP-102"
+          ],
+          "reasons": {
+            "code:MP-101": "link_target_unavailable",
+            "code:MP-102": "link_target_unavailable"
+          },
+          "answer_before_gate": "procedure_MP-101 and procedure_MP-102 – these are the maintenance procedures that cover the TX-440 traction inverter fault that stopped service at Harbour Row."
+        }
+      ],
+      "stop_reason": "gate_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Harbour Row?\nEvidence:\n[1] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_TX-440; occurred_at -> station_harbour_row\n[2] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_kestrel_green; served_by -> line_azure\n[3] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_kestrel_green\n[4] (equipment_TX-440) The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G. Links: maintained_by -> procedure_MP-101, procedure_MP-102\n[5] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; site_of_incident -> incident_2026_02\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "incident_2026_01",
+          "station_harbour_row",
+          "line_azure",
+          "equipment_TX-440",
+          "station_kestrel_green"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 671,
+        "output_tokens": 81,
+        "retrieval_latency_ms": 50.422,
+        "generation_latency_ms": 6234.281,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 671,
+            "output_tokens": 81,
+            "latency_ms": 6234.281
+          }
+        }
+      }
+    },
+    "1018": {
+      "id": 1018,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Copper Lane?",
+          "retrieved": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "incident_2026_08",
+            "station_brickworks",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "incident_2026_08",
+            "station_brickworks",
+            "line_azure"
+          ],
+          "decision": "ABSTAIN: The provided evidence does not specify any maintenance procedures related to the SG-12 signal interlocking relay fault.",
+          "abstain_reason": "The provided evidence does not specify any maintenance procedures related to the SG-12 signal interlocking relay fault."
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "pass",
+          "named": [],
+          "unsupported": [],
+          "reasons": {},
+          "answer_before_gate": "INSUFFICIENT EVIDENCE"
+        }
+      ],
+      "stop_reason": "model_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Copper Lane?\nEvidence:\n[1] (station_copper_lane) Copper Lane is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Harbour Row and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_dunmore_park; previous_station -> station_brickworks; served_by -> line_azure; site_of_incident -> incident_2026_05\n[2] (incident_2026_05) Service incident 2026/05 on 2026-05-16: trains were held at Copper Lane on the Azure Line for 27 minutes after a SG-12 signal interlocking relay suffered a contact welding. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_SG-12\n[3] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_DR-8; occurred_at -> station_foundry_bridge\n[4] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: previous_station -> station_alder_vale; served_by -> line_azure; site_of_incident -> incident_2026_04\n[5] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_dunmore_park, station_harbour_row, station_kestrel_green\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "station_copper_lane",
+          "incident_2026_05",
+          "incident_2026_08",
+          "station_brickworks",
+          "line_azure"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 696,
+        "output_tokens": 64,
+        "retrieval_latency_ms": 49.012,
+        "generation_latency_ms": 5835.43,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 696,
+            "output_tokens": 64,
+            "latency_ms": 5835.43
+          }
+        }
+      }
+    },
+    "1019": {
+      "id": 1019,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Garnet Hill?",
+          "retrieved": [
+            "incident_2026_09",
+            "station_garnet_hill",
+            "line_crimson",
+            "equipment_PS-19",
+            "station_foundry_bridge"
+          ],
+          "new_evidence": [
+            "incident_2026_09",
+            "station_garnet_hill",
+            "line_crimson",
+            "equipment_PS-19",
+            "station_foundry_bridge"
+          ],
+          "decision": "ANSWER: procedure_MP-117 – this maintenance procedure covers the PS-19 auxiliary power supply whose ripple fault stopped service at Garnet Hill."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-117"
+          ],
+          "cited_from_links_unverified": [],
+          "fetched": [],
+          "fetch_failures": [
+            {
+              "node_id": "procedure_MP-117",
+              "reason": "unavailable"
+            }
+          ],
+          "truncated": [],
+          "link_only_claims": [
+            "procedure_MP-117"
+          ]
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "abstain",
+          "named": [
+            "code:MP-117",
+            "code:PS-19"
+          ],
+          "unsupported": [
+            "code:MP-117"
+          ],
+          "reasons": {
+            "code:MP-117": "link_target_unavailable"
+          },
+          "answer_before_gate": "procedure_MP-117 – this maintenance procedure covers the PS-19 auxiliary power supply whose ripple fault stopped service at Garnet Hill."
+        }
+      ],
+      "stop_reason": "gate_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Garnet Hill?\nEvidence:\n[1] (incident_2026_09) Service incident 2026/09 on 2026-09-01: trains were held at Garnet Hill on the Crimson Line for 43 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 2 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_PS-19; occurred_at -> station_garnet_hill\n[2] (station_garnet_hill) Garnet Hill is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Eastgate Quay and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_hollow_mill; previous_station -> station_foundry_bridge; served_by -> line_crimson\n[3] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_foundry_bridge, station_hollow_mill, station_ironside, station_jubilee_fields\n[4] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\n[5] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: previous_station -> station_eastgate_quay; site_of_incident -> incident_2026_08\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "incident_2026_09",
+          "station_garnet_hill",
+          "line_crimson",
+          "equipment_PS-19",
+          "station_foundry_bridge"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 685,
+        "output_tokens": 70,
+        "retrieval_latency_ms": 45.627,
+        "generation_latency_ms": 4814.116,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 685,
+            "output_tokens": 70,
+            "latency_ms": 4814.116
+          }
+        }
+      }
+    },
+    "1020": {
+      "id": 1020,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Ironside?",
+          "retrieved": [
+            "incident_2026_11",
+            "station_ironside",
+            "line_crimson",
+            "equipment_VE-31",
+            "station_hollow_mill"
+          ],
+          "new_evidence": [
+            "incident_2026_11",
+            "station_ironside",
+            "line_crimson",
+            "equipment_VE-31",
+            "station_hollow_mill"
+          ],
+          "decision": "ANSWER: procedure_MP-120 – this maintenance procedure covers the VE-31 tunnel ventilation fan whose blade‑imbalance fault stopped service at Ironside."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-120"
+          ],
+          "cited_from_links_unverified": [],
+          "fetched": [],
+          "fetch_failures": [
+            {
+              "node_id": "procedure_MP-120",
+              "reason": "unavailable"
+            }
+          ],
+          "truncated": [],
+          "link_only_claims": [
+            "procedure_MP-120"
+          ]
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "abstain",
+          "named": [
+            "code:MP-120",
+            "code:VE-31"
+          ],
+          "unsupported": [
+            "code:MP-120"
+          ],
+          "reasons": {
+            "code:MP-120": "link_target_unavailable"
+          },
+          "answer_before_gate": "procedure_MP-120 – this maintenance procedure covers the VE-31 tunnel ventilation fan whose blade‑imbalance fault stopped service at Ironside."
+        }
+      ],
+      "stop_reason": "gate_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Ironside?\nEvidence:\n[1] (incident_2026_11) Service incident 2026/11 on 2026-11-07: trains were held at Ironside on the Crimson Line for 51 minutes after a VE-31 tunnel ventilation fan suffered a blade imbalance. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_VE-31; occurred_at -> station_ironside\n[2] (station_ironside) Ironside is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Eastgate Quay and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_jubilee_fields; previous_station -> station_hollow_mill; served_by -> line_crimson\n[3] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_foundry_bridge, station_garnet_hill, station_hollow_mill, station_jubilee_fields\n[4] (equipment_VE-31) The VE-31 tunnel ventilation fan is fitted across the fleet and in fixed installations. Its dominant failure mode is blade imbalance, which presents as vibration velocity above 7 millimetres per second at the bearing housing. A VE-31 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group VE31G. Links: maintained_by -> procedure_MP-120\n[5] (station_hollow_mill) Hollow Mill is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Eastgate Quay and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: previous_station -> station_garnet_hill; site_of_incident -> incident_2026_10\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "incident_2026_11",
+          "station_ironside",
+          "line_crimson",
+          "equipment_VE-31",
+          "station_hollow_mill"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 690,
+        "output_tokens": 74,
+        "retrieval_latency_ms": 46.329,
+        "generation_latency_ms": 6095.438,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 690,
+            "output_tokens": 74,
+            "latency_ms": 6095.438
+          }
+        }
+      }
+    },
+    "1021": {
+      "id": 1021,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out inverter phase balance verification on the TX-440?",
+          "retrieved": [
+            "procedure_MP-101",
+            "equipment_TX-440",
+            "procedure_MP-102",
+            "role_traction_technician",
+            "station_harbour_row"
+          ],
+          "new_evidence": [
+            "procedure_MP-101",
+            "equipment_TX-440",
+            "procedure_MP-102",
+            "role_traction_technician",
+            "station_harbour_row"
+          ],
+          "decision": "ANSWER: policy_PL-A – the inverter phase balance verification must be authorised by policy_PL-A."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "policy_PL-A"
+          ],
+          "cited_from_links_unverified": [],
+          "fetched": [],
+          "fetch_failures": [
+            {
+              "node_id": "policy_PL-A",
+              "reason": "unavailable"
+            }
+          ],
+          "truncated": [],
+          "link_only_claims": [
+            "policy_PL-A"
+          ]
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "abstain",
+          "named": [
+            "code:PL-A"
+          ],
+          "unsupported": [
+            "code:PL-A"
+          ],
+          "reasons": {
+            "code:PL-A": "link_target_unavailable"
+          },
+          "answer_before_gate": "policy_PL-A – the inverter phase balance verification must be authorised by policy_PL-A."
+        }
+      ],
+      "stop_reason": "gate_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which authorisation is needed to carry out inverter phase balance verification on the TX-440?\nEvidence:\n[1] (procedure_MP-101) Maintenance procedure MP-101: Inverter phase balance verification. Applies to the TX-440 traction inverter. Scheduled every 90 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-A; maintains -> equipment_TX-440; performed_by -> role_traction_technician; superseded_by -> procedure_MP-102\n[2] (equipment_TX-440) The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G. Links: maintained_by -> procedure_MP-102\n[3] (procedure_MP-102) Maintenance procedure MP-102: Inverter gate driver replacement. Applies to the TX-440 traction inverter. Scheduled on condition. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. This procedure supersedes MP-101, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-A; performed_by -> role_traction_technician\n[4] (role_traction_technician) The night traction technician owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on nights.\n[5] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_kestrel_green; served_by -> line_azure; site_of_incident -> incident_2026_01\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "procedure_MP-101",
+          "equipment_TX-440",
+          "procedure_MP-102",
+          "role_traction_technician",
+          "station_harbour_row"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 639,
+        "output_tokens": 53,
+        "retrieval_latency_ms": 210.599,
+        "generation_latency_ms": 4732.645,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 639,
+            "output_tokens": 53,
+            "latency_ms": 4732.645
+          }
+        }
+      }
+    },
+    "1022": {
+      "id": 1022,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out pantograph carbon strip renewal on the HV-21?",
+          "retrieved": [
+            "procedure_MP-103",
+            "equipment_HV-21",
+            "role_current_collection_fitter",
+            "station_kestrel_green",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "procedure_MP-103",
+            "equipment_HV-21",
+            "role_current_collection_fitter",
+            "station_kestrel_green",
+            "line_azure"
+          ],
+          "decision": "ANSWER: policy_PL-A – the pantograph carbon strip renewal on the HV‑21 must be authorised by policy PL‑A."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "policy_PL-A"
+          ],
+          "cited_from_links_unverified": [],
+          "fetched": [],
+          "fetch_failures": [
+            {
+              "node_id": "policy_PL-A",
+              "reason": "unavailable"
+            }
+          ],
+          "truncated": [],
+          "link_only_claims": [
+            "policy_PL-A"
+          ]
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "abstain",
+          "named": [
+            "code:PL-A"
+          ],
+          "unsupported": [
+            "code:PL-A"
+          ],
+          "reasons": {
+            "code:PL-A": "link_target_unavailable"
+          },
+          "answer_before_gate": "policy_PL-A – the pantograph carbon strip renewal on the HV‑21 must be authorised by policy PL‑A."
+        }
+      ],
+      "stop_reason": "gate_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which authorisation is needed to carry out pantograph carbon strip renewal on the HV-21?\nEvidence:\n[1] (procedure_MP-103) Maintenance procedure MP-103: Pantograph carbon strip renewal. Applies to the HV-21 pantograph head. Scheduled every 45 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-A; maintains -> equipment_HV-21; performed_by -> role_current_collection_fitter\n[2] (equipment_HV-21) The HV-21 pantograph head is fitted across the fleet and in fixed installations. Its dominant failure mode is carbon strip fracture, which presents as a sudden loss of overhead contact force. A HV-21 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group HV21G. Links: maintained_by -> procedure_MP-104\n[3] (role_current_collection_fitter) The current collection fitter owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts. Links: responsible_for -> procedure_MP-104\n[4] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; previous_station -> station_harbour_row; served_by -> line_azure; site_of_incident -> incident_2026_02\n[5] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_harbour_row\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "procedure_MP-103",
+          "equipment_HV-21",
+          "role_current_collection_fitter",
+          "station_kestrel_green",
+          "line_azure"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 661,
+        "output_tokens": 55,
+        "retrieval_latency_ms": 52.066,
+        "generation_latency_ms": 5669.369,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 661,
+            "output_tokens": 55,
+            "latency_ms": 5669.369
+          }
+        }
+      }
+    },
+    "1023": {
+      "id": 1023,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out brake resistor grid thermal survey on the BR-7?",
+          "retrieved": [
+            "equipment_BR-7",
+            "procedure_MP-105",
+            "procedure_MP-106",
+            "procedure_MP-123",
+            "procedure_MP-124"
+          ],
+          "new_evidence": [
+            "equipment_BR-7",
+            "procedure_MP-105",
+            "procedure_MP-106",
+            "procedure_MP-123",
+            "procedure_MP-124"
+          ],
+          "decision": "ANSWER: policy_PL-B – the brake resistor grid thermal survey on the BR‑7 is authorised by policy PL‑B."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "policy_PL-B"
+          ],
+          "cited_from_links_unverified": [],
+          "fetched": [],
+          "fetch_failures": [
+            {
+              "node_id": "policy_PL-B",
+              "reason": "unavailable"
+            }
+          ],
+          "truncated": [],
+          "link_only_claims": [
+            "policy_PL-B"
+          ]
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "abstain",
+          "named": [
+            "code:PL-B"
+          ],
+          "unsupported": [
+            "code:PL-B"
+          ],
+          "reasons": {
+            "code:PL-B": "link_target_unavailable"
+          },
+          "answer_before_gate": "policy_PL-B – the brake resistor grid thermal survey on the BR‑7 is authorised by policy PL‑B."
+        }
+      ],
+      "stop_reason": "gate_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which authorisation is needed to carry out brake resistor grid thermal survey on the BR-7?\nEvidence:\n[1] (equipment_BR-7) The BR-7 regenerative brake unit is fitted across the fleet and in fixed installations. Its dominant failure mode is resistor grid overheat, which presents as grid temperature above the 310 degree cut-out. A BR-7 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group BR7G. Links: maintained_by -> procedure_MP-105, procedure_MP-106\n[2] (procedure_MP-105) Maintenance procedure MP-105: Brake resistor grid thermal survey. Applies to the BR-7 regenerative brake unit. Scheduled every 60 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes. Links: authorised_by -> policy_PL-B; performed_by -> role_brake_specialist; superseded_by -> procedure_MP-106\n[3] (procedure_MP-106) Maintenance procedure MP-106: Brake chopper firmware refresh. Applies to the BR-7 regenerative brake unit. Scheduled annually. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 55 minutes. This procedure supersedes MP-105, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B; performed_by -> role_brake_specialist\n[4] (procedure_MP-123) Maintenance procedure MP-123: Slide protection valve latch release test. Applies to the WS-5 wheel slide protection valve. Scheduled every 55 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-B; maintains -> equipment_WS-5; performed_by -> role_plant_engineer; superseded_by -> procedure_MP-124\n[5] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B, policy_PL-L; maintains -> equipment_WS-5; performed_by -> role_plant_engineer\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "equipment_BR-7",
+          "procedure_MP-105",
+          "procedure_MP-106",
+          "procedure_MP-123",
+          "procedure_MP-124"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 718,
+        "output_tokens": 56,
+        "retrieval_latency_ms": 51.327,
+        "generation_latency_ms": 6274.284,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 718,
+            "output_tokens": 56,
+            "latency_ms": 6274.284
+          }
+        }
+      }
+    },
+    "1024": {
+      "id": 1024,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out brake chopper firmware refresh on the BR-7?",
+          "retrieved": [
+            "procedure_MP-106",
+            "equipment_BR-7",
+            "procedure_MP-123",
+            "procedure_MP-124",
+            "procedure_MP-105"
+          ],
+          "new_evidence": [
+            "procedure_MP-106",
+            "equipment_BR-7",
+            "procedure_MP-123",
+            "procedure_MP-124",
+            "procedure_MP-105"
+          ],
+          "decision": "ANSWER: policy_PL-B – the brake chopper firmware refresh on the BR-7 must be authorised by policy PL‑B."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "policy_PL-B"
+          ],
+          "cited_from_links_unverified": [],
+          "fetched": [],
+          "fetch_failures": [
+            {
+              "node_id": "policy_PL-B",
+              "reason": "unavailable"
+            }
+          ],
+          "truncated": [],
+          "link_only_claims": [
+            "policy_PL-B"
+          ]
+        },
+        {
+          "step": "gate",
+          "gate_version": "gate-1.0",
+          "decision": "abstain",
+          "named": [
+            "code:PL-B"
+          ],
+          "unsupported": [
+            "code:PL-B"
+          ],
+          "reasons": {
+            "code:PL-B": "link_target_unavailable"
+          },
+          "answer_before_gate": "policy_PL-B – the brake chopper firmware refresh on the BR-7 must be authorised by policy PL‑B."
+        }
+      ],
+      "stop_reason": "gate_abstained",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which authorisation is needed to carry out brake chopper firmware refresh on the BR-7?\nEvidence:\n[1] (procedure_MP-106) Maintenance procedure MP-106: Brake chopper firmware refresh. Applies to the BR-7 regenerative brake unit. Scheduled annually. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 55 minutes. This procedure supersedes MP-105, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B; maintains -> equipment_BR-7; performed_by -> role_brake_specialist; supersedes -> procedure_MP-105\n[2] (equipment_BR-7) The BR-7 regenerative brake unit is fitted across the fleet and in fixed installations. Its dominant failure mode is resistor grid overheat, which presents as grid temperature above the 310 degree cut-out. A BR-7 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group BR7G. Links: maintained_by -> procedure_MP-105\n[3] (procedure_MP-123) Maintenance procedure MP-123: Slide protection valve latch release test. Applies to the WS-5 wheel slide protection valve. Scheduled every 55 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-B; maintains -> equipment_WS-5; performed_by -> role_plant_engineer; superseded_by -> procedure_MP-124\n[4] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B, policy_PL-L; maintains -> equipment_WS-5; performed_by -> role_plant_engineer\n[5] (procedure_MP-105) Maintenance procedure MP-105: Brake resistor grid thermal survey. Applies to the BR-7 regenerative brake unit. Scheduled every 60 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes. Links: authorised_by -> policy_PL-B; performed_by -> role_brake_specialist\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nIf the evidence cannot answer the question and another search would not help, reply ABSTAIN: followed by one short reason.\nOtherwise, reply SEARCH: followed by one short query."
+      ],
+      "evidence_coverage": {
+        "evidence_chunks": [
+          "procedure_MP-106",
+          "equipment_BR-7",
+          "procedure_MP-123",
+          "procedure_MP-124",
+          "procedure_MP-105"
+        ]
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 719,
+        "output_tokens": 57,
+        "retrieval_latency_ms": 50.903,
+        "generation_latency_ms": 4749.77,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 719,
+            "output_tokens": 57,
+            "latency_ms": 4749.77
+          }
+        }
+      }
+    }
+  }
+}
