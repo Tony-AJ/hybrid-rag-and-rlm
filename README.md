@@ -338,6 +338,8 @@ The RLM evaluation engine (`rlm/evaluate.py`) tests accuracy without relying on 
 - **Evidence Coverage**: Computes whether the exact ground-truth answer-bearing chunks reached the context window.
 - **Resource Metrics**: Tracks wall-clock latency (retrieval vs generation), token consumption (input/output), and step counts.
 
+Measured results, including the token-optimization experiments (merged decide/answer calls, lean grounding, reasoning effort) and their provenance, are recorded in [RLM_EXPERIMENTS.md](RLM_EXPERIMENTS.md).
+
 ---
 
 ## 📊 Benchmarking & Fusion Ablation
