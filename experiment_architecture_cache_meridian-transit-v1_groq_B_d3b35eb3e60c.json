@@ -219,6 +219,4253 @@
           "decision": "bounds_reached"
         }
       ]
+    },
+    "4": {
+      "architecture": "B",
+      "id": 4,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Hollow Mill have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE.",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_hollow_mill"
+        ],
+        "evidence_chunks": [
+          "equipment_TC-6",
+          "incident_2026_08",
+          "line_crimson",
+          "line_slate",
+          "station_eastgate_quay"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 685,
+        "output_tokens": 39,
+        "retrieval_latency_ms": 19.751,
+        "generation_latency_ms": 5826.973,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 685,
+            "output_tokens": 39,
+            "latency_ms": 5826.973
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Hollow Mill have and when was the station building refurbished?",
+          "retrieved": [
+            "equipment_TC-6",
+            "incident_2026_08",
+            "line_crimson",
+            "line_slate",
+            "station_eastgate_quay"
+          ],
+          "new_evidence": [
+            "equipment_TC-6",
+            "incident_2026_08",
+            "line_crimson",
+            "line_slate",
+            "station_eastgate_quay"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "5": {
+      "architecture": "B",
+      "id": 5,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Kingsmoor have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_kingsmoor"
+        ],
+        "evidence_chunks": [
+          "equipment_LT-77",
+          "incident_2026_09",
+          "incident_2026_15",
+          "line_crimson",
+          "line_jade"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 687,
+        "output_tokens": 38,
+        "retrieval_latency_ms": 12.985,
+        "generation_latency_ms": 4484.503,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 687,
+            "output_tokens": 38,
+            "latency_ms": 4484.503
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Kingsmoor have and when was the station building refurbished?",
+          "retrieved": [
+            "equipment_LT-77",
+            "incident_2026_09",
+            "incident_2026_15",
+            "line_crimson",
+            "line_jade"
+          ],
+          "new_evidence": [
+            "equipment_LT-77",
+            "incident_2026_09",
+            "incident_2026_15",
+            "line_crimson",
+            "line_jade"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "6": {
+      "architecture": "B",
+      "id": 6,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Netherby have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_netherby"
+        ],
+        "evidence_chunks": [
+          "equipment_HV-21",
+          "incident_2026_01",
+          "line_azure",
+          "line_jade",
+          "line_slate"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 693,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 11.443,
+        "generation_latency_ms": 5871.591,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 693,
+            "output_tokens": 41,
+            "latency_ms": 5871.591
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Netherby have and when was the station building refurbished?",
+          "retrieved": [
+            "equipment_HV-21",
+            "incident_2026_01",
+            "line_azure",
+            "line_jade",
+            "line_slate"
+          ],
+          "new_evidence": [
+            "equipment_HV-21",
+            "incident_2026_01",
+            "line_azure",
+            "line_jade",
+            "line_slate"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "7": {
+      "architecture": "B",
+      "id": 7,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Quarry Side have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_quarry_side"
+        ],
+        "evidence_chunks": [
+          "incident_2026_04",
+          "incident_2026_07",
+          "incident_2026_08",
+          "incident_2026_12",
+          "incident_2026_19"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 692,
+        "output_tokens": 42,
+        "retrieval_latency_ms": 66.444,
+        "generation_latency_ms": 4542.868,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 692,
+            "output_tokens": 42,
+            "latency_ms": 4542.868
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Quarry Side have and when was the station building refurbished?",
+          "retrieved": [
+            "incident_2026_04",
+            "incident_2026_07",
+            "incident_2026_08",
+            "incident_2026_12",
+            "incident_2026_19"
+          ],
+          "new_evidence": [
+            "incident_2026_04",
+            "incident_2026_07",
+            "incident_2026_08",
+            "incident_2026_12",
+            "incident_2026_19"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "8": {
+      "architecture": "B",
+      "id": 8,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Thistlebank have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_thistlebank"
+        ],
+        "evidence_chunks": [
+          "equipment_DR-8",
+          "incident_2026_07",
+          "incident_2026_12",
+          "incident_2026_23",
+          "line_amber"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 680,
+        "output_tokens": 43,
+        "retrieval_latency_ms": 13.285,
+        "generation_latency_ms": 5698.698,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 680,
+            "output_tokens": 43,
+            "latency_ms": 5698.698
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Thistlebank have and when was the station building refurbished?",
+          "retrieved": [
+            "equipment_DR-8",
+            "incident_2026_07",
+            "incident_2026_12",
+            "incident_2026_23",
+            "line_amber"
+          ],
+          "new_evidence": [
+            "equipment_DR-8",
+            "incident_2026_07",
+            "incident_2026_12",
+            "incident_2026_23",
+            "line_amber"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "9": {
+      "architecture": "B",
+      "id": 9,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Westmere have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_westmere"
+        ],
+        "evidence_chunks": [
+          "equipment_VE-31",
+          "incident_2026_28",
+          "line_slate",
+          "line_violet",
+          "station_ashfen"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 679,
+        "output_tokens": 50,
+        "retrieval_latency_ms": 10.74,
+        "generation_latency_ms": 5894.383,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 679,
+            "output_tokens": 50,
+            "latency_ms": 5894.383
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Westmere have and when was the station building refurbished?",
+          "retrieved": [
+            "equipment_VE-31",
+            "incident_2026_28",
+            "line_slate",
+            "line_violet",
+            "station_ashfen"
+          ],
+          "new_evidence": [
+            "equipment_VE-31",
+            "incident_2026_28",
+            "line_slate",
+            "line_violet",
+            "station_ashfen"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "10": {
+      "architecture": "B",
+      "id": 10,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Beacon Rise have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE.",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_beacon_rise"
+        ],
+        "evidence_chunks": [
+          "equipment_WS-5",
+          "incident_2026_01",
+          "incident_2026_24",
+          "line_amber",
+          "line_azure"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 691,
+        "output_tokens": 37,
+        "retrieval_latency_ms": 14.253,
+        "generation_latency_ms": 5873.05,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 691,
+            "output_tokens": 37,
+            "latency_ms": 5873.05
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Beacon Rise have and when was the station building refurbished?",
+          "retrieved": [
+            "equipment_WS-5",
+            "incident_2026_01",
+            "incident_2026_24",
+            "line_amber",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "equipment_WS-5",
+            "incident_2026_01",
+            "incident_2026_24",
+            "line_amber",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "11": {
+      "architecture": "B",
+      "id": 11,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Elmsworth have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_elmsworth"
+        ],
+        "evidence_chunks": [
+          "incident_2026_17",
+          "line_jade",
+          "line_slate",
+          "station_hartsmere",
+          "station_juniper_row"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 658,
+        "output_tokens": 59,
+        "retrieval_latency_ms": 10.594,
+        "generation_latency_ms": 5763.587,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 658,
+            "output_tokens": 59,
+            "latency_ms": 5763.587
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Elmsworth have and when was the station building refurbished?",
+          "retrieved": [
+            "incident_2026_17",
+            "line_jade",
+            "line_slate",
+            "station_hartsmere",
+            "station_juniper_row"
+          ],
+          "new_evidence": [
+            "incident_2026_17",
+            "line_jade",
+            "line_slate",
+            "station_hartsmere",
+            "station_juniper_row"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "12": {
+      "architecture": "B",
+      "id": 12,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Hartsmere have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_hartsmere"
+        ],
+        "evidence_chunks": [
+          "incident_2026_25",
+          "incident_2026_28",
+          "line_slate",
+          "line_violet",
+          "station_ashfen"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 690,
+        "output_tokens": 55,
+        "retrieval_latency_ms": 9.642,
+        "generation_latency_ms": 5733.342,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 690,
+            "output_tokens": 55,
+            "latency_ms": 5733.342
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Hartsmere have and when was the station building refurbished?",
+          "retrieved": [
+            "incident_2026_25",
+            "incident_2026_28",
+            "line_slate",
+            "line_violet",
+            "station_ashfen"
+          ],
+          "new_evidence": [
+            "incident_2026_25",
+            "incident_2026_28",
+            "line_slate",
+            "line_violet",
+            "station_ashfen"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "13": {
+      "architecture": "B",
+      "id": 13,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Azure Line and what are its peak headways?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": false,
+          "peak_headway_minutes": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_azure"
+        ],
+        "evidence_chunks": [
+          "incident_2026_01",
+          "incident_2026_05",
+          "incident_2026_06",
+          "station_alder_vale",
+          "station_brickworks"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 677,
+        "output_tokens": 43,
+        "retrieval_latency_ms": 11.736,
+        "generation_latency_ms": 5623.923,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 677,
+            "output_tokens": 43,
+            "latency_ms": 5623.923
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Azure Line and what are its peak headways?",
+          "retrieved": [
+            "incident_2026_01",
+            "incident_2026_05",
+            "incident_2026_06",
+            "station_alder_vale",
+            "station_brickworks"
+          ],
+          "new_evidence": [
+            "incident_2026_01",
+            "incident_2026_05",
+            "incident_2026_06",
+            "station_alder_vale",
+            "station_brickworks"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "14": {
+      "architecture": "B",
+      "id": 14,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Crimson Line and what are its peak headways?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": false,
+          "peak_headway_minutes": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_crimson"
+        ],
+        "evidence_chunks": [
+          "station_alder_vale",
+          "station_ashfen",
+          "station_beacon_rise",
+          "station_brickworks",
+          "station_carrow_end"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 642,
+        "output_tokens": 29,
+        "retrieval_latency_ms": 15.57,
+        "generation_latency_ms": 5621.868,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 642,
+            "output_tokens": 29,
+            "latency_ms": 5621.868
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Crimson Line and what are its peak headways?",
+          "retrieved": [
+            "station_alder_vale",
+            "station_ashfen",
+            "station_beacon_rise",
+            "station_brickworks",
+            "station_carrow_end"
+          ],
+          "new_evidence": [
+            "station_alder_vale",
+            "station_ashfen",
+            "station_beacon_rise",
+            "station_brickworks",
+            "station_carrow_end"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "15": {
+      "architecture": "B",
+      "id": 15,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Jade Line and what are its peak headways?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": false,
+          "peak_headway_minutes": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_jade"
+        ],
+        "evidence_chunks": [
+          "incident_2026_15",
+          "incident_2026_18",
+          "station_eastgate_quay",
+          "station_elmsworth",
+          "station_fallowfield"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 641,
+        "output_tokens": 44,
+        "retrieval_latency_ms": 17.288,
+        "generation_latency_ms": 583.284,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 641,
+            "output_tokens": 44,
+            "latency_ms": 583.284
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Jade Line and what are its peak headways?",
+          "retrieved": [
+            "incident_2026_15",
+            "incident_2026_18",
+            "station_eastgate_quay",
+            "station_elmsworth",
+            "station_fallowfield"
+          ],
+          "new_evidence": [
+            "incident_2026_15",
+            "incident_2026_18",
+            "station_eastgate_quay",
+            "station_elmsworth",
+            "station_fallowfield"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "16": {
+      "architecture": "B",
+      "id": 16,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Amber Line and what are its peak headways?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": false,
+          "peak_headway_minutes": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_amber"
+        ],
+        "evidence_chunks": [
+          "incident_2026_19",
+          "station_ashfen",
+          "station_beacon_rise",
+          "station_carrow_end",
+          "station_dovecote"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 625,
+        "output_tokens": 48,
+        "retrieval_latency_ms": 22.093,
+        "generation_latency_ms": 792.681,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 625,
+            "output_tokens": 48,
+            "latency_ms": 792.681
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Amber Line and what are its peak headways?",
+          "retrieved": [
+            "incident_2026_19",
+            "station_ashfen",
+            "station_beacon_rise",
+            "station_carrow_end",
+            "station_dovecote"
+          ],
+          "new_evidence": [
+            "incident_2026_19",
+            "station_ashfen",
+            "station_beacon_rise",
+            "station_carrow_end",
+            "station_dovecote"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "17": {
+      "architecture": "B",
+      "id": 17,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Violet Line and what are its peak headways?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": false,
+          "peak_headway_minutes": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_violet"
+        ],
+        "evidence_chunks": [
+          "station_alder_vale",
+          "station_ashfen",
+          "station_beacon_rise",
+          "station_brickworks",
+          "station_carrow_end"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 642,
+        "output_tokens": 40,
+        "retrieval_latency_ms": 27.406,
+        "generation_latency_ms": 5033.687,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 642,
+            "output_tokens": 40,
+            "latency_ms": 5033.687
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Violet Line and what are its peak headways?",
+          "retrieved": [
+            "station_alder_vale",
+            "station_ashfen",
+            "station_beacon_rise",
+            "station_brickworks",
+            "station_carrow_end"
+          ],
+          "new_evidence": [
+            "station_alder_vale",
+            "station_ashfen",
+            "station_beacon_rise",
+            "station_brickworks",
+            "station_carrow_end"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "18": {
+      "architecture": "B",
+      "id": 18,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Slate Line and what are its peak headways?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": false,
+          "peak_headway_minutes": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_slate"
+        ],
+        "evidence_chunks": [
+          "station_alder_vale",
+          "station_brickworks",
+          "station_copper_lane",
+          "station_dunmore_park",
+          "station_eastgate_quay"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 646,
+        "output_tokens": 28,
+        "retrieval_latency_ms": 12.491,
+        "generation_latency_ms": 5677.66,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 646,
+            "output_tokens": 28,
+            "latency_ms": 5677.66
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Slate Line and what are its peak headways?",
+          "retrieved": [
+            "station_alder_vale",
+            "station_brickworks",
+            "station_copper_lane",
+            "station_dunmore_park",
+            "station_eastgate_quay"
+          ],
+          "new_evidence": [
+            "station_alder_vale",
+            "station_brickworks",
+            "station_copper_lane",
+            "station_dunmore_park",
+            "station_eastgate_quay"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "19": {
+      "architecture": "B",
+      "id": 19,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What does authorisation policy PL-A require before an asset returns to service?",
+      "answer": "policy_PL-A – the asset must be proved through two full cycles before it returns to service.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "policy_code": true,
+          "requirement": false,
+          "signatory": false
+        },
+        "satisfied": 1,
+        "total": 3,
+        "fraction_satisfied": 0.3333,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-A"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-101",
+          "procedure_MP-102",
+          "procedure_MP-103",
+          "procedure_MP-104",
+          "procedure_MP-105"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 680,
+        "output_tokens": 104,
+        "retrieval_latency_ms": 15.092,
+        "generation_latency_ms": 5628.796,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 680,
+            "output_tokens": 104,
+            "latency_ms": 5628.796
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What does authorisation policy PL-A require before an asset returns to service?",
+          "retrieved": [
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "procedure_MP-103",
+            "procedure_MP-104",
+            "procedure_MP-105"
+          ],
+          "new_evidence": [
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "procedure_MP-103",
+            "procedure_MP-104",
+            "procedure_MP-105"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "policy_PL-A"
+          ]
+        }
+      ]
+    },
+    "20": {
+      "architecture": "B",
+      "id": 20,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What does authorisation policy PL-B require before an asset returns to service?",
+      "answer": "policy_PL-B – the asset must be proved through two full cycles before it can return to service.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "policy_code": true,
+          "requirement": false,
+          "signatory": false
+        },
+        "satisfied": 1,
+        "total": 3,
+        "fraction_satisfied": 0.3333,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-B"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-101",
+          "procedure_MP-102",
+          "procedure_MP-103",
+          "procedure_MP-104",
+          "procedure_MP-105"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 680,
+        "output_tokens": 110,
+        "retrieval_latency_ms": 21.976,
+        "generation_latency_ms": 6102.885,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 680,
+            "output_tokens": 110,
+            "latency_ms": 6102.885
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What does authorisation policy PL-B require before an asset returns to service?",
+          "retrieved": [
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "procedure_MP-103",
+            "procedure_MP-104",
+            "procedure_MP-105"
+          ],
+          "new_evidence": [
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "procedure_MP-103",
+            "procedure_MP-104",
+            "procedure_MP-105"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "policy_PL-B"
+          ]
+        }
+      ]
+    },
+    "21": {
+      "architecture": "B",
+      "id": 21,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Harbour Row?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "TX-440"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_TX-440"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_PD-90",
+          "equipment_TX-440",
+          "equipment_WS-5",
+          "line_amber"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 649,
+        "output_tokens": 28,
+        "retrieval_latency_ms": 13.551,
+        "generation_latency_ms": 5608.949,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 649,
+            "output_tokens": 28,
+            "latency_ms": 5608.949
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Harbour Row?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_PD-90",
+            "equipment_TX-440",
+            "equipment_WS-5",
+            "line_amber"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_PD-90",
+            "equipment_TX-440",
+            "equipment_WS-5",
+            "line_amber"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "22": {
+      "architecture": "B",
+      "id": 22,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Kestrel Green?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "HV-21"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_HV-21"
+        ],
+        "evidence_chunks": [
+          "equipment_ES-14",
+          "equipment_HV-21",
+          "equipment_TC-6",
+          "equipment_WS-5",
+          "line_azure"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 656,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 9.984,
+        "generation_latency_ms": 4791.047,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 656,
+            "output_tokens": 41,
+            "latency_ms": 4791.047
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Kestrel Green?",
+          "retrieved": [
+            "equipment_ES-14",
+            "equipment_HV-21",
+            "equipment_TC-6",
+            "equipment_WS-5",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "equipment_ES-14",
+            "equipment_HV-21",
+            "equipment_TC-6",
+            "equipment_WS-5",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "23": {
+      "architecture": "B",
+      "id": 23,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Alder Vale?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "BR-7"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_BR-7"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_BR-7",
+          "equipment_DR-8",
+          "equipment_VE-31",
+          "line_amber"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 646,
+        "output_tokens": 28,
+        "retrieval_latency_ms": 77.668,
+        "generation_latency_ms": 5518.083,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 646,
+            "output_tokens": 28,
+            "latency_ms": 5518.083
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Alder Vale?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "equipment_VE-31",
+            "line_amber"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "equipment_VE-31",
+            "line_amber"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "24": {
+      "architecture": "B",
+      "id": 24,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Brickworks?",
+      "answer": "INSUFFICIENT EVIDENCE.",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "PD-90"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_PD-90"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_DR-8",
+          "equipment_PD-90",
+          "equipment_TC-6",
+          "equipment_WS-5"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 637,
+        "output_tokens": 40,
+        "retrieval_latency_ms": 17.376,
+        "generation_latency_ms": 4490.216,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 637,
+            "output_tokens": 40,
+            "latency_ms": 4490.216
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Brickworks?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_DR-8",
+            "equipment_PD-90",
+            "equipment_TC-6",
+            "equipment_WS-5"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_DR-8",
+            "equipment_PD-90",
+            "equipment_TC-6",
+            "equipment_WS-5"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "25": {
+      "architecture": "B",
+      "id": 25,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Copper Lane?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "SG-12"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_SG-12"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_DR-8",
+          "equipment_SG-12",
+          "equipment_TC-6",
+          "equipment_VE-31"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 638,
+        "output_tokens": 39,
+        "retrieval_latency_ms": 47.611,
+        "generation_latency_ms": 5526.027,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 638,
+            "output_tokens": 39,
+            "latency_ms": 5526.027
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Copper Lane?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_DR-8",
+            "equipment_SG-12",
+            "equipment_TC-6",
+            "equipment_VE-31"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_DR-8",
+            "equipment_SG-12",
+            "equipment_TC-6",
+            "equipment_VE-31"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "26": {
+      "architecture": "B",
+      "id": 26,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Dunmore Park?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "AX-3"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_AX-3"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_DR-8",
+          "equipment_PS-19",
+          "equipment_TC-6",
+          "line_amber"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 644,
+        "output_tokens": 29,
+        "retrieval_latency_ms": 15.418,
+        "generation_latency_ms": 5968.504,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 644,
+            "output_tokens": 29,
+            "latency_ms": 5968.504
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Dunmore Park?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_DR-8",
+            "equipment_PS-19",
+            "equipment_TC-6",
+            "line_amber"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_DR-8",
+            "equipment_PS-19",
+            "equipment_TC-6",
+            "line_amber"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "27": {
+      "architecture": "B",
+      "id": 27,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Eastgate Quay?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "CP-55"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_CP-55"
+        ],
+        "evidence_chunks": [
+          "equipment_CP-55",
+          "equipment_PS-19",
+          "equipment_SG-12",
+          "equipment_WS-5",
+          "line_amber"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 652,
+        "output_tokens": 42,
+        "retrieval_latency_ms": 9.685,
+        "generation_latency_ms": 4805.596,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 652,
+            "output_tokens": 42,
+            "latency_ms": 4805.596
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Eastgate Quay?",
+          "retrieved": [
+            "equipment_CP-55",
+            "equipment_PS-19",
+            "equipment_SG-12",
+            "equipment_WS-5",
+            "line_amber"
+          ],
+          "new_evidence": [
+            "equipment_CP-55",
+            "equipment_PS-19",
+            "equipment_SG-12",
+            "equipment_WS-5",
+            "line_amber"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "28": {
+      "architecture": "B",
+      "id": 28,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Foundry Bridge?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "DR-8"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_DR-8"
+        ],
+        "evidence_chunks": [
+          "equipment_BR-7",
+          "equipment_DR-8",
+          "equipment_SG-12",
+          "equipment_TC-6",
+          "equipment_VE-31"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 637,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 15.184,
+        "generation_latency_ms": 4897.421,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 637,
+            "output_tokens": 41,
+            "latency_ms": 4897.421
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Foundry Bridge?",
+          "retrieved": [
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "equipment_SG-12",
+            "equipment_TC-6",
+            "equipment_VE-31"
+          ],
+          "new_evidence": [
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "equipment_SG-12",
+            "equipment_TC-6",
+            "equipment_VE-31"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "29": {
+      "architecture": "B",
+      "id": 29,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Garnet Hill?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "PS-19"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_PS-19"
+        ],
+        "evidence_chunks": [
+          "equipment_LT-77",
+          "equipment_PS-19",
+          "equipment_VE-31",
+          "equipment_WS-5",
+          "line_crimson"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 646,
+        "output_tokens": 39,
+        "retrieval_latency_ms": 12.323,
+        "generation_latency_ms": 5907.203,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 646,
+            "output_tokens": 39,
+            "latency_ms": 5907.203
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Garnet Hill?",
+          "retrieved": [
+            "equipment_LT-77",
+            "equipment_PS-19",
+            "equipment_VE-31",
+            "equipment_WS-5",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "equipment_LT-77",
+            "equipment_PS-19",
+            "equipment_VE-31",
+            "equipment_WS-5",
+            "line_crimson"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "30": {
+      "architecture": "B",
+      "id": 30,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Hollow Mill?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "TC-6"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_TC-6"
+        ],
+        "evidence_chunks": [
+          "equipment_DR-8",
+          "equipment_TC-6",
+          "equipment_VE-31",
+          "equipment_WS-5",
+          "line_crimson"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 657,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 27.293,
+        "generation_latency_ms": 5110.199,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 657,
+            "output_tokens": 41,
+            "latency_ms": 5110.199
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Hollow Mill?",
+          "retrieved": [
+            "equipment_DR-8",
+            "equipment_TC-6",
+            "equipment_VE-31",
+            "equipment_WS-5",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "equipment_DR-8",
+            "equipment_TC-6",
+            "equipment_VE-31",
+            "equipment_WS-5",
+            "line_crimson"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "31": {
+      "architecture": "B",
+      "id": 31,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Harbour Row?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-101",
+          "MP-102"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-101",
+          "procedure_MP-102"
+        ],
+        "evidence_chunks": [
+          "equipment_CP-55",
+          "equipment_DR-8",
+          "equipment_PD-90",
+          "equipment_TX-440",
+          "line_azure"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 650,
+        "output_tokens": 40,
+        "retrieval_latency_ms": 15.15,
+        "generation_latency_ms": 4683.014,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 650,
+            "output_tokens": 40,
+            "latency_ms": 4683.014
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Harbour Row?",
+          "retrieved": [
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_PD-90",
+            "equipment_TX-440",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_PD-90",
+            "equipment_TX-440",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "32": {
+      "architecture": "B",
+      "id": 32,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Kestrel Green?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-103",
+          "MP-104"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-103",
+          "procedure_MP-104"
+        ],
+        "evidence_chunks": [
+          "equipment_CP-55",
+          "equipment_DR-8",
+          "equipment_HV-21",
+          "equipment_SG-12",
+          "line_azure"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 657,
+        "output_tokens": 42,
+        "retrieval_latency_ms": 22.778,
+        "generation_latency_ms": 5653.905,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 657,
+            "output_tokens": 42,
+            "latency_ms": 5653.905
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Kestrel Green?",
+          "retrieved": [
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_HV-21",
+            "equipment_SG-12",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_HV-21",
+            "equipment_SG-12",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "33": {
+      "architecture": "B",
+      "id": 33,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Alder Vale?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-105",
+          "MP-106"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-105",
+          "procedure_MP-106"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_BR-7",
+          "equipment_DR-8",
+          "line_amber",
+          "line_azure"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 667,
+        "output_tokens": 55,
+        "retrieval_latency_ms": 13.514,
+        "generation_latency_ms": 6134.108,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 667,
+            "output_tokens": 55,
+            "latency_ms": 6134.108
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Alder Vale?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "line_amber",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "line_amber",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "34": {
+      "architecture": "B",
+      "id": 34,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Brickworks?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-107",
+          "MP-108"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-107",
+          "procedure_MP-108"
+        ],
+        "evidence_chunks": [
+          "equipment_DR-8",
+          "equipment_PD-90",
+          "line_azure",
+          "line_crimson",
+          "procedure_MP-109"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 680,
+        "output_tokens": 80,
+        "retrieval_latency_ms": 18.305,
+        "generation_latency_ms": 6155.714,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 680,
+            "output_tokens": 80,
+            "latency_ms": 6155.714
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Brickworks?",
+          "retrieved": [
+            "equipment_DR-8",
+            "equipment_PD-90",
+            "line_azure",
+            "line_crimson",
+            "procedure_MP-109"
+          ],
+          "new_evidence": [
+            "equipment_DR-8",
+            "equipment_PD-90",
+            "line_azure",
+            "line_crimson",
+            "procedure_MP-109"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "35": {
+      "architecture": "B",
+      "id": 35,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Copper Lane?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-109",
+          "MP-110"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-109",
+          "procedure_MP-110"
+        ],
+        "evidence_chunks": [
+          "equipment_DR-8",
+          "equipment_SG-12",
+          "line_amber",
+          "line_azure",
+          "line_crimson"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 689,
+        "output_tokens": 65,
+        "retrieval_latency_ms": 23.629,
+        "generation_latency_ms": 5704.688,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 689,
+            "output_tokens": 65,
+            "latency_ms": 5704.688
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Copper Lane?",
+          "retrieved": [
+            "equipment_DR-8",
+            "equipment_SG-12",
+            "line_amber",
+            "line_azure",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "equipment_DR-8",
+            "equipment_SG-12",
+            "line_amber",
+            "line_azure",
+            "line_crimson"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "36": {
+      "architecture": "B",
+      "id": 36,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Dunmore Park?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-111",
+          "MP-112"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-111",
+          "procedure_MP-112"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_CP-55",
+          "equipment_DR-8",
+          "equipment_PS-19",
+          "line_azure"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 651,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 10.794,
+        "generation_latency_ms": 4286.471,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 651,
+            "output_tokens": 41,
+            "latency_ms": 4286.471
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Dunmore Park?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_PS-19",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_PS-19",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "37": {
+      "architecture": "B",
+      "id": 37,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Eastgate Quay?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-113",
+          "MP-114"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-113",
+          "procedure_MP-114"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_CP-55",
+          "equipment_SG-12",
+          "equipment_WS-5",
+          "line_amber"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 662,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 46.471,
+        "generation_latency_ms": 4712.308,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 662,
+            "output_tokens": 41,
+            "latency_ms": 4712.308
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Eastgate Quay?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_CP-55",
+            "equipment_SG-12",
+            "equipment_WS-5",
+            "line_amber"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_CP-55",
+            "equipment_SG-12",
+            "equipment_WS-5",
+            "line_amber"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "38": {
+      "architecture": "B",
+      "id": 38,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Foundry Bridge?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-115",
+          "MP-116"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-115",
+          "procedure_MP-116"
+        ],
+        "evidence_chunks": [
+          "equipment_BR-7",
+          "equipment_DR-8",
+          "equipment_SG-12",
+          "equipment_VE-31",
+          "line_amber"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 650,
+        "output_tokens": 39,
+        "retrieval_latency_ms": 15.449,
+        "generation_latency_ms": 5876.674,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 650,
+            "output_tokens": 39,
+            "latency_ms": 5876.674
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Foundry Bridge?",
+          "retrieved": [
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "equipment_SG-12",
+            "equipment_VE-31",
+            "line_amber"
+          ],
+          "new_evidence": [
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "equipment_SG-12",
+            "equipment_VE-31",
+            "line_amber"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "39": {
+      "architecture": "B",
+      "id": 39,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Garnet Hill?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-117"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-117"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_ES-14",
+          "equipment_LT-77",
+          "equipment_PS-19",
+          "line_azure"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 643,
+        "output_tokens": 43,
+        "retrieval_latency_ms": 11.537,
+        "generation_latency_ms": 4490.311,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 643,
+            "output_tokens": 43,
+            "latency_ms": 4490.311
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Garnet Hill?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_ES-14",
+            "equipment_LT-77",
+            "equipment_PS-19",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_ES-14",
+            "equipment_LT-77",
+            "equipment_PS-19",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "40": {
+      "architecture": "B",
+      "id": 40,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Hollow Mill?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-118",
+          "MP-119"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-118",
+          "procedure_MP-119"
+        ],
+        "evidence_chunks": [
+          "equipment_DR-8",
+          "equipment_SG-12",
+          "equipment_TC-6",
+          "line_amber",
+          "line_crimson"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 673,
+        "output_tokens": 64,
+        "retrieval_latency_ms": 9.391,
+        "generation_latency_ms": 5684.478,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 673,
+            "output_tokens": 64,
+            "latency_ms": 5684.478
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Hollow Mill?",
+          "retrieved": [
+            "equipment_DR-8",
+            "equipment_SG-12",
+            "equipment_TC-6",
+            "line_amber",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "equipment_DR-8",
+            "equipment_SG-12",
+            "equipment_TC-6",
+            "line_amber",
+            "line_crimson"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "41": {
+      "architecture": "B",
+      "id": 41,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Ironside?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-120"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-120"
+        ],
+        "evidence_chunks": [
+          "equipment_BR-7",
+          "equipment_CP-55",
+          "equipment_DR-8",
+          "equipment_VE-31",
+          "line_azure"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 654,
+        "output_tokens": 39,
+        "retrieval_latency_ms": 20.381,
+        "generation_latency_ms": 5638.538,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 654,
+            "output_tokens": 39,
+            "latency_ms": 5638.538
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Ironside?",
+          "retrieved": [
+            "equipment_BR-7",
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_VE-31",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "equipment_BR-7",
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_VE-31",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "42": {
+      "architecture": "B",
+      "id": 42,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Jubilee Fields?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-121"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-121"
+        ],
+        "evidence_chunks": [
+          "equipment_BR-7",
+          "equipment_ES-14",
+          "equipment_PS-19",
+          "line_amber",
+          "line_crimson"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 663,
+        "output_tokens": 40,
+        "retrieval_latency_ms": 16.033,
+        "generation_latency_ms": 5093.848,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 663,
+            "output_tokens": 40,
+            "latency_ms": 5093.848
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Jubilee Fields?",
+          "retrieved": [
+            "equipment_BR-7",
+            "equipment_ES-14",
+            "equipment_PS-19",
+            "line_amber",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "equipment_BR-7",
+            "equipment_ES-14",
+            "equipment_PS-19",
+            "line_amber",
+            "line_crimson"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "43": {
+      "architecture": "B",
+      "id": 43,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Kingsmoor?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-122"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-122"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_DR-8",
+          "equipment_LT-77",
+          "equipment_PS-19",
+          "equipment_SG-12"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 626,
+        "output_tokens": 43,
+        "retrieval_latency_ms": 54.556,
+        "generation_latency_ms": 4452.325,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 626,
+            "output_tokens": 43,
+            "latency_ms": 4452.325
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Kingsmoor?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_DR-8",
+            "equipment_LT-77",
+            "equipment_PS-19",
+            "equipment_SG-12"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_DR-8",
+            "equipment_LT-77",
+            "equipment_PS-19",
+            "equipment_SG-12"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "44": {
+      "architecture": "B",
+      "id": 44,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Larkspur?",
+      "answer": "procedure_MP-122 – this procedure maintains the LT‑77 lighting ballast, whose dominant failure mode (cascading flicker) can stop service at stations such as Larkspur.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-123",
+          "MP-124"
+        ],
+        "extracted": [
+          "MP-122"
+        ],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-123",
+          "procedure_MP-124"
+        ],
+        "evidence_chunks": [
+          "equipment_LT-77",
+          "equipment_WS-5",
+          "line_jade",
+          "line_violet",
+          "policy_PL-B"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 671,
+        "output_tokens": 116,
+        "retrieval_latency_ms": 10.049,
+        "generation_latency_ms": 5906.118,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 671,
+            "output_tokens": 116,
+            "latency_ms": 5906.118
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Larkspur?",
+          "retrieved": [
+            "equipment_LT-77",
+            "equipment_WS-5",
+            "line_jade",
+            "line_violet",
+            "policy_PL-B"
+          ],
+          "new_evidence": [
+            "equipment_LT-77",
+            "equipment_WS-5",
+            "line_jade",
+            "line_violet",
+            "policy_PL-B"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-122"
+          ]
+        }
+      ]
+    },
+    "45": {
+      "architecture": "B",
+      "id": 45,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Mallow Street?",
+      "answer": "INSUFFICIENT EVIDENCE.",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-101",
+          "MP-102"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-101",
+          "procedure_MP-102"
+        ],
+        "evidence_chunks": [
+          "equipment_BR-7",
+          "equipment_CP-55",
+          "equipment_DR-8",
+          "equipment_TX-440",
+          "line_amber"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 648,
+        "output_tokens": 39,
+        "retrieval_latency_ms": 12.301,
+        "generation_latency_ms": 6047.295,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 39,
+            "latency_ms": 6047.295
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Mallow Street?",
+          "retrieved": [
+            "equipment_BR-7",
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_TX-440",
+            "line_amber"
+          ],
+          "new_evidence": [
+            "equipment_BR-7",
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_TX-440",
+            "line_amber"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "46": {
+      "architecture": "B",
+      "id": 46,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Netherby?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-103",
+          "MP-104"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-103",
+          "procedure_MP-104"
+        ],
+        "evidence_chunks": [
+          "equipment_DR-8",
+          "equipment_HV-21",
+          "equipment_SG-12",
+          "line_amber",
+          "line_azure"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 666,
+        "output_tokens": 44,
+        "retrieval_latency_ms": 11.736,
+        "generation_latency_ms": 5403.233,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 666,
+            "output_tokens": 44,
+            "latency_ms": 5403.233
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Netherby?",
+          "retrieved": [
+            "equipment_DR-8",
+            "equipment_HV-21",
+            "equipment_SG-12",
+            "line_amber",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "equipment_DR-8",
+            "equipment_HV-21",
+            "equipment_SG-12",
+            "line_amber",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "47": {
+      "architecture": "B",
+      "id": 47,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Oakhurst?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-105",
+          "MP-106"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-105",
+          "procedure_MP-106"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_BR-7",
+          "equipment_DR-8",
+          "line_amber",
+          "line_crimson"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 671,
+        "output_tokens": 43,
+        "retrieval_latency_ms": 11.238,
+        "generation_latency_ms": 6022.145,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 671,
+            "output_tokens": 43,
+            "latency_ms": 6022.145
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Oakhurst?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "line_amber",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "line_amber",
+            "line_crimson"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "48": {
+      "architecture": "B",
+      "id": 48,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Pennyford?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-107",
+          "MP-108"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-107",
+          "procedure_MP-108"
+        ],
+        "evidence_chunks": [
+          "equipment_BR-7",
+          "equipment_DR-8",
+          "equipment_PD-90",
+          "line_amber",
+          "line_crimson"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 666,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 10.689,
+        "generation_latency_ms": 4171.891,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 666,
+            "output_tokens": 41,
+            "latency_ms": 4171.891
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Pennyford?",
+          "retrieved": [
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "equipment_PD-90",
+            "line_amber",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "equipment_BR-7",
+            "equipment_DR-8",
+            "equipment_PD-90",
+            "line_amber",
+            "line_crimson"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "49": {
+      "architecture": "B",
+      "id": 49,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Quarry Side?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-109",
+          "MP-110"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-109",
+          "procedure_MP-110"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_SG-12",
+          "equipment_VE-31",
+          "line_amber",
+          "line_crimson"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 675,
+        "output_tokens": 40,
+        "retrieval_latency_ms": 14.007,
+        "generation_latency_ms": 5804.909,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 675,
+            "output_tokens": 40,
+            "latency_ms": 5804.909
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Quarry Side?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_SG-12",
+            "equipment_VE-31",
+            "line_amber",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_SG-12",
+            "equipment_VE-31",
+            "line_amber",
+            "line_crimson"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "50": {
+      "architecture": "B",
+      "id": 50,
+      "category": "2-hop graph (incident to procedure)",
+      "hops": 2,
+      "question": "Which maintenance procedures cover the fault that stopped service at Redcliff?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "expected": [
+          "MP-111",
+          "MP-112"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "procedure_MP-111",
+          "procedure_MP-112"
+        ],
+        "evidence_chunks": [
+          "equipment_AX-3",
+          "equipment_CP-55",
+          "equipment_DR-8",
+          "equipment_VE-31",
+          "line_amber"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 651,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 12.685,
+        "generation_latency_ms": 6683.146,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 651,
+            "output_tokens": 41,
+            "latency_ms": 6683.146
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Redcliff?",
+          "retrieved": [
+            "equipment_AX-3",
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_VE-31",
+            "line_amber"
+          ],
+          "new_evidence": [
+            "equipment_AX-3",
+            "equipment_CP-55",
+            "equipment_DR-8",
+            "equipment_VE-31",
+            "line_amber"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "51": {
+      "architecture": "B",
+      "id": 51,
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "question": "Which authorisation is needed to carry out inverter phase balance verification on the TX-440?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "expected": [
+          "PL-A"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-A"
+        ],
+        "evidence_chunks": [
+          "line_azure",
+          "line_jade",
+          "policy_PL-A",
+          "role_traction_technician",
+          "station_harbour_row"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 650,
+        "output_tokens": 42,
+        "retrieval_latency_ms": 18.052,
+        "generation_latency_ms": 4855.443,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 650,
+            "output_tokens": 42,
+            "latency_ms": 4855.443
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out inverter phase balance verification on the TX-440?",
+          "retrieved": [
+            "line_azure",
+            "line_jade",
+            "policy_PL-A",
+            "role_traction_technician",
+            "station_harbour_row"
+          ],
+          "new_evidence": [
+            "line_azure",
+            "line_jade",
+            "policy_PL-A",
+            "role_traction_technician",
+            "station_harbour_row"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "52": {
+      "architecture": "B",
+      "id": 52,
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "question": "Which authorisation is needed to carry out inverter gate driver replacement on the TX-440?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "expected": [
+          "PL-A"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-A"
+        ],
+        "evidence_chunks": [
+          "policy_PL-A",
+          "procedure_MP-105",
+          "procedure_MP-106",
+          "procedure_MP-117",
+          "procedure_MP-122"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 679,
+        "output_tokens": 45,
+        "retrieval_latency_ms": 17.264,
+        "generation_latency_ms": 6113.145,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 679,
+            "output_tokens": 45,
+            "latency_ms": 6113.145
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out inverter gate driver replacement on the TX-440?",
+          "retrieved": [
+            "policy_PL-A",
+            "procedure_MP-105",
+            "procedure_MP-106",
+            "procedure_MP-117",
+            "procedure_MP-122"
+          ],
+          "new_evidence": [
+            "policy_PL-A",
+            "procedure_MP-105",
+            "procedure_MP-106",
+            "procedure_MP-117",
+            "procedure_MP-122"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "53": {
+      "architecture": "B",
+      "id": 53,
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "question": "Which authorisation is needed to carry out pantograph carbon strip renewal on the HV-21?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "expected": [
+          "PL-A"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-A"
+        ],
+        "evidence_chunks": [
+          "line_azure",
+          "policy_PL-A",
+          "procedure_MP-117",
+          "role_current_collection_fitter",
+          "station_kestrel_green"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 652,
+        "output_tokens": 50,
+        "retrieval_latency_ms": 52.9,
+        "generation_latency_ms": 4487.17,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 652,
+            "output_tokens": 50,
+            "latency_ms": 4487.17
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out pantograph carbon strip renewal on the HV-21?",
+          "retrieved": [
+            "line_azure",
+            "policy_PL-A",
+            "procedure_MP-117",
+            "role_current_collection_fitter",
+            "station_kestrel_green"
+          ],
+          "new_evidence": [
+            "line_azure",
+            "policy_PL-A",
+            "procedure_MP-117",
+            "role_current_collection_fitter",
+            "station_kestrel_green"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "54": {
+      "architecture": "B",
+      "id": 54,
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "question": "Which authorisation is needed to carry out pantograph contact force calibration on the HV-21?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "expected": [
+          "PL-A"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-A"
+        ],
+        "evidence_chunks": [
+          "line_azure",
+          "policy_PL-A",
+          "role_current_collection_fitter",
+          "station_kestrel_green",
+          "procedure_MP-101"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 652,
+        "output_tokens": 44,
+        "retrieval_latency_ms": 52.259,
+        "generation_latency_ms": 3640.934,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 652,
+            "output_tokens": 44,
+            "latency_ms": 3640.934
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out pantograph contact force calibration on the HV-21?",
+          "retrieved": [
+            "line_azure",
+            "policy_PL-A",
+            "role_current_collection_fitter",
+            "station_kestrel_green",
+            "procedure_MP-101"
+          ],
+          "new_evidence": [
+            "line_azure",
+            "policy_PL-A",
+            "role_current_collection_fitter",
+            "station_kestrel_green",
+            "procedure_MP-101"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "55": {
+      "architecture": "B",
+      "id": 55,
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "question": "Which authorisation is needed to carry out brake resistor grid thermal survey on the BR-7?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "expected": [
+          "PL-B"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-B"
+        ],
+        "evidence_chunks": [
+          "line_jade",
+          "procedure_MP-106",
+          "procedure_MP-123",
+          "procedure_MP-124",
+          "station_oakhurst"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 712,
+        "output_tokens": 50,
+        "retrieval_latency_ms": 21.049,
+        "generation_latency_ms": 4612.137,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 712,
+            "output_tokens": 50,
+            "latency_ms": 4612.137
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out brake resistor grid thermal survey on the BR-7?",
+          "retrieved": [
+            "line_jade",
+            "procedure_MP-106",
+            "procedure_MP-123",
+            "procedure_MP-124",
+            "station_oakhurst"
+          ],
+          "new_evidence": [
+            "line_jade",
+            "procedure_MP-106",
+            "procedure_MP-123",
+            "procedure_MP-124",
+            "station_oakhurst"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "56": {
+      "architecture": "B",
+      "id": 56,
+      "category": "1-hop graph (authorisation)",
+      "hops": 1,
+      "question": "Which authorisation is needed to carry out brake chopper firmware refresh on the BR-7?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "expected": [
+          "PL-B"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-B"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-123",
+          "procedure_MP-124",
+          "equipment_WS-5",
+          "policy_PL-L",
+          "role_plant_engineer"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 638,
+        "output_tokens": 46,
+        "retrieval_latency_ms": 54.938,
+        "generation_latency_ms": 4527.01,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 638,
+            "output_tokens": 46,
+            "latency_ms": 4527.01
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out brake chopper firmware refresh on the BR-7?",
+          "retrieved": [
+            "procedure_MP-123",
+            "procedure_MP-124",
+            "equipment_WS-5",
+            "policy_PL-L",
+            "role_plant_engineer"
+          ],
+          "new_evidence": [
+            "procedure_MP-123",
+            "procedure_MP-124",
+            "equipment_WS-5",
+            "policy_PL-L",
+            "role_plant_engineer"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "57": {
+      "architecture": "B",
+      "id": 57,
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "question": "Which stations sit immediately either side of Alder Vale along its own line?",
+      "answer": "INSUFFICIENT EVIDENCE.",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "expected": [
+          "Brickworks",
+          "Kestrel Green"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_brickworks",
+          "station_kestrel_green"
+        ],
+        "evidence_chunks": [
+          "equipment_BR-7",
+          "incident_2026_17",
+          "incident_2026_19",
+          "incident_2026_24",
+          "line_amber"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 681,
+        "output_tokens": 40,
+        "retrieval_latency_ms": 51.455,
+        "generation_latency_ms": 5628.865,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 681,
+            "output_tokens": 40,
+            "latency_ms": 5628.865
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Alder Vale along its own line?",
+          "retrieved": [
+            "equipment_BR-7",
+            "incident_2026_17",
+            "incident_2026_19",
+            "incident_2026_24",
+            "line_amber"
+          ],
+          "new_evidence": [
+            "equipment_BR-7",
+            "incident_2026_17",
+            "incident_2026_19",
+            "incident_2026_24",
+            "line_amber"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "58": {
+      "architecture": "B",
+      "id": 58,
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "question": "Which stations sit immediately either side of Garnet Hill along its own line?",
+      "answer": "INSUFFICIENT EVIDENCE.",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "expected": [
+          "Foundry Bridge",
+          "Hollow Mill"
+        ],
+        "extracted": [],
+        "exact_set_match": false,
+        "precision": 0.0,
+        "recall": 0.0,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_foundry_bridge",
+          "station_hollow_mill"
+        ],
+        "evidence_chunks": [
+          "equipment_PS-19",
+          "incident_2026_12",
+          "incident_2026_13",
+          "line_jade",
+          "station_eastgate_quay"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 669,
+        "output_tokens": 42,
+        "retrieval_latency_ms": 55.091,
+        "generation_latency_ms": 5911.308,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 669,
+            "output_tokens": 42,
+            "latency_ms": 5911.308
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Garnet Hill along its own line?",
+          "retrieved": [
+            "equipment_PS-19",
+            "incident_2026_12",
+            "incident_2026_13",
+            "line_jade",
+            "station_eastgate_quay"
+          ],
+          "new_evidence": [
+            "equipment_PS-19",
+            "incident_2026_12",
+            "incident_2026_13",
+            "line_jade",
+            "station_eastgate_quay"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "59": {
+      "architecture": "B",
+      "id": 59,
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "question": "Which stations sit immediately either side of Mallow Street along its own line?",
+      "answer": "station_larkspur and station_netherby are the stations that sit immediately either side of Mallow Street on the Jade Line.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "expected": [
+          "Larkspur",
+          "Netherby"
+        ],
+        "extracted": [
+          "Larkspur",
+          "Netherby"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_larkspur",
+          "station_netherby"
+        ],
+        "evidence_chunks": [
+          "equipment_TX-440",
+          "incident_2026_12",
+          "line_crimson",
+          "line_jade",
+          "line_slate"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 698,
+        "output_tokens": 108,
+        "retrieval_latency_ms": 53.727,
+        "generation_latency_ms": 4797.746,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 698,
+            "output_tokens": 108,
+            "latency_ms": 4797.746
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Mallow Street along its own line?",
+          "retrieved": [
+            "equipment_TX-440",
+            "incident_2026_12",
+            "line_crimson",
+            "line_jade",
+            "line_slate"
+          ],
+          "new_evidence": [
+            "equipment_TX-440",
+            "incident_2026_12",
+            "line_crimson",
+            "line_jade",
+            "line_slate"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "station_larkspur",
+            "station_netherby"
+          ]
+        }
+      ]
+    },
+    "60": {
+      "architecture": "B",
+      "id": 60,
+      "category": "1-hop graph (adjacency)",
+      "hops": 1,
+      "question": "Which stations sit immediately either side of Saltmarsh along its own line?",
+      "answer": "Station_redcliff and station_thistlebank sit immediately either side of Saltmarsh on the Amber Line.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "expected": [
+          "Redcliff",
+          "Thistlebank"
+        ],
+        "extracted": [
+          "Redcliff",
+          "Thistlebank"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_redcliff",
+          "station_thistlebank"
+        ],
+        "evidence_chunks": [
+          "equipment_CP-55",
+          "equipment_TX-440",
+          "incident_2026_24",
+          "line_amber",
+          "line_azure"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 679,
+        "output_tokens": 92,
+        "retrieval_latency_ms": 44.789,
+        "generation_latency_ms": 5605.157,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 679,
+            "output_tokens": 92,
+            "latency_ms": 5605.157
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Saltmarsh along its own line?",
+          "retrieved": [
+            "equipment_CP-55",
+            "equipment_TX-440",
+            "incident_2026_24",
+            "line_amber",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "equipment_CP-55",
+            "equipment_TX-440",
+            "incident_2026_24",
+            "line_amber",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "station_thistlebank"
+          ]
+        }
+      ]
     }
   }
 }
