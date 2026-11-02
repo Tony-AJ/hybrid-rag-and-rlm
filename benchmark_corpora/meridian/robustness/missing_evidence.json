@@ -1,0 +1,234 @@
+{
+  "corpus_id": "meridian-transit-v1",
+  "experiment": "robustness-r1-missing-evidence",
+  "dataset_version": "r1-1.0",
+  "base_dataset": "benchmark_corpora/meridian/dataset.json",
+  "base_dataset_version": "1.1",
+  "base_dataset_sha256": "8f61e760d6ec9b1ca95f8bf955bfb33698851caa8e61cf7ff0d3b1f758a54fb2",
+  "notes": [
+    "Every query is unanswerable from the evidence the system can read. The correct behaviour is to abstain (R1a, R1c) or to answer only the supported part and decline the rest (R1b).",
+    "R1a: the corpus states nothing that answers the question. absent_terms must occur in no chunk text; nonexistent_entities must not exist in the corpus.",
+    "R1b: two-part question. answerable_part is satisfied by the text of available_relevant; absent_terms (the missing part) occur in no chunk text.",
+    "R1c: the answer nodes are masked at retrieval time (never returned as evidence, fetch returns nothing) but the graph edges to them stay, so their ids remain visible in Links: lines of link_source. Naming them is a link-only answer.",
+    "relevant is empty for every query: no chunk the system can read contains the answer. available_relevant lists the readable chunks on the question's path, used for evidence coverage.",
+    "Query ids start at 1001 so they never collide with dataset v1.1."
+  ],
+  "queries": [
+    {
+      "id": 1001, "case": "R1a", "subtype": "missing_attribute",
+      "query": "Who is the station manager at Harbour Row?",
+      "relevant": [], "available_relevant": ["station_harbour_row"], "mask": [],
+      "absent_terms": ["station manager"], "nonexistent_entities": [],
+      "gold_answer": {"kind": "abstain", "missing": "station manager name"},
+      "description": "Station chunks give platforms, access, entries and building dates; no staff names."
+    },
+    {
+      "id": 1002, "case": "R1a", "subtype": "missing_attribute",
+      "query": "How many car parking spaces are there at Kestrel Green?",
+      "relevant": [], "available_relevant": ["station_kestrel_green"], "mask": [],
+      "absent_terms": ["car park", "parking spaces"], "nonexistent_entities": [],
+      "gold_answer": {"kind": "abstain", "missing": "car parking capacity"},
+      "description": "No chunk mentions car parking. A cycle parking bulletin exists but gives no station or space count."
+    },
+    {
+      "id": 1003, "case": "R1a", "subtype": "missing_attribute",
+      "query": "How much did the 2009 refurbishment of Harbour Row cost?",
+      "relevant": [], "available_relevant": ["station_harbour_row"], "mask": [],
+      "absent_terms": ["cost", "budget", "price"], "nonexistent_entities": [],
+      "gold_answer": {"kind": "abstain", "missing": "refurbishment cost"},
+      "description": "The refurbishment year is stated; no cost appears anywhere."
+    },
+    {
+      "id": 1004, "case": "R1a", "subtype": "missing_attribute",
+      "query": "What is the Sunday headway on the Azure Line?",
+      "relevant": [], "available_relevant": ["line_azure"], "mask": [],
+      "absent_terms": ["sunday", "weekend"], "nonexistent_entities": [],
+      "gold_answer": {"kind": "abstain", "missing": "Sunday headway"},
+      "description": "Line chunks give morning-peak and evening off-peak headways only."
+    },
+    {
+      "id": 1005, "case": "R1a", "subtype": "missing_attribute",
+      "query": "What is the top speed of the Series 400 four-car sets?",
+      "relevant": [], "available_relevant": ["line_azure"], "mask": [],
+      "absent_terms": ["speed", "km/h", "mph"], "nonexistent_entities": [],
+      "gold_answer": {"kind": "abstain", "missing": "rolling stock top speed"},
+      "description": "Rolling stock is named on line chunks; no performance figures exist."
+    },
+    {
+      "id": 1006, "case": "R1a", "subtype": "nonexistent_entity",
+      "query": "How many platforms does Thornwick Junction have?",
+      "relevant": [], "available_relevant": [], "mask": [],
+      "absent_terms": ["thornwick"], "nonexistent_entities": ["Thornwick Junction"],
+      "gold_answer": {"kind": "abstain", "missing": "the station does not exist in the corpus"},
+      "description": "Plausible station name that is not in the network."
+    },
+    {
+      "id": 1007, "case": "R1a", "subtype": "nonexistent_entity",
+      "query": "Which maintenance procedure covers the QZ-900 signalling relay?",
+      "relevant": [], "available_relevant": [], "mask": [],
+      "absent_terms": ["qz-900"], "nonexistent_entities": ["QZ-900"],
+      "gold_answer": {"kind": "abstain", "missing": "the equipment does not exist in the corpus"},
+      "description": "Equipment code in the corpus format that does not exist."
+    },
+    {
+      "id": 1008, "case": "R1a", "subtype": "nonexistent_entity",
+      "query": "When was authorisation policy PL-Z issued?",
+      "relevant": [], "available_relevant": [], "mask": [],
+      "absent_terms": ["pl-z"], "nonexistent_entities": ["PL-Z"],
+      "gold_answer": {"kind": "abstain", "missing": "the policy does not exist in the corpus"},
+      "description": "Policy codes run PL-A to PL-L."
+    },
+    {
+      "id": 1009, "case": "R1b",
+      "query": "How many platforms does Harbour Row have, and how many car parking spaces does it have?",
+      "relevant": [], "available_relevant": ["station_harbour_row"], "mask": [],
+      "absent_terms": ["car park", "parking spaces"], "nonexistent_entities": [],
+      "answerable_part": {"kind": "predicates", "predicates": {"platforms": 3}},
+      "gold_answer": {"kind": "abstain", "missing": "car parking capacity"},
+      "description": "Platform count is stated; parking is not."
+    },
+    {
+      "id": 1010, "case": "R1b",
+      "query": "In what year was Kestrel Green last refurbished, and who is its station manager?",
+      "relevant": [], "available_relevant": ["station_kestrel_green"], "mask": [],
+      "absent_terms": ["station manager"], "nonexistent_entities": [],
+      "answerable_part": {"kind": "predicates", "predicates": {"refurbished_year": 2010}},
+      "gold_answer": {"kind": "abstain", "missing": "station manager name"},
+      "description": "Refurbishment year is stated; no staff names exist."
+    },
+    {
+      "id": 1011, "case": "R1b",
+      "query": "What is the morning peak headway on the Azure Line, and what is its Sunday headway?",
+      "relevant": [], "available_relevant": ["line_azure"], "mask": [],
+      "absent_terms": ["sunday", "weekend"], "nonexistent_entities": [],
+      "answerable_part": {"kind": "predicates", "predicates": {"morning_peak_headway_minutes": 5}},
+      "gold_answer": {"kind": "abstain", "missing": "Sunday headway"},
+      "description": "Morning-peak headway is stated; Sunday service is not."
+    },
+    {
+      "id": 1012, "case": "R1b",
+      "query": "What is the design life of the TX-440 traction inverter, and what is the purchase price of one unit?",
+      "relevant": [], "available_relevant": ["equipment_TX-440"], "mask": [],
+      "absent_terms": ["price", "cost", "purchase"], "nonexistent_entities": [],
+      "answerable_part": {"kind": "predicates", "predicates": {"design_life_years": 9}},
+      "gold_answer": {"kind": "abstain", "missing": "unit purchase price"},
+      "description": "Design life is stated; no prices exist."
+    },
+    {
+      "id": 1013, "case": "R1b",
+      "query": "How often is maintenance procedure MP-101 scheduled, and what does each visit cost?",
+      "relevant": [], "available_relevant": ["procedure_MP-101"], "mask": [],
+      "absent_terms": ["cost", "price", "budget"], "nonexistent_entities": [],
+      "answerable_part": {"kind": "predicates", "predicates": {"interval_days": 90}},
+      "gold_answer": {"kind": "abstain", "missing": "cost per visit"},
+      "description": "Interval is stated; no costs exist."
+    },
+    {
+      "id": 1014, "case": "R1b",
+      "query": "When was policy PL-A issued, and what is the annual budget for work under it?",
+      "relevant": [], "available_relevant": ["policy_PL-A"], "mask": [],
+      "absent_terms": ["budget", "cost"], "nonexistent_entities": [],
+      "answerable_part": {"kind": "predicates", "predicates": {"issued_year": 2024}},
+      "gold_answer": {"kind": "abstain", "missing": "annual budget"},
+      "description": "Issue year is stated; no budgets exist."
+    },
+    {
+      "id": 1015, "case": "R1b",
+      "query": "How many entries does Alder Vale record on a typical weekday, and how many on a typical Sunday?",
+      "relevant": [], "available_relevant": ["station_alder_vale"], "mask": [],
+      "absent_terms": ["sunday", "weekend"], "nonexistent_entities": [],
+      "answerable_part": {"kind": "predicates", "predicates": {"weekday_entries_thousand": 17}},
+      "gold_answer": {"kind": "abstain", "missing": "Sunday entries"},
+      "description": "Weekday entries are stated; Sunday entries are not."
+    },
+    {
+      "id": 1016, "case": "R1b",
+      "query": "For how many minutes were trains held at Harbour Row in incident 2026/01, and what did the delay cost the authority?",
+      "relevant": [], "available_relevant": ["incident_2026_01"], "mask": [],
+      "absent_terms": ["cost", "compensation", "price"], "nonexistent_entities": [],
+      "answerable_part": {"kind": "predicates", "predicates": {"minutes_held": 11}},
+      "gold_answer": {"kind": "abstain", "missing": "cost of the delay"},
+      "description": "Hold duration is stated; no costs exist."
+    },
+    {
+      "id": 1017, "case": "R1c", "source_query_id": 31,
+      "query": "Which maintenance procedures cover the fault that stopped service at Harbour Row?",
+      "relevant": [], "available_relevant": ["incident_2026_01", "equipment_TX-440"],
+      "mask": ["procedure_MP-101", "procedure_MP-102"], "link_source": "equipment_TX-440",
+      "graph_path": "incident_2026_01 -caused_by-> equipment_TX-440 -maintained_by-> [masked] procedure_MP-101, procedure_MP-102",
+      "gold_answer": {"kind": "abstain", "missing": "procedure text",
+                      "unsupported_entities": {"entity_type": "procedure_code", "entities": ["MP-101", "MP-102"]}},
+      "description": "v1.1 query 31 with both procedure chunks masked. The maintained_by edges stay visible on the equipment chunk."
+    },
+    {
+      "id": 1018, "case": "R1c", "source_query_id": 35,
+      "query": "Which maintenance procedures cover the fault that stopped service at Copper Lane?",
+      "relevant": [], "available_relevant": ["incident_2026_05", "equipment_SG-12"],
+      "mask": ["procedure_MP-109", "procedure_MP-110"], "link_source": "equipment_SG-12",
+      "graph_path": "incident_2026_05 -caused_by-> equipment_SG-12 -maintained_by-> [masked] procedure_MP-109, procedure_MP-110",
+      "gold_answer": {"kind": "abstain", "missing": "procedure text",
+                      "unsupported_entities": {"entity_type": "procedure_code", "entities": ["MP-109", "MP-110"]}},
+      "description": "v1.1 query 35 with both procedure chunks masked."
+    },
+    {
+      "id": 1019, "case": "R1c", "source_query_id": 39,
+      "query": "Which maintenance procedures cover the fault that stopped service at Garnet Hill?",
+      "relevant": [], "available_relevant": ["incident_2026_09", "equipment_PS-19"],
+      "mask": ["procedure_MP-117"], "link_source": "equipment_PS-19",
+      "graph_path": "incident_2026_09 -caused_by-> equipment_PS-19 -maintained_by-> [masked] procedure_MP-117",
+      "gold_answer": {"kind": "abstain", "missing": "procedure text",
+                      "unsupported_entities": {"entity_type": "procedure_code", "entities": ["MP-117"]}},
+      "description": "v1.1 query 39 with its single procedure chunk masked."
+    },
+    {
+      "id": 1020, "case": "R1c", "source_query_id": 41,
+      "query": "Which maintenance procedures cover the fault that stopped service at Ironside?",
+      "relevant": [], "available_relevant": ["incident_2026_11", "equipment_VE-31"],
+      "mask": ["procedure_MP-120"], "link_source": "equipment_VE-31",
+      "graph_path": "incident_2026_11 -caused_by-> equipment_VE-31 -maintained_by-> [masked] procedure_MP-120",
+      "gold_answer": {"kind": "abstain", "missing": "procedure text",
+                      "unsupported_entities": {"entity_type": "procedure_code", "entities": ["MP-120"]}},
+      "description": "v1.1 query 41 with its single procedure chunk masked."
+    },
+    {
+      "id": 1021, "case": "R1c", "source_query_id": 51,
+      "query": "Which authorisation is needed to carry out inverter phase balance verification on the TX-440?",
+      "relevant": [], "available_relevant": ["procedure_MP-101"],
+      "mask": ["policy_PL-A"], "link_source": "procedure_MP-101",
+      "graph_path": "procedure_MP-101 -authorised_by-> [masked] policy_PL-A",
+      "gold_answer": {"kind": "abstain", "missing": "policy text",
+                      "unsupported_entities": {"entity_type": "policy_code", "entities": ["PL-A"]}},
+      "description": "v1.1 query 51 with the policy chunk masked. The authorised_by edge stays visible on the procedure chunk."
+    },
+    {
+      "id": 1022, "case": "R1c", "source_query_id": 53,
+      "query": "Which authorisation is needed to carry out pantograph carbon strip renewal on the HV-21?",
+      "relevant": [], "available_relevant": ["procedure_MP-103"],
+      "mask": ["policy_PL-A"], "link_source": "procedure_MP-103",
+      "graph_path": "procedure_MP-103 -authorised_by-> [masked] policy_PL-A",
+      "gold_answer": {"kind": "abstain", "missing": "policy text",
+                      "unsupported_entities": {"entity_type": "policy_code", "entities": ["PL-A"]}},
+      "description": "v1.1 query 53 with the policy chunk masked."
+    },
+    {
+      "id": 1023, "case": "R1c", "source_query_id": 55,
+      "query": "Which authorisation is needed to carry out brake resistor grid thermal survey on the BR-7?",
+      "relevant": [], "available_relevant": ["procedure_MP-105"],
+      "mask": ["policy_PL-B"], "link_source": "procedure_MP-105",
+      "graph_path": "procedure_MP-105 -authorised_by-> [masked] policy_PL-B",
+      "gold_answer": {"kind": "abstain", "missing": "policy text",
+                      "unsupported_entities": {"entity_type": "policy_code", "entities": ["PL-B"]}},
+      "description": "v1.1 query 55 with the policy chunk masked."
+    },
+    {
+      "id": 1024, "case": "R1c", "source_query_id": 56,
+      "query": "Which authorisation is needed to carry out brake chopper firmware refresh on the BR-7?",
+      "relevant": [], "available_relevant": ["procedure_MP-106"],
+      "mask": ["policy_PL-B"], "link_source": "procedure_MP-106",
+      "graph_path": "procedure_MP-106 -authorised_by-> [masked] policy_PL-B",
+      "gold_answer": {"kind": "abstain", "missing": "policy text",
+                      "unsupported_entities": {"entity_type": "policy_code", "entities": ["PL-B"]}},
+      "description": "v1.1 query 56 with the policy chunk masked."
+    }
+  ]
+}
