@@ -37,32 +37,24 @@ from rlm.providers import (  # noqa: E402
 )
 
 FROZEN_CONFIG_PATH = ROOT / "experiment_frozen_retrieval_config.json"
-LOOP_VERSION = "1.2"
+LOOP_VERSION = "1.4"
 
-ANSWER_TEMPLATE = """You answer questions about a transit authority using only the evidence below.
-
+ANSWER_TEMPLATE = """Answer using only the evidence.
 Question: {question}
-
 Evidence:
 {evidence}
-
 Rules:
-- Use only the evidence. If the evidence does not contain the answer, reply exactly: INSUFFICIENT EVIDENCE
-- Name the specific identifiers (procedure codes like MP-101, policy codes like PL-A, equipment codes like TX-440, or station names) that answer the question.
-- Reply with the identifiers and one short sentence. No preamble.
-
+- Give the exact identifiers and one short sentence.
+- Do not add unsupported facts.
+- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.
 Answer:"""
 
-DECIDE_TEMPLATE = """You are deciding whether more evidence is needed.
-
+DECIDE_TEMPLATE = """Determine whether the evidence answers the question.
 Question: {question}
-
-Evidence gathered so far:
+Evidence:
 {evidence}
-
-DECIDE: If the evidence already answers the question, reply exactly STOP.
-Otherwise reply with a single short search query that would find the missing piece, prefixed with SEARCH:
-"""
+If sufficient, reply STOP.
+Otherwise, reply SEARCH: followed by one short query."""
 
 TEMPLATE_HASHES = {
     "answer": prompt_template_sha256(ANSWER_TEMPLATE),
@@ -221,10 +213,32 @@ def cited_link_targets(answer: str, evidence: List[Dict[str, Any]]) -> List[str]
 
 
 def format_evidence(chunks: List[Dict[str, Any]]) -> str:
+    """Evidence block for a prompt.
+
+    Each connected pair of nodes is linked once. The graph stores every edge
+    with its inverse (maintained_by / maintains), so when both ends are in the
+    evidence the second chunk's copy repeats the first and is dropped. Links
+    to nodes not in the evidence are always kept: they point at what is still
+    missing. A link between two present chunks is not dropped outright, since
+    equipment_BR-7 maintained_by MP-105, MP-106 is the very fact a two-hop
+    answer needs, and the procedure texts alone do not say both apply.
+    """
+    present = {chunk["node_id"] for chunk in chunks}
+    shown: set = set()
     lines = []
     for index, chunk in enumerate(chunks, 1):
         line = f"[{index}] ({chunk['node_id']}) {chunk['text']}"
-        relations = chunk.get("relations") or {}
+        relations: Dict[str, List[str]] = {}
+        for edge_type, targets in (chunk.get("relations") or {}).items():
+            kept = []
+            for target in targets:
+                pair = frozenset((chunk["node_id"], target))
+                if target in present and pair in shown:
+                    continue
+                shown.add(pair)
+                kept.append(target)
+            if kept:
+                relations[edge_type] = kept
         if relations:
             line += " Links: " + "; ".join(
                 f"{edge_type} -> {', '.join(targets)}" for edge_type, targets in relations.items()
