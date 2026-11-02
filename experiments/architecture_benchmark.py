@@ -1,22 +1,26 @@
 """Architecture benchmark: Vector RAG vs Graph RAG vs Hybrid RAG vs Hybrid RAG + RLM.
 
-Four architectures run on the same corpus and the same query set:
+Five architectures run on the same corpus and the same query set:
 
   A  Vector RAG        production vector search (benchmark.extract_vector_ids)
   B  Graph RAG         benchmark.graph_expansion_ids over the vector top-k seeds
+  B2 Graph-only RAG    query entity linking into the graph, then traversal; no
+                       embeddings anywhere (EntityLinkingGraphRetriever)
   C  Hybrid RAG        the frozen step-3 retriever (rlm.loop.FrozenRetriever)
   D  Hybrid RAG + RLM  the bounded RLM loop on the frozen retriever
 
 Two phases keep retrieval quality measurable apart from answer generation:
 
-  retrieval  No LLM. Every query through A, B and C; P@k, R@k, MRR and NDCG@k via
+  retrieval  No LLM. Every query through A, B, B2 and C; P@k, R@k, MRR and NDCG@k via
              benchmark.summarize, plus retrieval latency. D retrieves through C,
              so its first retrieval is C's ranking and it has no separate row.
              Reproduction checks: A and B must equal the saved baseline
              (benchmark_baseline_<corpus>.json -> aggregate.vector and
              aggregate.graph_expansion) and C must equal the frozen config's
              selected_metrics, to 4 dp. A failed check is reported, never patched.
-  answers    A, B and C each run rlm.loop.run_loop with max_steps=1 and
+             B2 has no saved baseline. Its depth-3 ranking is reported as a
+             sensitivity row only, never used for answers.
+  answers    A, B, B2 and C each run rlm.loop.run_loop with max_steps=1 and
              grounding off: one retrieval, one ANSWER_TEMPLATE call. D runs the
              evaluator defaults (3 steps, 3 retrievals, merged decide/answer,
              compact links) with lean grounding. Scoring and evidence coverage
@@ -25,7 +29,7 @@ Two phases keep retrieval quality measurable apart from answer generation:
 Nothing is reimplemented. Each architecture is an adapter with the
 FrozenRetriever interface (retrieve / fetch / relations), so the same run_loop
 and the same prompt templates serve all four, and the only difference between
-A, B and C answers is the evidence they were given.
+A, B, B2 and C answers is the evidence they were given.
 
 What each adapter shows the model:
   - Vector chunks carry `relations = {}`. Vector RAG has no graph, so no
@@ -37,7 +41,7 @@ Graph RAG caveat: B is vector-seeded expansion with the seeds excluded,
 identical to benchmark.py's graph_expansion baseline (seed count = top_k,
 depth = benchmark.GRAPH_DEPTH). It measures what graph traversal adds beyond
 the vector hits, not a vector-free graph retriever. A vector-free variant
-(query entity linking into the graph, then traversal) is future work. Its
+(query entity linking into the graph, then traversal) is B2. Its
 latency here includes the seeding vector search, since that is part of the
 cost of producing the ranking; benchmark.py times the expansion alone.
 
@@ -60,6 +64,7 @@ import argparse
 import hashlib
 import json
 import platform
+import re
 import statistics
 import sys
 import time
@@ -76,16 +81,20 @@ from rlm import evaluate as rlm_eval  # noqa: E402
 from rlm import loop as rlm_loop  # noqa: E402
 from rlm.providers import ProviderUnavailable, QuotaExceeded, build_provider  # noqa: E402
 
-BENCHMARK_VERSION = "arch-bench-1.0"
+BENCHMARK_VERSION = "arch-bench-1.1"
 REPRODUCTION_DECIMALS = 4
 
 ARCHITECTURES: Dict[str, Dict[str, str]] = {
     "A": {"name": "vector_rag", "label": "Vector RAG", "retriever": "vector"},
     "B": {"name": "graph_rag", "label": "Graph RAG", "retriever": "graph"},
+    "B2": {"name": "graph_only_rag", "label": "Graph-only RAG", "retriever": "graph_entity"},
     "C": {"name": "hybrid_rag", "label": "Hybrid RAG", "retriever": "hybrid"},
     "D": {"name": "hybrid_rag_rlm", "label": "Hybrid RAG + RLM", "retriever": "hybrid"},
 }
-RETRIEVAL_ARCHITECTURES = ("A", "B", "C")
+RETRIEVAL_ARCHITECTURES = ("A", "B", "B2", "C")
+# B2 at one more hop: entity linking lands on the named station, one hop before
+# the incident a vector seed would hit. Reported for transparency only.
+SENSITIVITY_DEPTH = 3
 
 
 # ============================ Retriever adapters ============================
@@ -170,6 +179,125 @@ class GraphExpansionRetriever:
                 "depth": self.depth, "relations_in_prompt": True}
 
 
+STOPWORDS = frozenset(
+    "a an and are at do does for from have how in is it its of on or own the to was were what when "
+    "which who why with along either side sit immediately carry out needed".split()
+)
+
+
+def content_tokens(text: str) -> set:
+    return {
+        token for token in re.findall(r"[a-z0-9]+(?:-[a-z0-9]+)*", rlm_eval.fold_typography(text).lower())
+        if len(token) > 2 and token not in STOPWORDS
+    }
+
+
+class EntityLinkingGraphRetriever:
+    """B2: graph-only retrieval. No embeddings and no vector search at any point.
+
+    1. Entity linking. Every graph node gets aliases read from its own id and
+       lead sentence: station names ("Alder Vale is a through station"), line
+       names ("The Azure Line runs"), codes from node ids (TX-440, MP-101,
+       PL-A), procedure titles ("Maintenance procedure MP-101: <title>."),
+       policy names and incident references (2026/01). A node is a seed when
+       one of its aliases appears in the query as a whole phrase. The alias
+       patterns are specific to this synthetic corpus's text conventions.
+    2. Traversal. Outgoing edges from the seeds up to `depth` hops, the same
+       edge direction as production and graph_expansion. Seeds stay in the
+       ranking at hop 0: unlike B there is no vector search whose hits they
+       would double count.
+    3. Ranking. Hop distance first, then the number of seeds that reach the
+       node (convergence), then keyword overlap between the query and the node
+       text, then node id. The overlap step only orders nodes the graph already
+       reached at the same distance; it never adds a node.
+
+    A query that names no linkable entity gets an empty ranking, which is
+    scored as a miss, not patched with a fallback.
+    """
+
+    name = "graph_entity"
+
+    ALIAS_PATTERNS = (
+        re.compile(r"^(.+?) is a (?:terminus|through station)"),
+        re.compile(r"^The (.+? Line) runs"),
+        re.compile(r"^Maintenance procedure \S+: (.+?)\."),
+        re.compile(r"^Authorisation policy \S+, (.+?), governs"),
+        re.compile(r"^Service incident (\d{4}/\d{2})"),
+    )
+    CODE_PREFIXES = ("equipment_", "procedure_", "policy_")
+
+    def __init__(self, service: Any, depth: int = bench.GRAPH_DEPTH):
+        self.service = service
+        self.depth = depth
+        self.aliases = self._build_aliases()
+
+    def _build_aliases(self) -> List[tuple]:
+        aliases: List[tuple] = []
+        for node_id, data in self.service.graph_db.graph.nodes(data=True):
+            node_id = str(node_id)
+            text = data.get("text") or ""
+            names = {match.group(1) for pattern in self.ALIAS_PATTERNS
+                     for match in [pattern.match(text)] if match}
+            if node_id.startswith(self.CODE_PREFIXES):
+                names.add(node_id.split("_", 1)[1])
+            for alias in names:
+                folded = rlm_eval.fold_typography(alias).lower().strip()
+                if folded:
+                    aliases.append((re.compile(rf"(?<![\w-]){re.escape(folded)}(?![\w-])"), node_id))
+        return aliases
+
+    def link(self, query: str) -> List[str]:
+        folded = rlm_eval.fold_typography(query).lower()
+        return sorted({node_id for pattern, node_id in self.aliases if pattern.search(folded)})
+
+    def ranking(self, query: str, top_k: int) -> List[str]:
+        graph = self.service.graph_db.graph
+        seeds = self.link(query)
+        best_hop: Dict[str, int] = {}
+        reached_from: Dict[str, set] = {}
+        for seed in seeds:
+            frontier = {seed}
+            seen = {seed: 0}
+            for hop in range(1, self.depth + 1):
+                frontier = {
+                    str(neighbor) for node in frontier for neighbor in graph.successors(node)
+                    if str(neighbor) not in seen
+                }
+                for node in frontier:
+                    seen[node] = hop
+            for node, hop in seen.items():
+                best_hop[node] = min(hop, best_hop.get(node, hop))
+                reached_from.setdefault(node, set()).add(seed)
+        query_tokens = content_tokens(query)
+
+        def key(node: str) -> tuple:
+            overlap = len(query_tokens & content_tokens(graph.nodes[node].get("text") or ""))
+            return (best_hop[node], -len(reached_from[node]), -overlap, node)
+
+        ids = sorted(best_hop, key=key)[:top_k]
+        return bench.validate_ranking(ids, query, self.name)
+
+    def retrieve(self, query: str, top_k: int) -> List[Dict[str, Any]]:
+        return [
+            graph_chunk(self.service, node_id, self.relations(node_id), None, False)
+            for node_id in self.ranking(query, top_k)
+        ]
+
+    def relations(self, node_id: str) -> Dict[str, List[str]]:
+        return rlm_loop.FrozenRetriever.relations(self, node_id)  # type: ignore[arg-type]
+
+    def fetch(self, node_id: str) -> Optional[Dict[str, Any]]:
+        if node_id not in self.service.graph_db.graph:
+            return None
+        return graph_chunk(self.service, node_id, self.relations(node_id), None, False)
+
+    def as_record(self) -> Dict[str, Any]:
+        return {"retriever": self.name, "implementation": "EntityLinkingGraphRetriever",
+                "seeds": "query entity linking against node aliases; no embeddings",
+                "ranking": "hop, seed convergence, query keyword overlap, node id",
+                "depth": self.depth, "aliases": len(self.aliases), "relations_in_prompt": True}
+
+
 class HybridRetriever(rlm_loop.FrozenRetriever):
     """C and D: the frozen retriever, unchanged, plus a ranking helper."""
 
@@ -189,6 +317,7 @@ def build_retrievers(service: Any, frozen: Dict[str, Any]) -> Dict[str, Any]:
     return {
         "vector": VectorRetriever(service),
         "graph": GraphExpansionRetriever(service),
+        "graph_entity": EntityLinkingGraphRetriever(service),
         "hybrid": HybridRetriever(service, frozen),
     }
 
@@ -257,8 +386,31 @@ def run_retrieval_phase(
                          for arch in RETRIEVAL_ARCHITECTURES)
               + f" | {query[:56]}")
 
+    deep = EntityLinkingGraphRetriever(retrievers["graph_entity"].service, depth=SENSITIVITY_DEPTH)
+    deep_rows = []
+    for row in per_arch["B2"]:
+        ids = deep.ranking(row["query"], top_k)
+        deep_rows.append({**row, "ranking": ids, "metrics": {
+            key: round(value, 6) for key, value in bench.summarize(ids, set(row["relevant"]), top_k).items()
+        }})
+    linked = [len(retrievers["graph_entity"].link(row["query"])) for row in per_arch["B2"]]
+
     return {
         "top_k": top_k,
+        "entity_linking": {
+            "queries_with_no_linked_entity": sum(count == 0 for count in linked),
+            "mean_linked_entities": mean([float(count) for count in linked]),
+        },
+        "sensitivity": {
+            f"B2_depth{SENSITIVITY_DEPTH}": {
+                "description": "B2 traversal one hop deeper; reported only, not used for answers",
+                "aggregate": aggregate_retrieval(deep_rows, top_k),
+                "by_category": {
+                    category: aggregate_retrieval(group, top_k)
+                    for category, group in group_by_category(deep_rows).items()
+                },
+            },
+        },
         "architectures": {
             arch: {
                 **ARCHITECTURES[arch],
@@ -336,6 +488,7 @@ def answer_bounds(top_k: int, max_steps: int, max_retrievals: int) -> Dict[str, 
     return {
         "A": rlm_loop.LoopBounds(**single_shot),
         "B": rlm_loop.LoopBounds(**single_shot),
+        "B2": rlm_loop.LoopBounds(**single_shot),
         "C": rlm_loop.LoopBounds(**single_shot),
         # The evaluator defaults, with the lean grounding of the reference runs.
         "D": rlm_loop.LoopBounds(max_steps=max_steps, max_retrievals=max_retrievals, top_k=top_k,

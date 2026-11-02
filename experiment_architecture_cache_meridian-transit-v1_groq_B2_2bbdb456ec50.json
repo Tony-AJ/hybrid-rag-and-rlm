@@ -1,0 +1,224 @@
+{
+  "run_signature": "2bbdb456ec50b22e304ab6f2ca63bba495ed563887ff4adfd7399a6a94150f6a",
+  "rows": {
+    "1": {
+      "architecture": "B2",
+      "id": 1,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Harbour Row have and when was the station building refurbished?",
+      "answer": "Harbour Row has 3 platforms, and its station building was last refurbished in 2009.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_harbour_row"
+        ],
+        "evidence_chunks": [
+          "station_harbour_row",
+          "station_kestrel_green",
+          "incident_2026_01",
+          "line_azure",
+          "station_alder_vale"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 641,
+        "output_tokens": 57,
+        "retrieval_latency_ms": 0.498,
+        "generation_latency_ms": 600.317,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 641,
+            "output_tokens": 57,
+            "latency_ms": 600.317
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Harbour Row have and when was the station building refurbished?",
+          "retrieved": [
+            "station_harbour_row",
+            "station_kestrel_green",
+            "incident_2026_01",
+            "line_azure",
+            "station_alder_vale"
+          ],
+          "new_evidence": [
+            "station_harbour_row",
+            "station_kestrel_green",
+            "incident_2026_01",
+            "line_azure",
+            "station_alder_vale"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "2": {
+      "architecture": "B2",
+      "id": 2,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Brickworks have and when was the station building refurbished?",
+      "answer": "Brickworks has 2 platforms, and its station building was last refurbished in 2012.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_brickworks"
+        ],
+        "evidence_chunks": [
+          "station_brickworks",
+          "station_alder_vale",
+          "station_copper_lane",
+          "incident_2026_04",
+          "line_azure"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 652,
+        "output_tokens": 55,
+        "retrieval_latency_ms": 1.463,
+        "generation_latency_ms": 1652.16,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 652,
+            "output_tokens": 55,
+            "latency_ms": 1652.16
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Brickworks have and when was the station building refurbished?",
+          "retrieved": [
+            "station_brickworks",
+            "station_alder_vale",
+            "station_copper_lane",
+            "incident_2026_04",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "station_brickworks",
+            "station_alder_vale",
+            "station_copper_lane",
+            "incident_2026_04",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "3": {
+      "architecture": "B2",
+      "id": 3,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Eastgate Quay have and when was the station building refurbished?",
+      "answer": "station_eastgate_quay: 3 platforms; last refurbished in 2009.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_eastgate_quay"
+        ],
+        "evidence_chunks": [
+          "station_eastgate_quay",
+          "station_foundry_bridge",
+          "incident_2026_07",
+          "line_crimson",
+          "station_garnet_hill"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 658,
+        "output_tokens": 80,
+        "retrieval_latency_ms": 1.606,
+        "generation_latency_ms": 758.31,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 658,
+            "output_tokens": 80,
+            "latency_ms": 758.31
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Eastgate Quay have and when was the station building refurbished?",
+          "retrieved": [
+            "station_eastgate_quay",
+            "station_foundry_bridge",
+            "incident_2026_07",
+            "line_crimson",
+            "station_garnet_hill"
+          ],
+          "new_evidence": [
+            "station_eastgate_quay",
+            "station_foundry_bridge",
+            "incident_2026_07",
+            "line_crimson",
+            "station_garnet_hill"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    }
+  }
+}

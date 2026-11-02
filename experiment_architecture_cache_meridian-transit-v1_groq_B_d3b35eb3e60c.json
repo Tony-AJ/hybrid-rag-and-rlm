@@ -1,0 +1,224 @@
+{
+  "run_signature": "d3b35eb3e60c0a8eb03b4e801695cb2dac53468f6687839214212f00731746d5",
+  "rows": {
+    "1": {
+      "architecture": "B",
+      "id": 1,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Harbour Row have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_harbour_row"
+        ],
+        "evidence_chunks": [
+          "incident_2026_01",
+          "incident_2026_04",
+          "incident_2026_07",
+          "line_azure",
+          "line_crimson"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 709,
+        "output_tokens": 45,
+        "retrieval_latency_ms": 11.55,
+        "generation_latency_ms": 958.479,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 709,
+            "output_tokens": 45,
+            "latency_ms": 958.479
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Harbour Row have and when was the station building refurbished?",
+          "retrieved": [
+            "incident_2026_01",
+            "incident_2026_04",
+            "incident_2026_07",
+            "line_azure",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "incident_2026_01",
+            "incident_2026_04",
+            "incident_2026_07",
+            "line_azure",
+            "line_crimson"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "2": {
+      "architecture": "B",
+      "id": 2,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Brickworks have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_brickworks"
+        ],
+        "evidence_chunks": [
+          "equipment_PD-90",
+          "incident_2026_01",
+          "line_azure",
+          "line_slate",
+          "station_alder_vale"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 681,
+        "output_tokens": 45,
+        "retrieval_latency_ms": 22.452,
+        "generation_latency_ms": 543.799,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 681,
+            "output_tokens": 45,
+            "latency_ms": 543.799
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Brickworks have and when was the station building refurbished?",
+          "retrieved": [
+            "equipment_PD-90",
+            "incident_2026_01",
+            "line_azure",
+            "line_slate",
+            "station_alder_vale"
+          ],
+          "new_evidence": [
+            "equipment_PD-90",
+            "incident_2026_01",
+            "line_azure",
+            "line_slate",
+            "station_alder_vale"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "3": {
+      "architecture": "B",
+      "id": 3,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Eastgate Quay have and when was the station building refurbished?",
+      "answer": "INSUFFICIENT EVIDENCE",
+      "answer_evaluation": {
+        "abstained": true,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_eastgate_quay"
+        ],
+        "evidence_chunks": [
+          "incident_2026_01",
+          "incident_2026_07",
+          "incident_2026_08",
+          "incident_2026_11",
+          "incident_2026_12"
+        ],
+        "coverage": 0.0,
+        "all_relevant_present": false
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 693,
+        "output_tokens": 37,
+        "retrieval_latency_ms": 24.006,
+        "generation_latency_ms": 578.708,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 693,
+            "output_tokens": 37,
+            "latency_ms": 578.708
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Eastgate Quay have and when was the station building refurbished?",
+          "retrieved": [
+            "incident_2026_01",
+            "incident_2026_07",
+            "incident_2026_08",
+            "incident_2026_11",
+            "incident_2026_12"
+          ],
+          "new_evidence": [
+            "incident_2026_01",
+            "incident_2026_07",
+            "incident_2026_08",
+            "incident_2026_11",
+            "incident_2026_12"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    }
+  }
+}

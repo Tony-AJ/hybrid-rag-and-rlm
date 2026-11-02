@@ -1,0 +1,224 @@
+{
+  "run_signature": "0adc277425db6958768e4a39b486e58053ce49d5493b0e5e3ea9ab3847e9cda8",
+  "rows": {
+    "1": {
+      "architecture": "A",
+      "id": 1,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Harbour Row have and when was the station building refurbished?",
+      "answer": "no evidence found",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_harbour_row"
+        ],
+        "evidence_chunks": [
+          "station_harbour_row",
+          "station_glasshouse",
+          "station_brickworks",
+          "station_ivory_dock",
+          "station_eastgate_quay"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 458,
+        "output_tokens": 4,
+        "retrieval_latency_ms": 63.038,
+        "generation_latency_ms": 0.182,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 458,
+            "output_tokens": 4,
+            "latency_ms": 0.182
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Harbour Row have and when was the station building refurbished?",
+          "retrieved": [
+            "station_harbour_row",
+            "station_glasshouse",
+            "station_brickworks",
+            "station_ivory_dock",
+            "station_eastgate_quay"
+          ],
+          "new_evidence": [
+            "station_harbour_row",
+            "station_glasshouse",
+            "station_brickworks",
+            "station_ivory_dock",
+            "station_eastgate_quay"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "2": {
+      "architecture": "A",
+      "id": 2,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Brickworks have and when was the station building refurbished?",
+      "answer": "PD-90",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_brickworks"
+        ],
+        "evidence_chunks": [
+          "station_brickworks",
+          "incident_2026_04",
+          "station_glasshouse",
+          "station_harbour_row",
+          "station_ivory_dock"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 474,
+        "output_tokens": 1,
+        "retrieval_latency_ms": 10.736,
+        "generation_latency_ms": 0.054,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 474,
+            "output_tokens": 1,
+            "latency_ms": 0.054
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Brickworks have and when was the station building refurbished?",
+          "retrieved": [
+            "station_brickworks",
+            "incident_2026_04",
+            "station_glasshouse",
+            "station_harbour_row",
+            "station_ivory_dock"
+          ],
+          "new_evidence": [
+            "station_brickworks",
+            "incident_2026_04",
+            "station_glasshouse",
+            "station_harbour_row",
+            "station_ivory_dock"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    },
+    "3": {
+      "architecture": "A",
+      "id": 3,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Eastgate Quay have and when was the station building refurbished?",
+      "answer": "no evidence found",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": false,
+          "refurbished_year": false
+        },
+        "satisfied": 0,
+        "total": 2,
+        "fraction_satisfied": 0.0,
+        "all_satisfied": false,
+        "correct": false
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_eastgate_quay"
+        ],
+        "evidence_chunks": [
+          "station_eastgate_quay",
+          "station_jubilee_fields",
+          "station_foundry_bridge",
+          "station_ironside",
+          "station_harbour_row"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 466,
+        "output_tokens": 4,
+        "retrieval_latency_ms": 12.532,
+        "generation_latency_ms": 0.042,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 466,
+            "output_tokens": 4,
+            "latency_ms": 0.042
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Eastgate Quay have and when was the station building refurbished?",
+          "retrieved": [
+            "station_eastgate_quay",
+            "station_jubilee_fields",
+            "station_foundry_bridge",
+            "station_ironside",
+            "station_harbour_row"
+          ],
+          "new_evidence": [
+            "station_eastgate_quay",
+            "station_jubilee_fields",
+            "station_foundry_bridge",
+            "station_ironside",
+            "station_harbour_row"
+          ],
+          "decision": "bounds_reached"
+        }
+      ]
+    }
+  }
+}

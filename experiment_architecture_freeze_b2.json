@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-11-02T07:37:11+00:00",
+  "decision": "B2 (EntityLinkingGraphRetriever) frozen as designed; ranking not changed after seeing results. Personalized PageRank (B3) deferred to a separate exploratory experiment.",
+  "benchmark_script": "experiments/architecture_benchmark.py",
+  "benchmark_script_sha256": "0ff7f3f355bf91e735098a81921e01a97ee815b6b2a63d8065463e30c3a6d862",
+  "benchmark_version": "arch-bench-1.1",
+  "retrieval_results": "experiment_architecture_retrieval_frozen_b2.json"
+}

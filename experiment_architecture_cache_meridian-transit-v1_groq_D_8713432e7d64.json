@@ -1,0 +1,151 @@
+{
+  "run_signature": "8713432e7d644a9dac9c5a31a2efbc6e295ee2188cc06609af06951a818b508f",
+  "rows": {
+    "1": {
+      "architecture": "D",
+      "id": 1,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Harbour Row have and when was the station building refurbished?",
+      "answer": "Harbour Row has 3 platforms and its station building was last refurbished in 2009.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_harbour_row"
+        ],
+        "evidence_chunks": [
+          "station_harbour_row",
+          "line_azure",
+          "station_kestrel_green",
+          "incident_2026_01",
+          "station_fallowfield"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 651,
+        "output_tokens": 52,
+        "retrieval_latency_ms": 18.354,
+        "generation_latency_ms": 1035.5,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 651,
+            "output_tokens": 52,
+            "latency_ms": 1035.5
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Harbour Row have and when was the station building refurbished?",
+          "retrieved": [
+            "station_harbour_row",
+            "line_azure",
+            "station_kestrel_green",
+            "incident_2026_01",
+            "station_fallowfield"
+          ],
+          "new_evidence": [
+            "station_harbour_row",
+            "line_azure",
+            "station_kestrel_green",
+            "incident_2026_01",
+            "station_fallowfield"
+          ],
+          "decision": "ANSWER: Harbour Row has 3 platforms and its station building was last refurbished in 2009."
+        }
+      ]
+    },
+    "2": {
+      "architecture": "D",
+      "id": 2,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Brickworks have and when was the station building refurbished?",
+      "answer": "Brickworks has 2 platforms, and its station building was last refurbished in 2012.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_brickworks"
+        ],
+        "evidence_chunks": [
+          "station_brickworks",
+          "station_alder_vale",
+          "line_azure",
+          "station_copper_lane",
+          "equipment_PD-90"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 651,
+        "output_tokens": 52,
+        "retrieval_latency_ms": 12.844,
+        "generation_latency_ms": 530.39,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 651,
+            "output_tokens": 52,
+            "latency_ms": 530.39
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Brickworks have and when was the station building refurbished?",
+          "retrieved": [
+            "station_brickworks",
+            "station_alder_vale",
+            "line_azure",
+            "station_copper_lane",
+            "equipment_PD-90"
+          ],
+          "new_evidence": [
+            "station_brickworks",
+            "station_alder_vale",
+            "line_azure",
+            "station_copper_lane",
+            "equipment_PD-90"
+          ],
+          "decision": "ANSWER: Brickworks has 2 platforms, and its station building was last refurbished in 2012."
+        }
+      ]
+    }
+  }
+}
