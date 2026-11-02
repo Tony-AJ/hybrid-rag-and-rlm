@@ -37,7 +37,7 @@ from rlm.providers import (  # noqa: E402
 )
 
 FROZEN_CONFIG_PATH = ROOT / "experiment_frozen_retrieval_config.json"
-LOOP_VERSION = "1.6"
+LOOP_VERSION = "1.7"
 
 ANSWER_TEMPLATE = """Answer using only the evidence.
 Question: {question}
@@ -65,10 +65,22 @@ Evidence:
 If the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.
 Otherwise, reply SEARCH: followed by one short query."""
 
+# Lean grounding: check a draft against only the chunks that cited the new
+# nodes and the fetched chunks themselves, instead of resending all evidence.
+GROUND_TEMPLATE = """Check the draft answer against the evidence.
+Question: {question}
+Draft answer: {draft}
+Evidence:
+{evidence}
+Reply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."""
+
+GROUNDING_MODES = ("full", "lean", "off")
+
 TEMPLATE_HASHES = {
     "answer": prompt_template_sha256(ANSWER_TEMPLATE),
     "decide": prompt_template_sha256(DECIDE_TEMPLATE),
     "step": prompt_template_sha256(STEP_TEMPLATE),
+    "ground": prompt_template_sha256(GROUND_TEMPLATE),
 }
 
 
@@ -81,6 +93,14 @@ class LoopBounds:
     max_grounding_chunks: int = 4
     merge_decide_answer: bool = True
     full_links: bool = False
+    # full: re-answer over all evidence plus fetched chunks. lean: re-answer
+    # over the citing and fetched chunks only. off: no fetch and no re-answer;
+    # a diagnostic baseline, since the answer then rests on edges alone.
+    grounding: str = "full"
+
+    def __post_init__(self) -> None:
+        if self.grounding not in GROUNDING_MODES:
+            raise ValueError(f"grounding must be one of {GROUNDING_MODES}, not {self.grounding!r}")
 
     def as_record(self) -> Dict[str, Any]:
         return {
@@ -91,6 +111,7 @@ class LoopBounds:
             "max_grounding_chunks": self.max_grounding_chunks,
             "merge_decide_answer": self.merge_decide_answer,
             "full_links": self.full_links,
+            "grounding": self.grounding,
         }
 
 
@@ -107,6 +128,8 @@ class LoopRun:
     retrieval_latency_ms: float = 0.0
     generation_latency_ms: float = 0.0
     stop_reason: str = "unknown"
+    # Per stage (step, answer, grounding): calls, tokens and latency.
+    stage_costs: Dict[str, Dict[str, float]] = field(default_factory=dict)
 
     def as_record(self) -> Dict[str, Any]:
         return {
@@ -122,6 +145,7 @@ class LoopRun:
             "generation_latency_ms": round(self.generation_latency_ms, 3),
             "total_latency_ms": round(self.retrieval_latency_ms + self.generation_latency_ms, 3),
             "stop_reason": self.stop_reason,
+            "stage_costs": self.stage_costs,
         }
 
 
@@ -280,11 +304,18 @@ def run_loop(
     seen: set = set()
     current_query = question
 
-    def record_generation(result: GenerationResult) -> None:
+    def record_generation(result: GenerationResult, stage: str) -> None:
         run.generation_calls += 1
         run.input_tokens += result.input_tokens or 0
         run.output_tokens += result.output_tokens or 0
         run.generation_latency_ms += result.latency_ms
+        cost = run.stage_costs.setdefault(
+            stage, {"calls": 0, "input_tokens": 0, "output_tokens": 0, "latency_ms": 0.0}
+        )
+        cost["calls"] += 1
+        cost["input_tokens"] += result.input_tokens or 0
+        cost["output_tokens"] += result.output_tokens or 0
+        cost["latency_ms"] = round(cost["latency_ms"] + result.latency_ms, 3)
 
     for step in range(1, bounds.max_steps + 1):
         if run.retrieval_calls >= bounds.max_retrievals:
@@ -325,7 +356,7 @@ def run_loop(
         decide_result = provider.generate(
             template.format(question=question, evidence=format_evidence(evidence, not bounds.full_links))
         )
-        record_generation(decide_result)
+        record_generation(decide_result, "step")
         decision = decide_result.text.strip()
         step_record["decision"] = decision[:200]
         run.steps.append(step_record)
@@ -344,26 +375,51 @@ def run_loop(
         answer_result = provider.generate(
             ANSWER_TEMPLATE.format(question=question, evidence=format_evidence(evidence, not bounds.full_links))
         )
-        record_generation(answer_result)
+        record_generation(answer_result, "answer")
         run.answer = answer_result.text.strip()
 
     # Grounding pass: an answer that cites a node seen only as a link is
     # re-answered once with that node's text in the evidence. Graph lookups,
     # not retrievals; one extra generation call, and only when needed.
     grounding = cited_link_targets(run.answer, evidence)[: bounds.max_grounding_chunks]
-    fetched = [chunk for chunk in (retriever.fetch(node_id) for node_id in grounding) if chunk]
+    if grounding and bounds.grounding == "off":
+        # Recorded, not fetched: the answer rests on these edges unverified,
+        # and they are not counted as evidence the model read.
+        run.steps.append({"step": "grounding", "mode": "off", "cited_from_links_unverified": grounding})
+    fetched = (
+        [chunk for chunk in (retriever.fetch(node_id) for node_id in grounding) if chunk]
+        if bounds.grounding != "off" else []
+    )
     if fetched:
+        draft = run.answer
+        fetched_ids = {chunk["node_id"] for chunk in fetched}
+        if bounds.grounding == "lean":
+            # Keep the chunks whose links named the fetched nodes, so the edge
+            # (equipment_BR-7 maintained_by MP-105, MP-106) stays in view.
+            citing = [
+                chunk for chunk in evidence
+                if any(target in fetched_ids
+                       for targets in (chunk.get("relations") or {}).values() for target in targets)
+            ]
+            prompt = GROUND_TEMPLATE.format(
+                question=question, draft=draft,
+                evidence=format_evidence(citing + fetched, not bounds.full_links),
+            )
         evidence.extend(fetched)
+        if bounds.grounding == "full":
+            prompt = ANSWER_TEMPLATE.format(
+                question=question, evidence=format_evidence(evidence, not bounds.full_links)
+            )
+        answer_result = provider.generate(prompt)
+        record_generation(answer_result, "grounding")
+        run.answer = answer_result.text.strip()
         run.steps.append({
             "step": "grounding",
-            "cited_from_links": [chunk["node_id"] for chunk in fetched],
-            "answer_before_grounding": run.answer[:300],
+            "mode": bounds.grounding,
+            "cited_from_links": sorted(fetched_ids),
+            "answer_before_grounding": draft[:300],
+            "answer_changed": run.answer != draft,
         })
-        answer_result = provider.generate(
-            ANSWER_TEMPLATE.format(question=question, evidence=format_evidence(evidence, not bounds.full_links))
-        )
-        record_generation(answer_result)
-        run.answer = answer_result.text.strip()
 
     run.evidence_ids = [chunk["node_id"] for chunk in evidence]
     if run.stop_reason == "unknown":

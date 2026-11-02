@@ -279,6 +279,9 @@ def main() -> int:
                         help="use separate decide and answer calls instead of one merged step call")
     parser.add_argument("--full-links", action="store_true",
                         help="list every graph edge in the evidence instead of each node pair once")
+    parser.add_argument("--grounding", choices=rlm_loop.GROUNDING_MODES, default="full",
+                        help="full: re-answer over all evidence; lean: only citing and fetched "
+                             "chunks; off: no grounding (diagnostic only)")
     parser.add_argument("--no-cache-write", action="store_true",
                         help="do not record per-query results for later resumption")
     args = parser.parse_args()
@@ -316,6 +319,7 @@ def main() -> int:
         max_steps=args.max_steps, max_retrievals=args.max_retrievals, top_k=args.top_k,
         merge_decide_answer=not args.separate_decide,
         full_links=args.full_links,
+        grounding=args.grounding,
     )
     queries = dataset[: args.limit] if args.limit else dataset
     if args.category:
@@ -330,7 +334,9 @@ def main() -> int:
         provider.config.model,
         bounds.as_record(),
     )
-    cache_path = ROOT / f"experiment_rlm_cache_{corpus['corpus_id']}_{args.provider}.json"
+    # One cache file per configuration, so runs in different modes never
+    # overwrite each other's rows.
+    cache_path = ROOT / f"experiment_rlm_cache_{corpus['corpus_id']}_{args.provider}_{signature[:12]}.json"
     cache: Dict[int, Any] = load_cache(cache_path, signature) if args.resume else {}
     if args.resume:
         print(f"resume: {len(cache)} cached rows match this configuration "
@@ -394,6 +400,7 @@ def main() -> int:
                 "output_tokens": run.output_tokens,
                 "retrieval_latency_ms": round(run.retrieval_latency_ms, 3),
                 "generation_latency_ms": round(run.generation_latency_ms, 3),
+                "by_stage": run.stage_costs,
             },
             "stop_reason": run.stop_reason,
             "steps": run.steps,
