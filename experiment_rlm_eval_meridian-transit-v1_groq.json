@@ -3,24 +3,24 @@
   "experiment": "rag-plus-rlm-end-to-end",
   "evaluative": true,
   "complete": false,
-  "queries_evaluated": 4,
+  "queries_evaluated": 2,
   "queries_in_dataset": 60,
   "queries_requested": 20,
   "queries_reused_from_cache": 0,
   "quota_stop": {
     "provider": "groq",
-    "detail": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m4r0q1hhem1sqxw8c366gyze` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199487, Requested 1463. Please try again in 6m50.4s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
-    "stopped_at_query_id": 35,
-    "completed": 4,
-    "remaining": 16
+    "detail": "Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-120b` in organization `org_01m4r0q1hhem1sqxw8c366gyze` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199284, Requested 1030. Please try again in 2m15.648s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}",
+    "stopped_at_query_id": 33,
+    "completed": 2,
+    "remaining": 18
   },
   "caveat": null,
-  "partial_caveat": "Incomplete run: 4 of 20 queries evaluated, stopped by groq quota. Aggregates cover only the evaluated queries and are not comparable with a full run. Re-run with --resume to continue where this stopped.",
+  "partial_caveat": "Incomplete run: 2 of 20 queries evaluated, stopped by groq quota. Aggregates cover only the evaluated queries and are not comparable with a full run. Re-run with --resume to continue where this stopped.",
   "reproducibility": {
     "evaluation_code_version": "rlm-eval-1.1",
     "scorer_version": "rlm-score-1.3",
-    "git_revision": "7a177f9f20eed594aee2409ec7ec1a24ae334163",
-    "recorded_at": "2026-11-02T04:25:00+00:00",
+    "git_revision": "5a26fc7a4fdd0a8716a43838e5dc3059696ea354",
+    "recorded_at": "2026-11-02T04:58:45+00:00",
     "corpus_id": "meridian-transit-v1",
     "corpus_fingerprint": "63cf21ec4c8c04ad83977ebb9c029b6a1c26ea19c345a74587175aded99e97f1",
     "dataset": "dataset.json",
@@ -55,15 +55,17 @@
     },
     "prompt_template_sha256": {
       "answer": "2fd1b1017a4e19b5db5d09d401f51ea8f4a12eb90820d262bf39cea85ed9154f",
-      "decide": "29895476724ff170825b301373d012c37b9f3fbba02ec314b553c18d21ac9a19"
+      "decide": "29895476724ff170825b301373d012c37b9f3fbba02ec314b553c18d21ac9a19",
+      "step": "0d0a274513de3988bf6b7f4eb62715640b020ddf87aa1299be19344cc6f04468"
     },
-    "loop_version": "1.4",
+    "loop_version": "1.5",
     "loop_bounds": {
-      "max_steps": 3,
-      "max_retrievals": 3,
+      "max_steps": 1,
+      "max_retrievals": 1,
       "top_k": 5,
       "max_evidence_chunks": 12,
-      "max_grounding_chunks": 4
+      "max_grounding_chunks": 4,
+      "merge_decide_answer": true
     },
     "platform": {
       "python": "3.12.10",
@@ -84,20 +86,20 @@
     },
     "cost": {
       "mean_retrieval_calls": 1.0,
-      "mean_generation_calls": 3.0,
-      "mean_input_tokens": 2135.5,
-      "mean_output_tokens": 454.5,
-      "total_input_tokens": 8542,
-      "total_output_tokens": 1818,
-      "mean_retrieval_latency_ms": 64.7283,
-      "mean_generation_latency_ms": 4779.2553,
-      "wall_clock_ms": 43021.153
+      "mean_generation_calls": 2.0,
+      "mean_input_tokens": 1490.0,
+      "mean_output_tokens": 319.5,
+      "total_input_tokens": 2980,
+      "total_output_tokens": 639,
+      "mean_retrieval_latency_ms": 214.6365,
+      "mean_generation_latency_ms": 1526.8685,
+      "wall_clock_ms": 3631.428
     }
   },
   "by_category": {
     "2-hop graph (incident to procedure)": {
-      "queries": 4,
-      "correct": 4,
+      "queries": 2,
+      "correct": 2,
       "coverage": 1.0,
       "accuracy": 1.0
     }
@@ -145,13 +147,13 @@
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 3,
-        "input_tokens": 2116,
-        "output_tokens": 440,
-        "retrieval_latency_ms": 88.732,
-        "generation_latency_ms": 3304.431
+        "generation_calls": 2,
+        "input_tokens": 1494,
+        "output_tokens": 324,
+        "retrieval_latency_ms": 362.167,
+        "generation_latency_ms": 1641.042
       },
-      "stop_reason": "model_stopped",
+      "stop_reason": "step_budget_exhausted",
       "steps": [
         {
           "step": 1,
@@ -170,7 +172,7 @@
             "equipment_TX-440",
             "station_kestrel_green"
           ],
-          "decision": "STOP"
+          "decision": "bounds_reached"
         },
         {
           "step": "grounding",
@@ -178,7 +180,7 @@
             "procedure_MP-101",
             "procedure_MP-102"
           ],
-          "answer_before_grounding": "procedure_MP-101 and procedure_MP-102 cover the TX‑440 traction inverter fault that stopped service at Harbour Row."
+          "answer_before_grounding": "procedure_MP-101 and procedure_MP-102 – these are the maintenance procedures that cover the TX‑440 traction inverter fault that stopped service at Harbour Row."
         }
       ]
     },
@@ -224,13 +226,13 @@
       },
       "cost": {
         "retrieval_calls": 1,
-        "generation_calls": 3,
-        "input_tokens": 2114,
-        "output_tokens": 409,
-        "retrieval_latency_ms": 13.386,
-        "generation_latency_ms": 2205.413
+        "generation_calls": 2,
+        "input_tokens": 1486,
+        "output_tokens": 315,
+        "retrieval_latency_ms": 67.106,
+        "generation_latency_ms": 1412.695
       },
-      "stop_reason": "model_stopped",
+      "stop_reason": "step_budget_exhausted",
       "steps": [
         {
           "step": 1,
@@ -249,7 +251,7 @@
             "equipment_HV-21",
             "station_harbour_row"
           ],
-          "decision": "STOP"
+          "decision": "bounds_reached"
         },
         {
           "step": "grounding",
@@ -258,164 +260,6 @@
             "procedure_MP-104"
           ],
           "answer_before_grounding": "procedure_MP-103 and procedure_MP-104 – these are the maintenance procedures that cover the HV‑21 pantograph head fault that stopped service at Kestrel Green."
-        }
-      ]
-    },
-    {
-      "id": 33,
-      "category": "2-hop graph (incident to procedure)",
-      "hops": 2,
-      "question": "Which maintenance procedures cover the fault that stopped service at Alder Vale?",
-      "answer": "MP-105 and MP-106 – both procedures are assigned to the BR‑7 regenerative brake unit that suffered the resistor‑grid overheat that halted service at Alder Vale.",
-      "answer_evaluation": {
-        "abstained": false,
-        "kind": "entity_set",
-        "entity_type": "procedure_code",
-        "expected": [
-          "MP-105",
-          "MP-106"
-        ],
-        "extracted": [
-          "MP-105",
-          "MP-106"
-        ],
-        "exact_set_match": true,
-        "precision": 1.0,
-        "recall": 1.0,
-        "correct": true
-      },
-      "evidence_coverage": {
-        "relevant_chunks": [
-          "procedure_MP-105",
-          "procedure_MP-106"
-        ],
-        "evidence_chunks": [
-          "incident_2026_03",
-          "line_azure",
-          "equipment_BR-7",
-          "station_kestrel_green",
-          "station_brickworks",
-          "procedure_MP-105",
-          "procedure_MP-106"
-        ],
-        "coverage": 1.0,
-        "all_relevant_present": true
-      },
-      "cost": {
-        "retrieval_calls": 1,
-        "generation_calls": 3,
-        "input_tokens": 2217,
-        "output_tokens": 508,
-        "retrieval_latency_ms": 45.418,
-        "generation_latency_ms": 2226.961
-      },
-      "stop_reason": "model_stopped",
-      "steps": [
-        {
-          "step": 1,
-          "query": "Which maintenance procedures cover the fault that stopped service at Alder Vale?",
-          "retrieved": [
-            "incident_2026_03",
-            "line_azure",
-            "equipment_BR-7",
-            "station_kestrel_green",
-            "station_brickworks"
-          ],
-          "new_evidence": [
-            "incident_2026_03",
-            "line_azure",
-            "equipment_BR-7",
-            "station_kestrel_green",
-            "station_brickworks"
-          ],
-          "decision": "STOP"
-        },
-        {
-          "step": "grounding",
-          "cited_from_links": [
-            "procedure_MP-105",
-            "procedure_MP-106"
-          ],
-          "answer_before_grounding": "procedure_MP-105 and procedure_MP-106 are the maintenance procedures that cover the fault."
-        }
-      ]
-    },
-    {
-      "id": 34,
-      "category": "2-hop graph (incident to procedure)",
-      "hops": 2,
-      "question": "Which maintenance procedures cover the fault that stopped service at Brickworks?",
-      "answer": "MP‑107 – Screen door sensor realignment, a scheduled procedure for the PD‑90 controller.  \nMP‑108 – Screen door controller loop test, another scheduled procedure for the PD‑90 controller.",
-      "answer_evaluation": {
-        "abstained": false,
-        "kind": "entity_set",
-        "entity_type": "procedure_code",
-        "expected": [
-          "MP-107",
-          "MP-108"
-        ],
-        "extracted": [
-          "MP-107",
-          "MP-108"
-        ],
-        "exact_set_match": true,
-        "precision": 1.0,
-        "recall": 1.0,
-        "correct": true
-      },
-      "evidence_coverage": {
-        "relevant_chunks": [
-          "procedure_MP-107",
-          "procedure_MP-108"
-        ],
-        "evidence_chunks": [
-          "incident_2026_04",
-          "station_brickworks",
-          "role_signalling_technician",
-          "line_azure",
-          "equipment_PD-90",
-          "procedure_MP-107",
-          "procedure_MP-108"
-        ],
-        "coverage": 1.0,
-        "all_relevant_present": true
-      },
-      "cost": {
-        "retrieval_calls": 1,
-        "generation_calls": 3,
-        "input_tokens": 2095,
-        "output_tokens": 461,
-        "retrieval_latency_ms": 111.377,
-        "generation_latency_ms": 11380.216
-      },
-      "stop_reason": "model_stopped",
-      "steps": [
-        {
-          "step": 1,
-          "query": "Which maintenance procedures cover the fault that stopped service at Brickworks?",
-          "retrieved": [
-            "incident_2026_04",
-            "station_brickworks",
-            "role_signalling_technician",
-            "line_azure",
-            "equipment_PD-90"
-          ],
-          "new_evidence": [
-            "incident_2026_04",
-            "station_brickworks",
-            "role_signalling_technician",
-            "line_azure",
-            "equipment_PD-90"
-          ],
-          "decision": "STOP"
-        },
-        {
-          "step": "grounding",
-          "cited_from_links": [
-            "procedure_MP-107",
-            "procedure_MP-108"
-          ],
-          "answer_before_grounding": "procedure_MP-107 and procedure_MP-108 – these maintenance procedures are responsible for the PD‑90 platform screen door controller that suffered the obstruction‑sensor drift fault."
         }
       ]
     }
