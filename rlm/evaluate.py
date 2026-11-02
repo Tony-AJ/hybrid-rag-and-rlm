@@ -277,6 +277,8 @@ def main() -> int:
                         help="evaluate only queries whose category contains this text")
     parser.add_argument("--separate-decide", action="store_true",
                         help="use separate decide and answer calls instead of one merged step call")
+    parser.add_argument("--full-links", action="store_true",
+                        help="list every graph edge in the evidence instead of each node pair once")
     parser.add_argument("--no-cache-write", action="store_true",
                         help="do not record per-query results for later resumption")
     args = parser.parse_args()
@@ -313,6 +315,7 @@ def main() -> int:
     bounds = rlm_loop.LoopBounds(
         max_steps=args.max_steps, max_retrievals=args.max_retrievals, top_k=args.top_k,
         merge_decide_answer=not args.separate_decide,
+        full_links=args.full_links,
     )
     queries = dataset[: args.limit] if args.limit else dataset
     if args.category:

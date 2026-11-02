@@ -37,7 +37,7 @@ from rlm.providers import (  # noqa: E402
 )
 
 FROZEN_CONFIG_PATH = ROOT / "experiment_frozen_retrieval_config.json"
-LOOP_VERSION = "1.5"
+LOOP_VERSION = "1.6"
 
 ANSWER_TEMPLATE = """Answer using only the evidence.
 Question: {question}
@@ -80,6 +80,7 @@ class LoopBounds:
     max_evidence_chunks: int = 12
     max_grounding_chunks: int = 4
     merge_decide_answer: bool = True
+    full_links: bool = False
 
     def as_record(self) -> Dict[str, Any]:
         return {
@@ -89,6 +90,7 @@ class LoopBounds:
             "max_evidence_chunks": self.max_evidence_chunks,
             "max_grounding_chunks": self.max_grounding_chunks,
             "merge_decide_answer": self.merge_decide_answer,
+            "full_links": self.full_links,
         }
 
 
@@ -224,8 +226,11 @@ def cited_link_targets(answer: str, evidence: List[Dict[str, Any]]) -> List[str]
     return cited
 
 
-def format_evidence(chunks: List[Dict[str, Any]]) -> str:
+def format_evidence(chunks: List[Dict[str, Any]], compact_links: bool = True) -> str:
     """Evidence block for a prompt.
+
+    compact_links=False lists every edge of every chunk (the loop 1.2 format),
+    kept so the compaction can be measured on its own.
 
     Each connected pair of nodes is linked once. The graph stores every edge
     with its inverse (maintained_by / maintains), so when both ends are in the
@@ -245,7 +250,7 @@ def format_evidence(chunks: List[Dict[str, Any]]) -> str:
             kept = []
             for target in targets:
                 pair = frozenset((chunk["node_id"], target))
-                if target in present and pair in shown:
+                if compact_links and target in present and pair in shown:
                     continue
                 shown.add(pair)
                 kept.append(target)
@@ -318,7 +323,7 @@ def run_loop(
 
         template = STEP_TEMPLATE if bounds.merge_decide_answer else DECIDE_TEMPLATE
         decide_result = provider.generate(
-            template.format(question=question, evidence=format_evidence(evidence))
+            template.format(question=question, evidence=format_evidence(evidence, not bounds.full_links))
         )
         record_generation(decide_result)
         decision = decide_result.text.strip()
@@ -337,7 +342,7 @@ def run_loop(
     # decide calls, or the bounds were reached) answer with the full evidence.
     if not run.answer:
         answer_result = provider.generate(
-            ANSWER_TEMPLATE.format(question=question, evidence=format_evidence(evidence))
+            ANSWER_TEMPLATE.format(question=question, evidence=format_evidence(evidence, not bounds.full_links))
         )
         record_generation(answer_result)
         run.answer = answer_result.text.strip()
@@ -355,7 +360,7 @@ def run_loop(
             "answer_before_grounding": run.answer[:300],
         })
         answer_result = provider.generate(
-            ANSWER_TEMPLATE.format(question=question, evidence=format_evidence(evidence))
+            ANSWER_TEMPLATE.format(question=question, evidence=format_evidence(evidence, not bounds.full_links))
         )
         record_generation(answer_result)
         run.answer = answer_result.text.strip()
