@@ -1,0 +1,1447 @@
+{
+  "run_signature": "0c7795b8eaf86c194e2755acc3df1547984b2efe59af54ff9ca6e4db28ae00d2",
+  "rows": {
+    "1": {
+      "id": 1,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Harbour Row have and when was the station building refurbished?",
+      "answer": "Harbour Row has 3 platforms and its station building was last refurbished in 2009.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_harbour_row"
+        ],
+        "evidence_chunks": [
+          "station_harbour_row",
+          "line_azure",
+          "station_kestrel_green",
+          "incident_2026_01",
+          "station_fallowfield"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 651,
+        "output_tokens": 52,
+        "retrieval_latency_ms": 291.441,
+        "generation_latency_ms": 607.994,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 651,
+            "output_tokens": 52,
+            "latency_ms": 607.994
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Harbour Row have and when was the station building refurbished?",
+          "retrieved": [
+            "station_harbour_row",
+            "line_azure",
+            "station_kestrel_green",
+            "incident_2026_01",
+            "station_fallowfield"
+          ],
+          "new_evidence": [
+            "station_harbour_row",
+            "line_azure",
+            "station_kestrel_green",
+            "incident_2026_01",
+            "station_fallowfield"
+          ],
+          "decision": "ANSWER: Harbour Row has 3 platforms and its station building was last refurbished in 2009."
+        }
+      ]
+    },
+    "2": {
+      "id": 2,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Brickworks have and when was the station building refurbished?",
+      "answer": "Brickworks has 2 platforms, and its station building was last refurbished in 2012.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_brickworks"
+        ],
+        "evidence_chunks": [
+          "station_brickworks",
+          "station_alder_vale",
+          "line_azure",
+          "station_copper_lane",
+          "equipment_PD-90"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 651,
+        "output_tokens": 52,
+        "retrieval_latency_ms": 18.034,
+        "generation_latency_ms": 578.834,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 651,
+            "output_tokens": 52,
+            "latency_ms": 578.834
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Brickworks have and when was the station building refurbished?",
+          "retrieved": [
+            "station_brickworks",
+            "station_alder_vale",
+            "line_azure",
+            "station_copper_lane",
+            "equipment_PD-90"
+          ],
+          "new_evidence": [
+            "station_brickworks",
+            "station_alder_vale",
+            "line_azure",
+            "station_copper_lane",
+            "equipment_PD-90"
+          ],
+          "decision": "ANSWER: Brickworks has 2 platforms, and its station building was last refurbished in 2012."
+        }
+      ]
+    },
+    "3": {
+      "id": 3,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Eastgate Quay have and when was the station building refurbished?",
+      "answer": "Eastgate Quay has 3 platforms and its station building was last refurbished in 2009.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_eastgate_quay"
+        ],
+        "evidence_chunks": [
+          "station_eastgate_quay",
+          "station_jubilee_fields",
+          "line_crimson",
+          "incident_2026_07",
+          "incident_2026_12"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 665,
+        "output_tokens": 56,
+        "retrieval_latency_ms": 17.142,
+        "generation_latency_ms": 594.402,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 665,
+            "output_tokens": 56,
+            "latency_ms": 594.402
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Eastgate Quay have and when was the station building refurbished?",
+          "retrieved": [
+            "station_eastgate_quay",
+            "station_jubilee_fields",
+            "line_crimson",
+            "incident_2026_07",
+            "incident_2026_12"
+          ],
+          "new_evidence": [
+            "station_eastgate_quay",
+            "station_jubilee_fields",
+            "line_crimson",
+            "incident_2026_07",
+            "incident_2026_12"
+          ],
+          "decision": "ANSWER: Eastgate Quay has 3 platforms and its station building was last refurbished in 2009."
+        }
+      ]
+    },
+    "4": {
+      "id": 4,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Hollow Mill have and when was the station building refurbished?",
+      "answer": "Hollow Mill has 2 platforms and its station building was last refurbished in 2012.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_hollow_mill"
+        ],
+        "evidence_chunks": [
+          "station_hollow_mill",
+          "station_garnet_hill",
+          "line_crimson",
+          "station_ironside",
+          "line_slate"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 679,
+        "output_tokens": 50,
+        "retrieval_latency_ms": 14.946,
+        "generation_latency_ms": 591.238,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 679,
+            "output_tokens": 50,
+            "latency_ms": 591.238
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Hollow Mill have and when was the station building refurbished?",
+          "retrieved": [
+            "station_hollow_mill",
+            "station_garnet_hill",
+            "line_crimson",
+            "station_ironside",
+            "line_slate"
+          ],
+          "new_evidence": [
+            "station_hollow_mill",
+            "station_garnet_hill",
+            "line_crimson",
+            "station_ironside",
+            "line_slate"
+          ],
+          "decision": "ANSWER: Hollow Mill has 2 platforms and its station building was last refurbished in 2012."
+        }
+      ]
+    },
+    "5": {
+      "id": 5,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Kingsmoor have and when was the station building refurbished?",
+      "answer": "Kingsmoor has 3 platforms and its station building was last refurbished in 2009.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_kingsmoor"
+        ],
+        "evidence_chunks": [
+          "station_kingsmoor",
+          "line_jade",
+          "station_larkspur",
+          "equipment_LT-77",
+          "station_netherby"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 640,
+        "output_tokens": 43,
+        "retrieval_latency_ms": 17.419,
+        "generation_latency_ms": 891.507,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 640,
+            "output_tokens": 43,
+            "latency_ms": 891.507
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Kingsmoor have and when was the station building refurbished?",
+          "retrieved": [
+            "station_kingsmoor",
+            "line_jade",
+            "station_larkspur",
+            "equipment_LT-77",
+            "station_netherby"
+          ],
+          "new_evidence": [
+            "station_kingsmoor",
+            "line_jade",
+            "station_larkspur",
+            "equipment_LT-77",
+            "station_netherby"
+          ],
+          "decision": "ANSWER: Kingsmoor has 3 platforms and its station building was last refurbished in 2009."
+        }
+      ]
+    },
+    "6": {
+      "id": 6,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Netherby have and when was the station building refurbished?",
+      "answer": "Netherby has 2 platforms and its station building was last refurbished in 2012.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_netherby"
+        ],
+        "evidence_chunks": [
+          "station_netherby",
+          "station_mallow_street",
+          "line_jade",
+          "station_oakhurst",
+          "equipment_HV-21"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 645,
+        "output_tokens": 43,
+        "retrieval_latency_ms": 17.146,
+        "generation_latency_ms": 566.179,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 645,
+            "output_tokens": 43,
+            "latency_ms": 566.179
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Netherby have and when was the station building refurbished?",
+          "retrieved": [
+            "station_netherby",
+            "station_mallow_street",
+            "line_jade",
+            "station_oakhurst",
+            "equipment_HV-21"
+          ],
+          "new_evidence": [
+            "station_netherby",
+            "station_mallow_street",
+            "line_jade",
+            "station_oakhurst",
+            "equipment_HV-21"
+          ],
+          "decision": "ANSWER: Netherby has 2 platforms and its station building was last refurbished in 2012."
+        }
+      ]
+    },
+    "7": {
+      "id": 7,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Quarry Side have and when was the station building refurbished?",
+      "answer": "Quarry Side has 3 platforms, and its station building was last refurbished in 2009.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_quarry_side"
+        ],
+        "evidence_chunks": [
+          "station_quarry_side",
+          "station_eastgate_quay",
+          "line_amber",
+          "station_redcliff",
+          "incident_2026_19"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 651,
+        "output_tokens": 52,
+        "retrieval_latency_ms": 34.369,
+        "generation_latency_ms": 544.314,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 651,
+            "output_tokens": 52,
+            "latency_ms": 544.314
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Quarry Side have and when was the station building refurbished?",
+          "retrieved": [
+            "station_quarry_side",
+            "station_eastgate_quay",
+            "line_amber",
+            "station_redcliff",
+            "incident_2026_19"
+          ],
+          "new_evidence": [
+            "station_quarry_side",
+            "station_eastgate_quay",
+            "line_amber",
+            "station_redcliff",
+            "incident_2026_19"
+          ],
+          "decision": "ANSWER: Quarry Side has 3 platforms, and its station building was last refurbished in 2009."
+        }
+      ]
+    },
+    "8": {
+      "id": 8,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Thistlebank have and when was the station building refurbished?",
+      "answer": "Thistlebank has 2 platforms and its station building was last refurbished in 2012.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_thistlebank"
+        ],
+        "evidence_chunks": [
+          "station_thistlebank",
+          "incident_2026_22",
+          "station_saltmarsh",
+          "line_amber",
+          "equipment_DR-8"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 655,
+        "output_tokens": 44,
+        "retrieval_latency_ms": 15.642,
+        "generation_latency_ms": 826.353,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 655,
+            "output_tokens": 44,
+            "latency_ms": 826.353
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Thistlebank have and when was the station building refurbished?",
+          "retrieved": [
+            "station_thistlebank",
+            "incident_2026_22",
+            "station_saltmarsh",
+            "line_amber",
+            "equipment_DR-8"
+          ],
+          "new_evidence": [
+            "station_thistlebank",
+            "incident_2026_22",
+            "station_saltmarsh",
+            "line_amber",
+            "equipment_DR-8"
+          ],
+          "decision": "ANSWER: Thistlebank has 2 platforms and its station building was last refurbished in 2012."
+        }
+      ]
+    },
+    "9": {
+      "id": 9,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Westmere have and when was the station building refurbished?",
+      "answer": "Westmere has 3 platforms and its station building was last refurbished in 2009.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_westmere"
+        ],
+        "evidence_chunks": [
+          "station_westmere",
+          "incident_2026_25",
+          "station_beacon_rise",
+          "line_violet",
+          "station_yarrow_cross"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 649,
+        "output_tokens": 48,
+        "retrieval_latency_ms": 28.179,
+        "generation_latency_ms": 633.285,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 649,
+            "output_tokens": 48,
+            "latency_ms": 633.285
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Westmere have and when was the station building refurbished?",
+          "retrieved": [
+            "station_westmere",
+            "incident_2026_25",
+            "station_beacon_rise",
+            "line_violet",
+            "station_yarrow_cross"
+          ],
+          "new_evidence": [
+            "station_westmere",
+            "incident_2026_25",
+            "station_beacon_rise",
+            "line_violet",
+            "station_yarrow_cross"
+          ],
+          "decision": "ANSWER: Westmere has 3 platforms and its station building was last refurbished in 2009."
+        }
+      ]
+    },
+    "10": {
+      "id": 10,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Beacon Rise have and when was the station building refurbished?",
+      "answer": "Beacon Rise has 2 platforms and its station building was last refurbished in 2012.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_beacon_rise"
+        ],
+        "evidence_chunks": [
+          "station_beacon_rise",
+          "station_ashfen",
+          "line_violet",
+          "station_carrow_end",
+          "equipment_WS-5"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 637,
+        "output_tokens": 50,
+        "retrieval_latency_ms": 29.256,
+        "generation_latency_ms": 1244.431,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 637,
+            "output_tokens": 50,
+            "latency_ms": 1244.431
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Beacon Rise have and when was the station building refurbished?",
+          "retrieved": [
+            "station_beacon_rise",
+            "station_ashfen",
+            "line_violet",
+            "station_carrow_end",
+            "equipment_WS-5"
+          ],
+          "new_evidence": [
+            "station_beacon_rise",
+            "station_ashfen",
+            "line_violet",
+            "station_carrow_end",
+            "equipment_WS-5"
+          ],
+          "decision": "ANSWER: Beacon Rise has 2 platforms and its station building was last refurbished in 2012."
+        }
+      ]
+    },
+    "11": {
+      "id": 11,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Elmsworth have and when was the station building refurbished?",
+      "answer": "Elmsworth has 3 platforms and its station building was last refurbished in 2009.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_elmsworth"
+        ],
+        "evidence_chunks": [
+          "station_elmsworth",
+          "station_glasshouse",
+          "station_ivory_dock",
+          "line_slate",
+          "station_hartsmere"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 601,
+        "output_tokens": 54,
+        "retrieval_latency_ms": 20.074,
+        "generation_latency_ms": 1104.77,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 601,
+            "output_tokens": 54,
+            "latency_ms": 1104.77
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Elmsworth have and when was the station building refurbished?",
+          "retrieved": [
+            "station_elmsworth",
+            "station_glasshouse",
+            "station_ivory_dock",
+            "line_slate",
+            "station_hartsmere"
+          ],
+          "new_evidence": [
+            "station_elmsworth",
+            "station_glasshouse",
+            "station_ivory_dock",
+            "line_slate",
+            "station_hartsmere"
+          ],
+          "decision": "ANSWER: Elmsworth has 3 platforms and its station building was last refurbished in 2009."
+        }
+      ]
+    },
+    "12": {
+      "id": 12,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "How many platforms does Hartsmere have and when was the station building refurbished?",
+      "answer": "Hartsmere has 2 platforms and its station building was last refurbished in 2012.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "platforms": true,
+          "refurbished_year": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "station_hartsmere"
+        ],
+        "evidence_chunks": [
+          "station_hartsmere",
+          "line_slate",
+          "station_fallowfield",
+          "station_juniper_row",
+          "station_ashfen"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 638,
+        "output_tokens": 54,
+        "retrieval_latency_ms": 43.719,
+        "generation_latency_ms": 601.577,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 638,
+            "output_tokens": 54,
+            "latency_ms": 601.577
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Hartsmere have and when was the station building refurbished?",
+          "retrieved": [
+            "station_hartsmere",
+            "line_slate",
+            "station_fallowfield",
+            "station_juniper_row",
+            "station_ashfen"
+          ],
+          "new_evidence": [
+            "station_hartsmere",
+            "line_slate",
+            "station_fallowfield",
+            "station_juniper_row",
+            "station_ashfen"
+          ],
+          "decision": "ANSWER: Hartsmere has 2 platforms and its station building was last refurbished in 2012."
+        }
+      ]
+    },
+    "13": {
+      "id": 13,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Azure Line and what are its peak headways?",
+      "answer": "The Azure Line is operated with Series 400 four‑car sets and has peak headways of 5 minutes in the morning peak (and 9 minutes in the evening off‑peak).",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": true,
+          "peak_headway_minutes": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_azure"
+        ],
+        "evidence_chunks": [
+          "line_azure",
+          "station_kestrel_green",
+          "station_alder_vale",
+          "station_brickworks",
+          "station_eastgate_quay"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 657,
+        "output_tokens": 69,
+        "retrieval_latency_ms": 25.686,
+        "generation_latency_ms": 554.054,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 657,
+            "output_tokens": 69,
+            "latency_ms": 554.054
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Azure Line and what are its peak headways?",
+          "retrieved": [
+            "line_azure",
+            "station_kestrel_green",
+            "station_alder_vale",
+            "station_brickworks",
+            "station_eastgate_quay"
+          ],
+          "new_evidence": [
+            "line_azure",
+            "station_kestrel_green",
+            "station_alder_vale",
+            "station_brickworks",
+            "station_eastgate_quay"
+          ],
+          "decision": "ANSWER: The Azure Line is operated with Series 400 four‑car sets and has peak headways of 5 minutes in the morning peak (and 9 minutes in the evening off‑peak)."
+        }
+      ]
+    },
+    "14": {
+      "id": 14,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Crimson Line and what are its peak headways?",
+      "answer": "The Crimson Line is operated with **Series 500 six‑car sets**, and its peak headway is **5 minutes** in the morning peak.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": true,
+          "peak_headway_minutes": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_crimson"
+        ],
+        "evidence_chunks": [
+          "line_crimson",
+          "station_eastgate_quay",
+          "station_foundry_bridge",
+          "station_garnet_hill",
+          "station_hollow_mill"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 653,
+        "output_tokens": 119,
+        "retrieval_latency_ms": 14.003,
+        "generation_latency_ms": 4879.498,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 653,
+            "output_tokens": 119,
+            "latency_ms": 4879.498
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Crimson Line and what are its peak headways?",
+          "retrieved": [
+            "line_crimson",
+            "station_eastgate_quay",
+            "station_foundry_bridge",
+            "station_garnet_hill",
+            "station_hollow_mill"
+          ],
+          "new_evidence": [
+            "line_crimson",
+            "station_eastgate_quay",
+            "station_foundry_bridge",
+            "station_garnet_hill",
+            "station_hollow_mill"
+          ],
+          "decision": "ANSWER: The Crimson Line is operated with **Series 500 six‑car sets**, and its peak headway is **5 minutes** in the morning peak."
+        }
+      ]
+    },
+    "15": {
+      "id": 15,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Jade Line and what are its peak headways?",
+      "answer": "The Jade Line is operated with Series 300 refurbished sets and has a peak headway of 5 minutes.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": true,
+          "peak_headway_minutes": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_jade"
+        ],
+        "evidence_chunks": [
+          "line_jade",
+          "line_crimson",
+          "station_kingsmoor",
+          "station_larkspur",
+          "station_netherby"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 666,
+        "output_tokens": 86,
+        "retrieval_latency_ms": 12.978,
+        "generation_latency_ms": 5868.53,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 666,
+            "output_tokens": 86,
+            "latency_ms": 5868.53
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Jade Line and what are its peak headways?",
+          "retrieved": [
+            "line_jade",
+            "line_crimson",
+            "station_kingsmoor",
+            "station_larkspur",
+            "station_netherby"
+          ],
+          "new_evidence": [
+            "line_jade",
+            "line_crimson",
+            "station_kingsmoor",
+            "station_larkspur",
+            "station_netherby"
+          ],
+          "decision": "ANSWER: The Jade Line is operated with Series 300 refurbished sets and has a peak headway of 5 minutes."
+        }
+      ]
+    },
+    "16": {
+      "id": 16,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Amber Line and what are its peak headways?",
+      "answer": "The Amber Line operates with Series 600 articulated sets and has a peak headway of 5 minutes.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": true,
+          "peak_headway_minutes": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_amber"
+        ],
+        "evidence_chunks": [
+          "line_amber",
+          "line_crimson",
+          "station_redcliff",
+          "station_saltmarsh",
+          "station_thistlebank"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 667,
+        "output_tokens": 79,
+        "retrieval_latency_ms": 44.116,
+        "generation_latency_ms": 6900.887,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 667,
+            "output_tokens": 79,
+            "latency_ms": 6900.887
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Amber Line and what are its peak headways?",
+          "retrieved": [
+            "line_amber",
+            "line_crimson",
+            "station_redcliff",
+            "station_saltmarsh",
+            "station_thistlebank"
+          ],
+          "new_evidence": [
+            "line_amber",
+            "line_crimson",
+            "station_redcliff",
+            "station_saltmarsh",
+            "station_thistlebank"
+          ],
+          "decision": "ANSWER: The Amber Line operates with Series 600 articulated sets and has a peak headway of 5 minutes."
+        }
+      ]
+    },
+    "17": {
+      "id": 17,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Violet Line and what are its peak headways?",
+      "answer": "The Violet Line operates Series 450 driverless sets with a peak (morning) headway of 5 minutes.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": true,
+          "peak_headway_minutes": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_violet"
+        ],
+        "evidence_chunks": [
+          "line_violet",
+          "line_crimson",
+          "line_amber",
+          "station_westmere",
+          "station_yarrow_cross"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 677,
+        "output_tokens": 111,
+        "retrieval_latency_ms": 49.442,
+        "generation_latency_ms": 6692.588,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 677,
+            "output_tokens": 111,
+            "latency_ms": 6692.588
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Violet Line and what are its peak headways?",
+          "retrieved": [
+            "line_violet",
+            "line_crimson",
+            "line_amber",
+            "station_westmere",
+            "station_yarrow_cross"
+          ],
+          "new_evidence": [
+            "line_violet",
+            "line_crimson",
+            "line_amber",
+            "station_westmere",
+            "station_yarrow_cross"
+          ],
+          "decision": "ANSWER: The Violet Line operates Series 450 driverless sets with a peak (morning) headway of 5 minutes."
+        }
+      ]
+    },
+    "18": {
+      "id": 18,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What rolling stock operates the Slate Line and what are its peak headways?",
+      "answer": "The Slate Line is operated with Series 200 heritage sets and has peak headways of 5 minutes.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "rolling_stock": true,
+          "peak_headway_minutes": true
+        },
+        "satisfied": 2,
+        "total": 2,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "line_slate"
+        ],
+        "evidence_chunks": [
+          "line_slate",
+          "line_crimson",
+          "station_elmsworth",
+          "station_fallowfield",
+          "station_glasshouse"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 626,
+        "output_tokens": 50,
+        "retrieval_latency_ms": 48.68,
+        "generation_latency_ms": 4714.066,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 626,
+            "output_tokens": 50,
+            "latency_ms": 4714.066
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What rolling stock operates the Slate Line and what are its peak headways?",
+          "retrieved": [
+            "line_slate",
+            "line_crimson",
+            "station_elmsworth",
+            "station_fallowfield",
+            "station_glasshouse"
+          ],
+          "new_evidence": [
+            "line_slate",
+            "line_crimson",
+            "station_elmsworth",
+            "station_fallowfield",
+            "station_glasshouse"
+          ],
+          "decision": "ANSWER: The Slate Line is operated with Series 200 heritage sets and has peak headways of 5 minutes."
+        }
+      ]
+    },
+    "19": {
+      "id": 19,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What does authorisation policy PL-A require before an asset returns to service?",
+      "answer": "PL‑A requires that a named holder countersign the work record before the asset is returned to service.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "policy_code": true,
+          "requirement": true,
+          "signatory": true
+        },
+        "satisfied": 3,
+        "total": 3,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-A"
+        ],
+        "evidence_chunks": [
+          "policy_PL-A",
+          "policy_PL-L",
+          "policy_PL-E",
+          "policy_PL-B",
+          "procedure_MP-101"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 677,
+        "output_tokens": 61,
+        "retrieval_latency_ms": 30.87,
+        "generation_latency_ms": 5631.74,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 677,
+            "output_tokens": 61,
+            "latency_ms": 5631.74
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What does authorisation policy PL-A require before an asset returns to service?",
+          "retrieved": [
+            "policy_PL-A",
+            "policy_PL-L",
+            "policy_PL-E",
+            "policy_PL-B",
+            "procedure_MP-101"
+          ],
+          "new_evidence": [
+            "policy_PL-A",
+            "policy_PL-L",
+            "policy_PL-E",
+            "policy_PL-B",
+            "procedure_MP-101"
+          ],
+          "decision": "ANSWER: PL‑A requires that a named holder countersign the work record before the asset is returned to service."
+        }
+      ]
+    },
+    "20": {
+      "id": 20,
+      "category": "single-hop factual",
+      "hops": 0,
+      "question": "What does authorisation policy PL-B require before an asset returns to service?",
+      "answer": "A named holder of PL‑B must countersign the work record before the asset is returned to service.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "predicates",
+        "predicates": {
+          "policy_code": true,
+          "requirement": true,
+          "signatory": true
+        },
+        "satisfied": 3,
+        "total": 3,
+        "fraction_satisfied": 1.0,
+        "all_satisfied": true,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "policy_PL-B"
+        ],
+        "evidence_chunks": [
+          "policy_PL-B",
+          "policy_PL-L",
+          "policy_PL-A",
+          "policy_PL-E",
+          "procedure_MP-105"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 680,
+        "output_tokens": 74,
+        "retrieval_latency_ms": 30.256,
+        "generation_latency_ms": 5285.371,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 680,
+            "output_tokens": 74,
+            "latency_ms": 5285.371
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What does authorisation policy PL-B require before an asset returns to service?",
+          "retrieved": [
+            "policy_PL-B",
+            "policy_PL-L",
+            "policy_PL-A",
+            "policy_PL-E",
+            "procedure_MP-105"
+          ],
+          "new_evidence": [
+            "policy_PL-B",
+            "policy_PL-L",
+            "policy_PL-A",
+            "policy_PL-E",
+            "procedure_MP-105"
+          ],
+          "decision": "ANSWER: A named holder of PL‑B must countersign the work record before the asset is returned to service."
+        }
+      ]
+    }
+  }
+}

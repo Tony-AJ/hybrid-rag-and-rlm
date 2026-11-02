@@ -193,15 +193,20 @@ def run_signature(
     provider_name: str,
     model: str,
     bounds_record: Dict[str, Any],
+    generation_options: Optional[Dict[str, Any]] = None,
 ) -> str:
     """Identity of a run configuration.
 
     A cached per-query result may only be reused when every input that could
     change the answer is identical: corpus, dataset, retriever, provider, model,
-    prompt templates, loop bounds and the evaluator version.
+    prompt templates, loop bounds, the evaluator version, and any non-default
+    generation option such as reasoning_effort. Options left at their default
+    are not added, so earlier signatures, and the caches keyed by them, stay valid.
     """
+    extra = {key: value for key, value in (generation_options or {}).items() if value is not None}
     payload = json.dumps(
         {
+            **({"generation_options": extra} if extra else {}),
             "corpus_id": corpus_id,
             "dataset_sha256": dataset_sha,
             "variant": variant,
@@ -282,6 +287,8 @@ def main() -> int:
     parser.add_argument("--grounding", choices=rlm_loop.GROUNDING_MODES, default="full",
                         help="full: re-answer over all evidence; lean: only citing and fetched "
                              "chunks; off: no grounding (diagnostic only)")
+    parser.add_argument("--reasoning-effort", choices=("low", "medium", "high"), default=None,
+                        help="reasoning models only (groq gpt-oss); omitted means the provider default")
     parser.add_argument("--no-cache-write", action="store_true",
                         help="do not record per-query results for later resumption")
     args = parser.parse_args()
@@ -309,8 +316,8 @@ def main() -> int:
 
     try:
         provider = build_provider(args.provider, model=args.model, temperature=args.temperature,
-                                  max_tokens=args.max_tokens)
-    except ProviderUnavailable as exc:
+                                  max_tokens=args.max_tokens, reasoning_effort=args.reasoning_effort)
+    except (ProviderUnavailable, ValueError) as exc:
         raise SystemExit(str(exc))
     verification = provider.verify_model()
     evaluative = args.provider != "mock"
@@ -333,6 +340,7 @@ def main() -> int:
         args.provider,
         provider.config.model,
         bounds.as_record(),
+        {"reasoning_effort": args.reasoning_effort},
     )
     # One cache file per configuration, so runs in different modes never
     # overwrite each other's rows.

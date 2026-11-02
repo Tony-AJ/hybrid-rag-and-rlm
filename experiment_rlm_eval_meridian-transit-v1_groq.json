@@ -6,15 +6,15 @@
   "queries_evaluated": 60,
   "queries_in_dataset": 60,
   "queries_requested": 60,
-  "queries_reused_from_cache": 16,
+  "queries_reused_from_cache": 60,
   "quota_stop": null,
   "caveat": null,
   "partial_caveat": null,
   "reproducibility": {
     "evaluation_code_version": "rlm-eval-1.1",
     "scorer_version": "rlm-score-1.3",
-    "git_revision": "3aea4377a0190597cbbbb4d728ac43aa08922735",
-    "recorded_at": "2026-11-02T06:56:48+00:00",
+    "git_revision": "4246fa2f2b8ec59cda4609c31258dfb23ec5988b",
+    "recorded_at": "2026-11-02T07:03:06+00:00",
     "corpus_id": "meridian-transit-v1",
     "corpus_fingerprint": "63cf21ec4c8c04ad83977ebb9c029b6a1c26ea19c345a74587175aded99e97f1",
     "dataset": "dataset.json",
@@ -39,6 +39,7 @@
       "temperature": 0.0,
       "max_tokens": 512,
       "stop_sequences": [],
+      "reasoning_effort": null,
       "model_verification": {
         "provider": "groq",
         "model": "openai/gpt-oss-120b",
@@ -90,7 +91,7 @@
       "total_output_tokens": 13049,
       "mean_retrieval_latency_ms": 34.365,
       "mean_generation_latency_ms": 5991.0396,
-      "wall_clock_ms": 331822.633
+      "wall_clock_ms": 3.165
     }
   },
   "by_category": {

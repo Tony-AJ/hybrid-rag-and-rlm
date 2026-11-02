@@ -62,6 +62,9 @@ class GenerationConfig:
     temperature: float = 0.0
     max_tokens: int = 1024
     stop_sequences: tuple = ()
+    # Reasoning models only (Groq gpt-oss): low, medium or high. None leaves
+    # the provider default and is omitted from the request.
+    reasoning_effort: Optional[str] = None
 
     def as_record(self) -> Dict[str, Any]:
         return {
@@ -70,6 +73,7 @@ class GenerationConfig:
             "temperature": self.temperature,
             "max_tokens": self.max_tokens,
             "stop_sequences": list(self.stop_sequences),
+            "reasoning_effort": self.reasoning_effort,
         }
 
 
@@ -379,7 +383,13 @@ class GroqProvider:
 
     BASE_URL = "https://api.groq.com/openai/v1"
 
-    def __init__(self, model: Optional[str] = None, temperature: float = 0.0, max_tokens: int = 1024):
+    def __init__(
+        self,
+        model: Optional[str] = None,
+        temperature: float = 0.0,
+        max_tokens: int = 1024,
+        reasoning_effort: Optional[str] = None,
+    ):
         api_key = resolve_key("GROQ_API_KEY")
         if not api_key:
             raise ProviderUnavailable("GROQ_API_KEY is not set in the environment or .env")
@@ -390,7 +400,8 @@ class GroqProvider:
         self._client = OpenAI(api_key=api_key, base_url=self.BASE_URL)
         model_id = model or os.environ.get("GROQ_MODEL") or ""
         self.config = GenerationConfig(
-            provider="groq", model=model_id, temperature=temperature, max_tokens=max_tokens
+            provider="groq", model=model_id, temperature=temperature, max_tokens=max_tokens,
+            reasoning_effort=reasoning_effort,
         )
 
     def list_models(self) -> List[str]:
@@ -422,6 +433,8 @@ class GroqProvider:
                     temperature=self.config.temperature,
                     max_tokens=self.config.max_tokens,
                     messages=[{"role": "user", "content": prompt}],
+                    **({"reasoning_effort": self.config.reasoning_effort}
+                       if self.config.reasoning_effort else {}),
                 )
                 break
             except Exception as exc:
@@ -445,6 +458,8 @@ class GroqProvider:
         )
 
 
+REASONING_EFFORT_PROVIDERS = {"groq"}
+
 PROVIDERS = {
     "anthropic": AnthropicProvider,
     "google": GoogleProvider,
@@ -458,7 +473,13 @@ def build_provider(
     model: Optional[str] = None,
     temperature: float = 0.0,
     max_tokens: int = 1024,
+    reasoning_effort: Optional[str] = None,
 ) -> GenerationProvider:
     if name not in PROVIDERS:
         raise ValueError(f"Unknown provider {name!r}. Known: {sorted(PROVIDERS)}")
-    return PROVIDERS[name](model=model, temperature=temperature, max_tokens=max_tokens)
+    if reasoning_effort is None:
+        return PROVIDERS[name](model=model, temperature=temperature, max_tokens=max_tokens)
+    if name not in REASONING_EFFORT_PROVIDERS:
+        raise ValueError(f"reasoning_effort is only supported by {sorted(REASONING_EFFORT_PROVIDERS)}")
+    return PROVIDERS[name](model=model, temperature=temperature, max_tokens=max_tokens,
+                           reasoning_effort=reasoning_effort)
