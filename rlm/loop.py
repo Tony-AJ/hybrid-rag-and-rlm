@@ -37,7 +37,7 @@ from rlm.providers import (  # noqa: E402
 )
 
 FROZEN_CONFIG_PATH = ROOT / "experiment_frozen_retrieval_config.json"
-LOOP_VERSION = "1.4"
+LOOP_VERSION = "1.5"
 
 ANSWER_TEMPLATE = """Answer using only the evidence.
 Question: {question}
@@ -56,9 +56,19 @@ Evidence:
 If sufficient, reply STOP.
 Otherwise, reply SEARCH: followed by one short query."""
 
+# Decide and answer in one call. With separate calls the same evidence is sent
+# twice whenever the decision is STOP, which is most episodes.
+STEP_TEMPLATE = """Answer using only the evidence, or ask for more.
+Question: {question}
+Evidence:
+{evidence}
+If the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.
+Otherwise, reply SEARCH: followed by one short query."""
+
 TEMPLATE_HASHES = {
     "answer": prompt_template_sha256(ANSWER_TEMPLATE),
     "decide": prompt_template_sha256(DECIDE_TEMPLATE),
+    "step": prompt_template_sha256(STEP_TEMPLATE),
 }
 
 
@@ -69,6 +79,7 @@ class LoopBounds:
     top_k: int = 5
     max_evidence_chunks: int = 12
     max_grounding_chunks: int = 4
+    merge_decide_answer: bool = True
 
     def as_record(self) -> Dict[str, Any]:
         return {
@@ -77,6 +88,7 @@ class LoopBounds:
             "top_k": self.top_k,
             "max_evidence_chunks": self.max_evidence_chunks,
             "max_grounding_chunks": self.max_grounding_chunks,
+            "merge_decide_answer": self.merge_decide_answer,
         }
 
 
@@ -304,24 +316,31 @@ def run_loop(
             run.stop_reason = "step_budget_exhausted" if step == bounds.max_steps else "retrieval_budget_exhausted"
             break
 
+        template = STEP_TEMPLATE if bounds.merge_decide_answer else DECIDE_TEMPLATE
         decide_result = provider.generate(
-            DECIDE_TEMPLATE.format(question=question, evidence=format_evidence(evidence))
+            template.format(question=question, evidence=format_evidence(evidence))
         )
         record_generation(decide_result)
         decision = decide_result.text.strip()
         step_record["decision"] = decision[:200]
         run.steps.append(step_record)
 
-        if decision.upper().startswith("STOP") or "SEARCH:" not in decision.upper():
+        wants_search = "SEARCH:" in decision.upper() and not decision.upper().startswith(("STOP", "ANSWER:"))
+        if not wants_search:
             run.stop_reason = "model_stopped"
+            if bounds.merge_decide_answer:
+                run.answer = re.sub(r"^ANSWER:\s*", "", decision, flags=re.IGNORECASE).strip()
             break
-        current_query = decision.split("SEARCH:", 1)[1].strip() or question
+        current_query = decision[decision.upper().index("SEARCH:") + len("SEARCH:"):].strip() or question
 
-    answer_result = provider.generate(
-        ANSWER_TEMPLATE.format(question=question, evidence=format_evidence(evidence))
-    )
-    record_generation(answer_result)
-    run.answer = answer_result.text.strip()
+    # A merged step that stopped already holds the answer. Otherwise (separate
+    # decide calls, or the bounds were reached) answer with the full evidence.
+    if not run.answer:
+        answer_result = provider.generate(
+            ANSWER_TEMPLATE.format(question=question, evidence=format_evidence(evidence))
+        )
+        record_generation(answer_result)
+        run.answer = answer_result.text.strip()
 
     # Grounding pass: an answer that cites a node seen only as a link is
     # re-answered once with that node's text in the evidence. Graph lookups,
