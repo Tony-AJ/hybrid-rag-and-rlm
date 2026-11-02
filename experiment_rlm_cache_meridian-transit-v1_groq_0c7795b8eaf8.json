@@ -1442,6 +1442,466 @@
           "decision": "ANSWER: A named holder of PL‑B must countersign the work record before the asset is returned to service."
         }
       ]
+    },
+    "21": {
+      "id": 21,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Harbour Row?",
+      "answer": "equipment_TX-440 – the TX-440 traction inverter failed, causing the trains to be held at Harbour Row.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "TX-440"
+        ],
+        "extracted": [
+          "TX-440"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_TX-440"
+        ],
+        "evidence_chunks": [
+          "incident_2026_01",
+          "station_harbour_row",
+          "line_azure",
+          "equipment_TX-440",
+          "station_brickworks"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 649,
+        "output_tokens": 63,
+        "retrieval_latency_ms": 17.512,
+        "generation_latency_ms": 5075.794,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 649,
+            "output_tokens": 63,
+            "latency_ms": 5075.794
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Harbour Row?",
+          "retrieved": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_TX-440",
+            "station_brickworks"
+          ],
+          "new_evidence": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_TX-440",
+            "station_brickworks"
+          ],
+          "decision": "ANSWER: equipment_TX-440 – the TX-440 traction inverter failed, causing the trains to be held at Harbour Row."
+        }
+      ]
+    },
+    "22": {
+      "id": 22,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Kestrel Green?",
+      "answer": "equipment_HV-21 – the HV-21 pantograph head suffered a carbon strip fracture, causing the trains to be held at Kestrel Green.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "HV-21"
+        ],
+        "extracted": [
+          "HV-21"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_HV-21"
+        ],
+        "evidence_chunks": [
+          "incident_2026_02",
+          "station_kestrel_green",
+          "line_azure",
+          "equipment_HV-21",
+          "station_hollow_mill"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 679,
+        "output_tokens": 70,
+        "retrieval_latency_ms": 23.717,
+        "generation_latency_ms": 7851.579,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 679,
+            "output_tokens": 70,
+            "latency_ms": 7851.579
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Kestrel Green?",
+          "retrieved": [
+            "incident_2026_02",
+            "station_kestrel_green",
+            "line_azure",
+            "equipment_HV-21",
+            "station_hollow_mill"
+          ],
+          "new_evidence": [
+            "incident_2026_02",
+            "station_kestrel_green",
+            "line_azure",
+            "equipment_HV-21",
+            "station_hollow_mill"
+          ],
+          "decision": "ANSWER: equipment_HV-21 – the HV-21 pantograph head suffered a carbon strip fracture, causing the trains to be held at Kestrel Green."
+        }
+      ]
+    },
+    "23": {
+      "id": 23,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Alder Vale?",
+      "answer": "equipment_BR-7 – the BR-7 regenerative brake unit suffered a resistor grid overheat, causing the trains to be held at Alder Vale.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "BR-7"
+        ],
+        "extracted": [
+          "BR-7"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_BR-7"
+        ],
+        "evidence_chunks": [
+          "incident_2026_03",
+          "station_alder_vale",
+          "line_azure",
+          "equipment_BR-7",
+          "station_redcliff"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 669,
+        "output_tokens": 71,
+        "retrieval_latency_ms": 29.826,
+        "generation_latency_ms": 3739.177,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 669,
+            "output_tokens": 71,
+            "latency_ms": 3739.177
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Alder Vale?",
+          "retrieved": [
+            "incident_2026_03",
+            "station_alder_vale",
+            "line_azure",
+            "equipment_BR-7",
+            "station_redcliff"
+          ],
+          "new_evidence": [
+            "incident_2026_03",
+            "station_alder_vale",
+            "line_azure",
+            "equipment_BR-7",
+            "station_redcliff"
+          ],
+          "decision": "ANSWER: equipment_BR-7 – the BR-7 regenerative brake unit suffered a resistor grid overheat, causing the trains to be held at Alder Vale."
+        }
+      ]
+    },
+    "24": {
+      "id": 24,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Brickworks?",
+      "answer": "equipment_PD-90 – the PD-90 platform screen door controller failed, causing the obstruction sensor drift that held trains at Brickworks.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "PD-90"
+        ],
+        "extracted": [
+          "PD-90"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_PD-90"
+        ],
+        "evidence_chunks": [
+          "incident_2026_04",
+          "station_brickworks",
+          "line_azure",
+          "equipment_PD-90",
+          "station_foundry_bridge"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 673,
+        "output_tokens": 67,
+        "retrieval_latency_ms": 21.091,
+        "generation_latency_ms": 4661.004,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 673,
+            "output_tokens": 67,
+            "latency_ms": 4661.004
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Brickworks?",
+          "retrieved": [
+            "incident_2026_04",
+            "station_brickworks",
+            "line_azure",
+            "equipment_PD-90",
+            "station_foundry_bridge"
+          ],
+          "new_evidence": [
+            "incident_2026_04",
+            "station_brickworks",
+            "line_azure",
+            "equipment_PD-90",
+            "station_foundry_bridge"
+          ],
+          "decision": "ANSWER: equipment_PD-90 – the PD-90 platform screen door controller failed, causing the obstruction sensor drift that held trains at Brickworks."
+        }
+      ]
+    },
+    "25": {
+      "id": 25,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Copper Lane?",
+      "answer": "equipment_SG-12 – the SG-12 signal interlocking relay failed, causing trains to be held at Copper Lane.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "SG-12"
+        ],
+        "extracted": [
+          "SG-12"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_SG-12"
+        ],
+        "evidence_chunks": [
+          "incident_2026_08",
+          "incident_2026_10",
+          "incident_2026_05",
+          "station_foundry_bridge",
+          "line_crimson",
+          "equipment_SG-12"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1045,
+        "output_tokens": 127,
+        "retrieval_latency_ms": 16.948,
+        "generation_latency_ms": 9359.298,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 688,
+            "output_tokens": 55,
+            "latency_ms": 5629.791
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 357,
+            "output_tokens": 72,
+            "latency_ms": 3729.507
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Copper Lane?",
+          "retrieved": [
+            "incident_2026_08",
+            "incident_2026_10",
+            "incident_2026_05",
+            "station_foundry_bridge",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "incident_2026_08",
+            "incident_2026_10",
+            "incident_2026_05",
+            "station_foundry_bridge",
+            "line_crimson"
+          ],
+          "decision": "ANSWER: equipment_SG-12 – a SG-12 signal interlocking relay failed, causing trains to be held at Copper Lane."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "equipment_SG-12"
+          ],
+          "answer_before_grounding": "equipment_SG-12 – a SG-12 signal interlocking relay failed, causing trains to be held at Copper Lane.",
+          "answer_changed": true
+        }
+      ]
+    },
+    "26": {
+      "id": 26,
+      "category": "1-hop graph (cause)",
+      "hops": 1,
+      "question": "Which component failed when trains were held at Dunmore Park?",
+      "answer": "equipment_AX-3 – the AX-3 axle bearing assembly failed, causing trains to be held at Dunmore Park.",
+      "answer_evaluation": {
+        "abstained": false,
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "expected": [
+          "AX-3"
+        ],
+        "extracted": [
+          "AX-3"
+        ],
+        "exact_set_match": true,
+        "precision": 1.0,
+        "recall": 1.0,
+        "correct": true
+      },
+      "evidence_coverage": {
+        "relevant_chunks": [
+          "equipment_AX-3"
+        ],
+        "evidence_chunks": [
+          "incident_2026_06",
+          "incident_2026_09",
+          "station_dunmore_park",
+          "line_azure",
+          "equipment_AX-3"
+        ],
+        "coverage": 1.0,
+        "all_relevant_present": true
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 667,
+        "output_tokens": 69,
+        "retrieval_latency_ms": 13.817,
+        "generation_latency_ms": 4726.288,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 667,
+            "output_tokens": 69,
+            "latency_ms": 4726.288
+          }
+        }
+      },
+      "stop_reason": "model_stopped",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Dunmore Park?",
+          "retrieved": [
+            "incident_2026_06",
+            "incident_2026_09",
+            "station_dunmore_park",
+            "line_azure",
+            "equipment_AX-3"
+          ],
+          "new_evidence": [
+            "incident_2026_06",
+            "incident_2026_09",
+            "station_dunmore_park",
+            "line_azure",
+            "equipment_AX-3"
+          ],
+          "decision": "ANSWER: equipment_AX-3 – the AX-3 axle bearing assembly failed, causing trains to be held at Dunmore Park."
+        }
+      ]
     }
   }
 }
