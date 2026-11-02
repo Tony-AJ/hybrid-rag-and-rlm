@@ -322,3 +322,136 @@ Reproduce (with the caches present, cached rows are re-scored without model call
 ```powershell
 python -m experiments.architecture_benchmark --provider groq --model openai/gpt-oss-120b --reasoning-effort low --resume
 ```
+
+---
+
+# Phase 3, R1: Missing evidence
+
+Does the system decline when the text it can read does not answer the question,
+and can it tell a visible graph relationship from text that supports an answer?
+Phase 2 inputs are unchanged: same corpus and stores, dataset v1.1, frozen
+retrieval config, loop 1.7 prompts and model settings. R1 has its own dataset,
+scorer and runner.
+
+## Design
+
+| Case | n | Construction | Correct behaviour |
+|---|---|---|---|
+| R1a no document | 8 | 5 attributes the corpus never states (station manager, car parking, refurbishment cost, Sunday headway, top speed); 3 entities that do not exist (Thornwick Junction, QZ-900, PL-Z) | Abstain |
+| R1b partial evidence | 8 | Two-part question; one half stated in one chunk, the other half stated nowhere | Abstain, or answer the stated half and decline the rest (reported separately) |
+| R1c edge without text | 8 | v1.1 queries 31, 35, 39, 41 (procedures masked) and 51, 53, 55, 56 (policy masked) | Abstain. Naming a masked code is a link-only answer. |
+
+Masking (`MaskedRetriever`): a masked node is never returned by retrieval and
+`fetch()` returns nothing, but graph edges to it stay, so its id remains visible
+in `Links:` lines. No re-ingestion; the corpus fingerprint is unchanged.
+
+Scoring (`rlm/robustness_scoring.py`, `r1-score-1.0`): every prompt sent to the
+model is recorded. An identifier (code, station name, number) the answer names
+and the question did not is *supported* only if it appears in chunk text the
+model received; `Links:` lines are not text support. Outcomes, first match wins:
+`correct_abstention`, `partial_correct`, `link_only_answer` (unsupported
+identifier seen in a `Links:` line), `unsupported_answer`, `other_wrong`.
+Abstention is detected strictly (`INSUFFICIENT EVIDENCE`) and leniently (10
+pre-registered patterns); both are reported.
+
+Architectures A, B2, C and D, with their Phase 2 bounds and prompts. B is
+excluded: it abstains on almost everything by construction.
+
+## Results (24 queries, all architectures complete)
+
+| | A Vector | B2 Graph-only | C Hybrid | D Hybrid + RLM |
+|---|---|---|---|---|
+| **Correct abstention, all** | **24/24 (100%)** | 20/24 (83%) | 17/24 (71%) | 15/24 (63%) |
+| R1a no document | 8/8 | 8/8 | 8/8 | 7/8 |
+| R1b partial evidence (all full abstentions) | 8/8 | 8/8 | 8/8 | 8/8 |
+| R1c edge without text | 8/8 | 4/8 | 1/8 | 0/8 |
+| **Link-only answers, R1c** | 0/8 | 4/8 | 7/8 | **8/8** |
+| Masked ids visible in a `Links:` line, R1c | 0/8 | 4/8 | 7/8 | 8/8 |
+| **Link-only when visible** | n/a | **4/4** | **7/7** | **8/8** |
+| Unsupported claims, all | 0/24 | 4/24 | 7/24 | 8/24 |
+| Partial answers on R1b | 0/8 | 0/8 | 0/8 | 0/8 |
+| Input / output tokens per query | 532 / 43 | 551 / 43 | 657 / 51 | 1,748 / 102 |
+| Generation calls per query | 1.0 | 1.0 | 1.0 | 2.33 |
+
+Strict and lenient abstention detection agreed on every one of the 96 answers.
+Every abstention was the exact string `INSUFFICIENT EVIDENCE`.
+
+## Findings
+
+1. **Whenever a masked answer was visible as a graph link, the model named it:
+   19 of 19 times across B2, C and D.** No architecture declined when the edge
+   was in view. Abstention on R1c depended entirely on whether retrieval
+   surfaced the edge: A never sees links (8/8 abstain); B2 does not reach the
+   procedure edges on the two-hop queries (4/4 abstain there) but does on the
+   authorisation queries (4/4 link-only). The model treats an edge label as
+   sufficient evidence.
+2. **D's grounding did not catch any of them.** Lean grounding fetches the text
+   of a node the answer cites from a link. For a masked node the fetch returns
+   nothing, no grounding call runs, and **the loop records nothing**: all 8 D
+   traces on R1c look like ordinary answers. C (grounding off) at least logs
+   `cited_from_links_unverified`. In Phase 2, grounding raised evidence coverage
+   to 1.000, but it does not turn a missing text into an abstention.
+3. **The link-only answers are true in the graph.** Every named code is the real
+   target of the edge. Whether answering from an edge is acceptable is a policy
+   choice; R1 pre-registered it as unsupported, because no text the model read
+   states it.
+4. **No-document questions are handled well.** 31 of 32 R1a answers abstained.
+   The one failure is D on 1008 ("When was PL-Z issued?"), answered "policy_PL-K
+   was issued in 2024." Both identifiers are in its evidence, so it is scored
+   `other_wrong`, not unsupported: identifier supportedness does not catch an
+   answer about the wrong entity.
+5. **No architecture gave a partial answer.** On all 32 R1b answers the model
+   refused the whole question rather than answering the stated half. The answer
+   prompt's single rule ("If evidence is insufficient, reply exactly:
+   INSUFFICIENT EVIDENCE") appears to make abstention all-or-nothing.
+6. **D spends about 3 times C's tokens on unanswerable questions** (1,748 vs 657
+   input). Its step prompt offers only `ANSWER:` or `SEARCH:`, so on R1a and R1b
+   it searches until the step budget runs out and abstains through the fallback
+   answer prompt. On R1c it answers in the first step from the link.
+
+## Limitations
+
+- **Small n.** Eight queries per case; R1c contains two structural groups of 4
+  (procedure masked, policy masked). Raw counts are given everywhere. The 19/19
+  link-only result is consistent but comes from 8 distinct questions.
+- **One model, one run, temperature 0, `reasoning_effort: low`.**
+- **Masking is not deletion.** Edges to masked nodes are deliberately kept;
+  rankings are filtered after fusion (over-fetching changed no top-5 order).
+- **Identifier supportedness is not factual verification** (finding 4). Numbers
+  are matched as values.
+- **Several sessions on two Groq organisations.** The run stopped three times on
+  the 200k tokens/day limit and was resumed with `--resume` under unchanged
+  per-architecture signatures; row-level results are cached per query.
+- **Freeze timestamp.** The freeze file was first written in the same session
+  as the first run, immediately before it, with all 17 checks passing. It was
+  re-written about two minutes after that run's first record with identical
+  input hashes and git revision; only `frozen_at` changed (now
+  2026-11-02T10:18:27Z).
+
+## Provenance
+
+| Item | Value |
+|---|---|
+| Code revision | `df900935fb60b9ad5b70082d3b6bb15766d45bbc` |
+| Completed | 2026-11-02 10:39:30 UTC |
+| R1 dataset | `benchmark_corpora/meridian/robustness/missing_evidence.json` `r1-1.0`, sha256 `c43c0014d43dd55e891b0c13a095d97f33b51999313842a59f8465ddf0c83a41` |
+| Masks | sha256 `476c2ed5d12eed9f3554e3171befdad6b35c6348845897f140713175d1f1ac97` |
+| Scorer | `r1-score-1.0`, `rlm/robustness_scoring.py` sha256 `91f51d6bdd909081fbe5b61ef5e0d25821faf6cebbc267a9d4c49d9883a2c43c` |
+| Runner | `r1-run-1.0`, `experiments/robustness_r1.py` sha256 `c66eb2aed6e5ff449c3a9fd19c2e2e66af45a6f76dc33133052c4ba557469f4e` |
+| Base inputs | corpus fingerprint `63cf21ec4c8c…`, dataset v1.1 `8f61e760d6ec…`, frozen config `0e944282aa60…`, Phase 2 result `c70e8a416b12…` (all checked unchanged before every run) |
+| Model | Groq `openai/gpt-oss-120b`, temperature 0.0, max_tokens 512, `reasoning_effort: low` |
+| Loop | 1.7, prompts unchanged; A/B2/C one step, grounding off; D three steps, lean grounding |
+| Signatures | A `a7e142efee44`, B2 `50fd67389867`, C `9ee8f948dbe7`, D `0b6743bfeddf` |
+
+| File | Content |
+|---|---|
+| `experiment_robustness_r1_meridian-transit-v1_groq_frozen.json` | **Frozen R1 result, read-only. Cite this one.** sha256 `941f0d4a710a3af4e88b2020b578221edeee7b6a155ee90488bc848aaa417d14` |
+| `experiment_robustness_r1_answers_meridian-transit-v1_groq.json` | Same content; rewritten by any later run |
+| `experiment_robustness_r1_freeze.json` | Input hashes and validation record (sha256 `0d0fe6e1bcef…`) |
+| `experiment_robustness_r1_cache_meridian-transit-v1_groq_{A,B2,C,D}_<sig>.json` | Per-architecture rows, including every prompt sent |
+
+```powershell
+python -m pytest tests/test_robustness_scoring.py
+python -m experiments.robustness_r1 --phase validate
+python -m experiments.robustness_r1 --phase answers --provider groq --model openai/gpt-oss-120b --reasoning-effort low --resume
+```

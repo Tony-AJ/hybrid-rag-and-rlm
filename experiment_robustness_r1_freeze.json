@@ -1,0 +1,159 @@
+{
+  "experiment": "robustness-r1",
+  "frozen_at": "2026-11-02T10:18:27+00:00",
+  "git_revision": "df900935fb60b9ad5b70082d3b6bb15766d45bbc",
+  "inputs": {
+    "dataset_sha256": "c43c0014d43dd55e891b0c13a095d97f33b51999313842a59f8465ddf0c83a41",
+    "mask_sha256": "476c2ed5d12eed9f3554e3171befdad6b35c6348845897f140713175d1f1ac97",
+    "scorer_sha256": "91f51d6bdd909081fbe5b61ef5e0d25821faf6cebbc267a9d4c49d9883a2c43c",
+    "scorer_version": "r1-score-1.0",
+    "lenient_patterns_sha256": "2df9d434ba2fdad65684255a0f0c29984a26bfec43feff9a63dc5cf409c2d1bc",
+    "runner_sha256": "c66eb2aed6e5ff449c3a9fd19c2e2e66af45a6f76dc33133052c4ba557469f4e",
+    "runner_version": "r1-run-1.0",
+    "architecture_benchmark_sha256": "0ff7f3f355bf91e735098a81921e01a97ee815b6b2a63d8065463e30c3a6d862",
+    "loop_version": "1.7",
+    "prompt_template_sha256": {
+      "answer": "2fd1b1017a4e19b5db5d09d401f51ea8f4a12eb90820d262bf39cea85ed9154f",
+      "decide": "29895476724ff170825b301373d012c37b9f3fbba02ec314b553c18d21ac9a19",
+      "step": "0d0a274513de3988bf6b7f4eb62715640b020ddf87aa1299be19344cc6f04468",
+      "ground": "23b0ea16b2f7e141c3c37b0bf433380ca1721389b90092f8a27556e7f709fbae"
+    }
+  },
+  "validation": [
+    {
+      "check": "V1 dataset v1.1 sha256 unchanged",
+      "status": "passed",
+      "detail": "8f61e760d6ec9b1ca95f8bf955bfb33698851caa8e61cf7ff0d3b1f758a54fb2"
+    },
+    {
+      "check": "V1 corpus fingerprint matches",
+      "status": "passed",
+      "detail": "63cf21ec4c8c04ad83977ebb9c029b6a1c26ea19c345a74587175aded99e97f1"
+    },
+    {
+      "check": "V1 frozen retrieval config unchanged",
+      "status": "passed",
+      "detail": "0e944282aa60426b9b7c358a2797c33573b29bb0574dc9b8a959b1d57334690d"
+    },
+    {
+      "check": "V1 Phase 2 frozen result unchanged",
+      "status": "passed",
+      "detail": "c70e8a416b1259387c8cf47bf47a415aefa4812ca2e4bd93ad1a0687f7a31407"
+    },
+    {
+      "check": "V1 R1 dataset bound to v1.1",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "V2 dataset schema",
+      "status": "passed",
+      "detail": {
+        "case_counts": {
+          "R1a": 8,
+          "R1b": 8,
+          "R1c": 8
+        },
+        "problems": []
+      }
+    },
+    {
+      "check": "V3 masked nodes absent from retrieved text and fetch (A, B2, C; question, node text, code and title probes)",
+      "status": "passed",
+      "detail": []
+    },
+    {
+      "check": "V4 masked ids remain linked from link_source in the graph",
+      "status": "passed",
+      "detail": {
+        "problems": [],
+        "masked_ids_visible_in_first_retrieval_links (informational)": {
+          "1017": {
+            "B2": false,
+            "C": true
+          },
+          "1018": {
+            "B2": false,
+            "C": false
+          },
+          "1019": {
+            "B2": false,
+            "C": true
+          },
+          "1020": {
+            "B2": false,
+            "C": true
+          },
+          "1021": {
+            "B2": true,
+            "C": true
+          },
+          "1022": {
+            "B2": true,
+            "C": true
+          },
+          "1023": {
+            "B2": true,
+            "C": true
+          },
+          "1024": {
+            "B2": true,
+            "C": true
+          }
+        }
+      }
+    },
+    {
+      "check": "V5 masked code and title appear in no unmasked chunk text",
+      "status": "passed",
+      "detail": []
+    },
+    {
+      "check": "V6 R1a/R1b absent terms occur in no chunk text",
+      "status": "passed",
+      "detail": []
+    },
+    {
+      "check": "V6 R1a non-existent entities absent from corpus",
+      "status": "passed",
+      "detail": []
+    },
+    {
+      "check": "V6 R1b answerable part satisfied by available_relevant text",
+      "status": "passed",
+      "detail": []
+    },
+    {
+      "check": "V7 empty-mask wrapper returns identical rankings on all v1.1 queries",
+      "status": "passed",
+      "detail": []
+    },
+    {
+      "check": "V7 Phase 2 regression: A vector == baseline aggregate.vector",
+      "status": "passed",
+      "detail": {}
+    },
+    {
+      "check": "V7 Phase 2 regression: B graph == baseline aggregate.graph_expansion",
+      "status": "passed",
+      "detail": {}
+    },
+    {
+      "check": "V7 Phase 2 regression: C hybrid == frozen selected_metrics",
+      "status": "passed",
+      "detail": {}
+    },
+    {
+      "check": "V7 Phase 2 regression: B2 == frozen Phase 2 B2 aggregate",
+      "status": "passed",
+      "detail": {}
+    },
+    {
+      "check": "INFO over-fetch keeps the unmasked top-k prefix stable",
+      "status": "info",
+      "detail": {
+        "differences": []
+      }
+    }
+  ]
+}

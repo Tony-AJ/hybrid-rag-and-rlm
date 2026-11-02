@@ -1,0 +1,2303 @@
+{
+  "run_signature": "a7e142efee4402a23c5198486d14623026b19742464a6cd95db50dc12a2e2cab",
+  "rows": {
+    "1001": {
+      "architecture": "A",
+      "id": 1001,
+      "case": "R1a",
+      "question": "Who is the station manager at Harbour Row?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1a",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": null,
+        "received_node_ids": [
+          "incident_2026_01",
+          "station_alder_vale",
+          "station_foundry_bridge",
+          "station_glasshouse",
+          "station_harbour_row"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "station_harbour_row"
+        ],
+        "evidence_chunks": [
+          "station_harbour_row",
+          "incident_2026_01",
+          "station_glasshouse",
+          "station_alder_vale",
+          "station_foundry_bridge"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 500,
+        "output_tokens": 33,
+        "retrieval_latency_ms": 11.957,
+        "generation_latency_ms": 583.185,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 500,
+            "output_tokens": 33,
+            "latency_ms": 583.185
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Who is the station manager at Harbour Row?",
+          "retrieved": [
+            "station_harbour_row",
+            "incident_2026_01",
+            "station_glasshouse",
+            "station_alder_vale",
+            "station_foundry_bridge"
+          ],
+          "new_evidence": [
+            "station_harbour_row",
+            "incident_2026_01",
+            "station_glasshouse",
+            "station_alder_vale",
+            "station_foundry_bridge"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Who is the station manager at Harbour Row?\nEvidence:\n[1] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.\n[2] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[3] (station_glasshouse) Glasshouse is a through station on the Slate Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Elmsworth and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.\n[4] (station_alder_vale) Alder Vale is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Harbour Row and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.\n[5] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1002": {
+      "architecture": "A",
+      "id": 1002,
+      "case": "R1a",
+      "question": "How many car parking spaces are there at Kestrel Green?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1a",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": null,
+        "received_node_ids": [
+          "bulletin_19",
+          "bulletin_20",
+          "bulletin_21",
+          "line_azure",
+          "station_kestrel_green"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "station_kestrel_green"
+        ],
+        "evidence_chunks": [
+          "station_kestrel_green",
+          "bulletin_21",
+          "bulletin_20",
+          "line_azure",
+          "bulletin_19"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 512,
+        "output_tokens": 39,
+        "retrieval_latency_ms": 13.566,
+        "generation_latency_ms": 690.048,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 512,
+            "output_tokens": 39,
+            "latency_ms": 690.048
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many car parking spaces are there at Kestrel Green?",
+          "retrieved": [
+            "station_kestrel_green",
+            "bulletin_21",
+            "bulletin_20",
+            "line_azure",
+            "bulletin_19"
+          ],
+          "new_evidence": [
+            "station_kestrel_green",
+            "bulletin_21",
+            "bulletin_20",
+            "line_azure",
+            "bulletin_19"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: How many car parking spaces are there at Kestrel Green?\nEvidence:\n[1] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.\n[2] (bulletin_21) Cycle parking expansion notice, quarter 3 of 2026, reference B021. The authority confirms that cycling arrangements were reviewed by the customer committee, with 54 responses received and 6 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.\n[3] (bulletin_20) Cycle parking expansion notice, quarter 2 of 2026, reference B020. The authority confirms that cycling arrangements were reviewed by the customer committee, with 52 responses received and 5 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.\n[4] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.\n[5] (bulletin_19) Cycle parking expansion notice, quarter 1 of 2026, reference B019. The authority confirms that cycling arrangements were reviewed by the customer committee, with 50 responses received and 4 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1003": {
+      "architecture": "A",
+      "id": 1003,
+      "case": "R1a",
+      "question": "How much did the 2009 refurbishment of Harbour Row cost?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1a",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": null,
+        "received_node_ids": [
+          "line_slate",
+          "station_brickworks",
+          "station_foundry_bridge",
+          "station_glasshouse",
+          "station_harbour_row"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "station_harbour_row"
+        ],
+        "evidence_chunks": [
+          "station_harbour_row",
+          "line_slate",
+          "station_glasshouse",
+          "station_foundry_bridge",
+          "station_brickworks"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 501,
+        "output_tokens": 38,
+        "retrieval_latency_ms": 19.148,
+        "generation_latency_ms": 490.522,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 501,
+            "output_tokens": 38,
+            "latency_ms": 490.522
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How much did the 2009 refurbishment of Harbour Row cost?",
+          "retrieved": [
+            "station_harbour_row",
+            "line_slate",
+            "station_glasshouse",
+            "station_foundry_bridge",
+            "station_brickworks"
+          ],
+          "new_evidence": [
+            "station_harbour_row",
+            "line_slate",
+            "station_glasshouse",
+            "station_foundry_bridge",
+            "station_brickworks"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: How much did the 2009 refurbishment of Harbour Row cost?\nEvidence:\n[1] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.\n[2] (line_slate) The Slate Line runs from Elmsworth to Juniper Row, calling at Fallowfield, Glasshouse, Hartsmere, Ivory Dock. It is operated with Series 200 heritage sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.\n[3] (station_glasshouse) Glasshouse is a through station on the Slate Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Elmsworth and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.\n[4] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.\n[5] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1004": {
+      "architecture": "A",
+      "id": 1004,
+      "case": "R1a",
+      "question": "What is the Sunday headway on the Azure Line?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1a",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": null,
+        "received_node_ids": [
+          "line_azure",
+          "line_violet",
+          "station_dunmore_park",
+          "station_harbour_row",
+          "station_kestrel_green"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "line_azure"
+        ],
+        "evidence_chunks": [
+          "line_azure",
+          "station_kestrel_green",
+          "station_dunmore_park",
+          "station_harbour_row",
+          "line_violet"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 511,
+        "output_tokens": 55,
+        "retrieval_latency_ms": 29.419,
+        "generation_latency_ms": 3852.606,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 511,
+            "output_tokens": 55,
+            "latency_ms": 3852.606
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What is the Sunday headway on the Azure Line?",
+          "retrieved": [
+            "line_azure",
+            "station_kestrel_green",
+            "station_dunmore_park",
+            "station_harbour_row",
+            "line_violet"
+          ],
+          "new_evidence": [
+            "line_azure",
+            "station_kestrel_green",
+            "station_dunmore_park",
+            "station_harbour_row",
+            "line_violet"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: What is the Sunday headway on the Azure Line?\nEvidence:\n[1] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.\n[2] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.\n[3] (station_dunmore_park) Dunmore Park is a terminus on the Azure Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Harbour Row and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014.\n[4] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.\n[5] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1005": {
+      "architecture": "A",
+      "id": 1005,
+      "case": "R1a",
+      "question": "What is the top speed of the Series 400 four-car sets?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1a",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": null,
+        "received_node_ids": [
+          "line_amber",
+          "line_azure",
+          "line_crimson",
+          "line_slate",
+          "line_violet"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "line_azure"
+        ],
+        "evidence_chunks": [
+          "line_crimson",
+          "line_slate",
+          "line_violet",
+          "line_azure",
+          "line_amber"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 535,
+        "output_tokens": 38,
+        "retrieval_latency_ms": 58.122,
+        "generation_latency_ms": 4440.157,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 535,
+            "output_tokens": 38,
+            "latency_ms": 4440.157
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What is the top speed of the Series 400 four-car sets?",
+          "retrieved": [
+            "line_crimson",
+            "line_slate",
+            "line_violet",
+            "line_azure",
+            "line_amber"
+          ],
+          "new_evidence": [
+            "line_crimson",
+            "line_slate",
+            "line_violet",
+            "line_azure",
+            "line_amber"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: What is the top speed of the Series 400 four-car sets?\nEvidence:\n[1] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.\n[2] (line_slate) The Slate Line runs from Elmsworth to Juniper Row, calling at Fallowfield, Glasshouse, Hartsmere, Ivory Dock. It is operated with Series 200 heritage sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.\n[3] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.\n[4] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.\n[5] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1006": {
+      "architecture": "A",
+      "id": 1006,
+      "case": "R1a",
+      "question": "How many platforms does Thornwick Junction have?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1a",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": null,
+        "received_node_ids": [
+          "station_eastgate_quay",
+          "station_elmsworth",
+          "station_jubilee_fields",
+          "station_quarry_side",
+          "station_yarrow_cross"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [],
+        "evidence_chunks": [
+          "station_eastgate_quay",
+          "station_jubilee_fields",
+          "station_elmsworth",
+          "station_yarrow_cross",
+          "station_quarry_side"
+        ],
+        "coverage": null,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 494,
+        "output_tokens": 29,
+        "retrieval_latency_ms": 87.879,
+        "generation_latency_ms": 3589.756,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 494,
+            "output_tokens": 29,
+            "latency_ms": 3589.756
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Thornwick Junction have?",
+          "retrieved": [
+            "station_eastgate_quay",
+            "station_jubilee_fields",
+            "station_elmsworth",
+            "station_yarrow_cross",
+            "station_quarry_side"
+          ],
+          "new_evidence": [
+            "station_eastgate_quay",
+            "station_jubilee_fields",
+            "station_elmsworth",
+            "station_yarrow_cross",
+            "station_quarry_side"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: How many platforms does Thornwick Junction have?\nEvidence:\n[1] (station_eastgate_quay) Eastgate Quay is a terminus on the Crimson Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Eastgate Quay and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.\n[2] (station_jubilee_fields) Jubilee Fields is a terminus on the Crimson Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Eastgate Quay and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014.\n[3] (station_elmsworth) Elmsworth is a terminus on the Slate Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Elmsworth and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.\n[4] (station_yarrow_cross) Yarrow Cross is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Westmere and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.\n[5] (station_quarry_side) Quarry Side is a terminus on the Amber Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Quarry Side and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1007": {
+      "architecture": "A",
+      "id": 1007,
+      "case": "R1a",
+      "question": "Which maintenance procedure covers the QZ-900 signalling relay?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1a",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": null,
+        "received_node_ids": [
+          "equipment_SG-12",
+          "procedure_MP-109",
+          "procedure_MP-110",
+          "procedure_MP-119",
+          "role_signalling_technician"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [],
+        "evidence_chunks": [
+          "procedure_MP-119",
+          "procedure_MP-109",
+          "equipment_SG-12",
+          "procedure_MP-110",
+          "role_signalling_technician"
+        ],
+        "coverage": null,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 528,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 53.954,
+        "generation_latency_ms": 3625.003,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 528,
+            "output_tokens": 41,
+            "latency_ms": 3625.003
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedure covers the QZ-900 signalling relay?",
+          "retrieved": [
+            "procedure_MP-119",
+            "procedure_MP-109",
+            "equipment_SG-12",
+            "procedure_MP-110",
+            "role_signalling_technician"
+          ],
+          "new_evidence": [
+            "procedure_MP-119",
+            "procedure_MP-109",
+            "equipment_SG-12",
+            "procedure_MP-110",
+            "role_signalling_technician"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedure covers the QZ-900 signalling relay?\nEvidence:\n[1] (procedure_MP-119) Maintenance procedure MP-119: Transmitter oscillator substitution. Applies to the TC-6 track circuit transmitter. Scheduled on condition. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-118, which is withdrawn from the maintenance plan.\n[2] (procedure_MP-109) Maintenance procedure MP-109: Interlocking relay contact inspection. Applies to the SG-12 signal interlocking relay. Scheduled every 28 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes.\n[3] (equipment_SG-12) The SG-12 signal interlocking relay is fitted across the fleet and in fixed installations. Its dominant failure mode is contact welding, which presents as a relay that fails to drop out after de-energising. A SG-12 unit has a design life of 8 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group SG12G.\n[4] (procedure_MP-110) Maintenance procedure MP-110: Relay drop-out timing audit. Applies to the SG-12 signal interlocking relay. Scheduled every 365 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes.\n[5] (role_signalling_technician) The signalling maintenance technician owns 4 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 6 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1008": {
+      "architecture": "A",
+      "id": 1008,
+      "case": "R1a",
+      "question": "When was authorisation policy PL-Z issued?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1a",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": null,
+        "received_node_ids": [
+          "policy_PL-A",
+          "policy_PL-D",
+          "policy_PL-H",
+          "policy_PL-I",
+          "policy_PL-L"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [],
+        "evidence_chunks": [
+          "policy_PL-L",
+          "policy_PL-I",
+          "policy_PL-D",
+          "policy_PL-H",
+          "policy_PL-A"
+        ],
+        "coverage": null,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 564,
+        "output_tokens": 33,
+        "retrieval_latency_ms": 22.768,
+        "generation_latency_ms": 562.378,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 564,
+            "output_tokens": 33,
+            "latency_ms": 562.378
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "When was authorisation policy PL-Z issued?",
+          "retrieved": [
+            "policy_PL-L",
+            "policy_PL-I",
+            "policy_PL-D",
+            "policy_PL-H",
+            "policy_PL-A"
+          ],
+          "new_evidence": [
+            "policy_PL-L",
+            "policy_PL-I",
+            "policy_PL-D",
+            "policy_PL-H",
+            "policy_PL-A"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: When was authorisation policy PL-Z issued?\nEvidence:\n[1] (policy_PL-L) Authorisation policy PL-L, Degraded Mode Authorisation, governs procedures carried out while service is running. A named holder of PL-L must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 3 maintenance procedures. Withdrawal of PL-L suspends every procedure it covers until a new holder is appointed.\n[2] (policy_PL-I) Authorisation policy PL-I, Tunnel Environment Authorisation, governs work on tunnel ventilation and smoke control. A named holder of PL-I must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 1 maintenance procedures. Withdrawal of PL-I suspends every procedure it covers until a new holder is appointed.\n[3] (policy_PL-D) Authorisation policy PL-D, Signalling Safety Authorisation, governs work inside a signalling interlocking. A named holder of PL-D must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-D suspends every procedure it covers until a new holder is appointed.\n[4] (policy_PL-H) Authorisation policy PL-H, Low Voltage Authorisation, governs work on battery and auxiliary supplies. A named holder of PL-H must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 1 maintenance procedures. Withdrawal of PL-H suspends every procedure it covers until a new holder is appointed.\n[5] (policy_PL-A) Authorisation policy PL-A, Traction Maintenance Authorisation, governs work on propulsion and current collection assets. A named holder of PL-A must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-A suspends every procedure it covers until a new holder is appointed.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1009": {
+      "architecture": "A",
+      "id": 1009,
+      "case": "R1b",
+      "question": "How many platforms does Harbour Row have, and how many car parking spaces does it have?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1b",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": {
+          "kind": "predicates",
+          "predicates": {
+            "platforms": false
+          },
+          "satisfied": 0,
+          "total": 1,
+          "fraction_satisfied": 0.0,
+          "all_satisfied": false,
+          "correct": false
+        },
+        "answerable_part_correct": false,
+        "masked_truth": null,
+        "received_node_ids": [
+          "station_brickworks",
+          "station_eastgate_quay",
+          "station_harbour_row",
+          "station_ivory_dock",
+          "station_juniper_row"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "station_harbour_row"
+        ],
+        "evidence_chunks": [
+          "station_harbour_row",
+          "station_eastgate_quay",
+          "station_ivory_dock",
+          "station_brickworks",
+          "station_juniper_row"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 503,
+        "output_tokens": 36,
+        "retrieval_latency_ms": 14.076,
+        "generation_latency_ms": 3658.086,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 503,
+            "output_tokens": 36,
+            "latency_ms": 3658.086
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many platforms does Harbour Row have, and how many car parking spaces does it have?",
+          "retrieved": [
+            "station_harbour_row",
+            "station_eastgate_quay",
+            "station_ivory_dock",
+            "station_brickworks",
+            "station_juniper_row"
+          ],
+          "new_evidence": [
+            "station_harbour_row",
+            "station_eastgate_quay",
+            "station_ivory_dock",
+            "station_brickworks",
+            "station_juniper_row"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: How many platforms does Harbour Row have, and how many car parking spaces does it have?\nEvidence:\n[1] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.\n[2] (station_eastgate_quay) Eastgate Quay is a terminus on the Crimson Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Eastgate Quay and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.\n[3] (station_ivory_dock) Ivory Dock is a through station on the Slate Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Elmsworth and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013.\n[4] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012.\n[5] (station_juniper_row) Juniper Row is a terminus on the Slate Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Elmsworth and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1010": {
+      "architecture": "A",
+      "id": 1010,
+      "case": "R1b",
+      "question": "In what year was Kestrel Green last refurbished, and who is its station manager?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1b",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": {
+          "kind": "predicates",
+          "predicates": {
+            "refurbished_year": false
+          },
+          "satisfied": 0,
+          "total": 1,
+          "fraction_satisfied": 0.0,
+          "all_satisfied": false,
+          "correct": false
+        },
+        "answerable_part_correct": false,
+        "masked_truth": null,
+        "received_node_ids": [
+          "bulletin_17",
+          "bulletin_18",
+          "incident_2026_02",
+          "incident_2026_07",
+          "station_kestrel_green"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "station_kestrel_green"
+        ],
+        "evidence_chunks": [
+          "station_kestrel_green",
+          "incident_2026_02",
+          "bulletin_17",
+          "incident_2026_07",
+          "bulletin_18"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 535,
+        "output_tokens": 42,
+        "retrieval_latency_ms": 25.524,
+        "generation_latency_ms": 3715.065,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 535,
+            "output_tokens": 42,
+            "latency_ms": 3715.065
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "In what year was Kestrel Green last refurbished, and who is its station manager?",
+          "retrieved": [
+            "station_kestrel_green",
+            "incident_2026_02",
+            "bulletin_17",
+            "incident_2026_07",
+            "bulletin_18"
+          ],
+          "new_evidence": [
+            "station_kestrel_green",
+            "incident_2026_02",
+            "bulletin_17",
+            "incident_2026_07",
+            "bulletin_18"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: In what year was Kestrel Green last refurbished, and who is its station manager?\nEvidence:\n[1] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.\n[2] (incident_2026_02) Service incident 2026/02 on 2026-02-07: trains were held at Kestrel Green on the Azure Line for 15 minutes after a HV-21 pantograph head suffered a carbon strip fracture. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[3] (bulletin_17) Station retail licensing update, quarter 2 of 2026, reference B017. The authority confirms that retail arrangements were reviewed by the customer committee, with 46 responses received and 8 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.\n[4] (incident_2026_07) Service incident 2026/07 on 2026-07-22: trains were held at Eastgate Quay on the Crimson Line for 35 minutes after a CP-55 compressor module suffered a pressure bleed-down. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[5] (bulletin_18) Station retail licensing update, quarter 3 of 2026, reference B018. The authority confirms that retail arrangements were reviewed by the customer committee, with 48 responses received and 3 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1011": {
+      "architecture": "A",
+      "id": 1011,
+      "case": "R1b",
+      "question": "What is the morning peak headway on the Azure Line, and what is its Sunday headway?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1b",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": {
+          "kind": "predicates",
+          "predicates": {
+            "morning_peak_headway_minutes": false
+          },
+          "satisfied": 0,
+          "total": 1,
+          "fraction_satisfied": 0.0,
+          "all_satisfied": false,
+          "correct": false
+        },
+        "answerable_part_correct": false,
+        "masked_truth": null,
+        "received_node_ids": [
+          "line_azure",
+          "line_violet",
+          "station_dunmore_park",
+          "station_harbour_row",
+          "station_kestrel_green"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "line_azure"
+        ],
+        "evidence_chunks": [
+          "line_azure",
+          "station_dunmore_park",
+          "line_violet",
+          "station_kestrel_green",
+          "station_harbour_row"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 520,
+        "output_tokens": 53,
+        "retrieval_latency_ms": 21.213,
+        "generation_latency_ms": 585.984,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 520,
+            "output_tokens": 53,
+            "latency_ms": 585.984
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What is the morning peak headway on the Azure Line, and what is its Sunday headway?",
+          "retrieved": [
+            "line_azure",
+            "station_dunmore_park",
+            "line_violet",
+            "station_kestrel_green",
+            "station_harbour_row"
+          ],
+          "new_evidence": [
+            "line_azure",
+            "station_dunmore_park",
+            "line_violet",
+            "station_kestrel_green",
+            "station_harbour_row"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: What is the morning peak headway on the Azure Line, and what is its Sunday headway?\nEvidence:\n[1] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.\n[2] (station_dunmore_park) Dunmore Park is a terminus on the Azure Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Harbour Row and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014.\n[3] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak.\n[4] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010.\n[5] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1012": {
+      "architecture": "A",
+      "id": 1012,
+      "case": "R1b",
+      "question": "What is the design life of the TX-440 traction inverter, and what is the purchase price of one unit?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE.",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1b",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": {
+          "kind": "predicates",
+          "predicates": {
+            "design_life_years": false
+          },
+          "satisfied": 0,
+          "total": 1,
+          "fraction_satisfied": 0.0,
+          "all_satisfied": false,
+          "correct": false
+        },
+        "answerable_part_correct": false,
+        "masked_truth": null,
+        "received_node_ids": [
+          "equipment_TX-440",
+          "procedure_MP-101",
+          "procedure_MP-102",
+          "role_power_technician",
+          "role_traction_technician"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "equipment_TX-440"
+        ],
+        "evidence_chunks": [
+          "equipment_TX-440",
+          "procedure_MP-101",
+          "procedure_MP-102",
+          "role_traction_technician",
+          "role_power_technician"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 507,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 25.33,
+        "generation_latency_ms": 665.274,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 507,
+            "output_tokens": 41,
+            "latency_ms": 665.274
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "What is the design life of the TX-440 traction inverter, and what is the purchase price of one unit?",
+          "retrieved": [
+            "equipment_TX-440",
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "role_traction_technician",
+            "role_power_technician"
+          ],
+          "new_evidence": [
+            "equipment_TX-440",
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "role_traction_technician",
+            "role_power_technician"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: What is the design life of the TX-440 traction inverter, and what is the purchase price of one unit?\nEvidence:\n[1] (equipment_TX-440) The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G.\n[2] (procedure_MP-101) Maintenance procedure MP-101: Inverter phase balance verification. Applies to the TX-440 traction inverter. Scheduled every 90 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes.\n[3] (procedure_MP-102) Maintenance procedure MP-102: Inverter gate driver replacement. Applies to the TX-440 traction inverter. Scheduled on condition. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. This procedure supersedes MP-101, which is withdrawn from the maintenance plan.\n[4] (role_traction_technician) The night traction technician owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on nights.\n[5] (role_power_technician) The auxiliary power technician owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1013": {
+      "architecture": "A",
+      "id": 1013,
+      "case": "R1b",
+      "question": "How often is maintenance procedure MP-101 scheduled, and what does each visit cost?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1b",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": {
+          "kind": "predicates",
+          "predicates": {
+            "interval_days": false
+          },
+          "satisfied": 0,
+          "total": 1,
+          "fraction_satisfied": 0.0,
+          "all_satisfied": false,
+          "correct": false
+        },
+        "answerable_part_correct": false,
+        "masked_truth": null,
+        "received_node_ids": [
+          "procedure_MP-101",
+          "procedure_MP-113",
+          "procedure_MP-114",
+          "procedure_MP-116",
+          "procedure_MP-124"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "procedure_MP-101"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-113",
+          "procedure_MP-114",
+          "procedure_MP-101",
+          "procedure_MP-124",
+          "procedure_MP-116"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 534,
+        "output_tokens": 38,
+        "retrieval_latency_ms": 21.067,
+        "generation_latency_ms": 701.623,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 534,
+            "output_tokens": 38,
+            "latency_ms": 701.623
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How often is maintenance procedure MP-101 scheduled, and what does each visit cost?",
+          "retrieved": [
+            "procedure_MP-113",
+            "procedure_MP-114",
+            "procedure_MP-101",
+            "procedure_MP-124",
+            "procedure_MP-116"
+          ],
+          "new_evidence": [
+            "procedure_MP-113",
+            "procedure_MP-114",
+            "procedure_MP-101",
+            "procedure_MP-124",
+            "procedure_MP-116"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: How often is maintenance procedure MP-101 scheduled, and what does each visit cost?\nEvidence:\n[1] (procedure_MP-113) Maintenance procedure MP-113: Compressor valve plate overhaul. Applies to the CP-55 compressor module. Scheduled every 200 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 55 minutes.\n[2] (procedure_MP-114) Maintenance procedure MP-114: Reservoir leak-rate measurement. Applies to the CP-55 compressor module. Scheduled every 50 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 70 minutes.\n[3] (procedure_MP-101) Maintenance procedure MP-101: Inverter phase balance verification. Applies to the TX-440 traction inverter. Scheduled every 90 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes.\n[4] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan.\n[5] (procedure_MP-116) Maintenance procedure MP-116: Door obstacle force profiling. Applies to the DR-8 door engine actuator. Scheduled every 90 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 100 minutes.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1014": {
+      "architecture": "A",
+      "id": 1014,
+      "case": "R1b",
+      "question": "When was policy PL-A issued, and what is the annual budget for work under it?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1b",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": {
+          "kind": "predicates",
+          "predicates": {
+            "issued_year": false
+          },
+          "satisfied": 0,
+          "total": 1,
+          "fraction_satisfied": 0.0,
+          "all_satisfied": false,
+          "correct": false
+        },
+        "answerable_part_correct": false,
+        "masked_truth": null,
+        "received_node_ids": [
+          "policy_PL-A",
+          "policy_PL-C",
+          "policy_PL-F",
+          "policy_PL-I",
+          "policy_PL-J"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "policy_PL-A"
+        ],
+        "evidence_chunks": [
+          "policy_PL-F",
+          "policy_PL-A",
+          "policy_PL-C",
+          "policy_PL-I",
+          "policy_PL-J"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 576,
+        "output_tokens": 39,
+        "retrieval_latency_ms": 21.662,
+        "generation_latency_ms": 3747.594,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 576,
+            "output_tokens": 39,
+            "latency_ms": 3747.594
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "When was policy PL-A issued, and what is the annual budget for work under it?",
+          "retrieved": [
+            "policy_PL-F",
+            "policy_PL-A",
+            "policy_PL-C",
+            "policy_PL-I",
+            "policy_PL-J"
+          ],
+          "new_evidence": [
+            "policy_PL-F",
+            "policy_PL-A",
+            "policy_PL-C",
+            "policy_PL-I",
+            "policy_PL-J"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: When was policy PL-A issued, and what is the annual budget for work under it?\nEvidence:\n[1] (policy_PL-F) Authorisation policy PL-F, Pneumatics Authorisation, governs work on compressed air generation and storage. A named holder of PL-F must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-F suspends every procedure it covers until a new holder is appointed.\n[2] (policy_PL-A) Authorisation policy PL-A, Traction Maintenance Authorisation, governs work on propulsion and current collection assets. A named holder of PL-A must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-A suspends every procedure it covers until a new holder is appointed.\n[3] (policy_PL-C) Authorisation policy PL-C, Platform Interface Authorisation, governs work on the platform-train interface. A named holder of PL-C must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-C suspends every procedure it covers until a new holder is appointed.\n[4] (policy_PL-I) Authorisation policy PL-I, Tunnel Environment Authorisation, governs work on tunnel ventilation and smoke control. A named holder of PL-I must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 1 maintenance procedures. Withdrawal of PL-I suspends every procedure it covers until a new holder is appointed.\n[5] (policy_PL-J) Authorisation policy PL-J, Fixed Plant Authorisation, governs work on escalators, lifts and platform lighting. A named holder of PL-J must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-J suspends every procedure it covers until a new holder is appointed.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1015": {
+      "architecture": "A",
+      "id": 1015,
+      "case": "R1b",
+      "question": "How many entries does Alder Vale record on a typical weekday, and how many on a typical Sunday?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1b",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": {
+          "kind": "predicates",
+          "predicates": {
+            "weekday_entries_thousand": false
+          },
+          "satisfied": 0,
+          "total": 1,
+          "fraction_satisfied": 0.0,
+          "all_satisfied": false,
+          "correct": false
+        },
+        "answerable_part_correct": false,
+        "masked_truth": null,
+        "received_node_ids": [
+          "bulletin_10",
+          "bulletin_11",
+          "station_alder_vale",
+          "station_ashfen",
+          "station_oakhurst"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "station_alder_vale"
+        ],
+        "evidence_chunks": [
+          "station_alder_vale",
+          "station_oakhurst",
+          "station_ashfen",
+          "bulletin_10",
+          "bulletin_11"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 501,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 22.476,
+        "generation_latency_ms": 4568.361,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 501,
+            "output_tokens": 41,
+            "latency_ms": 4568.361
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "How many entries does Alder Vale record on a typical weekday, and how many on a typical Sunday?",
+          "retrieved": [
+            "station_alder_vale",
+            "station_oakhurst",
+            "station_ashfen",
+            "bulletin_10",
+            "bulletin_11"
+          ],
+          "new_evidence": [
+            "station_alder_vale",
+            "station_oakhurst",
+            "station_ashfen",
+            "bulletin_10",
+            "bulletin_11"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: How many entries does Alder Vale record on a typical weekday, and how many on a typical Sunday?\nEvidence:\n[1] (station_alder_vale) Alder Vale is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Harbour Row and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.\n[2] (station_oakhurst) Oakhurst is a through station on the Jade Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Kingsmoor and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013.\n[3] (station_ashfen) Ashfen is a through station on the Violet Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Westmere and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.\n[4] (bulletin_10) Staff newsletter extract, quarter 1 of 2026, reference B010. The authority confirms that staff news arrangements were reviewed by the customer committee, with 32 responses received and 7 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.\n[5] (bulletin_11) Staff newsletter extract, quarter 2 of 2026, reference B011. The authority confirms that staff news arrangements were reviewed by the customer committee, with 34 responses received and 8 actions carried forward. Nothing in this bulletin alters engineering standards, maintenance intervals or the authorisation framework. Enquiries go to the communications desk.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1016": {
+      "architecture": "A",
+      "id": 1016,
+      "case": "R1b",
+      "question": "For how many minutes were trains held at Harbour Row in incident 2026/01, and what did the delay cost the authority?",
+      "mask": [],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1b",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": {
+          "kind": "predicates",
+          "predicates": {
+            "minutes_held": false
+          },
+          "satisfied": 0,
+          "total": 1,
+          "fraction_satisfied": 0.0,
+          "all_satisfied": false,
+          "correct": false
+        },
+        "answerable_part_correct": false,
+        "masked_truth": null,
+        "received_node_ids": [
+          "incident_2026_01",
+          "incident_2026_04",
+          "incident_2026_05",
+          "incident_2026_07",
+          "incident_2026_08"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "incident_2026_01"
+        ],
+        "evidence_chunks": [
+          "incident_2026_01",
+          "incident_2026_04",
+          "incident_2026_07",
+          "incident_2026_08",
+          "incident_2026_05"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 573,
+        "output_tokens": 34,
+        "retrieval_latency_ms": 17.955,
+        "generation_latency_ms": 4728.271,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 573,
+            "output_tokens": 34,
+            "latency_ms": 4728.271
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "For how many minutes were trains held at Harbour Row in incident 2026/01, and what did the delay cost the authority?",
+          "retrieved": [
+            "incident_2026_01",
+            "incident_2026_04",
+            "incident_2026_07",
+            "incident_2026_08",
+            "incident_2026_05"
+          ],
+          "new_evidence": [
+            "incident_2026_01",
+            "incident_2026_04",
+            "incident_2026_07",
+            "incident_2026_08",
+            "incident_2026_05"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: For how many minutes were trains held at Harbour Row in incident 2026/01, and what did the delay cost the authority?\nEvidence:\n[1] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[2] (incident_2026_04) Service incident 2026/04 on 2026-04-13: trains were held at Brickworks on the Azure Line for 23 minutes after a PD-90 platform screen door controller suffered a obstruction sensor drift. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[3] (incident_2026_07) Service incident 2026/07 on 2026-07-22: trains were held at Eastgate Quay on the Crimson Line for 35 minutes after a CP-55 compressor module suffered a pressure bleed-down. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[4] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[5] (incident_2026_05) Service incident 2026/05 on 2026-05-16: trains were held at Copper Lane on the Azure Line for 27 minutes after a SG-12 signal interlocking relay suffered a contact welding. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1017": {
+      "architecture": "A",
+      "id": 1017,
+      "case": "R1c",
+      "question": "Which maintenance procedures cover the fault that stopped service at Harbour Row?",
+      "mask": [
+        "procedure_MP-101",
+        "procedure_MP-102"
+      ],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1c",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": {
+          "expected": [
+            "MP-101",
+            "MP-102"
+          ],
+          "named": [],
+          "named_any": false,
+          "visible_in_links": [],
+          "exposed": false
+        },
+        "received_node_ids": [
+          "incident_2026_01",
+          "incident_2026_04",
+          "incident_2026_07",
+          "incident_2026_08",
+          "station_harbour_row"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "equipment_TX-440",
+          "incident_2026_01"
+        ],
+        "evidence_chunks": [
+          "incident_2026_01",
+          "station_harbour_row",
+          "incident_2026_07",
+          "incident_2026_04",
+          "incident_2026_08"
+        ],
+        "coverage": 0.5,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 545,
+        "output_tokens": 44,
+        "retrieval_latency_ms": 18.071,
+        "generation_latency_ms": 4776.268,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 545,
+            "output_tokens": 44,
+            "latency_ms": 4776.268
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Harbour Row?",
+          "retrieved": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "incident_2026_07",
+            "incident_2026_04",
+            "incident_2026_08"
+          ],
+          "new_evidence": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "incident_2026_07",
+            "incident_2026_04",
+            "incident_2026_08"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Harbour Row?\nEvidence:\n[1] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[2] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009.\n[3] (incident_2026_07) Service incident 2026/07 on 2026-07-22: trains were held at Eastgate Quay on the Crimson Line for 35 minutes after a CP-55 compressor module suffered a pressure bleed-down. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[4] (incident_2026_04) Service incident 2026/04 on 2026-04-13: trains were held at Brickworks on the Azure Line for 23 minutes after a PD-90 platform screen door controller suffered a obstruction sensor drift. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[5] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1018": {
+      "architecture": "A",
+      "id": 1018,
+      "case": "R1c",
+      "question": "Which maintenance procedures cover the fault that stopped service at Copper Lane?",
+      "mask": [
+        "procedure_MP-109",
+        "procedure_MP-110"
+      ],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1c",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": {
+          "expected": [
+            "MP-109",
+            "MP-110"
+          ],
+          "named": [],
+          "named_any": false,
+          "visible_in_links": [],
+          "exposed": false
+        },
+        "received_node_ids": [
+          "incident_2026_05",
+          "incident_2026_08",
+          "incident_2026_19",
+          "incident_2026_22",
+          "station_copper_lane"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "equipment_SG-12",
+          "incident_2026_05"
+        ],
+        "evidence_chunks": [
+          "station_copper_lane",
+          "incident_2026_05",
+          "incident_2026_08",
+          "incident_2026_22",
+          "incident_2026_19"
+        ],
+        "coverage": 0.5,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 544,
+        "output_tokens": 63,
+        "retrieval_latency_ms": 17.681,
+        "generation_latency_ms": 4913.215,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 544,
+            "output_tokens": 63,
+            "latency_ms": 4913.215
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Copper Lane?",
+          "retrieved": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "incident_2026_08",
+            "incident_2026_22",
+            "incident_2026_19"
+          ],
+          "new_evidence": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "incident_2026_08",
+            "incident_2026_22",
+            "incident_2026_19"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Copper Lane?\nEvidence:\n[1] (station_copper_lane) Copper Lane is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Harbour Row and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013.\n[2] (incident_2026_05) Service incident 2026/05 on 2026-05-16: trains were held at Copper Lane on the Azure Line for 27 minutes after a SG-12 signal interlocking relay suffered a contact welding. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[3] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[4] (incident_2026_22) Service incident 2026/22 on 2026-10-13: trains were held at Thistlebank on the Amber Line for 42 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[5] (incident_2026_19) Service incident 2026/19 on 2026-07-04: trains were held at Quarry Side on the Amber Line for 30 minutes after a SG-12 signal interlocking relay suffered a contact welding. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1019": {
+      "architecture": "A",
+      "id": 1019,
+      "case": "R1c",
+      "question": "Which maintenance procedures cover the fault that stopped service at Garnet Hill?",
+      "mask": [
+        "procedure_MP-117"
+      ],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1c",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": {
+          "expected": [
+            "MP-117"
+          ],
+          "named": [],
+          "named_any": false,
+          "visible_in_links": [],
+          "exposed": false
+        },
+        "received_node_ids": [
+          "incident_2026_06",
+          "incident_2026_09",
+          "incident_2026_12",
+          "incident_2026_13",
+          "station_garnet_hill"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "equipment_PS-19",
+          "incident_2026_09"
+        ],
+        "evidence_chunks": [
+          "incident_2026_09",
+          "station_garnet_hill",
+          "incident_2026_13",
+          "incident_2026_12",
+          "incident_2026_06"
+        ],
+        "coverage": 0.5,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 548,
+        "output_tokens": 44,
+        "retrieval_latency_ms": 15.606,
+        "generation_latency_ms": 816.678,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 548,
+            "output_tokens": 44,
+            "latency_ms": 816.678
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Garnet Hill?",
+          "retrieved": [
+            "incident_2026_09",
+            "station_garnet_hill",
+            "incident_2026_13",
+            "incident_2026_12",
+            "incident_2026_06"
+          ],
+          "new_evidence": [
+            "incident_2026_09",
+            "station_garnet_hill",
+            "incident_2026_13",
+            "incident_2026_12",
+            "incident_2026_06"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Garnet Hill?\nEvidence:\n[1] (incident_2026_09) Service incident 2026/09 on 2026-09-01: trains were held at Garnet Hill on the Crimson Line for 43 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 2 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[2] (station_garnet_hill) Garnet Hill is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Eastgate Quay and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011.\n[3] (incident_2026_13) Service incident 2026/13 on 2026-01-13: trains were held at Kingsmoor on the Jade Line for 59 minutes after a LT-77 lighting ballast suffered a flicker cascade. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[4] (incident_2026_12) Service incident 2026/12 on 2026-12-10: trains were held at Jubilee Fields on the Crimson Line for 55 minutes after a ES-14 escalator drive chain suffered a elongation wear. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[5] (incident_2026_06) Service incident 2026/06 on 2026-06-19: trains were held at Dunmore Park on the Azure Line for 31 minutes after a AX-3 axle bearing assembly suffered a thermal spike. 8 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1020": {
+      "architecture": "A",
+      "id": 1020,
+      "case": "R1c",
+      "question": "Which maintenance procedures cover the fault that stopped service at Ironside?",
+      "mask": [
+        "procedure_MP-120"
+      ],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1c",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": {
+          "expected": [
+            "MP-120"
+          ],
+          "named": [],
+          "named_any": false,
+          "visible_in_links": [],
+          "exposed": false
+        },
+        "received_node_ids": [
+          "incident_2026_03",
+          "incident_2026_07",
+          "incident_2026_08",
+          "incident_2026_11",
+          "station_ironside"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "equipment_VE-31",
+          "incident_2026_11"
+        ],
+        "evidence_chunks": [
+          "incident_2026_11",
+          "station_ironside",
+          "incident_2026_08",
+          "incident_2026_03",
+          "incident_2026_07"
+        ],
+        "coverage": 0.5,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 549,
+        "output_tokens": 45,
+        "retrieval_latency_ms": 17.396,
+        "generation_latency_ms": 589.19,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 549,
+            "output_tokens": 45,
+            "latency_ms": 589.19
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Ironside?",
+          "retrieved": [
+            "incident_2026_11",
+            "station_ironside",
+            "incident_2026_08",
+            "incident_2026_03",
+            "incident_2026_07"
+          ],
+          "new_evidence": [
+            "incident_2026_11",
+            "station_ironside",
+            "incident_2026_08",
+            "incident_2026_03",
+            "incident_2026_07"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Ironside?\nEvidence:\n[1] (incident_2026_11) Service incident 2026/11 on 2026-11-07: trains were held at Ironside on the Crimson Line for 51 minutes after a VE-31 tunnel ventilation fan suffered a blade imbalance. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[2] (station_ironside) Ironside is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Eastgate Quay and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013.\n[3] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[4] (incident_2026_03) Service incident 2026/03 on 2026-03-10: trains were held at Alder Vale on the Azure Line for 19 minutes after a BR-7 regenerative brake unit suffered a resistor grid overheat. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[5] (incident_2026_07) Service incident 2026/07 on 2026-07-22: trains were held at Eastgate Quay on the Crimson Line for 35 minutes after a CP-55 compressor module suffered a pressure bleed-down. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1021": {
+      "architecture": "A",
+      "id": 1021,
+      "case": "R1c",
+      "question": "Which authorisation is needed to carry out inverter phase balance verification on the TX-440?",
+      "mask": [
+        "policy_PL-A"
+      ],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1c",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": {
+          "expected": [
+            "PL-A"
+          ],
+          "named": [],
+          "named_any": false,
+          "visible_in_links": [],
+          "exposed": false
+        },
+        "received_node_ids": [
+          "equipment_TX-440",
+          "incident_2026_01",
+          "incident_2026_15",
+          "procedure_MP-101",
+          "procedure_MP-102"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "procedure_MP-101"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-101",
+          "equipment_TX-440",
+          "procedure_MP-102",
+          "incident_2026_01",
+          "incident_2026_15"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 555,
+        "output_tokens": 35,
+        "retrieval_latency_ms": 22.291,
+        "generation_latency_ms": 636.963,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 555,
+            "output_tokens": 35,
+            "latency_ms": 636.963
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out inverter phase balance verification on the TX-440?",
+          "retrieved": [
+            "procedure_MP-101",
+            "equipment_TX-440",
+            "procedure_MP-102",
+            "incident_2026_01",
+            "incident_2026_15"
+          ],
+          "new_evidence": [
+            "procedure_MP-101",
+            "equipment_TX-440",
+            "procedure_MP-102",
+            "incident_2026_01",
+            "incident_2026_15"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which authorisation is needed to carry out inverter phase balance verification on the TX-440?\nEvidence:\n[1] (procedure_MP-101) Maintenance procedure MP-101: Inverter phase balance verification. Applies to the TX-440 traction inverter. Scheduled every 90 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes.\n[2] (equipment_TX-440) The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G.\n[3] (procedure_MP-102) Maintenance procedure MP-102: Inverter gate driver replacement. Applies to the TX-440 traction inverter. Scheduled on condition. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. This procedure supersedes MP-101, which is withdrawn from the maintenance plan.\n[4] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[5] (incident_2026_15) Service incident 2026/15 on 2026-03-19: trains were held at Mallow Street on the Jade Line for 14 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 8 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1022": {
+      "architecture": "A",
+      "id": 1022,
+      "case": "R1c",
+      "question": "Which authorisation is needed to carry out pantograph carbon strip renewal on the HV-21?",
+      "mask": [
+        "policy_PL-A"
+      ],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1c",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": {
+          "expected": [
+            "PL-A"
+          ],
+          "named": [],
+          "named_any": false,
+          "visible_in_links": [],
+          "exposed": false
+        },
+        "received_node_ids": [
+          "equipment_HV-21",
+          "incident_2026_02",
+          "policy_PL-H",
+          "procedure_MP-103",
+          "procedure_MP-104"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "procedure_MP-103"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-103",
+          "equipment_HV-21",
+          "procedure_MP-104",
+          "incident_2026_02",
+          "policy_PL-H"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 551,
+        "output_tokens": 52,
+        "retrieval_latency_ms": 14.719,
+        "generation_latency_ms": 4740.769,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 551,
+            "output_tokens": 52,
+            "latency_ms": 4740.769
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out pantograph carbon strip renewal on the HV-21?",
+          "retrieved": [
+            "procedure_MP-103",
+            "equipment_HV-21",
+            "procedure_MP-104",
+            "incident_2026_02",
+            "policy_PL-H"
+          ],
+          "new_evidence": [
+            "procedure_MP-103",
+            "equipment_HV-21",
+            "procedure_MP-104",
+            "incident_2026_02",
+            "policy_PL-H"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which authorisation is needed to carry out pantograph carbon strip renewal on the HV-21?\nEvidence:\n[1] (procedure_MP-103) Maintenance procedure MP-103: Pantograph carbon strip renewal. Applies to the HV-21 pantograph head. Scheduled every 45 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes.\n[2] (equipment_HV-21) The HV-21 pantograph head is fitted across the fleet and in fixed installations. Its dominant failure mode is carbon strip fracture, which presents as a sudden loss of overhead contact force. A HV-21 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group HV21G.\n[3] (procedure_MP-104) Maintenance procedure MP-104: Pantograph contact force calibration. Applies to the HV-21 pantograph head. Scheduled every 180 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 130 minutes.\n[4] (incident_2026_02) Service incident 2026/02 on 2026-02-07: trains were held at Kestrel Green on the Azure Line for 15 minutes after a HV-21 pantograph head suffered a carbon strip fracture. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[5] (policy_PL-H) Authorisation policy PL-H, Low Voltage Authorisation, governs work on battery and auxiliary supplies. A named holder of PL-H must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 1 maintenance procedures. Withdrawal of PL-H suspends every procedure it covers until a new holder is appointed.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1023": {
+      "architecture": "A",
+      "id": 1023,
+      "case": "R1c",
+      "question": "Which authorisation is needed to carry out brake resistor grid thermal survey on the BR-7?",
+      "mask": [
+        "policy_PL-B"
+      ],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1c",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": {
+          "expected": [
+            "PL-B"
+          ],
+          "named": [],
+          "named_any": false,
+          "visible_in_links": [],
+          "exposed": false
+        },
+        "received_node_ids": [
+          "equipment_BR-7",
+          "incident_2026_03",
+          "incident_2026_17",
+          "procedure_MP-105",
+          "role_brake_specialist"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "procedure_MP-105"
+        ],
+        "evidence_chunks": [
+          "equipment_BR-7",
+          "procedure_MP-105",
+          "role_brake_specialist",
+          "incident_2026_17",
+          "incident_2026_03"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 533,
+        "output_tokens": 54,
+        "retrieval_latency_ms": 25.68,
+        "generation_latency_ms": 3766.149,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 533,
+            "output_tokens": 54,
+            "latency_ms": 3766.149
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out brake resistor grid thermal survey on the BR-7?",
+          "retrieved": [
+            "equipment_BR-7",
+            "procedure_MP-105",
+            "role_brake_specialist",
+            "incident_2026_17",
+            "incident_2026_03"
+          ],
+          "new_evidence": [
+            "equipment_BR-7",
+            "procedure_MP-105",
+            "role_brake_specialist",
+            "incident_2026_17",
+            "incident_2026_03"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which authorisation is needed to carry out brake resistor grid thermal survey on the BR-7?\nEvidence:\n[1] (equipment_BR-7) The BR-7 regenerative brake unit is fitted across the fleet and in fixed installations. Its dominant failure mode is resistor grid overheat, which presents as grid temperature above the 310 degree cut-out. A BR-7 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group BR7G.\n[2] (procedure_MP-105) Maintenance procedure MP-105: Brake resistor grid thermal survey. Applies to the BR-7 regenerative brake unit. Scheduled every 60 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes.\n[3] (role_brake_specialist) The brake systems specialist owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.\n[4] (incident_2026_17) Service incident 2026/17 on 2026-05-25: trains were held at Oakhurst on the Jade Line for 22 minutes after a BR-7 regenerative brake unit suffered a resistor grid overheat. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\n[5] (incident_2026_03) Service incident 2026/03 on 2026-03-10: trains were held at Alder Vale on the Azure Line for 19 minutes after a BR-7 regenerative brake unit suffered a resistor grid overheat. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    },
+    "1024": {
+      "architecture": "A",
+      "id": 1024,
+      "case": "R1c",
+      "question": "Which authorisation is needed to carry out brake chopper firmware refresh on the BR-7?",
+      "mask": [
+        "policy_PL-B"
+      ],
+      "answer": "INSUFFICIENT EVIDENCE",
+      "score": {
+        "scorer_version": "r1-score-1.0",
+        "case": "R1c",
+        "outcome": "correct_abstention",
+        "abstention_strict": true,
+        "abstention_lenient": true,
+        "lenient_patterns_matched": [
+          "\\binsufficient (?:evidence|information)\\b"
+        ],
+        "correct_abstention_strict": true,
+        "contains_unsupported_claim": false,
+        "named_identifiers": [],
+        "unsupported_identifiers": [],
+        "link_only_identifiers": [],
+        "identifier_supported": true,
+        "answerable_part": null,
+        "answerable_part_correct": null,
+        "masked_truth": {
+          "expected": [
+            "PL-B"
+          ],
+          "named": [],
+          "named_any": false,
+          "visible_in_links": [],
+          "exposed": false
+        },
+        "received_node_ids": [
+          "equipment_BR-7",
+          "policy_PL-D",
+          "procedure_MP-105",
+          "procedure_MP-106",
+          "role_brake_specialist"
+        ]
+      },
+      "evidence_coverage": {
+        "available_relevant": [
+          "procedure_MP-106"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-106",
+          "equipment_BR-7",
+          "procedure_MP-105",
+          "role_brake_specialist",
+          "policy_PL-D"
+        ],
+        "coverage": 1.0,
+        "masked_in_evidence": []
+      },
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 538,
+        "output_tokens": 69,
+        "retrieval_latency_ms": 18.329,
+        "generation_latency_ms": 3663.554,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 538,
+            "output_tokens": 69,
+            "latency_ms": 3663.554
+          }
+        }
+      },
+      "stop_reason": "step_budget_exhausted",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation is needed to carry out brake chopper firmware refresh on the BR-7?",
+          "retrieved": [
+            "procedure_MP-106",
+            "equipment_BR-7",
+            "procedure_MP-105",
+            "role_brake_specialist",
+            "policy_PL-D"
+          ],
+          "new_evidence": [
+            "procedure_MP-106",
+            "equipment_BR-7",
+            "procedure_MP-105",
+            "role_brake_specialist",
+            "policy_PL-D"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which authorisation is needed to carry out brake chopper firmware refresh on the BR-7?\nEvidence:\n[1] (procedure_MP-106) Maintenance procedure MP-106: Brake chopper firmware refresh. Applies to the BR-7 regenerative brake unit. Scheduled annually. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 55 minutes. This procedure supersedes MP-105, which is withdrawn from the maintenance plan.\n[2] (equipment_BR-7) The BR-7 regenerative brake unit is fitted across the fleet and in fixed installations. Its dominant failure mode is resistor grid overheat, which presents as grid temperature above the 310 degree cut-out. A BR-7 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group BR7G.\n[3] (procedure_MP-105) Maintenance procedure MP-105: Brake resistor grid thermal survey. Applies to the BR-7 regenerative brake unit. Scheduled every 60 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes.\n[4] (role_brake_specialist) The brake systems specialist owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.\n[5] (policy_PL-D) Authorisation policy PL-D, Signalling Safety Authorisation, governs work inside a signalling interlocking. A named holder of PL-D must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-D suspends every procedure it covers until a new holder is appointed.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ]
+    }
+  }
+}
