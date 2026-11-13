@@ -596,3 +596,199 @@ python -m experiments.robustness_r1_prime --phase replay
 python -m experiments.robustness_r1_prime --phase answers --variant ea --dataset r1 --provider groq --model openai/gpt-oss-120b --reasoning-effort low --resume
 python -m experiments.robustness_r1_prime --phase report
 ```
+
+---
+
+# Phase 3, R2: Incorrect graph relationships
+
+Preregistered in [PREREGISTRATION_R2.md](PREREGISTRATION_R2.md) (commit `3f0adeba`)
+before implementation. Corpus, document text, graph files, dataset v1.1, frozen
+retrieval config, loop 1.7 and all earlier results are unchanged (validation G1, G2).
+
+## Design
+
+Each query gets its own **in-memory corrupted copy** of the graph
+(`experiments/graph_corruption.py`). Retrievers are rebuilt on it, and nothing is
+persisted. Only relations the source text can verify are corrupted:
+- `caused_by`: the incident text names the equipment.
+- `maintained_by`/`maintains`: the procedure text says "Applies to the <code>".
+- `next_station`/`previous_station`: the line text lists the order.
+
+Forward and reverse edges change together.
+
+| Case | n | Corruption | Answerable | Expected |
+|---|---|---|---|---|
+| R2a cause | 6 | `caused_by` → wrong equipment | yes (incident text names the true code) | true code |
+| R2b two-hop | 8 | `maintained_by` → wrong procedures | yes (true procedure text exists) | true procedures |
+| R2c adjacency | 6 | one `next_station` → station on another line | yes (line text) | true neighbours |
+| R2d two-hop, spurious | 6 | one extra `maintained_by` | yes | true set only |
+| R2e unanswerable | 4 | true procedures masked, edge → readable wrong procedure | no | abstain |
+| R2f unanswerable | 2 | true procedures masked, edge → masked procedure | no | abstain |
+
+Validation (17 checks, all passed) confirmed three things:
+- **Clean graph matches the text.** On the clean graph all 82 checkable edges agree with the documents.
+- **Corruption is genuinely wrong.** Every corrupted edge contradicts the text, and every replaced edge agreed with it.
+- **The view reproduces Phase 2 when nothing is corrupted.** Rankings are identical on all 60 v1.1 queries.
+
+Conditions:
+- A, B2 and C use loop 1.7 with one step and grounding off.
+- D uses loop 1.7 with lean grounding.
+- D-gate is `gate-1.0` replayed on the text inside D's recorded prompts from the corrupted run.
+
+Groq `openai/gpt-oss-120b`, temperature 0, `reasoning_effort: low`.
+
+## Clean vs corrupted graph
+
+Retrieval, no LLM: share of queries whose top-5 ranking is identical to the clean graph.
+
+| | A | B2 | C |
+|---|---|---|---|
+| All 32 | **32/32** | 26/32 | 20/32 |
+| R2a cause | 6/6 | 6/6 | **0/6**: wrong equipment enters top 5 on 6/6 |
+| R2b, R2d (maintained_by) | 14/14 | 14/14 | 14/14 |
+| R2c adjacency | 6/6 | **0/6**: wrong station in top 5 on 6/6 | **0/6**: wrong station in top 5 on 6/6 |
+
+- **Retrieval changes.** R2a and R2c corruptions alter what graph-dependent retrieval returns.
+- **Prompt changes only.** R2b and R2d corruptions leave every ranking unchanged. They reach the model only through the `Links:` lines in the prompt.
+- **A is untouched.** It never reads the graph, so its rankings are identical in every case.
+
+Answers on the 22 R2 questions that are word-for-word v1.1 questions (Phase 2 clean-graph answers vs R2 corrupted):
+
+| | A | B2 | C | D |
+|---|---|---|---|---|
+| Clean graph (Phase 2) | 5/22 | 9/22 | 19/22 | **22/22** |
+| Corrupted graph (R2) | 5/22 | 2/22 | 3/22 | 7/22 |
+| Correct on clean, wrong on corrupted | 0 | 7 | 16 | 15 |
+
+## Results (32 queries; raw counts)
+
+| | A | B2 | C | D | D-gate |
+|---|---|---|---|---|---|
+| Accuracy, answerable (26) | 7/26 | 3/26 | 4/26 | **8/26** | 8/26 |
+| Correct abstention, unanswerable (6) | **6/6** | 5/6 | 0/6 | 0/6 | 2/6 |
+| Wrong answers | 1/32 | 10/32 | 25/32 | 24/32 | 22/32 |
+| … wrong id in links only | 0 | 5 | 17 | 2 | 0 |
+| … wrong id in links and in received text | 0 | 5 | 8 | 22 | 22 |
+| … wrong id in text only / neither | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| … no wrong entity (omission) | 1 | 0 | 0 | 0 | 0 |
+| Over-abstention (answerable, declined) | 18/32 | 14/32 | 3/32 | 0/32 | 0/32 |
+| Evidence coverage | 0.465 | 0.622 | 0.647 | 0.821 | 0.821 |
+| Input / output tokens per query | 541 / 62 | 648 / 70 | 657 / 88 | 1,002 / 162 | same as D |
+| Generation calls / retrieval calls | 1.0 / 1.0 | 1.0 / 1.0 | 1.0 / 1.0 | 1.59 / 1.09 | same as D |
+| Generation latency per query | 4.0 s | 5.0 s | 4.9 s | 8.2 s | same as D |
+
+**Every wrong answer from B2, C and D involves an identifier the corrupted graph
+put in a `Links:` line (59 of 59).** None came from text alone or from nowhere, so these are graph-caused
+errors, not ordinary model errors. A's single wrong answer is an omission.
+
+### Per case (outcome counts)
+
+| Case | A | B2 | C | D | D-gate |
+|---|---|---|---|---|---|
+| R2a cause (6) | **6 correct** | 3 correct, 2 mixed, 1 misled | 4 correct, 2 misled | 3 correct, 2 mixed, 1 misled | as D |
+| R2b two-hop (8) | 7 over-abst., 1 other | 8 over-abst. | 6 misled, 2 over-abst. | **2 correct**, 6 misled | as D |
+| R2c adjacency (6) | 1 correct, 5 over-abst. | 5 misled, 1 over-abst. | 6 misled | 6 misled | as D |
+| R2d spurious (6) | 6 over-abst. | 1 mixed, 5 over-abst. | 5 mixed, 1 over-abst. | **3 correct**, 3 mixed | as D |
+| R2e unanswerable, readable wrong target (4) | **4 abstain** | **4 abstain** | 4 misled | 4 misled | 4 misled |
+| R2f unanswerable, missing wrong target (2) | **2 abstain** | 1 abstain, 1 misled | 2 misled | 2 misled | **2 abstain** |
+
+## D-gate on the corrupted evidence
+
+| Gate effect | R2a | R2b | R2c | R2d | R2e | R2f | All |
+|---|---|---|---|---|---|---|---|
+| Blocked a wrong answer | 0 | 0 | 0 | 0 | 0 | **2** | 2 |
+| Passed a wrong answer | 3 | 6 | 6 | 3 | 4 | 0 | **22** |
+| Passed a correct answer | 3 | 2 | 0 | 3 | 0 | 0 | 8 |
+| Blocked a correct answer | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+All 22 wrong answers the gate passed have the wrong identifier in received text as
+well as in links. Most often this is the wrong target's own chunk, fetched by grounding
+(`wrong_target_text_received` on 22 of D's 24 wrong answers). **Identifier presence
+was taken as support although the text contradicts the relation.** The gate blocks only
+when the target text is unavailable (R2f), the failure it was built for in R1′. It
+never blocked a correct answer.
+
+## Comparisons
+
+| Comparison | Finding |
+|---|---|
+| **A vs B2** (graph dependence) | A ignores the graph and is never misled (0 wrong entities). Where the answer needs a hop, it declines instead (18 over-abstentions; the same 5/22 on clean and corrupted). B2 follows corrupted links: 10 wrong, and 7 questions correct on clean become wrong. |
+| **B2 vs C** (does hybrid help?) | No. C is misled more often (25 vs 10 wrong). Its vector seeds bring the corrupted equipment or station into evidence, and it declines less (3 vs 14 over-abstentions). 16 of C's 19 clean-graph successes become wrong. |
+| **C vs D** (does iteration help?) | Slightly. D answers 8/26 vs 4/26, recovering 2 R2b and 3 R2d answers by searching before the corrupted link was in view. Wrong answers are about the same (24 vs 25). On R2b, D and C are misled equally (6/8 each). D costs 1.5× the input tokens and 1.7× the latency. |
+| **D vs D-gate** (does gating help?) | Only for missing text: 2/2 R2f blocked, 0 of 22 contradicted-but-present relations blocked, 0 correct answers blocked. Unsupported claims fall from 2 to 0 (identifier support 30/32 to 32/32) while wrong answers fall only from 24 to 22. |
+| **Clean vs corrupted** | The corruption works through two paths. It changes retrieval (R2a, R2c: C's rankings differ on 12/12, wrong target in top 5) and it changes prompt links only (R2b, R2d: rankings identical). Graph-dependent accuracy collapses: D 22/22 to 7/22, C 19/22 to 3/22. A is unaffected. |
+
+## Predictions (preregistered)
+
+| | Prediction | Result |
+|---|---|---|
+| P1 | A's retrieval identical on corrupted and clean graph | **held**: 32/32 rankings identical; A's answers on matched questions 5/22 both |
+| P2 | C and D misled on ≥ half of R2b and R2c | **held**: C 6/8, 6/6; D 6/8, 6/6 |
+| P3 | D-gate passes graph-misled answers when the wrong target text was received; abstains on R2f | **held**: passed 22/22 such answers; blocked 2/2 R2f |
+| P4 | D misled less often than C on R2b | **not supported**: 6/8 each. D's advantage is 2 correct answers vs C's 2 over-abstentions |
+
+## Findings
+
+1. **The models trust graph links over document text.** In 59 of 59 wrong answers from
+   B2, C and D, the wrong identifier came from a corrupted `Links:` line. C answered
+   R2a 2004 and 2006 from the `caused_by` link although the incident text in the same
+   prompt names the true equipment.
+2. **D's grounding reads the contradiction and keeps the wrong answer.** In D 2007,
+   grounding fetched MP-107's text, which says "Applies to the PD-90". The answer still read
+   "MP-107 and MP-108 … linked to the TX-440", with only the wording changed. This holds
+   for 22 of D's 24 wrong answers.
+3. **The identifier gate cannot detect graph/document disagreement.** It verifies that
+   a cited node's text was read, not that the text states the relation. A
+   relation-level check, for example that a cited procedure's text says "Applies to <the
+   cited equipment>", would need its own preregistered experiment (R2′).
+4. **Vector-only retrieval is immune to graph corruption but cannot answer
+   relational questions.** A gives no wrong entities and abstains correctly on 6/6
+   unanswerable, but it over-abstains on 18 answerable questions. Graph evidence carries the
+   answer and the risk together.
+5. **D-gate should not be promoted on R2 evidence.** It is safe (0 correct answers
+   blocked) but adds no protection against wrong relations.
+
+## Deviations (all before freezing)
+
+- **D1:** item 2032's corrupt target changed from MP-101 to MP-121. MP-102's text
+  says it supersedes MP-101, so a masked MP-101 would have been reconstructable (G6).
+- **G1 scope:** Chroma rewrites its HNSW segment files whenever the store is opened,
+  in every earlier phase too. G1 hashes `chroma.sqlite3` (documents and ids), and the vector index
+  is covered by the corpus fingerprint (G2) and exact Phase 2 reproduction (G7).
+- **Report additions** (wrong-answer source, gate-effect labels, clean-graph controls)
+  were added after review and before freezing. Outcome rules, dataset, prompts and
+  corruption were unchanged.
+
+## Limitations
+
+- **Sample and model:** 32 queries (2–8 per case), one model, one run at temperature 0.
+- **The corruption is deliberate and visible.** Every wrong edge contradicts readable text. Real-world graph errors may be subtler.
+- **R2a overlaps with the v1.1 cause-category issue.** The incident text names the equipment, so R2a tests text-versus-link conflict directly.
+- **Identifier-level scoring.** `wrong_source` records where an identifier appeared, not whether that text supports the relation.
+- **The clean comparison covers 22 matched questions** and uses the Phase 2 rows (same model and settings, different session).
+
+## Provenance
+
+| Item | Value |
+|---|---|
+| Preregistration | `PREREGISTRATION_R2.md`, commit `3f0adeba` (sha256 `e94b1501…`) |
+| Code | commits `27f1a260`, `7a2fd592` |
+| Freeze | `experiment_robustness_r2_freeze.json` (sha256 `8f993192…`), frozen 2026-11-13 05:20 UTC at `7a2fd592`; 17/17 checks |
+| Dataset | `r2-1.0`, sha256 `a8c8d169…`; corruption spec `7e4ca129…`; masks `dda4c553…` |
+| Scorer / runner / corruption | `r2-score-1.0` (`6a49c44d…`), `r2-run-1.0` (`31121983…`), `corrupt-1.0` (`9cd9d28c…`) |
+| Signatures | A `12b48506f4b2`, B2 `c4b10fc70c75`, C `0b166e61d61b`, D `3902dcfc718d` |
+
+| File | sha256 |
+|---|---|
+| `experiment_robustness_r2_meridian-transit-v1_groq_frozen.json` (read-only, cite this) | `97d3e3af4b80…` |
+| `experiment_robustness_r2_gate_replay.json` (read-only) | `fa738421a5d0…` |
+| `experiment_robustness_r2_comparison.json` | `075133cddf13…` |
+| `experiment_robustness_r2_retrieval_meridian-transit-v1.json` | `777452a9d861…` |
+
+```powershell
+python -m pytest tests/test_graph_corruption.py tests/test_robustness_scoring_r2.py
+python -m experiments.robustness_r2 --phase validate
+python -m experiments.robustness_r2 --phase answers --provider groq --model openai/gpt-oss-120b --reasoning-effort low --resume
+python -m experiments.robustness_r2 --phase replay-gate
+python -m experiments.robustness_r2 --phase report
+```

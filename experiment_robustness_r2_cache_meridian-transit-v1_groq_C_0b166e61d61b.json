@@ -1,0 +1,1801 @@
+{
+  "run_signature": "0b166e61d61bbbaf07c16c8d611c7b63463a4496d1db1a7da024b890641aea0f",
+  "rows": {
+    "2001": {
+      "id": 2001,
+      "answer": "The failure was a **TX‑440 traction inverter** that suffered a phase‑imbalance trip, causing the trains to be held at Harbour Row.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Harbour Row?",
+          "retrieved": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_AX-3",
+            "station_brickworks"
+          ],
+          "new_evidence": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_AX-3",
+            "station_brickworks"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed when trains were held at Harbour Row?\nEvidence:\n[1] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_AX-3; occurred_at -> station_harbour_row\n[2] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_kestrel_green; served_by -> line_azure\n[3] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_kestrel_green\n[4] (equipment_AX-3) The AX-3 axle bearing assembly is fitted across the fleet and in fixed installations. Its dominant failure mode is thermal spike, which presents as a bearing temperature rise of more than 40 degrees in ten minutes. A AX-3 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group AX3G. Links: maintained_by -> procedure_MP-111, procedure_MP-112\n[5] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_copper_lane; previous_station -> station_alder_vale; site_of_incident -> incident_2026_04\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_01",
+        "station_harbour_row",
+        "line_azure",
+        "equipment_AX-3",
+        "station_brickworks"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 648,
+        "output_tokens": 83,
+        "retrieval_latency_ms": 16.025,
+        "generation_latency_ms": 424.297,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 83,
+            "latency_ms": 424.297
+          }
+        }
+      }
+    },
+    "2002": {
+      "id": 2002,
+      "answer": "PD‑90 platform screen door controller – it suffered an obstruction‑sensor drift, causing the trains to be held at Brickworks.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Brickworks?",
+          "retrieved": [
+            "incident_2026_04",
+            "station_brickworks",
+            "line_azure",
+            "equipment_SG-12",
+            "station_foundry_bridge"
+          ],
+          "new_evidence": [
+            "incident_2026_04",
+            "station_brickworks",
+            "line_azure",
+            "equipment_SG-12",
+            "station_foundry_bridge"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed when trains were held at Brickworks?\nEvidence:\n[1] (incident_2026_04) Service incident 2026/04 on 2026-04-13: trains were held at Brickworks on the Azure Line for 23 minutes after a PD-90 platform screen door controller suffered a obstruction sensor drift. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_SG-12; occurred_at -> station_brickworks\n[2] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_copper_lane; previous_station -> station_alder_vale; served_by -> line_azure\n[3] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_copper_lane, station_dunmore_park, station_harbour_row, station_kestrel_green\n[4] (equipment_SG-12) The SG-12 signal interlocking relay is fitted across the fleet and in fixed installations. Its dominant failure mode is contact welding, which presents as a relay that fails to drop out after de-energising. A SG-12 unit has a design life of 8 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group SG12G. Links: maintained_by -> procedure_MP-109, procedure_MP-110\n[5] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_garnet_hill; previous_station -> station_eastgate_quay; served_by -> line_crimson; site_of_incident -> incident_2026_08\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_04",
+        "station_brickworks",
+        "line_azure",
+        "equipment_SG-12",
+        "station_foundry_bridge"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 674,
+        "output_tokens": 116,
+        "retrieval_latency_ms": 20.207,
+        "generation_latency_ms": 1964.132,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 674,
+            "output_tokens": 116,
+            "latency_ms": 1964.132
+          }
+        }
+      }
+    },
+    "2003": {
+      "id": 2003,
+      "answer": "The failure was of the **CP‑55 compressor module**, which suffered a pressure bleed‑down and caused the trains to be held at Eastgate Quay.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Eastgate Quay?",
+          "retrieved": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "line_crimson",
+            "equipment_LT-77",
+            "station_foundry_bridge"
+          ],
+          "new_evidence": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "line_crimson",
+            "equipment_LT-77",
+            "station_foundry_bridge"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed when trains were held at Eastgate Quay?\nEvidence:\n[1] (incident_2026_07) Service incident 2026/07 on 2026-07-22: trains were held at Eastgate Quay on the Crimson Line for 35 minutes after a CP-55 compressor module suffered a pressure bleed-down. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_LT-77; occurred_at -> station_eastgate_quay\n[2] (station_eastgate_quay) Eastgate Quay is a terminus on the Crimson Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Eastgate Quay and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_foundry_bridge; served_by -> line_crimson\n[3] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_foundry_bridge, station_garnet_hill, station_hollow_mill, station_ironside, station_jubilee_fields\n[4] (equipment_LT-77) The LT-77 lighting ballast is fitted across the fleet and in fixed installations. Its dominant failure mode is flicker cascade, which presents as a cascading flicker across an entire platform circuit. A LT-77 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group LT77G. Links: maintained_by -> procedure_MP-122\n[5] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_garnet_hill; site_of_incident -> incident_2026_08\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_07",
+        "station_eastgate_quay",
+        "line_crimson",
+        "equipment_LT-77",
+        "station_foundry_bridge"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 646,
+        "output_tokens": 85,
+        "retrieval_latency_ms": 13.616,
+        "generation_latency_ms": 1497.886,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 646,
+            "output_tokens": 85,
+            "latency_ms": 1497.886
+          }
+        }
+      }
+    },
+    "2004": {
+      "id": 2004,
+      "answer": "equipment_BR-7 – the BR‑7 regenerative brake unit failed, causing trains to be held at Hollow Mill.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Hollow Mill?",
+          "retrieved": [
+            "incident_2026_10",
+            "incident_2026_08",
+            "station_hollow_mill",
+            "line_crimson",
+            "equipment_BR-7"
+          ],
+          "new_evidence": [
+            "incident_2026_10",
+            "incident_2026_08",
+            "station_hollow_mill",
+            "line_crimson",
+            "equipment_BR-7"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed when trains were held at Hollow Mill?\nEvidence:\n[1] (incident_2026_10) Service incident 2026/10 on 2026-10-04: trains were held at Hollow Mill on the Crimson Line for 47 minutes after a TC-6 track circuit transmitter suffered a frequency drift. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_BR-7; occurred_at -> station_hollow_mill\n[2] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_DR-8; occurred_at -> station_foundry_bridge\n[3] (station_hollow_mill) Hollow Mill is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Eastgate Quay and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_ironside; previous_station -> station_garnet_hill; served_by -> line_crimson\n[4] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_foundry_bridge, station_garnet_hill, station_ironside, station_jubilee_fields\n[5] (equipment_BR-7) The BR-7 regenerative brake unit is fitted across the fleet and in fixed installations. Its dominant failure mode is resistor grid overheat, which presents as grid temperature above the 310 degree cut-out. A BR-7 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group BR7G. Links: maintained_by -> procedure_MP-105, procedure_MP-106\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_10",
+        "incident_2026_08",
+        "station_hollow_mill",
+        "line_crimson",
+        "equipment_BR-7"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 670,
+        "output_tokens": 69,
+        "retrieval_latency_ms": 17.341,
+        "generation_latency_ms": 5921.262,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 670,
+            "output_tokens": 69,
+            "latency_ms": 5921.262
+          }
+        }
+      }
+    },
+    "2005": {
+      "id": 2005,
+      "answer": "WS-5 wheel slide protection valve – it suffered a latched release, causing the trains to be held at Larkspur.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Larkspur?",
+          "retrieved": [
+            "incident_2026_14",
+            "station_larkspur",
+            "line_jade",
+            "equipment_HV-21",
+            "station_kingsmoor"
+          ],
+          "new_evidence": [
+            "incident_2026_14",
+            "station_larkspur",
+            "line_jade",
+            "equipment_HV-21",
+            "station_kingsmoor"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed when trains were held at Larkspur?\nEvidence:\n[1] (incident_2026_14) Service incident 2026/14 on 2026-02-16: trains were held at Larkspur on the Jade Line for 10 minutes after a WS-5 wheel slide protection valve suffered a latched release. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_jade; caused_by -> equipment_HV-21; occurred_at -> station_larkspur\n[2] (station_larkspur) Larkspur is a through station on the Jade Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Kingsmoor and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_mallow_street; previous_station -> station_kingsmoor; served_by -> line_jade\n[3] (line_jade) The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_kingsmoor, station_mallow_street, station_netherby, station_oakhurst, station_pennyford\n[4] (equipment_HV-21) The HV-21 pantograph head is fitted across the fleet and in fixed installations. Its dominant failure mode is carbon strip fracture, which presents as a sudden loss of overhead contact force. A HV-21 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group HV21G. Links: maintained_by -> procedure_MP-103, procedure_MP-104\n[5] (station_kingsmoor) Kingsmoor is a terminus on the Jade Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Kingsmoor and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: site_of_incident -> incident_2026_13\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_14",
+        "station_larkspur",
+        "line_jade",
+        "equipment_HV-21",
+        "station_kingsmoor"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 635,
+        "output_tokens": 87,
+        "retrieval_latency_ms": 15.993,
+        "generation_latency_ms": 5971.128,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 635,
+            "output_tokens": 87,
+            "latency_ms": 5971.128
+          }
+        }
+      }
+    },
+    "2006": {
+      "id": 2006,
+      "answer": "equipment_VE-31 – the tunnel ventilation fan that suffered an obstruction sensor drift caused the trains to be held at Pennyford.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed when trains were held at Pennyford?",
+          "retrieved": [
+            "incident_2026_18",
+            "incident_2026_10",
+            "station_pennyford",
+            "line_jade",
+            "equipment_VE-31"
+          ],
+          "new_evidence": [
+            "incident_2026_18",
+            "incident_2026_10",
+            "station_pennyford",
+            "line_jade",
+            "equipment_VE-31"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed when trains were held at Pennyford?\nEvidence:\n[1] (incident_2026_18) Service incident 2026/18 on 2026-06-01: trains were held at Pennyford on the Jade Line for 26 minutes after a PD-90 platform screen door controller suffered a obstruction sensor drift. 2 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_jade; caused_by -> equipment_VE-31; occurred_at -> station_pennyford\n[2] (incident_2026_10) Service incident 2026/10 on 2026-10-04: trains were held at Hollow Mill on the Crimson Line for 47 minutes after a TC-6 track circuit transmitter suffered a frequency drift. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_TC-6; occurred_at -> station_hollow_mill\n[3] (station_pennyford) Pennyford is a terminus on the Jade Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Kingsmoor and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014. Links: previous_station -> station_oakhurst; served_by -> line_jade\n[4] (line_jade) The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_kingsmoor, station_larkspur, station_mallow_street, station_netherby, station_oakhurst\n[5] (equipment_VE-31) The VE-31 tunnel ventilation fan is fitted across the fleet and in fixed installations. Its dominant failure mode is blade imbalance, which presents as vibration velocity above 7 millimetres per second at the bearing housing. A VE-31 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group VE31G. Links: maintained_by -> procedure_MP-120\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_18",
+        "incident_2026_10",
+        "station_pennyford",
+        "line_jade",
+        "equipment_VE-31"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 650,
+        "output_tokens": 69,
+        "retrieval_latency_ms": 16.331,
+        "generation_latency_ms": 4732.526,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 650,
+            "output_tokens": 69,
+            "latency_ms": 4732.526
+          }
+        }
+      }
+    },
+    "2007": {
+      "id": 2007,
+      "answer": "procedure_MP-107 – one of the maintenance procedures that covers the TX‑440 traction inverter fault.  \nprocedure_MP-108 – another maintenance procedure that covers the TX‑440 traction inverter fault.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Harbour Row?",
+          "retrieved": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_TX-440",
+            "station_kestrel_green"
+          ],
+          "new_evidence": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_TX-440",
+            "station_kestrel_green"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-107",
+            "procedure_MP-108"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Harbour Row?\nEvidence:\n[1] (incident_2026_01) Service incident 2026/01 on 2026-01-04: trains were held at Harbour Row on the Azure Line for 11 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_TX-440; occurred_at -> station_harbour_row\n[2] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_kestrel_green; served_by -> line_azure\n[3] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_kestrel_green\n[4] (equipment_TX-440) The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G. Links: maintained_by -> procedure_MP-107, procedure_MP-108\n[5] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; site_of_incident -> incident_2026_02\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_01",
+        "station_harbour_row",
+        "line_azure",
+        "equipment_TX-440",
+        "station_kestrel_green"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 641,
+        "output_tokens": 89,
+        "retrieval_latency_ms": 22.951,
+        "generation_latency_ms": 4790.753,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 641,
+            "output_tokens": 89,
+            "latency_ms": 4790.753
+          }
+        }
+      }
+    },
+    "2008": {
+      "id": 2008,
+      "answer": "procedure_MP-111 – one of the maintenance procedures that covers the HV‑21 pantograph head fault.  \nprocedure_MP-112 – another maintenance procedure that covers the HV‑21 pantograph head fault.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Kestrel Green?",
+          "retrieved": [
+            "incident_2026_02",
+            "station_kestrel_green",
+            "line_azure",
+            "equipment_HV-21",
+            "station_harbour_row"
+          ],
+          "new_evidence": [
+            "incident_2026_02",
+            "station_kestrel_green",
+            "line_azure",
+            "equipment_HV-21",
+            "station_harbour_row"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-111",
+            "procedure_MP-112"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Kestrel Green?\nEvidence:\n[1] (incident_2026_02) Service incident 2026/02 on 2026-02-07: trains were held at Kestrel Green on the Azure Line for 15 minutes after a HV-21 pantograph head suffered a carbon strip fracture. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_HV-21; occurred_at -> station_kestrel_green\n[2] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; previous_station -> station_harbour_row; served_by -> line_azure\n[3] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_harbour_row\n[4] (equipment_HV-21) The HV-21 pantograph head is fitted across the fleet and in fixed installations. Its dominant failure mode is carbon strip fracture, which presents as a sudden loss of overhead contact force. A HV-21 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group HV21G. Links: maintained_by -> procedure_MP-111, procedure_MP-112\n[5] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: site_of_incident -> incident_2026_01\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_02",
+        "station_kestrel_green",
+        "line_azure",
+        "equipment_HV-21",
+        "station_harbour_row"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 647,
+        "output_tokens": 96,
+        "retrieval_latency_ms": 17.12,
+        "generation_latency_ms": 4901.44,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 647,
+            "output_tokens": 96,
+            "latency_ms": 4901.44
+          }
+        }
+      }
+    },
+    "2009": {
+      "id": 2009,
+      "answer": "procedure_MP-113 – this procedure maintains the BR‑7 regenerative brake unit that can suffer resistor‑grid overheat.  \nprocedure_MP-114 – this procedure also maintains the BR‑7 regenerative brake unit that can suffer resistor‑grid overheat.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Alder Vale?",
+          "retrieved": [
+            "incident_2026_03",
+            "line_azure",
+            "equipment_BR-7",
+            "station_kestrel_green",
+            "station_brickworks"
+          ],
+          "new_evidence": [
+            "incident_2026_03",
+            "line_azure",
+            "equipment_BR-7",
+            "station_kestrel_green",
+            "station_brickworks"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-113",
+            "procedure_MP-114"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Alder Vale?\nEvidence:\n[1] (incident_2026_03) Service incident 2026/03 on 2026-03-10: trains were held at Alder Vale on the Azure Line for 19 minutes after a BR-7 regenerative brake unit suffered a resistor grid overheat. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_BR-7; occurred_at -> station_alder_vale\n[2] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_harbour_row, station_kestrel_green\n[3] (equipment_BR-7) The BR-7 regenerative brake unit is fitted across the fleet and in fixed installations. Its dominant failure mode is resistor grid overheat, which presents as grid temperature above the 310 degree cut-out. A BR-7 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group BR7G. Links: maintained_by -> procedure_MP-113, procedure_MP-114\n[4] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_alder_vale; previous_station -> station_harbour_row; site_of_incident -> incident_2026_02\n[5] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_copper_lane; previous_station -> station_alder_vale; site_of_incident -> incident_2026_04\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_03",
+        "line_azure",
+        "equipment_BR-7",
+        "station_kestrel_green",
+        "station_brickworks"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 674,
+        "output_tokens": 97,
+        "retrieval_latency_ms": 15.222,
+        "generation_latency_ms": 4834.302,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 674,
+            "output_tokens": 97,
+            "latency_ms": 4834.302
+          }
+        }
+      }
+    },
+    "2010": {
+      "id": 2010,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Copper Lane?",
+          "retrieved": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "incident_2026_08",
+            "station_brickworks",
+            "line_azure"
+          ],
+          "new_evidence": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "incident_2026_08",
+            "station_brickworks",
+            "line_azure"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Copper Lane?\nEvidence:\n[1] (station_copper_lane) Copper Lane is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Harbour Row and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_dunmore_park; previous_station -> station_brickworks; served_by -> line_azure; site_of_incident -> incident_2026_05\n[2] (incident_2026_05) Service incident 2026/05 on 2026-05-16: trains were held at Copper Lane on the Azure Line for 27 minutes after a SG-12 signal interlocking relay suffered a contact welding. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_SG-12\n[3] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_DR-8; occurred_at -> station_foundry_bridge\n[4] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: previous_station -> station_alder_vale; served_by -> line_azure; site_of_incident -> incident_2026_04\n[5] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_dunmore_park, station_harbour_row, station_kestrel_green\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_copper_lane",
+        "incident_2026_05",
+        "incident_2026_08",
+        "station_brickworks",
+        "line_azure"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 666,
+        "output_tokens": 51,
+        "retrieval_latency_ms": 23.816,
+        "generation_latency_ms": 5120.781,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 666,
+            "output_tokens": 51,
+            "latency_ms": 5120.781
+          }
+        }
+      }
+    },
+    "2011": {
+      "id": 2011,
+      "answer": "procedure_MP-120 – this maintenance procedure is linked to the PS‑19 auxiliary power supply, whose ripple fault caused the service stoppage at Garnet Hill.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Garnet Hill?",
+          "retrieved": [
+            "incident_2026_09",
+            "station_garnet_hill",
+            "line_crimson",
+            "equipment_PS-19",
+            "station_foundry_bridge"
+          ],
+          "new_evidence": [
+            "incident_2026_09",
+            "station_garnet_hill",
+            "line_crimson",
+            "equipment_PS-19",
+            "station_foundry_bridge"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-120"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Garnet Hill?\nEvidence:\n[1] (incident_2026_09) Service incident 2026/09 on 2026-09-01: trains were held at Garnet Hill on the Crimson Line for 43 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 2 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_PS-19; occurred_at -> station_garnet_hill\n[2] (station_garnet_hill) Garnet Hill is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Eastgate Quay and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_hollow_mill; previous_station -> station_foundry_bridge; served_by -> line_crimson\n[3] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_foundry_bridge, station_hollow_mill, station_ironside, station_jubilee_fields\n[4] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-120\n[5] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: previous_station -> station_eastgate_quay; site_of_incident -> incident_2026_08\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_09",
+        "station_garnet_hill",
+        "line_crimson",
+        "equipment_PS-19",
+        "station_foundry_bridge"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 655,
+        "output_tokens": 80,
+        "retrieval_latency_ms": 14.368,
+        "generation_latency_ms": 4704.928,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 655,
+            "output_tokens": 80,
+            "latency_ms": 4704.928
+          }
+        }
+      }
+    },
+    "2012": {
+      "id": 2012,
+      "answer": "procedure_MP-121 – this maintenance procedure is responsible for the VE‑31 tunnel ventilation fan whose blade‑imbalance fault stopped service at Ironside.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Ironside?",
+          "retrieved": [
+            "incident_2026_11",
+            "station_ironside",
+            "line_crimson",
+            "equipment_VE-31",
+            "station_hollow_mill"
+          ],
+          "new_evidence": [
+            "incident_2026_11",
+            "station_ironside",
+            "line_crimson",
+            "equipment_VE-31",
+            "station_hollow_mill"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-121"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Ironside?\nEvidence:\n[1] (incident_2026_11) Service incident 2026/11 on 2026-11-07: trains were held at Ironside on the Crimson Line for 51 minutes after a VE-31 tunnel ventilation fan suffered a blade imbalance. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_VE-31; occurred_at -> station_ironside\n[2] (station_ironside) Ironside is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Eastgate Quay and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_jubilee_fields; previous_station -> station_hollow_mill; served_by -> line_crimson\n[3] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_foundry_bridge, station_garnet_hill, station_hollow_mill, station_jubilee_fields\n[4] (equipment_VE-31) The VE-31 tunnel ventilation fan is fitted across the fleet and in fixed installations. Its dominant failure mode is blade imbalance, which presents as vibration velocity above 7 millimetres per second at the bearing housing. A VE-31 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group VE31G. Links: maintained_by -> procedure_MP-121\n[5] (station_hollow_mill) Hollow Mill is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Eastgate Quay and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: previous_station -> station_garnet_hill; site_of_incident -> incident_2026_10\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_11",
+        "station_ironside",
+        "line_crimson",
+        "equipment_VE-31",
+        "station_hollow_mill"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 660,
+        "output_tokens": 82,
+        "retrieval_latency_ms": 12.623,
+        "generation_latency_ms": 5820.757,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 660,
+            "output_tokens": 82,
+            "latency_ms": 5820.757
+          }
+        }
+      }
+    },
+    "2013": {
+      "id": 2013,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Kingsmoor?",
+          "retrieved": [
+            "incident_2026_13",
+            "incident_2026_08",
+            "incident_2026_19",
+            "station_kingsmoor",
+            "line_jade"
+          ],
+          "new_evidence": [
+            "incident_2026_13",
+            "incident_2026_08",
+            "incident_2026_19",
+            "station_kingsmoor",
+            "line_jade"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Kingsmoor?\nEvidence:\n[1] (incident_2026_13) Service incident 2026/13 on 2026-01-13: trains were held at Kingsmoor on the Jade Line for 59 minutes after a LT-77 lighting ballast suffered a flicker cascade. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_jade; caused_by -> equipment_LT-77; occurred_at -> station_kingsmoor\n[2] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_DR-8; occurred_at -> station_foundry_bridge\n[3] (incident_2026_19) Service incident 2026/19 on 2026-07-04: trains were held at Quarry Side on the Amber Line for 30 minutes after a SG-12 signal interlocking relay suffered a contact welding. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_SG-12; occurred_at -> station_quarry_side\n[4] (station_kingsmoor) Kingsmoor is a terminus on the Jade Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Kingsmoor and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_larkspur; served_by -> line_jade\n[5] (line_jade) The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_larkspur, station_mallow_street, station_netherby, station_oakhurst, station_pennyford\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_13",
+        "incident_2026_08",
+        "incident_2026_19",
+        "station_kingsmoor",
+        "line_jade"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 659,
+        "output_tokens": 56,
+        "retrieval_latency_ms": 14.513,
+        "generation_latency_ms": 5083.196,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 659,
+            "output_tokens": 56,
+            "latency_ms": 5083.196
+          }
+        }
+      }
+    },
+    "2014": {
+      "id": 2014,
+      "answer": "procedure_MP-115 – one of the maintenance procedures that covers the WS‑5 wheel slide protection valve fault.  \nprocedure_MP-116 – another maintenance procedure that covers the WS‑5 wheel slide protection valve fault.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Larkspur?",
+          "retrieved": [
+            "incident_2026_14",
+            "station_larkspur",
+            "line_jade",
+            "equipment_WS-5",
+            "station_kingsmoor"
+          ],
+          "new_evidence": [
+            "incident_2026_14",
+            "station_larkspur",
+            "line_jade",
+            "equipment_WS-5",
+            "station_kingsmoor"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-115",
+            "procedure_MP-116"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Larkspur?\nEvidence:\n[1] (incident_2026_14) Service incident 2026/14 on 2026-02-16: trains were held at Larkspur on the Jade Line for 10 minutes after a WS-5 wheel slide protection valve suffered a latched release. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_jade; caused_by -> equipment_WS-5; occurred_at -> station_larkspur\n[2] (station_larkspur) Larkspur is a through station on the Jade Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Kingsmoor and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_mallow_street; previous_station -> station_kingsmoor; served_by -> line_jade\n[3] (line_jade) The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_kingsmoor, station_mallow_street, station_netherby, station_oakhurst, station_pennyford\n[4] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-115, procedure_MP-116\n[5] (station_kingsmoor) Kingsmoor is a terminus on the Jade Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Kingsmoor and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: site_of_incident -> incident_2026_13\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_14",
+        "station_larkspur",
+        "line_jade",
+        "equipment_WS-5",
+        "station_kingsmoor"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 641,
+        "output_tokens": 93,
+        "retrieval_latency_ms": 15.842,
+        "generation_latency_ms": 5819.343,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 641,
+            "output_tokens": 93,
+            "latency_ms": 5819.343
+          }
+        }
+      }
+    },
+    "2015": {
+      "id": 2015,
+      "answer": "station_kestrel_green – the station preceding Alder Vale on the Azure Line.  \nstation_glasshouse – the station following Alder Vale on the Azure Line.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Alder Vale along its own line?",
+          "retrieved": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "station_kestrel_green",
+            "line_azure",
+            "station_glasshouse"
+          ],
+          "new_evidence": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "station_kestrel_green",
+            "line_azure",
+            "station_glasshouse"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which stations sit immediately either side of Alder Vale along its own line?\nEvidence:\n[1] (station_alder_vale) Alder Vale is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Harbour Row and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_glasshouse; previous_station -> station_kestrel_green; served_by -> line_azure; site_of_incident -> incident_2026_03\n[2] (incident_2026_03) Service incident 2026/03 on 2026-03-10: trains were held at Alder Vale on the Azure Line for 19 minutes after a BR-7 regenerative brake unit suffered a resistor grid overheat. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_BR-7\n[3] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: previous_station -> station_harbour_row; served_by -> line_azure; site_of_incident -> incident_2026_02\n[4] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_brickworks, station_copper_lane, station_dunmore_park, station_harbour_row\n[5] (station_glasshouse) Glasshouse is a through station on the Slate Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Elmsworth and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_hartsmere; previous_station -> station_fallowfield; served_by -> line_slate\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_alder_vale",
+        "incident_2026_03",
+        "station_kestrel_green",
+        "line_azure",
+        "station_glasshouse"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 654,
+        "output_tokens": 91,
+        "retrieval_latency_ms": 17.944,
+        "generation_latency_ms": 4714.799,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 654,
+            "output_tokens": 91,
+            "latency_ms": 4714.799
+          }
+        }
+      }
+    },
+    "2016": {
+      "id": 2016,
+      "answer": "station_foundry_bridge – the previous station on the Crimson Line; station_ashfen – the next station listed for Garnet Hill.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Garnet Hill along its own line?",
+          "retrieved": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "station_foundry_bridge",
+            "station_ashfen",
+            "equipment_PS-19"
+          ],
+          "new_evidence": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "station_foundry_bridge",
+            "station_ashfen",
+            "equipment_PS-19"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which stations sit immediately either side of Garnet Hill along its own line?\nEvidence:\n[1] (station_garnet_hill) Garnet Hill is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Eastgate Quay and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_ashfen; previous_station -> station_foundry_bridge; served_by -> line_crimson; site_of_incident -> incident_2026_09\n[2] (incident_2026_09) Service incident 2026/09 on 2026-09-01: trains were held at Garnet Hill on the Crimson Line for 43 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 2 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_PS-19\n[3] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: previous_station -> station_eastgate_quay; served_by -> line_crimson; site_of_incident -> incident_2026_08\n[4] (station_ashfen) Ashfen is a through station on the Violet Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Westmere and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_beacon_rise; previous_station -> station_yarrow_cross; served_by -> line_violet; site_of_incident -> incident_2026_27\n[5] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_garnet_hill",
+        "incident_2026_09",
+        "station_foundry_bridge",
+        "station_ashfen",
+        "equipment_PS-19"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 657,
+        "output_tokens": 147,
+        "retrieval_latency_ms": 22.03,
+        "generation_latency_ms": 6243.597,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 657,
+            "output_tokens": 147,
+            "latency_ms": 6243.597
+          }
+        }
+      }
+    },
+    "2017": {
+      "id": 2017,
+      "answer": "station_larkspur is the station immediately before Mallow Street, and station_redcliff is the station immediately after Mallow Street on the Jade Line.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Mallow Street along its own line?",
+          "retrieved": [
+            "station_mallow_street",
+            "station_larkspur",
+            "line_jade",
+            "station_redcliff",
+            "station_elmsworth"
+          ],
+          "new_evidence": [
+            "station_mallow_street",
+            "station_larkspur",
+            "line_jade",
+            "station_redcliff",
+            "station_elmsworth"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which stations sit immediately either side of Mallow Street along its own line?\nEvidence:\n[1] (station_mallow_street) Mallow Street is a through station on the Jade Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Kingsmoor and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_redcliff; previous_station -> station_larkspur; served_by -> line_jade; site_of_incident -> incident_2026_15\n[2] (station_larkspur) Larkspur is a through station on the Jade Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Kingsmoor and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: previous_station -> station_kingsmoor; served_by -> line_jade; site_of_incident -> incident_2026_14\n[3] (line_jade) The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_kingsmoor, station_netherby, station_oakhurst, station_pennyford\n[4] (station_redcliff) Redcliff is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Quarry Side and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_saltmarsh; previous_station -> station_quarry_side; served_by -> line_amber; site_of_incident -> incident_2026_20\n[5] (station_elmsworth) Elmsworth is a terminus on the Slate Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Elmsworth and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_fallowfield; served_by -> line_slate\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_mallow_street",
+        "station_larkspur",
+        "line_jade",
+        "station_redcliff",
+        "station_elmsworth"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 648,
+        "output_tokens": 100,
+        "retrieval_latency_ms": 174.463,
+        "generation_latency_ms": 3865.083,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 100,
+            "latency_ms": 3865.083
+          }
+        }
+      }
+    },
+    "2018": {
+      "id": 2018,
+      "answer": "station_redcliff – the previous station on the Amber Line; station_ironside – the next station on the Amber Line.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Saltmarsh along its own line?",
+          "retrieved": [
+            "station_saltmarsh",
+            "incident_2026_21",
+            "station_redcliff",
+            "line_amber",
+            "station_ironside"
+          ],
+          "new_evidence": [
+            "station_saltmarsh",
+            "incident_2026_21",
+            "station_redcliff",
+            "line_amber",
+            "station_ironside"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which stations sit immediately either side of Saltmarsh along its own line?\nEvidence:\n[1] (station_saltmarsh) Saltmarsh is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Quarry Side and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_ironside; previous_station -> station_redcliff; served_by -> line_amber; site_of_incident -> incident_2026_21\n[2] (incident_2026_21) Service incident 2026/21 on 2026-09-10: trains were held at Saltmarsh on the Amber Line for 38 minutes after a CP-55 compressor module suffered a pressure bleed-down. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_CP-55\n[3] (station_redcliff) Redcliff is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Quarry Side and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: previous_station -> station_quarry_side; served_by -> line_amber; site_of_incident -> incident_2026_20\n[4] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_thistlebank, station_underbank, station_vantage_point\n[5] (station_ironside) Ironside is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Eastgate Quay and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_jubilee_fields; previous_station -> station_hollow_mill; served_by -> line_crimson; site_of_incident -> incident_2026_11\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_saltmarsh",
+        "incident_2026_21",
+        "station_redcliff",
+        "line_amber",
+        "station_ironside"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 662,
+        "output_tokens": 85,
+        "retrieval_latency_ms": 25.761,
+        "generation_latency_ms": 4711.783,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 662,
+            "output_tokens": 85,
+            "latency_ms": 4711.783
+          }
+        }
+      }
+    },
+    "2019": {
+      "id": 2019,
+      "answer": "station_fallowfield and station_mallow_street are the stations immediately next to Netherby on the Jade Line.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Netherby along its own line?",
+          "retrieved": [
+            "station_netherby",
+            "station_mallow_street",
+            "line_jade",
+            "incident_2026_16",
+            "station_fallowfield"
+          ],
+          "new_evidence": [
+            "station_netherby",
+            "station_mallow_street",
+            "line_jade",
+            "incident_2026_16",
+            "station_fallowfield"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which stations sit immediately either side of Netherby along its own line?\nEvidence:\n[1] (station_netherby) Netherby is a through station on the Jade Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Kingsmoor and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_fallowfield; previous_station -> station_mallow_street; served_by -> line_jade; site_of_incident -> incident_2026_16\n[2] (station_mallow_street) Mallow Street is a through station on the Jade Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Kingsmoor and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: previous_station -> station_larkspur; served_by -> line_jade; site_of_incident -> incident_2026_15\n[3] (line_jade) The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_kingsmoor, station_larkspur, station_oakhurst, station_pennyford\n[4] (incident_2026_16) Service incident 2026/16 on 2026-04-22: trains were held at Netherby on the Jade Line for 18 minutes after a HV-21 pantograph head suffered a carbon strip fracture. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_jade; caused_by -> equipment_HV-21\n[5] (station_fallowfield) Fallowfield is a through station on the Slate Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Elmsworth and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_glasshouse; previous_station -> station_elmsworth; served_by -> line_slate\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_netherby",
+        "station_mallow_street",
+        "line_jade",
+        "incident_2026_16",
+        "station_fallowfield"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 649,
+        "output_tokens": 89,
+        "retrieval_latency_ms": 94.876,
+        "generation_latency_ms": 7853.207,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 649,
+            "output_tokens": 89,
+            "latency_ms": 7853.207
+          }
+        }
+      }
+    },
+    "2020": {
+      "id": 2020,
+      "answer": "station_hollow_mill – the previous station on the Crimson Line; station_underbank – the next station on the Crimson Line.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which stations sit immediately either side of Ironside along its own line?",
+          "retrieved": [
+            "station_ironside",
+            "incident_2026_11",
+            "station_hollow_mill",
+            "station_underbank",
+            "equipment_VE-31"
+          ],
+          "new_evidence": [
+            "station_ironside",
+            "incident_2026_11",
+            "station_hollow_mill",
+            "station_underbank",
+            "equipment_VE-31"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which stations sit immediately either side of Ironside along its own line?\nEvidence:\n[1] (station_ironside) Ironside is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Eastgate Quay and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_underbank; previous_station -> station_hollow_mill; served_by -> line_crimson; site_of_incident -> incident_2026_11\n[2] (incident_2026_11) Service incident 2026/11 on 2026-11-07: trains were held at Ironside on the Crimson Line for 51 minutes after a VE-31 tunnel ventilation fan suffered a blade imbalance. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_VE-31\n[3] (station_hollow_mill) Hollow Mill is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Eastgate Quay and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: previous_station -> station_garnet_hill; served_by -> line_crimson; site_of_incident -> incident_2026_10\n[4] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber; site_of_incident -> incident_2026_23\n[5] (equipment_VE-31) The VE-31 tunnel ventilation fan is fitted across the fleet and in fixed installations. Its dominant failure mode is blade imbalance, which presents as vibration velocity above 7 millimetres per second at the bearing housing. A VE-31 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group VE31G. Links: maintained_by -> procedure_MP-120\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_ironside",
+        "incident_2026_11",
+        "station_hollow_mill",
+        "station_underbank",
+        "equipment_VE-31"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 659,
+        "output_tokens": 87,
+        "retrieval_latency_ms": 48.635,
+        "generation_latency_ms": 6168.714,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 659,
+            "output_tokens": 87,
+            "latency_ms": 6168.714
+          }
+        }
+      }
+    },
+    "2021": {
+      "id": 2021,
+      "answer": "procedure_MP-107 – maintains the PD‑90 platform screen door controller.  \nprocedure_MP-108 – maintains the PD‑90 platform screen door controller.  \nprocedure_MP-119 – maintains the PD‑90 platform screen door controller.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Brickworks?",
+          "retrieved": [
+            "incident_2026_04",
+            "station_brickworks",
+            "role_signalling_technician",
+            "line_azure",
+            "equipment_PD-90"
+          ],
+          "new_evidence": [
+            "incident_2026_04",
+            "station_brickworks",
+            "role_signalling_technician",
+            "line_azure",
+            "equipment_PD-90"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-119",
+            "procedure_MP-107",
+            "procedure_MP-108"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Brickworks?\nEvidence:\n[1] (incident_2026_04) Service incident 2026/04 on 2026-04-13: trains were held at Brickworks on the Azure Line for 23 minutes after a PD-90 platform screen door controller suffered a obstruction sensor drift. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_PD-90; occurred_at -> station_brickworks\n[2] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_copper_lane; previous_station -> station_alder_vale; served_by -> line_azure\n[3] (role_signalling_technician) The signalling maintenance technician owns 4 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 6 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts. Links: responsible_for -> procedure_MP-109, procedure_MP-110, procedure_MP-118, procedure_MP-119\n[4] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_copper_lane, station_dunmore_park, station_harbour_row, station_kestrel_green\n[5] (equipment_PD-90) The PD-90 platform screen door controller is fitted across the fleet and in fixed installations. Its dominant failure mode is obstruction sensor drift, which presents as false obstruction reports on an empty threshold. A PD-90 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PD90G. Links: maintained_by -> procedure_MP-107, procedure_MP-108, procedure_MP-119\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_04",
+        "station_brickworks",
+        "role_signalling_technician",
+        "line_azure",
+        "equipment_PD-90"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 643,
+        "output_tokens": 100,
+        "retrieval_latency_ms": 15.68,
+        "generation_latency_ms": 5718.665,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 643,
+            "output_tokens": 100,
+            "latency_ms": 5718.665
+          }
+        }
+      }
+    },
+    "2022": {
+      "id": 2022,
+      "answer": "procedure_MP-105 – one of the maintenance procedures that covers the AX‑3 axle bearing assembly fault.  \nprocedure_MP-111 – another maintenance procedure that covers the AX‑3 axle bearing assembly fault.  \nprocedure_MP-112 – a further maintenance procedure that covers the AX‑3 axle bearing assembly fault.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Dunmore Park?",
+          "retrieved": [
+            "incident_2026_06",
+            "line_azure",
+            "equipment_AX-3",
+            "station_copper_lane",
+            "station_garnet_hill"
+          ],
+          "new_evidence": [
+            "incident_2026_06",
+            "line_azure",
+            "equipment_AX-3",
+            "station_copper_lane",
+            "station_garnet_hill"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-105",
+            "procedure_MP-111",
+            "procedure_MP-112"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Dunmore Park?\nEvidence:\n[1] (incident_2026_06) Service incident 2026/06 on 2026-06-19: trains were held at Dunmore Park on the Azure Line for 31 minutes after a AX-3 axle bearing assembly suffered a thermal spike. 8 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_azure; caused_by -> equipment_AX-3; occurred_at -> station_dunmore_park\n[2] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park, station_harbour_row, station_kestrel_green\n[3] (equipment_AX-3) The AX-3 axle bearing assembly is fitted across the fleet and in fixed installations. Its dominant failure mode is thermal spike, which presents as a bearing temperature rise of more than 40 degrees in ten minutes. A AX-3 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group AX3G. Links: maintained_by -> procedure_MP-105, procedure_MP-111, procedure_MP-112\n[4] (station_copper_lane) Copper Lane is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Harbour Row and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_dunmore_park; previous_station -> station_brickworks; site_of_incident -> incident_2026_05\n[5] (station_garnet_hill) Garnet Hill is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Eastgate Quay and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_hollow_mill; previous_station -> station_foundry_bridge; served_by -> line_crimson; site_of_incident -> incident_2026_09\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_06",
+        "line_azure",
+        "equipment_AX-3",
+        "station_copper_lane",
+        "station_garnet_hill"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 687,
+        "output_tokens": 119,
+        "retrieval_latency_ms": 18.377,
+        "generation_latency_ms": 5621.562,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 687,
+            "output_tokens": 119,
+            "latency_ms": 5621.562
+          }
+        }
+      }
+    },
+    "2023": {
+      "id": 2023,
+      "answer": "procedure_MP-113 – a maintenance procedure that covers the CP‑55 compressor module.  \nprocedure_MP-114 – a maintenance procedure that covers the CP‑55 compressor module.  \nprocedure_MP-122 – a maintenance procedure that covers the CP‑55 compressor module.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Eastgate Quay?",
+          "retrieved": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "line_crimson",
+            "equipment_CP-55",
+            "station_foundry_bridge"
+          ],
+          "new_evidence": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "line_crimson",
+            "equipment_CP-55",
+            "station_foundry_bridge"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-113",
+            "procedure_MP-114",
+            "procedure_MP-122"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Eastgate Quay?\nEvidence:\n[1] (incident_2026_07) Service incident 2026/07 on 2026-07-22: trains were held at Eastgate Quay on the Crimson Line for 35 minutes after a CP-55 compressor module suffered a pressure bleed-down. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_CP-55; occurred_at -> station_eastgate_quay\n[2] (station_eastgate_quay) Eastgate Quay is a terminus on the Crimson Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Eastgate Quay and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_foundry_bridge; served_by -> line_crimson\n[3] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_foundry_bridge, station_garnet_hill, station_hollow_mill, station_ironside, station_jubilee_fields\n[4] (equipment_CP-55) The CP-55 compressor module is fitted across the fleet and in fixed installations. Its dominant failure mode is pressure bleed-down, which presents as main reservoir pressure falling below 6.2 bar while stabled. A CP-55 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group CP55G. Links: maintained_by -> procedure_MP-113, procedure_MP-114, procedure_MP-122\n[5] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_garnet_hill; site_of_incident -> incident_2026_08\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_07",
+        "station_eastgate_quay",
+        "line_crimson",
+        "equipment_CP-55",
+        "station_foundry_bridge"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 662,
+        "output_tokens": 106,
+        "retrieval_latency_ms": 24.762,
+        "generation_latency_ms": 5084.291,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 662,
+            "output_tokens": 106,
+            "latency_ms": 5084.291
+          }
+        }
+      }
+    },
+    "2024": {
+      "id": 2024,
+      "answer": "procedure_MP-103 – a maintenance procedure that covers the DR‑8 door engine actuator.  \nprocedure_MP-115 – a maintenance procedure that covers the DR‑8 door engine actuator.  \nprocedure_MP-116 – a maintenance procedure that covers the DR‑8 door engine actuator.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Foundry Bridge?",
+          "retrieved": [
+            "incident_2026_08",
+            "station_foundry_bridge",
+            "line_crimson",
+            "equipment_DR-8",
+            "station_eastgate_quay"
+          ],
+          "new_evidence": [
+            "incident_2026_08",
+            "station_foundry_bridge",
+            "line_crimson",
+            "equipment_DR-8",
+            "station_eastgate_quay"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-103",
+            "procedure_MP-115",
+            "procedure_MP-116"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Foundry Bridge?\nEvidence:\n[1] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_DR-8; occurred_at -> station_foundry_bridge\n[2] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_garnet_hill; previous_station -> station_eastgate_quay; served_by -> line_crimson\n[3] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_garnet_hill, station_hollow_mill, station_ironside, station_jubilee_fields\n[4] (equipment_DR-8) The DR-8 door engine actuator is fitted across the fleet and in fixed installations. Its dominant failure mode is leadscrew backlash, which presents as a door leaf that rebounds before locking. A DR-8 unit has a design life of 12 years and is classified as a service-critical asset. Replacement units are held at the central store under part group DR8G. Links: maintained_by -> procedure_MP-103, procedure_MP-115, procedure_MP-116\n[5] (station_eastgate_quay) Eastgate Quay is a terminus on the Crimson Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Eastgate Quay and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: site_of_incident -> incident_2026_07\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_08",
+        "station_foundry_bridge",
+        "line_crimson",
+        "equipment_DR-8",
+        "station_eastgate_quay"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 658,
+        "output_tokens": 109,
+        "retrieval_latency_ms": 77.573,
+        "generation_latency_ms": 4064.119,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 658,
+            "output_tokens": 109,
+            "latency_ms": 4064.119
+          }
+        }
+      }
+    },
+    "2025": {
+      "id": 2025,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Hollow Mill?",
+          "retrieved": [
+            "station_hollow_mill",
+            "incident_2026_10",
+            "incident_2026_08",
+            "station_garnet_hill",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "station_hollow_mill",
+            "incident_2026_10",
+            "incident_2026_08",
+            "station_garnet_hill",
+            "line_crimson"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Hollow Mill?\nEvidence:\n[1] (station_hollow_mill) Hollow Mill is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Eastgate Quay and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_ironside; previous_station -> station_garnet_hill; served_by -> line_crimson; site_of_incident -> incident_2026_10\n[2] (incident_2026_10) Service incident 2026/10 on 2026-10-04: trains were held at Hollow Mill on the Crimson Line for 47 minutes after a TC-6 track circuit transmitter suffered a frequency drift. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_TC-6\n[3] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_DR-8; occurred_at -> station_foundry_bridge\n[4] (station_garnet_hill) Garnet Hill is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Eastgate Quay and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: previous_station -> station_foundry_bridge; served_by -> line_crimson; site_of_incident -> incident_2026_09\n[5] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_foundry_bridge, station_ironside, station_jubilee_fields\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_hollow_mill",
+        "incident_2026_10",
+        "incident_2026_08",
+        "station_garnet_hill",
+        "line_crimson"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 671,
+        "output_tokens": 53,
+        "retrieval_latency_ms": 19.033,
+        "generation_latency_ms": 4930.353,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 671,
+            "output_tokens": 53,
+            "latency_ms": 4930.353
+          }
+        }
+      }
+    },
+    "2026": {
+      "id": 2026,
+      "answer": "procedure_MP-121 – one of the maintenance procedures that covers the ES-14 escalator drive chain fault.  \nprocedure_MP-124 – another maintenance procedure that covers the ES-14 escalator drive chain fault.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Jubilee Fields?",
+          "retrieved": [
+            "incident_2026_12",
+            "station_jubilee_fields",
+            "line_crimson",
+            "equipment_ES-14",
+            "station_ironside"
+          ],
+          "new_evidence": [
+            "incident_2026_12",
+            "station_jubilee_fields",
+            "line_crimson",
+            "equipment_ES-14",
+            "station_ironside"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-121",
+            "procedure_MP-124"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Jubilee Fields?\nEvidence:\n[1] (incident_2026_12) Service incident 2026/12 on 2026-12-10: trains were held at Jubilee Fields on the Crimson Line for 55 minutes after a ES-14 escalator drive chain suffered a elongation wear. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_ES-14; occurred_at -> station_jubilee_fields\n[2] (station_jubilee_fields) Jubilee Fields is a terminus on the Crimson Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Eastgate Quay and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014. Links: previous_station -> station_ironside; served_by -> line_crimson\n[3] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_foundry_bridge, station_garnet_hill, station_hollow_mill, station_ironside\n[4] (equipment_ES-14) The ES-14 escalator drive chain is fitted across the fleet and in fixed installations. Its dominant failure mode is elongation wear, which presents as chain elongation beyond the 1.5 percent service limit. A ES-14 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group ES14G. Links: maintained_by -> procedure_MP-121, procedure_MP-124\n[5] (station_ironside) Ironside is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Eastgate Quay and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: previous_station -> station_hollow_mill; site_of_incident -> incident_2026_11\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_12",
+        "station_jubilee_fields",
+        "line_crimson",
+        "equipment_ES-14",
+        "station_ironside"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 652,
+        "output_tokens": 97,
+        "retrieval_latency_ms": 103.098,
+        "generation_latency_ms": 5067.569,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 652,
+            "output_tokens": 97,
+            "latency_ms": 5067.569
+          }
+        }
+      }
+    },
+    "2027": {
+      "id": 2027,
+      "answer": "procedure_MP-105 – the maintenance procedure that maintains the TX-440 traction inverter, whose phase‑imbalance trip caused the fault at Mallow Street.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Mallow Street?",
+          "retrieved": [
+            "incident_2026_15",
+            "incident_2026_07",
+            "station_mallow_street",
+            "line_jade",
+            "equipment_TX-440"
+          ],
+          "new_evidence": [
+            "incident_2026_15",
+            "incident_2026_07",
+            "station_mallow_street",
+            "line_jade",
+            "equipment_TX-440"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-105"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Mallow Street?\nEvidence:\n[1] (incident_2026_15) Service incident 2026/15 on 2026-03-19: trains were held at Mallow Street on the Jade Line for 14 minutes after a TX-440 traction inverter suffered a phase imbalance trip. 8 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_jade; caused_by -> equipment_TX-440; occurred_at -> station_mallow_street\n[2] (incident_2026_07) Service incident 2026/07 on 2026-07-22: trains were held at Eastgate Quay on the Crimson Line for 35 minutes after a CP-55 compressor module suffered a pressure bleed-down. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_CP-55; occurred_at -> station_eastgate_quay\n[3] (station_mallow_street) Mallow Street is a through station on the Jade Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Kingsmoor and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_netherby; previous_station -> station_larkspur; served_by -> line_jade\n[4] (line_jade) The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_kingsmoor, station_larkspur, station_netherby, station_oakhurst, station_pennyford\n[5] (equipment_TX-440) The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G. Links: maintained_by -> procedure_MP-105\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_15",
+        "incident_2026_07",
+        "station_mallow_street",
+        "line_jade",
+        "equipment_TX-440"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 656,
+        "output_tokens": 81,
+        "retrieval_latency_ms": 28.459,
+        "generation_latency_ms": 5087.229,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 656,
+            "output_tokens": 81,
+            "latency_ms": 5087.229
+          }
+        }
+      }
+    },
+    "2028": {
+      "id": 2028,
+      "answer": "procedure_MP-117 – this maintenance procedure is responsible for the HV‑21 pantograph head that suffered the carbon strip fracture.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Netherby?",
+          "retrieved": [
+            "incident_2026_16",
+            "station_netherby",
+            "line_jade",
+            "equipment_HV-21",
+            "station_mallow_street"
+          ],
+          "new_evidence": [
+            "incident_2026_16",
+            "station_netherby",
+            "line_jade",
+            "equipment_HV-21",
+            "station_mallow_street"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-117"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Netherby?\nEvidence:\n[1] (incident_2026_16) Service incident 2026/16 on 2026-04-22: trains were held at Netherby on the Jade Line for 18 minutes after a HV-21 pantograph head suffered a carbon strip fracture. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_jade; caused_by -> equipment_HV-21; occurred_at -> station_netherby\n[2] (station_netherby) Netherby is a through station on the Jade Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Kingsmoor and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_oakhurst; previous_station -> station_mallow_street; served_by -> line_jade\n[3] (line_jade) The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_kingsmoor, station_larkspur, station_mallow_street, station_oakhurst, station_pennyford\n[4] (equipment_HV-21) The HV-21 pantograph head is fitted across the fleet and in fixed installations. Its dominant failure mode is carbon strip fracture, which presents as a sudden loss of overhead contact force. A HV-21 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group HV21G. Links: maintained_by -> procedure_MP-117\n[5] (station_mallow_street) Mallow Street is a through station on the Jade Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Kingsmoor and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: previous_station -> station_larkspur; site_of_incident -> incident_2026_15\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_16",
+        "station_netherby",
+        "line_jade",
+        "equipment_HV-21",
+        "station_mallow_street"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 638,
+        "output_tokens": 79,
+        "retrieval_latency_ms": 37.899,
+        "generation_latency_ms": 5145.261,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 638,
+            "output_tokens": 79,
+            "latency_ms": 5145.261
+          }
+        }
+      }
+    },
+    "2029": {
+      "id": 2029,
+      "answer": "procedure_MP-120 – this maintenance procedure is linked to the BR-7 regenerative brake unit that failed at Oakhurst.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Oakhurst?",
+          "retrieved": [
+            "incident_2026_17",
+            "incident_2026_08",
+            "line_jade",
+            "equipment_BR-7",
+            "station_foundry_bridge"
+          ],
+          "new_evidence": [
+            "incident_2026_17",
+            "incident_2026_08",
+            "line_jade",
+            "equipment_BR-7",
+            "station_foundry_bridge"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-120"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Oakhurst?\nEvidence:\n[1] (incident_2026_17) Service incident 2026/17 on 2026-05-25: trains were held at Oakhurst on the Jade Line for 22 minutes after a BR-7 regenerative brake unit suffered a resistor grid overheat. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_jade; caused_by -> equipment_BR-7; occurred_at -> station_oakhurst\n[2] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_DR-8; occurred_at -> station_foundry_bridge\n[3] (line_jade) The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_kingsmoor, station_larkspur, station_mallow_street, station_netherby, station_oakhurst, station_pennyford\n[4] (equipment_BR-7) The BR-7 regenerative brake unit is fitted across the fleet and in fixed installations. Its dominant failure mode is resistor grid overheat, which presents as grid temperature above the 310 degree cut-out. A BR-7 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group BR7G. Links: maintained_by -> procedure_MP-120\n[5] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_garnet_hill; previous_station -> station_eastgate_quay; served_by -> line_crimson\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_17",
+        "incident_2026_08",
+        "line_jade",
+        "equipment_BR-7",
+        "station_foundry_bridge"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 670,
+        "output_tokens": 84,
+        "retrieval_latency_ms": 45.98,
+        "generation_latency_ms": 5270.219,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 670,
+            "output_tokens": 84,
+            "latency_ms": 5270.219
+          }
+        }
+      }
+    },
+    "2030": {
+      "id": 2030,
+      "answer": "procedure_MP-113 – this maintenance procedure is responsible for the PD-90 platform screen door controller, whose obstruction sensor drift caused the fault at Pennyford.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Pennyford?",
+          "retrieved": [
+            "incident_2026_18",
+            "line_jade",
+            "equipment_PD-90",
+            "station_foundry_bridge",
+            "line_crimson"
+          ],
+          "new_evidence": [
+            "incident_2026_18",
+            "line_jade",
+            "equipment_PD-90",
+            "station_foundry_bridge",
+            "line_crimson"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-113"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Pennyford?\nEvidence:\n[1] (incident_2026_18) Service incident 2026/18 on 2026-06-01: trains were held at Pennyford on the Jade Line for 26 minutes after a PD-90 platform screen door controller suffered a obstruction sensor drift. 2 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_jade; caused_by -> equipment_PD-90; occurred_at -> station_pennyford\n[2] (line_jade) The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_kingsmoor, station_larkspur, station_mallow_street, station_netherby, station_oakhurst, station_pennyford\n[3] (equipment_PD-90) The PD-90 platform screen door controller is fitted across the fleet and in fixed installations. Its dominant failure mode is obstruction sensor drift, which presents as false obstruction reports on an empty threshold. A PD-90 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PD90G. Links: maintained_by -> procedure_MP-113\n[4] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_garnet_hill; previous_station -> station_eastgate_quay; served_by -> line_crimson; site_of_incident -> incident_2026_08\n[5] (line_crimson) The Crimson Line runs from Eastgate Quay to Jubilee Fields, calling at Foundry Bridge, Garnet Hill, Hollow Mill, Ironside. It is operated with Series 500 six-car sets and carries an average weekday ridership of 87 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_eastgate_quay, station_garnet_hill, station_hollow_mill, station_ironside, station_jubilee_fields\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_18",
+        "line_jade",
+        "equipment_PD-90",
+        "station_foundry_bridge",
+        "line_crimson"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 684,
+        "output_tokens": 80,
+        "retrieval_latency_ms": 27.136,
+        "generation_latency_ms": 4732.507,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 684,
+            "output_tokens": 80,
+            "latency_ms": 4732.507
+          }
+        }
+      }
+    },
+    "2031": {
+      "id": 2031,
+      "answer": "procedure_MP-122 – the maintenance procedure that covers SG-12 signal interlocking relays, whose contact‑welding fault stopped service at Quarry Side.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Quarry Side?",
+          "retrieved": [
+            "incident_2026_19",
+            "station_quarry_side",
+            "line_amber",
+            "equipment_SG-12",
+            "station_redcliff"
+          ],
+          "new_evidence": [
+            "incident_2026_19",
+            "station_quarry_side",
+            "line_amber",
+            "equipment_SG-12",
+            "station_redcliff"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-122"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Quarry Side?\nEvidence:\n[1] (incident_2026_19) Service incident 2026/19 on 2026-07-04: trains were held at Quarry Side on the Amber Line for 30 minutes after a SG-12 signal interlocking relay suffered a contact welding. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_SG-12; occurred_at -> station_quarry_side\n[2] (station_quarry_side) Quarry Side is a terminus on the Amber Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Quarry Side and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_redcliff; served_by -> line_amber\n[3] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_redcliff, station_saltmarsh, station_thistlebank, station_underbank, station_vantage_point\n[4] (equipment_SG-12) The SG-12 signal interlocking relay is fitted across the fleet and in fixed installations. Its dominant failure mode is contact welding, which presents as a relay that fails to drop out after de-energising. A SG-12 unit has a design life of 8 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group SG12G. Links: maintained_by -> procedure_MP-122\n[5] (station_redcliff) Redcliff is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Quarry Side and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_saltmarsh; site_of_incident -> incident_2026_20\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_19",
+        "station_quarry_side",
+        "line_amber",
+        "equipment_SG-12",
+        "station_redcliff"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 634,
+        "output_tokens": 79,
+        "retrieval_latency_ms": 27.821,
+        "generation_latency_ms": 5578.353,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 634,
+            "output_tokens": 79,
+            "latency_ms": 5578.353
+          }
+        }
+      }
+    },
+    "2032": {
+      "id": 2032,
+      "answer": "procedure_MP-121 – this maintenance procedure is linked to the AX-3 axle bearing assembly that caused the fault.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Redcliff?",
+          "retrieved": [
+            "incident_2026_20",
+            "station_redcliff",
+            "incident_2026_08",
+            "line_amber",
+            "equipment_AX-3"
+          ],
+          "new_evidence": [
+            "incident_2026_20",
+            "station_redcliff",
+            "incident_2026_08",
+            "line_amber",
+            "equipment_AX-3"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-121"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Redcliff?\nEvidence:\n[1] (incident_2026_20) Service incident 2026/20 on 2026-08-07: trains were held at Redcliff on the Amber Line for 34 minutes after a AX-3 axle bearing assembly suffered a thermal spike. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_AX-3; occurred_at -> station_redcliff\n[2] (station_redcliff) Redcliff is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Quarry Side and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_saltmarsh; previous_station -> station_quarry_side; served_by -> line_amber\n[3] (incident_2026_08) Service incident 2026/08 on 2026-08-25: trains were held at Foundry Bridge on the Crimson Line for 39 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_DR-8; occurred_at -> station_foundry_bridge\n[4] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_saltmarsh, station_thistlebank, station_underbank, station_vantage_point\n[5] (equipment_AX-3) The AX-3 axle bearing assembly is fitted across the fleet and in fixed installations. Its dominant failure mode is thermal spike, which presents as a bearing temperature rise of more than 40 degrees in ten minutes. A AX-3 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group AX3G. Links: maintained_by -> procedure_MP-121\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_20",
+        "station_redcliff",
+        "incident_2026_08",
+        "line_amber",
+        "equipment_AX-3"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 660,
+        "output_tokens": 73,
+        "retrieval_latency_ms": 15.731,
+        "generation_latency_ms": 5200.016,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 660,
+            "output_tokens": 73,
+            "latency_ms": 5200.016
+          }
+        }
+      }
+    }
+  }
+}
