@@ -1,0 +1,615 @@
+{
+  "corpus_id": "meridian-transit-v1",
+  "experiment": "robustness-r2-prime-b",
+  "dataset_version": "r2pb-1.0",
+  "preregistration": "PREREGISTRATION_R2_PRIME_B.md",
+  "corruption_version": "corrupt-1.0",
+  "base_dataset_sha256": "8f61e760d6ec9b1ca95f8bf955bfb33698851caa8e61cf7ff0d3b1f758a54fb2",
+  "notes": [
+    "Paired: each station appears clean (P) and with maintained_by substituted (N), same question text.",
+    "Vantage Point excluded by the retrieval precondition (equipment chunk not in C top 5)."
+  ],
+  "queries": [
+    {
+      "id": 4001,
+      "case": "P",
+      "family": "two_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Saltmarsh?",
+      "answerable": true,
+      "anchor": "station_saltmarsh",
+      "station": "Saltmarsh",
+      "pair_key": "Saltmarsh",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-113",
+          "MP-114"
+        ],
+        "evidence_chunks": [
+          "incident_2026_21",
+          "equipment_CP-55",
+          "procedure_MP-113",
+          "procedure_MP-114"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-113",
+          "MP-114"
+        ]
+      }
+    },
+    {
+      "id": 4002,
+      "case": "P",
+      "family": "two_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Thistlebank?",
+      "answerable": true,
+      "anchor": "station_thistlebank",
+      "station": "Thistlebank",
+      "pair_key": "Thistlebank",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-115",
+          "MP-116"
+        ],
+        "evidence_chunks": [
+          "incident_2026_22",
+          "equipment_DR-8",
+          "procedure_MP-115",
+          "procedure_MP-116"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-115",
+          "MP-116"
+        ]
+      }
+    },
+    {
+      "id": 4003,
+      "case": "P",
+      "family": "two_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Underbank?",
+      "answerable": true,
+      "anchor": "station_underbank",
+      "station": "Underbank",
+      "pair_key": "Underbank",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-117"
+        ],
+        "evidence_chunks": [
+          "incident_2026_23",
+          "equipment_PS-19",
+          "procedure_MP-117"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-117"
+        ]
+      }
+    },
+    {
+      "id": 4004,
+      "case": "P",
+      "family": "two_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Westmere?",
+      "answerable": true,
+      "anchor": "station_westmere",
+      "station": "Westmere",
+      "pair_key": "Westmere",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-120"
+        ],
+        "evidence_chunks": [
+          "incident_2026_25",
+          "equipment_VE-31",
+          "procedure_MP-120"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-120"
+        ]
+      }
+    },
+    {
+      "id": 4005,
+      "case": "P",
+      "family": "two_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Yarrow Cross?",
+      "answerable": true,
+      "anchor": "station_yarrow_cross",
+      "station": "Yarrow Cross",
+      "pair_key": "Yarrow Cross",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-121"
+        ],
+        "evidence_chunks": [
+          "incident_2026_26",
+          "equipment_ES-14",
+          "procedure_MP-121"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-121"
+        ]
+      }
+    },
+    {
+      "id": 4006,
+      "case": "P",
+      "family": "two_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Ashfen?",
+      "answerable": true,
+      "anchor": "station_ashfen",
+      "station": "Ashfen",
+      "pair_key": "Ashfen",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-122"
+        ],
+        "evidence_chunks": [
+          "incident_2026_27",
+          "equipment_LT-77",
+          "procedure_MP-122"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-122"
+        ]
+      }
+    },
+    {
+      "id": 4007,
+      "case": "P",
+      "family": "two_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Beacon Rise?",
+      "answerable": true,
+      "anchor": "station_beacon_rise",
+      "station": "Beacon Rise",
+      "pair_key": "Beacon Rise",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-123",
+          "MP-124"
+        ],
+        "evidence_chunks": [
+          "incident_2026_28",
+          "equipment_WS-5",
+          "procedure_MP-123",
+          "procedure_MP-124"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-123",
+          "MP-124"
+        ]
+      }
+    },
+    {
+      "id": 4008,
+      "case": "N",
+      "family": "two_hop_second_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Saltmarsh?",
+      "answerable": true,
+      "anchor": "station_saltmarsh",
+      "station": "Saltmarsh",
+      "pair_key": "Saltmarsh",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_CP-55",
+          "true_targets": [
+            "procedure_MP-113",
+            "procedure_MP-114"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-103",
+            "procedure_MP-104"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-113",
+          "MP-114"
+        ],
+        "evidence_chunks": [
+          "incident_2026_21",
+          "equipment_CP-55",
+          "procedure_MP-113",
+          "procedure_MP-114"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-103",
+          "MP-104"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-113",
+          "MP-114"
+        ]
+      }
+    },
+    {
+      "id": 4009,
+      "case": "N",
+      "family": "two_hop_second_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Thistlebank?",
+      "answerable": true,
+      "anchor": "station_thistlebank",
+      "station": "Thistlebank",
+      "pair_key": "Thistlebank",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_DR-8",
+          "true_targets": [
+            "procedure_MP-115",
+            "procedure_MP-116"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-109",
+            "procedure_MP-110"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-115",
+          "MP-116"
+        ],
+        "evidence_chunks": [
+          "incident_2026_22",
+          "equipment_DR-8",
+          "procedure_MP-115",
+          "procedure_MP-116"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-109",
+          "MP-110"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-115",
+          "MP-116"
+        ]
+      }
+    },
+    {
+      "id": 4010,
+      "case": "N",
+      "family": "two_hop_second_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Underbank?",
+      "answerable": true,
+      "anchor": "station_underbank",
+      "station": "Underbank",
+      "pair_key": "Underbank",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_PS-19",
+          "true_targets": [
+            "procedure_MP-117"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-120"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-117"
+        ],
+        "evidence_chunks": [
+          "incident_2026_23",
+          "equipment_PS-19",
+          "procedure_MP-117"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-120"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-117"
+        ]
+      }
+    },
+    {
+      "id": 4011,
+      "case": "N",
+      "family": "two_hop_second_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Westmere?",
+      "answerable": true,
+      "anchor": "station_westmere",
+      "station": "Westmere",
+      "pair_key": "Westmere",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_VE-31",
+          "true_targets": [
+            "procedure_MP-120"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-117"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-120"
+        ],
+        "evidence_chunks": [
+          "incident_2026_25",
+          "equipment_VE-31",
+          "procedure_MP-120"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-117"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-120"
+        ]
+      }
+    },
+    {
+      "id": 4012,
+      "case": "N",
+      "family": "two_hop_second_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Yarrow Cross?",
+      "answerable": true,
+      "anchor": "station_yarrow_cross",
+      "station": "Yarrow Cross",
+      "pair_key": "Yarrow Cross",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_ES-14",
+          "true_targets": [
+            "procedure_MP-121"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-122"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-121"
+        ],
+        "evidence_chunks": [
+          "incident_2026_26",
+          "equipment_ES-14",
+          "procedure_MP-121"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-122"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-121"
+        ]
+      }
+    },
+    {
+      "id": 4013,
+      "case": "N",
+      "family": "two_hop_second_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Ashfen?",
+      "answerable": true,
+      "anchor": "station_ashfen",
+      "station": "Ashfen",
+      "pair_key": "Ashfen",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_LT-77",
+          "true_targets": [
+            "procedure_MP-122"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-121"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-122"
+        ],
+        "evidence_chunks": [
+          "incident_2026_27",
+          "equipment_LT-77",
+          "procedure_MP-122"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-121"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-122"
+        ]
+      }
+    },
+    {
+      "id": 4014,
+      "case": "N",
+      "family": "two_hop_second_hop",
+      "query": "Which maintenance procedures cover the fault that stopped service at Beacon Rise?",
+      "answerable": true,
+      "anchor": "station_beacon_rise",
+      "station": "Beacon Rise",
+      "pair_key": "Beacon Rise",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_WS-5",
+          "true_targets": [
+            "procedure_MP-123",
+            "procedure_MP-124"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-107",
+            "procedure_MP-108"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-123",
+          "MP-124"
+        ],
+        "evidence_chunks": [
+          "incident_2026_28",
+          "equipment_WS-5",
+          "procedure_MP-123",
+          "procedure_MP-124"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-107",
+          "MP-108"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-123",
+          "MP-124"
+        ]
+      }
+    }
+  ]
+}
