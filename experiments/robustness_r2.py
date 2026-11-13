@@ -40,6 +40,7 @@ from experiments import robustness_r1 as r1  # noqa: E402
 from rlm import evaluate as rlm_eval  # noqa: E402
 from rlm import loop as rlm_loop  # noqa: E402
 from rlm import loop_evidence as ea  # noqa: E402
+from rlm import robustness_scoring as r1s  # noqa: E402
 from rlm import robustness_scoring_r2 as r2s  # noqa: E402
 from rlm.providers import ProviderUnavailable, QuotaExceeded, build_provider  # noqa: E402
 
@@ -278,27 +279,37 @@ def run_retrieval(ctx: Context) -> Dict[str, Any]:
         truth_chunks = set(item["document_truth"]["evidence_chunks"]) if item["answerable"] else set()
         corrupt_nodes = {node for op in item["corruption"] for node in op["corrupt_targets"]}
         entry = {"id": item["id"], "case": item["case"], "query": item["query"]}
+
+        def measure(ranking: List[str]) -> Dict[str, Any]:
+            return {"ranking": ranking,
+                    "truth_recall@5": round(len(truth_chunks & set(ranking)) / len(truth_chunks), 4) if truth_chunks else None,
+                    "corrupt_target_in_top5": bool(corrupt_nodes & set(ranking))}
+
         for arch in ("A", "B2", "C"):
-            ranking = [chunk["node_id"] for chunk in retrievers[arch].retrieve(item["query"], 5)]
-            entry[arch] = {
-                "ranking": ranking,
-                "truth_recall@5": round(len(truth_chunks & set(ranking)) / len(truth_chunks), 4) if truth_chunks else None,
-                "corrupt_target_in_top5": bool(corrupt_nodes & set(ranking)),
-            }
-        clean = r1.MaskedRetriever(ctx.base["vector"], item.get("mask") or [])
-        entry["A_identical_to_clean_graph"] = [c["node_id"] for c in clean.retrieve(item["query"], 5)] == entry["A"]["ranking"]
+            entry[arch] = measure([chunk["node_id"] for chunk in retrievers[arch].retrieve(item["query"], 5)])
+            # Same query, same mask, clean graph: the control for the corruption's effect.
+            clean = r1.MaskedRetriever(ctx.base[ab.ARCHITECTURES[arch]["retriever"]], item.get("mask") or [])
+            entry[f"{arch}_clean"] = measure([chunk["node_id"] for chunk in clean.retrieve(item["query"], 5)])
+            entry[f"{arch}_identical_to_clean"] = entry[arch]["ranking"] == entry[f"{arch}_clean"]["ranking"]
         rows.append(entry)
-    summary = {}
+
+    def summarise(key: str, group: List[Dict[str, Any]]) -> Dict[str, Any]:
+        recalls = [row[key]["truth_recall@5"] for row in group if row[key]["truth_recall@5"] is not None]
+        return {"truth_recall@5": round(statistics.fmean(recalls), 4) if recalls else None,
+                "corrupt_target_in_top5": r1.fraction(sum(row[key]["corrupt_target_in_top5"] for row in group), len(group))["text"]}
+
+    summary: Dict[str, Any] = {}
     for arch in ("A", "B2", "C"):
         for case in CASES:
             group = [row for row in rows if row["case"] == case]
-            recalls = [row[arch]["truth_recall@5"] for row in group if row[arch]["truth_recall@5"] is not None]
             summary.setdefault(arch, {})[case] = {
-                "truth_recall@5": round(statistics.fmean(recalls), 4) if recalls else None,
-                "corrupt_target_in_top5": r1.fraction(sum(row[arch]["corrupt_target_in_top5"] for row in group), len(group))["text"],
+                "corrupted": summarise(arch, group), "clean": summarise(f"{arch}_clean", group),
+                "rankings_identical_to_clean": r1.fraction(sum(row[f"{arch}_identical_to_clean"] for row in group), len(group))["text"],
             }
     return {"per_query": rows, "summary": summary,
-            "P1_A_rankings_identical_to_clean": r1.fraction(sum(row["A_identical_to_clean_graph"] for row in rows), len(rows))["text"]}
+            "rankings_identical_to_clean": {arch: r1.fraction(sum(row[f"{arch}_identical_to_clean"] for row in rows), len(rows))["text"]
+                                            for arch in ("A", "B2", "C")},
+            "P1_A_rankings_identical_to_clean": r1.fraction(sum(row["A_identical_to_clean"] for row in rows), len(rows))["text"]}
 
 
 # ================================= Answers ==================================
@@ -419,6 +430,9 @@ def aggregate(rows: List[Dict[str, Any]]) -> Dict[str, Any]:
         "wrong_target_text_received": r1.fraction(count(lambda row: row["score"]["wrong_target_text_received"], rows), n)["text"],
         "document_supported": r1.fraction(count(lambda row: row["score"]["document_supported"], answerable), len(answerable))["text"],
         "identifier_supported": r1.fraction(count(lambda row: row["score"]["identifier_supported"], rows), n)["text"],
+        "wrong_answers": r1.fraction(count(lambda row: row["score"]["is_wrong"], rows), n)["text"],
+        "wrong_by_source": {source: count(lambda row, s=source: row["score"]["wrong_source"] == s, rows)
+                            for source in r2s.WRONG_SOURCES},
         "mean_evidence_coverage": avg(row["evidence_coverage"] for row in rows),
         "mean_input_tokens": avg(row["cost"]["input_tokens"] for row in rows),
         "mean_output_tokens": avg(row["cost"]["output_tokens"] for row in rows),
@@ -431,18 +445,49 @@ def aggregate(rows: List[Dict[str, Any]]) -> Dict[str, Any]:
 # ============================== Gate replay =================================
 
 
+GATE_EFFECTS = ("blocked_wrong", "blocked_correct", "passed_correct", "passed_wrong",
+                 "blocked_other", "passed_other")
+
+
+def gate_effect(decision: str, control_outcome: str) -> str:
+    """What the gate did to D's answer.
+
+    blocked_wrong    abstained on a wrong answer (graph_misled, mixed, unsupported, other_wrong)
+    blocked_correct  abstained on a correct answer: the gate rejected a legitimate answer
+    passed_wrong     let a wrong answer through, e.g. because the wrong identifier
+                     appears in some received text (identifier presence is not relation support)
+    passed_correct   let a correct answer or a correct abstention through
+    """
+    wrong = control_outcome in r2s.WRONG_OUTCOMES
+    good = control_outcome in ("correct", "correct_abstention")
+    if decision == "abstain":
+        return "blocked_wrong" if wrong else "blocked_correct" if control_outcome == "correct" else "blocked_other"
+    return "passed_wrong" if wrong else "passed_correct" if good else "passed_other"
+
+
 def replay_gate(ctx: Context, answers: Dict[str, Any]) -> Dict[str, Any]:
+    """gate-1.0 on D's exact corrupted-run evidence: the text inside D's recorded prompts."""
     items = {item["id"]: item for item in ctx.items}
     rows = []
     for row in answers["architectures"]["D"]["per_query"]:
         item = items[row["id"]]
-        texts = [ctx.texts.get(node, "") for node in row["evidence_chunks"]]
+        received = r1s.received_evidence(row["prompts"])["text"].split("\n")
         failures = [{"node_id": node, "reason": "unavailable"} for node in item.get("mask") or []]
-        verdict = ea.sufficiency_gate(row["answer"], item["query"], texts, ctx.universe, failures)
+        verdict = ea.sufficiency_gate(row["answer"], item["query"], received, ctx.universe, failures)
         answer = ea.ABSTAIN_ANSWER if verdict["decision"] == "abstain" else row["answer"]
-        rows.append({**score_row("D-gate", item, {**row, "answer": answer}, ctx),
-                     "answer_control": row["answer"], "gate": verdict})
-    return {"gate_version": ea.GATE_VERSION, "aggregate": aggregate(rows),
+        scored = score_row("D-gate", item, {**row, "answer": answer}, ctx)
+        effect = gate_effect(verdict["decision"], row["score"]["outcome"])
+        rows.append({**scored, "answer_control": row["answer"], "control_outcome": row["score"]["outcome"],
+                     "control_wrong_source": row["score"]["wrong_source"], "gate": verdict, "gate_effect": effect})
+    effects = {effect: sum(1 for row in rows if row["gate_effect"] == effect) for effect in GATE_EFFECTS}
+    passed_wrong_by_source = {source: sum(1 for row in rows if row["gate_effect"] == "passed_wrong"
+                                          and row["control_wrong_source"] == source) for source in r2s.WRONG_SOURCES}
+    return {"gate_version": ea.GATE_VERSION,
+            "evidence": "text inside D's recorded prompts (exact corrupted-run evidence); Links: lines excluded",
+            "gate_effects": effects, "passed_wrong_by_source": passed_wrong_by_source,
+            "gate_effects_by_case": {c: {e: sum(1 for r in rows if r["case"] == c and r["gate_effect"] == e)
+                                         for e in GATE_EFFECTS} for c in CASES},
+            "aggregate": aggregate(rows),
             "by_case": {c: aggregate([r for r in rows if r["case"] == c]) for c in CASES}, "per_query": rows}
 
 
@@ -466,12 +511,52 @@ def input_hashes(ctx: Context) -> Dict[str, Any]:
 # ================================== Report ==================================
 
 
-def build_report(answers: Dict[str, Any], replay: Optional[Dict[str, Any]]) -> Dict[str, Any]:
+def clean_comparison(ctx: Context, answers: Dict[str, Any]) -> Dict[str, Any]:
+    """R2 items whose question text is a v1.1 question: Phase 2 (clean graph) vs R2 (corrupted).
+
+    Same question, same retriever and loop; only the graph differs. R2e/R2f are
+    excluded (their masks also differ from the clean run).
+    """
+    phase2 = json.loads(r1.PHASE2_FROZEN_RESULT.read_text(encoding="utf-8"))["answers"]["architectures"]
+    by_question = {item["query"]: item["id"] for item in ctx.v11}
+    items = {item["id"]: item for item in ctx.items}
+    out: Dict[str, Any] = {}
+    for arch in ARCHS:
+        clean_rows = {row["id"]: row for row in phase2[arch]["per_query"]}
+        pairs = []
+        for row in answers["architectures"][arch]["per_query"]:
+            item = items[row["id"]]
+            v11_id = by_question.get(item["query"])
+            if v11_id is None or not item["answerable"]:
+                continue
+            pairs.append({"id": row["id"], "case": row["case"], "v11_id": v11_id,
+                          "clean_correct": clean_rows[v11_id]["answer_evaluation"]["correct"],
+                          "corrupted_correct": row["score"]["outcome"] == "correct",
+                          "corrupted_outcome": row["score"]["outcome"]})
+        n = len(pairs)
+        out[arch] = {
+            "matched_questions": n,
+            "matched_by_case": {c: sum(1 for p in pairs if p["case"] == c) for c in CASES if any(p["case"] == c for p in pairs)},
+            "clean_accuracy": r1.fraction(sum(p["clean_correct"] for p in pairs), n)["text"],
+            "corrupted_accuracy": r1.fraction(sum(p["corrupted_correct"] for p in pairs), n)["text"],
+            "correct_clean_wrong_corrupted": sum(p["clean_correct"] and not p["corrupted_correct"] for p in pairs),
+            "pairs": pairs,
+        }
+    return out
+
+
+def build_report(ctx: Context, answers: Dict[str, Any], replay: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     columns = {arch: answers["architectures"][arch] for arch in ARCHS}
     if replay:
         columns["D-gate"] = replay
+    retrieval = json.loads(RETRIEVAL_PATH.read_text(encoding="utf-8"))["retrieval"] if RETRIEVAL_PATH.exists() else None
     return {"overall": {name: col["aggregate"] for name, col in columns.items()},
-            "by_case": {case: {name: col["by_case"][case] for name, col in columns.items()} for case in CASES}}
+            "by_case": {case: {name: col["by_case"][case] for name, col in columns.items()} for case in CASES},
+            "gate_effects": replay and {"overall": replay["gate_effects"], "passed_wrong_by_source": replay["passed_wrong_by_source"],
+                                        "by_case": replay["gate_effects_by_case"]},
+            "clean_vs_corrupted_answers": clean_comparison(ctx, answers),
+            "clean_vs_corrupted_retrieval": retrieval and {"summary": retrieval["summary"],
+                                                           "rankings_identical_to_clean": retrieval["rankings_identical_to_clean"]}}
 
 
 def print_report(report: Dict[str, Any]) -> None:
@@ -483,10 +568,21 @@ def print_report(report: Dict[str, Any]) -> None:
     print(f"{'R2 overall':<34}" + "".join(f"{n:>18}" for n in names))
     for key in keys:
         print(f"{key:<34}" + "".join(f"{str(report['overall'][n][key]):>18}" for n in names))
+    print(f"{'wrong_answers':<34}" + "".join(f"{report['overall'][n]['wrong_answers']:>18}" for n in names))
+    for source in r2s.WRONG_SOURCES:
+        print(f"  wrong, source {source:<18}" + "".join(f"{report['overall'][n]['wrong_by_source'][source]:>18}" for n in names))
     for case in CASES:
         print(f"-- {case}")
         for outcome in r2s.OUTCOMES:
             print(f"  {outcome:<32}" + "".join(f"{report['by_case'][case][n]['outcomes'][outcome]:>18}" for n in names))
+    if report.get("gate_effects"):
+        print("-- D-gate effects:", report["gate_effects"]["overall"])
+        print("   passed_wrong by source:", report["gate_effects"]["passed_wrong_by_source"])
+    for arch, value in (report.get("clean_vs_corrupted_answers") or {}).items():
+        print(f"-- clean vs corrupted answers {arch}: matched {value['matched_questions']}, "
+              f"clean {value['clean_accuracy']}, corrupted {value['corrupted_accuracy']}")
+    if report.get("clean_vs_corrupted_retrieval"):
+        print("-- rankings identical to clean graph:", report["clean_vs_corrupted_retrieval"]["rankings_identical_to_clean"])
 
 
 # =================================== Main ===================================
@@ -541,7 +637,7 @@ def main() -> int:
                 diff = sorted(k for k in current if not frozen or frozen.get(k) != current[k])
                 raise SystemExit(f"Refusing hosted run: R2 inputs not frozen or changed since freezing: {diff}")
         output["answers"] = run_answers(args, ctx)
-        print_report(build_report(output["answers"], None))
+        print_report(build_report(ctx, output["answers"], None))
         out = out or (ANSWERS_PATH if args.provider == "groq" else
                       ROOT / f"experiment_robustness_r2_answers_meridian-transit-v1_{args.provider}.json")
     elif args.phase == "replay-gate":
@@ -551,7 +647,7 @@ def main() -> int:
     elif args.phase == "report":
         answers = json.loads(Path(args.answers).read_text(encoding="utf-8"))["answers"]
         replay = json.loads(REPLAY_PATH.read_text(encoding="utf-8"))["replay"] if REPLAY_PATH.exists() else None
-        output["report"] = build_report(answers, replay)
+        output["report"] = build_report(ctx, answers, replay)
         print_report(output["report"])
         out = out or COMPARISON_PATH
 

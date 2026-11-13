@@ -1,0 +1,2624 @@
+{
+  "experiment": "robustness-r2",
+  "phase": "retrieval",
+  "retrieval": {
+    "per_query": [
+      {
+        "id": 2001,
+        "case": "R2a",
+        "query": "Which component failed when trains were held at Harbour Row?",
+        "A": {
+          "ranking": [
+            "incident_2026_01",
+            "incident_2026_04",
+            "incident_2026_28",
+            "incident_2026_14",
+            "incident_2026_20"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_01",
+            "incident_2026_04",
+            "incident_2026_28",
+            "incident_2026_14",
+            "incident_2026_20"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_harbour_row",
+            "incident_2026_01",
+            "line_azure",
+            "station_kestrel_green",
+            "incident_2026_02"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_harbour_row",
+            "incident_2026_01",
+            "line_azure",
+            "station_kestrel_green",
+            "incident_2026_02"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_AX-3",
+            "station_brickworks"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_TX-440",
+            "station_brickworks"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2002,
+        "case": "R2a",
+        "query": "Which component failed when trains were held at Brickworks?",
+        "A": {
+          "ranking": [
+            "incident_2026_04",
+            "incident_2026_08",
+            "incident_2026_10",
+            "incident_2026_20",
+            "incident_2026_14"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_04",
+            "incident_2026_08",
+            "incident_2026_10",
+            "incident_2026_20",
+            "incident_2026_14"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_brickworks",
+            "incident_2026_04",
+            "line_azure",
+            "station_alder_vale",
+            "station_copper_lane"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_brickworks",
+            "incident_2026_04",
+            "line_azure",
+            "station_alder_vale",
+            "station_copper_lane"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_04",
+            "station_brickworks",
+            "line_azure",
+            "equipment_SG-12",
+            "station_foundry_bridge"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_04",
+            "station_brickworks",
+            "line_azure",
+            "equipment_PD-90",
+            "station_foundry_bridge"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2003,
+        "case": "R2a",
+        "query": "Which component failed when trains were held at Eastgate Quay?",
+        "A": {
+          "ranking": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "incident_2026_19",
+            "incident_2026_23",
+            "incident_2026_28"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "incident_2026_19",
+            "incident_2026_23",
+            "incident_2026_28"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_eastgate_quay",
+            "incident_2026_07",
+            "line_crimson",
+            "station_foundry_bridge",
+            "incident_2026_08"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_eastgate_quay",
+            "incident_2026_07",
+            "line_crimson",
+            "station_foundry_bridge",
+            "incident_2026_08"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "line_crimson",
+            "equipment_LT-77",
+            "station_foundry_bridge"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "line_crimson",
+            "equipment_CP-55",
+            "station_foundry_bridge"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2004,
+        "case": "R2a",
+        "query": "Which component failed when trains were held at Hollow Mill?",
+        "A": {
+          "ranking": [
+            "incident_2026_10",
+            "incident_2026_08",
+            "station_hollow_mill",
+            "incident_2026_11",
+            "incident_2026_14"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_10",
+            "incident_2026_08",
+            "station_hollow_mill",
+            "incident_2026_11",
+            "incident_2026_14"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_hollow_mill",
+            "incident_2026_10",
+            "line_crimson",
+            "station_garnet_hill",
+            "station_ironside"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_hollow_mill",
+            "incident_2026_10",
+            "line_crimson",
+            "station_garnet_hill",
+            "station_ironside"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_10",
+            "incident_2026_08",
+            "station_hollow_mill",
+            "line_crimson",
+            "equipment_BR-7"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_10",
+            "incident_2026_08",
+            "station_hollow_mill",
+            "line_crimson",
+            "equipment_TC-6"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2005,
+        "case": "R2a",
+        "query": "Which component failed when trains were held at Larkspur?",
+        "A": {
+          "ranking": [
+            "incident_2026_14",
+            "station_larkspur",
+            "incident_2026_28",
+            "incident_2026_25",
+            "incident_2026_27"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_14",
+            "station_larkspur",
+            "incident_2026_28",
+            "incident_2026_25",
+            "incident_2026_27"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_larkspur",
+            "incident_2026_14",
+            "line_jade",
+            "station_kingsmoor",
+            "station_mallow_street"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_larkspur",
+            "incident_2026_14",
+            "line_jade",
+            "station_kingsmoor",
+            "station_mallow_street"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_14",
+            "station_larkspur",
+            "line_jade",
+            "equipment_HV-21",
+            "station_kingsmoor"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_14",
+            "station_larkspur",
+            "line_jade",
+            "equipment_WS-5",
+            "station_kingsmoor"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2006,
+        "case": "R2a",
+        "query": "Which component failed when trains were held at Pennyford?",
+        "A": {
+          "ranking": [
+            "incident_2026_18",
+            "incident_2026_10",
+            "incident_2026_28",
+            "incident_2026_08",
+            "incident_2026_09"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_18",
+            "incident_2026_10",
+            "incident_2026_28",
+            "incident_2026_08",
+            "incident_2026_09"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_pennyford",
+            "incident_2026_18",
+            "line_jade",
+            "station_oakhurst",
+            "incident_2026_17"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_pennyford",
+            "incident_2026_18",
+            "line_jade",
+            "station_oakhurst",
+            "incident_2026_17"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_18",
+            "incident_2026_10",
+            "station_pennyford",
+            "line_jade",
+            "equipment_VE-31"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_18",
+            "incident_2026_10",
+            "station_pennyford",
+            "line_jade",
+            "equipment_PD-90"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2007,
+        "case": "R2b",
+        "query": "Which maintenance procedures cover the fault that stopped service at Harbour Row?",
+        "A": {
+          "ranking": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "incident_2026_07",
+            "incident_2026_04",
+            "incident_2026_08"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "incident_2026_07",
+            "incident_2026_04",
+            "incident_2026_08"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_harbour_row",
+            "incident_2026_01",
+            "line_azure",
+            "station_kestrel_green",
+            "station_alder_vale"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_harbour_row",
+            "incident_2026_01",
+            "line_azure",
+            "station_kestrel_green",
+            "station_alder_vale"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_TX-440",
+            "station_kestrel_green"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_01",
+            "station_harbour_row",
+            "line_azure",
+            "equipment_TX-440",
+            "station_kestrel_green"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2008,
+        "case": "R2b",
+        "query": "Which maintenance procedures cover the fault that stopped service at Kestrel Green?",
+        "A": {
+          "ranking": [
+            "incident_2026_02",
+            "station_kestrel_green",
+            "incident_2026_05",
+            "incident_2026_07",
+            "incident_2026_08"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_02",
+            "station_kestrel_green",
+            "incident_2026_05",
+            "incident_2026_07",
+            "incident_2026_08"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_kestrel_green",
+            "incident_2026_02",
+            "line_azure",
+            "station_alder_vale",
+            "station_harbour_row"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_kestrel_green",
+            "incident_2026_02",
+            "line_azure",
+            "station_alder_vale",
+            "station_harbour_row"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_02",
+            "station_kestrel_green",
+            "line_azure",
+            "equipment_HV-21",
+            "station_harbour_row"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_02",
+            "station_kestrel_green",
+            "line_azure",
+            "equipment_HV-21",
+            "station_harbour_row"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2009,
+        "case": "R2b",
+        "query": "Which maintenance procedures cover the fault that stopped service at Alder Vale?",
+        "A": {
+          "ranking": [
+            "incident_2026_03",
+            "station_alder_vale",
+            "incident_2026_17",
+            "incident_2026_08",
+            "incident_2026_20"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_03",
+            "station_alder_vale",
+            "incident_2026_17",
+            "incident_2026_08",
+            "incident_2026_20"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "line_azure",
+            "station_brickworks",
+            "station_kestrel_green"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "line_azure",
+            "station_brickworks",
+            "station_kestrel_green"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_03",
+            "line_azure",
+            "equipment_BR-7",
+            "station_kestrel_green",
+            "station_brickworks"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_03",
+            "line_azure",
+            "equipment_BR-7",
+            "station_kestrel_green",
+            "station_brickworks"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2010,
+        "case": "R2b",
+        "query": "Which maintenance procedures cover the fault that stopped service at Copper Lane?",
+        "A": {
+          "ranking": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "incident_2026_08",
+            "incident_2026_22",
+            "incident_2026_19"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "incident_2026_08",
+            "incident_2026_22",
+            "incident_2026_19"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "line_azure",
+            "station_brickworks",
+            "station_dunmore_park"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "line_azure",
+            "station_brickworks",
+            "station_dunmore_park"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "incident_2026_08",
+            "station_brickworks",
+            "line_azure"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "station_copper_lane",
+            "incident_2026_05",
+            "incident_2026_08",
+            "station_brickworks",
+            "line_azure"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2011,
+        "case": "R2b",
+        "query": "Which maintenance procedures cover the fault that stopped service at Garnet Hill?",
+        "A": {
+          "ranking": [
+            "incident_2026_09",
+            "station_garnet_hill",
+            "incident_2026_13",
+            "incident_2026_12",
+            "incident_2026_06"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_09",
+            "station_garnet_hill",
+            "incident_2026_13",
+            "incident_2026_12",
+            "incident_2026_06"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "line_crimson",
+            "station_foundry_bridge",
+            "station_hollow_mill"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "line_crimson",
+            "station_foundry_bridge",
+            "station_hollow_mill"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_09",
+            "station_garnet_hill",
+            "line_crimson",
+            "equipment_PS-19",
+            "station_foundry_bridge"
+          ],
+          "truth_recall@5": 0.6667,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_09",
+            "station_garnet_hill",
+            "line_crimson",
+            "equipment_PS-19",
+            "station_foundry_bridge"
+          ],
+          "truth_recall@5": 0.6667,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2012,
+        "case": "R2b",
+        "query": "Which maintenance procedures cover the fault that stopped service at Ironside?",
+        "A": {
+          "ranking": [
+            "incident_2026_11",
+            "station_ironside",
+            "incident_2026_08",
+            "incident_2026_03",
+            "incident_2026_07"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_11",
+            "station_ironside",
+            "incident_2026_08",
+            "incident_2026_03",
+            "incident_2026_07"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_ironside",
+            "incident_2026_11",
+            "line_crimson",
+            "station_hollow_mill",
+            "station_jubilee_fields"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_ironside",
+            "incident_2026_11",
+            "line_crimson",
+            "station_hollow_mill",
+            "station_jubilee_fields"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_11",
+            "station_ironside",
+            "line_crimson",
+            "equipment_VE-31",
+            "station_hollow_mill"
+          ],
+          "truth_recall@5": 0.6667,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_11",
+            "station_ironside",
+            "line_crimson",
+            "equipment_VE-31",
+            "station_hollow_mill"
+          ],
+          "truth_recall@5": 0.6667,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2013,
+        "case": "R2b",
+        "query": "Which maintenance procedures cover the fault that stopped service at Kingsmoor?",
+        "A": {
+          "ranking": [
+            "incident_2026_13",
+            "incident_2026_08",
+            "incident_2026_19",
+            "incident_2026_06",
+            "incident_2026_09"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_13",
+            "incident_2026_08",
+            "incident_2026_19",
+            "incident_2026_06",
+            "incident_2026_09"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_kingsmoor",
+            "incident_2026_13",
+            "line_jade",
+            "station_larkspur",
+            "incident_2026_14"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_kingsmoor",
+            "incident_2026_13",
+            "line_jade",
+            "station_larkspur",
+            "incident_2026_14"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_13",
+            "incident_2026_08",
+            "incident_2026_19",
+            "station_kingsmoor",
+            "line_jade"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_13",
+            "incident_2026_08",
+            "incident_2026_19",
+            "station_kingsmoor",
+            "line_jade"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2014,
+        "case": "R2b",
+        "query": "Which maintenance procedures cover the fault that stopped service at Larkspur?",
+        "A": {
+          "ranking": [
+            "incident_2026_14",
+            "station_larkspur",
+            "incident_2026_28",
+            "incident_2026_27",
+            "procedure_MP-124"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_14",
+            "station_larkspur",
+            "incident_2026_28",
+            "incident_2026_27",
+            "procedure_MP-124"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_larkspur",
+            "incident_2026_14",
+            "line_jade",
+            "station_kingsmoor",
+            "station_mallow_street"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_larkspur",
+            "incident_2026_14",
+            "line_jade",
+            "station_kingsmoor",
+            "station_mallow_street"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_14",
+            "station_larkspur",
+            "line_jade",
+            "equipment_WS-5",
+            "station_kingsmoor"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_14",
+            "station_larkspur",
+            "line_jade",
+            "equipment_WS-5",
+            "station_kingsmoor"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2015,
+        "case": "R2c",
+        "query": "Which stations sit immediately either side of Alder Vale along its own line?",
+        "A": {
+          "ranking": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "station_vantage_point",
+            "station_quarry_side",
+            "station_oakhurst"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "station_vantage_point",
+            "station_quarry_side",
+            "station_oakhurst"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "line_azure",
+            "station_glasshouse",
+            "station_kestrel_green"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "line_azure",
+            "station_brickworks",
+            "station_kestrel_green"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": false,
+        "C": {
+          "ranking": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "station_kestrel_green",
+            "line_azure",
+            "station_glasshouse"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "station_alder_vale",
+            "incident_2026_03",
+            "station_kestrel_green",
+            "line_azure",
+            "station_brickworks"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2016,
+        "case": "R2c",
+        "query": "Which stations sit immediately either side of Garnet Hill along its own line?",
+        "A": {
+          "ranking": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "line_crimson",
+            "station_jubilee_fields",
+            "station_kingsmoor"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "line_crimson",
+            "station_jubilee_fields",
+            "station_kingsmoor"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "line_crimson",
+            "station_ashfen",
+            "station_foundry_bridge"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "line_crimson",
+            "station_foundry_bridge",
+            "station_hollow_mill"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": false,
+        "C": {
+          "ranking": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "station_foundry_bridge",
+            "station_ashfen",
+            "equipment_PS-19"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "station_garnet_hill",
+            "incident_2026_09",
+            "station_foundry_bridge",
+            "station_hollow_mill",
+            "equipment_PS-19"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2017,
+        "case": "R2c",
+        "query": "Which stations sit immediately either side of Mallow Street along its own line?",
+        "A": {
+          "ranking": [
+            "station_mallow_street",
+            "station_fallowfield",
+            "station_jubilee_fields",
+            "station_carrow_end",
+            "incident_2026_15"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "station_mallow_street",
+            "station_fallowfield",
+            "station_jubilee_fields",
+            "station_carrow_end",
+            "incident_2026_15"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_mallow_street",
+            "incident_2026_15",
+            "line_jade",
+            "station_larkspur",
+            "station_redcliff"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_mallow_street",
+            "incident_2026_15",
+            "line_jade",
+            "station_larkspur",
+            "station_netherby"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": false,
+        "C": {
+          "ranking": [
+            "station_mallow_street",
+            "station_larkspur",
+            "line_jade",
+            "station_redcliff",
+            "station_elmsworth"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "station_mallow_street",
+            "station_larkspur",
+            "line_jade",
+            "station_netherby",
+            "station_elmsworth"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2018,
+        "case": "R2c",
+        "query": "Which stations sit immediately either side of Saltmarsh along its own line?",
+        "A": {
+          "ranking": [
+            "station_saltmarsh",
+            "incident_2026_21",
+            "station_hartsmere",
+            "station_vantage_point",
+            "incident_2026_01"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "station_saltmarsh",
+            "incident_2026_21",
+            "station_hartsmere",
+            "station_vantage_point",
+            "incident_2026_01"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_saltmarsh",
+            "incident_2026_21",
+            "line_amber",
+            "station_ironside",
+            "station_redcliff"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_saltmarsh",
+            "incident_2026_21",
+            "line_amber",
+            "station_redcliff",
+            "station_thistlebank"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": false,
+        "C": {
+          "ranking": [
+            "station_saltmarsh",
+            "incident_2026_21",
+            "station_redcliff",
+            "line_amber",
+            "station_ironside"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "station_saltmarsh",
+            "incident_2026_21",
+            "station_redcliff",
+            "line_amber",
+            "station_thistlebank"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2019,
+        "case": "R2c",
+        "query": "Which stations sit immediately either side of Netherby along its own line?",
+        "A": {
+          "ranking": [
+            "station_netherby",
+            "station_vantage_point",
+            "station_juniper_row",
+            "station_quarry_side",
+            "station_hartsmere"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "station_netherby",
+            "station_vantage_point",
+            "station_juniper_row",
+            "station_quarry_side",
+            "station_hartsmere"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_netherby",
+            "incident_2026_16",
+            "line_jade",
+            "station_fallowfield",
+            "station_mallow_street"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_netherby",
+            "incident_2026_16",
+            "line_jade",
+            "station_mallow_street",
+            "station_oakhurst"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": false,
+        "C": {
+          "ranking": [
+            "station_netherby",
+            "station_mallow_street",
+            "line_jade",
+            "incident_2026_16",
+            "station_fallowfield"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "station_netherby",
+            "station_mallow_street",
+            "line_jade",
+            "station_oakhurst",
+            "incident_2026_16"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2020,
+        "case": "R2c",
+        "query": "Which stations sit immediately either side of Ironside along its own line?",
+        "A": {
+          "ranking": [
+            "station_ironside",
+            "incident_2026_11",
+            "line_crimson",
+            "station_foundry_bridge",
+            "station_jubilee_fields"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "station_ironside",
+            "incident_2026_11",
+            "line_crimson",
+            "station_foundry_bridge",
+            "station_jubilee_fields"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_ironside",
+            "incident_2026_11",
+            "line_crimson",
+            "station_hollow_mill",
+            "station_underbank"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": true
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_ironside",
+            "incident_2026_11",
+            "line_crimson",
+            "station_hollow_mill",
+            "station_jubilee_fields"
+          ],
+          "truth_recall@5": 1.0,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": false,
+        "C": {
+          "ranking": [
+            "station_ironside",
+            "incident_2026_11",
+            "station_hollow_mill",
+            "station_underbank",
+            "equipment_VE-31"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": true
+        },
+        "C_clean": {
+          "ranking": [
+            "station_ironside",
+            "incident_2026_11",
+            "station_hollow_mill",
+            "equipment_VE-31",
+            "station_eastgate_quay"
+          ],
+          "truth_recall@5": 0.0,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": false
+      },
+      {
+        "id": 2021,
+        "case": "R2d",
+        "query": "Which maintenance procedures cover the fault that stopped service at Brickworks?",
+        "A": {
+          "ranking": [
+            "incident_2026_04",
+            "station_brickworks",
+            "role_signalling_technician",
+            "role_plant_engineer",
+            "incident_2026_08"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_04",
+            "station_brickworks",
+            "role_signalling_technician",
+            "role_plant_engineer",
+            "incident_2026_08"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_brickworks",
+            "incident_2026_04",
+            "line_azure",
+            "station_alder_vale",
+            "station_copper_lane"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_brickworks",
+            "incident_2026_04",
+            "line_azure",
+            "station_alder_vale",
+            "station_copper_lane"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_04",
+            "station_brickworks",
+            "role_signalling_technician",
+            "line_azure",
+            "equipment_PD-90"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_04",
+            "station_brickworks",
+            "role_signalling_technician",
+            "line_azure",
+            "equipment_PD-90"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2022,
+        "case": "R2d",
+        "query": "Which maintenance procedures cover the fault that stopped service at Dunmore Park?",
+        "A": {
+          "ranking": [
+            "incident_2026_06",
+            "station_dunmore_park",
+            "incident_2026_09",
+            "incident_2026_07",
+            "incident_2026_08"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_06",
+            "station_dunmore_park",
+            "incident_2026_09",
+            "incident_2026_07",
+            "incident_2026_08"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_dunmore_park",
+            "incident_2026_06",
+            "line_azure",
+            "station_copper_lane",
+            "incident_2026_05"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_dunmore_park",
+            "incident_2026_06",
+            "line_azure",
+            "station_copper_lane",
+            "incident_2026_05"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_06",
+            "line_azure",
+            "equipment_AX-3",
+            "station_copper_lane",
+            "station_garnet_hill"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_06",
+            "line_azure",
+            "equipment_AX-3",
+            "station_copper_lane",
+            "station_garnet_hill"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2023,
+        "case": "R2d",
+        "query": "Which maintenance procedures cover the fault that stopped service at Eastgate Quay?",
+        "A": {
+          "ranking": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "incident_2026_19",
+            "procedure_MP-124",
+            "procedure_MP-111"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "incident_2026_19",
+            "procedure_MP-124",
+            "procedure_MP-111"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_eastgate_quay",
+            "incident_2026_07",
+            "line_crimson",
+            "station_foundry_bridge",
+            "station_garnet_hill"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_eastgate_quay",
+            "incident_2026_07",
+            "line_crimson",
+            "station_foundry_bridge",
+            "station_garnet_hill"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "line_crimson",
+            "equipment_CP-55",
+            "station_foundry_bridge"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_07",
+            "station_eastgate_quay",
+            "line_crimson",
+            "equipment_CP-55",
+            "station_foundry_bridge"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2024,
+        "case": "R2d",
+        "query": "Which maintenance procedures cover the fault that stopped service at Foundry Bridge?",
+        "A": {
+          "ranking": [
+            "incident_2026_08",
+            "station_foundry_bridge",
+            "incident_2026_17",
+            "incident_2026_19",
+            "incident_2026_11"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_08",
+            "station_foundry_bridge",
+            "incident_2026_17",
+            "incident_2026_19",
+            "incident_2026_11"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_foundry_bridge",
+            "incident_2026_08",
+            "line_crimson",
+            "station_eastgate_quay",
+            "station_garnet_hill"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_foundry_bridge",
+            "incident_2026_08",
+            "line_crimson",
+            "station_eastgate_quay",
+            "station_garnet_hill"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_08",
+            "station_foundry_bridge",
+            "line_crimson",
+            "equipment_DR-8",
+            "station_eastgate_quay"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_08",
+            "station_foundry_bridge",
+            "line_crimson",
+            "equipment_DR-8",
+            "station_eastgate_quay"
+          ],
+          "truth_recall@5": 0.5,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2025,
+        "case": "R2d",
+        "query": "Which maintenance procedures cover the fault that stopped service at Hollow Mill?",
+        "A": {
+          "ranking": [
+            "station_hollow_mill",
+            "incident_2026_10",
+            "incident_2026_08",
+            "role_door_fitter",
+            "incident_2026_19"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "station_hollow_mill",
+            "incident_2026_10",
+            "incident_2026_08",
+            "role_door_fitter",
+            "incident_2026_19"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_hollow_mill",
+            "incident_2026_10",
+            "line_crimson",
+            "station_garnet_hill",
+            "station_ironside"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_hollow_mill",
+            "incident_2026_10",
+            "line_crimson",
+            "station_garnet_hill",
+            "station_ironside"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "station_hollow_mill",
+            "incident_2026_10",
+            "incident_2026_08",
+            "station_garnet_hill",
+            "line_crimson"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "station_hollow_mill",
+            "incident_2026_10",
+            "incident_2026_08",
+            "station_garnet_hill",
+            "line_crimson"
+          ],
+          "truth_recall@5": 0.25,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2026,
+        "case": "R2d",
+        "query": "Which maintenance procedures cover the fault that stopped service at Jubilee Fields?",
+        "A": {
+          "ranking": [
+            "incident_2026_12",
+            "station_jubilee_fields",
+            "incident_2026_09",
+            "incident_2026_23",
+            "incident_2026_17"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_12",
+            "station_jubilee_fields",
+            "incident_2026_09",
+            "incident_2026_23",
+            "incident_2026_17"
+          ],
+          "truth_recall@5": 0.3333,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_jubilee_fields",
+            "incident_2026_12",
+            "line_crimson",
+            "station_ironside",
+            "equipment_ES-14"
+          ],
+          "truth_recall@5": 0.6667,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_jubilee_fields",
+            "incident_2026_12",
+            "line_crimson",
+            "station_ironside",
+            "equipment_ES-14"
+          ],
+          "truth_recall@5": 0.6667,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_12",
+            "station_jubilee_fields",
+            "line_crimson",
+            "equipment_ES-14",
+            "station_ironside"
+          ],
+          "truth_recall@5": 0.6667,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_12",
+            "station_jubilee_fields",
+            "line_crimson",
+            "equipment_ES-14",
+            "station_ironside"
+          ],
+          "truth_recall@5": 0.6667,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2027,
+        "case": "R2e",
+        "query": "Which maintenance procedures cover the fault that stopped service at Mallow Street?",
+        "A": {
+          "ranking": [
+            "incident_2026_15",
+            "incident_2026_07",
+            "incident_2026_08",
+            "incident_2026_22",
+            "incident_2026_17"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_15",
+            "incident_2026_07",
+            "incident_2026_08",
+            "incident_2026_22",
+            "incident_2026_17"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_mallow_street",
+            "incident_2026_15",
+            "line_jade",
+            "station_larkspur",
+            "station_netherby"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_mallow_street",
+            "incident_2026_15",
+            "line_jade",
+            "station_larkspur",
+            "station_netherby"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_15",
+            "incident_2026_07",
+            "station_mallow_street",
+            "line_jade",
+            "equipment_TX-440"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_15",
+            "incident_2026_07",
+            "station_mallow_street",
+            "line_jade",
+            "equipment_TX-440"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2028,
+        "case": "R2e",
+        "query": "Which maintenance procedures cover the fault that stopped service at Netherby?",
+        "A": {
+          "ranking": [
+            "incident_2026_16",
+            "station_netherby",
+            "incident_2026_22",
+            "incident_2026_05",
+            "incident_2026_19"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_16",
+            "station_netherby",
+            "incident_2026_22",
+            "incident_2026_05",
+            "incident_2026_19"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_netherby",
+            "incident_2026_16",
+            "line_jade",
+            "station_mallow_street",
+            "station_oakhurst"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_netherby",
+            "incident_2026_16",
+            "line_jade",
+            "station_mallow_street",
+            "station_oakhurst"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_16",
+            "station_netherby",
+            "line_jade",
+            "equipment_HV-21",
+            "station_mallow_street"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_16",
+            "station_netherby",
+            "line_jade",
+            "equipment_HV-21",
+            "station_mallow_street"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2029,
+        "case": "R2e",
+        "query": "Which maintenance procedures cover the fault that stopped service at Oakhurst?",
+        "A": {
+          "ranking": [
+            "incident_2026_17",
+            "incident_2026_08",
+            "incident_2026_20",
+            "incident_2026_22",
+            "station_oakhurst"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_17",
+            "incident_2026_08",
+            "incident_2026_20",
+            "incident_2026_22",
+            "station_oakhurst"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_oakhurst",
+            "incident_2026_17",
+            "line_jade",
+            "station_netherby",
+            "station_pennyford"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_oakhurst",
+            "incident_2026_17",
+            "line_jade",
+            "station_netherby",
+            "station_pennyford"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_17",
+            "incident_2026_08",
+            "line_jade",
+            "equipment_BR-7",
+            "station_foundry_bridge"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_17",
+            "incident_2026_08",
+            "line_jade",
+            "equipment_BR-7",
+            "station_foundry_bridge"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2030,
+        "case": "R2e",
+        "query": "Which maintenance procedures cover the fault that stopped service at Pennyford?",
+        "A": {
+          "ranking": [
+            "incident_2026_18",
+            "incident_2026_08",
+            "incident_2026_17",
+            "incident_2026_22",
+            "station_pennyford"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_18",
+            "incident_2026_08",
+            "incident_2026_17",
+            "incident_2026_22",
+            "station_pennyford"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_pennyford",
+            "incident_2026_18",
+            "line_jade",
+            "station_oakhurst",
+            "incident_2026_17"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_pennyford",
+            "incident_2026_18",
+            "line_jade",
+            "station_oakhurst",
+            "incident_2026_17"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_18",
+            "line_jade",
+            "equipment_PD-90",
+            "station_foundry_bridge",
+            "line_crimson"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_18",
+            "line_jade",
+            "equipment_PD-90",
+            "station_foundry_bridge",
+            "line_crimson"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2031,
+        "case": "R2f",
+        "query": "Which maintenance procedures cover the fault that stopped service at Quarry Side?",
+        "A": {
+          "ranking": [
+            "incident_2026_19",
+            "station_quarry_side",
+            "procedure_MP-112",
+            "incident_2026_20",
+            "incident_2026_11"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_19",
+            "station_quarry_side",
+            "procedure_MP-112",
+            "incident_2026_20",
+            "incident_2026_11"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_quarry_side",
+            "incident_2026_19",
+            "line_amber",
+            "station_redcliff",
+            "equipment_SG-12"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_quarry_side",
+            "incident_2026_19",
+            "line_amber",
+            "station_redcliff",
+            "equipment_SG-12"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_19",
+            "station_quarry_side",
+            "line_amber",
+            "equipment_SG-12",
+            "station_redcliff"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_19",
+            "station_quarry_side",
+            "line_amber",
+            "equipment_SG-12",
+            "station_redcliff"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      },
+      {
+        "id": 2032,
+        "case": "R2f",
+        "query": "Which maintenance procedures cover the fault that stopped service at Redcliff?",
+        "A": {
+          "ranking": [
+            "incident_2026_20",
+            "station_redcliff",
+            "incident_2026_08",
+            "incident_2026_07",
+            "incident_2026_11"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_clean": {
+          "ranking": [
+            "incident_2026_20",
+            "station_redcliff",
+            "incident_2026_08",
+            "incident_2026_07",
+            "incident_2026_11"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "A_identical_to_clean": true,
+        "B2": {
+          "ranking": [
+            "station_redcliff",
+            "incident_2026_20",
+            "line_amber",
+            "station_quarry_side",
+            "station_saltmarsh"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_clean": {
+          "ranking": [
+            "station_redcliff",
+            "incident_2026_20",
+            "line_amber",
+            "station_quarry_side",
+            "station_saltmarsh"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "B2_identical_to_clean": true,
+        "C": {
+          "ranking": [
+            "incident_2026_20",
+            "station_redcliff",
+            "incident_2026_08",
+            "line_amber",
+            "equipment_AX-3"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_clean": {
+          "ranking": [
+            "incident_2026_20",
+            "station_redcliff",
+            "incident_2026_08",
+            "line_amber",
+            "equipment_AX-3"
+          ],
+          "truth_recall@5": null,
+          "corrupt_target_in_top5": false
+        },
+        "C_identical_to_clean": true
+      }
+    ],
+    "summary": {
+      "A": {
+        "R2a": {
+          "corrupted": {
+            "truth_recall@5": 1.0,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 1.0,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "rankings_identical_to_clean": "6/6 (100.0%)"
+        },
+        "R2b": {
+          "corrupted": {
+            "truth_recall@5": 0.3125,
+            "corrupt_target_in_top5": "0/8 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 0.3125,
+            "corrupt_target_in_top5": "0/8 (0.0%)"
+          },
+          "rankings_identical_to_clean": "8/8 (100.0%)"
+        },
+        "R2c": {
+          "corrupted": {
+            "truth_recall@5": 0.3333,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 0.3333,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "rankings_identical_to_clean": "6/6 (100.0%)"
+        },
+        "R2d": {
+          "corrupted": {
+            "truth_recall@5": 0.2639,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 0.2639,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "rankings_identical_to_clean": "6/6 (100.0%)"
+        },
+        "R2e": {
+          "corrupted": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/4 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/4 (0.0%)"
+          },
+          "rankings_identical_to_clean": "4/4 (100.0%)"
+        },
+        "R2f": {
+          "corrupted": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/2 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/2 (0.0%)"
+          },
+          "rankings_identical_to_clean": "2/2 (100.0%)"
+        }
+      },
+      "B2": {
+        "R2a": {
+          "corrupted": {
+            "truth_recall@5": 1.0,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 1.0,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "rankings_identical_to_clean": "6/6 (100.0%)"
+        },
+        "R2b": {
+          "corrupted": {
+            "truth_recall@5": 0.2812,
+            "corrupt_target_in_top5": "0/8 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 0.2812,
+            "corrupt_target_in_top5": "0/8 (0.0%)"
+          },
+          "rankings_identical_to_clean": "8/8 (100.0%)"
+        },
+        "R2c": {
+          "corrupted": {
+            "truth_recall@5": 1.0,
+            "corrupt_target_in_top5": "6/6 (100.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 1.0,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "rankings_identical_to_clean": "0/6 (0.0%)"
+        },
+        "R2d": {
+          "corrupted": {
+            "truth_recall@5": 0.3195,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 0.3195,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "rankings_identical_to_clean": "6/6 (100.0%)"
+        },
+        "R2e": {
+          "corrupted": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/4 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/4 (0.0%)"
+          },
+          "rankings_identical_to_clean": "4/4 (100.0%)"
+        },
+        "R2f": {
+          "corrupted": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/2 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/2 (0.0%)"
+          },
+          "rankings_identical_to_clean": "2/2 (100.0%)"
+        }
+      },
+      "C": {
+        "R2a": {
+          "corrupted": {
+            "truth_recall@5": 1.0,
+            "corrupt_target_in_top5": "6/6 (100.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 1.0,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "rankings_identical_to_clean": "0/6 (0.0%)"
+        },
+        "R2b": {
+          "corrupted": {
+            "truth_recall@5": 0.4896,
+            "corrupt_target_in_top5": "0/8 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 0.4896,
+            "corrupt_target_in_top5": "0/8 (0.0%)"
+          },
+          "rankings_identical_to_clean": "8/8 (100.0%)"
+        },
+        "R2c": {
+          "corrupted": {
+            "truth_recall@5": 0.6667,
+            "corrupt_target_in_top5": "6/6 (100.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 0.6667,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "rankings_identical_to_clean": "0/6 (0.0%)"
+        },
+        "R2d": {
+          "corrupted": {
+            "truth_recall@5": 0.4861,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": 0.4861,
+            "corrupt_target_in_top5": "0/6 (0.0%)"
+          },
+          "rankings_identical_to_clean": "6/6 (100.0%)"
+        },
+        "R2e": {
+          "corrupted": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/4 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/4 (0.0%)"
+          },
+          "rankings_identical_to_clean": "4/4 (100.0%)"
+        },
+        "R2f": {
+          "corrupted": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/2 (0.0%)"
+          },
+          "clean": {
+            "truth_recall@5": null,
+            "corrupt_target_in_top5": "0/2 (0.0%)"
+          },
+          "rankings_identical_to_clean": "2/2 (100.0%)"
+        }
+      }
+    },
+    "rankings_identical_to_clean": {
+      "A": "32/32 (100.0%)",
+      "B2": "26/32 (81.2%)",
+      "C": "20/32 (62.5%)"
+    },
+    "P1_A_rankings_identical_to_clean": "32/32 (100.0%)"
+  },
+  "reproducibility": {
+    "runner_version": "r2-run-1.0",
+    "git_revision": "27f1a2601b7a41805a12576c0fa6164a73ef0fee",
+    "recorded_at": "2026-11-13T05:18:50+00:00",
+    "inputs": {
+      "dataset_path": "benchmark_corpora/meridian/robustness/incorrect_edges.json",
+      "dataset_version": "r2-1.0",
+      "dataset_sha256": "a8c8d16943fa94074f10f3a167bccdea127f0623448ed4917691f20d9459a14b",
+      "corruption_spec_sha256": "7e4ca12988af97925e01893c2664b83df69c8a83f920e816b49c41b32345e116",
+      "mask_sha256": "dda4c553e3c9242d667e43a01341680a470ce5a5dd8a1cda12833db21440bb09",
+      "corruption_version": "corrupt-1.0",
+      "scorer_version": "r2-score-1.0",
+      "runner_version": "r2-run-1.0",
+      "gate_version": "gate-1.0",
+      "loop_version": "1.7",
+      "prompt_template_sha256": {
+        "answer": "2fd1b1017a4e19b5db5d09d401f51ea8f4a12eb90820d262bf39cea85ed9154f",
+        "decide": "29895476724ff170825b301373d012c37b9f3fbba02ec314b553c18d21ac9a19",
+        "step": "0d0a274513de3988bf6b7f4eb62715640b020ddf87aa1299be19344cc6f04468",
+        "ground": "23b0ea16b2f7e141c3c37b0bf433380ca1721389b90092f8a27556e7f709fbae"
+      },
+      "preregistration_sha256": "e94b150137ade5328719a46c58d02672317877219b22505c8fc5446170e43592",
+      "corruption_module_sha256": "9cd9d28c99fba9c08303b911ac3b1cfb32c3a7c8c7b5366ed2dca41cf7729aa6",
+      "scorer_r2_sha256": "6a49c44d1fbebca1d1e9706c9ad2d5ee0afe51dcfaf89635ba689c56d5ac73e0",
+      "scorer_r1_sha256": "91f51d6bdd909081fbe5b61ef5e0d25821faf6cebbc267a9d4c49d9883a2c43c",
+      "runner_sha256": "311219831c882dfc18442589a1135e88c9f02e26551777145873cdd465bf0c69",
+      "loop_evidence_gate_sha256": "9440779ec579650be5314b33bae4ca812bcef84aee2906b6e206b1dcdf548d3f",
+      "architecture_benchmark_sha256": "0ff7f3f355bf91e735098a81921e01a97ee815b6b2a63d8065463e30c3a6d862",
+      "stores": {
+        "benchmark_corpora/meridian/corpus_graph.json": "804b5e1dc2908bb509ec5a28f3cfc68c4f383c55f723801367de499306298eda",
+        "benchmark_corpora/meridian/corpus_documents.json": "46c94d02b7b2bfa17e85903d93af4c15f238db5bb6e6b913ff1cb7069ae378b5",
+        "db/graph_data_bench_meridian.json": "804b5e1dc2908bb509ec5a28f3cfc68c4f383c55f723801367de499306298eda",
+        "db/chroma_db_bench_meridian/chroma.sqlite3": "f99bdb0074bbeee7df1cdcc723b0d18bd6bd31ef94cb26fc855c99e4f6c8f07a"
+      }
+    }
+  }
+}

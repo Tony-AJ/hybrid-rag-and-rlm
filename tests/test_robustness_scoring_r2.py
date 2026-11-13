@@ -120,3 +120,46 @@ def test_every_outcome_reachable(outcome):
     }
     answer, item, lines = examples[outcome]
     assert score(answer, item, *lines)["outcome"] == outcome
+
+
+OTHER_INCIDENT = "[5] (incident_2026_06) Trains were held at Dunmore Park after an AX-3 axle counter failed."
+
+
+@pytest.mark.parametrize("answer,lines,source", [
+    ("MP-107.", (EQUIPMENT,), "links_only"),
+    ("MP-107.", (EQUIPMENT, WRONG_PROC), "links_and_text"),
+    ("MP-109.", (EQUIPMENT, "[6] (procedure_MP-109) Maintenance procedure MP-109: q. Applies to the SG-12."), "text_only"),
+    ("MP-150.", (EQUIPMENT,), "neither"),
+    ("MP-101 only.", (EQUIPMENT, TRUE_PROC, TRUE_PROC2), "no_wrong_entity"),
+])
+def test_wrong_source(answer, lines, source):
+    result = score(answer, R2B, *lines)
+    assert result["is_wrong"]
+    assert result["wrong_source"] == source
+
+
+def test_right_answers_have_no_wrong_source():
+    assert score("MP-101 and MP-102.", R2B, EQUIPMENT, TRUE_PROC, TRUE_PROC2)["wrong_source"] is None
+    assert score("INSUFFICIENT EVIDENCE", R2B, EQUIPMENT)["wrong_source"] is None  # over-abstention is not a wrong entity
+
+
+def test_corrupt_code_in_unrelated_text_is_text_only_not_links():
+    item = {**R2B, "graph_claim": {"entity_type": "equipment_code", "entities": ["AX-3"]},
+            "document_truth": {"entity_type": "equipment_code", "entities": ["TX-440"]},
+            "query": "Which component failed when trains were held at Harbour Row?",
+            "corruption": [{"op": "substitute", "relation": "caused_by", "source": "incident_2026_01",
+                            "true_targets": ["equipment_TX-440"], "corrupt_targets": ["equipment_AX-3"]}]}
+    result = score("AX-3.", item, "[1] (incident_2026_01) Trains were held at Harbour Row after a TX-440 trip.", OTHER_INCIDENT)
+    assert result["outcome"] == "graph_misled"
+    assert not result["graph_supported"]
+    assert result["wrong_source"] == "text_only"
+
+
+def test_gate_effect_labels():
+    from experiments.robustness_r2 import gate_effect
+    assert gate_effect("abstain", "graph_misled") == "blocked_wrong"
+    assert gate_effect("abstain", "correct") == "blocked_correct"
+    assert gate_effect("pass", "graph_misled") == "passed_wrong"
+    assert gate_effect("pass", "correct") == "passed_correct"
+    assert gate_effect("pass", "correct_abstention") == "passed_correct"
+    assert gate_effect("abstain", "over_abstention") == "blocked_other"

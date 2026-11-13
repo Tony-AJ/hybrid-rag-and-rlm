@@ -18,6 +18,10 @@ Flags:
   wrong_target_text_received  the corrupt target's own chunk was in a prompt
   document_supported          every true entity named and present in received text
   identifier_supported        R1's identifier check (every named identifier in received text)
+  wrong_source                for wrong answers (mixed, graph_misled, unsupported_answer,
+                              other_wrong): where the wrong entities' identifiers appeared,
+                              links_only / links_and_text / text_only / neither, or
+                              no_wrong_entity (wrong by omission). Identifier presence only.
 """
 
 from __future__ import annotations
@@ -30,6 +34,8 @@ from rlm import robustness_scoring as r1s
 R2_SCORER_VERSION = "r2-score-1.0"
 OUTCOMES = ("correct", "correct_abstention", "mixed", "graph_misled", "over_abstention",
             "unsupported_answer", "other_wrong")
+WRONG_OUTCOMES = ("mixed", "graph_misled", "unsupported_answer", "other_wrong")
+WRONG_SOURCES = ("links_only", "links_and_text", "text_only", "neither", "no_wrong_entity")
 
 
 def _key(entity_type: str, entity: str) -> str:
@@ -78,6 +84,18 @@ def score_r2(answer: str, item: Dict[str, Any], prompts: Iterable[str],
     corrupt_keys = {_key(entity_type, entity) for entity in corrupt}
     corrupt_nodes = {node for operation in item.get("corruption") or [] for node in operation["corrupt_targets"]}
     truth_keys = {_key(entity_type, entity) for entity in truth}
+
+    # Where did each wrong entity come from? Identifier presence only: a code seen in
+    # some chunk's text does not mean that text states the relation.
+    is_wrong = outcome in WRONG_OUTCOMES
+    wrong_entities = sorted(named - truth) if is_wrong else []
+    wrong_keys = {_key(entity_type, entity) for entity in wrong_entities}
+    in_links, in_text = bool(wrong_keys & link_ids), bool(wrong_keys & text_ids)
+    if not is_wrong or not wrong_entities:
+        wrong_source = None if not is_wrong else "no_wrong_entity"
+    else:
+        wrong_source = {(True, True): "links_and_text", (True, False): "links_only",
+                        (False, True): "text_only", (False, False): "neither"}[(in_links, in_text)]
     return {
         "scorer_version": R2_SCORER_VERSION,
         "case": item["case"],
@@ -96,5 +114,8 @@ def score_r2(answer: str, item: Dict[str, Any], prompts: Iterable[str],
         "unsupported_identifiers": support["unsupported_identifiers"],
         "abstention_strict": declined["strict"],
         "abstention_lenient": declined["lenient"],
+        "is_wrong": is_wrong,
+        "wrong_entities": wrong_entities,
+        "wrong_source": wrong_source,
         "received_node_ids": evidence["node_ids"],
     }
