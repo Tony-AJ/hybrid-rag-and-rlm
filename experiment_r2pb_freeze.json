@@ -1,0 +1,142 @@
+{
+  "experiment": "robustness-r2-prime-b",
+  "frozen_at": "2026-11-13T07:35:00+00:00",
+  "git_revision": "272a38c0f9fac45a30b2b6efeacbf59fb9eedb24",
+  "inputs": {
+    "dataset_path": "benchmark_corpora/meridian/robustness/relation_verification_b.json",
+    "dataset_version": "r2pb-1.0",
+    "dataset_sha256": "05b44a069d3307728355fc3e794a6c09948889a62bda5a36c07b0b2ee313362c",
+    "corruption_spec_sha256": "54cbd2eed07e7902396acf1f8f84717789bb7e60614b972d0b94a2046deb0c2c",
+    "mask_sha256": "9bb720373e3b0ed8d1248f1bb05f2fceae9a3f6a079703c1e02d9589c8cf02bc",
+    "schema_sha256": "97176c8a7d268bac9a96f520721ac42462a773a893b107d6647a474303bea435",
+    "schema_version": "relschema-1.0",
+    "verifier_version": "relver-1.0",
+    "scorer_version": "r2p-score-1.0",
+    "runner_version": "r2pb-run-1.0",
+    "gate_version": "gate-1.0",
+    "loop_version": "1.7",
+    "corruption_version": "corrupt-1.0",
+    "prompt_template_sha256": {
+      "answer": "2fd1b1017a4e19b5db5d09d401f51ea8f4a12eb90820d262bf39cea85ed9154f",
+      "decide": "29895476724ff170825b301373d012c37b9f3fbba02ec314b553c18d21ac9a19",
+      "step": "0d0a274513de3988bf6b7f4eb62715640b020ddf87aa1299be19344cc6f04468",
+      "ground": "23b0ea16b2f7e141c3c37b0bf433380ca1721389b90092f8a27556e7f709fbae"
+    },
+    "preregistration_sha256": "15eff8b73b5f2dc97be1b83c0dfb1dcd895b7c8c59c8755e355baefa646160c9",
+    "verifier_sha256": "17567a01589739c1fabf743e2b5af21a965deebc96324acdf8b8ca93f2239342",
+    "scorer_r2p_sha256": "75e357a093f39a6f0a8419a272b52771cc88bf7e7b217ed27e773b0c81ba4d08",
+    "runner_sha256": "6e10b90d695c24de7b34442f7a3d53aaebf0cb59f2ab644a23ddffa96433648d",
+    "r2_pinned_loop_evidence_gate_sha256": "9440779ec579650be5314b33bae4ca812bcef84aee2906b6e206b1dcdf548d3f",
+    "r2_pinned_corruption_module_sha256": "9cd9d28c99fba9c08303b911ac3b1cfb32c3a7c8c7b5366ed2dca41cf7729aa6",
+    "r2_pinned_scorer_r2_sha256": "6a49c44d1fbebca1d1e9706c9ad2d5ee0afe51dcfaf89635ba689c56d5ac73e0",
+    "r2_pinned_scorer_r1_sha256": "91f51d6bdd909081fbe5b61ef5e0d25821faf6cebbc267a9d4c49d9883a2c43c",
+    "r2_pinned_runner_sha256": "311219831c882dfc18442589a1135e88c9f02e26551777145873cdd465bf0c69",
+    "r2_pinned_architecture_benchmark_sha256": "0ff7f3f355bf91e735098a81921e01a97ee815b6b2a63d8065463e30c3a6d862",
+    "stores": {
+      "benchmark_corpora/meridian/corpus_graph.json": "804b5e1dc2908bb509ec5a28f3cfc68c4f383c55f723801367de499306298eda",
+      "benchmark_corpora/meridian/corpus_documents.json": "46c94d02b7b2bfa17e85903d93af4c15f238db5bb6e6b913ff1cb7069ae378b5",
+      "db/graph_data_bench_meridian.json": "804b5e1dc2908bb509ec5a28f3cfc68c4f383c55f723801367de499306298eda",
+      "db/chroma_db_bench_meridian/chroma.sqlite3": "f99bdb0074bbeee7df1cdcc723b0d18bd6bd31ef94cb26fc855c99e4f6c8f07a"
+    },
+    "r2pb_runner_sha256": "a03dee4b6a2a741ff9c5a3d56f97a056b92247833eef7afc642f76d72c83a9d1",
+    "r2pb_preregistration_sha256": "71b40fccc10fcb5584127b7119d4dab4687d9a0ec477ac93f92e0ac6b1e328ab"
+  },
+  "validation": [
+    {
+      "check": "V1 dataset v1.1 and corpus fingerprint unchanged",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "V1 frozen retrieval config unchanged",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "V1 Phase 2, R1, R1' and R2 result files unchanged",
+      "status": "passed",
+      "detail": {}
+    },
+    {
+      "check": "V1 loop_evidence (gate-1.0), corrupt-1.0, R1/R2 scorers, R2 runner, benchmark unchanged since R2 freeze",
+      "status": "passed",
+      "detail": {}
+    },
+    {
+      "check": "V1 store files equal the R2 freeze record",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "V2 clean graph: all 412 edges supported or graph_only (H5)",
+      "status": "passed",
+      "detail": []
+    },
+    {
+      "check": "V3 exhaustive substitution sweep (reported, not pass/fail)",
+      "status": "info",
+      "detail": {
+        "maintained_by": "532/532 (100.0%)",
+        "affected_line": "140/140 (100.0%)",
+        "caused_by": "364/364 (100.0%)",
+        "occurred_at": "980/980 (100.0%)",
+        "serves": "1080/1080 (100.0%)",
+        "maintains": "312/312 (100.0%)",
+        "superseded_by": "0/115 (0.0%)",
+        "supersedes": "0/115 (0.0%)",
+        "next_station": "1050/1050 (100.0%)",
+        "previous_station": "1050/1050 (100.0%)",
+        "served_by": "180/180 (100.0%)",
+        "site_of_incident": "756/756 (100.0%)"
+      }
+    },
+    {
+      "check": "V4 seeded random corruptions: no corrupted claim labelled supported",
+      "status": "passed",
+      "detail": []
+    },
+    {
+      "check": "V5 dataset: corruptions contradict text, true edges agree, truth readable, masks hold, no reused questions",
+      "status": "passed",
+      "detail": []
+    },
+    {
+      "check": "V8 relver-1.0 replay over R2 frozen D rows is deterministic; R2 files byte-identical",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "V9 per-condition signatures distinct and differ from R2's",
+      "status": "passed",
+      "detail": {
+        "C": "927a133b7a9e",
+        "D": "812cd5a4ce20"
+      }
+    },
+    {
+      "check": "V1 store files and base graph unchanged after validation",
+      "status": "passed",
+      "detail": null
+    },
+    {
+      "check": "W1 relver-1.0, relschema-1.0, r2p scorer and R2' runner unchanged since the R2' freeze",
+      "status": "passed",
+      "detail": {}
+    },
+    {
+      "check": "W2 paired P/N items (same question, distinct ids); no R2' question reused",
+      "status": "passed",
+      "detail": []
+    },
+    {
+      "check": "W3 retrieval precondition: incident and equipment in C top 5, no true procedure (all 14 items)",
+      "status": "passed",
+      "detail": []
+    },
+    {
+      "check": "W4 V2/V3 sweeps with relver-1.0 identical to the committed R2' sweep",
+      "status": "passed",
+      "detail": null
+    }
+  ]
+}
