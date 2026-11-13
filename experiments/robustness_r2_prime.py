@@ -473,7 +473,8 @@ def print_report(report: Dict[str, Any]) -> None:
 def input_hashes(ctx: Context) -> Dict[str, Any]:
     files = {"preregistration": "PREREGISTRATION_R2_PRIME.md", "verifier": "rlm/relation_verifier.py",
              "scorer_r2p": "rlm/robustness_scoring_r2p.py", "runner": "experiments/robustness_r2_prime.py",
-             **{key.replace("_sha256", ""): path for key, path in PINNED_SOURCES.items()}}
+             # Prefixed: R2's pinned "runner" must not overwrite this runner's own hash.
+             **{"r2_pinned_" + key.replace("_sha256", ""): path for key, path in PINNED_SOURCES.items()}}
     return {**ctx.provenance, "verifier_version": rv.VERIFIER_VERSION, "scorer_version": r2ps.R2P_SCORER_VERSION,
             "runner_version": RUNNER_VERSION, "gate_version": ea.GATE_VERSION, "loop_version": rlm_loop.LOOP_VERSION,
             "corruption_version": gc.CORRUPTION_VERSION, "prompt_template_sha256": rlm_loop.TEMPLATE_HASHES,
