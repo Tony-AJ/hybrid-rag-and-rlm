@@ -792,3 +792,162 @@ python -m experiments.robustness_r2 --phase answers --provider groq --model open
 python -m experiments.robustness_r2 --phase replay-gate
 python -m experiments.robustness_r2 --phase report
 ```
+
+---
+
+# Phase 3, R2′: Relation-level verification
+
+Preregistered in [PREREGISTRATION_R2_PRIME.md](PREREGISTRATION_R2_PRIME.md) (`78116bc5`)
+and amended by [Amendment 1](PREREGISTRATION_R2_PRIME_AMENDMENT_1.md) (`9d672d4a`).
+The amendment covers D1 (stricter completeness) and D2 (shortest-path resolution); both preceded the
+sweeps and every model call. It also fixes the V4 denominator. Phase 2, R1, R1′, R2,
+loop 1.7, `gate-1.0` and `corrupt-1.0` are unchanged (validation V1).
+
+## Design
+
+`rlm/relation_verifier.py` (`relver-1.0`) is a deterministic subject–relation–object verifier
+driven by `relation_schema.json`. It makes no model calls and its code contains no relation phrase.
+- **`endpoint_mention`:** the text that should state the relation (its witness) must mention the other entity. The claim is **contradicted** only when that text is complete for the slot and names a different entity of the same type.
+- **`sequence`:** a directional check of the station order in the line text.
+- **`not_text_verifiable`** (`authorised_by`, `performed_by`): labelled **graph_only** and permitted.
+
+Every edge on a multi-hop answer path is verified. The final answer is then kept, the contradicted entities are dropped
+(only if the rest of the answer is complete), or the answer abstains (on any unverified entity).
+
+Dataset `r2p-1.0`: 42 new questions, none reused from R2 or v1.1.
+
+| Case | n | Contents |
+|---|---|---|
+| P | 16 | valid, clean graph |
+| N | 16 | contradicted edge, wrong target readable: 4 cause, 4 one-hop maintenance, 4 adjacency, 2 two-hop with the second hop wrong, 2 two-hop with the **first** hop wrong |
+| S | 4 | an extra wrong edge alongside the true ones |
+| U | 6 | the evidence is missing |
+
+Conditions:
+- C and D run live (loop 1.7, Groq `openai/gpt-oss-120b`, temperature 0, `reasoning_effort: low`).
+- D-gate, D-relation and C-relation are exact replays on the recorded prompts and answers, with **no extra model calls**.
+
+## Offline verifier sweeps (before any model call)
+
+| Sweep | Result |
+|---|---|
+| V2: all 412 clean-graph edges | 284 supported, 128 graph_only, **0 false contradictions in all 16 relation types** |
+| V3: every same-type wrong-object substitution | 6,444/6,444 detected in the 10 text-verifiable relations. `supersedes`/`superseded_by`: 230/230 unverified, never contradicted, by design (non-exhaustive text). **0 false supports.** |
+| V4: seeded random corruptions (seed 20261113) through the full pipeline | **119/119 valid corruptions contradicted, 0 supported.** One further draw (Oakhurst → Oakhurst, a self-substitution) was degenerate and is excluded (Amendment 1). |
+
+## Results (42 queries)
+
+| | C | D | D-gate | **D-relation** | C-relation |
+|---|---|---|---|---|---|
+| Accuracy, answerable (36) | 15/36 | 18/36 | 18/36 | 18/36 | 16/36 |
+| Correct abstention, unanswerable (6) | 0/6 | 0/6 | **6/6** | **6/6** | **6/6** |
+| Wrong answers | 11/42 | 11/42 | 5/42 | **0/42** | **0/42** |
+| Graph-caused errors | 11/42 | 10/42 | 4/42 | **0/42** | **0/42** |
+| Decisions (keep / drop / abstain) | — | — | 36 / 0 / 6 | 31 / 0 / 11 | 31 / 1 / 10 |
+| Input / output tokens per query | 645 / 73 | 1,437 / 105 | same as D | same as D | same as C |
+| Generation calls per query | 1.0 | 1.79 | 1.79 | 1.79 | 1.0 |
+| Generation latency per query | 4.9 s | 10.6 s | same as D | same as D | same as C |
+| Extra check time per query | — | — | 0.6 ms | 11.7 ms | 8.3 ms |
+| Evidence coverage | 0.523 | 0.583 | 0.583 | 0.583 | 0.523 |
+
+### Per case (outcome counts)
+
+| Case | C | D | D-gate | D-relation | C-relation |
+|---|---|---|---|---|---|
+| P (16) | 8 correct, 8 over-abst. | 10 correct, 6 over-abst. | as D | **as D (0 rejected)** | as C |
+| N (16) | 4 correct, 4 misled, 8 over-abst. | 4 correct, 5 misled, 7 over-abst. | as D | 4 correct, **0 misled**, 12 abstain | 4 correct, **0 misled**, 12 abstain |
+| S (4) | 3 correct, 1 mixed | 4 correct | 4 correct | 4 correct | **4 correct** (1 drop) |
+| U (6) | 3 misled, 3 unsupported | 3 misled, 3 unsupported | **6 abstain** | **6 abstain** | **6 abstain** |
+
+### Relation-level verification (separate from answer correctness)
+
+Claims on D's answer paths, labelled by `relver-1.0` and compared with the clean graph:
+
+| Relation | Claims | Correct support | Contradiction detected | False contradiction | Unverified (true / false) |
+|---|---|---|---|---|---|
+| `next_station` | 7 | 3 | **4/4** | 0 | 0 / 0 |
+| `previous_station` | 7 | 7 | — | 0 | 0 / 0 |
+| `caused_by` | 4 | 3 | **1/1** | 0 | 0 / 0 |
+| `maintained_by` | 23 | 17 | 0/3 | 0 | 3 / 3 |
+| `maintains` | 7 | 7 | — | 0 | 0 / 0 |
+| **All** | **48** | **37** | **5/8** | **0/40** | **3 / 3** |
+
+All six unverified claims are on the U items, where the text that would state the relation is masked:
+- **3 false claims** (U items with a corrupted edge to a masked target): the verifier cannot read the target's text, so it cannot contradict; it labels them unverified, and the answers abstain.
+- **3 true claims** (U items where the true target is masked): unverified for the same reason; this is the correct outcome there.
+
+## Hypotheses
+
+| | Preregistered criterion | Result | |
+|---|---|---|---|
+| H1 | ≥ 90% of false claims on D's paths labelled contradicted | **5/8 (62.5%)** | **not met** |
+| H2 | false rejection ≤ 1 of the P items D answered correctly | **0/10** | met |
+| H3 | graph-caused wrong answers on N+S ≤ half of D's | D 4/20, D-relation **0/20** | met |
+| H4 | correct abstention ≥ 5/6 on U | **6/6** | met |
+| H5 | 0 false contradictions over all clean-graph edges | **0/412** | met |
+
+**H1 is not met as preregistered.**
+- **Where the 3 misses are.** All 3 undetected false claims are on U items, where the corrupted target's text is masked. A verifier that only reads text cannot contradict a claim whose text is unavailable. It labels them unverified, which is the preregistered safe outcome, and all 3 answers abstain correctly.
+- **Where the text was readable,** detection is 5/5.
+- **The rule still applies.** The threshold and its denominator were fixed before the run and are not reinterpreted here.
+
+**Adoption rule:** D-relation is recommended only if H1–H5 all hold. **It is therefore not recommended on this run.**
+
+**About the H2 denominator.**
+- **What was preregistered.** The committed criterion is "≤ 1 of the P items D answered correctly". On this run that set is 10 of the 16 P items; D over-abstained on the other 6 by itself, before any check.
+- **Where "1/14" comes from.** It came from the earlier design draft, which proposed 14 P items. The committed dataset has 16, and the committed rule is defined over D's correct P answers, not a fixed 14.
+- **Result.** 0 false rejections, so H2 holds under either reading.
+
+## Findings
+
+1. **No false contradictions anywhere:** 0/412 clean edges, 0/40 true claims surfaced by D, 0/35 by C. The verifier never rejected a valid relation, including multi-hop and adjacency answers (P: 0/10 false rejections).
+2. **It removes every graph-caused error D and C made: 10 to 0 and 11 to 0.**
+   - **Station order:** it caught the 4 wrong next-station answers that D-gate passed, by reading the line's station order.
+   - **Two-hop, first hop wrong:** item 3032 named MP-121, which really is maintained for ES-14, but the failure in incident 2026/24 was TC-6. Only verifying every edge of the path catches this.
+   - **Extra edge, C:** C-relation made the one drop (3035), removing the spurious MP-108 and keeping the complete true answer (MP-120).
+3. **It turns wrong answers into abstentions, not right ones.** D-relation's accuracy equals D's (18/36). Graph-misled N answers become abstentions (N over-abstention 7 to 12). Recovering the correct answer would need the deferred repair step.
+4. **D-gate already handles missing text (U 6/6).** D-relation's added value is on contradicted *readable* relations, where D-gate passed every one.
+5. **Retrieval limited the test.** D abstained on its own on 6 P and 7 N questions; the anchored incident or procedure was never retrieved for the new incident-number and procedure-number wording. As a result:
+   - only 8 false claims reached D's answer paths;
+   - **no corrupted `maintained_by` claim with readable text was surfaced by D**, so the strongest R2 failure mode (wrong procedure, contradicting text present) was not re-tested at answer level here. It was tested offline: V3 caught 532/532 and V4 119/119.
+6. **Cost:** 11.7 ms of deterministic checking per query and no model calls, against 10.6 s of generation for D.
+
+## Ambiguous and failed cases
+
+- **3032 (two-hop, first hop wrong).** R2's identifier-level scorer labels D's wrong answer `text_only`, because MP-121's code reached D through text, not a link. The error is still caused by the corrupted `caused_by` edge. Counting it as graph-caused, D's N+S total is 5 and H3 still holds (0 ≤ 2.5).
+- **H1's three misses** are discussed above. They are a limit of text-only verification under masked evidence, not a verifier defect.
+- **D's 13 own abstentions** are retrieval misses on the new question wording, not verifier behaviour.
+
+## Limitations
+
+- **Sample and model.** 42 queries (4–16 per case), one model, one run at temperature 0; only 8 false claims reached D's answer paths.
+- **Fixed format adapter.** The verifier reads one station-order text format, declared in the schema. Other corpora need their own adapter.
+- **Identifier-level mentions.** The check cannot tell a wrong *kind* of relation between two entities that the same text mentions together.
+- **Strict rule on unverified entities.** Any entity mentioned without a path forces an abstention. On this run this caused no false rejections.
+- **Run provenance.** The C/D answers were produced in a session started after the freeze, under the frozen signatures (both caches written at 07:21 UTC, after the freeze at 07:01 UTC). A second invocation found all 42 rows per condition cached and made no new model calls. Rows were not edited.
+
+## Provenance
+
+| Item | Value |
+|---|---|
+| Preregistration / amendment | `78116bc5` (`15eff8b7…`) / `9d672d4a` |
+| Code | `dd9caf5d`; freeze-provenance fix `94bd8831` |
+| Freeze | `experiment_r2p_freeze.json` (`c9bf1fa6…`), 2026-11-13 07:01:47 UTC at `94bd8831`; validation identical to the committed sweep |
+| Dataset / schema / verifier / scorer | `r2p-1.0` `b7962113…` / `relschema-1.0` `97176c8a…` / `relver-1.0` `17567a01…` / `r2p-score-1.0` `75e357a0…` |
+| Signatures | C `357e007c5a5c`, D `c1c7493773aa` |
+
+| File | sha256 |
+|---|---|
+| `experiment_r2p_meridian-transit-v1_groq_frozen.json` (read-only, cite this) | `eb633e0cdae5…` |
+| `experiment_r2p_relation_replay.json` (read-only) | `2bdc058867c3…` |
+| `experiment_r2p_comparison.json` | `215ffe5f21da…` |
+| `experiment_r2p_verifier_sweep.json` | `fe9a5347f9a7…` |
+| caches C / D (every prompt sent) | `ade653ff4af5…` / `7899176bb8dc…` |
+
+```powershell
+python -m pytest tests/test_relation_verifier.py
+python -m experiments.robustness_r2_prime --phase validate
+python -m experiments.robustness_r2_prime --phase answers --provider groq --model openai/gpt-oss-120b --reasoning-effort low --resume
+python -m experiments.robustness_r2_prime --phase replay
+python -m experiments.robustness_r2_prime --phase report
+```

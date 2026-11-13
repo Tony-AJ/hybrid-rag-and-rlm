@@ -1,0 +1,2238 @@
+{
+  "run_signature": "357e007c5a5cec1f5c768b5bf9daea1e84384cb0fde0cf692e1908917f522613",
+  "rows": {
+    "3001": {
+      "id": 3001,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed in service incident 2026/21?",
+          "retrieved": [
+            "incident_2026_23",
+            "incident_2026_20",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "new_evidence": [
+            "incident_2026_23",
+            "incident_2026_20",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed in service incident 2026/21?\nEvidence:\n[1] (incident_2026_23) Service incident 2026/23 on 2026-11-16: trains were held at Underbank on the Amber Line for 46 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_PS-19; occurred_at -> station_underbank\n[2] (incident_2026_20) Service incident 2026/20 on 2026-08-07: trains were held at Redcliff on the Amber Line for 34 minutes after a AX-3 axle bearing assembly suffered a thermal spike. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_AX-3; occurred_at -> station_redcliff\n[3] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber\n[4] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_thistlebank, station_vantage_point\n[5] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_23",
+        "incident_2026_20",
+        "station_underbank",
+        "line_amber",
+        "equipment_PS-19"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 648,
+        "output_tokens": 42,
+        "retrieval_latency_ms": 12.104,
+        "generation_latency_ms": 563.278,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 42,
+            "latency_ms": 563.278
+          }
+        }
+      }
+    },
+    "3002": {
+      "id": 3002,
+      "answer": "INSUFFICIENT EVIDENCE.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed in service incident 2026/22?",
+          "retrieved": [
+            "incident_2026_23",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19",
+            "station_redcliff"
+          ],
+          "new_evidence": [
+            "incident_2026_23",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19",
+            "station_redcliff"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed in service incident 2026/22?\nEvidence:\n[1] (incident_2026_23) Service incident 2026/23 on 2026-11-16: trains were held at Underbank on the Amber Line for 46 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_PS-19; occurred_at -> station_underbank\n[2] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber\n[3] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_thistlebank, station_vantage_point\n[4] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\n[5] (station_redcliff) Redcliff is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Quarry Side and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_saltmarsh; previous_station -> station_quarry_side; site_of_incident -> incident_2026_20\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_23",
+        "station_underbank",
+        "line_amber",
+        "equipment_PS-19",
+        "station_redcliff"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 642,
+        "output_tokens": 43,
+        "retrieval_latency_ms": 28.13,
+        "generation_latency_ms": 602.157,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 642,
+            "output_tokens": 43,
+            "latency_ms": 602.157
+          }
+        }
+      }
+    },
+    "3003": {
+      "id": 3003,
+      "answer": "The failure was caused by **equipment_PS-19** – the PS‑19 auxiliary power supply suffered a ripple fault.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed in service incident 2026/23?",
+          "retrieved": [
+            "incident_2026_23",
+            "incident_2026_20",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "new_evidence": [
+            "incident_2026_23",
+            "incident_2026_20",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed in service incident 2026/23?\nEvidence:\n[1] (incident_2026_23) Service incident 2026/23 on 2026-11-16: trains were held at Underbank on the Amber Line for 46 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_PS-19; occurred_at -> station_underbank\n[2] (incident_2026_20) Service incident 2026/20 on 2026-08-07: trains were held at Redcliff on the Amber Line for 34 minutes after a AX-3 axle bearing assembly suffered a thermal spike. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_AX-3; occurred_at -> station_redcliff\n[3] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber\n[4] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_thistlebank, station_vantage_point\n[5] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_23",
+        "incident_2026_20",
+        "station_underbank",
+        "line_amber",
+        "equipment_PS-19"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 648,
+        "output_tokens": 75,
+        "retrieval_latency_ms": 27.596,
+        "generation_latency_ms": 643.453,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 75,
+            "latency_ms": 643.453
+          }
+        }
+      }
+    },
+    "3004": {
+      "id": 3004,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed in service incident 2026/24?",
+          "retrieved": [
+            "incident_2026_23",
+            "incident_2026_20",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "new_evidence": [
+            "incident_2026_23",
+            "incident_2026_20",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed in service incident 2026/24?\nEvidence:\n[1] (incident_2026_23) Service incident 2026/23 on 2026-11-16: trains were held at Underbank on the Amber Line for 46 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_PS-19; occurred_at -> station_underbank\n[2] (incident_2026_20) Service incident 2026/20 on 2026-08-07: trains were held at Redcliff on the Amber Line for 34 minutes after a AX-3 axle bearing assembly suffered a thermal spike. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_AX-3; occurred_at -> station_redcliff\n[3] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber\n[4] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_thistlebank, station_vantage_point\n[5] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_23",
+        "incident_2026_20",
+        "station_underbank",
+        "line_amber",
+        "equipment_PS-19"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 648,
+        "output_tokens": 42,
+        "retrieval_latency_ms": 23.148,
+        "generation_latency_ms": 524.838,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 42,
+            "latency_ms": 524.838
+          }
+        }
+      }
+    },
+    "3005": {
+      "id": 3005,
+      "answer": "MP-111 – Axle bearing lubrication and endplay check applies to the AX-3 axle bearing assembly.  \nMP-112 – Bearing acoustic emission screening applies to the AX-3 axle bearing assembly.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the AX-3 axle bearing assembly?",
+          "retrieved": [
+            "procedure_MP-111",
+            "equipment_AX-3",
+            "procedure_MP-112",
+            "policy_PL-E",
+            "role_running_gear_inspector"
+          ],
+          "new_evidence": [
+            "procedure_MP-111",
+            "equipment_AX-3",
+            "procedure_MP-112",
+            "policy_PL-E",
+            "role_running_gear_inspector"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the AX-3 axle bearing assembly?\nEvidence:\n[1] (procedure_MP-111) Maintenance procedure MP-111: Axle bearing lubrication and endplay check. Applies to the AX-3 axle bearing assembly. Scheduled every 75 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 130 minutes. Links: authorised_by -> policy_PL-E; maintains -> equipment_AX-3; performed_by -> role_running_gear_inspector; superseded_by -> procedure_MP-112\n[2] (equipment_AX-3) The AX-3 axle bearing assembly is fitted across the fleet and in fixed installations. Its dominant failure mode is thermal spike, which presents as a bearing temperature rise of more than 40 degrees in ten minutes. A AX-3 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group AX3G. Links: maintained_by -> procedure_MP-112\n[3] (procedure_MP-112) Maintenance procedure MP-112: Bearing acoustic emission screening. Applies to the AX-3 axle bearing assembly. Scheduled every 150 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-111, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-E; performed_by -> role_running_gear_inspector\n[4] (policy_PL-E) Authorisation policy PL-E, Running Gear Authorisation, governs work on axles, bearings and wheelsets. A named holder of PL-E must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-E suspends every procedure it covers until a new holder is appointed.\n[5] (role_running_gear_inspector) The running gear inspector owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "procedure_MP-111",
+        "equipment_AX-3",
+        "procedure_MP-112",
+        "policy_PL-E",
+        "role_running_gear_inspector"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 603,
+        "output_tokens": 111,
+        "retrieval_latency_ms": 28.346,
+        "generation_latency_ms": 6420.443,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 603,
+            "output_tokens": 111,
+            "latency_ms": 6420.443
+          }
+        }
+      }
+    },
+    "3006": {
+      "id": 3006,
+      "answer": "MP‑113 – Compressor valve plate overhaul applies to the CP‑55 compressor module.  \nMP‑114 – Reservoir leak‑rate measurement applies to the CP‑55 compressor module.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the CP-55 compressor module?",
+          "retrieved": [
+            "equipment_CP-55",
+            "procedure_MP-113",
+            "procedure_MP-114",
+            "policy_PL-F",
+            "policy_PL-L"
+          ],
+          "new_evidence": [
+            "equipment_CP-55",
+            "procedure_MP-113",
+            "procedure_MP-114",
+            "policy_PL-F",
+            "policy_PL-L"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the CP-55 compressor module?\nEvidence:\n[1] (equipment_CP-55) The CP-55 compressor module is fitted across the fleet and in fixed installations. Its dominant failure mode is pressure bleed-down, which presents as main reservoir pressure falling below 6.2 bar while stabled. A CP-55 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group CP55G. Links: maintained_by -> procedure_MP-113, procedure_MP-114\n[2] (procedure_MP-113) Maintenance procedure MP-113: Compressor valve plate overhaul. Applies to the CP-55 compressor module. Scheduled every 200 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 55 minutes. Links: authorised_by -> policy_PL-F; performed_by -> role_pneumatics_fitter\n[3] (procedure_MP-114) Maintenance procedure MP-114: Reservoir leak-rate measurement. Applies to the CP-55 compressor module. Scheduled every 50 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 70 minutes. Links: authorised_by -> policy_PL-F, policy_PL-L; performed_by -> role_pneumatics_fitter\n[4] (policy_PL-F) Authorisation policy PL-F, Pneumatics Authorisation, governs work on compressed air generation and storage. A named holder of PL-F must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-F suspends every procedure it covers until a new holder is appointed.\n[5] (policy_PL-L) Authorisation policy PL-L, Degraded Mode Authorisation, governs procedures carried out while service is running. A named holder of PL-L must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 3 maintenance procedures. Withdrawal of PL-L suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-107, procedure_MP-124\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_CP-55",
+        "procedure_MP-113",
+        "procedure_MP-114",
+        "policy_PL-F",
+        "policy_PL-L"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 621,
+        "output_tokens": 73,
+        "retrieval_latency_ms": 21.841,
+        "generation_latency_ms": 6907.705,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 621,
+            "output_tokens": 73,
+            "latency_ms": 6907.705
+          }
+        }
+      }
+    },
+    "3007": {
+      "id": 3007,
+      "answer": "MP‑115 – Door actuator leadscrew re‑shimming is a maintenance procedure for the DR‑8 door engine actuator.  \nMP‑116 – Door obstacle force profiling is a maintenance procedure for the DR‑8 door engine actuator.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the DR-8 door engine actuator?",
+          "retrieved": [
+            "equipment_DR-8",
+            "procedure_MP-116",
+            "procedure_MP-115",
+            "policy_PL-G",
+            "equipment_AX-3"
+          ],
+          "new_evidence": [
+            "equipment_DR-8",
+            "procedure_MP-116",
+            "procedure_MP-115",
+            "policy_PL-G",
+            "equipment_AX-3"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the DR-8 door engine actuator?\nEvidence:\n[1] (equipment_DR-8) The DR-8 door engine actuator is fitted across the fleet and in fixed installations. Its dominant failure mode is leadscrew backlash, which presents as a door leaf that rebounds before locking. A DR-8 unit has a design life of 12 years and is classified as a service-critical asset. Replacement units are held at the central store under part group DR8G. Links: maintained_by -> procedure_MP-115, procedure_MP-116\n[2] (procedure_MP-116) Maintenance procedure MP-116: Door obstacle force profiling. Applies to the DR-8 door engine actuator. Scheduled every 90 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-G; performed_by -> role_door_fitter\n[3] (procedure_MP-115) Maintenance procedure MP-115: Door actuator leadscrew re-shimming. Applies to the DR-8 door engine actuator. Scheduled every 40 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-G; performed_by -> role_door_fitter\n[4] (policy_PL-G) Authorisation policy PL-G, Door Systems Authorisation, governs work on vehicle door mechanisms. A named holder of PL-G must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-G suspends every procedure it covers until a new holder is appointed.\n[5] (equipment_AX-3) The AX-3 axle bearing assembly is fitted across the fleet and in fixed installations. Its dominant failure mode is thermal spike, which presents as a bearing temperature rise of more than 40 degrees in ten minutes. A AX-3 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group AX3G. Links: maintained_by -> procedure_MP-111, procedure_MP-112\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_DR-8",
+        "procedure_MP-116",
+        "procedure_MP-115",
+        "policy_PL-G",
+        "equipment_AX-3"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 611,
+        "output_tokens": 80,
+        "retrieval_latency_ms": 28.296,
+        "generation_latency_ms": 4674.706,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 611,
+            "output_tokens": 80,
+            "latency_ms": 4674.706
+          }
+        }
+      }
+    },
+    "3008": {
+      "id": 3008,
+      "answer": "MP-123 – Slide protection valve latch release test applies to the WS‑5 wheel slide protection valve.  \nMP-124 – Wheel slide event log reconciliation applies to the WS‑5 wheel slide protection valve.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the WS-5 wheel slide protection valve?",
+          "retrieved": [
+            "equipment_WS-5",
+            "procedure_MP-123",
+            "procedure_MP-124",
+            "policy_PL-B",
+            "role_plant_engineer"
+          ],
+          "new_evidence": [
+            "equipment_WS-5",
+            "procedure_MP-123",
+            "procedure_MP-124",
+            "policy_PL-B",
+            "role_plant_engineer"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the WS-5 wheel slide protection valve?\nEvidence:\n[1] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-123, procedure_MP-124\n[2] (procedure_MP-123) Maintenance procedure MP-123: Slide protection valve latch release test. Applies to the WS-5 wheel slide protection valve. Scheduled every 55 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-B; performed_by -> role_plant_engineer; superseded_by -> procedure_MP-124\n[3] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B, policy_PL-L; performed_by -> role_plant_engineer\n[4] (policy_PL-B) Authorisation policy PL-B, Braking Systems Authorisation, governs work that alters braking performance. A named holder of PL-B must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-B suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-105, procedure_MP-106\n[5] (role_plant_engineer) The fixed plant engineer owns 4 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 6 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts. Links: responsible_for -> procedure_MP-120, procedure_MP-121\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_WS-5",
+        "procedure_MP-123",
+        "procedure_MP-124",
+        "policy_PL-B",
+        "role_plant_engineer"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 632,
+        "output_tokens": 87,
+        "retrieval_latency_ms": 19.521,
+        "generation_latency_ms": 6747.461,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 632,
+            "output_tokens": 87,
+            "latency_ms": 6747.461
+          }
+        }
+      }
+    },
+    "3009": {
+      "id": 3009,
+      "answer": "station_brickworks comes immediately before Copper Lane, and station_dunmore_park comes immediately after it.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "On its own line, which station comes immediately before Copper Lane and which comes immediately after it?",
+          "retrieved": [
+            "station_copper_lane",
+            "station_brickworks",
+            "line_azure",
+            "station_dunmore_park",
+            "equipment_SG-12"
+          ],
+          "new_evidence": [
+            "station_copper_lane",
+            "station_brickworks",
+            "line_azure",
+            "station_dunmore_park",
+            "equipment_SG-12"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: On its own line, which station comes immediately before Copper Lane and which comes immediately after it?\nEvidence:\n[1] (station_copper_lane) Copper Lane is a through station on the Azure Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Harbour Row and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_dunmore_park; previous_station -> station_brickworks; served_by -> line_azure; site_of_incident -> incident_2026_05\n[2] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: previous_station -> station_alder_vale; served_by -> line_azure; site_of_incident -> incident_2026_04\n[3] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_dunmore_park, station_harbour_row, station_kestrel_green\n[4] (station_dunmore_park) Dunmore Park is a terminus on the Azure Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Harbour Row and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014. Links: site_of_incident -> incident_2026_06\n[5] (equipment_SG-12) The SG-12 signal interlocking relay is fitted across the fleet and in fixed installations. Its dominant failure mode is contact welding, which presents as a relay that fails to drop out after de-energising. A SG-12 unit has a design life of 8 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group SG12G. Links: maintained_by -> procedure_MP-109, procedure_MP-110\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_copper_lane",
+        "station_brickworks",
+        "line_azure",
+        "station_dunmore_park",
+        "equipment_SG-12"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 651,
+        "output_tokens": 87,
+        "retrieval_latency_ms": 33.989,
+        "generation_latency_ms": 4762.088,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 651,
+            "output_tokens": 87,
+            "latency_ms": 4762.088
+          }
+        }
+      }
+    },
+    "3010": {
+      "id": 3010,
+      "answer": "station_westmere – it is the previous_station of Yarrow Cross.  \nstation_ashfen – it is the next_station of Yarrow Cross.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "On its own line, which station comes immediately before Yarrow Cross and which comes immediately after it?",
+          "retrieved": [
+            "station_yarrow_cross",
+            "incident_2026_26",
+            "station_westmere",
+            "station_ashfen",
+            "equipment_ES-14"
+          ],
+          "new_evidence": [
+            "station_yarrow_cross",
+            "incident_2026_26",
+            "station_westmere",
+            "station_ashfen",
+            "equipment_ES-14"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: On its own line, which station comes immediately before Yarrow Cross and which comes immediately after it?\nEvidence:\n[1] (station_yarrow_cross) Yarrow Cross is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Westmere and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_ashfen; previous_station -> station_westmere; served_by -> line_violet; site_of_incident -> incident_2026_26\n[2] (incident_2026_26) Service incident 2026/26 on 2026-02-25: trains were held at Yarrow Cross on the Violet Line for 58 minutes after a ES-14 escalator drive chain suffered a elongation wear. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_violet; caused_by -> equipment_ES-14\n[3] (station_westmere) Westmere is a terminus on the Violet Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Westmere and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: served_by -> line_violet; site_of_incident -> incident_2026_25\n[4] (station_ashfen) Ashfen is a through station on the Violet Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Westmere and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_beacon_rise; served_by -> line_violet; site_of_incident -> incident_2026_27\n[5] (equipment_ES-14) The ES-14 escalator drive chain is fitted across the fleet and in fixed installations. Its dominant failure mode is elongation wear, which presents as chain elongation beyond the 1.5 percent service limit. A ES-14 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group ES14G. Links: maintained_by -> procedure_MP-121\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_yarrow_cross",
+        "incident_2026_26",
+        "station_westmere",
+        "station_ashfen",
+        "equipment_ES-14"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 643,
+        "output_tokens": 87,
+        "retrieval_latency_ms": 34.318,
+        "generation_latency_ms": 5753.611,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 643,
+            "output_tokens": 87,
+            "latency_ms": 5753.611
+          }
+        }
+      }
+    },
+    "3011": {
+      "id": 3011,
+      "answer": "station_glasshouse comes immediately before Hartsmere, and station_ivory_dock comes immediately after it.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "On its own line, which station comes immediately before Hartsmere and which comes immediately after it?",
+          "retrieved": [
+            "station_hartsmere",
+            "station_glasshouse",
+            "line_slate",
+            "station_ivory_dock",
+            "station_underbank"
+          ],
+          "new_evidence": [
+            "station_hartsmere",
+            "station_glasshouse",
+            "line_slate",
+            "station_ivory_dock",
+            "station_underbank"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: On its own line, which station comes immediately before Hartsmere and which comes immediately after it?\nEvidence:\n[1] (station_hartsmere) Hartsmere is a through station on the Slate Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Elmsworth and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_ivory_dock; previous_station -> station_glasshouse; served_by -> line_slate\n[2] (station_glasshouse) Glasshouse is a through station on the Slate Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Elmsworth and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: previous_station -> station_fallowfield; served_by -> line_slate\n[3] (line_slate) The Slate Line runs from Elmsworth to Juniper Row, calling at Fallowfield, Glasshouse, Hartsmere, Ivory Dock. It is operated with Series 200 heritage sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_elmsworth, station_fallowfield, station_ivory_dock, station_juniper_row\n[4] (station_ivory_dock) Ivory Dock is a through station on the Slate Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Elmsworth and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_juniper_row\n[5] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber; site_of_incident -> incident_2026_23\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_hartsmere",
+        "station_glasshouse",
+        "line_slate",
+        "station_ivory_dock",
+        "station_underbank"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 623,
+        "output_tokens": 80,
+        "retrieval_latency_ms": 39.271,
+        "generation_latency_ms": 1967.53,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 623,
+            "output_tokens": 80,
+            "latency_ms": 1967.53
+          }
+        }
+      }
+    },
+    "3012": {
+      "id": 3012,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation policy covers maintenance procedure MP-115?",
+          "retrieved": [
+            "policy_PL-A",
+            "policy_PL-L",
+            "policy_PL-K",
+            "procedure_MP-101",
+            "procedure_MP-102"
+          ],
+          "new_evidence": [
+            "policy_PL-A",
+            "policy_PL-L",
+            "policy_PL-K",
+            "procedure_MP-101",
+            "procedure_MP-102"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which authorisation policy covers maintenance procedure MP-115?\nEvidence:\n[1] (policy_PL-A) Authorisation policy PL-A, Traction Maintenance Authorisation, governs work on propulsion and current collection assets. A named holder of PL-A must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-A suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-101, procedure_MP-102, procedure_MP-103, procedure_MP-104\n[2] (policy_PL-L) Authorisation policy PL-L, Degraded Mode Authorisation, governs procedures carried out while service is running. A named holder of PL-L must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 3 maintenance procedures. Withdrawal of PL-L suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-107, procedure_MP-114, procedure_MP-124\n[3] (policy_PL-K) Authorisation policy PL-K, Night Possession Authorisation, governs any procedure performed inside an engineering possession. A named holder of PL-K must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-K suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-109, procedure_MP-118, procedure_MP-120, procedure_MP-121\n[4] (procedure_MP-101) Maintenance procedure MP-101: Inverter phase balance verification. Applies to the TX-440 traction inverter. Scheduled every 90 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: maintains -> equipment_TX-440; performed_by -> role_traction_technician; superseded_by -> procedure_MP-102\n[5] (procedure_MP-102) Maintenance procedure MP-102: Inverter gate driver replacement. Applies to the TX-440 traction inverter. Scheduled on condition. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. This procedure supersedes MP-101, which is withdrawn from the maintenance plan. Links: maintains -> equipment_TX-440; performed_by -> role_traction_technician\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "policy_PL-A",
+        "policy_PL-L",
+        "policy_PL-K",
+        "procedure_MP-101",
+        "procedure_MP-102"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 676,
+        "output_tokens": 36,
+        "retrieval_latency_ms": 15.212,
+        "generation_latency_ms": 5817.569,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 676,
+            "output_tokens": 36,
+            "latency_ms": 5817.569
+          }
+        }
+      }
+    },
+    "3013": {
+      "id": 3013,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation policy covers maintenance procedure MP-117?",
+          "retrieved": [
+            "policy_PL-A",
+            "policy_PL-L",
+            "policy_PL-K",
+            "procedure_MP-101",
+            "procedure_MP-102"
+          ],
+          "new_evidence": [
+            "policy_PL-A",
+            "policy_PL-L",
+            "policy_PL-K",
+            "procedure_MP-101",
+            "procedure_MP-102"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which authorisation policy covers maintenance procedure MP-117?\nEvidence:\n[1] (policy_PL-A) Authorisation policy PL-A, Traction Maintenance Authorisation, governs work on propulsion and current collection assets. A named holder of PL-A must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-A suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-101, procedure_MP-102, procedure_MP-103, procedure_MP-104\n[2] (policy_PL-L) Authorisation policy PL-L, Degraded Mode Authorisation, governs procedures carried out while service is running. A named holder of PL-L must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 3 maintenance procedures. Withdrawal of PL-L suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-107, procedure_MP-114, procedure_MP-124\n[3] (policy_PL-K) Authorisation policy PL-K, Night Possession Authorisation, governs any procedure performed inside an engineering possession. A named holder of PL-K must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-K suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-109, procedure_MP-118, procedure_MP-120, procedure_MP-121\n[4] (procedure_MP-101) Maintenance procedure MP-101: Inverter phase balance verification. Applies to the TX-440 traction inverter. Scheduled every 90 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: maintains -> equipment_TX-440; performed_by -> role_traction_technician; superseded_by -> procedure_MP-102\n[5] (procedure_MP-102) Maintenance procedure MP-102: Inverter gate driver replacement. Applies to the TX-440 traction inverter. Scheduled on condition. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. This procedure supersedes MP-101, which is withdrawn from the maintenance plan. Links: maintains -> equipment_TX-440; performed_by -> role_traction_technician\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "policy_PL-A",
+        "policy_PL-L",
+        "policy_PL-K",
+        "procedure_MP-101",
+        "procedure_MP-102"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 676,
+        "output_tokens": 38,
+        "retrieval_latency_ms": 15.365,
+        "generation_latency_ms": 5604.135,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 676,
+            "output_tokens": 38,
+            "latency_ms": 5604.135
+          }
+        }
+      }
+    },
+    "3014": {
+      "id": 3014,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which authorisation policy covers maintenance procedure MP-122?",
+          "retrieved": [
+            "policy_PL-A",
+            "policy_PL-L",
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "procedure_MP-103"
+          ],
+          "new_evidence": [
+            "policy_PL-A",
+            "policy_PL-L",
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "procedure_MP-103"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which authorisation policy covers maintenance procedure MP-122?\nEvidence:\n[1] (policy_PL-A) Authorisation policy PL-A, Traction Maintenance Authorisation, governs work on propulsion and current collection assets. A named holder of PL-A must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-A suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-101, procedure_MP-102, procedure_MP-103, procedure_MP-104\n[2] (policy_PL-L) Authorisation policy PL-L, Degraded Mode Authorisation, governs procedures carried out while service is running. A named holder of PL-L must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 3 maintenance procedures. Withdrawal of PL-L suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-107, procedure_MP-114, procedure_MP-124\n[3] (procedure_MP-101) Maintenance procedure MP-101: Inverter phase balance verification. Applies to the TX-440 traction inverter. Scheduled every 90 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: maintains -> equipment_TX-440; performed_by -> role_traction_technician; superseded_by -> procedure_MP-102\n[4] (procedure_MP-102) Maintenance procedure MP-102: Inverter gate driver replacement. Applies to the TX-440 traction inverter. Scheduled on condition. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. This procedure supersedes MP-101, which is withdrawn from the maintenance plan. Links: maintains -> equipment_TX-440; performed_by -> role_traction_technician\n[5] (procedure_MP-103) Maintenance procedure MP-103: Pantograph carbon strip renewal. Applies to the HV-21 pantograph head. Scheduled every 45 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: maintains -> equipment_HV-21; performed_by -> role_current_collection_fitter\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "policy_PL-A",
+        "policy_PL-L",
+        "procedure_MP-101",
+        "procedure_MP-102",
+        "procedure_MP-103"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 660,
+        "output_tokens": 38,
+        "retrieval_latency_ms": 14.64,
+        "generation_latency_ms": 5584.572,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 660,
+            "output_tokens": 38,
+            "latency_ms": 5584.572
+          }
+        }
+      }
+    },
+    "3015": {
+      "id": 3015,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/19?",
+          "retrieved": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "equipment_WS-5",
+            "policy_PL-B",
+            "policy_PL-L"
+          ],
+          "new_evidence": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "equipment_WS-5",
+            "policy_PL-B",
+            "policy_PL-L"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the equipment that failed in service incident 2026/19?\nEvidence:\n[1] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B, policy_PL-L; maintains -> equipment_WS-5; performed_by -> role_plant_engineer; supersedes -> procedure_MP-123\n[2] (procedure_MP-112) Maintenance procedure MP-112: Bearing acoustic emission screening. Applies to the AX-3 axle bearing assembly. Scheduled every 150 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-111, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-E; maintains -> equipment_AX-3; performed_by -> role_running_gear_inspector; supersedes -> procedure_MP-111\n[3] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-123\n[4] (policy_PL-B) Authorisation policy PL-B, Braking Systems Authorisation, governs work that alters braking performance. A named holder of PL-B must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-B suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-105, procedure_MP-106, procedure_MP-123\n[5] (policy_PL-L) Authorisation policy PL-L, Degraded Mode Authorisation, governs procedures carried out while service is running. A named holder of PL-L must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 3 maintenance procedures. Withdrawal of PL-L suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-107, procedure_MP-114\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "procedure_MP-124",
+        "procedure_MP-112",
+        "equipment_WS-5",
+        "policy_PL-B",
+        "policy_PL-L"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 703,
+        "output_tokens": 40,
+        "retrieval_latency_ms": 21.411,
+        "generation_latency_ms": 5413.27,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 703,
+            "output_tokens": 40,
+            "latency_ms": 5413.27
+          }
+        }
+      }
+    },
+    "3016": {
+      "id": 3016,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/20?",
+          "retrieved": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "role_platform_systems_engineer",
+            "equipment_WS-5",
+            "policy_PL-B"
+          ],
+          "new_evidence": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "role_platform_systems_engineer",
+            "equipment_WS-5",
+            "policy_PL-B"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the equipment that failed in service incident 2026/20?\nEvidence:\n[1] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B, policy_PL-L; maintains -> equipment_WS-5; performed_by -> role_plant_engineer; supersedes -> procedure_MP-123\n[2] (procedure_MP-112) Maintenance procedure MP-112: Bearing acoustic emission screening. Applies to the AX-3 axle bearing assembly. Scheduled every 150 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-111, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-E; maintains -> equipment_AX-3; performed_by -> role_running_gear_inspector; supersedes -> procedure_MP-111\n[3] (role_platform_systems_engineer) The platform systems engineer owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts. Links: responsible_for -> procedure_MP-107, procedure_MP-108\n[4] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-123\n[5] (policy_PL-B) Authorisation policy PL-B, Braking Systems Authorisation, governs work that alters braking performance. A named holder of PL-B must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-B suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-105, procedure_MP-106, procedure_MP-123\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "procedure_MP-124",
+        "procedure_MP-112",
+        "role_platform_systems_engineer",
+        "equipment_WS-5",
+        "policy_PL-B"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 674,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 14.513,
+        "generation_latency_ms": 5351.465,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 674,
+            "output_tokens": 41,
+            "latency_ms": 5351.465
+          }
+        }
+      }
+    },
+    "3017": {
+      "id": 3017,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed in service incident 2026/25?",
+          "retrieved": [
+            "incident_2026_23",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19",
+            "station_brickworks"
+          ],
+          "new_evidence": [
+            "incident_2026_23",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19",
+            "station_brickworks"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed in service incident 2026/25?\nEvidence:\n[1] (incident_2026_23) Service incident 2026/23 on 2026-11-16: trains were held at Underbank on the Amber Line for 46 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_PS-19; occurred_at -> station_underbank\n[2] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber\n[3] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_thistlebank, station_vantage_point\n[4] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\n[5] (station_brickworks) Brickworks is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Harbour Row and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_copper_lane; previous_station -> station_alder_vale; served_by -> line_azure; site_of_incident -> incident_2026_04\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_23",
+        "station_underbank",
+        "line_amber",
+        "equipment_PS-19",
+        "station_brickworks"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 648,
+        "output_tokens": 44,
+        "retrieval_latency_ms": 47.971,
+        "generation_latency_ms": 5740.609,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 44,
+            "latency_ms": 5740.609
+          }
+        }
+      }
+    },
+    "3018": {
+      "id": 3018,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed in service incident 2026/26?",
+          "retrieved": [
+            "incident_2026_23",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19",
+            "station_redcliff"
+          ],
+          "new_evidence": [
+            "incident_2026_23",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19",
+            "station_redcliff"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed in service incident 2026/26?\nEvidence:\n[1] (incident_2026_23) Service incident 2026/23 on 2026-11-16: trains were held at Underbank on the Amber Line for 46 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_PS-19; occurred_at -> station_underbank\n[2] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber\n[3] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_thistlebank, station_vantage_point\n[4] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\n[5] (station_redcliff) Redcliff is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Quarry Side and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_saltmarsh; previous_station -> station_quarry_side; site_of_incident -> incident_2026_20\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_23",
+        "station_underbank",
+        "line_amber",
+        "equipment_PS-19",
+        "station_redcliff"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 642,
+        "output_tokens": 52,
+        "retrieval_latency_ms": 13.514,
+        "generation_latency_ms": 6551.492,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 642,
+            "output_tokens": 52,
+            "latency_ms": 6551.492
+          }
+        }
+      }
+    },
+    "3019": {
+      "id": 3019,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed in service incident 2026/27?",
+          "retrieved": [
+            "incident_2026_23",
+            "incident_2026_20",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "new_evidence": [
+            "incident_2026_23",
+            "incident_2026_20",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed in service incident 2026/27?\nEvidence:\n[1] (incident_2026_23) Service incident 2026/23 on 2026-11-16: trains were held at Underbank on the Amber Line for 46 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_PS-19; occurred_at -> station_underbank\n[2] (incident_2026_20) Service incident 2026/20 on 2026-08-07: trains were held at Redcliff on the Amber Line for 34 minutes after a AX-3 axle bearing assembly suffered a thermal spike. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_AX-3; occurred_at -> station_redcliff\n[3] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber\n[4] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_thistlebank, station_vantage_point\n[5] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_23",
+        "incident_2026_20",
+        "station_underbank",
+        "line_amber",
+        "equipment_PS-19"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 648,
+        "output_tokens": 42,
+        "retrieval_latency_ms": 15.011,
+        "generation_latency_ms": 5384.808,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 42,
+            "latency_ms": 5384.808
+          }
+        }
+      }
+    },
+    "3020": {
+      "id": 3020,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which component failed in service incident 2026/28?",
+          "retrieved": [
+            "incident_2026_23",
+            "incident_2026_20",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "new_evidence": [
+            "incident_2026_23",
+            "incident_2026_20",
+            "station_underbank",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which component failed in service incident 2026/28?\nEvidence:\n[1] (incident_2026_23) Service incident 2026/23 on 2026-11-16: trains were held at Underbank on the Amber Line for 46 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_PS-19; occurred_at -> station_underbank\n[2] (incident_2026_20) Service incident 2026/20 on 2026-08-07: trains were held at Redcliff on the Amber Line for 34 minutes after a AX-3 axle bearing assembly suffered a thermal spike. 4 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_AX-3; occurred_at -> station_redcliff\n[3] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber\n[4] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_thistlebank, station_vantage_point\n[5] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "incident_2026_23",
+        "incident_2026_20",
+        "station_underbank",
+        "line_amber",
+        "equipment_PS-19"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 648,
+        "output_tokens": 41,
+        "retrieval_latency_ms": 14.709,
+        "generation_latency_ms": 6096.919,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 41,
+            "latency_ms": 6096.919
+          }
+        }
+      }
+    },
+    "3021": {
+      "id": 3021,
+      "answer": "MP-119 – Transmitter oscillator substitution applies to the TC‑6 track circuit transmitter.  \nMP-118 – Track circuit carrier retune applies to the TC‑6 track circuit transmitter.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the TC-6 track circuit transmitter?",
+          "retrieved": [
+            "equipment_TC-6",
+            "procedure_MP-119",
+            "procedure_MP-118",
+            "procedure_MP-103",
+            "procedure_MP-104"
+          ],
+          "new_evidence": [
+            "equipment_TC-6",
+            "procedure_MP-119",
+            "procedure_MP-118",
+            "procedure_MP-103",
+            "procedure_MP-104"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the TC-6 track circuit transmitter?\nEvidence:\n[1] (equipment_TC-6) The TC-6 track circuit transmitter is fitted across the fleet and in fixed installations. Its dominant failure mode is frequency drift, which presents as a carrier frequency outside the 83 to 87 hertz window. A TC-6 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TC6G. Links: maintained_by -> procedure_MP-103, procedure_MP-104\n[2] (procedure_MP-119) Maintenance procedure MP-119: Transmitter oscillator substitution. Applies to the TC-6 track circuit transmitter. Scheduled on condition. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-118, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-D; performed_by -> role_signalling_technician; supersedes -> procedure_MP-118\n[3] (procedure_MP-118) Maintenance procedure MP-118: Track circuit carrier retune. Applies to the TC-6 track circuit transmitter. Scheduled every 35 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 130 minutes. Links: authorised_by -> policy_PL-D, policy_PL-K; performed_by -> role_signalling_technician\n[4] (procedure_MP-103) Maintenance procedure MP-103: Pantograph carbon strip renewal. Applies to the HV-21 pantograph head. Scheduled every 45 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-A; maintains -> equipment_HV-21; performed_by -> role_current_collection_fitter\n[5] (procedure_MP-104) Maintenance procedure MP-104: Pantograph contact force calibration. Applies to the HV-21 pantograph head. Scheduled every 180 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 130 minutes. Links: authorised_by -> policy_PL-A; maintains -> equipment_HV-21; performed_by -> role_current_collection_fitter\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_TC-6",
+        "procedure_MP-119",
+        "procedure_MP-118",
+        "procedure_MP-103",
+        "procedure_MP-104"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 662,
+        "output_tokens": 111,
+        "retrieval_latency_ms": 22.613,
+        "generation_latency_ms": 4654.881,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 662,
+            "output_tokens": 111,
+            "latency_ms": 4654.881
+          }
+        }
+      }
+    },
+    "3022": {
+      "id": 3022,
+      "answer": "MP-117 – This maintenance procedure applies to the PS‑19 auxiliary power supply.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the PS-19 auxiliary power supply?",
+          "retrieved": [
+            "equipment_PS-19",
+            "procedure_MP-117",
+            "role_power_technician",
+            "procedure_MP-122",
+            "policy_PL-H"
+          ],
+          "new_evidence": [
+            "equipment_PS-19",
+            "procedure_MP-117",
+            "role_power_technician",
+            "procedure_MP-122",
+            "policy_PL-H"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the PS-19 auxiliary power supply?\nEvidence:\n[1] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-122\n[2] (procedure_MP-117) Maintenance procedure MP-117: Auxiliary supply ripple measurement. Applies to the PS-19 auxiliary power supply. Scheduled every 70 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-H; performed_by -> role_power_technician\n[3] (role_power_technician) The auxiliary power technician owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts. Links: responsible_for -> procedure_MP-122\n[4] (procedure_MP-122) Maintenance procedure MP-122: Ballast circuit staged replacement. Applies to the LT-77 lighting ballast. Scheduled every 300 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-J; maintains -> equipment_LT-77\n[5] (policy_PL-H) Authorisation policy PL-H, Low Voltage Authorisation, governs work on battery and auxiliary supplies. A named holder of PL-H must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 1 maintenance procedures. Withdrawal of PL-H suspends every procedure it covers until a new holder is appointed.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_PS-19",
+        "procedure_MP-117",
+        "role_power_technician",
+        "procedure_MP-122",
+        "policy_PL-H"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 566,
+        "output_tokens": 72,
+        "retrieval_latency_ms": 25.576,
+        "generation_latency_ms": 4424.649,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 566,
+            "output_tokens": 72,
+            "latency_ms": 4424.649
+          }
+        }
+      }
+    },
+    "3023": {
+      "id": 3023,
+      "answer": "MP-122 – This maintenance procedure applies to the LT‑77 lighting ballast.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the LT-77 lighting ballast?",
+          "retrieved": [
+            "equipment_LT-77",
+            "procedure_MP-122",
+            "procedure_MP-117",
+            "policy_PL-J",
+            "role_power_technician"
+          ],
+          "new_evidence": [
+            "equipment_LT-77",
+            "procedure_MP-122",
+            "procedure_MP-117",
+            "policy_PL-J",
+            "role_power_technician"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the LT-77 lighting ballast?\nEvidence:\n[1] (equipment_LT-77) The LT-77 lighting ballast is fitted across the fleet and in fixed installations. Its dominant failure mode is flicker cascade, which presents as a cascading flicker across an entire platform circuit. A LT-77 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group LT77G. Links: maintained_by -> procedure_MP-117\n[2] (procedure_MP-122) Maintenance procedure MP-122: Ballast circuit staged replacement. Applies to the LT-77 lighting ballast. Scheduled every 300 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-J; performed_by -> role_power_technician\n[3] (procedure_MP-117) Maintenance procedure MP-117: Auxiliary supply ripple measurement. Applies to the PS-19 auxiliary power supply. Scheduled every 70 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-H; maintains -> equipment_PS-19; performed_by -> role_power_technician\n[4] (policy_PL-J) Authorisation policy PL-J, Fixed Plant Authorisation, governs work on escalators, lifts and platform lighting. A named holder of PL-J must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-J suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-121\n[5] (role_power_technician) The auxiliary power technician owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_LT-77",
+        "procedure_MP-122",
+        "procedure_MP-117",
+        "policy_PL-J",
+        "role_power_technician"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 576,
+        "output_tokens": 71,
+        "retrieval_latency_ms": 13.832,
+        "generation_latency_ms": 5099.109,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 576,
+            "output_tokens": 71,
+            "latency_ms": 5099.109
+          }
+        }
+      }
+    },
+    "3024": {
+      "id": 3024,
+      "answer": "MP-103 – Pantograph carbon strip renewal.  \nMP-104 – Pantograph contact force calibration.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the HV-21 pantograph head?",
+          "retrieved": [
+            "equipment_HV-21",
+            "procedure_MP-104",
+            "procedure_MP-103",
+            "procedure_MP-109",
+            "procedure_MP-110"
+          ],
+          "new_evidence": [
+            "equipment_HV-21",
+            "procedure_MP-104",
+            "procedure_MP-103",
+            "procedure_MP-109",
+            "procedure_MP-110"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the HV-21 pantograph head?\nEvidence:\n[1] (equipment_HV-21) The HV-21 pantograph head is fitted across the fleet and in fixed installations. Its dominant failure mode is carbon strip fracture, which presents as a sudden loss of overhead contact force. A HV-21 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group HV21G. Links: maintained_by -> procedure_MP-109, procedure_MP-110\n[2] (procedure_MP-104) Maintenance procedure MP-104: Pantograph contact force calibration. Applies to the HV-21 pantograph head. Scheduled every 180 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 130 minutes. Links: authorised_by -> policy_PL-A; performed_by -> role_current_collection_fitter\n[3] (procedure_MP-103) Maintenance procedure MP-103: Pantograph carbon strip renewal. Applies to the HV-21 pantograph head. Scheduled every 45 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-A; performed_by -> role_current_collection_fitter\n[4] (procedure_MP-109) Maintenance procedure MP-109: Interlocking relay contact inspection. Applies to the SG-12 signal interlocking relay. Scheduled every 28 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-D, policy_PL-K; maintains -> equipment_SG-12; performed_by -> role_signalling_technician\n[5] (procedure_MP-110) Maintenance procedure MP-110: Relay drop-out timing audit. Applies to the SG-12 signal interlocking relay. Scheduled every 365 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-D; maintains -> equipment_SG-12; performed_by -> role_signalling_technician\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_HV-21",
+        "procedure_MP-104",
+        "procedure_MP-103",
+        "procedure_MP-109",
+        "procedure_MP-110"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 639,
+        "output_tokens": 91,
+        "retrieval_latency_ms": 35.145,
+        "generation_latency_ms": 5210.31,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 639,
+            "output_tokens": 91,
+            "latency_ms": 5210.31
+          }
+        }
+      }
+    },
+    "3025": {
+      "id": 3025,
+      "answer": "station_harbour_row is the station immediately before Kestrel Green, and station_ivory_dock is the station immediately after it.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "On its own line, which station comes immediately before Kestrel Green and which comes immediately after it?",
+          "retrieved": [
+            "station_kestrel_green",
+            "station_harbour_row",
+            "line_azure",
+            "station_ivory_dock",
+            "equipment_HV-21"
+          ],
+          "new_evidence": [
+            "station_kestrel_green",
+            "station_harbour_row",
+            "line_azure",
+            "station_ivory_dock",
+            "equipment_HV-21"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: On its own line, which station comes immediately before Kestrel Green and which comes immediately after it?\nEvidence:\n[1] (station_kestrel_green) Kestrel Green is a through station on the Azure Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Harbour Row and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_ivory_dock; previous_station -> station_harbour_row; served_by -> line_azure; site_of_incident -> incident_2026_02\n[2] (station_harbour_row) Harbour Row is a terminus on the Azure Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Harbour Row and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: served_by -> line_azure; site_of_incident -> incident_2026_01\n[3] (line_azure) The Azure Line runs from Harbour Row to Dunmore Park, calling at Kestrel Green, Alder Vale, Brickworks, Copper Lane. It is operated with Series 400 four-car sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_alder_vale, station_brickworks, station_copper_lane, station_dunmore_park\n[4] (station_ivory_dock) Ivory Dock is a through station on the Slate Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Elmsworth and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_juniper_row; previous_station -> station_hartsmere; served_by -> line_slate\n[5] (equipment_HV-21) The HV-21 pantograph head is fitted across the fleet and in fixed installations. Its dominant failure mode is carbon strip fracture, which presents as a sudden loss of overhead contact force. A HV-21 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group HV21G. Links: maintained_by -> procedure_MP-103, procedure_MP-104\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_kestrel_green",
+        "station_harbour_row",
+        "line_azure",
+        "station_ivory_dock",
+        "equipment_HV-21"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 651,
+        "output_tokens": 95,
+        "retrieval_latency_ms": 22.037,
+        "generation_latency_ms": 4859.867,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 651,
+            "output_tokens": 95,
+            "latency_ms": 4859.867
+          }
+        }
+      }
+    },
+    "3026": {
+      "id": 3026,
+      "answer": "station_eastgate_quay comes immediately before Foundry Bridge, and station_carrow_end comes immediately after it.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "On its own line, which station comes immediately before Foundry Bridge and which comes immediately after it?",
+          "retrieved": [
+            "station_foundry_bridge",
+            "station_eastgate_quay",
+            "station_carrow_end",
+            "equipment_DR-8",
+            "station_garnet_hill"
+          ],
+          "new_evidence": [
+            "station_foundry_bridge",
+            "station_eastgate_quay",
+            "station_carrow_end",
+            "equipment_DR-8",
+            "station_garnet_hill"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: On its own line, which station comes immediately before Foundry Bridge and which comes immediately after it?\nEvidence:\n[1] (station_foundry_bridge) Foundry Bridge is a through station on the Crimson Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Eastgate Quay and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_carrow_end; previous_station -> station_eastgate_quay; served_by -> line_crimson; site_of_incident -> incident_2026_08\n[2] (station_eastgate_quay) Eastgate Quay is a terminus on the Crimson Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Eastgate Quay and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: served_by -> line_crimson; site_of_incident -> incident_2026_07\n[3] (station_carrow_end) Carrow End is a through station on the Violet Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Westmere and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_dovecote; previous_station -> station_beacon_rise; served_by -> line_violet\n[4] (equipment_DR-8) The DR-8 door engine actuator is fitted across the fleet and in fixed installations. Its dominant failure mode is leadscrew backlash, which presents as a door leaf that rebounds before locking. A DR-8 unit has a design life of 12 years and is classified as a service-critical asset. Replacement units are held at the central store under part group DR8G. Links: maintained_by -> procedure_MP-115, procedure_MP-116\n[5] (station_garnet_hill) Garnet Hill is a through station on the Crimson Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Eastgate Quay and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_hollow_mill; served_by -> line_crimson; site_of_incident -> incident_2026_09\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_foundry_bridge",
+        "station_eastgate_quay",
+        "station_carrow_end",
+        "equipment_DR-8",
+        "station_garnet_hill"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 650,
+        "output_tokens": 92,
+        "retrieval_latency_ms": 23.301,
+        "generation_latency_ms": 5065.34,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 650,
+            "output_tokens": 92,
+            "latency_ms": 5065.34
+          }
+        }
+      }
+    },
+    "3027": {
+      "id": 3027,
+      "answer": "station_ashfen is the station immediately before Beacon Rise, and station_larkspur is the station immediately after it.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "On its own line, which station comes immediately before Beacon Rise and which comes immediately after it?",
+          "retrieved": [
+            "station_beacon_rise",
+            "incident_2026_28",
+            "station_vantage_point",
+            "station_ashfen",
+            "line_violet"
+          ],
+          "new_evidence": [
+            "station_beacon_rise",
+            "incident_2026_28",
+            "station_vantage_point",
+            "station_ashfen",
+            "line_violet"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "station_larkspur"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: On its own line, which station comes immediately before Beacon Rise and which comes immediately after it?\nEvidence:\n[1] (station_beacon_rise) Beacon Rise is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Westmere and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_larkspur; previous_station -> station_ashfen; served_by -> line_violet; site_of_incident -> incident_2026_28\n[2] (incident_2026_28) Service incident 2026/28 on 2026-04-04: trains were held at Beacon Rise on the Violet Line for 13 minutes after a WS-5 wheel slide protection valve suffered a latched release. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_violet; caused_by -> equipment_WS-5\n[3] (station_vantage_point) Vantage Point is a terminus on the Amber Line with 3 platforms and step-free access to the northbound platforms. It is the 6 stop counted from Quarry Side and records about 26 thousand entries on a typical weekday. The station building dates from 1937 and was last refurbished in 2014. Links: previous_station -> station_underbank; served_by -> line_amber; site_of_incident -> incident_2026_24\n[4] (station_ashfen) Ashfen is a through station on the Violet Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Westmere and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: previous_station -> station_yarrow_cross; served_by -> line_violet; site_of_incident -> incident_2026_27\n[5] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_carrow_end, station_dovecote, station_westmere, station_yarrow_cross\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_beacon_rise",
+        "incident_2026_28",
+        "station_vantage_point",
+        "station_ashfen",
+        "line_violet"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 655,
+        "output_tokens": 76,
+        "retrieval_latency_ms": 37.37,
+        "generation_latency_ms": 4600.104,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 655,
+            "output_tokens": 76,
+            "latency_ms": 4600.104
+          }
+        }
+      }
+    },
+    "3028": {
+      "id": 3028,
+      "answer": "station_saltmarsh comes immediately before Thistlebank, and station_elmsworth comes immediately after it.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "On its own line, which station comes immediately before Thistlebank and which comes immediately after it?",
+          "retrieved": [
+            "station_thistlebank",
+            "incident_2026_22",
+            "station_saltmarsh",
+            "station_elmsworth",
+            "equipment_DR-8"
+          ],
+          "new_evidence": [
+            "station_thistlebank",
+            "incident_2026_22",
+            "station_saltmarsh",
+            "station_elmsworth",
+            "equipment_DR-8"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: On its own line, which station comes immediately before Thistlebank and which comes immediately after it?\nEvidence:\n[1] (station_thistlebank) Thistlebank is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Quarry Side and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_elmsworth; previous_station -> station_saltmarsh; served_by -> line_amber; site_of_incident -> incident_2026_22\n[2] (incident_2026_22) Service incident 2026/22 on 2026-10-13: trains were held at Thistlebank on the Amber Line for 42 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_DR-8\n[3] (station_saltmarsh) Saltmarsh is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Quarry Side and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: previous_station -> station_redcliff; served_by -> line_amber; site_of_incident -> incident_2026_21\n[4] (station_elmsworth) Elmsworth is a terminus on the Slate Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Elmsworth and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_fallowfield; served_by -> line_slate\n[5] (equipment_DR-8) The DR-8 door engine actuator is fitted across the fleet and in fixed installations. Its dominant failure mode is leadscrew backlash, which presents as a door leaf that rebounds before locking. A DR-8 unit has a design life of 12 years and is classified as a service-critical asset. Replacement units are held at the central store under part group DR8G. Links: maintained_by -> procedure_MP-115, procedure_MP-116\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "station_thistlebank",
+        "incident_2026_22",
+        "station_saltmarsh",
+        "station_elmsworth",
+        "equipment_DR-8"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 641,
+        "output_tokens": 66,
+        "retrieval_latency_ms": 17.406,
+        "generation_latency_ms": 5395.486,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 641,
+            "output_tokens": 66,
+            "latency_ms": 5395.486
+          }
+        }
+      }
+    },
+    "3029": {
+      "id": 3029,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/21?",
+          "retrieved": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "equipment_WS-5",
+            "policy_PL-B",
+            "policy_PL-L"
+          ],
+          "new_evidence": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "equipment_WS-5",
+            "policy_PL-B",
+            "policy_PL-L"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the equipment that failed in service incident 2026/21?\nEvidence:\n[1] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B, policy_PL-L; maintains -> equipment_WS-5; performed_by -> role_plant_engineer; supersedes -> procedure_MP-123\n[2] (procedure_MP-112) Maintenance procedure MP-112: Bearing acoustic emission screening. Applies to the AX-3 axle bearing assembly. Scheduled every 150 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-111, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-E; maintains -> equipment_AX-3; performed_by -> role_running_gear_inspector; supersedes -> procedure_MP-111\n[3] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-123\n[4] (policy_PL-B) Authorisation policy PL-B, Braking Systems Authorisation, governs work that alters braking performance. A named holder of PL-B must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-B suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-105, procedure_MP-106, procedure_MP-123\n[5] (policy_PL-L) Authorisation policy PL-L, Degraded Mode Authorisation, governs procedures carried out while service is running. A named holder of PL-L must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 3 maintenance procedures. Withdrawal of PL-L suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-107, procedure_MP-114\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "procedure_MP-124",
+        "procedure_MP-112",
+        "equipment_WS-5",
+        "policy_PL-B",
+        "policy_PL-L"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 703,
+        "output_tokens": 40,
+        "retrieval_latency_ms": 22.728,
+        "generation_latency_ms": 6177.125,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 703,
+            "output_tokens": 40,
+            "latency_ms": 6177.125
+          }
+        }
+      }
+    },
+    "3030": {
+      "id": 3030,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/22?",
+          "retrieved": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "equipment_WS-5",
+            "policy_PL-B",
+            "policy_PL-L"
+          ],
+          "new_evidence": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "equipment_WS-5",
+            "policy_PL-B",
+            "policy_PL-L"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the equipment that failed in service incident 2026/22?\nEvidence:\n[1] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B, policy_PL-L; maintains -> equipment_WS-5; performed_by -> role_plant_engineer; supersedes -> procedure_MP-123\n[2] (procedure_MP-112) Maintenance procedure MP-112: Bearing acoustic emission screening. Applies to the AX-3 axle bearing assembly. Scheduled every 150 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-111, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-E; maintains -> equipment_AX-3; performed_by -> role_running_gear_inspector; supersedes -> procedure_MP-111\n[3] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-123\n[4] (policy_PL-B) Authorisation policy PL-B, Braking Systems Authorisation, governs work that alters braking performance. A named holder of PL-B must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-B suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-105, procedure_MP-106, procedure_MP-123\n[5] (policy_PL-L) Authorisation policy PL-L, Degraded Mode Authorisation, governs procedures carried out while service is running. A named holder of PL-L must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 3 maintenance procedures. Withdrawal of PL-L suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-107, procedure_MP-114\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "procedure_MP-124",
+        "procedure_MP-112",
+        "equipment_WS-5",
+        "policy_PL-B",
+        "policy_PL-L"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 703,
+        "output_tokens": 42,
+        "retrieval_latency_ms": 14.556,
+        "generation_latency_ms": 5836.528,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 703,
+            "output_tokens": 42,
+            "latency_ms": 5836.528
+          }
+        }
+      }
+    },
+    "3031": {
+      "id": 3031,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/23?",
+          "retrieved": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "equipment_WS-5",
+            "policy_PL-B",
+            "policy_PL-L"
+          ],
+          "new_evidence": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "equipment_WS-5",
+            "policy_PL-B",
+            "policy_PL-L"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the equipment that failed in service incident 2026/23?\nEvidence:\n[1] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B, policy_PL-L; maintains -> equipment_WS-5; performed_by -> role_plant_engineer; supersedes -> procedure_MP-123\n[2] (procedure_MP-112) Maintenance procedure MP-112: Bearing acoustic emission screening. Applies to the AX-3 axle bearing assembly. Scheduled every 150 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-111, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-E; maintains -> equipment_AX-3; performed_by -> role_running_gear_inspector; supersedes -> procedure_MP-111\n[3] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-123\n[4] (policy_PL-B) Authorisation policy PL-B, Braking Systems Authorisation, governs work that alters braking performance. A named holder of PL-B must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-B suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-105, procedure_MP-106, procedure_MP-123\n[5] (policy_PL-L) Authorisation policy PL-L, Degraded Mode Authorisation, governs procedures carried out while service is running. A named holder of PL-L must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 3 maintenance procedures. Withdrawal of PL-L suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-107, procedure_MP-114\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "procedure_MP-124",
+        "procedure_MP-112",
+        "equipment_WS-5",
+        "policy_PL-B",
+        "policy_PL-L"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 703,
+        "output_tokens": 42,
+        "retrieval_latency_ms": 31.454,
+        "generation_latency_ms": 5631.916,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 703,
+            "output_tokens": 42,
+            "latency_ms": 5631.916
+          }
+        }
+      }
+    },
+    "3032": {
+      "id": 3032,
+      "answer": "INSUFFICIENT EVIDENCE",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/24?",
+          "retrieved": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "role_signalling_technician",
+            "equipment_WS-5",
+            "policy_PL-B"
+          ],
+          "new_evidence": [
+            "procedure_MP-124",
+            "procedure_MP-112",
+            "role_signalling_technician",
+            "equipment_WS-5",
+            "policy_PL-B"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures cover the equipment that failed in service incident 2026/24?\nEvidence:\n[1] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B, policy_PL-L; maintains -> equipment_WS-5; performed_by -> role_plant_engineer; supersedes -> procedure_MP-123\n[2] (procedure_MP-112) Maintenance procedure MP-112: Bearing acoustic emission screening. Applies to the AX-3 axle bearing assembly. Scheduled every 150 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 40 minutes. This procedure supersedes MP-111, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-E; maintains -> equipment_AX-3; performed_by -> role_running_gear_inspector; supersedes -> procedure_MP-111\n[3] (role_signalling_technician) The signalling maintenance technician owns 4 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 6 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts. Links: responsible_for -> procedure_MP-109, procedure_MP-110, procedure_MP-118, procedure_MP-119\n[4] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-123\n[5] (policy_PL-B) Authorisation policy PL-B, Braking Systems Authorisation, governs work that alters braking performance. A named holder of PL-B must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-B suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-105, procedure_MP-106, procedure_MP-123\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "procedure_MP-124",
+        "procedure_MP-112",
+        "role_signalling_technician",
+        "equipment_WS-5",
+        "policy_PL-B"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 684,
+        "output_tokens": 44,
+        "retrieval_latency_ms": 15.099,
+        "generation_latency_ms": 4630.29,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 684,
+            "output_tokens": 44,
+            "latency_ms": 4630.29
+          }
+        }
+      }
+    },
+    "3033": {
+      "id": 3033,
+      "answer": "MP‑109 – Interlocking relay contact inspection applies to the SG‑12 signal interlocking relay.  \nMP‑110 – Relay drop‑out timing audit applies to the SG‑12 signal interlocking relay.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the SG-12 signal interlocking relay?",
+          "retrieved": [
+            "equipment_SG-12",
+            "procedure_MP-109",
+            "procedure_MP-110",
+            "procedure_MP-104",
+            "policy_PL-D"
+          ],
+          "new_evidence": [
+            "equipment_SG-12",
+            "procedure_MP-109",
+            "procedure_MP-110",
+            "procedure_MP-104",
+            "policy_PL-D"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the SG-12 signal interlocking relay?\nEvidence:\n[1] (equipment_SG-12) The SG-12 signal interlocking relay is fitted across the fleet and in fixed installations. Its dominant failure mode is contact welding, which presents as a relay that fails to drop out after de-energising. A SG-12 unit has a design life of 8 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group SG12G. Links: maintained_by -> procedure_MP-104, procedure_MP-109, procedure_MP-110\n[2] (procedure_MP-109) Maintenance procedure MP-109: Interlocking relay contact inspection. Applies to the SG-12 signal interlocking relay. Scheduled every 28 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-D, policy_PL-K; performed_by -> role_signalling_technician\n[3] (procedure_MP-110) Maintenance procedure MP-110: Relay drop-out timing audit. Applies to the SG-12 signal interlocking relay. Scheduled every 365 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-D; performed_by -> role_signalling_technician\n[4] (procedure_MP-104) Maintenance procedure MP-104: Pantograph contact force calibration. Applies to the HV-21 pantograph head. Scheduled every 180 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 130 minutes. Links: authorised_by -> policy_PL-A; maintains -> equipment_HV-21; performed_by -> role_current_collection_fitter\n[5] (policy_PL-D) Authorisation policy PL-D, Signalling Safety Authorisation, governs work inside a signalling interlocking. A named holder of PL-D must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-D suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-118, procedure_MP-119\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_SG-12",
+        "procedure_MP-109",
+        "procedure_MP-110",
+        "procedure_MP-104",
+        "policy_PL-D"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 648,
+        "output_tokens": 95,
+        "retrieval_latency_ms": 25.444,
+        "generation_latency_ms": 6595.96,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 95,
+            "latency_ms": 6595.96
+          }
+        }
+      }
+    },
+    "3034": {
+      "id": 3034,
+      "answer": "MP-101 – Inverter phase balance verification applies to the TX‑440 traction inverter.  \nMP-102 – Inverter gate driver replacement applies to the TX‑440 traction inverter.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the TX-440 traction inverter?",
+          "retrieved": [
+            "equipment_TX-440",
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "procedure_MP-116",
+            "policy_PL-A"
+          ],
+          "new_evidence": [
+            "equipment_TX-440",
+            "procedure_MP-101",
+            "procedure_MP-102",
+            "procedure_MP-116",
+            "policy_PL-A"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the TX-440 traction inverter?\nEvidence:\n[1] (equipment_TX-440) The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G. Links: maintained_by -> procedure_MP-101, procedure_MP-102, procedure_MP-116\n[2] (procedure_MP-101) Maintenance procedure MP-101: Inverter phase balance verification. Applies to the TX-440 traction inverter. Scheduled every 90 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-A; performed_by -> role_traction_technician; superseded_by -> procedure_MP-102\n[3] (procedure_MP-102) Maintenance procedure MP-102: Inverter gate driver replacement. Applies to the TX-440 traction inverter. Scheduled on condition. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. This procedure supersedes MP-101, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-A; performed_by -> role_traction_technician\n[4] (procedure_MP-116) Maintenance procedure MP-116: Door obstacle force profiling. Applies to the DR-8 door engine actuator. Scheduled every 90 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-G; maintains -> equipment_DR-8; performed_by -> role_door_fitter\n[5] (policy_PL-A) Authorisation policy PL-A, Traction Maintenance Authorisation, governs work on propulsion and current collection assets. A named holder of PL-A must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-A suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-103, procedure_MP-104\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_TX-440",
+        "procedure_MP-101",
+        "procedure_MP-102",
+        "procedure_MP-116",
+        "policy_PL-A"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 652,
+        "output_tokens": 150,
+        "retrieval_latency_ms": 10.965,
+        "generation_latency_ms": 4977.035,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 652,
+            "output_tokens": 150,
+            "latency_ms": 4977.035
+          }
+        }
+      }
+    },
+    "3035": {
+      "id": 3035,
+      "answer": "MP‑120: This procedure corrects ventilation fan balance and is scheduled every 240 days for the VE‑31 tunnel ventilation fan.  \nMP‑108: This procedure is also listed as a maintenance procedure for the VE‑31 tunnel ventilation fan.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the VE-31 tunnel ventilation fan?",
+          "retrieved": [
+            "equipment_VE-31",
+            "procedure_MP-120",
+            "procedure_MP-108",
+            "policy_PL-I",
+            "policy_PL-K"
+          ],
+          "new_evidence": [
+            "equipment_VE-31",
+            "procedure_MP-120",
+            "procedure_MP-108",
+            "policy_PL-I",
+            "policy_PL-K"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the VE-31 tunnel ventilation fan?\nEvidence:\n[1] (equipment_VE-31) The VE-31 tunnel ventilation fan is fitted across the fleet and in fixed installations. Its dominant failure mode is blade imbalance, which presents as vibration velocity above 7 millimetres per second at the bearing housing. A VE-31 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group VE31G. Links: maintained_by -> procedure_MP-108, procedure_MP-120\n[2] (procedure_MP-120) Maintenance procedure MP-120: Ventilation fan balance correction. Applies to the VE-31 tunnel ventilation fan. Scheduled every 240 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 55 minutes. Links: authorised_by -> policy_PL-I, policy_PL-K; performed_by -> role_plant_engineer\n[3] (procedure_MP-108) Maintenance procedure MP-108: Screen door controller loop test. Applies to the PD-90 platform screen door controller. Scheduled every 120 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-C; maintains -> equipment_PD-90; performed_by -> role_platform_systems_engineer\n[4] (policy_PL-I) Authorisation policy PL-I, Tunnel Environment Authorisation, governs work on tunnel ventilation and smoke control. A named holder of PL-I must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 1 maintenance procedures. Withdrawal of PL-I suspends every procedure it covers until a new holder is appointed.\n[5] (policy_PL-K) Authorisation policy PL-K, Night Possession Authorisation, governs any procedure performed inside an engineering possession. A named holder of PL-K must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-K suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-109, procedure_MP-118, procedure_MP-121\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_VE-31",
+        "procedure_MP-120",
+        "procedure_MP-108",
+        "policy_PL-I",
+        "policy_PL-K"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 637,
+        "output_tokens": 160,
+        "retrieval_latency_ms": 16.578,
+        "generation_latency_ms": 6258.782,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 637,
+            "output_tokens": 160,
+            "latency_ms": 6258.782
+          }
+        }
+      }
+    },
+    "3036": {
+      "id": 3036,
+      "answer": "MP-107 – Screen door sensor realignment applies to the PD‑90 platform screen door controller.  \nMP-108 – Screen door controller loop test applies to the PD‑90 platform screen door controller.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the PD-90 platform screen door controller?",
+          "retrieved": [
+            "equipment_PD-90",
+            "procedure_MP-107",
+            "procedure_MP-108",
+            "procedure_MP-122",
+            "policy_PL-C"
+          ],
+          "new_evidence": [
+            "equipment_PD-90",
+            "procedure_MP-107",
+            "procedure_MP-108",
+            "procedure_MP-122",
+            "policy_PL-C"
+          ],
+          "decision": "bounds_reached"
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the PD-90 platform screen door controller?\nEvidence:\n[1] (equipment_PD-90) The PD-90 platform screen door controller is fitted across the fleet and in fixed installations. Its dominant failure mode is obstruction sensor drift, which presents as false obstruction reports on an empty threshold. A PD-90 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PD90G. Links: maintained_by -> procedure_MP-107, procedure_MP-108, procedure_MP-122\n[2] (procedure_MP-107) Maintenance procedure MP-107: Screen door sensor realignment. Applies to the PD-90 platform screen door controller. Scheduled every 30 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 70 minutes. Links: authorised_by -> policy_PL-C, policy_PL-L; performed_by -> role_platform_systems_engineer\n[3] (procedure_MP-108) Maintenance procedure MP-108: Screen door controller loop test. Applies to the PD-90 platform screen door controller. Scheduled every 120 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-C; performed_by -> role_platform_systems_engineer\n[4] (procedure_MP-122) Maintenance procedure MP-122: Ballast circuit staged replacement. Applies to the LT-77 lighting ballast. Scheduled every 300 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-J; maintains -> equipment_LT-77; performed_by -> role_power_technician\n[5] (policy_PL-C) Authorisation policy PL-C, Platform Interface Authorisation, governs work on the platform-train interface. A named holder of PL-C must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-C suspends every procedure it covers until a new holder is appointed.\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_PD-90",
+        "procedure_MP-107",
+        "procedure_MP-108",
+        "procedure_MP-122",
+        "policy_PL-C"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 623,
+        "output_tokens": 103,
+        "retrieval_latency_ms": 26.733,
+        "generation_latency_ms": 5488.022,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 623,
+            "output_tokens": 103,
+            "latency_ms": 5488.022
+          }
+        }
+      }
+    },
+    "3037": {
+      "id": 3037,
+      "answer": "procedure_MP-110 – this procedure is the maintenance procedure that applies to the ES-14 escalator drive chain.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the ES-14 escalator drive chain?",
+          "retrieved": [
+            "equipment_ES-14",
+            "incident_2026_26",
+            "incident_2026_12",
+            "policy_PL-J",
+            "policy_PL-K"
+          ],
+          "new_evidence": [
+            "equipment_ES-14",
+            "incident_2026_26",
+            "incident_2026_12",
+            "policy_PL-J",
+            "policy_PL-K"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-110"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the ES-14 escalator drive chain?\nEvidence:\n[1] (equipment_ES-14) The ES-14 escalator drive chain is fitted across the fleet and in fixed installations. Its dominant failure mode is elongation wear, which presents as chain elongation beyond the 1.5 percent service limit. A ES-14 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group ES14G. Links: maintained_by -> procedure_MP-110\n[2] (incident_2026_26) Service incident 2026/26 on 2026-02-25: trains were held at Yarrow Cross on the Violet Line for 58 minutes after a ES-14 escalator drive chain suffered a elongation wear. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_violet; caused_by -> equipment_ES-14; occurred_at -> station_yarrow_cross\n[3] (incident_2026_12) Service incident 2026/12 on 2026-12-10: trains were held at Jubilee Fields on the Crimson Line for 55 minutes after a ES-14 escalator drive chain suffered a elongation wear. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_crimson; caused_by -> equipment_ES-14; occurred_at -> station_jubilee_fields\n[4] (policy_PL-J) Authorisation policy PL-J, Fixed Plant Authorisation, governs work on escalators, lifts and platform lighting. A named holder of PL-J must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-J suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-121, procedure_MP-122\n[5] (policy_PL-K) Authorisation policy PL-K, Night Possession Authorisation, governs any procedure performed inside an engineering possession. A named holder of PL-K must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-K suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-109, procedure_MP-118, procedure_MP-120, procedure_MP-121\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_ES-14",
+        "incident_2026_26",
+        "incident_2026_12",
+        "policy_PL-J",
+        "policy_PL-K"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 673,
+        "output_tokens": 85,
+        "retrieval_latency_ms": 32.992,
+        "generation_latency_ms": 4909.223,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 673,
+            "output_tokens": 85,
+            "latency_ms": 4909.223
+          }
+        }
+      }
+    },
+    "3038": {
+      "id": 3038,
+      "answer": "MP-124 – the scheduled maintenance procedure linked to the BR-7 regenerative brake unit.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the BR-7 regenerative brake unit?",
+          "retrieved": [
+            "equipment_BR-7",
+            "role_brake_specialist",
+            "policy_PL-B",
+            "procedure_MP-109",
+            "procedure_MP-110"
+          ],
+          "new_evidence": [
+            "equipment_BR-7",
+            "role_brake_specialist",
+            "policy_PL-B",
+            "procedure_MP-109",
+            "procedure_MP-110"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-124"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the BR-7 regenerative brake unit?\nEvidence:\n[1] (equipment_BR-7) The BR-7 regenerative brake unit is fitted across the fleet and in fixed installations. Its dominant failure mode is resistor grid overheat, which presents as grid temperature above the 310 degree cut-out. A BR-7 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group BR7G. Links: maintained_by -> procedure_MP-124\n[2] (role_brake_specialist) The brake systems specialist owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts. Links: responsible_for -> procedure_MP-105, procedure_MP-106\n[3] (policy_PL-B) Authorisation policy PL-B, Braking Systems Authorisation, governs work that alters braking performance. A named holder of PL-B must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-B suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-105, procedure_MP-106, procedure_MP-123, procedure_MP-124\n[4] (procedure_MP-109) Maintenance procedure MP-109: Interlocking relay contact inspection. Applies to the SG-12 signal interlocking relay. Scheduled every 28 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-D, policy_PL-K; maintains -> equipment_SG-12; performed_by -> role_signalling_technician\n[5] (procedure_MP-110) Maintenance procedure MP-110: Relay drop-out timing audit. Applies to the SG-12 signal interlocking relay. Scheduled every 365 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-D; maintains -> equipment_SG-12; performed_by -> role_signalling_technician\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_BR-7",
+        "role_brake_specialist",
+        "policy_PL-B",
+        "procedure_MP-109",
+        "procedure_MP-110"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 628,
+        "output_tokens": 109,
+        "retrieval_latency_ms": 25.093,
+        "generation_latency_ms": 5095.521,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 628,
+            "output_tokens": 109,
+            "latency_ms": 5095.521
+          }
+        }
+      }
+    },
+    "3039": {
+      "id": 3039,
+      "answer": "procedure_MP-114 – This procedure is the maintenance procedure that applies to the TX‑440 traction inverter.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the TX-440 traction inverter?",
+          "retrieved": [
+            "equipment_TX-440",
+            "policy_PL-A",
+            "station_mallow_street",
+            "line_jade",
+            "role_traction_technician"
+          ],
+          "new_evidence": [
+            "equipment_TX-440",
+            "policy_PL-A",
+            "station_mallow_street",
+            "line_jade",
+            "role_traction_technician"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-114"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the TX-440 traction inverter?\nEvidence:\n[1] (equipment_TX-440) The TX-440 traction inverter is fitted across the fleet and in fixed installations. Its dominant failure mode is phase imbalance trip, which presents as unbalanced current draw across the three output phases. A TX-440 unit has a design life of 9 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group TX440G. Links: maintained_by -> procedure_MP-114\n[2] (policy_PL-A) Authorisation policy PL-A, Traction Maintenance Authorisation, governs work on propulsion and current collection assets. A named holder of PL-A must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-A suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-101, procedure_MP-102, procedure_MP-103, procedure_MP-104\n[3] (station_mallow_street) Mallow Street is a through station on the Jade Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Kingsmoor and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_netherby; previous_station -> station_larkspur; served_by -> line_jade; site_of_incident -> incident_2026_15\n[4] (line_jade) The Jade Line runs from Kingsmoor to Pennyford, calling at Larkspur, Mallow Street, Netherby, Oakhurst. It is operated with Series 300 refurbished sets and carries an average weekday ridership of 66 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_kingsmoor, station_larkspur, station_netherby, station_oakhurst, station_pennyford\n[5] (role_traction_technician) The night traction technician owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on nights. Links: responsible_for -> procedure_MP-101, procedure_MP-102\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_TX-440",
+        "policy_PL-A",
+        "station_mallow_street",
+        "line_jade",
+        "role_traction_technician"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 628,
+        "output_tokens": 77,
+        "retrieval_latency_ms": 17.319,
+        "generation_latency_ms": 6341.15,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 628,
+            "output_tokens": 77,
+            "latency_ms": 6341.15
+          }
+        }
+      }
+    },
+    "3040": {
+      "id": 3040,
+      "answer": "procedure_MP-120 – this is the maintenance procedure that applies to the VE‑31 tunnel ventilation fan.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the VE-31 tunnel ventilation fan?",
+          "retrieved": [
+            "equipment_VE-31",
+            "policy_PL-I",
+            "policy_PL-K",
+            "role_plant_engineer",
+            "station_westmere"
+          ],
+          "new_evidence": [
+            "equipment_VE-31",
+            "policy_PL-I",
+            "policy_PL-K",
+            "role_plant_engineer",
+            "station_westmere"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-120"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the VE-31 tunnel ventilation fan?\nEvidence:\n[1] (equipment_VE-31) The VE-31 tunnel ventilation fan is fitted across the fleet and in fixed installations. Its dominant failure mode is blade imbalance, which presents as vibration velocity above 7 millimetres per second at the bearing housing. A VE-31 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group VE31G. Links: maintained_by -> procedure_MP-120\n[2] (policy_PL-I) Authorisation policy PL-I, Tunnel Environment Authorisation, governs work on tunnel ventilation and smoke control. A named holder of PL-I must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 1 maintenance procedures. Withdrawal of PL-I suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-120\n[3] (policy_PL-K) Authorisation policy PL-K, Night Possession Authorisation, governs any procedure performed inside an engineering possession. A named holder of PL-K must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 4 maintenance procedures. Withdrawal of PL-K suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-109, procedure_MP-118, procedure_MP-120, procedure_MP-121\n[4] (role_plant_engineer) The fixed plant engineer owns 4 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 6 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts. Links: responsible_for -> procedure_MP-120, procedure_MP-121, procedure_MP-123, procedure_MP-124\n[5] (station_westmere) Westmere is a terminus on the Violet Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Westmere and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_yarrow_cross; served_by -> line_violet; site_of_incident -> incident_2026_25\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_VE-31",
+        "policy_PL-I",
+        "policy_PL-K",
+        "role_plant_engineer",
+        "station_westmere"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 624,
+        "output_tokens": 69,
+        "retrieval_latency_ms": 17.161,
+        "generation_latency_ms": 4475.389,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 624,
+            "output_tokens": 69,
+            "latency_ms": 4475.389
+          }
+        }
+      }
+    },
+    "3041": {
+      "id": 3041,
+      "answer": "procedure_MP-122 – this procedure is listed as the maintenance procedure for the LT‑77 lighting ballast.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the LT-77 lighting ballast?",
+          "retrieved": [
+            "equipment_LT-77",
+            "policy_PL-J",
+            "role_power_technician",
+            "station_ashfen",
+            "line_violet"
+          ],
+          "new_evidence": [
+            "equipment_LT-77",
+            "policy_PL-J",
+            "role_power_technician",
+            "station_ashfen",
+            "line_violet"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-122"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the LT-77 lighting ballast?\nEvidence:\n[1] (equipment_LT-77) The LT-77 lighting ballast is fitted across the fleet and in fixed installations. Its dominant failure mode is flicker cascade, which presents as a cascading flicker across an entire platform circuit. A LT-77 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group LT77G. Links: maintained_by -> procedure_MP-122\n[2] (policy_PL-J) Authorisation policy PL-J, Fixed Plant Authorisation, governs work on escalators, lifts and platform lighting. A named holder of PL-J must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 2 maintenance procedures. Withdrawal of PL-J suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-121, procedure_MP-122\n[3] (role_power_technician) The auxiliary power technician owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts. Links: responsible_for -> procedure_MP-117, procedure_MP-122\n[4] (station_ashfen) Ashfen is a through station on the Violet Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Westmere and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_beacon_rise; previous_station -> station_yarrow_cross; served_by -> line_violet; site_of_incident -> incident_2026_27\n[5] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_beacon_rise, station_carrow_end, station_dovecote, station_westmere, station_yarrow_cross\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_LT-77",
+        "policy_PL-J",
+        "role_power_technician",
+        "station_ashfen",
+        "line_violet"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 620,
+        "output_tokens": 99,
+        "retrieval_latency_ms": 21.222,
+        "generation_latency_ms": 5995.996,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 620,
+            "output_tokens": 99,
+            "latency_ms": 5995.996
+          }
+        }
+      }
+    },
+    "3042": {
+      "id": 3042,
+      "answer": "MP-117 – This scheduled maintenance procedure is applied to the PS‑19 auxiliary power supply.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures apply to the PS-19 auxiliary power supply?",
+          "retrieved": [
+            "equipment_PS-19",
+            "role_power_technician",
+            "policy_PL-H",
+            "procedure_MP-122",
+            "station_underbank"
+          ],
+          "new_evidence": [
+            "equipment_PS-19",
+            "role_power_technician",
+            "policy_PL-H",
+            "procedure_MP-122",
+            "station_underbank"
+          ],
+          "decision": "bounds_reached"
+        },
+        {
+          "step": "grounding",
+          "mode": "off",
+          "cited_from_links_unverified": [
+            "procedure_MP-117"
+          ]
+        }
+      ],
+      "stop_reason": "step_budget_exhausted",
+      "prompts": [
+        "Answer using only the evidence.\nQuestion: Which maintenance procedures apply to the PS-19 auxiliary power supply?\nEvidence:\n[1] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\n[2] (role_power_technician) The auxiliary power technician owns 2 scheduled maintenance procedures and reports to the engineering duty manager. The post requires 4 years of depot experience, a current track safety certificate, and annual reassessment. Rostering places the post on rotating shifts. Links: responsible_for -> procedure_MP-117, procedure_MP-122\n[3] (policy_PL-H) Authorisation policy PL-H, Low Voltage Authorisation, governs work on battery and auxiliary supplies. A named holder of PL-H must countersign the work record before the asset is returned to service. The policy was issued in 2024, reviewed in 2026, and covers 1 maintenance procedures. Withdrawal of PL-H suspends every procedure it covers until a new holder is appointed. Links: authorises -> procedure_MP-117\n[4] (procedure_MP-122) Maintenance procedure MP-122: Ballast circuit staged replacement. Applies to the LT-77 lighting ballast. Scheduled every 300 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-J; maintains -> equipment_LT-77\n[5] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber; site_of_incident -> incident_2026_23\nRules:\n- Give the exact identifiers and one short sentence.\n- Do not add unsupported facts.\n- If evidence is insufficient, reply exactly: INSUFFICIENT EVIDENCE.\nAnswer:"
+      ],
+      "evidence_chunks": [
+        "equipment_PS-19",
+        "role_power_technician",
+        "policy_PL-H",
+        "procedure_MP-122",
+        "station_underbank"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 1,
+        "input_tokens": 592,
+        "output_tokens": 77,
+        "retrieval_latency_ms": 16.373,
+        "generation_latency_ms": 4292.754,
+        "by_stage": {
+          "answer": {
+            "calls": 1,
+            "input_tokens": 592,
+            "output_tokens": 77,
+            "latency_ms": 4292.754
+          }
+        }
+      }
+    }
+  }
+}
