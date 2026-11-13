@@ -1,0 +1,1653 @@
+{
+  "corpus_id": "meridian-transit-v1",
+  "experiment": "robustness-r2-prime-relation-verification",
+  "dataset_version": "r2p-1.0",
+  "preregistration": "PREREGISTRATION_R2_PRIME.md",
+  "corruption_version": "corrupt-1.0",
+  "base_dataset_sha256": "8f61e760d6ec9b1ca95f8bf955bfb33698851caa8e61cf7ff0d3b1f758a54fb2",
+  "notes": [
+    "New questions; no R2 item or v1.1 question wording is reused.",
+    "Corruption is applied in memory per query by corrupt-1.0; graph files and document text never change.",
+    "Claim truth = membership in the clean graph edge set."
+  ],
+  "queries": [
+    {
+      "id": 3001,
+      "case": "P",
+      "family": "caused_by",
+      "query": "Which component failed in service incident 2026/21?",
+      "answerable": true,
+      "anchor": "incident_2026_21",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "CP-55"
+        ],
+        "evidence_chunks": [
+          "incident_2026_21"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "equipment_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "CP-55"
+        ]
+      }
+    },
+    {
+      "id": 3002,
+      "case": "P",
+      "family": "caused_by",
+      "query": "Which component failed in service incident 2026/22?",
+      "answerable": true,
+      "anchor": "incident_2026_22",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "DR-8"
+        ],
+        "evidence_chunks": [
+          "incident_2026_22"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "equipment_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "DR-8"
+        ]
+      }
+    },
+    {
+      "id": 3003,
+      "case": "P",
+      "family": "caused_by",
+      "query": "Which component failed in service incident 2026/23?",
+      "answerable": true,
+      "anchor": "incident_2026_23",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "PS-19"
+        ],
+        "evidence_chunks": [
+          "incident_2026_23"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "equipment_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "PS-19"
+        ]
+      }
+    },
+    {
+      "id": 3004,
+      "case": "P",
+      "family": "caused_by",
+      "query": "Which component failed in service incident 2026/24?",
+      "answerable": true,
+      "anchor": "incident_2026_24",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "TC-6"
+        ],
+        "evidence_chunks": [
+          "incident_2026_24"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "equipment_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "TC-6"
+        ]
+      }
+    },
+    {
+      "id": 3005,
+      "case": "P",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the AX-3 axle bearing assembly?",
+      "answerable": true,
+      "anchor": "equipment_AX-3",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-111",
+          "MP-112"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-111",
+          "procedure_MP-112"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-111",
+          "MP-112"
+        ]
+      }
+    },
+    {
+      "id": 3006,
+      "case": "P",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the CP-55 compressor module?",
+      "answerable": true,
+      "anchor": "equipment_CP-55",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-113",
+          "MP-114"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-113",
+          "procedure_MP-114"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-113",
+          "MP-114"
+        ]
+      }
+    },
+    {
+      "id": 3007,
+      "case": "P",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the DR-8 door engine actuator?",
+      "answerable": true,
+      "anchor": "equipment_DR-8",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-115",
+          "MP-116"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-115",
+          "procedure_MP-116"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-115",
+          "MP-116"
+        ]
+      }
+    },
+    {
+      "id": 3008,
+      "case": "P",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the WS-5 wheel slide protection valve?",
+      "answerable": true,
+      "anchor": "equipment_WS-5",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-123",
+          "MP-124"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-123",
+          "procedure_MP-124"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-123",
+          "MP-124"
+        ]
+      }
+    },
+    {
+      "id": 3009,
+      "case": "P",
+      "family": "next_station",
+      "query": "On its own line, which station comes immediately before Copper Lane and which comes immediately after it?",
+      "answerable": true,
+      "anchor": "station_copper_lane",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "station_name",
+        "entities": [
+          "Brickworks",
+          "Dunmore Park"
+        ],
+        "evidence_chunks": [
+          "line_azure"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "station_name",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "entities": [
+          "Brickworks",
+          "Dunmore Park"
+        ]
+      }
+    },
+    {
+      "id": 3010,
+      "case": "P",
+      "family": "next_station",
+      "query": "On its own line, which station comes immediately before Yarrow Cross and which comes immediately after it?",
+      "answerable": true,
+      "anchor": "station_yarrow_cross",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "station_name",
+        "entities": [
+          "Ashfen",
+          "Westmere"
+        ],
+        "evidence_chunks": [
+          "line_violet"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "station_name",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "entities": [
+          "Ashfen",
+          "Westmere"
+        ]
+      }
+    },
+    {
+      "id": 3011,
+      "case": "P",
+      "family": "next_station",
+      "query": "On its own line, which station comes immediately before Hartsmere and which comes immediately after it?",
+      "answerable": true,
+      "anchor": "station_hartsmere",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "station_name",
+        "entities": [
+          "Glasshouse",
+          "Ivory Dock"
+        ],
+        "evidence_chunks": [
+          "line_slate"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "station_name",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "entities": [
+          "Glasshouse",
+          "Ivory Dock"
+        ]
+      }
+    },
+    {
+      "id": 3012,
+      "case": "P",
+      "family": "authorised_by",
+      "query": "Which authorisation policy covers maintenance procedure MP-115?",
+      "answerable": true,
+      "anchor": "procedure_MP-115",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-G"
+        ],
+        "evidence_chunks": []
+      },
+      "graph_claim": {
+        "entity_type": "policy_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-G"
+        ]
+      },
+      "note": "authorised_by is graph_only: no document states it; truth is the clean graph."
+    },
+    {
+      "id": 3013,
+      "case": "P",
+      "family": "authorised_by",
+      "query": "Which authorisation policy covers maintenance procedure MP-117?",
+      "answerable": true,
+      "anchor": "procedure_MP-117",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-H"
+        ],
+        "evidence_chunks": []
+      },
+      "graph_claim": {
+        "entity_type": "policy_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-H"
+        ]
+      },
+      "note": "authorised_by is graph_only: no document states it; truth is the clean graph."
+    },
+    {
+      "id": 3014,
+      "case": "P",
+      "family": "authorised_by",
+      "query": "Which authorisation policy covers maintenance procedure MP-122?",
+      "answerable": true,
+      "anchor": "procedure_MP-122",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-J"
+        ],
+        "evidence_chunks": []
+      },
+      "graph_claim": {
+        "entity_type": "policy_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "policy_code",
+        "entities": [
+          "PL-J"
+        ]
+      },
+      "note": "authorised_by is graph_only: no document states it; truth is the clean graph."
+    },
+    {
+      "id": 3015,
+      "case": "P",
+      "family": "two_hop",
+      "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/19?",
+      "answerable": true,
+      "anchor": "incident_2026_19",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-109",
+          "MP-110"
+        ],
+        "evidence_chunks": [
+          "incident_2026_19",
+          "equipment_SG-12",
+          "procedure_MP-109",
+          "procedure_MP-110"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-109",
+          "MP-110"
+        ]
+      }
+    },
+    {
+      "id": 3016,
+      "case": "P",
+      "family": "two_hop",
+      "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/20?",
+      "answerable": true,
+      "anchor": "incident_2026_20",
+      "corruption": [],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-111",
+          "MP-112"
+        ],
+        "evidence_chunks": [
+          "incident_2026_20",
+          "equipment_AX-3",
+          "procedure_MP-111",
+          "procedure_MP-112"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-111",
+          "MP-112"
+        ]
+      }
+    },
+    {
+      "id": 3017,
+      "case": "N",
+      "family": "caused_by",
+      "query": "Which component failed in service incident 2026/25?",
+      "answerable": true,
+      "anchor": "incident_2026_25",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "caused_by",
+          "source": "incident_2026_25",
+          "true_targets": [
+            "equipment_VE-31"
+          ],
+          "corrupt_targets": [
+            "equipment_BR-7"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "VE-31"
+        ],
+        "evidence_chunks": [
+          "incident_2026_25"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "BR-7"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "VE-31"
+        ]
+      }
+    },
+    {
+      "id": 3018,
+      "case": "N",
+      "family": "caused_by",
+      "query": "Which component failed in service incident 2026/26?",
+      "answerable": true,
+      "anchor": "incident_2026_26",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "caused_by",
+          "source": "incident_2026_26",
+          "true_targets": [
+            "equipment_ES-14"
+          ],
+          "corrupt_targets": [
+            "equipment_TX-440"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "ES-14"
+        ],
+        "evidence_chunks": [
+          "incident_2026_26"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "TX-440"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "ES-14"
+        ]
+      }
+    },
+    {
+      "id": 3019,
+      "case": "N",
+      "family": "caused_by",
+      "query": "Which component failed in service incident 2026/27?",
+      "answerable": true,
+      "anchor": "incident_2026_27",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "caused_by",
+          "source": "incident_2026_27",
+          "true_targets": [
+            "equipment_LT-77"
+          ],
+          "corrupt_targets": [
+            "equipment_CP-55"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "LT-77"
+        ],
+        "evidence_chunks": [
+          "incident_2026_27"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "CP-55"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "LT-77"
+        ]
+      }
+    },
+    {
+      "id": 3020,
+      "case": "N",
+      "family": "caused_by",
+      "query": "Which component failed in service incident 2026/28?",
+      "answerable": true,
+      "anchor": "incident_2026_28",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "caused_by",
+          "source": "incident_2026_28",
+          "true_targets": [
+            "equipment_WS-5"
+          ],
+          "corrupt_targets": [
+            "equipment_PD-90"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "WS-5"
+        ],
+        "evidence_chunks": [
+          "incident_2026_28"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "equipment_code",
+        "entities": [
+          "PD-90"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "equipment_code",
+        "entities": [
+          "WS-5"
+        ]
+      }
+    },
+    {
+      "id": 3021,
+      "case": "N",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the TC-6 track circuit transmitter?",
+      "answerable": true,
+      "anchor": "equipment_TC-6",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_TC-6",
+          "true_targets": [
+            "procedure_MP-118",
+            "procedure_MP-119"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-103",
+            "procedure_MP-104"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-118",
+          "MP-119"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-118",
+          "procedure_MP-119"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-103",
+          "MP-104"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-118",
+          "MP-119"
+        ]
+      }
+    },
+    {
+      "id": 3022,
+      "case": "N",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the PS-19 auxiliary power supply?",
+      "answerable": true,
+      "anchor": "equipment_PS-19",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_PS-19",
+          "true_targets": [
+            "procedure_MP-117"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-122"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-117"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-117"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-122"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-117"
+        ]
+      }
+    },
+    {
+      "id": 3023,
+      "case": "N",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the LT-77 lighting ballast?",
+      "answerable": true,
+      "anchor": "equipment_LT-77",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_LT-77",
+          "true_targets": [
+            "procedure_MP-122"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-117"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-122"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-122"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-117"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-122"
+        ]
+      }
+    },
+    {
+      "id": 3024,
+      "case": "N",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the HV-21 pantograph head?",
+      "answerable": true,
+      "anchor": "equipment_HV-21",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_HV-21",
+          "true_targets": [
+            "procedure_MP-103",
+            "procedure_MP-104"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-109",
+            "procedure_MP-110"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-103",
+          "MP-104"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-103",
+          "procedure_MP-104"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-109",
+          "MP-110"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-103",
+          "MP-104"
+        ]
+      }
+    },
+    {
+      "id": 3025,
+      "case": "N",
+      "family": "next_station",
+      "query": "On its own line, which station comes immediately before Kestrel Green and which comes immediately after it?",
+      "answerable": true,
+      "anchor": "station_kestrel_green",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "next_station",
+          "source": "station_kestrel_green",
+          "true_targets": [
+            "station_alder_vale"
+          ],
+          "corrupt_targets": [
+            "station_ivory_dock"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "station_name",
+        "entities": [
+          "Alder Vale",
+          "Harbour Row"
+        ],
+        "evidence_chunks": [
+          "line_azure"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "station_name",
+        "entities": [
+          "Ivory Dock"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "entities": [
+          "Alder Vale",
+          "Harbour Row"
+        ]
+      }
+    },
+    {
+      "id": 3026,
+      "case": "N",
+      "family": "next_station",
+      "query": "On its own line, which station comes immediately before Foundry Bridge and which comes immediately after it?",
+      "answerable": true,
+      "anchor": "station_foundry_bridge",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "next_station",
+          "source": "station_foundry_bridge",
+          "true_targets": [
+            "station_garnet_hill"
+          ],
+          "corrupt_targets": [
+            "station_carrow_end"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "station_name",
+        "entities": [
+          "Eastgate Quay",
+          "Garnet Hill"
+        ],
+        "evidence_chunks": [
+          "line_crimson"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "station_name",
+        "entities": [
+          "Carrow End"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "entities": [
+          "Eastgate Quay",
+          "Garnet Hill"
+        ]
+      }
+    },
+    {
+      "id": 3027,
+      "case": "N",
+      "family": "next_station",
+      "query": "On its own line, which station comes immediately before Beacon Rise and which comes immediately after it?",
+      "answerable": true,
+      "anchor": "station_beacon_rise",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "next_station",
+          "source": "station_beacon_rise",
+          "true_targets": [
+            "station_carrow_end"
+          ],
+          "corrupt_targets": [
+            "station_larkspur"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "station_name",
+        "entities": [
+          "Ashfen",
+          "Carrow End"
+        ],
+        "evidence_chunks": [
+          "line_violet"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "station_name",
+        "entities": [
+          "Larkspur"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "entities": [
+          "Ashfen",
+          "Carrow End"
+        ]
+      }
+    },
+    {
+      "id": 3028,
+      "case": "N",
+      "family": "next_station",
+      "query": "On its own line, which station comes immediately before Thistlebank and which comes immediately after it?",
+      "answerable": true,
+      "anchor": "station_thistlebank",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "next_station",
+          "source": "station_thistlebank",
+          "true_targets": [
+            "station_underbank"
+          ],
+          "corrupt_targets": [
+            "station_elmsworth"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "station_name",
+        "entities": [
+          "Saltmarsh",
+          "Underbank"
+        ],
+        "evidence_chunks": [
+          "line_amber"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "station_name",
+        "entities": [
+          "Elmsworth"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "station_name",
+        "entities": [
+          "Saltmarsh",
+          "Underbank"
+        ]
+      }
+    },
+    {
+      "id": 3029,
+      "case": "N",
+      "family": "two_hop_second_hop",
+      "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/21?",
+      "answerable": true,
+      "anchor": "incident_2026_21",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_CP-55",
+          "true_targets": [
+            "procedure_MP-113",
+            "procedure_MP-114"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-107",
+            "procedure_MP-108"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-113",
+          "MP-114"
+        ],
+        "evidence_chunks": [
+          "incident_2026_21",
+          "equipment_CP-55",
+          "procedure_MP-113",
+          "procedure_MP-114"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-107",
+          "MP-108"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-113",
+          "MP-114"
+        ]
+      }
+    },
+    {
+      "id": 3030,
+      "case": "N",
+      "family": "two_hop_second_hop",
+      "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/22?",
+      "answerable": true,
+      "anchor": "incident_2026_22",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_DR-8",
+          "true_targets": [
+            "procedure_MP-115",
+            "procedure_MP-116"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-120"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-115",
+          "MP-116"
+        ],
+        "evidence_chunks": [
+          "incident_2026_22",
+          "equipment_DR-8",
+          "procedure_MP-115",
+          "procedure_MP-116"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-120"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-115",
+          "MP-116"
+        ]
+      }
+    },
+    {
+      "id": 3031,
+      "case": "N",
+      "family": "two_hop_first_hop",
+      "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/23?",
+      "answerable": true,
+      "anchor": "incident_2026_23",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "caused_by",
+          "source": "incident_2026_23",
+          "true_targets": [
+            "equipment_PS-19"
+          ],
+          "corrupt_targets": [
+            "equipment_VE-31"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-117"
+        ],
+        "evidence_chunks": [
+          "incident_2026_23",
+          "equipment_PS-19",
+          "procedure_MP-117"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-120"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-117"
+        ]
+      },
+      "note": "first hop corrupted to VE-31; second hop VE-31 -> ['MP-120'] is genuinely true, so only verifying every edge catches it."
+    },
+    {
+      "id": 3032,
+      "case": "N",
+      "family": "two_hop_first_hop",
+      "query": "Which maintenance procedures cover the equipment that failed in service incident 2026/24?",
+      "answerable": true,
+      "anchor": "incident_2026_24",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "caused_by",
+          "source": "incident_2026_24",
+          "true_targets": [
+            "equipment_TC-6"
+          ],
+          "corrupt_targets": [
+            "equipment_ES-14"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-118",
+          "MP-119"
+        ],
+        "evidence_chunks": [
+          "incident_2026_24",
+          "equipment_TC-6",
+          "procedure_MP-118",
+          "procedure_MP-119"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-121"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-118",
+          "MP-119"
+        ]
+      },
+      "note": "first hop corrupted to ES-14; second hop ES-14 -> ['MP-121'] is genuinely true, so only verifying every edge catches it."
+    },
+    {
+      "id": 3033,
+      "case": "S",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the SG-12 signal interlocking relay?",
+      "answerable": true,
+      "anchor": "equipment_SG-12",
+      "corruption": [
+        {
+          "op": "add_spurious",
+          "relation": "maintained_by",
+          "source": "equipment_SG-12",
+          "corrupt_targets": [
+            "procedure_MP-104"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-109",
+          "MP-110"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-109",
+          "procedure_MP-110"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-104"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-109",
+          "MP-110"
+        ]
+      }
+    },
+    {
+      "id": 3034,
+      "case": "S",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the TX-440 traction inverter?",
+      "answerable": true,
+      "anchor": "equipment_TX-440",
+      "corruption": [
+        {
+          "op": "add_spurious",
+          "relation": "maintained_by",
+          "source": "equipment_TX-440",
+          "corrupt_targets": [
+            "procedure_MP-116"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-101",
+          "MP-102"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-101",
+          "procedure_MP-102"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-116"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-101",
+          "MP-102"
+        ]
+      }
+    },
+    {
+      "id": 3035,
+      "case": "S",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the VE-31 tunnel ventilation fan?",
+      "answerable": true,
+      "anchor": "equipment_VE-31",
+      "corruption": [
+        {
+          "op": "add_spurious",
+          "relation": "maintained_by",
+          "source": "equipment_VE-31",
+          "corrupt_targets": [
+            "procedure_MP-108"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-120"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-120"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-108"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-120"
+        ]
+      }
+    },
+    {
+      "id": 3036,
+      "case": "S",
+      "family": "maintained_by",
+      "query": "Which maintenance procedures apply to the PD-90 platform screen door controller?",
+      "answerable": true,
+      "anchor": "equipment_PD-90",
+      "corruption": [
+        {
+          "op": "add_spurious",
+          "relation": "maintained_by",
+          "source": "equipment_PD-90",
+          "corrupt_targets": [
+            "procedure_MP-122"
+          ]
+        }
+      ],
+      "mask": [],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-107",
+          "MP-108"
+        ],
+        "evidence_chunks": [
+          "procedure_MP-107",
+          "procedure_MP-108"
+        ]
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-122"
+        ]
+      },
+      "gold_answer": {
+        "kind": "entity_set",
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-107",
+          "MP-108"
+        ]
+      }
+    },
+    {
+      "id": 3037,
+      "case": "U",
+      "family": "masked_corrupt",
+      "query": "Which maintenance procedures apply to the ES-14 escalator drive chain?",
+      "answerable": false,
+      "anchor": "equipment_ES-14",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_ES-14",
+          "true_targets": [
+            "procedure_MP-121"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-110"
+          ]
+        }
+      ],
+      "mask": [
+        "procedure_MP-121",
+        "procedure_MP-110"
+      ],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [],
+        "evidence_chunks": []
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-110"
+        ]
+      },
+      "masked_truth": [
+        "MP-121"
+      ],
+      "gold_answer": {
+        "kind": "abstain"
+      }
+    },
+    {
+      "id": 3038,
+      "case": "U",
+      "family": "masked_corrupt",
+      "query": "Which maintenance procedures apply to the BR-7 regenerative brake unit?",
+      "answerable": false,
+      "anchor": "equipment_BR-7",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_BR-7",
+          "true_targets": [
+            "procedure_MP-105",
+            "procedure_MP-106"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-124"
+          ]
+        }
+      ],
+      "mask": [
+        "procedure_MP-105",
+        "procedure_MP-106",
+        "procedure_MP-124"
+      ],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [],
+        "evidence_chunks": []
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-124"
+        ]
+      },
+      "masked_truth": [
+        "MP-105",
+        "MP-106"
+      ],
+      "gold_answer": {
+        "kind": "abstain"
+      }
+    },
+    {
+      "id": 3039,
+      "case": "U",
+      "family": "masked_corrupt",
+      "query": "Which maintenance procedures apply to the TX-440 traction inverter?",
+      "answerable": false,
+      "anchor": "equipment_TX-440",
+      "corruption": [
+        {
+          "op": "substitute",
+          "relation": "maintained_by",
+          "source": "equipment_TX-440",
+          "true_targets": [
+            "procedure_MP-101",
+            "procedure_MP-102"
+          ],
+          "corrupt_targets": [
+            "procedure_MP-114"
+          ]
+        }
+      ],
+      "mask": [
+        "procedure_MP-101",
+        "procedure_MP-102",
+        "procedure_MP-114"
+      ],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [],
+        "evidence_chunks": []
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": [
+          "MP-114"
+        ]
+      },
+      "masked_truth": [
+        "MP-101",
+        "MP-102"
+      ],
+      "gold_answer": {
+        "kind": "abstain"
+      }
+    },
+    {
+      "id": 3040,
+      "case": "U",
+      "family": "masked_true",
+      "query": "Which maintenance procedures apply to the VE-31 tunnel ventilation fan?",
+      "answerable": false,
+      "anchor": "equipment_VE-31",
+      "corruption": [],
+      "mask": [
+        "procedure_MP-120"
+      ],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [],
+        "evidence_chunks": []
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "masked_truth": [
+        "MP-120"
+      ],
+      "gold_answer": {
+        "kind": "abstain"
+      }
+    },
+    {
+      "id": 3041,
+      "case": "U",
+      "family": "masked_true",
+      "query": "Which maintenance procedures apply to the LT-77 lighting ballast?",
+      "answerable": false,
+      "anchor": "equipment_LT-77",
+      "corruption": [],
+      "mask": [
+        "procedure_MP-122"
+      ],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [],
+        "evidence_chunks": []
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "masked_truth": [
+        "MP-122"
+      ],
+      "gold_answer": {
+        "kind": "abstain"
+      }
+    },
+    {
+      "id": 3042,
+      "case": "U",
+      "family": "masked_true",
+      "query": "Which maintenance procedures apply to the PS-19 auxiliary power supply?",
+      "answerable": false,
+      "anchor": "equipment_PS-19",
+      "corruption": [],
+      "mask": [
+        "procedure_MP-117"
+      ],
+      "document_truth": {
+        "entity_type": "procedure_code",
+        "entities": [],
+        "evidence_chunks": []
+      },
+      "graph_claim": {
+        "entity_type": "procedure_code",
+        "entities": []
+      },
+      "masked_truth": [
+        "MP-117"
+      ],
+      "gold_answer": {
+        "kind": "abstain"
+      }
+    }
+  ]
+}

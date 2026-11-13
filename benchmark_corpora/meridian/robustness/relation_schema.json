@@ -1,0 +1,40 @@
+{
+  "version": "relschema-1.0",
+  "notes": [
+    "Declarative description of the Meridian graph's entity types and relations for relver-1.0.",
+    "label rules say how an entity is mentioned in text; check kinds say how a relation can be verified from text.",
+    "exhaustive: the witness text names every entity of the counterpart type it relates to, so naming a different one contradicts the claim.",
+    "sequence_extractors are data-format adapters for container texts that list entities in order; the verifier code contains no relation phrase."
+  ],
+  "entity_types": {
+    "equipment": {"id_prefix": "equipment_", "label": {"kind": "id_suffix"}},
+    "procedure": {"id_prefix": "procedure_", "label": {"kind": "id_suffix"}},
+    "policy": {"id_prefix": "policy_", "label": {"kind": "id_suffix"}},
+    "incident": {"id_prefix": "incident_", "label": {"kind": "id_pattern", "pattern": "^incident_(\\d{4})_(\\d{2})$", "format": "{0}/{1}"}},
+    "station": {"id_prefix": "station_", "label": {"kind": "text_pattern", "pattern": "^(.+?) is a "}},
+    "line": {"id_prefix": "line_", "label": {"kind": "text_pattern", "pattern": "^The (.+? Line) "}},
+    "role": {"id_prefix": "role_", "label": {"kind": "none"}},
+    "bulletin": {"id_prefix": "bulletin_", "label": {"kind": "none"}}
+  },
+  "relations": {
+    "caused_by":        {"subject": "incident",  "object": "equipment", "check": "endpoint_mention", "witness": "subject", "exhaustive": true},
+    "occurred_at":      {"subject": "incident",  "object": "station",   "check": "endpoint_mention", "witness": "subject", "exhaustive": true},
+    "site_of_incident": {"subject": "station",   "object": "incident",  "check": "endpoint_mention", "witness": "object",  "exhaustive": true},
+    "affected_line":    {"subject": "incident",  "object": "line",      "check": "endpoint_mention", "witness": "subject", "exhaustive": true},
+    "maintained_by":    {"subject": "equipment", "object": "procedure", "check": "endpoint_mention", "witness": "object",  "exhaustive": true},
+    "maintains":        {"subject": "procedure", "object": "equipment", "check": "endpoint_mention", "witness": "subject", "exhaustive": true},
+    "serves":           {"subject": "line",      "object": "station",   "check": "endpoint_mention", "witness": "subject", "exhaustive": true},
+    "served_by":        {"subject": "station",   "object": "line",      "check": "endpoint_mention", "witness": "object",  "exhaustive": true},
+    "supersedes":       {"subject": "procedure", "object": "procedure", "check": "endpoint_mention", "witness": "subject", "exhaustive": false},
+    "superseded_by":    {"subject": "procedure", "object": "procedure", "check": "endpoint_mention", "witness": "object",  "exhaustive": false},
+    "next_station":     {"subject": "station",   "object": "station",   "check": "sequence", "direction": "forward",  "container_relation": "served_by", "extractor": "line_order"},
+    "previous_station": {"subject": "station",   "object": "station",   "check": "sequence", "direction": "backward", "container_relation": "served_by", "extractor": "line_order"},
+    "authorised_by":    {"subject": "procedure", "object": "policy",    "check": "not_text_verifiable"},
+    "authorises":       {"subject": "policy",    "object": "procedure", "check": "not_text_verifiable"},
+    "performed_by":     {"subject": "procedure", "object": "role",      "check": "not_text_verifiable"},
+    "responsible_for":  {"subject": "role",      "object": "procedure", "check": "not_text_verifiable"}
+  },
+  "sequence_extractors": {
+    "line_order": {"pattern": "runs from (?P<first>.+?) to (?P<last>.+?), calling at (?P<middle>.+?)\\.", "order": ["first", "middle", "last"], "separator": ", "}
+  }
+}
