@@ -951,3 +951,117 @@ python -m experiments.robustness_r2_prime --phase answers --provider groq --mode
 python -m experiments.robustness_r2_prime --phase replay
 python -m experiments.robustness_r2_prime --phase report
 ```
+
+---
+
+# Phase 3, R2′b: Targeted test of contradicted maintenance links
+
+Preregistered in [PREREGISTRATION_R2_PRIME_B.md](PREREGISTRATION_R2_PRIME_B.md) (`021965ee`).
+This is the narrow follow-up to R2′. There, H1 could not be tested on the case that matters,
+because no corrupted `maintained_by` claim with readable text reached D's answers.
+`relver-1.0`, the schema, scorers, loop 1.7, `gate-1.0` and the R2′ runner are
+reused unchanged (W1). New code is only a thin runner, `experiments/robustness_r2_prime_b.py`.
+
+## Design
+
+**Items (dataset `r2pb-1.0`).** Seven stations, each asked "Which maintenance procedures cover the fault that stopped
+service at <station>?" twice:
+- **P:** the clean graph.
+- **N:** `maintained_by` substituted to wrong procedures whose text is readable and names other equipment.
+
+**Retrieval precondition** (offline, no model). C's first top 5 contains the incident and equipment chunks,
+so the corrupted link is visible, and no true procedure text. The answer can only come through
+the link. Vantage Point failed the precondition and was excluded. All 14 items pass (W3).
+
+Same conditions and model as R2′:
+- C and D run live.
+- D-gate, D-relation and C-relation are exact replays with no extra model calls.
+
+## Results (14 queries; 7 P + 7 N)
+
+| | C | D | D-gate | **D-relation** | C-relation |
+|---|---|---|---|---|---|
+| P correct (clean) | 7/7 | 7/7 | 7/7 | **7/7** | **7/7** |
+| N graph-misled | 7/7 | 7/7 | 7/7 | **0/7** | **0/7** |
+| N abstained | 0/7 | 0/7 | 0/7 | 7/7 | 7/7 |
+| N correct | 0/7 | 0/7 | 0/7 | 0/7 | 0/7 |
+| Graph-caused errors | 7/14 | 7/14 | 7/14 | **0/14** | **0/14** |
+| Identifier-supported answers | 0/14 | 14/14 | 14/14 | 14/14 | 7/14 |
+| Input / output tokens per query | 649 / 84 | 1,049 / 187 | same as D | same as D | same as C |
+| Generation calls / latency per query | 1.0 / 3.8 s | 2.0 / 6.8 s | same as D | same as D | same as C |
+| Extra check time per query | — | — | 0.4 ms | 17.7 ms | 15.4 ms |
+
+Relation-level verification, on claims from D's answer paths:
+
+| Relation | Claims | True claims supported | False claims contradicted | False contradictions | Unverified |
+|---|---|---|---|---|---|
+| All (D-relation) | 48 | 38/38 | **10/10** | **0/38** | 0 |
+| All (C-relation) | 48 | 38/38 | **10/10** | **0/38** | 0 |
+
+## Hypotheses
+
+| | Preregistered criterion | Result | |
+|---|---|---|---|
+| H1b | ≥ 90% of false claims on D's paths contradicted; inconclusive if fewer than 6 surface | **10/10 (100%)**, 10 surfaced | met |
+| H2b | D-relation false rejection ≤ 1 of the P items D answered correctly | **0/7** | met |
+| H3b | D-relation graph-caused errors on N ≤ half of D's | D 7/7, D-relation **0/7** | met |
+
+**Conclusion rule:** H1b, H2b and H3b all hold, and R2′'s H2–H5 already held. Under the
+preregistered rule, relation-level verification is **reliable enough to move toward
+production integration** on this corpus. Promotion remains the owner's decision.
+
+## Findings
+
+1. **R2's failure is reproduced in full and blocked in full.** With the wrong procedure's text
+   in its prompt, D answered from the corrupted link on 7/7 corrupted pairs. On 4008,
+   grounding fetched MP-103 and MP-104 ("Applies to the HV-21"), and D kept "MP-103 and MP-104 … cover the
+   CP-55". D-gate passed all 7. D-relation checked every hop
+   (station ← incident → CP-55 → MP-103) and contradicted the last one, because the witness text names HV-21.
+2. **No valid answer was rejected.** On the 7 clean pairs, with the same question text, D-relation and
+   C-relation kept 7/7.
+3. **Valid graph-derived facts are kept, not rejected.** C answered the clean pairs from the
+   `Links:` lines alone, without reading any procedure text (identifier support 0/14). C-relation still kept all 7,
+   because the verifier fetched each procedure's text itself and found it supports the link. The verifier
+   separates a valid graph-derived fact (link confirmed by its source) from a relation the
+   source contradicts. It does not simply reject graph evidence.
+4. **It blocks but does not repair.** All 7 corrupted pairs end as abstentions (N correct 0/7). Turning
+   them into correct answers needs the deferred repair step, for example re-retrieving procedures whose text
+   names the cited equipment.
+5. **Cost:** 15–18 ms of deterministic checking per query and no model calls.
+
+## Ambiguous cases
+
+- **4010 (Underbank, N).** D-relation abstained with reason `unverified_entities`, because D's answer also named
+  VE-31, the wrong procedure's own equipment, which has no path from the question. The wrong procedure MP-120 was also contradicted. The
+  outcome, abstention, is the same either way.
+
+## Limitations
+
+- **Sample and model.** 7 pairs, one model, one run at temperature 0, one relation type (`maintained_by`).
+- **Retrieval-dependent selection.** Items were selected by a model-free retrieval precondition, which shows the verifier works when the corrupted link is visible.
+  R2′ showed that question wording can stop the anchor being retrieved at all.
+- **One corpus with consistent conventions.** The verifier depends on schema declarations: which text states which relation, and whether it is exhaustive.
+  Each new corpus needs its own schema, validated with the V2/V3 sweeps.
+
+## Provenance
+
+| Item | Value |
+|---|---|
+| Preregistration | `021965ee` (`71b40fcc…`) |
+| Code / dataset | `272a38c0`: runner `a03dee4b…`, dataset `r2pb-1.0` `05b44a06…`; verifier `relver-1.0` `17567a01…` (unchanged) |
+| Freeze | `experiment_r2pb_freeze.json` (`9e206853…`), 2026-11-13 07:35:00 UTC at `272a38c0`, commit `ade6df9c` |
+| Signatures | C `927a133b7a9e`, D `812cd5a4ce20` |
+
+| File | sha256 |
+|---|---|
+| `experiment_r2pb_meridian-transit-v1_groq_frozen.json` (read-only, cite this) | `6f956b258474…` |
+| `experiment_r2pb_relation_replay.json` (read-only) | `5a81eb18562b…` |
+| `experiment_r2pb_comparison.json` | `aed8a48a791c…` |
+| caches C / D (`experiment_r2p_cache_…_C_927a133b7a9e.json`, `…_D_812cd5a4ce20.json`) | `70317bb9b970…` / `6e8a5f30b439…` |
+
+```powershell
+python -m experiments.robustness_r2_prime_b --phase validate
+python -m experiments.robustness_r2_prime_b --phase answers --provider groq --model openai/gpt-oss-120b --reasoning-effort low --resume
+python -m experiments.robustness_r2_prime_b --phase replay
+python -m experiments.robustness_r2_prime_b --phase report
+```

@@ -1,0 +1,983 @@
+{
+  "run_signature": "812cd5a4ce202fab6b796487616fa27b2c7428ed24b553cb5d76586457d3cac3",
+  "rows": {
+    "4001": {
+      "id": 4001,
+      "answer": "procedure_MP-113 and procedure_MP-114 – these are the maintenance procedures that cover the CP‑55 compressor module fault that stopped service at Saltmarsh.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Saltmarsh?",
+          "retrieved": [
+            "incident_2026_21",
+            "station_saltmarsh",
+            "line_amber",
+            "equipment_CP-55",
+            "station_redcliff"
+          ],
+          "new_evidence": [
+            "incident_2026_21",
+            "station_saltmarsh",
+            "line_amber",
+            "equipment_CP-55",
+            "station_redcliff"
+          ],
+          "decision": "ANSWER: procedure_MP-113 and procedure_MP-114 – these are the maintenance procedures that cover the CP-55 compressor module fault that stopped service at Saltmarsh."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-113",
+            "procedure_MP-114"
+          ],
+          "answer_before_grounding": "procedure_MP-113 and procedure_MP-114 – these are the maintenance procedures that cover the CP-55 compressor module fault that stopped service at Saltmarsh.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Saltmarsh?\nEvidence:\n[1] (incident_2026_21) Service incident 2026/21 on 2026-09-10: trains were held at Saltmarsh on the Amber Line for 38 minutes after a CP-55 compressor module suffered a pressure bleed-down. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_CP-55; occurred_at -> station_saltmarsh\n[2] (station_saltmarsh) Saltmarsh is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Quarry Side and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_thistlebank; previous_station -> station_redcliff; served_by -> line_amber\n[3] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_thistlebank, station_underbank, station_vantage_point\n[4] (equipment_CP-55) The CP-55 compressor module is fitted across the fleet and in fixed installations. Its dominant failure mode is pressure bleed-down, which presents as main reservoir pressure falling below 6.2 bar while stabled. A CP-55 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group CP55G. Links: maintained_by -> procedure_MP-113, procedure_MP-114\n[5] (station_redcliff) Redcliff is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Quarry Side and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: previous_station -> station_quarry_side; site_of_incident -> incident_2026_20\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Saltmarsh?\nDraft answer: procedure_MP-113 and procedure_MP-114 – these are the maintenance procedures that cover the CP-55 compressor module fault that stopped service at Saltmarsh.\nEvidence:\n[1] (equipment_CP-55) The CP-55 compressor module is fitted across the fleet and in fixed installations. Its dominant failure mode is pressure bleed-down, which presents as main reservoir pressure falling below 6.2 bar while stabled. A CP-55 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group CP55G. Links: maintained_by -> procedure_MP-113, procedure_MP-114\n[2] (procedure_MP-113) Maintenance procedure MP-113: Compressor valve plate overhaul. Applies to the CP-55 compressor module. Scheduled every 200 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 55 minutes. Links: authorised_by -> policy_PL-F; performed_by -> role_pneumatics_fitter\n[3] (procedure_MP-114) Maintenance procedure MP-114: Reservoir leak-rate measurement. Applies to the CP-55 compressor module. Scheduled every 50 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 70 minutes. Links: authorised_by -> policy_PL-F, policy_PL-L; performed_by -> role_pneumatics_fitter\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_21",
+        "station_saltmarsh",
+        "line_amber",
+        "equipment_CP-55",
+        "station_redcliff",
+        "procedure_MP-113",
+        "procedure_MP-114"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1103,
+        "output_tokens": 163,
+        "retrieval_latency_ms": 20.635,
+        "generation_latency_ms": 1257.599,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 652,
+            "output_tokens": 75,
+            "latency_ms": 520.284
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 451,
+            "output_tokens": 88,
+            "latency_ms": 737.315
+          }
+        }
+      }
+    },
+    "4002": {
+      "id": 4002,
+      "answer": "procedure_MP-115 and procedure_MP-116 – these maintenance procedures cover the DR‑8 door engine actuator fault that stopped service at Thistlebank.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Thistlebank?",
+          "retrieved": [
+            "incident_2026_22",
+            "station_thistlebank",
+            "line_amber",
+            "equipment_DR-8",
+            "station_saltmarsh"
+          ],
+          "new_evidence": [
+            "incident_2026_22",
+            "station_thistlebank",
+            "line_amber",
+            "equipment_DR-8",
+            "station_saltmarsh"
+          ],
+          "decision": "ANSWER: procedure_MP-115 and procedure_MP-116 – these are the maintenance procedures that cover the DR-8 door engine actuator fault that stopped service at Thistlebank."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-115",
+            "procedure_MP-116"
+          ],
+          "answer_before_grounding": "procedure_MP-115 and procedure_MP-116 – these are the maintenance procedures that cover the DR-8 door engine actuator fault that stopped service at Thistlebank.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Thistlebank?\nEvidence:\n[1] (incident_2026_22) Service incident 2026/22 on 2026-10-13: trains were held at Thistlebank on the Amber Line for 42 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_DR-8; occurred_at -> station_thistlebank\n[2] (station_thistlebank) Thistlebank is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Quarry Side and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_underbank; previous_station -> station_saltmarsh; served_by -> line_amber\n[3] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_underbank, station_vantage_point\n[4] (equipment_DR-8) The DR-8 door engine actuator is fitted across the fleet and in fixed installations. Its dominant failure mode is leadscrew backlash, which presents as a door leaf that rebounds before locking. A DR-8 unit has a design life of 12 years and is classified as a service-critical asset. Replacement units are held at the central store under part group DR8G. Links: maintained_by -> procedure_MP-115, procedure_MP-116\n[5] (station_saltmarsh) Saltmarsh is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Quarry Side and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: previous_station -> station_redcliff; site_of_incident -> incident_2026_21\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Thistlebank?\nDraft answer: procedure_MP-115 and procedure_MP-116 – these are the maintenance procedures that cover the DR-8 door engine actuator fault that stopped service at Thistlebank.\nEvidence:\n[1] (equipment_DR-8) The DR-8 door engine actuator is fitted across the fleet and in fixed installations. Its dominant failure mode is leadscrew backlash, which presents as a door leaf that rebounds before locking. A DR-8 unit has a design life of 12 years and is classified as a service-critical asset. Replacement units are held at the central store under part group DR8G. Links: maintained_by -> procedure_MP-115, procedure_MP-116\n[2] (procedure_MP-115) Maintenance procedure MP-115: Door actuator leadscrew re-shimming. Applies to the DR-8 door engine actuator. Scheduled every 40 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-G; performed_by -> role_door_fitter\n[3] (procedure_MP-116) Maintenance procedure MP-116: Door obstacle force profiling. Applies to the DR-8 door engine actuator. Scheduled every 90 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-G; performed_by -> role_door_fitter\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_22",
+        "station_thistlebank",
+        "line_amber",
+        "equipment_DR-8",
+        "station_saltmarsh",
+        "procedure_MP-115",
+        "procedure_MP-116"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1092,
+        "output_tokens": 177,
+        "retrieval_latency_ms": 15.74,
+        "generation_latency_ms": 1626.263,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 85,
+            "latency_ms": 646.962
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 444,
+            "output_tokens": 92,
+            "latency_ms": 979.301
+          }
+        }
+      }
+    },
+    "4003": {
+      "id": 4003,
+      "answer": "procedure_MP-117 – this maintenance procedure covers the PS‑19 auxiliary power supply ripple fault that stopped service at Underbank.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Underbank?",
+          "retrieved": [
+            "incident_2026_23",
+            "station_underbank",
+            "incident_2026_22",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "new_evidence": [
+            "incident_2026_23",
+            "station_underbank",
+            "incident_2026_22",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "decision": "ANSWER: procedure_MP-117 – this maintenance procedure covers the PS-19 auxiliary power supply ripple fault that stopped service at Underbank."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-117"
+          ],
+          "answer_before_grounding": "procedure_MP-117 – this maintenance procedure covers the PS-19 auxiliary power supply ripple fault that stopped service at Underbank.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Underbank?\nEvidence:\n[1] (incident_2026_23) Service incident 2026/23 on 2026-11-16: trains were held at Underbank on the Amber Line for 46 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_PS-19; occurred_at -> station_underbank\n[2] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber\n[3] (incident_2026_22) Service incident 2026/22 on 2026-10-13: trains were held at Thistlebank on the Amber Line for 42 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_DR-8; occurred_at -> station_thistlebank\n[4] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_thistlebank, station_vantage_point\n[5] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Underbank?\nDraft answer: procedure_MP-117 – this maintenance procedure covers the PS-19 auxiliary power supply ripple fault that stopped service at Underbank.\nEvidence:\n[1] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-117\n[2] (procedure_MP-117) Maintenance procedure MP-117: Auxiliary supply ripple measurement. Applies to the PS-19 auxiliary power supply. Scheduled every 70 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-H; performed_by -> role_power_technician\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_23",
+        "station_underbank",
+        "incident_2026_22",
+        "line_amber",
+        "equipment_PS-19",
+        "procedure_MP-117"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 989,
+        "output_tokens": 141,
+        "retrieval_latency_ms": 21.827,
+        "generation_latency_ms": 1054.654,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 655,
+            "output_tokens": 69,
+            "latency_ms": 459.626
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 334,
+            "output_tokens": 72,
+            "latency_ms": 595.028
+          }
+        }
+      }
+    },
+    "4004": {
+      "id": 4004,
+      "answer": "procedure_MP-120 – this maintenance procedure covers the blade‑imbalance fault of the VE‑31 tunnel ventilation fan that stopped service at Westmere.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Westmere?",
+          "retrieved": [
+            "incident_2026_25",
+            "line_violet",
+            "equipment_VE-31",
+            "station_yarrow_cross",
+            "station_eastgate_quay"
+          ],
+          "new_evidence": [
+            "incident_2026_25",
+            "line_violet",
+            "equipment_VE-31",
+            "station_yarrow_cross",
+            "station_eastgate_quay"
+          ],
+          "decision": "ANSWER: procedure_MP-120 – this maintenance procedure covers the VE-31 tunnel ventilation fan whose blade‑imbalance fault stopped service at Westmere."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-120"
+          ],
+          "answer_before_grounding": "procedure_MP-120 – this maintenance procedure covers the VE-31 tunnel ventilation fan whose blade‑imbalance fault stopped service at Westmere.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Westmere?\nEvidence:\n[1] (incident_2026_25) Service incident 2026/25 on 2026-01-22: trains were held at Westmere on the Violet Line for 54 minutes after a VE-31 tunnel ventilation fan suffered a blade imbalance. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_violet; caused_by -> equipment_VE-31; occurred_at -> station_westmere\n[2] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_ashfen, station_beacon_rise, station_carrow_end, station_dovecote, station_westmere, station_yarrow_cross\n[3] (equipment_VE-31) The VE-31 tunnel ventilation fan is fitted across the fleet and in fixed installations. Its dominant failure mode is blade imbalance, which presents as vibration velocity above 7 millimetres per second at the bearing housing. A VE-31 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group VE31G. Links: maintained_by -> procedure_MP-120\n[4] (station_yarrow_cross) Yarrow Cross is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Westmere and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_ashfen; previous_station -> station_westmere; site_of_incident -> incident_2026_26\n[5] (station_eastgate_quay) Eastgate Quay is a terminus on the Crimson Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Eastgate Quay and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_foundry_bridge; served_by -> line_crimson; site_of_incident -> incident_2026_07\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Westmere?\nDraft answer: procedure_MP-120 – this maintenance procedure covers the VE-31 tunnel ventilation fan whose blade‑imbalance fault stopped service at Westmere.\nEvidence:\n[1] (equipment_VE-31) The VE-31 tunnel ventilation fan is fitted across the fleet and in fixed installations. Its dominant failure mode is blade imbalance, which presents as vibration velocity above 7 millimetres per second at the bearing housing. A VE-31 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group VE31G. Links: maintained_by -> procedure_MP-120\n[2] (procedure_MP-120) Maintenance procedure MP-120: Ventilation fan balance correction. Applies to the VE-31 tunnel ventilation fan. Scheduled every 240 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 55 minutes. Links: authorised_by -> policy_PL-I, policy_PL-K; performed_by -> role_plant_engineer\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_25",
+        "line_violet",
+        "equipment_VE-31",
+        "station_yarrow_cross",
+        "station_eastgate_quay",
+        "procedure_MP-120"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1017,
+        "output_tokens": 171,
+        "retrieval_latency_ms": 14.41,
+        "generation_latency_ms": 1303.469,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 670,
+            "output_tokens": 73,
+            "latency_ms": 610.903
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 347,
+            "output_tokens": 98,
+            "latency_ms": 692.566
+          }
+        }
+      }
+    },
+    "4005": {
+      "id": 4005,
+      "answer": "procedure_MP-121 – this maintenance procedure covers the ES‑14 escalator drive‑chain elongation wear that caused the service stoppage at Yarrow Cross.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Yarrow Cross?",
+          "retrieved": [
+            "incident_2026_26",
+            "station_yarrow_cross",
+            "line_violet",
+            "equipment_ES-14",
+            "station_westmere"
+          ],
+          "new_evidence": [
+            "incident_2026_26",
+            "station_yarrow_cross",
+            "line_violet",
+            "equipment_ES-14",
+            "station_westmere"
+          ],
+          "decision": "ANSWER: procedure_MP-121 – this maintenance procedure covers the ES-14 escalator drive chain whose elongation wear caused the service stoppage at Yarrow Cross."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-121"
+          ],
+          "answer_before_grounding": "procedure_MP-121 – this maintenance procedure covers the ES-14 escalator drive chain whose elongation wear caused the service stoppage at Yarrow Cross.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Yarrow Cross?\nEvidence:\n[1] (incident_2026_26) Service incident 2026/26 on 2026-02-25: trains were held at Yarrow Cross on the Violet Line for 58 minutes after a ES-14 escalator drive chain suffered a elongation wear. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_violet; caused_by -> equipment_ES-14; occurred_at -> station_yarrow_cross\n[2] (station_yarrow_cross) Yarrow Cross is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Westmere and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_ashfen; previous_station -> station_westmere; served_by -> line_violet\n[3] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_ashfen, station_beacon_rise, station_carrow_end, station_dovecote, station_westmere\n[4] (equipment_ES-14) The ES-14 escalator drive chain is fitted across the fleet and in fixed installations. Its dominant failure mode is elongation wear, which presents as chain elongation beyond the 1.5 percent service limit. A ES-14 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group ES14G. Links: maintained_by -> procedure_MP-121\n[5] (station_westmere) Westmere is a terminus on the Violet Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Westmere and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: site_of_incident -> incident_2026_25\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Yarrow Cross?\nDraft answer: procedure_MP-121 – this maintenance procedure covers the ES-14 escalator drive chain whose elongation wear caused the service stoppage at Yarrow Cross.\nEvidence:\n[1] (equipment_ES-14) The ES-14 escalator drive chain is fitted across the fleet and in fixed installations. Its dominant failure mode is elongation wear, which presents as chain elongation beyond the 1.5 percent service limit. A ES-14 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group ES14G. Links: maintained_by -> procedure_MP-121\n[2] (procedure_MP-121) Maintenance procedure MP-121: Escalator chain elongation gauging. Applies to the ES-14 escalator drive chain. Scheduled every 110 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 70 minutes. Links: authorised_by -> policy_PL-J, policy_PL-K; performed_by -> role_plant_engineer\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_26",
+        "station_yarrow_cross",
+        "line_violet",
+        "equipment_ES-14",
+        "station_westmere",
+        "procedure_MP-121"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 995,
+        "output_tokens": 160,
+        "retrieval_latency_ms": 17.481,
+        "generation_latency_ms": 5538.762,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 641,
+            "output_tokens": 79,
+            "latency_ms": 2861.333
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 354,
+            "output_tokens": 81,
+            "latency_ms": 2677.429
+          }
+        }
+      }
+    },
+    "4006": {
+      "id": 4006,
+      "answer": "procedure_MP-122 – this maintenance procedure covers the LT‑77 lighting ballast whose flicker‑cascade fault stopped service at Ashfen.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Ashfen?",
+          "retrieved": [
+            "incident_2026_27",
+            "station_ashfen",
+            "line_violet",
+            "equipment_LT-77",
+            "station_yarrow_cross"
+          ],
+          "new_evidence": [
+            "incident_2026_27",
+            "station_ashfen",
+            "line_violet",
+            "equipment_LT-77",
+            "station_yarrow_cross"
+          ],
+          "decision": "ANSWER: procedure_MP-122 – this maintenance procedure covers the LT-77 lighting ballast whose flicker cascade fault stopped service at Ashfen."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-122"
+          ],
+          "answer_before_grounding": "procedure_MP-122 – this maintenance procedure covers the LT-77 lighting ballast whose flicker cascade fault stopped service at Ashfen.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Ashfen?\nEvidence:\n[1] (incident_2026_27) Service incident 2026/27 on 2026-03-01: trains were held at Ashfen on the Violet Line for 9 minutes after a LT-77 lighting ballast suffered a flicker cascade. 2 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_violet; caused_by -> equipment_LT-77; occurred_at -> station_ashfen\n[2] (station_ashfen) Ashfen is a through station on the Violet Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Westmere and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_beacon_rise; previous_station -> station_yarrow_cross; served_by -> line_violet\n[3] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_beacon_rise, station_carrow_end, station_dovecote, station_westmere, station_yarrow_cross\n[4] (equipment_LT-77) The LT-77 lighting ballast is fitted across the fleet and in fixed installations. Its dominant failure mode is flicker cascade, which presents as a cascading flicker across an entire platform circuit. A LT-77 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group LT77G. Links: maintained_by -> procedure_MP-122\n[5] (station_yarrow_cross) Yarrow Cross is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Westmere and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: previous_station -> station_westmere; site_of_incident -> incident_2026_26\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Ashfen?\nDraft answer: procedure_MP-122 – this maintenance procedure covers the LT-77 lighting ballast whose flicker cascade fault stopped service at Ashfen.\nEvidence:\n[1] (equipment_LT-77) The LT-77 lighting ballast is fitted across the fleet and in fixed installations. Its dominant failure mode is flicker cascade, which presents as a cascading flicker across an entire platform circuit. A LT-77 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group LT77G. Links: maintained_by -> procedure_MP-122\n[2] (procedure_MP-122) Maintenance procedure MP-122: Ballast circuit staged replacement. Applies to the LT-77 lighting ballast. Scheduled every 300 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-J; performed_by -> role_power_technician\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_27",
+        "station_ashfen",
+        "line_violet",
+        "equipment_LT-77",
+        "station_yarrow_cross",
+        "procedure_MP-122"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 972,
+        "output_tokens": 137,
+        "retrieval_latency_ms": 19.782,
+        "generation_latency_ms": 7862.201,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 641,
+            "output_tokens": 59,
+            "latency_ms": 4918.088
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 331,
+            "output_tokens": 78,
+            "latency_ms": 2944.113
+          }
+        }
+      }
+    },
+    "4007": {
+      "id": 4007,
+      "answer": "The fault is covered by maintenance procedures **MP-123** and **MP-124**.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Beacon Rise?",
+          "retrieved": [
+            "incident_2026_28",
+            "station_beacon_rise",
+            "incident_2026_19",
+            "line_violet",
+            "equipment_WS-5"
+          ],
+          "new_evidence": [
+            "incident_2026_28",
+            "station_beacon_rise",
+            "incident_2026_19",
+            "line_violet",
+            "equipment_WS-5"
+          ],
+          "decision": "ANSWER: procedure_MP-123 and procedure_MP-124 – these are the maintenance procedures that cover the WS-5 wheel slide protection valve fault that stopped service at Beacon Rise."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-123",
+            "procedure_MP-124"
+          ],
+          "answer_before_grounding": "procedure_MP-123 and procedure_MP-124 – these are the maintenance procedures that cover the WS-5 wheel slide protection valve fault that stopped service at Beacon Rise.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Beacon Rise?\nEvidence:\n[1] (incident_2026_28) Service incident 2026/28 on 2026-04-04: trains were held at Beacon Rise on the Violet Line for 13 minutes after a WS-5 wheel slide protection valve suffered a latched release. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_violet; caused_by -> equipment_WS-5; occurred_at -> station_beacon_rise\n[2] (station_beacon_rise) Beacon Rise is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Westmere and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_carrow_end; previous_station -> station_ashfen; served_by -> line_violet\n[3] (incident_2026_19) Service incident 2026/19 on 2026-07-04: trains were held at Quarry Side on the Amber Line for 30 minutes after a SG-12 signal interlocking relay suffered a contact welding. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_SG-12; occurred_at -> station_quarry_side\n[4] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_ashfen, station_carrow_end, station_dovecote, station_westmere, station_yarrow_cross\n[5] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-123, procedure_MP-124\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Beacon Rise?\nDraft answer: procedure_MP-123 and procedure_MP-124 – these are the maintenance procedures that cover the WS-5 wheel slide protection valve fault that stopped service at Beacon Rise.\nEvidence:\n[1] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-123, procedure_MP-124\n[2] (procedure_MP-123) Maintenance procedure MP-123: Slide protection valve latch release test. Applies to the WS-5 wheel slide protection valve. Scheduled every 55 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-B; performed_by -> role_plant_engineer; superseded_by -> procedure_MP-124\n[3] (procedure_MP-124) Maintenance procedure MP-124: Wheel slide event log reconciliation. Applies to the WS-5 wheel slide protection valve. Scheduled every 25 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. This procedure supersedes MP-123, which is withdrawn from the maintenance plan. Links: authorised_by -> policy_PL-B, policy_PL-L; performed_by -> role_plant_engineer\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_28",
+        "station_beacon_rise",
+        "incident_2026_19",
+        "line_violet",
+        "equipment_WS-5",
+        "procedure_MP-123",
+        "procedure_MP-124"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1148,
+        "output_tokens": 145,
+        "retrieval_latency_ms": 12.749,
+        "generation_latency_ms": 9511.997,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 671,
+            "output_tokens": 89,
+            "latency_ms": 5377.294
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 477,
+            "output_tokens": 56,
+            "latency_ms": 4134.703
+          }
+        }
+      }
+    },
+    "4008": {
+      "id": 4008,
+      "answer": "Procedures MP‑103 and MP‑104 are the maintenance procedures that cover the CP‑55 compressor‑module fault that stopped service at Saltmarsh.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Saltmarsh?",
+          "retrieved": [
+            "incident_2026_21",
+            "station_saltmarsh",
+            "line_amber",
+            "equipment_CP-55",
+            "station_redcliff"
+          ],
+          "new_evidence": [
+            "incident_2026_21",
+            "station_saltmarsh",
+            "line_amber",
+            "equipment_CP-55",
+            "station_redcliff"
+          ],
+          "decision": "ANSWER: procedure_MP-103 and procedure_MP-104 – these are the maintenance procedures that cover the CP-55 compressor module fault that stopped service at Saltmarsh."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-103",
+            "procedure_MP-104"
+          ],
+          "answer_before_grounding": "procedure_MP-103 and procedure_MP-104 – these are the maintenance procedures that cover the CP-55 compressor module fault that stopped service at Saltmarsh.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Saltmarsh?\nEvidence:\n[1] (incident_2026_21) Service incident 2026/21 on 2026-09-10: trains were held at Saltmarsh on the Amber Line for 38 minutes after a CP-55 compressor module suffered a pressure bleed-down. 5 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_CP-55; occurred_at -> station_saltmarsh\n[2] (station_saltmarsh) Saltmarsh is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Quarry Side and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_thistlebank; previous_station -> station_redcliff; served_by -> line_amber\n[3] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_thistlebank, station_underbank, station_vantage_point\n[4] (equipment_CP-55) The CP-55 compressor module is fitted across the fleet and in fixed installations. Its dominant failure mode is pressure bleed-down, which presents as main reservoir pressure falling below 6.2 bar while stabled. A CP-55 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group CP55G. Links: maintained_by -> procedure_MP-103, procedure_MP-104\n[5] (station_redcliff) Redcliff is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Quarry Side and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: previous_station -> station_quarry_side; site_of_incident -> incident_2026_20\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Saltmarsh?\nDraft answer: procedure_MP-103 and procedure_MP-104 – these are the maintenance procedures that cover the CP-55 compressor module fault that stopped service at Saltmarsh.\nEvidence:\n[1] (equipment_CP-55) The CP-55 compressor module is fitted across the fleet and in fixed installations. Its dominant failure mode is pressure bleed-down, which presents as main reservoir pressure falling below 6.2 bar while stabled. A CP-55 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group CP55G. Links: maintained_by -> procedure_MP-103, procedure_MP-104\n[2] (procedure_MP-103) Maintenance procedure MP-103: Pantograph carbon strip renewal. Applies to the HV-21 pantograph head. Scheduled every 45 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-A; maintains -> equipment_HV-21; performed_by -> role_current_collection_fitter\n[3] (procedure_MP-104) Maintenance procedure MP-104: Pantograph contact force calibration. Applies to the HV-21 pantograph head. Scheduled every 180 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 130 minutes. Links: authorised_by -> policy_PL-A; maintains -> equipment_HV-21; performed_by -> role_current_collection_fitter\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_21",
+        "station_saltmarsh",
+        "line_amber",
+        "equipment_CP-55",
+        "station_redcliff",
+        "procedure_MP-103",
+        "procedure_MP-104"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1115,
+        "output_tokens": 225,
+        "retrieval_latency_ms": 15.976,
+        "generation_latency_ms": 9810.276,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 652,
+            "output_tokens": 87,
+            "latency_ms": 5779.208
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 463,
+            "output_tokens": 138,
+            "latency_ms": 4031.068
+          }
+        }
+      }
+    },
+    "4009": {
+      "id": 4009,
+      "answer": "procedure_MP-109 and procedure_MP-110 – these are the maintenance procedures that cover the DR‑8 door engine actuator fault that stopped service at Thistlebank.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Thistlebank?",
+          "retrieved": [
+            "incident_2026_22",
+            "station_thistlebank",
+            "line_amber",
+            "equipment_DR-8",
+            "station_saltmarsh"
+          ],
+          "new_evidence": [
+            "incident_2026_22",
+            "station_thistlebank",
+            "line_amber",
+            "equipment_DR-8",
+            "station_saltmarsh"
+          ],
+          "decision": "ANSWER: procedure_MP-109 and procedure_MP-110 – these are the maintenance procedures that cover the DR-8 door engine actuator fault that stopped service at Thistlebank."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-109",
+            "procedure_MP-110"
+          ],
+          "answer_before_grounding": "procedure_MP-109 and procedure_MP-110 – these are the maintenance procedures that cover the DR-8 door engine actuator fault that stopped service at Thistlebank.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Thistlebank?\nEvidence:\n[1] (incident_2026_22) Service incident 2026/22 on 2026-10-13: trains were held at Thistlebank on the Amber Line for 42 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_DR-8; occurred_at -> station_thistlebank\n[2] (station_thistlebank) Thistlebank is a through station on the Amber Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Quarry Side and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_underbank; previous_station -> station_saltmarsh; served_by -> line_amber\n[3] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_underbank, station_vantage_point\n[4] (equipment_DR-8) The DR-8 door engine actuator is fitted across the fleet and in fixed installations. Its dominant failure mode is leadscrew backlash, which presents as a door leaf that rebounds before locking. A DR-8 unit has a design life of 12 years and is classified as a service-critical asset. Replacement units are held at the central store under part group DR8G. Links: maintained_by -> procedure_MP-109, procedure_MP-110\n[5] (station_saltmarsh) Saltmarsh is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Quarry Side and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: previous_station -> station_redcliff; site_of_incident -> incident_2026_21\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Thistlebank?\nDraft answer: procedure_MP-109 and procedure_MP-110 – these are the maintenance procedures that cover the DR-8 door engine actuator fault that stopped service at Thistlebank.\nEvidence:\n[1] (equipment_DR-8) The DR-8 door engine actuator is fitted across the fleet and in fixed installations. Its dominant failure mode is leadscrew backlash, which presents as a door leaf that rebounds before locking. A DR-8 unit has a design life of 12 years and is classified as a service-critical asset. Replacement units are held at the central store under part group DR8G. Links: maintained_by -> procedure_MP-109, procedure_MP-110\n[2] (procedure_MP-109) Maintenance procedure MP-109: Interlocking relay contact inspection. Applies to the SG-12 signal interlocking relay. Scheduled every 28 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 100 minutes. Links: authorised_by -> policy_PL-D, policy_PL-K; maintains -> equipment_SG-12; performed_by -> role_signalling_technician\n[3] (procedure_MP-110) Maintenance procedure MP-110: Relay drop-out timing audit. Applies to the SG-12 signal interlocking relay. Scheduled every 365 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-D; maintains -> equipment_SG-12; performed_by -> role_signalling_technician\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_22",
+        "station_thistlebank",
+        "line_amber",
+        "equipment_DR-8",
+        "station_saltmarsh",
+        "procedure_MP-109",
+        "procedure_MP-110"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1115,
+        "output_tokens": 159,
+        "retrieval_latency_ms": 27.025,
+        "generation_latency_ms": 9508.443,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 648,
+            "output_tokens": 85,
+            "latency_ms": 6965.784
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 467,
+            "output_tokens": 74,
+            "latency_ms": 2542.659
+          }
+        }
+      }
+    },
+    "4010": {
+      "id": 4010,
+      "answer": "No maintenance procedure in the evidence is linked to the PS‑19 auxiliary‑power‑supply ripple fault; the only procedure mentioned (MP‑120) applies to the VE‑31 ventilation fan.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Underbank?",
+          "retrieved": [
+            "incident_2026_23",
+            "station_underbank",
+            "incident_2026_22",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "new_evidence": [
+            "incident_2026_23",
+            "station_underbank",
+            "incident_2026_22",
+            "line_amber",
+            "equipment_PS-19"
+          ],
+          "decision": "ANSWER: procedure_MP-120 – this maintenance procedure covers the PS-19 auxiliary power supply ripple fault that stopped service at Underbank."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-120"
+          ],
+          "answer_before_grounding": "procedure_MP-120 – this maintenance procedure covers the PS-19 auxiliary power supply ripple fault that stopped service at Underbank.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Underbank?\nEvidence:\n[1] (incident_2026_23) Service incident 2026/23 on 2026-11-16: trains were held at Underbank on the Amber Line for 46 minutes after a PS-19 auxiliary power supply suffered a ripple fault. 7 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_PS-19; occurred_at -> station_underbank\n[2] (station_underbank) Underbank is a through station on the Amber Line with 2 platforms and step-free access to all platforms. It is the 5 stop counted from Quarry Side and records about 23 thousand entries on a typical weekday. The station building dates from 1930 and was last refurbished in 2013. Links: next_station -> station_vantage_point; previous_station -> station_thistlebank; served_by -> line_amber\n[3] (incident_2026_22) Service incident 2026/22 on 2026-10-13: trains were held at Thistlebank on the Amber Line for 42 minutes after a DR-8 door engine actuator suffered a leadscrew backlash. 6 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_DR-8; occurred_at -> station_thistlebank\n[4] (line_amber) The Amber Line runs from Quarry Side to Vantage Point, calling at Redcliff, Saltmarsh, Thistlebank, Underbank. It is operated with Series 600 articulated sets and carries an average weekday ridership of 73 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_quarry_side, station_redcliff, station_saltmarsh, station_thistlebank, station_vantage_point\n[5] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-120\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Underbank?\nDraft answer: procedure_MP-120 – this maintenance procedure covers the PS-19 auxiliary power supply ripple fault that stopped service at Underbank.\nEvidence:\n[1] (equipment_PS-19) The PS-19 auxiliary power supply is fitted across the fleet and in fixed installations. Its dominant failure mode is ripple fault, which presents as excess ripple voltage on the 110 volt battery bus. A PS-19 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group PS19G. Links: maintained_by -> procedure_MP-120\n[2] (procedure_MP-120) Maintenance procedure MP-120: Ventilation fan balance correction. Applies to the VE-31 tunnel ventilation fan. Scheduled every 240 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 55 minutes. Links: authorised_by -> policy_PL-I, policy_PL-K; maintains -> equipment_VE-31; performed_by -> role_plant_engineer\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_23",
+        "station_underbank",
+        "incident_2026_22",
+        "line_amber",
+        "equipment_PS-19",
+        "procedure_MP-120"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1002,
+        "output_tokens": 164,
+        "retrieval_latency_ms": 25.569,
+        "generation_latency_ms": 7427.688,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 655,
+            "output_tokens": 70,
+            "latency_ms": 3741.777
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 347,
+            "output_tokens": 94,
+            "latency_ms": 3685.911
+          }
+        }
+      }
+    },
+    "4011": {
+      "id": 4011,
+      "answer": "procedure_MP-117 – this maintenance procedure is linked to the VE‑31 tunnel ventilation fan and therefore covers the blade‑imbalance fault that stopped service at Westmere.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Westmere?",
+          "retrieved": [
+            "incident_2026_25",
+            "line_violet",
+            "equipment_VE-31",
+            "station_yarrow_cross",
+            "station_eastgate_quay"
+          ],
+          "new_evidence": [
+            "incident_2026_25",
+            "line_violet",
+            "equipment_VE-31",
+            "station_yarrow_cross",
+            "station_eastgate_quay"
+          ],
+          "decision": "ANSWER: procedure_MP-117 – this maintenance procedure covers the VE-31 tunnel ventilation fan whose blade imbalance caused the fault at Westmere."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-117"
+          ],
+          "answer_before_grounding": "procedure_MP-117 – this maintenance procedure covers the VE-31 tunnel ventilation fan whose blade imbalance caused the fault at Westmere.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Westmere?\nEvidence:\n[1] (incident_2026_25) Service incident 2026/25 on 2026-01-22: trains were held at Westmere on the Violet Line for 54 minutes after a VE-31 tunnel ventilation fan suffered a blade imbalance. 9 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_violet; caused_by -> equipment_VE-31; occurred_at -> station_westmere\n[2] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_ashfen, station_beacon_rise, station_carrow_end, station_dovecote, station_westmere, station_yarrow_cross\n[3] (equipment_VE-31) The VE-31 tunnel ventilation fan is fitted across the fleet and in fixed installations. Its dominant failure mode is blade imbalance, which presents as vibration velocity above 7 millimetres per second at the bearing housing. A VE-31 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group VE31G. Links: maintained_by -> procedure_MP-117\n[4] (station_yarrow_cross) Yarrow Cross is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Westmere and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_ashfen; previous_station -> station_westmere; site_of_incident -> incident_2026_26\n[5] (station_eastgate_quay) Eastgate Quay is a terminus on the Crimson Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Eastgate Quay and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: next_station -> station_foundry_bridge; served_by -> line_crimson; site_of_incident -> incident_2026_07\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Westmere?\nDraft answer: procedure_MP-117 – this maintenance procedure covers the VE-31 tunnel ventilation fan whose blade imbalance caused the fault at Westmere.\nEvidence:\n[1] (equipment_VE-31) The VE-31 tunnel ventilation fan is fitted across the fleet and in fixed installations. Its dominant failure mode is blade imbalance, which presents as vibration velocity above 7 millimetres per second at the bearing housing. A VE-31 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group VE31G. Links: maintained_by -> procedure_MP-117\n[2] (procedure_MP-117) Maintenance procedure MP-117: Auxiliary supply ripple measurement. Applies to the PS-19 auxiliary power supply. Scheduled every 70 days. Method: isolate the unit, record the as-found reading, carry out the corrective step, then prove the unit through two full cycles. Two competent staff are required and the work takes about 115 minutes. Links: authorised_by -> policy_PL-H; maintains -> equipment_PS-19; performed_by -> role_power_technician\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_25",
+        "line_violet",
+        "equipment_VE-31",
+        "station_yarrow_cross",
+        "station_eastgate_quay",
+        "procedure_MP-117"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1017,
+        "output_tokens": 208,
+        "retrieval_latency_ms": 17.128,
+        "generation_latency_ms": 9726.649,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 670,
+            "output_tokens": 64,
+            "latency_ms": 5660.341
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 347,
+            "output_tokens": 144,
+            "latency_ms": 4066.308
+          }
+        }
+      }
+    },
+    "4012": {
+      "id": 4012,
+      "answer": "procedure_MP-122 – this maintenance procedure is linked as the maintainer of equipment_ES-14 and therefore covers the ES-14 escalator drive‑chain fault that stopped service at Yarrow Cross.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Yarrow Cross?",
+          "retrieved": [
+            "incident_2026_26",
+            "station_yarrow_cross",
+            "line_violet",
+            "equipment_ES-14",
+            "station_westmere"
+          ],
+          "new_evidence": [
+            "incident_2026_26",
+            "station_yarrow_cross",
+            "line_violet",
+            "equipment_ES-14",
+            "station_westmere"
+          ],
+          "decision": "ANSWER: procedure_MP-122 – this maintenance procedure covers the ES-14 escalator drive chain whose elongation wear caused the service stoppage at Yarrow Cross."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-122"
+          ],
+          "answer_before_grounding": "procedure_MP-122 – this maintenance procedure covers the ES-14 escalator drive chain whose elongation wear caused the service stoppage at Yarrow Cross.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Yarrow Cross?\nEvidence:\n[1] (incident_2026_26) Service incident 2026/26 on 2026-02-25: trains were held at Yarrow Cross on the Violet Line for 58 minutes after a ES-14 escalator drive chain suffered a elongation wear. 10 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_violet; caused_by -> equipment_ES-14; occurred_at -> station_yarrow_cross\n[2] (station_yarrow_cross) Yarrow Cross is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Westmere and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: next_station -> station_ashfen; previous_station -> station_westmere; served_by -> line_violet\n[3] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_ashfen, station_beacon_rise, station_carrow_end, station_dovecote, station_westmere\n[4] (equipment_ES-14) The ES-14 escalator drive chain is fitted across the fleet and in fixed installations. Its dominant failure mode is elongation wear, which presents as chain elongation beyond the 1.5 percent service limit. A ES-14 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group ES14G. Links: maintained_by -> procedure_MP-122\n[5] (station_westmere) Westmere is a terminus on the Violet Line with 3 platforms and step-free access to all platforms. It is the 1 stop counted from Westmere and records about 11 thousand entries on a typical weekday. The station building dates from 1902 and was last refurbished in 2009. Links: site_of_incident -> incident_2026_25\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Yarrow Cross?\nDraft answer: procedure_MP-122 – this maintenance procedure covers the ES-14 escalator drive chain whose elongation wear caused the service stoppage at Yarrow Cross.\nEvidence:\n[1] (equipment_ES-14) The ES-14 escalator drive chain is fitted across the fleet and in fixed installations. Its dominant failure mode is elongation wear, which presents as chain elongation beyond the 1.5 percent service limit. A ES-14 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group ES14G. Links: maintained_by -> procedure_MP-122\n[2] (procedure_MP-122) Maintenance procedure MP-122: Ballast circuit staged replacement. Applies to the LT-77 lighting ballast. Scheduled every 300 days. Method: apply the local isolation, measure against the acceptance table, replace any part outside limits, and seal the enclosure. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-J; maintains -> equipment_LT-77; performed_by -> role_power_technician\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_26",
+        "station_yarrow_cross",
+        "line_violet",
+        "equipment_ES-14",
+        "station_westmere",
+        "procedure_MP-122"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 990,
+        "output_tokens": 265,
+        "retrieval_latency_ms": 30.33,
+        "generation_latency_ms": 9100.859,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 641,
+            "output_tokens": 79,
+            "latency_ms": 6173.07
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 349,
+            "output_tokens": 186,
+            "latency_ms": 2927.789
+          }
+        }
+      }
+    },
+    "4013": {
+      "id": 4013,
+      "answer": "procedure_MP-121 – this maintenance procedure is linked as the maintainer of equipment_LT-77, whose flicker‑cascade fault stopped service at Ashfen.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Ashfen?",
+          "retrieved": [
+            "incident_2026_27",
+            "station_ashfen",
+            "line_violet",
+            "equipment_LT-77",
+            "station_yarrow_cross"
+          ],
+          "new_evidence": [
+            "incident_2026_27",
+            "station_ashfen",
+            "line_violet",
+            "equipment_LT-77",
+            "station_yarrow_cross"
+          ],
+          "decision": "ANSWER: procedure_MP-121 – this maintenance procedure covers the LT‑77 lighting ballast whose flicker‑cascade fault stopped service at Ashfen."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-121"
+          ],
+          "answer_before_grounding": "procedure_MP-121 – this maintenance procedure covers the LT‑77 lighting ballast whose flicker‑cascade fault stopped service at Ashfen.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Ashfen?\nEvidence:\n[1] (incident_2026_27) Service incident 2026/27 on 2026-03-01: trains were held at Ashfen on the Violet Line for 9 minutes after a LT-77 lighting ballast suffered a flicker cascade. 2 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_violet; caused_by -> equipment_LT-77; occurred_at -> station_ashfen\n[2] (station_ashfen) Ashfen is a through station on the Violet Line with 2 platforms and step-free access to all platforms. It is the 3 stop counted from Westmere and records about 17 thousand entries on a typical weekday. The station building dates from 1916 and was last refurbished in 2011. Links: next_station -> station_beacon_rise; previous_station -> station_yarrow_cross; served_by -> line_violet\n[3] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_beacon_rise, station_carrow_end, station_dovecote, station_westmere, station_yarrow_cross\n[4] (equipment_LT-77) The LT-77 lighting ballast is fitted across the fleet and in fixed installations. Its dominant failure mode is flicker cascade, which presents as a cascading flicker across an entire platform circuit. A LT-77 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group LT77G. Links: maintained_by -> procedure_MP-121\n[5] (station_yarrow_cross) Yarrow Cross is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 2 stop counted from Westmere and records about 14 thousand entries on a typical weekday. The station building dates from 1909 and was last refurbished in 2010. Links: previous_station -> station_westmere; site_of_incident -> incident_2026_26\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Ashfen?\nDraft answer: procedure_MP-121 – this maintenance procedure covers the LT‑77 lighting ballast whose flicker‑cascade fault stopped service at Ashfen.\nEvidence:\n[1] (equipment_LT-77) The LT-77 lighting ballast is fitted across the fleet and in fixed installations. Its dominant failure mode is flicker cascade, which presents as a cascading flicker across an entire platform circuit. A LT-77 unit has a design life of 8 years and is classified as a service-critical asset. Replacement units are held at the central store under part group LT77G. Links: maintained_by -> procedure_MP-121\n[2] (procedure_MP-121) Maintenance procedure MP-121: Escalator chain elongation gauging. Applies to the ES-14 escalator drive chain. Scheduled every 110 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 70 minutes. Links: authorised_by -> policy_PL-J, policy_PL-K; maintains -> equipment_ES-14; performed_by -> role_plant_engineer\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_27",
+        "station_ashfen",
+        "line_violet",
+        "equipment_LT-77",
+        "station_yarrow_cross",
+        "procedure_MP-121"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 992,
+        "output_tokens": 299,
+        "retrieval_latency_ms": 24.723,
+        "generation_latency_ms": 11134.936,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 641,
+            "output_tokens": 73,
+            "latency_ms": 5809.94
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 351,
+            "output_tokens": 226,
+            "latency_ms": 5324.996
+          }
+        }
+      }
+    },
+    "4014": {
+      "id": 4014,
+      "answer": "Procedures MP‑107 and MP‑108 are the maintenance procedures that cover the WS‑5 wheel‑slide‑protection‑valve fault that stopped service at Beacon Rise.",
+      "steps": [
+        {
+          "step": 1,
+          "query": "Which maintenance procedures cover the fault that stopped service at Beacon Rise?",
+          "retrieved": [
+            "incident_2026_28",
+            "station_beacon_rise",
+            "incident_2026_19",
+            "line_violet",
+            "equipment_WS-5"
+          ],
+          "new_evidence": [
+            "incident_2026_28",
+            "station_beacon_rise",
+            "incident_2026_19",
+            "line_violet",
+            "equipment_WS-5"
+          ],
+          "decision": "ANSWER: procedure_MP-107 and procedure_MP-108 – these are the maintenance procedures that cover the WS-5 wheel slide protection valve fault that stopped service at Beacon Rise."
+        },
+        {
+          "step": "grounding",
+          "mode": "lean",
+          "cited_from_links": [
+            "procedure_MP-107",
+            "procedure_MP-108"
+          ],
+          "answer_before_grounding": "procedure_MP-107 and procedure_MP-108 – these are the maintenance procedures that cover the WS-5 wheel slide protection valve fault that stopped service at Beacon Rise.",
+          "answer_changed": true
+        }
+      ],
+      "stop_reason": "model_stopped",
+      "prompts": [
+        "Answer using only the evidence, or ask for more.\nQuestion: Which maintenance procedures cover the fault that stopped service at Beacon Rise?\nEvidence:\n[1] (incident_2026_28) Service incident 2026/28 on 2026-04-04: trains were held at Beacon Rise on the Violet Line for 13 minutes after a WS-5 wheel slide protection valve suffered a latched release. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_violet; caused_by -> equipment_WS-5; occurred_at -> station_beacon_rise\n[2] (station_beacon_rise) Beacon Rise is a through station on the Violet Line with 2 platforms and step-free access to the northbound platforms. It is the 4 stop counted from Westmere and records about 20 thousand entries on a typical weekday. The station building dates from 1923 and was last refurbished in 2012. Links: next_station -> station_carrow_end; previous_station -> station_ashfen; served_by -> line_violet\n[3] (incident_2026_19) Service incident 2026/19 on 2026-07-04: trains were held at Quarry Side on the Amber Line for 30 minutes after a SG-12 signal interlocking relay suffered a contact welding. 3 trains were held behind the failure and the station was placed in degraded mode until the unit was isolated. Customers were advised to use alternative routes. Links: affected_line -> line_amber; caused_by -> equipment_SG-12; occurred_at -> station_quarry_side\n[4] (line_violet) The Violet Line runs from Westmere to Dovecote, calling at Yarrow Cross, Ashfen, Beacon Rise, Carrow End. It is operated with Series 450 driverless sets and carries an average weekday ridership of 80 thousand journeys. Headways are 5 minutes in the morning peak and 9 minutes in the evening off-peak. Links: serves -> station_ashfen, station_carrow_end, station_dovecote, station_westmere, station_yarrow_cross\n[5] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-107, procedure_MP-108\nIf the evidence answers the question, reply ANSWER: followed by the exact identifiers and one short sentence. Do not add unsupported facts.\nOtherwise, reply SEARCH: followed by one short query.",
+        "Check the draft answer against the evidence.\nQuestion: Which maintenance procedures cover the fault that stopped service at Beacon Rise?\nDraft answer: procedure_MP-107 and procedure_MP-108 – these are the maintenance procedures that cover the WS-5 wheel slide protection valve fault that stopped service at Beacon Rise.\nEvidence:\n[1] (equipment_WS-5) The WS-5 wheel slide protection valve is fitted across the fleet and in fixed installations. Its dominant failure mode is latched release, which presents as a brake release that stays latched after the slide event clears. A WS-5 unit has a design life of 12 years and is classified as a safety-critical asset. Replacement units are held at the central store under part group WS5G. Links: maintained_by -> procedure_MP-107, procedure_MP-108\n[2] (procedure_MP-107) Maintenance procedure MP-107: Screen door sensor realignment. Applies to the PD-90 platform screen door controller. Scheduled every 30 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 70 minutes. Links: authorised_by -> policy_PL-C, policy_PL-L; maintains -> equipment_PD-90; performed_by -> role_platform_systems_engineer\n[3] (procedure_MP-108) Maintenance procedure MP-108: Screen door controller loop test. Applies to the PD-90 platform screen door controller. Scheduled every 120 days. Method: take the asset out of service, complete the measurement sheet, restore the configuration, and log the result in the asset register. Two competent staff are required and the work takes about 85 minutes. Links: authorised_by -> policy_PL-C; maintains -> equipment_PD-90; performed_by -> role_platform_systems_engineer\nReply with the corrected answer: the exact identifiers and one short sentence. Do not add unsupported facts."
+      ],
+      "evidence_chunks": [
+        "incident_2026_28",
+        "station_beacon_rise",
+        "incident_2026_19",
+        "line_violet",
+        "equipment_WS-5",
+        "procedure_MP-107",
+        "procedure_MP-108"
+      ],
+      "cost": {
+        "retrieval_calls": 1,
+        "generation_calls": 2,
+        "input_tokens": 1141,
+        "output_tokens": 200,
+        "retrieval_latency_ms": 10.919,
+        "generation_latency_ms": 10580.796,
+        "by_stage": {
+          "step": {
+            "calls": 1,
+            "input_tokens": 671,
+            "output_tokens": 89,
+            "latency_ms": 5768.954
+          },
+          "grounding": {
+            "calls": 1,
+            "input_tokens": 470,
+            "output_tokens": 111,
+            "latency_ms": 4811.842
+          }
+        }
+      }
+    }
+  }
+}
